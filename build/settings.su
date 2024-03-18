@@ -1,0 +1,2 @@
+bsp_l0/common/settings.c:14:6:settings_init	8	static
+bsp_l0/common/settings.c:21:6:settings_print	72	static

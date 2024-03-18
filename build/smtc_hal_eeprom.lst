@@ -1,0 +1,90 @@
+ARM GAS  /tmp/ccpV4RIP.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"smtc_hal_eeprom.c"
+  12              		.text
+  13              		.section	.text.hal_eeprom_write_buffer,"ax",%progbits
+  14              		.align	1
+  15              		.global	hal_eeprom_write_buffer
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	hal_eeprom_write_buffer:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  24 0002 0600     		movs	r6, r0
+  25 0004 0F00     		movs	r7, r1
+  26 0006 1500     		movs	r5, r2
+  27 0008 0024     		movs	r4, #0
+  28 000a FFF7FEFF 		bl	HAL_FLASHEx_DATAEEPROM_Unlock
+  29              	.L2:
+  30 000e AC42     		cmp	r4, r5
+  31 0010 03D1     		bne	.L3
+  32              		@ sp needed
+  33 0012 FFF7FEFF 		bl	HAL_FLASHEx_DATAEEPROM_Lock
+  34 0016 2000     		movs	r0, r4
+  35 0018 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+  36              	.L3:
+  37 001a 0349     		ldr	r1, .L4
+  38 001c 3A5D     		ldrb	r2, [r7, r4]
+  39 001e A319     		adds	r3, r4, r6
+  40 0020 5B18     		adds	r3, r3, r1
+  41 0022 1A70     		strb	r2, [r3]
+  42 0024 0134     		adds	r4, r4, #1
+  43 0026 F2E7     		b	.L2
+  44              	.L5:
+  45              		.align	2
+  46              	.L4:
+  47 0028 00000808 		.word	134742016
+  49              		.section	.text.hal_eeprom_read_buffer,"ax",%progbits
+  50              		.align	1
+  51              		.global	hal_eeprom_read_buffer
+  52              		.syntax unified
+  53              		.code	16
+  54              		.thumb_func
+  56              	hal_eeprom_read_buffer:
+  57              		@ args = 0, pretend = 0, frame = 0
+  58              		@ frame_needed = 0, uses_anonymous_args = 0
+  59 0000 0300     		movs	r3, r0
+  60 0002 10B5     		push	{r4, lr}
+ARM GAS  /tmp/ccpV4RIP.s 			page 2
+
+
+  61 0004 0800     		movs	r0, r1
+  62              		@ sp needed
+  63 0006 0249     		ldr	r1, .L7
+  64 0008 5918     		adds	r1, r3, r1
+  65 000a FFF7FEFF 		bl	memcpy
+  66 000e 10BD     		pop	{r4, pc}
+  67              	.L8:
+  68              		.align	2
+  69              	.L7:
+  70 0010 00000808 		.word	134742016
+  72              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccpV4RIP.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 smtc_hal_eeprom.c
+     /tmp/ccpV4RIP.s:14     .text.hal_eeprom_write_buffer:00000000 $t
+     /tmp/ccpV4RIP.s:20     .text.hal_eeprom_write_buffer:00000000 hal_eeprom_write_buffer
+     /tmp/ccpV4RIP.s:47     .text.hal_eeprom_write_buffer:00000028 $d
+     /tmp/ccpV4RIP.s:50     .text.hal_eeprom_read_buffer:00000000 $t
+     /tmp/ccpV4RIP.s:56     .text.hal_eeprom_read_buffer:00000000 hal_eeprom_read_buffer
+     /tmp/ccpV4RIP.s:70     .text.hal_eeprom_read_buffer:00000010 $d
+
+UNDEFINED SYMBOLS
+HAL_FLASHEx_DATAEEPROM_Unlock
+HAL_FLASHEx_DATAEEPROM_Lock
+memcpy

@@ -1,0 +1,391 @@
+ARM GAS  /tmp/cc97bgTP.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"smtc_hal_adc.c"
+  12              		.text
+  13              		.section	.text.adc_read,"ax",%progbits
+  14              		.align	1
+  15              		.syntax unified
+  16              		.code	16
+  17              		.thumb_func
+  19              	adc_read:
+  20              		@ args = 0, pretend = 0, frame = 8
+  21              		@ frame_needed = 0, uses_anonymous_args = 0
+  22 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+  23 0002 194D     		ldr	r5, .L9
+  24 0004 194A     		ldr	r2, .L9+4
+  25 0006 1A4B     		ldr	r3, .L9+8
+  26 0008 0400     		movs	r4, r0
+  27 000a 6946     		mov	r1, sp
+  28 000c 2800     		movs	r0, r5
+  29 000e 0092     		str	r2, [sp]
+  30 0010 0193     		str	r3, [sp, #4]
+  31 0012 FFF7FEFF 		bl	HAL_ADC_ConfigChannel
+  32 0016 0028     		cmp	r0, #0
+  33 0018 02D0     		beq	.L2
+  34              	.L4:
+  35 001a 0024     		movs	r4, #0
+  36              	.L3:
+  37              		@ sp needed
+  38 001c 2000     		movs	r0, r4
+  39 001e 3EBD     		pop	{r1, r2, r3, r4, r5, pc}
+  40              	.L2:
+  41 0020 8023     		movs	r3, #128
+  42 0022 6946     		mov	r1, sp
+  43 0024 5B01     		lsls	r3, r3, #5
+  44 0026 2800     		movs	r0, r5
+  45 0028 0094     		str	r4, [sp]
+  46 002a 0193     		str	r3, [sp, #4]
+  47 002c FFF7FEFF 		bl	HAL_ADC_ConfigChannel
+  48 0030 0028     		cmp	r0, #0
+  49 0032 F2D1     		bne	.L4
+  50 0034 2800     		movs	r0, r5
+  51 0036 FFF7FEFF 		bl	HAL_ADC_Start
+  52 003a 0028     		cmp	r0, #0
+  53 003c EDD1     		bne	.L4
+  54 003e 0A21     		movs	r1, #10
+  55 0040 2800     		movs	r0, r5
+  56 0042 FFF7FEFF 		bl	HAL_ADC_PollForConversion
+  57 0046 041E     		subs	r4, r0, #0
+  58 0048 E7D1     		bne	.L4
+ARM GAS  /tmp/cc97bgTP.s 			page 2
+
+
+  59 004a 2800     		movs	r0, r5
+  60 004c FFF7FEFF 		bl	HAL_ADC_GetState
+  61 0050 8005     		lsls	r0, r0, #22
+  62 0052 03D5     		bpl	.L5
+  63 0054 2800     		movs	r0, r5
+  64 0056 FFF7FEFF 		bl	HAL_ADC_GetValue
+  65 005a 84B2     		uxth	r4, r0
+  66              	.L5:
+  67 005c 2800     		movs	r0, r5
+  68 005e FFF7FEFF 		bl	HAL_ADC_Stop
+  69 0062 0028     		cmp	r0, #0
+  70 0064 DAD0     		beq	.L3
+  71 0066 D8E7     		b	.L4
+  72              	.L10:
+  73              		.align	2
+  74              	.L9:
+  75 0068 00000000 		.word	hal_adc_handle
+  76 006c FFFF0700 		.word	524287
+  77 0070 01100000 		.word	4097
+  79              		.section	.rodata.hal_adc_init.str1.1,"aMS",%progbits,1
+  80              	.LC3:
+  81 0000 4552524F 		.ascii	"ERROR: mcu_panic:%s\012\000"
+  81      523A206D 
+  81      63755F70 
+  81      616E6963 
+  81      3A25730A 
+  82              	.LC5:
+  83 0015 00       		.ascii	"\000"
+  84              	.LC7:
+  85 0016 4552524F 		.ascii	"ERROR: -> \000"
+  85      523A202D 
+  85      3E2000
+  86              		.section	.text.hal_adc_init,"ax",%progbits
+  87              		.align	1
+  88              		.global	hal_adc_init
+  89              		.syntax unified
+  90              		.code	16
+  91              		.thumb_func
+  93              	hal_adc_init:
+  94              		@ args = 0, pretend = 0, frame = 0
+  95              		@ frame_needed = 0, uses_anonymous_args = 0
+  96 0000 C221     		movs	r1, #194
+  97 0002 70B5     		push	{r4, r5, r6, lr}
+  98 0004 234B     		ldr	r3, .L20
+  99 0006 244C     		ldr	r4, .L20+4
+ 100 0008 FF31     		adds	r1, r1, #255
+ 101 000a 2360     		str	r3, [r4]
+ 102 000c C023     		movs	r3, #192
+ 103 000e 6162     		str	r1, [r4, #36]
+ 104 0010 BE39     		subs	r1, r1, #190
+ 105 0012 FF39     		subs	r1, r1, #255
+ 106 0014 1B06     		lsls	r3, r3, #24
+ 107 0016 6161     		str	r1, [r4, #20]
+ 108 0018 2100     		movs	r1, r4
+ 109 001a 0122     		movs	r2, #1
+ 110 001c 6360     		str	r3, [r4, #4]
+ 111 001e 0023     		movs	r3, #0
+ARM GAS  /tmp/cc97bgTP.s 			page 3
+
+
+ 112 0020 2C31     		adds	r1, r1, #44
+ 113 0022 2000     		movs	r0, r4
+ 114 0024 E360     		str	r3, [r4, #12]
+ 115 0026 A360     		str	r3, [r4, #8]
+ 116 0028 2261     		str	r2, [r4, #16]
+ 117 002a A362     		str	r3, [r4, #40]
+ 118 002c 2384     		strh	r3, [r4, #32]
+ 119 002e A361     		str	r3, [r4, #24]
+ 120 0030 0B70     		strb	r3, [r1]
+ 121 0032 E363     		str	r3, [r4, #60]
+ 122 0034 2363     		str	r3, [r4, #48]
+ 123 0036 A363     		str	r3, [r4, #56]
+ 124 0038 6263     		str	r2, [r4, #52]
+ 125 003a E361     		str	r3, [r4, #28]
+ 126 003c FFF7FEFF 		bl	HAL_ADC_Init
+ 127 0040 0028     		cmp	r0, #0
+ 128 0042 0FD0     		beq	.L12
+ 129 0044 1549     		ldr	r1, .L20+8
+ 130 0046 1648     		ldr	r0, .L20+12
+ 131 0048 FFF7FEFF 		bl	hal_trace_print_var
+ 132 004c 154D     		ldr	r5, .L20+16
+ 133 004e 2800     		movs	r0, r5
+ 134 0050 FFF7FEFF 		bl	hal_trace_print_var
+ 135 0054 1448     		ldr	r0, .L20+20
+ 136 0056 FFF7FEFF 		bl	hal_trace_print_var
+ 137 005a 2800     		movs	r0, r5
+ 138 005c FFF7FEFF 		bl	hal_trace_print_var
+ 139 0060 FFF7FEFF 		bl	hal_mcu_reset
+ 140              	.L12:
+ 141 0064 0021     		movs	r1, #0
+ 142 0066 2000     		movs	r0, r4
+ 143 0068 FFF7FEFF 		bl	HAL_ADCEx_Calibration_Start
+ 144 006c 0028     		cmp	r0, #0
+ 145 006e 0FD0     		beq	.L11
+ 146 0070 0A49     		ldr	r1, .L20+8
+ 147 0072 0B48     		ldr	r0, .L20+12
+ 148 0074 FFF7FEFF 		bl	hal_trace_print_var
+ 149 0078 0A4C     		ldr	r4, .L20+16
+ 150 007a 2000     		movs	r0, r4
+ 151 007c FFF7FEFF 		bl	hal_trace_print_var
+ 152 0080 0948     		ldr	r0, .L20+20
+ 153 0082 FFF7FEFF 		bl	hal_trace_print_var
+ 154 0086 2000     		movs	r0, r4
+ 155 0088 FFF7FEFF 		bl	hal_trace_print_var
+ 156 008c FFF7FEFF 		bl	hal_mcu_reset
+ 157              	.L11:
+ 158              		@ sp needed
+ 159 0090 70BD     		pop	{r4, r5, r6, pc}
+ 160              	.L21:
+ 161 0092 C046     		.align	2
+ 162              	.L20:
+ 163 0094 00240140 		.word	1073816576
+ 164 0098 00000000 		.word	hal_adc_handle
+ 165 009c 00000000 		.word	__func__.0
+ 166 00a0 00000000 		.word	.LC3
+ 167 00a4 15000000 		.word	.LC5
+ 168 00a8 16000000 		.word	.LC7
+ARM GAS  /tmp/cc97bgTP.s 			page 4
+
+
+ 170              		.global	__aeabi_uidiv
+ 171              		.global	__aeabi_idiv
+ 172              		.section	.text.hal_adc_get_vref_int,"ax",%progbits
+ 173              		.align	1
+ 174              		.global	hal_adc_get_vref_int
+ 175              		.syntax unified
+ 176              		.code	16
+ 177              		.thumb_func
+ 179              	hal_adc_get_vref_int:
+ 180              		@ args = 0, pretend = 0, frame = 0
+ 181              		@ frame_needed = 0, uses_anonymous_args = 0
+ 182 0000 10B5     		push	{r4, lr}
+ 183 0002 0648     		ldr	r0, .L23
+ 184 0004 FFF7FEFF 		bl	adc_read
+ 185              		@ sp needed
+ 186 0008 054B     		ldr	r3, .L23+4
+ 187 000a 0100     		movs	r1, r0
+ 188 000c 1B88     		ldrh	r3, [r3]
+ 189 000e 0548     		ldr	r0, .L23+8
+ 190 0010 5843     		muls	r0, r3
+ 191 0012 FFF7FEFF 		bl	__aeabi_uidiv
+ 192 0016 80B2     		uxth	r0, r0
+ 193 0018 10BD     		pop	{r4, pc}
+ 194              	.L24:
+ 195 001a C046     		.align	2
+ 196              	.L23:
+ 197 001c 00000244 		.word	1140981760
+ 198 0020 7800F81F 		.word	536346744
+ 199 0024 B80B0000 		.word	3000
+ 201              		.section	.text.hal_adc_get_temp,"ax",%progbits
+ 202              		.align	1
+ 203              		.global	hal_adc_get_temp
+ 204              		.syntax unified
+ 205              		.code	16
+ 206              		.thumb_func
+ 208              	hal_adc_get_temp:
+ 209              		@ args = 0, pretend = 0, frame = 0
+ 210              		@ frame_needed = 0, uses_anonymous_args = 0
+ 211 0000 70B5     		push	{r4, r5, r6, lr}
+ 212 0002 FFF7FEFF 		bl	hal_adc_get_vref_int
+ 213              		@ sp needed
+ 214 0006 0400     		movs	r4, r0
+ 215 0008 0948     		ldr	r0, .L26
+ 216 000a FFF7FEFF 		bl	adc_read
+ 217 000e 094B     		ldr	r3, .L26+4
+ 218 0010 6043     		muls	r0, r4
+ 219 0012 0949     		ldr	r1, .L26+8
+ 220 0014 1D88     		ldrh	r5, [r3]
+ 221 0016 FFF7FEFF 		bl	__aeabi_uidiv
+ 222 001a 431B     		subs	r3, r0, r5
+ 223 001c 6420     		movs	r0, #100
+ 224 001e 5843     		muls	r0, r3
+ 225 0020 064B     		ldr	r3, .L26+12
+ 226 0022 1988     		ldrh	r1, [r3]
+ 227 0024 491B     		subs	r1, r1, r5
+ 228 0026 FFF7FEFF 		bl	__aeabi_idiv
+ 229 002a 1E30     		adds	r0, r0, #30
+ARM GAS  /tmp/cc97bgTP.s 			page 5
+
+
+ 230 002c 40B2     		sxtb	r0, r0
+ 231 002e 70BD     		pop	{r4, r5, r6, pc}
+ 232              	.L27:
+ 233              		.align	2
+ 234              	.L26:
+ 235 0030 00000448 		.word	1208221696
+ 236 0034 7A00F81F 		.word	536346746
+ 237 0038 B80B0000 		.word	3000
+ 238 003c 7E00F81F 		.word	536346750
+ 240              		.section	.text.hal_adc_deinit,"ax",%progbits
+ 241              		.align	1
+ 242              		.global	hal_adc_deinit
+ 243              		.syntax unified
+ 244              		.code	16
+ 245              		.thumb_func
+ 247              	hal_adc_deinit:
+ 248              		@ args = 0, pretend = 0, frame = 0
+ 249              		@ frame_needed = 0, uses_anonymous_args = 0
+ 250 0000 10B5     		push	{r4, lr}
+ 251 0002 0248     		ldr	r0, .L29
+ 252 0004 FFF7FEFF 		bl	HAL_ADC_DeInit
+ 253              		@ sp needed
+ 254 0008 10BD     		pop	{r4, pc}
+ 255              	.L30:
+ 256 000a C046     		.align	2
+ 257              	.L29:
+ 258 000c 00000000 		.word	hal_adc_handle
+ 260              		.section	.text.HAL_ADC_MspInit,"ax",%progbits
+ 261              		.align	1
+ 262              		.global	HAL_ADC_MspInit
+ 263              		.syntax unified
+ 264              		.code	16
+ 265              		.thumb_func
+ 267              	HAL_ADC_MspInit:
+ 268              		@ args = 0, pretend = 0, frame = 0
+ 269              		@ frame_needed = 0, uses_anonymous_args = 0
+ 270              		@ link register save eliminated.
+ 271 0000 8023     		movs	r3, #128
+ 272              		@ sp needed
+ 273 0002 034A     		ldr	r2, .L32
+ 274 0004 9B00     		lsls	r3, r3, #2
+ 275 0006 516B     		ldr	r1, [r2, #52]
+ 276 0008 0B43     		orrs	r3, r1
+ 277 000a 5363     		str	r3, [r2, #52]
+ 278 000c 7047     		bx	lr
+ 279              	.L33:
+ 280 000e C046     		.align	2
+ 281              	.L32:
+ 282 0010 00100240 		.word	1073876992
+ 284              		.section	.text.HAL_ADC_MspDeInit,"ax",%progbits
+ 285              		.align	1
+ 286              		.global	HAL_ADC_MspDeInit
+ 287              		.syntax unified
+ 288              		.code	16
+ 289              		.thumb_func
+ 291              	HAL_ADC_MspDeInit:
+ 292              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/cc97bgTP.s 			page 6
+
+
+ 293              		@ frame_needed = 0, uses_anonymous_args = 0
+ 294              		@ link register save eliminated.
+ 295 0000 024A     		ldr	r2, .L35
+ 296 0002 0349     		ldr	r1, .L35+4
+ 297 0004 536B     		ldr	r3, [r2, #52]
+ 298              		@ sp needed
+ 299 0006 0B40     		ands	r3, r1
+ 300 0008 5363     		str	r3, [r2, #52]
+ 301 000a 7047     		bx	lr
+ 302              	.L36:
+ 303              		.align	2
+ 304              	.L35:
+ 305 000c 00100240 		.word	1073876992
+ 306 0010 FFFDFFFF 		.word	-513
+ 308              		.section	.text.hal_adc_read_channel,"ax",%progbits
+ 309              		.align	1
+ 310              		.global	hal_adc_read_channel
+ 311              		.syntax unified
+ 312              		.code	16
+ 313              		.thumb_func
+ 315              	hal_adc_read_channel:
+ 316              		@ args = 0, pretend = 0, frame = 0
+ 317              		@ frame_needed = 0, uses_anonymous_args = 0
+ 318 0000 10B5     		push	{r4, lr}
+ 319 0002 FFF7FEFF 		bl	adc_read
+ 320              		@ sp needed
+ 321 0006 10BD     		pop	{r4, pc}
+ 323              		.section	.rodata.__func__.0,"a"
+ 326              	__func__.0:
+ 327 0000 68616C5F 		.ascii	"hal_adc_init\000"
+ 327      6164635F 
+ 327      696E6974 
+ 327      00
+ 328              		.section	.bss.hal_adc_handle,"aw",%nobits
+ 329              		.align	2
+ 332              	hal_adc_handle:
+ 333 0000 00000000 		.space	92
+ 333      00000000 
+ 333      00000000 
+ 333      00000000 
+ 333      00000000 
+ 334              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/cc97bgTP.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 smtc_hal_adc.c
+     /tmp/cc97bgTP.s:14     .text.adc_read:00000000 $t
+     /tmp/cc97bgTP.s:19     .text.adc_read:00000000 adc_read
+     /tmp/cc97bgTP.s:75     .text.adc_read:00000068 $d
+     /tmp/cc97bgTP.s:332    .bss.hal_adc_handle:00000000 hal_adc_handle
+     /tmp/cc97bgTP.s:87     .text.hal_adc_init:00000000 $t
+     /tmp/cc97bgTP.s:93     .text.hal_adc_init:00000000 hal_adc_init
+     /tmp/cc97bgTP.s:163    .text.hal_adc_init:00000094 $d
+     /tmp/cc97bgTP.s:326    .rodata.__func__.0:00000000 __func__.0
+     /tmp/cc97bgTP.s:173    .text.hal_adc_get_vref_int:00000000 $t
+     /tmp/cc97bgTP.s:179    .text.hal_adc_get_vref_int:00000000 hal_adc_get_vref_int
+     /tmp/cc97bgTP.s:197    .text.hal_adc_get_vref_int:0000001c $d
+     /tmp/cc97bgTP.s:202    .text.hal_adc_get_temp:00000000 $t
+     /tmp/cc97bgTP.s:208    .text.hal_adc_get_temp:00000000 hal_adc_get_temp
+     /tmp/cc97bgTP.s:235    .text.hal_adc_get_temp:00000030 $d
+     /tmp/cc97bgTP.s:241    .text.hal_adc_deinit:00000000 $t
+     /tmp/cc97bgTP.s:247    .text.hal_adc_deinit:00000000 hal_adc_deinit
+     /tmp/cc97bgTP.s:258    .text.hal_adc_deinit:0000000c $d
+     /tmp/cc97bgTP.s:261    .text.HAL_ADC_MspInit:00000000 $t
+     /tmp/cc97bgTP.s:267    .text.HAL_ADC_MspInit:00000000 HAL_ADC_MspInit
+     /tmp/cc97bgTP.s:282    .text.HAL_ADC_MspInit:00000010 $d
+     /tmp/cc97bgTP.s:285    .text.HAL_ADC_MspDeInit:00000000 $t
+     /tmp/cc97bgTP.s:291    .text.HAL_ADC_MspDeInit:00000000 HAL_ADC_MspDeInit
+     /tmp/cc97bgTP.s:305    .text.HAL_ADC_MspDeInit:0000000c $d
+     /tmp/cc97bgTP.s:309    .text.hal_adc_read_channel:00000000 $t
+     /tmp/cc97bgTP.s:315    .text.hal_adc_read_channel:00000000 hal_adc_read_channel
+     /tmp/cc97bgTP.s:329    .bss.hal_adc_handle:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_ADC_ConfigChannel
+HAL_ADC_Start
+HAL_ADC_PollForConversion
+HAL_ADC_GetState
+HAL_ADC_GetValue
+HAL_ADC_Stop
+HAL_ADC_Init
+hal_trace_print_var
+hal_mcu_reset
+HAL_ADCEx_Calibration_Start
+__aeabi_uidiv
+__aeabi_idiv
+HAL_ADC_DeInit

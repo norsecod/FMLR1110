@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Compilation flags
 #-----------------------------------------------------------------------------
-MCU_FLAGS ?= -mcpu=cortex-m0 -mthumb
+MCU_FLAGS ?= -mcpu=cortex-m0 -mthumb -u _printf_float
 
 BOARD_C_DEFS =  \
 	-DUSE_HAL_DRIVER \

@@ -1,0 +1,788 @@
+ARM GAS  /tmp/ccLigRZw.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"ral_lr11xx_bsp.c"
+  12              		.text
+  13              		.section	.text.ral_lr11xx_bsp_get_rf_switch_cfg,"ax",%progbits
+  14              		.align	1
+  15              		.global	ral_lr11xx_bsp_get_rf_switch_cfg
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	ral_lr11xx_bsp_get_rf_switch_cfg:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23              		@ link register save eliminated.
+  24 0000 0F23     		movs	r3, #15
+  25              		@ sp needed
+  26 0002 0122     		movs	r2, #1
+  27 0004 0B70     		strb	r3, [r1]
+  28 0006 0023     		movs	r3, #0
+  29 0008 8A70     		strb	r2, [r1, #2]
+  30 000a 4B70     		strb	r3, [r1, #1]
+  31 000c 0232     		adds	r2, r2, #2
+  32 000e 4B71     		strb	r3, [r1, #5]
+  33 0010 0433     		adds	r3, r3, #4
+  34 0012 CA70     		strb	r2, [r1, #3]
+  35 0014 8B71     		strb	r3, [r1, #6]
+  36 0016 013A     		subs	r2, r2, #1
+  37 0018 0433     		adds	r3, r3, #4
+  38 001a 0A71     		strb	r2, [r1, #4]
+  39 001c CB71     		strb	r3, [r1, #7]
+  40 001e 7047     		bx	lr
+  42              		.section	.text.ral_lr11xx_bsp_get_reg_mode,"ax",%progbits
+  43              		.align	1
+  44              		.global	ral_lr11xx_bsp_get_reg_mode
+  45              		.syntax unified
+  46              		.code	16
+  47              		.thumb_func
+  49              	ral_lr11xx_bsp_get_reg_mode:
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52              		@ link register save eliminated.
+  53 0000 0123     		movs	r3, #1
+  54              		@ sp needed
+  55 0002 0B70     		strb	r3, [r1]
+  56 0004 7047     		bx	lr
+  58              		.section	.text.ral_lr11xx_bsp_get_xosc_cfg,"ax",%progbits
+  59              		.align	1
+  60              		.global	ral_lr11xx_bsp_get_xosc_cfg
+  61              		.syntax unified
+ARM GAS  /tmp/ccLigRZw.s 			page 2
+
+
+  62              		.code	16
+  63              		.thumb_func
+  65              	ral_lr11xx_bsp_get_xosc_cfg:
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68              		@ link register save eliminated.
+  69 0000 0120     		movs	r0, #1
+  70              		@ sp needed
+  71 0002 0870     		strb	r0, [r1]
+  72 0004 0221     		movs	r1, #2
+  73 0006 1170     		strb	r1, [r2]
+  74 0008 A422     		movs	r2, #164
+  75 000a 1A60     		str	r2, [r3]
+  76 000c 7047     		bx	lr
+  78              		.section	.text.ral_lr11xx_bsp_get_crc_state,"ax",%progbits
+  79              		.align	1
+  80              		.global	ral_lr11xx_bsp_get_crc_state
+  81              		.syntax unified
+  82              		.code	16
+  83              		.thumb_func
+  85              	ral_lr11xx_bsp_get_crc_state:
+  86              		@ args = 0, pretend = 0, frame = 0
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88              		@ link register save eliminated.
+  89 0000 0023     		movs	r3, #0
+  90              		@ sp needed
+  91 0002 0B70     		strb	r3, [r1]
+  92 0004 7047     		bx	lr
+  94              		.section	.text.ral_lr11xx_bsp_get_rssi_calibration_table,"ax",%progbits
+  95              		.align	1
+  96              		.global	ral_lr11xx_bsp_get_rssi_calibration_table
+  97              		.syntax unified
+  98              		.code	16
+  99              		.thumb_func
+ 101              	ral_lr11xx_bsp_get_rssi_calibration_table:
+ 102              		@ args = 0, pretend = 0, frame = 32
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 105 0002 2F4B     		ldr	r3, .L9
+ 106 0004 89B0     		sub	sp, sp, #36
+ 107 0006 9942     		cmp	r1, r3
+ 108 0008 35D9     		bls	.L7
+ 109 000a 2E4B     		ldr	r3, .L9+4
+ 110 000c C918     		adds	r1, r1, r3
+ 111 000e 2E4B     		ldr	r3, .L9+8
+ 112 0010 9942     		cmp	r1, r3
+ 113 0012 43D9     		bls	.L8
+ 114 0014 2D4B     		ldr	r3, .L9+12
+ 115 0016 0427     		movs	r7, #4
+ 116 0018 9C46     		mov	ip, r3
+ 117 001a 0723     		movs	r3, #7
+ 118 001c 0826     		movs	r6, #8
+ 119 001e 0793     		str	r3, [sp, #28]
+ 120 0020 043B     		subs	r3, r3, #4
+ 121 0022 0621     		movs	r1, #6
+ 122 0024 0E24     		movs	r4, #14
+ 123 0026 0593     		str	r3, [sp, #20]
+ARM GAS  /tmp/ccLigRZw.s 			page 3
+
+
+ 124 0028 0933     		adds	r3, r3, #9
+ 125 002a 3D00     		movs	r5, r7
+ 126 002c 1800     		movs	r0, r3
+ 127 002e 0096     		str	r6, [sp]
+ 128 0030 0136     		adds	r6, r6, #1
+ 129 0032 0691     		str	r1, [sp, #24]
+ 130 0034 0493     		str	r3, [sp, #16]
+ 131 0036 0394     		str	r4, [sp, #12]
+ 132 0038 0296     		str	r6, [sp, #8]
+ 133 003a 0196     		str	r6, [sp, #4]
+ 134              	.L6:
+ 135 003c 6646     		mov	r6, ip
+ 136 003e 1170     		strb	r1, [r2]
+ 137 0040 0799     		ldr	r1, [sp, #28]
+ 138 0042 9372     		strb	r3, [r2, #10]
+ 139 0044 5170     		strb	r1, [r2, #1]
+ 140 0046 0699     		ldr	r1, [sp, #24]
+ 141 0048 D372     		strb	r3, [r2, #11]
+ 142 004a 9170     		strb	r1, [r2, #2]
+ 143 004c 009B     		ldr	r3, [sp]
+ 144 004e 0599     		ldr	r1, [sp, #20]
+ 145 0050 5373     		strb	r3, [r2, #13]
+ 146 0052 1171     		strb	r1, [r2, #4]
+ 147 0054 9373     		strb	r3, [r2, #14]
+ 148 0056 0499     		ldr	r1, [sp, #16]
+ 149 0058 029B     		ldr	r3, [sp, #8]
+ 150 005a D171     		strb	r1, [r2, #7]
+ 151 005c D373     		strb	r3, [r2, #15]
+ 152 005e 0399     		ldr	r1, [sp, #12]
+ 153 0060 019B     		ldr	r3, [sp, #4]
+ 154 0062 5682     		strh	r6, [r2, #18]
+ 155 0064 D770     		strb	r7, [r2, #3]
+ 156 0066 5571     		strb	r5, [r2, #5]
+ 157 0068 9471     		strb	r4, [r2, #6]
+ 158 006a 1172     		strb	r1, [r2, #8]
+ 159 006c 5072     		strb	r0, [r2, #9]
+ 160 006e 1073     		strb	r0, [r2, #12]
+ 161 0070 1374     		strb	r3, [r2, #16]
+ 162 0072 09B0     		add	sp, sp, #36
+ 163              		@ sp needed
+ 164 0074 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 165              	.L7:
+ 166 0076 0023     		movs	r3, #0
+ 167 0078 0C21     		movs	r1, #12
+ 168 007a 9C46     		mov	ip, r3
+ 169 007c 0325     		movs	r5, #3
+ 170 007e 0424     		movs	r4, #4
+ 171 0080 0E33     		adds	r3, r3, #14
+ 172 0082 0693     		str	r3, [sp, #24]
+ 173 0084 0D3B     		subs	r3, r3, #13
+ 174 0086 0593     		str	r3, [sp, #20]
+ 175 0088 0533     		adds	r3, r3, #5
+ 176 008a 6746     		mov	r7, ip
+ 177 008c 1800     		movs	r0, r3
+ 178 008e 0791     		str	r1, [sp, #28]
+ 179 0090 0494     		str	r4, [sp, #16]
+ 180 0092 0395     		str	r5, [sp, #12]
+ARM GAS  /tmp/ccLigRZw.s 			page 4
+
+
+ 181 0094 0093     		str	r3, [sp]
+ 182 0096 0293     		str	r3, [sp, #8]
+ 183 0098 0193     		str	r3, [sp, #4]
+ 184 009a CFE7     		b	.L6
+ 185              	.L8:
+ 186 009c 0023     		movs	r3, #0
+ 187 009e 0221     		movs	r1, #2
+ 188 00a0 0425     		movs	r5, #4
+ 189 00a2 0620     		movs	r0, #6
+ 190 00a4 0327     		movs	r7, #3
+ 191 00a6 0524     		movs	r4, #5
+ 192 00a8 0726     		movs	r6, #7
+ 193 00aa 9C46     		mov	ip, r3
+ 194 00ac 0791     		str	r1, [sp, #28]
+ 195 00ae 2300     		movs	r3, r4
+ 196 00b0 0691     		str	r1, [sp, #24]
+ 197 00b2 0597     		str	r7, [sp, #20]
+ 198 00b4 0495     		str	r5, [sp, #16]
+ 199 00b6 0395     		str	r5, [sp, #12]
+ 200 00b8 0090     		str	r0, [sp]
+ 201 00ba 0296     		str	r6, [sp, #8]
+ 202 00bc 0190     		str	r0, [sp, #4]
+ 203 00be BDE7     		b	.L6
+ 204              	.L10:
+ 205              		.align	2
+ 206              	.L9:
+ 207 00c0 0046C323 		.word	600000000
+ 208 00c4 00BA3CDC 		.word	-600000000
+ 209 00c8 004E7253 		.word	1400000000
+ 210 00cc EE070000 		.word	2030
+ 212              		.section	.rodata.lr11xx_get_tx_cfg.cst1,"aM",%progbits,1
+ 213              	.LC3:
+ 214 0000 EF       		.byte	-17
+ 215              	.LC4:
+ 216 0001 F7       		.byte	-9
+ 217              	.LC5:
+ 218 0002 EE       		.byte	-18
+ 219              		.section	.text.lr11xx_get_tx_cfg,"ax",%progbits
+ 220              		.align	1
+ 221              		.global	lr11xx_get_tx_cfg
+ 222              		.syntax unified
+ 223              		.code	16
+ 224              		.thumb_func
+ 226              	lr11xx_get_tx_cfg:
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 229 0000 0223     		movs	r3, #2
+ 230 0002 30B5     		push	{r4, r5, lr}
+ 231 0004 1371     		strb	r3, [r2, #4]
+ 232 0006 0328     		cmp	r0, #3
+ 233 0008 38D8     		bhi	.L11
+ 234 000a FFF7FEFF 		bl	__gnu_thumb1_case_uqi
+ 235              	.L14:
+ 236 000e 02       		.byte	(.L17-.L14)/2
+ 237 000f 1E       		.byte	(.L16-.L14)/2
+ 238 0010 3E       		.byte	(.L15-.L14)/2
+ 239 0011 63       		.byte	(.L13-.L14)/2
+ARM GAS  /tmp/ccLigRZw.s 			page 5
+
+
+ 240              		.p2align 1
+ 241              	.L17:
+ 242 0012 0B1C     		adds	r3, r1, #0
+ 243 0014 0F29     		cmp	r1, #15
+ 244 0016 12DD     		ble	.L18
+ 245 0018 0F23     		movs	r3, #15
+ 246              	.L19:
+ 247 001a 0021     		movs	r1, #0
+ 248 001c 1C00     		movs	r4, r3
+ 249 001e 1170     		strb	r1, [r2]
+ 250 0020 5170     		strb	r1, [r2, #1]
+ 251 0022 1134     		adds	r4, r4, #17
+ 252 0024 3549     		ldr	r1, .L35
+ 253 0026 64B2     		sxtb	r4, r4
+ 254              	.L33:
+ 255 0028 0320     		movs	r0, #3
+ 256 002a 6043     		muls	r0, r4
+ 257 002c 0C18     		adds	r4, r1, r0
+ 258 002e 6578     		ldrb	r5, [r4, #1]
+ 259 0030 415C     		ldrb	r1, [r0, r1]
+ 260 0032 A478     		ldrb	r4, [r4, #2]
+ 261 0034 9570     		strb	r5, [r2, #2]
+ 262 0036 D470     		strb	r4, [r2, #3]
+ 263 0038 5171     		strb	r1, [r2, #5]
+ 264 003a 9371     		strb	r3, [r2, #6]
+ 265 003c 1EE0     		b	.L11
+ 266              	.L18:
+ 267 003e 49B2     		sxtb	r1, r1
+ 268 0040 1131     		adds	r1, r1, #17
+ 269 0042 EADA     		bge	.L19
+ 270 0044 2E4B     		ldr	r3, .L35+4
+ 271 0046 1B78     		ldrb	r3, [r3]
+ 272 0048 E7E7     		b	.L19
+ 273              	.L16:
+ 274 004a 0C1C     		adds	r4, r1, #0
+ 275 004c 1629     		cmp	r1, #22
+ 276 004e 16DD     		ble	.L20
+ 277 0050 1624     		movs	r4, #22
+ 278              	.L21:
+ 279 0052 0120     		movs	r0, #1
+ 280 0054 63B2     		sxtb	r3, r4
+ 281 0056 1070     		strb	r0, [r2]
+ 282 0058 9471     		strb	r4, [r2, #6]
+ 283 005a 0829     		cmp	r1, #8
+ 284 005c 00DC     		bgt	.L22
+ 285 005e 0020     		movs	r0, #0
+ 286              	.L22:
+ 287 0060 5070     		strb	r0, [r2, #1]
+ 288 0062 0320     		movs	r0, #3
+ 289 0064 2749     		ldr	r1, .L35+8
+ 290 0066 0933     		adds	r3, r3, #9
+ 291 0068 5BB2     		sxtb	r3, r3
+ 292 006a 5843     		muls	r0, r3
+ 293 006c 0B00     		movs	r3, r1
+ 294 006e 0918     		adds	r1, r1, r0
+ 295 0070 4C78     		ldrb	r4, [r1, #1]
+ 296 0072 8978     		ldrb	r1, [r1, #2]
+ARM GAS  /tmp/ccLigRZw.s 			page 6
+
+
+ 297 0074 C35C     		ldrb	r3, [r0, r3]
+ 298 0076 9470     		strb	r4, [r2, #2]
+ 299 0078 D170     		strb	r1, [r2, #3]
+ 300              	.L34:
+ 301 007a 5371     		strb	r3, [r2, #5]
+ 302              	.L11:
+ 303              		@ sp needed
+ 304 007c 30BD     		pop	{r4, r5, pc}
+ 305              	.L20:
+ 306 007e 4BB2     		sxtb	r3, r1
+ 307 0080 0933     		adds	r3, r3, #9
+ 308 0082 E6DA     		bge	.L21
+ 309 0084 204B     		ldr	r3, .L35+12
+ 310 0086 1C78     		ldrb	r4, [r3]
+ 311 0088 E3E7     		b	.L21
+ 312              	.L15:
+ 313 008a 0B00     		movs	r3, r1
+ 314 008c 1133     		adds	r3, r3, #17
+ 315 008e 12DA     		bge	.L23
+ 316 0090 EF23     		movs	r3, #239
+ 317 0092 1121     		movs	r1, #17
+ 318 0094 9371     		strb	r3, [r2, #6]
+ 319 0096 4942     		rsbs	r1, r1, #0
+ 320              	.L24:
+ 321 0098 0023     		movs	r3, #0
+ 322 009a 1131     		adds	r1, r1, #17
+ 323 009c 1370     		strb	r3, [r2]
+ 324 009e 5370     		strb	r3, [r2, #1]
+ 325 00a0 164B     		ldr	r3, .L35
+ 326 00a2 48B2     		sxtb	r0, r1
+ 327              	.L32:
+ 328 00a4 0321     		movs	r1, #3
+ 329 00a6 4143     		muls	r1, r0
+ 330 00a8 5818     		adds	r0, r3, r1
+ 331 00aa 4478     		ldrb	r4, [r0, #1]
+ 332 00ac 8078     		ldrb	r0, [r0, #2]
+ 333 00ae CB5C     		ldrb	r3, [r1, r3]
+ 334 00b0 9470     		strb	r4, [r2, #2]
+ 335 00b2 D070     		strb	r0, [r2, #3]
+ 336 00b4 E1E7     		b	.L34
+ 337              	.L23:
+ 338 00b6 1629     		cmp	r1, #22
+ 339 00b8 08DD     		ble	.L25
+ 340 00ba 1621     		movs	r1, #22
+ 341 00bc 9171     		strb	r1, [r2, #6]
+ 342              	.L26:
+ 343 00be 0123     		movs	r3, #1
+ 344 00c0 0931     		adds	r1, r1, #9
+ 345 00c2 1370     		strb	r3, [r2]
+ 346 00c4 5370     		strb	r3, [r2, #1]
+ 347 00c6 48B2     		sxtb	r0, r1
+ 348 00c8 0E4B     		ldr	r3, .L35+8
+ 349 00ca EBE7     		b	.L32
+ 350              	.L25:
+ 351 00cc 9171     		strb	r1, [r2, #6]
+ 352 00ce 0F29     		cmp	r1, #15
+ 353 00d0 F5DC     		bgt	.L26
+ARM GAS  /tmp/ccLigRZw.s 			page 7
+
+
+ 354 00d2 E1E7     		b	.L24
+ 355              	.L13:
+ 356 00d4 0B1C     		adds	r3, r1, #0
+ 357 00d6 0D29     		cmp	r1, #13
+ 358 00d8 09DD     		ble	.L27
+ 359 00da 0D23     		movs	r3, #13
+ 360              	.L28:
+ 361 00dc 0221     		movs	r1, #2
+ 362 00de 1C00     		movs	r4, r3
+ 363 00e0 1170     		strb	r1, [r2]
+ 364 00e2 0021     		movs	r1, #0
+ 365 00e4 1234     		adds	r4, r4, #18
+ 366 00e6 5170     		strb	r1, [r2, #1]
+ 367 00e8 64B2     		sxtb	r4, r4
+ 368 00ea 0849     		ldr	r1, .L35+16
+ 369 00ec 9CE7     		b	.L33
+ 370              	.L27:
+ 371 00ee 49B2     		sxtb	r1, r1
+ 372 00f0 1231     		adds	r1, r1, #18
+ 373 00f2 F3DA     		bge	.L28
+ 374 00f4 064B     		ldr	r3, .L35+20
+ 375 00f6 1B78     		ldrb	r3, [r3]
+ 376 00f8 F0E7     		b	.L28
+ 377              	.L36:
+ 378 00fa C046     		.align	2
+ 379              	.L35:
+ 380 00fc 00000000 		.word	pa_lp_cfg_table
+ 381 0100 00000000 		.word	.LC3
+ 382 0104 00000000 		.word	pa_hp_cfg_table
+ 383 0108 01000000 		.word	.LC4
+ 384 010c 00000000 		.word	pa_hf_cfg_table
+ 385 0110 02000000 		.word	.LC5
+ 387              		.section	.text.ral_lr11xx_bsp_get_tx_cfg,"ax",%progbits
+ 388              		.align	1
+ 389              		.global	ral_lr11xx_bsp_get_tx_cfg
+ 390              		.syntax unified
+ 391              		.code	16
+ 392              		.thumb_func
+ 394              	ral_lr11xx_bsp_get_tx_cfg:
+ 395              		@ args = 0, pretend = 0, frame = 8
+ 396              		@ frame_needed = 0, uses_anonymous_args = 0
+ 397 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 398 0002 6B46     		mov	r3, sp
+ 399 0004 0D00     		movs	r5, r1
+ 400 0006 0020     		movs	r0, #0
+ 401 0008 D91D     		adds	r1, r3, #7
+ 402 000a 1400     		movs	r4, r2
+ 403 000c FFF7FEFF 		bl	smtc_modem_get_tx_power_offset_db
+ 404 0010 0028     		cmp	r0, #0
+ 405 0012 02D0     		beq	.L38
+ 406 0014 0023     		movs	r3, #0
+ 407 0016 6A46     		mov	r2, sp
+ 408 0018 D371     		strb	r3, [r2, #7]
+ 409              	.L38:
+ 410 001a 6B46     		mov	r3, sp
+ 411              		@ sp needed
+ 412 001c 6A68     		ldr	r2, [r5, #4]
+ARM GAS  /tmp/ccLigRZw.s 			page 8
+
+
+ 413 001e 0021     		movs	r1, #0
+ 414 0020 0648     		ldr	r0, .L44
+ 415 0022 DB79     		ldrb	r3, [r3, #7]
+ 416 0024 9042     		cmp	r0, r2
+ 417 0026 8041     		sbcs	r0, r0, r0
+ 418 0028 6956     		ldrsb	r1, [r5, r1]
+ 419 002a 5BB2     		sxtb	r3, r3
+ 420 002c C918     		adds	r1, r1, r3
+ 421 002e 4042     		rsbs	r0, r0, #0
+ 422 0030 2200     		movs	r2, r4
+ 423 0032 0230     		adds	r0, r0, #2
+ 424 0034 49B2     		sxtb	r1, r1
+ 425 0036 FFF7FEFF 		bl	lr11xx_get_tx_cfg
+ 426 003a 37BD     		pop	{r0, r1, r2, r4, r5, pc}
+ 427              	.L45:
+ 428              		.align	2
+ 429              	.L44:
+ 430 003c FF170D8F 		.word	-1894967297
+ 432              		.global	pa_hf_cfg_table
+ 433              		.section	.rodata.pa_hf_cfg_table,"a"
+ 436              	pa_hf_cfg_table:
+ 437 0000 EE       		.byte	-18
+ 438 0001 04       		.byte	4
+ 439 0002 00       		.byte	0
+ 440 0003 EE       		.byte	-18
+ 441 0004 04       		.byte	4
+ 442 0005 00       		.byte	0
+ 443 0006 EF       		.byte	-17
+ 444 0007 04       		.byte	4
+ 445 0008 00       		.byte	0
+ 446 0009 F0       		.byte	-16
+ 447 000a 04       		.byte	4
+ 448 000b 00       		.byte	0
+ 449 000c F1       		.byte	-15
+ 450 000d 04       		.byte	4
+ 451 000e 00       		.byte	0
+ 452 000f F2       		.byte	-14
+ 453 0010 04       		.byte	4
+ 454 0011 00       		.byte	0
+ 455 0012 F2       		.byte	-14
+ 456 0013 04       		.byte	4
+ 457 0014 00       		.byte	0
+ 458 0015 F4       		.byte	-12
+ 459 0016 04       		.byte	4
+ 460 0017 00       		.byte	0
+ 461 0018 F6       		.byte	-10
+ 462 0019 04       		.byte	4
+ 463 001a 00       		.byte	0
+ 464 001b F7       		.byte	-9
+ 465 001c 04       		.byte	4
+ 466 001d 00       		.byte	0
+ 467 001e F8       		.byte	-8
+ 468 001f 04       		.byte	4
+ 469 0020 00       		.byte	0
+ 470 0021 F9       		.byte	-7
+ 471 0022 04       		.byte	4
+ 472 0023 00       		.byte	0
+ARM GAS  /tmp/ccLigRZw.s 			page 9
+
+
+ 473 0024 FA       		.byte	-6
+ 474 0025 04       		.byte	4
+ 475 0026 00       		.byte	0
+ 476 0027 FB       		.byte	-5
+ 477 0028 04       		.byte	4
+ 478 0029 00       		.byte	0
+ 479 002a FC       		.byte	-4
+ 480 002b 04       		.byte	4
+ 481 002c 00       		.byte	0
+ 482 002d FD       		.byte	-3
+ 483 002e 04       		.byte	4
+ 484 002f 00       		.byte	0
+ 485 0030 FE       		.byte	-2
+ 486 0031 03       		.byte	3
+ 487 0032 00       		.byte	0
+ 488 0033 FF       		.byte	-1
+ 489 0034 04       		.byte	4
+ 490 0035 00       		.byte	0
+ 491 0036 00       		.byte	0
+ 492 0037 04       		.byte	4
+ 493 0038 00       		.byte	0
+ 494 0039 01       		.byte	1
+ 495 003a 00       		.byte	0
+ 496 003b 00       		.byte	0
+ 497 003c 02       		.byte	2
+ 498 003d 00       		.byte	0
+ 499 003e 00       		.byte	0
+ 500 003f 04       		.byte	4
+ 501 0040 04       		.byte	4
+ 502 0041 00       		.byte	0
+ 503 0042 05       		.byte	5
+ 504 0043 04       		.byte	4
+ 505 0044 00       		.byte	0
+ 506 0045 06       		.byte	6
+ 507 0046 04       		.byte	4
+ 508 0047 00       		.byte	0
+ 509 0048 07       		.byte	7
+ 510 0049 04       		.byte	4
+ 511 004a 00       		.byte	0
+ 512 004b 08       		.byte	8
+ 513 004c 04       		.byte	4
+ 514 004d 00       		.byte	0
+ 515 004e 09       		.byte	9
+ 516 004f 04       		.byte	4
+ 517 0050 00       		.byte	0
+ 518 0051 0A       		.byte	10
+ 519 0052 04       		.byte	4
+ 520 0053 00       		.byte	0
+ 521 0054 0B       		.byte	11
+ 522 0055 04       		.byte	4
+ 523 0056 00       		.byte	0
+ 524 0057 0C       		.byte	12
+ 525 0058 03       		.byte	3
+ 526 0059 00       		.byte	0
+ 527 005a 0D       		.byte	13
+ 528 005b 04       		.byte	4
+ 529 005c 00       		.byte	0
+ARM GAS  /tmp/ccLigRZw.s 			page 10
+
+
+ 530 005d 0D       		.byte	13
+ 531 005e 00       		.byte	0
+ 532 005f 00       		.byte	0
+ 533              		.global	pa_hp_cfg_table
+ 534              		.section	.rodata.pa_hp_cfg_table,"a"
+ 537              	pa_hp_cfg_table:
+ 538 0000 09       		.byte	9
+ 539 0001 00       		.byte	0
+ 540 0002 00       		.byte	0
+ 541 0003 0A       		.byte	10
+ 542 0004 00       		.byte	0
+ 543 0005 00       		.byte	0
+ 544 0006 0B       		.byte	11
+ 545 0007 00       		.byte	0
+ 546 0008 00       		.byte	0
+ 547 0009 0C       		.byte	12
+ 548 000a 00       		.byte	0
+ 549 000b 00       		.byte	0
+ 550 000c 0D       		.byte	13
+ 551 000d 00       		.byte	0
+ 552 000e 00       		.byte	0
+ 553 000f 0D       		.byte	13
+ 554 0010 01       		.byte	1
+ 555 0011 00       		.byte	0
+ 556 0012 0D       		.byte	13
+ 557 0013 02       		.byte	2
+ 558 0014 00       		.byte	0
+ 559 0015 11       		.byte	17
+ 560 0016 02       		.byte	2
+ 561 0017 00       		.byte	0
+ 562 0018 0E       		.byte	14
+ 563 0019 04       		.byte	4
+ 564 001a 00       		.byte	0
+ 565 001b 0C       		.byte	12
+ 566 001c 00       		.byte	0
+ 567 001d 01       		.byte	1
+ 568 001e 0D       		.byte	13
+ 569 001f 00       		.byte	0
+ 570 0020 01       		.byte	1
+ 571 0021 0D       		.byte	13
+ 572 0022 01       		.byte	1
+ 573 0023 01       		.byte	1
+ 574 0024 0D       		.byte	13
+ 575 0025 02       		.byte	2
+ 576 0026 01       		.byte	1
+ 577 0027 0F       		.byte	15
+ 578 0028 00       		.byte	0
+ 579 0029 02       		.byte	2
+ 580 002a 0F       		.byte	15
+ 581 002b 04       		.byte	4
+ 582 002c 01       		.byte	1
+ 583 002d 0E       		.byte	14
+ 584 002e 02       		.byte	2
+ 585 002f 02       		.byte	2
+ 586 0030 0E       		.byte	14
+ 587 0031 01       		.byte	1
+ 588 0032 03       		.byte	3
+ARM GAS  /tmp/ccLigRZw.s 			page 11
+
+
+ 589 0033 11       		.byte	17
+ 590 0034 04       		.byte	4
+ 591 0035 02       		.byte	2
+ 592 0036 16       		.byte	22
+ 593 0037 00       		.byte	0
+ 594 0038 01       		.byte	1
+ 595 0039 16       		.byte	22
+ 596 003a 01       		.byte	1
+ 597 003b 01       		.byte	1
+ 598 003c 16       		.byte	22
+ 599 003d 02       		.byte	2
+ 600 003e 01       		.byte	1
+ 601 003f 16       		.byte	22
+ 602 0040 03       		.byte	3
+ 603 0041 01       		.byte	1
+ 604 0042 16       		.byte	22
+ 605 0043 00       		.byte	0
+ 606 0044 03       		.byte	3
+ 607 0045 16       		.byte	22
+ 608 0046 01       		.byte	1
+ 609 0047 03       		.byte	3
+ 610 0048 16       		.byte	22
+ 611 0049 04       		.byte	4
+ 612 004a 02       		.byte	2
+ 613 004b 16       		.byte	22
+ 614 004c 01       		.byte	1
+ 615 004d 04       		.byte	4
+ 616 004e 16       		.byte	22
+ 617 004f 02       		.byte	2
+ 618 0050 04       		.byte	4
+ 619 0051 16       		.byte	22
+ 620 0052 01       		.byte	1
+ 621 0053 06       		.byte	6
+ 622 0054 16       		.byte	22
+ 623 0055 03       		.byte	3
+ 624 0056 05       		.byte	5
+ 625 0057 16       		.byte	22
+ 626 0058 03       		.byte	3
+ 627 0059 07       		.byte	7
+ 628 005a 16       		.byte	22
+ 629 005b 04       		.byte	4
+ 630 005c 06       		.byte	6
+ 631 005d 16       		.byte	22
+ 632 005e 04       		.byte	4
+ 633 005f 07       		.byte	7
+ 634              		.global	pa_lp_cfg_table
+ 635              		.section	.rodata.pa_lp_cfg_table,"a"
+ 638              	pa_lp_cfg_table:
+ 639 0000 F1       		.byte	-15
+ 640 0001 00       		.byte	0
+ 641 0002 00       		.byte	0
+ 642 0003 F2       		.byte	-14
+ 643 0004 00       		.byte	0
+ 644 0005 00       		.byte	0
+ 645 0006 F3       		.byte	-13
+ 646 0007 00       		.byte	0
+ 647 0008 00       		.byte	0
+ARM GAS  /tmp/ccLigRZw.s 			page 12
+
+
+ 648 0009 F4       		.byte	-12
+ 649 000a 00       		.byte	0
+ 650 000b 00       		.byte	0
+ 651 000c F5       		.byte	-11
+ 652 000d 00       		.byte	0
+ 653 000e 00       		.byte	0
+ 654 000f F7       		.byte	-9
+ 655 0010 00       		.byte	0
+ 656 0011 00       		.byte	0
+ 657 0012 F8       		.byte	-8
+ 658 0013 00       		.byte	0
+ 659 0014 00       		.byte	0
+ 660 0015 F9       		.byte	-7
+ 661 0016 00       		.byte	0
+ 662 0017 00       		.byte	0
+ 663 0018 FA       		.byte	-6
+ 664 0019 00       		.byte	0
+ 665 001a 00       		.byte	0
+ 666 001b FB       		.byte	-5
+ 667 001c 00       		.byte	0
+ 668 001d 00       		.byte	0
+ 669 001e FC       		.byte	-4
+ 670 001f 00       		.byte	0
+ 671 0020 00       		.byte	0
+ 672 0021 FD       		.byte	-3
+ 673 0022 00       		.byte	0
+ 674 0023 00       		.byte	0
+ 675 0024 FE       		.byte	-2
+ 676 0025 00       		.byte	0
+ 677 0026 00       		.byte	0
+ 678 0027 FF       		.byte	-1
+ 679 0028 00       		.byte	0
+ 680 0029 00       		.byte	0
+ 681 002a 00       		.byte	0
+ 682 002b 00       		.byte	0
+ 683 002c 00       		.byte	0
+ 684 002d 01       		.byte	1
+ 685 002e 00       		.byte	0
+ 686 002f 00       		.byte	0
+ 687 0030 02       		.byte	2
+ 688 0031 00       		.byte	0
+ 689 0032 00       		.byte	0
+ 690 0033 03       		.byte	3
+ 691 0034 00       		.byte	0
+ 692 0035 00       		.byte	0
+ 693 0036 03       		.byte	3
+ 694 0037 01       		.byte	1
+ 695 0038 00       		.byte	0
+ 696 0039 04       		.byte	4
+ 697 003a 01       		.byte	1
+ 698 003b 00       		.byte	0
+ 699 003c 07       		.byte	7
+ 700 003d 00       		.byte	0
+ 701 003e 00       		.byte	0
+ 702 003f 08       		.byte	8
+ 703 0040 00       		.byte	0
+ 704 0041 00       		.byte	0
+ARM GAS  /tmp/ccLigRZw.s 			page 13
+
+
+ 705 0042 09       		.byte	9
+ 706 0043 00       		.byte	0
+ 707 0044 00       		.byte	0
+ 708 0045 0A       		.byte	10
+ 709 0046 00       		.byte	0
+ 710 0047 00       		.byte	0
+ 711 0048 0C       		.byte	12
+ 712 0049 00       		.byte	0
+ 713 004a 00       		.byte	0
+ 714 004b 0D       		.byte	13
+ 715 004c 00       		.byte	0
+ 716 004d 00       		.byte	0
+ 717 004e 0E       		.byte	14
+ 718 004f 00       		.byte	0
+ 719 0050 00       		.byte	0
+ 720 0051 0D       		.byte	13
+ 721 0052 01       		.byte	1
+ 722 0053 00       		.byte	0
+ 723 0054 0D       		.byte	13
+ 724 0055 02       		.byte	2
+ 725 0056 00       		.byte	0
+ 726 0057 0E       		.byte	14
+ 727 0058 02       		.byte	2
+ 728 0059 00       		.byte	0
+ 729 005a 0E       		.byte	14
+ 730 005b 03       		.byte	3
+ 731 005c 00       		.byte	0
+ 732 005d 0E       		.byte	14
+ 733 005e 04       		.byte	4
+ 734 005f 00       		.byte	0
+ 735 0060 0E       		.byte	14
+ 736 0061 07       		.byte	7
+ 737 0062 00       		.byte	0
+ 738              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccLigRZw.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ral_lr11xx_bsp.c
+     /tmp/ccLigRZw.s:14     .text.ral_lr11xx_bsp_get_rf_switch_cfg:00000000 $t
+     /tmp/ccLigRZw.s:20     .text.ral_lr11xx_bsp_get_rf_switch_cfg:00000000 ral_lr11xx_bsp_get_rf_switch_cfg
+     /tmp/ccLigRZw.s:43     .text.ral_lr11xx_bsp_get_reg_mode:00000000 $t
+     /tmp/ccLigRZw.s:49     .text.ral_lr11xx_bsp_get_reg_mode:00000000 ral_lr11xx_bsp_get_reg_mode
+     /tmp/ccLigRZw.s:59     .text.ral_lr11xx_bsp_get_xosc_cfg:00000000 $t
+     /tmp/ccLigRZw.s:65     .text.ral_lr11xx_bsp_get_xosc_cfg:00000000 ral_lr11xx_bsp_get_xosc_cfg
+     /tmp/ccLigRZw.s:79     .text.ral_lr11xx_bsp_get_crc_state:00000000 $t
+     /tmp/ccLigRZw.s:85     .text.ral_lr11xx_bsp_get_crc_state:00000000 ral_lr11xx_bsp_get_crc_state
+     /tmp/ccLigRZw.s:95     .text.ral_lr11xx_bsp_get_rssi_calibration_table:00000000 $t
+     /tmp/ccLigRZw.s:101    .text.ral_lr11xx_bsp_get_rssi_calibration_table:00000000 ral_lr11xx_bsp_get_rssi_calibration_table
+     /tmp/ccLigRZw.s:207    .text.ral_lr11xx_bsp_get_rssi_calibration_table:000000c0 $d
+     /tmp/ccLigRZw.s:220    .text.lr11xx_get_tx_cfg:00000000 $t
+     /tmp/ccLigRZw.s:226    .text.lr11xx_get_tx_cfg:00000000 lr11xx_get_tx_cfg
+     /tmp/ccLigRZw.s:236    .text.lr11xx_get_tx_cfg:0000000e $d
+     /tmp/ccLigRZw.s:240    .text.lr11xx_get_tx_cfg:00000012 $t
+     /tmp/ccLigRZw.s:380    .text.lr11xx_get_tx_cfg:000000fc $d
+     /tmp/ccLigRZw.s:638    .rodata.pa_lp_cfg_table:00000000 pa_lp_cfg_table
+     /tmp/ccLigRZw.s:537    .rodata.pa_hp_cfg_table:00000000 pa_hp_cfg_table
+     /tmp/ccLigRZw.s:436    .rodata.pa_hf_cfg_table:00000000 pa_hf_cfg_table
+     /tmp/ccLigRZw.s:388    .text.ral_lr11xx_bsp_get_tx_cfg:00000000 $t
+     /tmp/ccLigRZw.s:394    .text.ral_lr11xx_bsp_get_tx_cfg:00000000 ral_lr11xx_bsp_get_tx_cfg
+     /tmp/ccLigRZw.s:430    .text.ral_lr11xx_bsp_get_tx_cfg:0000003c $d
+
+UNDEFINED SYMBOLS
+__gnu_thumb1_case_uqi
+smtc_modem_get_tx_power_offset_db

@@ -1,0 +1,253 @@
+ARM GAS  /tmp/ccHFe643.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"lr11xx_lr_fhss.c"
+  12              		.text
+  13              		.section	.text.lr11xx_lr_fhss_init,"ax",%progbits
+  14              		.align	1
+  15              		.global	lr11xx_lr_fhss_init
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	lr11xx_lr_fhss_init:
+  21              		@ args = 0, pretend = 0, frame = 8
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+  24 0002 0421     		movs	r1, #4
+  25 0004 0400     		movs	r4, r0
+  26 0006 FFF7FEFF 		bl	lr11xx_radio_set_pkt_type
+  27 000a 0028     		cmp	r0, #0
+  28 000c 0DD1     		bne	.L2
+  29 000e 6A46     		mov	r2, sp
+  30 0010 074B     		ldr	r3, .L3
+  31 0012 02A9     		add	r1, sp, #8
+  32 0014 0293     		str	r3, [sp, #8]
+  33 0016 074B     		ldr	r3, .L3+4
+  34 0018 9381     		strh	r3, [r2, #12]
+  35 001a 0B23     		movs	r3, #11
+  36 001c 9373     		strb	r3, [r2, #14]
+  37 001e 0300     		movs	r3, r0
+  38 0020 0090     		str	r0, [sp]
+  39 0022 0722     		movs	r2, #7
+  40 0024 2000     		movs	r0, r4
+  41 0026 FFF7FEFF 		bl	lr11xx_hal_write
+  42              	.L2:
+  43 002a 04B0     		add	sp, sp, #16
+  44              		@ sp needed
+  45 002c 10BD     		pop	{r4, pc}
+  46              	.L4:
+  47 002e C046     		.align	2
+  48              	.L3:
+  49 0030 020F8001 		.word	25169666
+  50 0034 E8480000 		.word	18664
+  52              		.section	.text.lr11xx_lr_fhss_build_frame,"ax",%progbits
+  53              		.align	1
+  54              		.global	lr11xx_lr_fhss_build_frame
+  55              		.syntax unified
+  56              		.code	16
+  57              		.thumb_func
+  59              	lr11xx_lr_fhss_build_frame:
+  60              		@ args = 4, pretend = 0, frame = 24
+ARM GAS  /tmp/ccHFe643.s 			page 2
+
+
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  63 0002 89B0     		sub	sp, sp, #36
+  64 0004 0292     		str	r2, [sp, #8]
+  65 0006 164A     		ldr	r2, .L7
+  66 0008 05AC     		add	r4, sp, #20
+  67 000a 2280     		strh	r2, [r4]
+  68 000c 0422     		movs	r2, #4
+  69 000e 0393     		str	r3, [sp, #12]
+  70 0010 0EAB     		add	r3, sp, #56
+  71 0012 1F78     		ldrb	r7, [r3]
+  72 0014 0D00     		movs	r5, r1
+  73 0016 0B68     		ldr	r3, [r1]
+  74 0018 0092     		str	r2, [sp]
+  75 001a 2100     		movs	r1, r4
+  76 001c 023A     		subs	r2, r2, #2
+  77 001e 0600     		movs	r6, r0
+  78 0020 FFF7FEFF 		bl	lr11xx_hal_write
+  79 0024 0028     		cmp	r0, #0
+  80 0026 19D1     		bne	.L6
+  81 0028 0E4B     		ldr	r3, .L7+4
+  82 002a 0B22     		movs	r2, #11
+  83 002c 2380     		strh	r3, [r4]
+  84 002e 6B7A     		ldrb	r3, [r5, #9]
+  85 0030 2100     		movs	r1, r4
+  86 0032 A370     		strb	r3, [r4, #2]
+  87 0034 6B79     		ldrb	r3, [r5, #5]
+  88 0036 3000     		movs	r0, r6
+  89 0038 E370     		strb	r3, [r4, #3]
+  90 003a 2B79     		ldrb	r3, [r5, #4]
+  91 003c 2371     		strb	r3, [r4, #4]
+  92 003e AB79     		ldrb	r3, [r5, #6]
+  93 0040 6371     		strb	r3, [r4, #5]
+  94 0042 2B7A     		ldrb	r3, [r5, #8]
+  95 0044 A371     		strb	r3, [r4, #6]
+  96 0046 EB79     		ldrb	r3, [r5, #7]
+  97 0048 E371     		strb	r3, [r4, #7]
+  98 004a 029B     		ldr	r3, [sp, #8]
+  99 004c 5BBA     		rev16	r3, r3
+ 100 004e 2381     		strh	r3, [r4, #8]
+ 101 0050 2B7B     		ldrb	r3, [r5, #12]
+ 102 0052 A372     		strb	r3, [r4, #10]
+ 103 0054 039B     		ldr	r3, [sp, #12]
+ 104 0056 0097     		str	r7, [sp]
+ 105 0058 FFF7FEFF 		bl	lr11xx_hal_write
+ 106              	.L6:
+ 107 005c 09B0     		add	sp, sp, #36
+ 108              		@ sp needed
+ 109 005e F0BD     		pop	{r4, r5, r6, r7, pc}
+ 110              	.L8:
+ 111              		.align	2
+ 112              	.L7:
+ 113 0060 022D0000 		.word	11522
+ 114 0064 022C0000 		.word	11266
+ 116              		.global	__aeabi_uidiv
+ 117              		.global	__aeabi_idiv
+ 118              		.global	__aeabi_uidivmod
+ARM GAS  /tmp/ccHFe643.s 			page 3
+
+
+ 119              		.section	.text.lr11xx_lr_fhss_get_time_on_air_in_ms,"ax",%progbits
+ 120              		.align	1
+ 121              		.global	lr11xx_lr_fhss_get_time_on_air_in_ms
+ 122              		.syntax unified
+ 123              		.code	16
+ 124              		.thumb_func
+ 126              	lr11xx_lr_fhss_get_time_on_air_in_ms:
+ 127              		@ args = 0, pretend = 0, frame = 0
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129 0000 70B5     		push	{r4, r5, r6, lr}
+ 130 0002 CC00     		lsls	r4, r1, #3
+ 131 0004 467A     		ldrb	r6, [r0, #9]
+ 132 0006 4079     		ldrb	r0, [r0, #5]
+ 133 0008 1634     		adds	r4, r4, #22
+ 134 000a A4B2     		uxth	r4, r4
+ 135 000c 0328     		cmp	r0, #3
+ 136 000e 0AD8     		bhi	.L10
+ 137 0010 FFF7FEFF 		bl	__gnu_thumb1_case_uqi
+ 138              	.L12:
+ 139 0014 02       		.byte	(.L15-.L12)/2
+ 140 0015 24       		.byte	(.L14-.L12)/2
+ 141 0016 29       		.byte	(.L13-.L12)/2
+ 142 0017 2C       		.byte	(.L11-.L12)/2
+ 143              		.p2align 1
+ 144              	.L15:
+ 145 0018 0620     		movs	r0, #6
+ 146 001a 6043     		muls	r0, r4
+ 147 001c 0521     		movs	r1, #5
+ 148 001e 0430     		adds	r0, r0, #4
+ 149 0020 FFF7FEFF 		bl	__aeabi_idiv
+ 150 0024 84B2     		uxth	r4, r0
+ 151              	.L10:
+ 152 0026 3021     		movs	r1, #48
+ 153 0028 2000     		movs	r0, r4
+ 154 002a FFF7FEFF 		bl	__aeabi_uidiv
+ 155 002e 3225     		movs	r5, #50
+ 156 0030 3021     		movs	r1, #48
+ 157 0032 4543     		muls	r5, r0
+ 158 0034 2000     		movs	r0, r4
+ 159 0036 FFF7FEFF 		bl	__aeabi_uidivmod
+ 160 003a 89B2     		uxth	r1, r1
+ 161 003c ADB2     		uxth	r5, r5
+ 162 003e 0029     		cmp	r1, #0
+ 163 0040 02D0     		beq	.L16
+ 164 0042 0231     		adds	r1, r1, #2
+ 165 0044 6D18     		adds	r5, r5, r1
+ 166 0046 ADB2     		uxth	r5, r5
+ 167              	.L16:
+ 168 0048 7223     		movs	r3, #114
+ 169              		@ sp needed
+ 170 004a 7343     		muls	r3, r6
+ 171 004c E818     		adds	r0, r5, r3
+ 172 004e 80B2     		uxth	r0, r0
+ 173 0050 0002     		lsls	r0, r0, #8
+ 174 0052 7D21     		movs	r1, #125
+ 175 0054 7C30     		adds	r0, r0, #124
+ 176 0056 FFF7FEFF 		bl	__aeabi_idiv
+ARM GAS  /tmp/ccHFe643.s 			page 4
+
+
+ 177 005a 70BD     		pop	{r4, r5, r6, pc}
+ 178              	.L14:
+ 179 005c 0323     		movs	r3, #3
+ 180 005e 6343     		muls	r3, r4
+ 181 0060 5B10     		asrs	r3, r3, #1
+ 182 0062 9CB2     		uxth	r4, r3
+ 183 0064 DFE7     		b	.L10
+ 184              	.L13:
+ 185 0066 6400     		lsls	r4, r4, #1
+ 186              	.L20:
+ 187 0068 A4B2     		uxth	r4, r4
+ 188 006a DCE7     		b	.L10
+ 189              	.L11:
+ 190 006c 0323     		movs	r3, #3
+ 191 006e 5C43     		muls	r4, r3
+ 192 0070 FAE7     		b	.L20
+ 194              		.section	.text.lr11xx_lr_fhss_get_hop_sequence_count,"ax",%progbits
+ 195              		.align	1
+ 196              		.global	lr11xx_lr_fhss_get_hop_sequence_count
+ 197              		.syntax unified
+ 198              		.code	16
+ 199              		.thumb_func
+ 201              	lr11xx_lr_fhss_get_hop_sequence_count:
+ 202              		@ args = 0, pretend = 0, frame = 0
+ 203              		@ frame_needed = 0, uses_anonymous_args = 0
+ 204              		@ link register save eliminated.
+ 205 0000 8379     		ldrb	r3, [r0, #6]
+ 206 0002 002B     		cmp	r3, #0
+ 207 0004 07D0     		beq	.L25
+ 208 0006 012B     		cmp	r3, #1
+ 209 0008 02D1     		bne	.L24
+ 210 000a C379     		ldrb	r3, [r0, #7]
+ 211 000c 032B     		cmp	r3, #3
+ 212 000e 02D9     		bls	.L25
+ 213              	.L24:
+ 214 0010 8020     		movs	r0, #128
+ 215 0012 8000     		lsls	r0, r0, #2
+ 216              	.L21:
+ 217              		@ sp needed
+ 218 0014 7047     		bx	lr
+ 219              	.L25:
+ 220 0016 C020     		movs	r0, #192
+ 221 0018 4000     		lsls	r0, r0, #1
+ 222 001a FBE7     		b	.L21
+ 224              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccHFe643.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lr11xx_lr_fhss.c
+     /tmp/ccHFe643.s:14     .text.lr11xx_lr_fhss_init:00000000 $t
+     /tmp/ccHFe643.s:20     .text.lr11xx_lr_fhss_init:00000000 lr11xx_lr_fhss_init
+     /tmp/ccHFe643.s:49     .text.lr11xx_lr_fhss_init:00000030 $d
+     /tmp/ccHFe643.s:53     .text.lr11xx_lr_fhss_build_frame:00000000 $t
+     /tmp/ccHFe643.s:59     .text.lr11xx_lr_fhss_build_frame:00000000 lr11xx_lr_fhss_build_frame
+     /tmp/ccHFe643.s:113    .text.lr11xx_lr_fhss_build_frame:00000060 $d
+     /tmp/ccHFe643.s:120    .text.lr11xx_lr_fhss_get_time_on_air_in_ms:00000000 $t
+     /tmp/ccHFe643.s:126    .text.lr11xx_lr_fhss_get_time_on_air_in_ms:00000000 lr11xx_lr_fhss_get_time_on_air_in_ms
+     /tmp/ccHFe643.s:139    .text.lr11xx_lr_fhss_get_time_on_air_in_ms:00000014 $d
+     /tmp/ccHFe643.s:143    .text.lr11xx_lr_fhss_get_time_on_air_in_ms:00000018 $t
+     /tmp/ccHFe643.s:195    .text.lr11xx_lr_fhss_get_hop_sequence_count:00000000 $t
+     /tmp/ccHFe643.s:201    .text.lr11xx_lr_fhss_get_hop_sequence_count:00000000 lr11xx_lr_fhss_get_hop_sequence_count
+
+UNDEFINED SYMBOLS
+lr11xx_radio_set_pkt_type
+lr11xx_hal_write
+__aeabi_uidiv
+__aeabi_idiv
+__aeabi_uidivmod
+__gnu_thumb1_case_uqi

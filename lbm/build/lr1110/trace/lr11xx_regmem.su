@@ -1,0 +1,8 @@
+smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_regmem.c:150:17:lr11xx_regmem_write_regmem32	288	static
+smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_regmem.c:163:17:lr11xx_regmem_read_regmem32	32	static
+smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_regmem.c:182:17:lr11xx_regmem_write_mem8	32	static
+smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_regmem.c:193:17:lr11xx_regmem_read_mem8	32	static
+smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_regmem.c:203:17:lr11xx_regmem_write_buffer8	24	static
+smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_regmem.c:214:17:lr11xx_regmem_read_buffer8	32	static
+smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_regmem.c:228:17:lr11xx_regmem_clear_rxbuffer	24	static
+smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_regmem.c:238:17:lr11xx_regmem_write_regmem32_mask	40	static

@@ -1,0 +1,2 @@
+bsp_l0/smtc_hal/smtc_hal_eeprom.c:90:10:hal_eeprom_write_buffer	24	static
+bsp_l0/smtc_hal/smtc_hal_eeprom.c:102:6:hal_eeprom_read_buffer	8	static

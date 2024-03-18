@@ -1,0 +1,8 @@
+bsp_l0/smtc_hal/smtc_hal_lp_timer.c:81:6:hal_lp_timer_init	16	static
+bsp_l0/smtc_hal/smtc_hal_lp_timer.c:97:6:hal_lp_timer_start	8	static
+bsp_l0/smtc_hal/smtc_hal_lp_timer.c:113:6:hal_lp_timer_stop	8	static
+bsp_l0/smtc_hal/smtc_hal_lp_timer.c:117:6:hal_lp_timer_irq_enable	8	static
+bsp_l0/smtc_hal/smtc_hal_lp_timer.c:121:6:hal_lp_timer_irq_disable	8	static
+bsp_l0/smtc_hal/smtc_hal_lp_timer.c:125:6:LPTIM1_IRQHandler	8	static
+bsp_l0/smtc_hal/smtc_hal_lp_timer.c:134:6:HAL_LPTIM_MspInit	8	static
+bsp_l0/smtc_hal/smtc_hal_lp_timer.c:142:6:HAL_LPTIM_MspDeInit	8	static

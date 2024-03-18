@@ -1,0 +1,702 @@
+ARM GAS  /tmp/ccEWex4T.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"smtc_hal_i2c.c"
+  12              		.text
+  13              		.section	.rodata.hal_i2c_init.str1.1,"aMS",%progbits,1
+  14              	.LC2:
+  15 0000 4552524F 		.ascii	"ERROR: mcu_panic:%s\012\000"
+  15      523A206D 
+  15      63755F70 
+  15      616E6963 
+  15      3A25730A 
+  16              	.LC4:
+  17 0015 00       		.ascii	"\000"
+  18              	.LC6:
+  19 0016 4552524F 		.ascii	"ERROR: -> \000"
+  19      523A202D 
+  19      3E2000
+  20              		.section	.text.hal_i2c_init,"ax",%progbits
+  21              		.align	1
+  22              		.global	hal_i2c_init
+  23              		.syntax unified
+  24              		.code	16
+  25              		.thumb_func
+  27              	hal_i2c_init:
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30 0000 70B5     		push	{r4, r5, r6, lr}
+  31 0002 5424     		movs	r4, #84
+  32 0004 0138     		subs	r0, r0, #1
+  33 0006 4443     		muls	r4, r0
+  34 0008 2B4D     		ldr	r5, .L14
+  35 000a 0126     		movs	r6, #1
+  36 000c 6059     		ldr	r0, [r4, r5]
+  37 000e 2B19     		adds	r3, r5, r4
+  38 0010 5860     		str	r0, [r3, #4]
+  39 0012 2A48     		ldr	r0, .L14+4
+  40 0014 0434     		adds	r4, r4, #4
+  41 0016 9860     		str	r0, [r3, #8]
+  42 0018 0020     		movs	r0, #0
+  43 001a D860     		str	r0, [r3, #12]
+  44 001c 5861     		str	r0, [r3, #20]
+  45 001e 9861     		str	r0, [r3, #24]
+  46 0020 D861     		str	r0, [r3, #28]
+  47 0022 1862     		str	r0, [r3, #32]
+  48 0024 5862     		str	r0, [r3, #36]
+  49 0026 1800     		movs	r0, r3
+  50 0028 6419     		adds	r4, r4, r5
+  51 002a 5030     		adds	r0, r0, #80
+  52 002c 1E61     		str	r6, [r3, #16]
+ARM GAS  /tmp/ccEWex4T.s 			page 2
+
+
+  53 002e 0170     		strb	r1, [r0]
+  54 0030 5133     		adds	r3, r3, #81
+  55 0032 2000     		movs	r0, r4
+  56 0034 1A70     		strb	r2, [r3]
+  57 0036 FFF7FEFF 		bl	HAL_I2C_Init
+  58 003a 0028     		cmp	r0, #0
+  59 003c 0FD0     		beq	.L2
+  60 003e 2049     		ldr	r1, .L14+8
+  61 0040 2048     		ldr	r0, .L14+12
+  62 0042 FFF7FEFF 		bl	hal_trace_print_var
+  63 0046 204D     		ldr	r5, .L14+16
+  64 0048 2800     		movs	r0, r5
+  65 004a FFF7FEFF 		bl	hal_trace_print_var
+  66 004e 1F48     		ldr	r0, .L14+20
+  67 0050 FFF7FEFF 		bl	hal_trace_print_var
+  68 0054 2800     		movs	r0, r5
+  69 0056 FFF7FEFF 		bl	hal_trace_print_var
+  70 005a FFF7FEFF 		bl	hal_mcu_reset
+  71              	.L2:
+  72 005e 0021     		movs	r1, #0
+  73 0060 2000     		movs	r0, r4
+  74 0062 FFF7FEFF 		bl	HAL_I2CEx_ConfigAnalogFilter
+  75 0066 0028     		cmp	r0, #0
+  76 0068 0FD0     		beq	.L3
+  77 006a 1549     		ldr	r1, .L14+8
+  78 006c 1548     		ldr	r0, .L14+12
+  79 006e FFF7FEFF 		bl	hal_trace_print_var
+  80 0072 154D     		ldr	r5, .L14+16
+  81 0074 2800     		movs	r0, r5
+  82 0076 FFF7FEFF 		bl	hal_trace_print_var
+  83 007a 1448     		ldr	r0, .L14+20
+  84 007c FFF7FEFF 		bl	hal_trace_print_var
+  85 0080 2800     		movs	r0, r5
+  86 0082 FFF7FEFF 		bl	hal_trace_print_var
+  87 0086 FFF7FEFF 		bl	hal_mcu_reset
+  88              	.L3:
+  89 008a 0021     		movs	r1, #0
+  90 008c 2000     		movs	r0, r4
+  91 008e FFF7FEFF 		bl	HAL_I2CEx_ConfigDigitalFilter
+  92 0092 0028     		cmp	r0, #0
+  93 0094 0FD0     		beq	.L1
+  94 0096 0A49     		ldr	r1, .L14+8
+  95 0098 0A48     		ldr	r0, .L14+12
+  96 009a FFF7FEFF 		bl	hal_trace_print_var
+  97 009e 0A4C     		ldr	r4, .L14+16
+  98 00a0 2000     		movs	r0, r4
+  99 00a2 FFF7FEFF 		bl	hal_trace_print_var
+ 100 00a6 0948     		ldr	r0, .L14+20
+ 101 00a8 FFF7FEFF 		bl	hal_trace_print_var
+ 102 00ac 2000     		movs	r0, r4
+ 103 00ae FFF7FEFF 		bl	hal_trace_print_var
+ 104 00b2 FFF7FEFF 		bl	hal_mcu_reset
+ 105              	.L1:
+ 106              		@ sp needed
+ 107 00b6 70BD     		pop	{r4, r5, r6, pc}
+ 108              	.L15:
+ 109              		.align	2
+ARM GAS  /tmp/ccEWex4T.s 			page 3
+
+
+ 110              	.L14:
+ 111 00b8 00000000 		.word	hal_i2c
+ 112 00bc BB7C7000 		.word	7371963
+ 113 00c0 00000000 		.word	__func__.2
+ 114 00c4 00000000 		.word	.LC2
+ 115 00c8 15000000 		.word	.LC4
+ 116 00cc 16000000 		.word	.LC6
+ 118              		.section	.text.hal_i2c_deinit,"ax",%progbits
+ 119              		.align	1
+ 120              		.global	hal_i2c_deinit
+ 121              		.syntax unified
+ 122              		.code	16
+ 123              		.thumb_func
+ 125              	hal_i2c_deinit:
+ 126              		@ args = 0, pretend = 0, frame = 0
+ 127              		@ frame_needed = 0, uses_anonymous_args = 0
+ 128 0000 5423     		movs	r3, #84
+ 129 0002 10B5     		push	{r4, lr}
+ 130 0004 4343     		muls	r3, r0
+ 131              		@ sp needed
+ 132 0006 0248     		ldr	r0, .L17
+ 133 0008 1818     		adds	r0, r3, r0
+ 134 000a FFF7FEFF 		bl	HAL_I2C_DeInit
+ 135 000e 10BD     		pop	{r4, pc}
+ 136              	.L18:
+ 137              		.align	2
+ 138              	.L17:
+ 139 0010 B0FFFFFF 		.word	hal_i2c-80
+ 141              		.section	.text.HAL_I2C_MspInit,"ax",%progbits
+ 142              		.align	1
+ 143              		.global	HAL_I2C_MspInit
+ 144              		.syntax unified
+ 145              		.code	16
+ 146              		.thumb_func
+ 148              	HAL_I2C_MspInit:
+ 149              		@ args = 0, pretend = 0, frame = 24
+ 150              		@ frame_needed = 0, uses_anonymous_args = 0
+ 151 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 152 0002 474C     		ldr	r4, .L32
+ 153 0004 0368     		ldr	r3, [r0]
+ 154 0006 2268     		ldr	r2, [r4]
+ 155 0008 87B0     		sub	sp, sp, #28
+ 156 000a 9342     		cmp	r3, r2
+ 157 000c 44D1     		bne	.L20
+ 158 000e 2300     		movs	r3, r4
+ 159 0010 F022     		movs	r2, #240
+ 160 0012 5033     		adds	r3, r3, #80
+ 161 0014 1B78     		ldrb	r3, [r3]
+ 162 0016 9201     		lsls	r2, r2, #6
+ 163 0018 5BB2     		sxtb	r3, r3
+ 164 001a 9D01     		lsls	r5, r3, #6
+ 165 001c 1540     		ands	r5, r2
+ 166 001e A022     		movs	r2, #160
+ 167 0020 0121     		movs	r1, #1
+ 168 0022 D205     		lsls	r2, r2, #23
+ 169 0024 AD18     		adds	r5, r5, r2
+ 170 0026 0022     		movs	r2, #0
+ARM GAS  /tmp/ccEWex4T.s 			page 4
+
+
+ 171 0028 0800     		movs	r0, r1
+ 172 002a 0392     		str	r2, [sp, #12]
+ 173 002c 1232     		adds	r2, r2, #18
+ 174 002e 0292     		str	r2, [sp, #8]
+ 175 0030 0F3A     		subs	r2, r2, #15
+ 176 0032 0492     		str	r2, [sp, #16]
+ 177 0034 0C32     		adds	r2, r2, #12
+ 178 0036 1A40     		ands	r2, r3
+ 179 0038 9040     		lsls	r0, r0, r2
+ 180 003a 0422     		movs	r2, #4
+ 181 003c 0190     		str	r0, [sp, #4]
+ 182 003e 192B     		cmp	r3, #25
+ 183 0040 06D0     		beq	.L21
+ 184 0042 0332     		adds	r2, r2, #3
+ 185 0044 212B     		cmp	r3, #33
+ 186 0046 03D0     		beq	.L21
+ 187 0048 0A00     		movs	r2, r1
+ 188 004a 082B     		cmp	r3, #8
+ 189 004c 00D1     		bne	.L21
+ 190 004e 0632     		adds	r2, r2, #6
+ 191              	.L21:
+ 192 0050 2800     		movs	r0, r5
+ 193 0052 01A9     		add	r1, sp, #4
+ 194 0054 0592     		str	r2, [sp, #20]
+ 195 0056 FFF7FEFF 		bl	HAL_GPIO_Init
+ 196 005a 0121     		movs	r1, #1
+ 197 005c 5122     		movs	r2, #81
+ 198 005e 0F23     		movs	r3, #15
+ 199 0060 0800     		movs	r0, r1
+ 200 0062 A256     		ldrsb	r2, [r4, r2]
+ 201 0064 1340     		ands	r3, r2
+ 202 0066 9840     		lsls	r0, r0, r3
+ 203 0068 0423     		movs	r3, #4
+ 204 006a 0190     		str	r0, [sp, #4]
+ 205 006c 192A     		cmp	r2, #25
+ 206 006e 06D0     		beq	.L22
+ 207 0070 0333     		adds	r3, r3, #3
+ 208 0072 212A     		cmp	r2, #33
+ 209 0074 03D0     		beq	.L22
+ 210 0076 0B00     		movs	r3, r1
+ 211 0078 082A     		cmp	r2, #8
+ 212 007a 00D1     		bne	.L22
+ 213 007c 0633     		adds	r3, r3, #6
+ 214              	.L22:
+ 215 007e 01A9     		add	r1, sp, #4
+ 216 0080 2800     		movs	r0, r5
+ 217 0082 0593     		str	r3, [sp, #20]
+ 218 0084 FFF7FEFF 		bl	HAL_GPIO_Init
+ 219 0088 8023     		movs	r3, #128
+ 220 008a 264A     		ldr	r2, .L32+4
+ 221 008c 9B03     		lsls	r3, r3, #14
+ 222 008e 916B     		ldr	r1, [r2, #56]
+ 223              	.L31:
+ 224 0090 0B43     		orrs	r3, r1
+ 225 0092 9363     		str	r3, [r2, #56]
+ 226              	.L19:
+ 227 0094 07B0     		add	sp, sp, #28
+ARM GAS  /tmp/ccEWex4T.s 			page 5
+
+
+ 228              		@ sp needed
+ 229 0096 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 230              	.L20:
+ 231 0098 2200     		movs	r2, r4
+ 232 009a A832     		adds	r2, r2, #168
+ 233 009c 1268     		ldr	r2, [r2]
+ 234 009e 9342     		cmp	r3, r2
+ 235 00a0 2CD1     		bne	.L24
+ 236 00a2 0023     		movs	r3, #0
+ 237 00a4 F920     		movs	r0, #249
+ 238 00a6 0125     		movs	r5, #1
+ 239 00a8 2056     		ldrsb	r0, [r4, r0]
+ 240 00aa 0393     		str	r3, [sp, #12]
+ 241 00ac 1233     		adds	r3, r3, #18
+ 242 00ae 0293     		str	r3, [sp, #8]
+ 243 00b0 0F3B     		subs	r3, r3, #15
+ 244 00b2 0493     		str	r3, [sp, #16]
+ 245 00b4 0433     		adds	r3, r3, #4
+ 246 00b6 0F26     		movs	r6, #15
+ 247 00b8 0593     		str	r3, [sp, #20]
+ 248 00ba 0300     		movs	r3, r0
+ 249 00bc 2A00     		movs	r2, r5
+ 250 00be 3340     		ands	r3, r6
+ 251 00c0 F027     		movs	r7, #240
+ 252 00c2 9A40     		lsls	r2, r2, r3
+ 253 00c4 A023     		movs	r3, #160
+ 254 00c6 BF01     		lsls	r7, r7, #6
+ 255 00c8 8001     		lsls	r0, r0, #6
+ 256 00ca DB05     		lsls	r3, r3, #23
+ 257 00cc 3840     		ands	r0, r7
+ 258 00ce C018     		adds	r0, r0, r3
+ 259 00d0 01A9     		add	r1, sp, #4
+ 260 00d2 0192     		str	r2, [sp, #4]
+ 261 00d4 FFF7FEFF 		bl	HAL_GPIO_Init
+ 262 00d8 F820     		movs	r0, #248
+ 263 00da 2056     		ldrsb	r0, [r4, r0]
+ 264 00dc A023     		movs	r3, #160
+ 265 00de 0640     		ands	r6, r0
+ 266 00e0 B540     		lsls	r5, r5, r6
+ 267 00e2 8001     		lsls	r0, r0, #6
+ 268 00e4 DB05     		lsls	r3, r3, #23
+ 269 00e6 3840     		ands	r0, r7
+ 270 00e8 C018     		adds	r0, r0, r3
+ 271 00ea 01A9     		add	r1, sp, #4
+ 272 00ec 0195     		str	r5, [sp, #4]
+ 273 00ee FFF7FEFF 		bl	HAL_GPIO_Init
+ 274 00f2 8023     		movs	r3, #128
+ 275 00f4 0B4A     		ldr	r2, .L32+4
+ 276 00f6 DB05     		lsls	r3, r3, #23
+ 277 00f8 916B     		ldr	r1, [r2, #56]
+ 278 00fa C9E7     		b	.L31
+ 279              	.L24:
+ 280 00fc 0A49     		ldr	r1, .L32+8
+ 281 00fe 0B48     		ldr	r0, .L32+12
+ 282 0100 FFF7FEFF 		bl	hal_trace_print_var
+ 283 0104 0A4C     		ldr	r4, .L32+16
+ 284 0106 2000     		movs	r0, r4
+ARM GAS  /tmp/ccEWex4T.s 			page 6
+
+
+ 285 0108 FFF7FEFF 		bl	hal_trace_print_var
+ 286 010c 0948     		ldr	r0, .L32+20
+ 287 010e FFF7FEFF 		bl	hal_trace_print_var
+ 288 0112 2000     		movs	r0, r4
+ 289 0114 FFF7FEFF 		bl	hal_trace_print_var
+ 290 0118 FFF7FEFF 		bl	hal_mcu_reset
+ 291 011c BAE7     		b	.L19
+ 292              	.L33:
+ 293 011e C046     		.align	2
+ 294              	.L32:
+ 295 0120 00000000 		.word	hal_i2c
+ 296 0124 00100240 		.word	1073876992
+ 297 0128 00000000 		.word	__func__.1
+ 298 012c 00000000 		.word	.LC2
+ 299 0130 15000000 		.word	.LC4
+ 300 0134 16000000 		.word	.LC6
+ 302              		.section	.text.HAL_I2C_MspDeInit,"ax",%progbits
+ 303              		.align	1
+ 304              		.global	HAL_I2C_MspDeInit
+ 305              		.syntax unified
+ 306              		.code	16
+ 307              		.thumb_func
+ 309              	HAL_I2C_MspDeInit:
+ 310              		@ args = 0, pretend = 0, frame = 0
+ 311              		@ frame_needed = 0, uses_anonymous_args = 0
+ 312 0000 70B5     		push	{r4, r5, r6, lr}
+ 313 0002 294C     		ldr	r4, .L39
+ 314 0004 0368     		ldr	r3, [r0]
+ 315 0006 2268     		ldr	r2, [r4]
+ 316 0008 9342     		cmp	r3, r2
+ 317 000a 0ED1     		bne	.L35
+ 318 000c 8022     		movs	r2, #128
+ 319 000e 274B     		ldr	r3, .L39+4
+ 320 0010 9203     		lsls	r2, r2, #14
+ 321 0012 996A     		ldr	r1, [r3, #40]
+ 322 0014 0A43     		orrs	r2, r1
+ 323 0016 9A62     		str	r2, [r3, #40]
+ 324 0018 9A6A     		ldr	r2, [r3, #40]
+ 325 001a 2549     		ldr	r1, .L39+8
+ 326 001c 0A40     		ands	r2, r1
+ 327 001e 9A62     		str	r2, [r3, #40]
+ 328 0020 9A6B     		ldr	r2, [r3, #56]
+ 329 0022 0A40     		ands	r2, r1
+ 330 0024 9A63     		str	r2, [r3, #56]
+ 331              	.L36:
+ 332 0026 0022     		movs	r2, #0
+ 333 0028 12E0     		b	.L38
+ 334              	.L35:
+ 335 002a 2200     		movs	r2, r4
+ 336 002c A832     		adds	r2, r2, #168
+ 337 002e 1268     		ldr	r2, [r2]
+ 338 0030 9342     		cmp	r3, r2
+ 339 0032 27D1     		bne	.L37
+ 340 0034 8022     		movs	r2, #128
+ 341 0036 1D4B     		ldr	r3, .L39+4
+ 342 0038 D205     		lsls	r2, r2, #23
+ 343 003a 996A     		ldr	r1, [r3, #40]
+ARM GAS  /tmp/ccEWex4T.s 			page 7
+
+
+ 344 003c 0A43     		orrs	r2, r1
+ 345 003e 9A62     		str	r2, [r3, #40]
+ 346 0040 9A6A     		ldr	r2, [r3, #40]
+ 347 0042 1C49     		ldr	r1, .L39+12
+ 348 0044 0A40     		ands	r2, r1
+ 349 0046 9A62     		str	r2, [r3, #40]
+ 350 0048 9A6B     		ldr	r2, [r3, #56]
+ 351 004a 0A40     		ands	r2, r1
+ 352 004c 9A63     		str	r2, [r3, #56]
+ 353 004e 0222     		movs	r2, #2
+ 354              	.L38:
+ 355              		@ sp needed
+ 356 0050 5423     		movs	r3, #84
+ 357 0052 5343     		muls	r3, r2
+ 358 0054 5020     		movs	r0, #80
+ 359 0056 E418     		adds	r4, r4, r3
+ 360 0058 0123     		movs	r3, #1
+ 361 005a 2056     		ldrsb	r0, [r4, r0]
+ 362 005c 0F22     		movs	r2, #15
+ 363 005e 5134     		adds	r4, r4, #81
+ 364 0060 2178     		ldrb	r1, [r4]
+ 365 0062 1C00     		movs	r4, r3
+ 366 0064 1140     		ands	r1, r2
+ 367 0066 8C40     		lsls	r4, r4, r1
+ 368 0068 0240     		ands	r2, r0
+ 369 006a 9340     		lsls	r3, r3, r2
+ 370 006c 2100     		movs	r1, r4
+ 371 006e 1943     		orrs	r1, r3
+ 372 0070 F023     		movs	r3, #240
+ 373 0072 8001     		lsls	r0, r0, #6
+ 374 0074 9B01     		lsls	r3, r3, #6
+ 375 0076 1840     		ands	r0, r3
+ 376 0078 A023     		movs	r3, #160
+ 377 007a DB05     		lsls	r3, r3, #23
+ 378 007c C018     		adds	r0, r0, r3
+ 379 007e FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 380 0082 70BD     		pop	{r4, r5, r6, pc}
+ 381              	.L37:
+ 382 0084 0C49     		ldr	r1, .L39+16
+ 383 0086 0D48     		ldr	r0, .L39+20
+ 384 0088 FFF7FEFF 		bl	hal_trace_print_var
+ 385 008c 0C4D     		ldr	r5, .L39+24
+ 386 008e 2800     		movs	r0, r5
+ 387 0090 FFF7FEFF 		bl	hal_trace_print_var
+ 388 0094 0B48     		ldr	r0, .L39+28
+ 389 0096 FFF7FEFF 		bl	hal_trace_print_var
+ 390 009a 2800     		movs	r0, r5
+ 391 009c FFF7FEFF 		bl	hal_trace_print_var
+ 392 00a0 FFF7FEFF 		bl	hal_mcu_reset
+ 393 00a4 BFE7     		b	.L36
+ 394              	.L40:
+ 395 00a6 C046     		.align	2
+ 396              	.L39:
+ 397 00a8 00000000 		.word	hal_i2c
+ 398 00ac 00100240 		.word	1073876992
+ 399 00b0 FFFFDFFF 		.word	-2097153
+ 400 00b4 FFFFFFBF 		.word	-1073741825
+ARM GAS  /tmp/ccEWex4T.s 			page 8
+
+
+ 401 00b8 00000000 		.word	__func__.0
+ 402 00bc 00000000 		.word	.LC2
+ 403 00c0 15000000 		.word	.LC4
+ 404 00c4 16000000 		.word	.LC6
+ 406              		.section	.text.hal_i2c_write,"ax",%progbits
+ 407              		.align	1
+ 408              		.global	hal_i2c_write
+ 409              		.syntax unified
+ 410              		.code	16
+ 411              		.thumb_func
+ 413              	hal_i2c_write:
+ 414              		@ args = 0, pretend = 0, frame = 8
+ 415              		@ frame_needed = 0, uses_anonymous_args = 0
+ 416 0000 30B5     		push	{r4, r5, lr}
+ 417 0002 1725     		movs	r5, #23
+ 418 0004 87B0     		sub	sp, sp, #28
+ 419 0006 6D44     		add	r5, r5, sp
+ 420 0008 2B70     		strb	r3, [r5]
+ 421 000a 094B     		ldr	r3, .L44
+ 422 000c 1B78     		ldrb	r3, [r3]
+ 423 000e 0095     		str	r5, [sp]
+ 424 0010 5C1E     		subs	r4, r3, #1
+ 425 0012 A341     		sbcs	r3, r3, r4
+ 426 0014 5424     		movs	r4, #84
+ 427 0016 4443     		muls	r4, r0
+ 428 0018 0648     		ldr	r0, .L44+4
+ 429 001a 0133     		adds	r3, r3, #1
+ 430 001c 2018     		adds	r0, r4, r0
+ 431 001e FA24     		movs	r4, #250
+ 432 0020 E400     		lsls	r4, r4, #3
+ 433 0022 0294     		str	r4, [sp, #8]
+ 434 0024 0124     		movs	r4, #1
+ 435 0026 0194     		str	r4, [sp, #4]
+ 436 0028 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 437 002c 07B0     		add	sp, sp, #28
+ 438              		@ sp needed
+ 439 002e 30BD     		pop	{r4, r5, pc}
+ 440              	.L45:
+ 441              		.align	2
+ 442              	.L44:
+ 443 0030 00000000 		.word	i2c_internal_addr_size
+ 444 0034 B0FFFFFF 		.word	hal_i2c-80
+ 446              		.section	.text.hal_i2c_write_buffer,"ax",%progbits
+ 447              		.align	1
+ 448              		.global	hal_i2c_write_buffer
+ 449              		.syntax unified
+ 450              		.code	16
+ 451              		.thumb_func
+ 453              	hal_i2c_write_buffer:
+ 454              		@ args = 4, pretend = 0, frame = 0
+ 455              		@ frame_needed = 0, uses_anonymous_args = 0
+ 456 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
+ 457 0002 1D00     		movs	r5, r3
+ 458 0004 08AB     		add	r3, sp, #32
+ 459 0006 1E88     		ldrh	r6, [r3]
+ 460 0008 084B     		ldr	r3, .L49
+ 461 000a 1B78     		ldrb	r3, [r3]
+ARM GAS  /tmp/ccEWex4T.s 			page 9
+
+
+ 462 000c 0196     		str	r6, [sp, #4]
+ 463 000e 5C1E     		subs	r4, r3, #1
+ 464 0010 A341     		sbcs	r3, r3, r4
+ 465 0012 5424     		movs	r4, #84
+ 466 0014 4443     		muls	r4, r0
+ 467 0016 0648     		ldr	r0, .L49+4
+ 468 0018 0133     		adds	r3, r3, #1
+ 469 001a 2018     		adds	r0, r4, r0
+ 470 001c FA24     		movs	r4, #250
+ 471 001e E400     		lsls	r4, r4, #3
+ 472 0020 0294     		str	r4, [sp, #8]
+ 473 0022 0095     		str	r5, [sp]
+ 474 0024 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 475 0028 04B0     		add	sp, sp, #16
+ 476              		@ sp needed
+ 477 002a 70BD     		pop	{r4, r5, r6, pc}
+ 478              	.L50:
+ 479              		.align	2
+ 480              	.L49:
+ 481 002c 00000000 		.word	i2c_internal_addr_size
+ 482 0030 B0FFFFFF 		.word	hal_i2c-80
+ 484              		.section	.text.hal_i2c_read,"ax",%progbits
+ 485              		.align	1
+ 486              		.global	hal_i2c_read
+ 487              		.syntax unified
+ 488              		.code	16
+ 489              		.thumb_func
+ 491              	hal_i2c_read:
+ 492              		@ args = 0, pretend = 0, frame = 0
+ 493              		@ frame_needed = 0, uses_anonymous_args = 0
+ 494 0000 30B5     		push	{r4, r5, lr}
+ 495 0002 1D00     		movs	r5, r3
+ 496 0004 094B     		ldr	r3, .L54
+ 497 0006 85B0     		sub	sp, sp, #20
+ 498 0008 1C78     		ldrb	r4, [r3]
+ 499 000a 0095     		str	r5, [sp]
+ 500 000c 631E     		subs	r3, r4, #1
+ 501 000e 9C41     		sbcs	r4, r4, r3
+ 502 0010 631C     		adds	r3, r4, #1
+ 503 0012 5424     		movs	r4, #84
+ 504 0014 4443     		muls	r4, r0
+ 505 0016 0648     		ldr	r0, .L54+4
+ 506 0018 2018     		adds	r0, r4, r0
+ 507 001a FA24     		movs	r4, #250
+ 508 001c E400     		lsls	r4, r4, #3
+ 509 001e 0294     		str	r4, [sp, #8]
+ 510 0020 0124     		movs	r4, #1
+ 511 0022 0194     		str	r4, [sp, #4]
+ 512 0024 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 513 0028 05B0     		add	sp, sp, #20
+ 514              		@ sp needed
+ 515 002a 30BD     		pop	{r4, r5, pc}
+ 516              	.L55:
+ 517              		.align	2
+ 518              	.L54:
+ 519 002c 00000000 		.word	i2c_internal_addr_size
+ 520 0030 B0FFFFFF 		.word	hal_i2c-80
+ARM GAS  /tmp/ccEWex4T.s 			page 10
+
+
+ 522              		.section	.text.hal_i2c_read_buffer,"ax",%progbits
+ 523              		.align	1
+ 524              		.global	hal_i2c_read_buffer
+ 525              		.syntax unified
+ 526              		.code	16
+ 527              		.thumb_func
+ 529              	hal_i2c_read_buffer:
+ 530              		@ args = 4, pretend = 0, frame = 0
+ 531              		@ frame_needed = 0, uses_anonymous_args = 0
+ 532 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
+ 533 0002 1D00     		movs	r5, r3
+ 534 0004 08AB     		add	r3, sp, #32
+ 535 0006 1E88     		ldrh	r6, [r3]
+ 536 0008 084B     		ldr	r3, .L59
+ 537 000a 1B78     		ldrb	r3, [r3]
+ 538 000c 0196     		str	r6, [sp, #4]
+ 539 000e 5C1E     		subs	r4, r3, #1
+ 540 0010 A341     		sbcs	r3, r3, r4
+ 541 0012 5424     		movs	r4, #84
+ 542 0014 4443     		muls	r4, r0
+ 543 0016 0648     		ldr	r0, .L59+4
+ 544 0018 0133     		adds	r3, r3, #1
+ 545 001a 2018     		adds	r0, r4, r0
+ 546 001c FA24     		movs	r4, #250
+ 547 001e E400     		lsls	r4, r4, #3
+ 548 0020 0294     		str	r4, [sp, #8]
+ 549 0022 0095     		str	r5, [sp]
+ 550 0024 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 551 0028 04B0     		add	sp, sp, #16
+ 552              		@ sp needed
+ 553 002a 70BD     		pop	{r4, r5, r6, pc}
+ 554              	.L60:
+ 555              		.align	2
+ 556              	.L59:
+ 557 002c 00000000 		.word	i2c_internal_addr_size
+ 558 0030 B0FFFFFF 		.word	hal_i2c-80
+ 560              		.section	.text.hal_i2c_set_addr_size,"ax",%progbits
+ 561              		.align	1
+ 562              		.global	hal_i2c_set_addr_size
+ 563              		.syntax unified
+ 564              		.code	16
+ 565              		.thumb_func
+ 567              	hal_i2c_set_addr_size:
+ 568              		@ args = 0, pretend = 0, frame = 0
+ 569              		@ frame_needed = 0, uses_anonymous_args = 0
+ 570              		@ link register save eliminated.
+ 571 0000 014B     		ldr	r3, .L62
+ 572              		@ sp needed
+ 573 0002 1870     		strb	r0, [r3]
+ 574 0004 7047     		bx	lr
+ 575              	.L63:
+ 576 0006 C046     		.align	2
+ 577              	.L62:
+ 578 0008 00000000 		.word	i2c_internal_addr_size
+ 580              		.section	.rodata.__func__.0,"a"
+ 583              	__func__.0:
+ 584 0000 48414C5F 		.ascii	"HAL_I2C_MspDeInit\000"
+ARM GAS  /tmp/ccEWex4T.s 			page 11
+
+
+ 584      4932435F 
+ 584      4D737044 
+ 584      65496E69 
+ 584      7400
+ 585              		.section	.rodata.__func__.1,"a"
+ 588              	__func__.1:
+ 589 0000 48414C5F 		.ascii	"HAL_I2C_MspInit\000"
+ 589      4932435F 
+ 589      4D737049 
+ 589      6E697400 
+ 590              		.section	.rodata.__func__.2,"a"
+ 593              	__func__.2:
+ 594 0000 68616C5F 		.ascii	"hal_i2c_init\000"
+ 594      6932635F 
+ 594      696E6974 
+ 594      00
+ 595              		.section	.bss.i2c_internal_addr_size,"aw",%nobits
+ 598              	i2c_internal_addr_size:
+ 599 0000 00       		.space	1
+ 600              		.section	.data.hal_i2c,"aw"
+ 601              		.align	2
+ 604              	hal_i2c:
+ 605 0000 00540040 		.word	1073763328
+ 606 0004 00000000 		.word	0
+ 607 0008 00000000 		.space	72
+ 607      00000000 
+ 607      00000000 
+ 607      00000000 
+ 607      00000000 
+ 608 0050 FF       		.byte	-1
+ 609 0051 FF       		.byte	-1
+ 610 0052 0000     		.space	2
+ 611 0054 00000000 		.space	84
+ 611      00000000 
+ 611      00000000 
+ 611      00000000 
+ 611      00000000 
+ 612 00a8 00780040 		.word	1073772544
+ 613 00ac 00000000 		.word	0
+ 614 00b0 00000000 		.space	72
+ 614      00000000 
+ 614      00000000 
+ 614      00000000 
+ 614      00000000 
+ 615 00f8 FF       		.byte	-1
+ 616 00f9 FF       		.byte	-1
+ 617 00fa 0000     		.space	2
+ 618              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccEWex4T.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 smtc_hal_i2c.c
+     /tmp/ccEWex4T.s:21     .text.hal_i2c_init:00000000 $t
+     /tmp/ccEWex4T.s:27     .text.hal_i2c_init:00000000 hal_i2c_init
+     /tmp/ccEWex4T.s:111    .text.hal_i2c_init:000000b8 $d
+     /tmp/ccEWex4T.s:604    .data.hal_i2c:00000000 hal_i2c
+     /tmp/ccEWex4T.s:593    .rodata.__func__.2:00000000 __func__.2
+     /tmp/ccEWex4T.s:119    .text.hal_i2c_deinit:00000000 $t
+     /tmp/ccEWex4T.s:125    .text.hal_i2c_deinit:00000000 hal_i2c_deinit
+     /tmp/ccEWex4T.s:139    .text.hal_i2c_deinit:00000010 $d
+     /tmp/ccEWex4T.s:142    .text.HAL_I2C_MspInit:00000000 $t
+     /tmp/ccEWex4T.s:148    .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
+     /tmp/ccEWex4T.s:295    .text.HAL_I2C_MspInit:00000120 $d
+     /tmp/ccEWex4T.s:588    .rodata.__func__.1:00000000 __func__.1
+     /tmp/ccEWex4T.s:303    .text.HAL_I2C_MspDeInit:00000000 $t
+     /tmp/ccEWex4T.s:309    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
+     /tmp/ccEWex4T.s:397    .text.HAL_I2C_MspDeInit:000000a8 $d
+     /tmp/ccEWex4T.s:583    .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccEWex4T.s:407    .text.hal_i2c_write:00000000 $t
+     /tmp/ccEWex4T.s:413    .text.hal_i2c_write:00000000 hal_i2c_write
+     /tmp/ccEWex4T.s:443    .text.hal_i2c_write:00000030 $d
+     /tmp/ccEWex4T.s:598    .bss.i2c_internal_addr_size:00000000 i2c_internal_addr_size
+     /tmp/ccEWex4T.s:447    .text.hal_i2c_write_buffer:00000000 $t
+     /tmp/ccEWex4T.s:453    .text.hal_i2c_write_buffer:00000000 hal_i2c_write_buffer
+     /tmp/ccEWex4T.s:481    .text.hal_i2c_write_buffer:0000002c $d
+     /tmp/ccEWex4T.s:485    .text.hal_i2c_read:00000000 $t
+     /tmp/ccEWex4T.s:491    .text.hal_i2c_read:00000000 hal_i2c_read
+     /tmp/ccEWex4T.s:519    .text.hal_i2c_read:0000002c $d
+     /tmp/ccEWex4T.s:523    .text.hal_i2c_read_buffer:00000000 $t
+     /tmp/ccEWex4T.s:529    .text.hal_i2c_read_buffer:00000000 hal_i2c_read_buffer
+     /tmp/ccEWex4T.s:557    .text.hal_i2c_read_buffer:0000002c $d
+     /tmp/ccEWex4T.s:561    .text.hal_i2c_set_addr_size:00000000 $t
+     /tmp/ccEWex4T.s:567    .text.hal_i2c_set_addr_size:00000000 hal_i2c_set_addr_size
+     /tmp/ccEWex4T.s:578    .text.hal_i2c_set_addr_size:00000008 $d
+     /tmp/ccEWex4T.s:599    .bss.i2c_internal_addr_size:00000000 $d
+     /tmp/ccEWex4T.s:601    .data.hal_i2c:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_I2C_Init
+hal_trace_print_var
+hal_mcu_reset
+HAL_I2CEx_ConfigAnalogFilter
+HAL_I2CEx_ConfigDigitalFilter
+HAL_I2C_DeInit
+HAL_GPIO_Init
+HAL_GPIO_DeInit
+HAL_I2C_Mem_Write
+HAL_I2C_Mem_Read

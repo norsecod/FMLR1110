@@ -1,0 +1,442 @@
+ARM GAS  /tmp/ccqh9hbu.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"lis2dw.c"
+  12              		.text
+  13              		.section	.text.lis2dw_read_byte,"ax",%progbits
+  14              		.align	1
+  15              		.syntax unified
+  16              		.code	16
+  17              		.thumb_func
+  19              	lis2dw_read_byte:
+  20              		@ args = 0, pretend = 0, frame = 0
+  21              		@ frame_needed = 0, uses_anonymous_args = 0
+  22 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
+  23 0002 0500     		movs	r5, r0
+  24              		@ sp needed
+  25 0004 0020     		movs	r0, #0
+  26 0006 0E00     		movs	r6, r1
+  27 0008 FFF7FEFF 		bl	hal_i2c_set_addr_size
+  28 000c 064B     		ldr	r3, .L2
+  29 000e 074C     		ldr	r4, .L2+4
+  30 0010 1978     		ldrb	r1, [r3]
+  31 0012 0123     		movs	r3, #1
+  32 0014 0093     		str	r3, [sp]
+  33 0016 2A00     		movs	r2, r5
+  34 0018 3300     		movs	r3, r6
+  35 001a 2068     		ldr	r0, [r4]
+  36 001c FFF7FEFF 		bl	hal_i2c_read_buffer
+  37 0020 4342     		rsbs	r3, r0, #0
+  38 0022 5841     		adcs	r0, r0, r3
+  39 0024 C0B2     		uxtb	r0, r0
+  40 0026 76BD     		pop	{r1, r2, r4, r5, r6, pc}
+  41              	.L3:
+  42              		.align	2
+  43              	.L2:
+  44 0028 00000000 		.word	address
+  45 002c 00000000 		.word	i2c
+  47              		.section	.text.lis2dw_write_byte,"ax",%progbits
+  48              		.align	1
+  49              		.syntax unified
+  50              		.code	16
+  51              		.thumb_func
+  53              	lis2dw_write_byte:
+  54              		@ args = 0, pretend = 0, frame = 8
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
+  57 0002 0F26     		movs	r6, #15
+  58 0004 0500     		movs	r5, r0
+  59 0006 6E44     		add	r6, r6, sp
+  60 0008 0020     		movs	r0, #0
+ARM GAS  /tmp/ccqh9hbu.s 			page 2
+
+
+  61 000a 3170     		strb	r1, [r6]
+  62 000c FFF7FEFF 		bl	hal_i2c_set_addr_size
+  63 0010 074B     		ldr	r3, .L5
+  64 0012 084C     		ldr	r4, .L5+4
+  65 0014 1978     		ldrb	r1, [r3]
+  66 0016 0123     		movs	r3, #1
+  67 0018 0093     		str	r3, [sp]
+  68 001a 2A00     		movs	r2, r5
+  69 001c 3300     		movs	r3, r6
+  70 001e 2068     		ldr	r0, [r4]
+  71 0020 FFF7FEFF 		bl	hal_i2c_write_buffer
+  72 0024 4342     		rsbs	r3, r0, #0
+  73 0026 5841     		adcs	r0, r0, r3
+  74 0028 C0B2     		uxtb	r0, r0
+  75 002a 04B0     		add	sp, sp, #16
+  76              		@ sp needed
+  77 002c 70BD     		pop	{r4, r5, r6, pc}
+  78              	.L6:
+  79 002e C046     		.align	2
+  80              	.L5:
+  81 0030 00000000 		.word	address
+  82 0034 00000000 		.word	i2c
+  84              		.section	.text.lis2dw_init,"ax",%progbits
+  85              		.align	1
+  86              		.global	lis2dw_init
+  87              		.syntax unified
+  88              		.code	16
+  89              		.thumb_func
+  91              	lis2dw_init:
+  92              		@ args = 0, pretend = 0, frame = 8
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+  95 0002 1400     		movs	r4, r2
+  96 0004 204D     		ldr	r5, .L25
+  97 0006 214A     		ldr	r2, .L25+4
+  98 0008 2B70     		strb	r3, [r5]
+  99 000a 214B     		ldr	r3, .L25+8
+ 100 000c 1060     		str	r0, [r2]
+ 101 000e 1C70     		strb	r4, [r3]
+ 102 0010 6B46     		mov	r3, sp
+ 103 0012 204A     		ldr	r2, .L25+12
+ 104 0014 9E1D     		adds	r6, r3, #6
+ 105 0016 1170     		strb	r1, [r2]
+ 106 0018 0F20     		movs	r0, #15
+ 107 001a 3100     		movs	r1, r6
+ 108 001c FFF7FEFF 		bl	lis2dw_read_byte
+ 109 0020 0028     		cmp	r0, #0
+ 110 0022 01D1     		bne	.L8
+ 111              	.L10:
+ 112 0024 0020     		movs	r0, #0
+ 113              	.L9:
+ 114              		@ sp needed
+ 115 0026 FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
+ 116              	.L8:
+ 117 0028 3378     		ldrb	r3, [r6]
+ 118 002a 442B     		cmp	r3, #68
+ 119 002c FAD1     		bne	.L10
+ARM GAS  /tmp/ccqh9hbu.s 			page 3
+
+
+ 120 002e 4021     		movs	r1, #64
+ 121 0030 2120     		movs	r0, #33
+ 122 0032 FFF7FEFF 		bl	lis2dw_write_byte
+ 123 0036 0028     		cmp	r0, #0
+ 124 0038 F4D0     		beq	.L10
+ 125 003a 4027     		movs	r7, #64
+ 126              	.L11:
+ 127 003c 6B46     		mov	r3, sp
+ 128 003e DE1D     		adds	r6, r3, #7
+ 129 0040 3100     		movs	r1, r6
+ 130 0042 2120     		movs	r0, #33
+ 131 0044 FFF7FEFF 		bl	lis2dw_read_byte
+ 132 0048 1348     		ldr	r0, .L25+16
+ 133 004a FFF7FEFF 		bl	hal_mcu_wait_us
+ 134 004e 3378     		ldrb	r3, [r6]
+ 135 0050 3B42     		tst	r3, r7
+ 136 0052 F3D1     		bne	.L11
+ 137 0054 2021     		movs	r1, #32
+ 138 0056 2B78     		ldrb	r3, [r5]
+ 139 0058 A020     		movs	r0, #160
+ 140 005a 1943     		orrs	r1, r3
+ 141 005c FFF7FEFF 		bl	lis2dw_write_byte
+ 142 0060 0028     		cmp	r0, #0
+ 143 0062 DFD0     		beq	.L10
+ 144 0064 0121     		movs	r1, #1
+ 145 0066 2220     		movs	r0, #34
+ 146 0068 FFF7FEFF 		bl	lis2dw_write_byte
+ 147 006c 0028     		cmp	r0, #0
+ 148 006e D9D0     		beq	.L10
+ 149 0070 2101     		lsls	r1, r4, #4
+ 150 0072 2520     		movs	r0, #37
+ 151 0074 C9B2     		uxtb	r1, r1
+ 152 0076 FFF7FEFF 		bl	lis2dw_write_byte
+ 153 007a 0028     		cmp	r0, #0
+ 154 007c D2D0     		beq	.L10
+ 155 007e 0421     		movs	r1, #4
+ 156 0080 2120     		movs	r0, #33
+ 157 0082 FFF7FEFF 		bl	lis2dw_write_byte
+ 158 0086 CEE7     		b	.L9
+ 159              	.L26:
+ 160              		.align	2
+ 161              	.L25:
+ 162 0088 00000000 		.word	lp_mod
+ 163 008c 00000000 		.word	i2c
+ 164 0090 00000000 		.word	dr
+ 165 0094 00000000 		.word	address
+ 166 0098 88130000 		.word	5000
+ 168              		.global	__aeabi_i2f
+ 169              		.global	__aeabi_fmul
+ 170              		.global	__aeabi_f2iz
+ 171              		.section	.text.lis2dw_read,"ax",%progbits
+ 172              		.align	1
+ 173              		.global	lis2dw_read
+ 174              		.syntax unified
+ 175              		.code	16
+ 176              		.thumb_func
+ 178              	lis2dw_read:
+ARM GAS  /tmp/ccqh9hbu.s 			page 4
+
+
+ 179              		@ args = 0, pretend = 0, frame = 16
+ 180              		@ frame_needed = 0, uses_anonymous_args = 0
+ 181 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 182 0002 0221     		movs	r1, #2
+ 183 0004 87B0     		sub	sp, sp, #28
+ 184 0006 0700     		movs	r7, r0
+ 185 0008 2220     		movs	r0, #34
+ 186 000a FFF7FEFF 		bl	lis2dw_write_byte
+ 187 000e 0390     		str	r0, [sp, #12]
+ 188 0010 0028     		cmp	r0, #0
+ 189 0012 04D1     		bne	.L28
+ 190              	.L30:
+ 191 0014 0023     		movs	r3, #0
+ 192 0016 0393     		str	r3, [sp, #12]
+ 193              	.L29:
+ 194 0018 0398     		ldr	r0, [sp, #12]
+ 195 001a 07B0     		add	sp, sp, #28
+ 196              		@ sp needed
+ 197 001c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 198              	.L28:
+ 199 001e 6148     		ldr	r0, .L44
+ 200 0020 FFF7FEFF 		bl	hal_mcu_wait_us
+ 201 0024 0020     		movs	r0, #0
+ 202 0026 FFF7FEFF 		bl	hal_i2c_set_addr_size
+ 203 002a 5F4B     		ldr	r3, .L44+4
+ 204 002c 5F48     		ldr	r0, .L44+8
+ 205 002e 1978     		ldrb	r1, [r3]
+ 206 0030 0623     		movs	r3, #6
+ 207 0032 04AC     		add	r4, sp, #16
+ 208 0034 0093     		str	r3, [sp]
+ 209 0036 2822     		movs	r2, #40
+ 210 0038 2300     		movs	r3, r4
+ 211 003a 0068     		ldr	r0, [r0]
+ 212 003c FFF7FEFF 		bl	hal_i2c_read_buffer
+ 213 0040 0028     		cmp	r0, #0
+ 214 0042 E7D1     		bne	.L30
+ 215 0044 0023     		movs	r3, #0
+ 216 0046 E65E     		ldrsh	r6, [r4, r3]
+ 217 0048 0223     		movs	r3, #2
+ 218 004a E55E     		ldrsh	r5, [r4, r3]
+ 219 004c 0423     		movs	r3, #4
+ 220 004e E45E     		ldrsh	r4, [r4, r3]
+ 221 0050 574B     		ldr	r3, .L44+12
+ 222 0052 1878     		ldrb	r0, [r3]
+ 223 0054 574B     		ldr	r3, .L44+16
+ 224 0056 1B78     		ldrb	r3, [r3]
+ 225 0058 002B     		cmp	r3, #0
+ 226 005a 3ED1     		bne	.L31
+ 227 005c 3611     		asrs	r6, r6, #4
+ 228 005e 2D11     		asrs	r5, r5, #4
+ 229 0060 2411     		asrs	r4, r4, #4
+ 230 0062 0328     		cmp	r0, #3
+ 231 0064 1ED8     		bhi	.L32
+ 232 0066 FFF7FEFF 		bl	__gnu_thumb1_case_uqi
+ 233              	.L34:
+ 234 006a 6F       		.byte	(.L40-.L34)/2
+ 235 006b 86       		.byte	(.L38-.L34)/2
+ARM GAS  /tmp/ccqh9hbu.s 			page 5
+
+
+ 236 006c 02       		.byte	(.L35-.L34)/2
+ 237 006d 21       		.byte	(.L33-.L34)/2
+ 238              		.p2align 1
+ 239              	.L35:
+ 240 006e 3000     		movs	r0, r6
+ 241 0070 FFF7FEFF 		bl	__aeabi_i2f
+ 242 0074 5049     		ldr	r1, .L44+20
+ 243 0076 FFF7FEFF 		bl	__aeabi_fmul
+ 244 007a FFF7FEFF 		bl	__aeabi_f2iz
+ 245 007e 06B2     		sxth	r6, r0
+ 246 0080 2800     		movs	r0, r5
+ 247 0082 FFF7FEFF 		bl	__aeabi_i2f
+ 248 0086 4C49     		ldr	r1, .L44+20
+ 249 0088 FFF7FEFF 		bl	__aeabi_fmul
+ 250 008c FFF7FEFF 		bl	__aeabi_f2iz
+ 251 0090 05B2     		sxth	r5, r0
+ 252 0092 2000     		movs	r0, r4
+ 253 0094 FFF7FEFF 		bl	__aeabi_i2f
+ 254 0098 4749     		ldr	r1, .L44+20
+ 255              	.L43:
+ 256 009a FFF7FEFF 		bl	__aeabi_fmul
+ 257 009e FFF7FEFF 		bl	__aeabi_f2iz
+ 258 00a2 04B2     		sxth	r4, r0
+ 259              	.L32:
+ 260 00a4 3E80     		strh	r6, [r7]
+ 261 00a6 7D80     		strh	r5, [r7, #2]
+ 262 00a8 BC80     		strh	r4, [r7, #4]
+ 263 00aa B5E7     		b	.L29
+ 264              	.L33:
+ 265 00ac 3000     		movs	r0, r6
+ 266 00ae FFF7FEFF 		bl	__aeabi_i2f
+ 267 00b2 4249     		ldr	r1, .L44+24
+ 268 00b4 FFF7FEFF 		bl	__aeabi_fmul
+ 269 00b8 FFF7FEFF 		bl	__aeabi_f2iz
+ 270 00bc 06B2     		sxth	r6, r0
+ 271 00be 2800     		movs	r0, r5
+ 272 00c0 FFF7FEFF 		bl	__aeabi_i2f
+ 273 00c4 3D49     		ldr	r1, .L44+24
+ 274 00c6 FFF7FEFF 		bl	__aeabi_fmul
+ 275 00ca FFF7FEFF 		bl	__aeabi_f2iz
+ 276 00ce 05B2     		sxth	r5, r0
+ 277 00d0 2000     		movs	r0, r4
+ 278 00d2 FFF7FEFF 		bl	__aeabi_i2f
+ 279 00d6 3949     		ldr	r1, .L44+24
+ 280 00d8 DFE7     		b	.L43
+ 281              	.L31:
+ 282 00da B610     		asrs	r6, r6, #2
+ 283 00dc AD10     		asrs	r5, r5, #2
+ 284 00de A410     		asrs	r4, r4, #2
+ 285 00e0 0328     		cmp	r0, #3
+ 286 00e2 DFD8     		bhi	.L32
+ 287 00e4 FFF7FEFF 		bl	__gnu_thumb1_case_uqi
+ 288              	.L39:
+ 289 00e8 02       		.byte	(.L42-.L39)/2
+ 290 00e9 19       		.byte	(.L41-.L39)/2
+ 291 00ea 30       		.byte	(.L40-.L39)/2
+ 292 00eb 47       		.byte	(.L38-.L39)/2
+ARM GAS  /tmp/ccqh9hbu.s 			page 6
+
+
+ 293              		.p2align 1
+ 294              	.L42:
+ 295 00ec 3000     		movs	r0, r6
+ 296 00ee FFF7FEFF 		bl	__aeabi_i2f
+ 297 00f2 3349     		ldr	r1, .L44+28
+ 298 00f4 FFF7FEFF 		bl	__aeabi_fmul
+ 299 00f8 FFF7FEFF 		bl	__aeabi_f2iz
+ 300 00fc 06B2     		sxth	r6, r0
+ 301 00fe 2800     		movs	r0, r5
+ 302 0100 FFF7FEFF 		bl	__aeabi_i2f
+ 303 0104 2E49     		ldr	r1, .L44+28
+ 304 0106 FFF7FEFF 		bl	__aeabi_fmul
+ 305 010a FFF7FEFF 		bl	__aeabi_f2iz
+ 306 010e 05B2     		sxth	r5, r0
+ 307 0110 2000     		movs	r0, r4
+ 308 0112 FFF7FEFF 		bl	__aeabi_i2f
+ 309 0116 2A49     		ldr	r1, .L44+28
+ 310 0118 BFE7     		b	.L43
+ 311              	.L41:
+ 312 011a 3000     		movs	r0, r6
+ 313 011c FFF7FEFF 		bl	__aeabi_i2f
+ 314 0120 2849     		ldr	r1, .L44+32
+ 315 0122 FFF7FEFF 		bl	__aeabi_fmul
+ 316 0126 FFF7FEFF 		bl	__aeabi_f2iz
+ 317 012a 06B2     		sxth	r6, r0
+ 318 012c 2800     		movs	r0, r5
+ 319 012e FFF7FEFF 		bl	__aeabi_i2f
+ 320 0132 2449     		ldr	r1, .L44+32
+ 321 0134 FFF7FEFF 		bl	__aeabi_fmul
+ 322 0138 FFF7FEFF 		bl	__aeabi_f2iz
+ 323 013c 05B2     		sxth	r5, r0
+ 324 013e 2000     		movs	r0, r4
+ 325 0140 FFF7FEFF 		bl	__aeabi_i2f
+ 326 0144 1F49     		ldr	r1, .L44+32
+ 327 0146 A8E7     		b	.L43
+ 328              	.L40:
+ 329 0148 3000     		movs	r0, r6
+ 330 014a FFF7FEFF 		bl	__aeabi_i2f
+ 331 014e 1E49     		ldr	r1, .L44+36
+ 332 0150 FFF7FEFF 		bl	__aeabi_fmul
+ 333 0154 FFF7FEFF 		bl	__aeabi_f2iz
+ 334 0158 06B2     		sxth	r6, r0
+ 335 015a 2800     		movs	r0, r5
+ 336 015c FFF7FEFF 		bl	__aeabi_i2f
+ 337 0160 1949     		ldr	r1, .L44+36
+ 338 0162 FFF7FEFF 		bl	__aeabi_fmul
+ 339 0166 FFF7FEFF 		bl	__aeabi_f2iz
+ 340 016a 05B2     		sxth	r5, r0
+ 341 016c 2000     		movs	r0, r4
+ 342 016e FFF7FEFF 		bl	__aeabi_i2f
+ 343 0172 1549     		ldr	r1, .L44+36
+ 344 0174 91E7     		b	.L43
+ 345              	.L38:
+ 346 0176 3000     		movs	r0, r6
+ 347 0178 FFF7FEFF 		bl	__aeabi_i2f
+ 348 017c 1349     		ldr	r1, .L44+40
+ 349 017e FFF7FEFF 		bl	__aeabi_fmul
+ARM GAS  /tmp/ccqh9hbu.s 			page 7
+
+
+ 350 0182 FFF7FEFF 		bl	__aeabi_f2iz
+ 351 0186 06B2     		sxth	r6, r0
+ 352 0188 2800     		movs	r0, r5
+ 353 018a FFF7FEFF 		bl	__aeabi_i2f
+ 354 018e 0F49     		ldr	r1, .L44+40
+ 355 0190 FFF7FEFF 		bl	__aeabi_fmul
+ 356 0194 FFF7FEFF 		bl	__aeabi_f2iz
+ 357 0198 05B2     		sxth	r5, r0
+ 358 019a 2000     		movs	r0, r4
+ 359 019c FFF7FEFF 		bl	__aeabi_i2f
+ 360 01a0 0A49     		ldr	r1, .L44+40
+ 361 01a2 7AE7     		b	.L43
+ 362              	.L45:
+ 363              		.align	2
+ 364              	.L44:
+ 365 01a4 88130000 		.word	5000
+ 366 01a8 00000000 		.word	address
+ 367 01ac 00000000 		.word	i2c
+ 368 01b0 00000000 		.word	dr
+ 369 01b4 00000000 		.word	lp_mod
+ 370 01b8 23DB7940 		.word	1081727779
+ 371 01bc 23DBF940 		.word	1090116387
+ 372 01c0 23DB793E 		.word	1048173347
+ 373 01c4 23DBF93E 		.word	1056561955
+ 374 01c8 23DB793F 		.word	1064950563
+ 375 01cc 23DBF93F 		.word	1073339171
+ 377              		.section	.bss.dr,"aw",%nobits
+ 380              	dr:
+ 381 0000 00       		.space	1
+ 382              		.section	.bss.lp_mod,"aw",%nobits
+ 385              	lp_mod:
+ 386 0000 00       		.space	1
+ 387              		.section	.bss.address,"aw",%nobits
+ 390              	address:
+ 391 0000 00       		.space	1
+ 392              		.section	.bss.i2c,"aw",%nobits
+ 393              		.align	2
+ 396              	i2c:
+ 397 0000 00000000 		.space	4
+ 398              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccqh9hbu.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lis2dw.c
+     /tmp/ccqh9hbu.s:14     .text.lis2dw_read_byte:00000000 $t
+     /tmp/ccqh9hbu.s:19     .text.lis2dw_read_byte:00000000 lis2dw_read_byte
+     /tmp/ccqh9hbu.s:44     .text.lis2dw_read_byte:00000028 $d
+     /tmp/ccqh9hbu.s:390    .bss.address:00000000 address
+     /tmp/ccqh9hbu.s:396    .bss.i2c:00000000 i2c
+     /tmp/ccqh9hbu.s:48     .text.lis2dw_write_byte:00000000 $t
+     /tmp/ccqh9hbu.s:53     .text.lis2dw_write_byte:00000000 lis2dw_write_byte
+     /tmp/ccqh9hbu.s:81     .text.lis2dw_write_byte:00000030 $d
+     /tmp/ccqh9hbu.s:85     .text.lis2dw_init:00000000 $t
+     /tmp/ccqh9hbu.s:91     .text.lis2dw_init:00000000 lis2dw_init
+     /tmp/ccqh9hbu.s:162    .text.lis2dw_init:00000088 $d
+     /tmp/ccqh9hbu.s:385    .bss.lp_mod:00000000 lp_mod
+     /tmp/ccqh9hbu.s:380    .bss.dr:00000000 dr
+     /tmp/ccqh9hbu.s:172    .text.lis2dw_read:00000000 $t
+     /tmp/ccqh9hbu.s:178    .text.lis2dw_read:00000000 lis2dw_read
+     /tmp/ccqh9hbu.s:234    .text.lis2dw_read:0000006a $d
+     /tmp/ccqh9hbu.s:238    .text.lis2dw_read:0000006e $t
+     /tmp/ccqh9hbu.s:289    .text.lis2dw_read:000000e8 $d
+     /tmp/ccqh9hbu.s:293    .text.lis2dw_read:000000ec $t
+     /tmp/ccqh9hbu.s:365    .text.lis2dw_read:000001a4 $d
+     /tmp/ccqh9hbu.s:381    .bss.dr:00000000 $d
+     /tmp/ccqh9hbu.s:386    .bss.lp_mod:00000000 $d
+     /tmp/ccqh9hbu.s:391    .bss.address:00000000 $d
+     /tmp/ccqh9hbu.s:393    .bss.i2c:00000000 $d
+
+UNDEFINED SYMBOLS
+hal_i2c_set_addr_size
+hal_i2c_read_buffer
+hal_i2c_write_buffer
+hal_mcu_wait_us
+__aeabi_i2f
+__aeabi_fmul
+__aeabi_f2iz
+__gnu_thumb1_case_uqi

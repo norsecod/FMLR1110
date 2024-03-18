@@ -78,8 +78,11 @@ static ADC_HandleTypeDef hal_adc_handle;
  */
 
 void hal_adc_init( void ) {
+
+
+
     hal_adc_handle.Instance                   = ADC1;
-    hal_adc_handle.Init.ClockPrescaler        = ADC_CLOCK_ASYNC_DIV12;
+    hal_adc_handle.Init.ClockPrescaler        = ADC_CLOCK_SYNC_PCLK_DIV1;
     hal_adc_handle.Init.DataAlign             = ADC_DATAALIGN_RIGHT;
     hal_adc_handle.Init.Resolution            = ADC_RESOLUTION_12B;
     hal_adc_handle.Init.ScanConvMode          = ADC_SCAN_DIRECTION_FORWARD;
@@ -91,10 +94,14 @@ void hal_adc_init( void ) {
     hal_adc_handle.Init.LowPowerAutoWait      = DISABLE;
     hal_adc_handle.Init.DMAContinuousRequests = DISABLE;
     hal_adc_handle.Init.OversamplingMode      = DISABLE;
-    hal_adc_handle.Init.Overrun               = ADC_OVR_DATA_OVERWRITTEN;
-    hal_adc_handle.Init.SamplingTime          = ADC_SAMPLETIME_39CYCLES_5;
+    hal_adc_handle.Init.Overrun               = ADC_OVR_DATA_PRESERVED;
+    hal_adc_handle.Init.SamplingTime          = ADC_SAMPLETIME_1CYCLE_5;
     hal_adc_handle.Init.LowPowerFrequencyMode = ENABLE;
     hal_adc_handle.Init.LowPowerAutoPowerOff  = DISABLE;
+    hal_adc_handle.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+    hal_adc_handle.Init.Overrun = ADC_OVR_DATA_PRESERVED;
+    hal_adc_handle.Init.OversamplingMode = DISABLE;
+
 
     if( HAL_ADC_Init( &hal_adc_handle ) != HAL_OK ) {
         mcu_panic( );
@@ -193,4 +200,9 @@ static uint16_t adc_read( uint32_t channel ) {
     }
 
     return adc_value;
+}
+
+uint16_t hal_adc_read_channel(uint32_t channel) {
+    // Reuse the adc_read body here
+    return adc_read(channel);
 }

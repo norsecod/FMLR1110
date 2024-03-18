@@ -1,0 +1,79 @@
+ARM GAS  /tmp/ccorSAEd.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"smtc_hal_trace.c"
+  12              		.text
+  13              		.section	.text.hal_trace_print,"ax",%progbits
+  14              		.align	1
+  15              		.global	hal_trace_print
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	hal_trace_print:
+  21              		@ args = 0, pretend = 0, frame = 256
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 00B5     		push	{lr}
+  24 0002 C1B0     		sub	sp, sp, #260
+  25 0004 0A00     		movs	r2, r1
+  26 0006 0100     		movs	r1, r0
+  27 0008 6846     		mov	r0, sp
+  28 000a FFF7FEFF 		bl	vsprintf
+  29 000e 0028     		cmp	r0, #0
+  30 0010 06DD     		ble	.L1
+  31 0012 6846     		mov	r0, sp
+  32 0014 FFF7FEFF 		bl	strlen
+  33 0018 C1B2     		uxtb	r1, r0
+  34 001a 6846     		mov	r0, sp
+  35 001c FFF7FEFF 		bl	uart1_tx
+  36              	.L1:
+  37 0020 41B0     		add	sp, sp, #260
+  38              		@ sp needed
+  39 0022 00BD     		pop	{pc}
+  41              		.section	.text.hal_trace_print_var,"ax",%progbits
+  42              		.align	1
+  43              		.global	hal_trace_print_var
+  44              		.syntax unified
+  45              		.code	16
+  46              		.thumb_func
+  48              	hal_trace_print_var:
+  49              		@ args = 4, pretend = 16, frame = 8
+  50              		@ frame_needed = 0, uses_anonymous_args = 1
+  51 0000 0FB4     		push	{r0, r1, r2, r3}
+  52 0002 07B5     		push	{r0, r1, r2, lr}
+  53 0004 04A9     		add	r1, sp, #16
+  54 0006 01C9     		ldmia	r1!, {r0}
+  55 0008 0191     		str	r1, [sp, #4]
+  56 000a FFF7FEFF 		bl	hal_trace_print
+  57 000e 03B0     		add	sp, sp, #12
+  58              		@ sp needed
+  59 0010 08BC     		pop	{r3}
+  60 0012 04B0     		add	sp, sp, #16
+ARM GAS  /tmp/ccorSAEd.s 			page 2
+
+
+  61 0014 1847     		bx	r3
+  63              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccorSAEd.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 smtc_hal_trace.c
+     /tmp/ccorSAEd.s:14     .text.hal_trace_print:00000000 $t
+     /tmp/ccorSAEd.s:20     .text.hal_trace_print:00000000 hal_trace_print
+     /tmp/ccorSAEd.s:42     .text.hal_trace_print_var:00000000 $t
+     /tmp/ccorSAEd.s:48     .text.hal_trace_print_var:00000000 hal_trace_print_var
+
+UNDEFINED SYMBOLS
+vsprintf
+strlen
+uart1_tx

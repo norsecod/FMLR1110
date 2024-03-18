@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "smtc_hal_mcu.h": "c",
+        "ralf_lr11xx.h": "c",
+        "smtc_hal_adc.h": "c",
+        "stm32l0xx_hal_adc.h": "c",
+        "lr11xx_gnss.h": "c",
+        "string.h": "c",
+        "cayennelpp.h": "c"
+    }
+}

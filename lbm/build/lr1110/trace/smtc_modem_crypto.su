@@ -1,0 +1,11 @@
+smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.c:192:33:smtc_modem_crypto_payload_encrypt	64	static
+smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.c:244:33:smtc_modem_crypto_payload_decrypt	32	static
+smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.c:252:33:smtc_modem_crypto_compute_join_mic	16	static
+smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.c:264:33:smtc_modem_crypto_process_join_accept	32	static
+smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.c:280:33:smtc_modem_crypto_derive_skeys	40	static
+smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.c:301:33:smtc_modem_crypto_verify_mic	304	static
+smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.c:339:33:smtc_modem_crypto_compute_and_add_mic	64	static
+smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.c:350:33:smtc_modem_crypto_set_key	32	static
+smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.c:373:33:smtc_modem_crypto_derive_multicast_session_keys	48	static
+smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.c:428:33:smtc_modem_crypto_get_class_b_rand	32	static
+smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.c:458:33:smtc_modem_crypto_service_encrypt	64	static

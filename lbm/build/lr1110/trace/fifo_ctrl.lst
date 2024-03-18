@@ -1,0 +1,516 @@
+ARM GAS  /tmp/ccZLSLdy.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"fifo_ctrl.c"
+  12              		.text
+  13              		.section	.text.fifo_ctrl_clear,"ax",%progbits
+  14              		.align	1
+  15              		.global	fifo_ctrl_clear
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	fifo_ctrl_clear:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23              		@ link register save eliminated.
+  24 0000 0023     		movs	r3, #0
+  25              		@ sp needed
+  26 0002 C380     		strh	r3, [r0, #6]
+  27 0004 0381     		strh	r3, [r0, #8]
+  28 0006 8381     		strh	r3, [r0, #12]
+  29 0008 0361     		str	r3, [r0, #16]
+  30 000a 4361     		str	r3, [r0, #20]
+  31 000c 8361     		str	r3, [r0, #24]
+  32 000e 8388     		ldrh	r3, [r0, #4]
+  33 0010 4381     		strh	r3, [r0, #10]
+  34 0012 7047     		bx	lr
+  36              		.section	.text.fifo_ctrl_init,"ax",%progbits
+  37              		.align	1
+  38              		.global	fifo_ctrl_init
+  39              		.syntax unified
+  40              		.code	16
+  41              		.thumb_func
+  43              	fifo_ctrl_init:
+  44              		@ args = 0, pretend = 0, frame = 0
+  45              		@ frame_needed = 0, uses_anonymous_args = 0
+  46 0000 10B5     		push	{r4, lr}
+  47 0002 0160     		str	r1, [r0]
+  48 0004 8280     		strh	r2, [r0, #4]
+  49 0006 FFF7FEFF 		bl	fifo_ctrl_clear
+  50              		@ sp needed
+  51 000a 10BD     		pop	{r4, pc}
+  53              		.section	.text.fifo_ctrl_print_stat,"ax",%progbits
+  54              		.align	1
+  55              		.global	fifo_ctrl_print_stat
+  56              		.syntax unified
+  57              		.code	16
+  58              		.thumb_func
+  60              	fifo_ctrl_print_stat:
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccZLSLdy.s 			page 2
+
+
+  63              		@ link register save eliminated.
+  64              		@ sp needed
+  65 0000 7047     		bx	lr
+  67              		.section	.text.fifo_ctrl_get_nb_elt,"ax",%progbits
+  68              		.align	1
+  69              		.global	fifo_ctrl_get_nb_elt
+  70              		.syntax unified
+  71              		.code	16
+  72              		.thumb_func
+  74              	fifo_ctrl_get_nb_elt:
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77              		@ link register save eliminated.
+  78 0000 8089     		ldrh	r0, [r0, #12]
+  79              		@ sp needed
+  80 0002 7047     		bx	lr
+  82              		.section	.text.fifo_ctrl_get_free_space,"ax",%progbits
+  83              		.align	1
+  84              		.global	fifo_ctrl_get_free_space
+  85              		.syntax unified
+  86              		.code	16
+  87              		.thumb_func
+  89              	fifo_ctrl_get_free_space:
+  90              		@ args = 0, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92              		@ link register save eliminated.
+  93 0000 4089     		ldrh	r0, [r0, #10]
+  94              		@ sp needed
+  95 0002 7047     		bx	lr
+  97              		.global	__aeabi_uidivmod
+  98              		.global	__aeabi_idivmod
+  99              		.section	.text.fifo_ctrl_get,"ax",%progbits
+ 100              		.align	1
+ 101              		.global	fifo_ctrl_get
+ 102              		.syntax unified
+ 103              		.code	16
+ 104              		.thumb_func
+ 106              	fifo_ctrl_get:
+ 107              		@ args = 12, pretend = 0, frame = 24
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 110 0002 0400     		movs	r4, r0
+ 111 0004 87B0     		sub	sp, sp, #28
+ 112 0006 0493     		str	r3, [sp, #16]
+ 113 0008 0EAB     		add	r3, sp, #56
+ 114 000a 1B78     		ldrb	r3, [r3]
+ 115 000c 0191     		str	r1, [sp, #4]
+ 116 000e 0593     		str	r3, [sp, #20]
+ 117 0010 0392     		str	r2, [sp, #12]
+ 118 0012 FFF7FEFF 		bl	smtc_modem_hal_disable_modem_irq
+ 119 0016 A389     		ldrh	r3, [r4, #12]
+ 120 0018 0226     		movs	r6, #2
+ 121 001a 002B     		cmp	r3, #0
+ 122 001c 69D0     		beq	.L7
+ 123 001e E688     		ldrh	r6, [r4, #6]
+ 124 0020 A388     		ldrh	r3, [r4, #4]
+ 125 0022 701C     		adds	r0, r6, #1
+ARM GAS  /tmp/ccZLSLdy.s 			page 3
+
+
+ 126 0024 1900     		movs	r1, r3
+ 127 0026 0293     		str	r3, [sp, #8]
+ 128 0028 FFF7FEFF 		bl	__aeabi_idivmod
+ 129 002c 2568     		ldr	r5, [r4]
+ 130 002e B01C     		adds	r0, r6, #2
+ 131 0030 AF5D     		ldrb	r7, [r5, r6]
+ 132 0032 6B5C     		ldrb	r3, [r5, r1]
+ 133 0034 3F02     		lsls	r7, r7, #8
+ 134 0036 FB18     		adds	r3, r7, r3
+ 135 0038 0299     		ldr	r1, [sp, #8]
+ 136 003a 9FB2     		uxth	r7, r3
+ 137 003c FFF7FEFF 		bl	__aeabi_idivmod
+ 138 0040 019B     		ldr	r3, [sp, #4]
+ 139 0042 6D5C     		ldrb	r5, [r5, r1]
+ 140 0044 002B     		cmp	r3, #0
+ 141 0046 3FD1     		bne	.L8
+ 142              	.L11:
+ 143 0048 E088     		ldrh	r0, [r4, #6]
+ 144 004a A688     		ldrh	r6, [r4, #4]
+ 145 004c 0330     		adds	r0, r0, #3
+ 146 004e 3100     		movs	r1, r6
+ 147 0050 80B2     		uxth	r0, r0
+ 148 0052 FFF7FEFF 		bl	__aeabi_uidivmod
+ 149 0056 0C9B     		ldr	r3, [sp, #48]
+ 150 0058 8AB2     		uxth	r2, r1
+ 151 005a E280     		strh	r2, [r4, #6]
+ 152 005c 002B     		cmp	r3, #0
+ 153 005e 4DD1     		bne	.L9
+ 154              	.L10:
+ 155 0060 E088     		ldrh	r0, [r4, #6]
+ 156 0062 A688     		ldrh	r6, [r4, #4]
+ 157 0064 2818     		adds	r0, r5, r0
+ 158 0066 3100     		movs	r1, r6
+ 159 0068 80B2     		uxth	r0, r0
+ 160 006a FFF7FEFF 		bl	__aeabi_uidivmod
+ 161 006e 019B     		ldr	r3, [sp, #4]
+ 162 0070 8AB2     		uxth	r2, r1
+ 163 0072 E280     		strh	r2, [r4, #6]
+ 164 0074 002B     		cmp	r3, #0
+ 165 0076 13D0     		beq	.L13
+ 166 0078 002F     		cmp	r7, #0
+ 167 007a 11D0     		beq	.L13
+ 168 007c 2168     		ldr	r1, [r4]
+ 169 007e D319     		adds	r3, r2, r7
+ 170 0080 8918     		adds	r1, r1, r2
+ 171 0082 B342     		cmp	r3, r6
+ 172 0084 52DD     		ble	.L14
+ 173 0086 B21A     		subs	r2, r6, r2
+ 174 0088 0198     		ldr	r0, [sp, #4]
+ 175 008a FFF7FEFF 		bl	memcpy
+ 176 008e E388     		ldrh	r3, [r4, #6]
+ 177 0090 A088     		ldrh	r0, [r4, #4]
+ 178 0092 2168     		ldr	r1, [r4]
+ 179 0094 C01A     		subs	r0, r0, r3
+ 180 0096 019B     		ldr	r3, [sp, #4]
+ 181 0098 3A1A     		subs	r2, r7, r0
+ 182 009a 1818     		adds	r0, r3, r0
+ARM GAS  /tmp/ccZLSLdy.s 			page 4
+
+
+ 183              	.L33:
+ 184 009c FFF7FEFF 		bl	memcpy
+ 185              	.L13:
+ 186 00a0 E088     		ldrh	r0, [r4, #6]
+ 187 00a2 A188     		ldrh	r1, [r4, #4]
+ 188 00a4 3818     		adds	r0, r7, r0
+ 189 00a6 80B2     		uxth	r0, r0
+ 190 00a8 FFF7FEFF 		bl	__aeabi_uidivmod
+ 191 00ac 6389     		ldrh	r3, [r4, #10]
+ 192 00ae 0026     		movs	r6, #0
+ 193 00b0 0333     		adds	r3, r3, #3
+ 194 00b2 ED18     		adds	r5, r5, r3
+ 195 00b4 A389     		ldrh	r3, [r4, #12]
+ 196 00b6 7D19     		adds	r5, r7, r5
+ 197 00b8 013B     		subs	r3, r3, #1
+ 198 00ba A381     		strh	r3, [r4, #12]
+ 199 00bc 6369     		ldr	r3, [r4, #20]
+ 200 00be E180     		strh	r1, [r4, #6]
+ 201 00c0 0133     		adds	r3, r3, #1
+ 202 00c2 6581     		strh	r5, [r4, #10]
+ 203 00c4 6361     		str	r3, [r4, #20]
+ 204 00c6 14E0     		b	.L7
+ 205              	.L8:
+ 206 00c8 0C9B     		ldr	r3, [sp, #48]
+ 207 00ca 002B     		cmp	r3, #0
+ 208 00cc BCD0     		beq	.L11
+ 209 00ce 039B     		ldr	r3, [sp, #12]
+ 210 00d0 0126     		movs	r6, #1
+ 211 00d2 002B     		cmp	r3, #0
+ 212 00d4 0DD0     		beq	.L7
+ 213 00d6 0D9B     		ldr	r3, [sp, #52]
+ 214 00d8 002B     		cmp	r3, #0
+ 215 00da 0AD0     		beq	.L7
+ 216 00dc 039B     		ldr	r3, [sp, #12]
+ 217 00de 0236     		adds	r6, r6, #2
+ 218 00e0 1F80     		strh	r7, [r3]
+ 219 00e2 0D9B     		ldr	r3, [sp, #52]
+ 220 00e4 1D70     		strb	r5, [r3]
+ 221 00e6 049B     		ldr	r3, [sp, #16]
+ 222 00e8 BB42     		cmp	r3, r7
+ 223 00ea 02D3     		bcc	.L7
+ 224 00ec 059B     		ldr	r3, [sp, #20]
+ 225 00ee AB42     		cmp	r3, r5
+ 226 00f0 AAD2     		bcs	.L11
+ 227              	.L7:
+ 228 00f2 FFF7FEFF 		bl	smtc_modem_hal_enable_modem_irq
+ 229 00f6 3000     		movs	r0, r6
+ 230 00f8 07B0     		add	sp, sp, #28
+ 231              		@ sp needed
+ 232 00fa F0BD     		pop	{r4, r5, r6, r7, pc}
+ 233              	.L9:
+ 234 00fc 002D     		cmp	r5, #0
+ 235 00fe AFD0     		beq	.L10
+ 236 0100 2168     		ldr	r1, [r4]
+ 237 0102 5319     		adds	r3, r2, r5
+ 238 0104 8918     		adds	r1, r1, r2
+ 239 0106 B342     		cmp	r3, r6
+ARM GAS  /tmp/ccZLSLdy.s 			page 5
+
+
+ 240 0108 0DDD     		ble	.L12
+ 241 010a B21A     		subs	r2, r6, r2
+ 242 010c 0C98     		ldr	r0, [sp, #48]
+ 243 010e FFF7FEFF 		bl	memcpy
+ 244 0112 E388     		ldrh	r3, [r4, #6]
+ 245 0114 A088     		ldrh	r0, [r4, #4]
+ 246 0116 2168     		ldr	r1, [r4]
+ 247 0118 C01A     		subs	r0, r0, r3
+ 248 011a 0C9B     		ldr	r3, [sp, #48]
+ 249 011c 2A1A     		subs	r2, r5, r0
+ 250 011e 1818     		adds	r0, r3, r0
+ 251              	.L32:
+ 252 0120 FFF7FEFF 		bl	memcpy
+ 253 0124 9CE7     		b	.L10
+ 254              	.L12:
+ 255 0126 2A00     		movs	r2, r5
+ 256 0128 0C98     		ldr	r0, [sp, #48]
+ 257 012a F9E7     		b	.L32
+ 258              	.L14:
+ 259 012c 3A00     		movs	r2, r7
+ 260 012e 0198     		ldr	r0, [sp, #4]
+ 261 0130 B4E7     		b	.L33
+ 263              		.section	.text.fifo_ctrl_set,"ax",%progbits
+ 264              		.align	1
+ 265              		.global	fifo_ctrl_set
+ 266              		.syntax unified
+ 267              		.code	16
+ 268              		.thumb_func
+ 270              	fifo_ctrl_set:
+ 271              		@ args = 4, pretend = 0, frame = 40
+ 272              		@ frame_needed = 0, uses_anonymous_args = 0
+ 273 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 274 0002 1500     		movs	r5, r2
+ 275 0004 0400     		movs	r4, r0
+ 276 0006 8BB0     		sub	sp, sp, #44
+ 277 0008 0693     		str	r3, [sp, #24]
+ 278 000a 10AB     		add	r3, sp, #64
+ 279 000c 1B78     		ldrb	r3, [r3]
+ 280 000e 0591     		str	r1, [sp, #20]
+ 281 0010 0193     		str	r3, [sp, #4]
+ 282 0012 FFF7FEFF 		bl	smtc_modem_hal_disable_modem_irq
+ 283 0016 019B     		ldr	r3, [sp, #4]
+ 284 0018 0326     		movs	r6, #3
+ 285 001a 0333     		adds	r3, r3, #3
+ 286 001c EB18     		adds	r3, r5, r3
+ 287 001e 9BB2     		uxth	r3, r3
+ 288 0020 0493     		str	r3, [sp, #16]
+ 289 0022 A388     		ldrh	r3, [r4, #4]
+ 290 0024 0293     		str	r3, [sp, #8]
+ 291 0026 029A     		ldr	r2, [sp, #8]
+ 292 0028 049B     		ldr	r3, [sp, #16]
+ 293 002a 9342     		cmp	r3, r2
+ 294 002c 00D9     		bls	.LCB282
+ 295 002e 71E0     		b	.L35	@long jump
+ 296              	.LCB282:
+ 297 0030 2368     		ldr	r3, [r4]
+ 298 0032 0393     		str	r3, [sp, #12]
+ARM GAS  /tmp/ccZLSLdy.s 			page 6
+
+
+ 299              	.L36:
+ 300 0034 6389     		ldrh	r3, [r4, #10]
+ 301 0036 0793     		str	r3, [sp, #28]
+ 302 0038 079A     		ldr	r2, [sp, #28]
+ 303 003a 049B     		ldr	r3, [sp, #16]
+ 304 003c 9342     		cmp	r3, r2
+ 305 003e 00D9     		bls	.LCB292
+ 306 0040 6DE0     		b	.L38	@long jump
+ 307              	.LCB292:
+ 308 0042 2389     		ldrh	r3, [r4, #8]
+ 309 0044 0399     		ldr	r1, [sp, #12]
+ 310 0046 2A0A     		lsrs	r2, r5, #8
+ 311 0048 CA54     		strb	r2, [r1, r3]
+ 312 004a 2089     		ldrh	r0, [r4, #8]
+ 313 004c A188     		ldrh	r1, [r4, #4]
+ 314 004e 0130     		adds	r0, r0, #1
+ 315 0050 80B2     		uxth	r0, r0
+ 316 0052 FFF7FEFF 		bl	__aeabi_uidivmod
+ 317 0056 2368     		ldr	r3, [r4]
+ 318 0058 89B2     		uxth	r1, r1
+ 319 005a 2181     		strh	r1, [r4, #8]
+ 320 005c 5D54     		strb	r5, [r3, r1]
+ 321 005e 2089     		ldrh	r0, [r4, #8]
+ 322 0060 A188     		ldrh	r1, [r4, #4]
+ 323 0062 0130     		adds	r0, r0, #1
+ 324 0064 80B2     		uxth	r0, r0
+ 325 0066 FFF7FEFF 		bl	__aeabi_uidivmod
+ 326 006a 2368     		ldr	r3, [r4]
+ 327 006c 019A     		ldr	r2, [sp, #4]
+ 328 006e 89B2     		uxth	r1, r1
+ 329 0070 2181     		strh	r1, [r4, #8]
+ 330 0072 5A54     		strb	r2, [r3, r1]
+ 331 0074 2089     		ldrh	r0, [r4, #8]
+ 332 0076 A688     		ldrh	r6, [r4, #4]
+ 333 0078 0130     		adds	r0, r0, #1
+ 334 007a 3100     		movs	r1, r6
+ 335 007c 80B2     		uxth	r0, r0
+ 336 007e FFF7FEFF 		bl	__aeabi_uidivmod
+ 337 0082 019B     		ldr	r3, [sp, #4]
+ 338 0084 89B2     		uxth	r1, r1
+ 339 0086 2181     		strh	r1, [r4, #8]
+ 340 0088 002B     		cmp	r3, #0
+ 341 008a 1BD0     		beq	.L39
+ 342 008c 2068     		ldr	r0, [r4]
+ 343 008e CB18     		adds	r3, r1, r3
+ 344 0090 4018     		adds	r0, r0, r1
+ 345 0092 B342     		cmp	r3, r6
+ 346 0094 00DC     		bgt	.LCB334
+ 347 0096 7AE0     		b	.L40	@long jump
+ 348              	.LCB334:
+ 349 0098 721A     		subs	r2, r6, r1
+ 350 009a 0699     		ldr	r1, [sp, #24]
+ 351 009c FFF7FEFF 		bl	memcpy
+ 352 00a0 2389     		ldrh	r3, [r4, #8]
+ 353 00a2 A188     		ldrh	r1, [r4, #4]
+ 354 00a4 2068     		ldr	r0, [r4]
+ 355 00a6 C91A     		subs	r1, r1, r3
+ARM GAS  /tmp/ccZLSLdy.s 			page 7
+
+
+ 356 00a8 019B     		ldr	r3, [sp, #4]
+ 357 00aa 5A1A     		subs	r2, r3, r1
+ 358 00ac 069B     		ldr	r3, [sp, #24]
+ 359 00ae 5918     		adds	r1, r3, r1
+ 360              	.L55:
+ 361 00b0 FFF7FEFF 		bl	memcpy
+ 362 00b4 2089     		ldrh	r0, [r4, #8]
+ 363 00b6 019B     		ldr	r3, [sp, #4]
+ 364 00b8 A188     		ldrh	r1, [r4, #4]
+ 365 00ba 1818     		adds	r0, r3, r0
+ 366 00bc 80B2     		uxth	r0, r0
+ 367 00be FFF7FEFF 		bl	__aeabi_uidivmod
+ 368 00c2 2181     		strh	r1, [r4, #8]
+ 369              	.L39:
+ 370 00c4 002D     		cmp	r5, #0
+ 371 00c6 1AD0     		beq	.L42
+ 372 00c8 2389     		ldrh	r3, [r4, #8]
+ 373 00ca 2068     		ldr	r0, [r4]
+ 374 00cc A288     		ldrh	r2, [r4, #4]
+ 375 00ce 5919     		adds	r1, r3, r5
+ 376 00d0 C018     		adds	r0, r0, r3
+ 377 00d2 9142     		cmp	r1, r2
+ 378 00d4 5EDD     		ble	.L43
+ 379 00d6 D21A     		subs	r2, r2, r3
+ 380 00d8 0599     		ldr	r1, [sp, #20]
+ 381 00da FFF7FEFF 		bl	memcpy
+ 382 00de 2389     		ldrh	r3, [r4, #8]
+ 383 00e0 A188     		ldrh	r1, [r4, #4]
+ 384 00e2 2068     		ldr	r0, [r4]
+ 385 00e4 C91A     		subs	r1, r1, r3
+ 386 00e6 059B     		ldr	r3, [sp, #20]
+ 387 00e8 6A1A     		subs	r2, r5, r1
+ 388 00ea 5918     		adds	r1, r3, r1
+ 389              	.L56:
+ 390 00ec FFF7FEFF 		bl	memcpy
+ 391 00f0 2089     		ldrh	r0, [r4, #8]
+ 392 00f2 A188     		ldrh	r1, [r4, #4]
+ 393 00f4 2818     		adds	r0, r5, r0
+ 394 00f6 80B2     		uxth	r0, r0
+ 395 00f8 FFF7FEFF 		bl	__aeabi_uidivmod
+ 396 00fc 2181     		strh	r1, [r4, #8]
+ 397              	.L42:
+ 398 00fe 0026     		movs	r6, #0
+ 399 0100 6389     		ldrh	r3, [r4, #10]
+ 400 0102 049A     		ldr	r2, [sp, #16]
+ 401 0104 9B1A     		subs	r3, r3, r2
+ 402 0106 6381     		strh	r3, [r4, #10]
+ 403 0108 A389     		ldrh	r3, [r4, #12]
+ 404 010a 0133     		adds	r3, r3, #1
+ 405 010c A381     		strh	r3, [r4, #12]
+ 406 010e 2369     		ldr	r3, [r4, #16]
+ 407 0110 0133     		adds	r3, r3, #1
+ 408 0112 2361     		str	r3, [r4, #16]
+ 409              	.L35:
+ 410 0114 FFF7FEFF 		bl	smtc_modem_hal_enable_modem_irq
+ 411 0118 3000     		movs	r0, r6
+ 412 011a 0BB0     		add	sp, sp, #44
+ARM GAS  /tmp/ccZLSLdy.s 			page 8
+
+
+ 413              		@ sp needed
+ 414 011c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 415              	.L38:
+ 416 011e A389     		ldrh	r3, [r4, #12]
+ 417 0120 0893     		str	r3, [sp, #32]
+ 418 0122 002B     		cmp	r3, #0
+ 419 0124 2FD0     		beq	.L37
+ 420 0126 E688     		ldrh	r6, [r4, #6]
+ 421 0128 039B     		ldr	r3, [sp, #12]
+ 422 012a 701C     		adds	r0, r6, #1
+ 423 012c 0299     		ldr	r1, [sp, #8]
+ 424 012e 9F5D     		ldrb	r7, [r3, r6]
+ 425 0130 FFF7FEFF 		bl	__aeabi_idivmod
+ 426 0134 039B     		ldr	r3, [sp, #12]
+ 427 0136 3F02     		lsls	r7, r7, #8
+ 428 0138 5B5C     		ldrb	r3, [r3, r1]
+ 429 013a B01C     		adds	r0, r6, #2
+ 430 013c FF18     		adds	r7, r7, r3
+ 431 013e BBB2     		uxth	r3, r7
+ 432 0140 0299     		ldr	r1, [sp, #8]
+ 433 0142 0993     		str	r3, [sp, #36]
+ 434 0144 FFF7FEFF 		bl	__aeabi_idivmod
+ 435 0148 039B     		ldr	r3, [sp, #12]
+ 436 014a 0336     		adds	r6, r6, #3
+ 437 014c 5F5C     		ldrb	r7, [r3, r1]
+ 438 014e B0B2     		uxth	r0, r6
+ 439 0150 0299     		ldr	r1, [sp, #8]
+ 440 0152 FFF7FEFF 		bl	__aeabi_uidivmod
+ 441 0156 7818     		adds	r0, r7, r1
+ 442 0158 80B2     		uxth	r0, r0
+ 443 015a 0299     		ldr	r1, [sp, #8]
+ 444 015c FFF7FEFF 		bl	__aeabi_uidivmod
+ 445 0160 099B     		ldr	r3, [sp, #36]
+ 446 0162 5818     		adds	r0, r3, r1
+ 447 0164 80B2     		uxth	r0, r0
+ 448 0166 0299     		ldr	r1, [sp, #8]
+ 449 0168 FFF7FEFF 		bl	__aeabi_uidivmod
+ 450 016c 079B     		ldr	r3, [sp, #28]
+ 451 016e E180     		strh	r1, [r4, #6]
+ 452 0170 0333     		adds	r3, r3, #3
+ 453 0172 FF18     		adds	r7, r7, r3
+ 454 0174 099B     		ldr	r3, [sp, #36]
+ 455 0176 DF19     		adds	r7, r3, r7
+ 456 0178 089B     		ldr	r3, [sp, #32]
+ 457 017a 6781     		strh	r7, [r4, #10]
+ 458 017c 013B     		subs	r3, r3, #1
+ 459 017e A381     		strh	r3, [r4, #12]
+ 460 0180 6369     		ldr	r3, [r4, #20]
+ 461 0182 0133     		adds	r3, r3, #1
+ 462 0184 6361     		str	r3, [r4, #20]
+ 463              	.L37:
+ 464 0186 A369     		ldr	r3, [r4, #24]
+ 465 0188 0133     		adds	r3, r3, #1
+ 466 018a A361     		str	r3, [r4, #24]
+ 467 018c 52E7     		b	.L36
+ 468              	.L40:
+ 469 018e 019A     		ldr	r2, [sp, #4]
+ARM GAS  /tmp/ccZLSLdy.s 			page 9
+
+
+ 470 0190 0699     		ldr	r1, [sp, #24]
+ 471 0192 8DE7     		b	.L55
+ 472              	.L43:
+ 473 0194 2A00     		movs	r2, r5
+ 474 0196 0599     		ldr	r1, [sp, #20]
+ 475 0198 A8E7     		b	.L56
+ 477              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccZLSLdy.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 fifo_ctrl.c
+     /tmp/ccZLSLdy.s:14     .text.fifo_ctrl_clear:00000000 $t
+     /tmp/ccZLSLdy.s:20     .text.fifo_ctrl_clear:00000000 fifo_ctrl_clear
+     /tmp/ccZLSLdy.s:37     .text.fifo_ctrl_init:00000000 $t
+     /tmp/ccZLSLdy.s:43     .text.fifo_ctrl_init:00000000 fifo_ctrl_init
+     /tmp/ccZLSLdy.s:54     .text.fifo_ctrl_print_stat:00000000 $t
+     /tmp/ccZLSLdy.s:60     .text.fifo_ctrl_print_stat:00000000 fifo_ctrl_print_stat
+     /tmp/ccZLSLdy.s:68     .text.fifo_ctrl_get_nb_elt:00000000 $t
+     /tmp/ccZLSLdy.s:74     .text.fifo_ctrl_get_nb_elt:00000000 fifo_ctrl_get_nb_elt
+     /tmp/ccZLSLdy.s:83     .text.fifo_ctrl_get_free_space:00000000 $t
+     /tmp/ccZLSLdy.s:89     .text.fifo_ctrl_get_free_space:00000000 fifo_ctrl_get_free_space
+     /tmp/ccZLSLdy.s:100    .text.fifo_ctrl_get:00000000 $t
+     /tmp/ccZLSLdy.s:106    .text.fifo_ctrl_get:00000000 fifo_ctrl_get
+     /tmp/ccZLSLdy.s:264    .text.fifo_ctrl_set:00000000 $t
+     /tmp/ccZLSLdy.s:270    .text.fifo_ctrl_set:00000000 fifo_ctrl_set
+
+UNDEFINED SYMBOLS
+__aeabi_uidivmod
+__aeabi_idivmod
+smtc_modem_hal_disable_modem_irq
+memcpy
+smtc_modem_hal_enable_modem_irq

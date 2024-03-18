@@ -1,0 +1,314 @@
+ARM GAS  /tmp/ccFwDo54.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"lr11xx_hal.c"
+  12              		.text
+  13              		.section	.text.lr11xx_hal_reset,"ax",%progbits
+  14              		.align	1
+  15              		.global	lr11xx_hal_reset
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	lr11xx_hal_reset:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 10B5     		push	{r4, lr}
+  24 0002 0B4C     		ldr	r4, .L2
+  25 0004 0021     		movs	r1, #0
+  26              		@ sp needed
+  27 0006 2220     		movs	r0, #34
+  28 0008 FFF7FEFF 		bl	hal_gpio_set_value
+  29 000c 2000     		movs	r0, r4
+  30 000e FFF7FEFF 		bl	hal_mcu_wait_us
+  31 0012 0121     		movs	r1, #1
+  32 0014 2220     		movs	r0, #34
+  33 0016 FFF7FEFF 		bl	hal_gpio_set_value
+  34 001a 2000     		movs	r0, r4
+  35 001c FFF7FEFF 		bl	hal_mcu_wait_us
+  36 0020 0448     		ldr	r0, .L2+4
+  37 0022 FFF7FEFF 		bl	hal_mcu_wait_us
+  38 0026 0122     		movs	r2, #1
+  39 0028 034B     		ldr	r3, .L2+8
+  40 002a 0020     		movs	r0, #0
+  41 002c 1A70     		strb	r2, [r3]
+  42 002e 10BD     		pop	{r4, pc}
+  43              	.L3:
+  44              		.align	2
+  45              	.L2:
+  46 0030 88130000 		.word	5000
+  47 0034 400D0300 		.word	200000
+  48 0038 00000000 		.word	radio_mode
+  50              		.section	.text.lr11xx_hal_wait_on_busy,"ax",%progbits
+  51              		.align	1
+  52              		.global	lr11xx_hal_wait_on_busy
+  53              		.syntax unified
+  54              		.code	16
+  55              		.thumb_func
+  57              	lr11xx_hal_wait_on_busy:
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60 0000 10B5     		push	{r4, lr}
+ARM GAS  /tmp/ccFwDo54.s 			page 2
+
+
+  61              	.L5:
+  62 0002 0720     		movs	r0, #7
+  63 0004 FFF7FEFF 		bl	hal_gpio_get_value
+  64 0008 0128     		cmp	r0, #1
+  65 000a FAD0     		beq	.L5
+  66              		@ sp needed
+  67 000c 10BD     		pop	{r4, pc}
+  69              		.section	.text.lr11xx_hal_check_device_ready,"ax",%progbits
+  70              		.align	1
+  71              		.global	lr11xx_hal_check_device_ready
+  72              		.syntax unified
+  73              		.code	16
+  74              		.thumb_func
+  76              	lr11xx_hal_check_device_ready:
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79 0000 10B5     		push	{r4, lr}
+  80 0002 0A4C     		ldr	r4, .L11
+  81 0004 2378     		ldrb	r3, [r4]
+  82 0006 D9B2     		uxtb	r1, r3
+  83 0008 002B     		cmp	r3, #0
+  84 000a 02D0     		beq	.L9
+  85 000c FFF7FEFF 		bl	lr11xx_hal_wait_on_busy
+  86              	.L8:
+  87              		@ sp needed
+  88 0010 10BD     		pop	{r4, pc}
+  89              	.L9:
+  90 0012 0420     		movs	r0, #4
+  91 0014 FFF7FEFF 		bl	hal_gpio_set_value
+  92 0018 0121     		movs	r1, #1
+  93 001a 0420     		movs	r0, #4
+  94 001c FFF7FEFF 		bl	hal_gpio_set_value
+  95 0020 FFF7FEFF 		bl	lr11xx_hal_wait_on_busy
+  96 0024 0123     		movs	r3, #1
+  97 0026 2370     		strb	r3, [r4]
+  98 0028 F2E7     		b	.L8
+  99              	.L12:
+ 100 002a C046     		.align	2
+ 101              	.L11:
+ 102 002c 00000000 		.word	radio_mode
+ 104              		.section	.text.lr11xx_hal_write,"ax",%progbits
+ 105              		.align	1
+ 106              		.global	lr11xx_hal_write
+ 107              		.syntax unified
+ 108              		.code	16
+ 109              		.thumb_func
+ 111              	lr11xx_hal_write:
+ 112              		@ args = 4, pretend = 0, frame = 8
+ 113              		@ frame_needed = 0, uses_anonymous_args = 0
+ 114 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 115 0002 0D00     		movs	r5, r1
+ 116 0004 1C00     		movs	r4, r3
+ 117 0006 08AB     		add	r3, sp, #32
+ 118 0008 1B88     		ldrh	r3, [r3]
+ 119 000a 1600     		movs	r6, r2
+ 120 000c 0193     		str	r3, [sp, #4]
+ 121 000e FFF7FEFF 		bl	lr11xx_hal_check_device_ready
+ARM GAS  /tmp/ccFwDo54.s 			page 3
+
+
+ 122 0012 0021     		movs	r1, #0
+ 123 0014 0420     		movs	r0, #4
+ 124 0016 FFF7FEFF 		bl	hal_gpio_set_value
+ 125 001a 2F00     		movs	r7, r5
+ 126 001c 7619     		adds	r6, r6, r5
+ 127              	.L14:
+ 128 001e B742     		cmp	r7, r6
+ 129 0020 16D1     		bne	.L15
+ 130 0022 019B     		ldr	r3, [sp, #4]
+ 131 0024 E618     		adds	r6, r4, r3
+ 132              	.L16:
+ 133 0026 B442     		cmp	r4, r6
+ 134 0028 18D1     		bne	.L17
+ 135 002a 0121     		movs	r1, #1
+ 136 002c 0420     		movs	r0, #4
+ 137 002e FFF7FEFF 		bl	hal_gpio_set_value
+ 138 0032 2B78     		ldrb	r3, [r5]
+ 139 0034 012B     		cmp	r3, #1
+ 140 0036 09D1     		bne	.L18
+ 141 0038 6B78     		ldrb	r3, [r5, #1]
+ 142 003a 1B2B     		cmp	r3, #27
+ 143 003c 06D1     		bne	.L18
+ 144 003e FA20     		movs	r0, #250
+ 145 0040 0022     		movs	r2, #0
+ 146 0042 094B     		ldr	r3, .L19
+ 147 0044 4000     		lsls	r0, r0, #1
+ 148 0046 1A70     		strb	r2, [r3]
+ 149 0048 FFF7FEFF 		bl	hal_mcu_wait_us
+ 150              	.L18:
+ 151              		@ sp needed
+ 152 004c 0020     		movs	r0, #0
+ 153 004e FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
+ 154              	.L15:
+ 155 0050 3978     		ldrb	r1, [r7]
+ 156 0052 0220     		movs	r0, #2
+ 157 0054 FFF7FEFF 		bl	hal_spi_in_out
+ 158 0058 0137     		adds	r7, r7, #1
+ 159 005a E0E7     		b	.L14
+ 160              	.L17:
+ 161 005c 2178     		ldrb	r1, [r4]
+ 162 005e 0220     		movs	r0, #2
+ 163 0060 FFF7FEFF 		bl	hal_spi_in_out
+ 164 0064 0134     		adds	r4, r4, #1
+ 165 0066 DEE7     		b	.L16
+ 166              	.L20:
+ 167              		.align	2
+ 168              	.L19:
+ 169 0068 00000000 		.word	radio_mode
+ 171              		.section	.text.lr11xx_hal_read,"ax",%progbits
+ 172              		.align	1
+ 173              		.global	lr11xx_hal_read
+ 174              		.syntax unified
+ 175              		.code	16
+ 176              		.thumb_func
+ 178              	lr11xx_hal_read:
+ 179              		@ args = 4, pretend = 0, frame = 0
+ 180              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccFwDo54.s 			page 4
+
+
+ 181 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 182 0002 1D00     		movs	r5, r3
+ 183 0004 06AB     		add	r3, sp, #24
+ 184 0006 0C00     		movs	r4, r1
+ 185 0008 1700     		movs	r7, r2
+ 186 000a 1E88     		ldrh	r6, [r3]
+ 187 000c FFF7FEFF 		bl	lr11xx_hal_check_device_ready
+ 188 0010 0021     		movs	r1, #0
+ 189 0012 0420     		movs	r0, #4
+ 190 0014 FFF7FEFF 		bl	hal_gpio_set_value
+ 191 0018 E719     		adds	r7, r4, r7
+ 192              	.L22:
+ 193 001a BC42     		cmp	r4, r7
+ 194 001c 1ED1     		bne	.L23
+ 195 001e 0121     		movs	r1, #1
+ 196 0020 0420     		movs	r0, #4
+ 197 0022 FFF7FEFF 		bl	hal_gpio_set_value
+ 198 0026 002E     		cmp	r6, #0
+ 199 0028 16D0     		beq	.L24
+ 200 002a FFF7FEFF 		bl	lr11xx_hal_check_device_ready
+ 201 002e 0021     		movs	r1, #0
+ 202 0030 0420     		movs	r0, #4
+ 203 0032 FFF7FEFF 		bl	hal_gpio_set_value
+ 204 0036 0021     		movs	r1, #0
+ 205 0038 0220     		movs	r0, #2
+ 206 003a FFF7FEFF 		bl	hal_spi_in_out
+ 207 003e AE19     		adds	r6, r5, r6
+ 208              	.L25:
+ 209 0040 0021     		movs	r1, #0
+ 210 0042 0220     		movs	r0, #2
+ 211 0044 FFF7FEFF 		bl	hal_spi_in_out
+ 212 0048 2870     		strb	r0, [r5]
+ 213 004a 0135     		adds	r5, r5, #1
+ 214 004c B542     		cmp	r5, r6
+ 215 004e F7D1     		bne	.L25
+ 216 0050 0121     		movs	r1, #1
+ 217 0052 0420     		movs	r0, #4
+ 218 0054 FFF7FEFF 		bl	hal_gpio_set_value
+ 219              	.L24:
+ 220              		@ sp needed
+ 221 0058 0020     		movs	r0, #0
+ 222 005a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 223              	.L23:
+ 224 005c 2178     		ldrb	r1, [r4]
+ 225 005e 0220     		movs	r0, #2
+ 226 0060 FFF7FEFF 		bl	hal_spi_in_out
+ 227 0064 0134     		adds	r4, r4, #1
+ 228 0066 D8E7     		b	.L22
+ 230              		.section	.text.lr11xx_hal_direct_read,"ax",%progbits
+ 231              		.align	1
+ 232              		.global	lr11xx_hal_direct_read
+ 233              		.syntax unified
+ 234              		.code	16
+ 235              		.thumb_func
+ 237              	lr11xx_hal_direct_read:
+ 238              		@ args = 0, pretend = 0, frame = 0
+ 239              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccFwDo54.s 			page 5
+
+
+ 240 0000 70B5     		push	{r4, r5, r6, lr}
+ 241 0002 0C00     		movs	r4, r1
+ 242 0004 1500     		movs	r5, r2
+ 243 0006 FFF7FEFF 		bl	lr11xx_hal_check_device_ready
+ 244 000a 0021     		movs	r1, #0
+ 245 000c 0420     		movs	r0, #4
+ 246 000e FFF7FEFF 		bl	hal_gpio_set_value
+ 247 0012 6519     		adds	r5, r4, r5
+ 248              	.L31:
+ 249 0014 AC42     		cmp	r4, r5
+ 250 0016 05D1     		bne	.L32
+ 251              		@ sp needed
+ 252 0018 0121     		movs	r1, #1
+ 253 001a 0420     		movs	r0, #4
+ 254 001c FFF7FEFF 		bl	hal_gpio_set_value
+ 255 0020 0020     		movs	r0, #0
+ 256 0022 70BD     		pop	{r4, r5, r6, pc}
+ 257              	.L32:
+ 258 0024 0021     		movs	r1, #0
+ 259 0026 0220     		movs	r0, #2
+ 260 0028 FFF7FEFF 		bl	hal_spi_in_out
+ 261 002c 2070     		strb	r0, [r4]
+ 262 002e 0134     		adds	r4, r4, #1
+ 263 0030 F0E7     		b	.L31
+ 265              		.section	.text.lr11xx_hal_wakeup,"ax",%progbits
+ 266              		.align	1
+ 267              		.global	lr11xx_hal_wakeup
+ 268              		.syntax unified
+ 269              		.code	16
+ 270              		.thumb_func
+ 272              	lr11xx_hal_wakeup:
+ 273              		@ args = 0, pretend = 0, frame = 0
+ 274              		@ frame_needed = 0, uses_anonymous_args = 0
+ 275 0000 10B5     		push	{r4, lr}
+ 276 0002 FFF7FEFF 		bl	lr11xx_hal_check_device_ready
+ 277              		@ sp needed
+ 278 0006 0020     		movs	r0, #0
+ 279 0008 10BD     		pop	{r4, pc}
+ 281              		.section	.data.radio_mode,"aw"
+ 284              	radio_mode:
+ 285 0000 01       		.byte	1
+ 286              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccFwDo54.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lr11xx_hal.c
+     /tmp/ccFwDo54.s:14     .text.lr11xx_hal_reset:00000000 $t
+     /tmp/ccFwDo54.s:20     .text.lr11xx_hal_reset:00000000 lr11xx_hal_reset
+     /tmp/ccFwDo54.s:46     .text.lr11xx_hal_reset:00000030 $d
+     /tmp/ccFwDo54.s:284    .data.radio_mode:00000000 radio_mode
+     /tmp/ccFwDo54.s:51     .text.lr11xx_hal_wait_on_busy:00000000 $t
+     /tmp/ccFwDo54.s:57     .text.lr11xx_hal_wait_on_busy:00000000 lr11xx_hal_wait_on_busy
+     /tmp/ccFwDo54.s:70     .text.lr11xx_hal_check_device_ready:00000000 $t
+     /tmp/ccFwDo54.s:76     .text.lr11xx_hal_check_device_ready:00000000 lr11xx_hal_check_device_ready
+     /tmp/ccFwDo54.s:102    .text.lr11xx_hal_check_device_ready:0000002c $d
+     /tmp/ccFwDo54.s:105    .text.lr11xx_hal_write:00000000 $t
+     /tmp/ccFwDo54.s:111    .text.lr11xx_hal_write:00000000 lr11xx_hal_write
+     /tmp/ccFwDo54.s:169    .text.lr11xx_hal_write:00000068 $d
+     /tmp/ccFwDo54.s:172    .text.lr11xx_hal_read:00000000 $t
+     /tmp/ccFwDo54.s:178    .text.lr11xx_hal_read:00000000 lr11xx_hal_read
+     /tmp/ccFwDo54.s:231    .text.lr11xx_hal_direct_read:00000000 $t
+     /tmp/ccFwDo54.s:237    .text.lr11xx_hal_direct_read:00000000 lr11xx_hal_direct_read
+     /tmp/ccFwDo54.s:266    .text.lr11xx_hal_wakeup:00000000 $t
+     /tmp/ccFwDo54.s:272    .text.lr11xx_hal_wakeup:00000000 lr11xx_hal_wakeup
+
+UNDEFINED SYMBOLS
+hal_gpio_set_value
+hal_mcu_wait_us
+hal_gpio_get_value
+hal_spi_in_out

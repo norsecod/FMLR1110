@@ -100,6 +100,14 @@ int8_t hal_adc_get_temp( void );
  */
 int8_t hal_adc_get_vbat( void );
 
+/*!
+ *  Reads the specified ADC channel and returns the raw ADC value
+ *
+ * \param [IN] channel   ADC channel to read
+ * \return Raw ADC value
+ */
+uint16_t hal_adc_read_channel(uint32_t channel);
+
 #ifdef __cplusplus
 }
 #endif

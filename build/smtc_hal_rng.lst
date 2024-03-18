@@ -1,0 +1,132 @@
+ARM GAS  /tmp/ccbVgTZW.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"smtc_hal_rng.c"
+  12              		.text
+  13              		.section	.text.hal_rng_init,"ax",%progbits
+  14              		.align	1
+  15              		.global	hal_rng_init
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	hal_rng_init:
+  21              		@ args = 0, pretend = 0, frame = 8
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 07B5     		push	{r0, r1, r2, lr}
+  24 0002 0422     		movs	r2, #4
+  25              		@ sp needed
+  26 0004 0349     		ldr	r1, .L2
+  27 0006 01A8     		add	r0, sp, #4
+  28 0008 FFF7FEFF 		bl	memcpy
+  29 000c 0198     		ldr	r0, [sp, #4]
+  30 000e FFF7FEFF 		bl	srand
+  31 0012 07BD     		pop	{r0, r1, r2, pc}
+  32              	.L3:
+  33              		.align	2
+  34              	.L2:
+  35 0014 21000000 		.word	settings+33
+  37              		.section	.text.hal_rng_get_random,"ax",%progbits
+  38              		.align	1
+  39              		.global	hal_rng_get_random
+  40              		.syntax unified
+  41              		.code	16
+  42              		.thumb_func
+  44              	hal_rng_get_random:
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47 0000 10B5     		push	{r4, lr}
+  48 0002 FFF7FEFF 		bl	rand
+  49              		@ sp needed
+  50 0006 10BD     		pop	{r4, pc}
+  52              		.global	__aeabi_uidivmod
+  53              		.section	.text.hal_rng_get_random_in_range,"ax",%progbits
+  54              		.align	1
+  55              		.global	hal_rng_get_random_in_range
+  56              		.syntax unified
+  57              		.code	16
+  58              		.thumb_func
+  60              	hal_rng_get_random_in_range:
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccbVgTZW.s 			page 2
+
+
+  63 0000 70B5     		push	{r4, r5, r6, lr}
+  64 0002 0500     		movs	r5, r0
+  65 0004 0C00     		movs	r4, r1
+  66 0006 8842     		cmp	r0, r1
+  67 0008 07D8     		bhi	.L6
+  68 000a 0134     		adds	r4, r4, #1
+  69 000c FFF7FEFF 		bl	rand
+  70 0010 611B     		subs	r1, r4, r5
+  71 0012 FFF7FEFF 		bl	__aeabi_uidivmod
+  72 0016 4819     		adds	r0, r1, r5
+  73              	.L5:
+  74              		@ sp needed
+  75 0018 70BD     		pop	{r4, r5, r6, pc}
+  76              	.L6:
+  77 001a FFF7FEFF 		bl	rand
+  78 001e 291B     		subs	r1, r5, r4
+  79 0020 0131     		adds	r1, r1, #1
+  80 0022 FFF7FEFF 		bl	__aeabi_uidivmod
+  81 0026 0819     		adds	r0, r1, r4
+  82 0028 F6E7     		b	.L5
+  84              		.section	.text.hal_rng_get_signed_random_in_range,"ax",%progbits
+  85              		.align	1
+  86              		.global	hal_rng_get_signed_random_in_range
+  87              		.syntax unified
+  88              		.code	16
+  89              		.thumb_func
+  91              	hal_rng_get_signed_random_in_range:
+  92              		@ args = 0, pretend = 0, frame = 0
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94 0000 70B5     		push	{r4, r5, r6, lr}
+  95 0002 0500     		movs	r5, r0
+  96 0004 0C00     		movs	r4, r1
+  97 0006 8842     		cmp	r0, r1
+  98 0008 05DC     		bgt	.L9
+  99 000a 091A     		subs	r1, r1, r0
+ 100 000c 0020     		movs	r0, #0
+ 101 000e FFF7FEFF 		bl	hal_rng_get_random_in_range
+ 102 0012 2818     		adds	r0, r5, r0
+ 103              	.L8:
+ 104              		@ sp needed
+ 105 0014 70BD     		pop	{r4, r5, r6, pc}
+ 106              	.L9:
+ 107 0016 411A     		subs	r1, r0, r1
+ 108 0018 0020     		movs	r0, #0
+ 109 001a FFF7FEFF 		bl	hal_rng_get_random_in_range
+ 110 001e 2018     		adds	r0, r4, r0
+ 111 0020 F8E7     		b	.L8
+ 113              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccbVgTZW.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 smtc_hal_rng.c
+     /tmp/ccbVgTZW.s:14     .text.hal_rng_init:00000000 $t
+     /tmp/ccbVgTZW.s:20     .text.hal_rng_init:00000000 hal_rng_init
+     /tmp/ccbVgTZW.s:35     .text.hal_rng_init:00000014 $d
+     /tmp/ccbVgTZW.s:38     .text.hal_rng_get_random:00000000 $t
+     /tmp/ccbVgTZW.s:44     .text.hal_rng_get_random:00000000 hal_rng_get_random
+     /tmp/ccbVgTZW.s:54     .text.hal_rng_get_random_in_range:00000000 $t
+     /tmp/ccbVgTZW.s:60     .text.hal_rng_get_random_in_range:00000000 hal_rng_get_random_in_range
+     /tmp/ccbVgTZW.s:85     .text.hal_rng_get_signed_random_in_range:00000000 $t
+     /tmp/ccbVgTZW.s:91     .text.hal_rng_get_signed_random_in_range:00000000 hal_rng_get_signed_random_in_range
+
+UNDEFINED SYMBOLS
+memcpy
+srand
+settings
+rand
+__aeabi_uidivmod

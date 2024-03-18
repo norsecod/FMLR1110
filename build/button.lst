@@ -1,0 +1,147 @@
+ARM GAS  /tmp/ccUpgbWu.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"button.c"
+  12              		.text
+  13              		.section	.text.debounce_timer_cb,"ax",%progbits
+  14              		.align	1
+  15              		.syntax unified
+  16              		.code	16
+  17              		.thumb_func
+  19              	debounce_timer_cb:
+  20              		@ args = 0, pretend = 0, frame = 0
+  21              		@ frame_needed = 0, uses_anonymous_args = 0
+  22 0000 70B5     		push	{r4, r5, r6, lr}
+  23 0002 0500     		movs	r5, r0
+  24 0004 3035     		adds	r5, r5, #48
+  25 0006 2B78     		ldrb	r3, [r5]
+  26 0008 0400     		movs	r4, r0
+  27 000a 012B     		cmp	r3, #1
+  28 000c 09D1     		bne	.L3
+  29 000e 0020     		movs	r0, #0
+  30 0010 2056     		ldrsb	r0, [r4, r0]
+  31 0012 FFF7FEFF 		bl	hal_gpio_get_value
+  32 0016 6378     		ldrb	r3, [r4, #1]
+  33 0018 9842     		cmp	r0, r3
+  34 001a 02D1     		bne	.L3
+  35 001c E369     		ldr	r3, [r4, #28]
+  36 001e 206A     		ldr	r0, [r4, #32]
+  37 0020 9847     		blx	r3
+  38              	.L3:
+  39              		@ sp needed
+  40 0022 0023     		movs	r3, #0
+  41 0024 2B70     		strb	r3, [r5]
+  42 0026 70BD     		pop	{r4, r5, r6, pc}
+  44              		.section	.text.button_cb,"ax",%progbits
+  45              		.align	1
+  46              		.syntax unified
+  47              		.code	16
+  48              		.thumb_func
+  50              	button_cb:
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53 0000 0300     		movs	r3, r0
+  54 0002 10B5     		push	{r4, lr}
+  55 0004 3033     		adds	r3, r3, #48
+  56 0006 1A78     		ldrb	r2, [r3]
+  57 0008 002A     		cmp	r2, #0
+  58 000a 04D1     		bne	.L5
+  59 000c 0132     		adds	r2, r2, #1
+  60 000e 1A70     		strb	r2, [r3]
+ARM GAS  /tmp/ccUpgbWu.s 			page 2
+
+
+  61 0010 0430     		adds	r0, r0, #4
+  62 0012 FFF7FEFF 		bl	TimerStart
+  63              	.L5:
+  64              		@ sp needed
+  65 0016 10BD     		pop	{r4, pc}
+  67              		.section	.text.button_init,"ax",%progbits
+  68              		.align	1
+  69              		.global	button_init
+  70              		.syntax unified
+  71              		.code	16
+  72              		.thumb_func
+  74              	button_init:
+  75              		@ args = 4, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77 0000 70B5     		push	{r4, r5, r6, lr}
+  78 0002 0400     		movs	r4, r0
+  79 0004 E361     		str	r3, [r4, #28]
+  80 0006 049B     		ldr	r3, [sp, #16]
+  81 0008 2170     		strb	r1, [r4]
+  82 000a 2362     		str	r3, [r4, #32]
+  83 000c 114B     		ldr	r3, .L10
+  84 000e 0800     		movs	r0, r1
+  85 0010 E362     		str	r3, [r4, #44]
+  86 0012 3223     		movs	r3, #50
+  87 0014 6386     		strh	r3, [r4, #50]
+  88 0016 2300     		movs	r3, r4
+  89 0018 0021     		movs	r1, #0
+  90 001a 3033     		adds	r3, r3, #48
+  91 001c 6270     		strb	r2, [r4, #1]
+  92 001e A462     		str	r4, [r4, #40]
+  93 0020 1970     		strb	r1, [r3]
+  94 0022 8A42     		cmp	r2, r1
+  95 0024 13D0     		beq	.L9
+  96 0026 0122     		movs	r2, #1
+  97 0028 0231     		adds	r1, r1, #2
+  98              	.L8:
+  99 002a 2300     		movs	r3, r4
+ 100              		@ sp needed
+ 101 002c 2433     		adds	r3, r3, #36
+ 102 002e 251D     		adds	r5, r4, #4
+ 103 0030 FFF7FEFF 		bl	hal_gpio_init_in
+ 104 0034 2800     		movs	r0, r5
+ 105 0036 0849     		ldr	r1, .L10+4
+ 106 0038 FFF7FEFF 		bl	TimerInit
+ 107 003c 2800     		movs	r0, r5
+ 108 003e 2100     		movs	r1, r4
+ 109 0040 FFF7FEFF 		bl	TimerSetContext
+ 110 0044 2800     		movs	r0, r5
+ 111 0046 618E     		ldrh	r1, [r4, #50]
+ 112 0048 FFF7FEFF 		bl	TimerSetValue
+ 113 004c 70BD     		pop	{r4, r5, r6, pc}
+ 114              	.L9:
+ 115 004e 0121     		movs	r1, #1
+ 116 0050 0222     		movs	r2, #2
+ 117 0052 EAE7     		b	.L8
+ 118              	.L11:
+ 119              		.align	2
+ARM GAS  /tmp/ccUpgbWu.s 			page 3
+
+
+ 120              	.L10:
+ 121 0054 00000000 		.word	button_cb
+ 122 0058 00000000 		.word	debounce_timer_cb
+ 124              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccUpgbWu.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 button.c
+     /tmp/ccUpgbWu.s:14     .text.debounce_timer_cb:00000000 $t
+     /tmp/ccUpgbWu.s:19     .text.debounce_timer_cb:00000000 debounce_timer_cb
+     /tmp/ccUpgbWu.s:45     .text.button_cb:00000000 $t
+     /tmp/ccUpgbWu.s:50     .text.button_cb:00000000 button_cb
+     /tmp/ccUpgbWu.s:68     .text.button_init:00000000 $t
+     /tmp/ccUpgbWu.s:74     .text.button_init:00000000 button_init
+     /tmp/ccUpgbWu.s:121    .text.button_init:00000054 $d
+
+UNDEFINED SYMBOLS
+hal_gpio_get_value
+TimerStart
+hal_gpio_init_in
+TimerInit
+TimerSetContext
+TimerSetValue

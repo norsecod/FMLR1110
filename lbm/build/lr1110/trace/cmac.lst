@@ -1,0 +1,400 @@
+ARM GAS  /tmp/cctVHkfa.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"cmac.c"
+  12              		.text
+  13              		.section	.text.AES_CMAC_Init,"ax",%progbits
+  14              		.align	1
+  15              		.global	AES_CMAC_Init
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	AES_CMAC_Init:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 10B5     		push	{r4, lr}
+  24 0002 0400     		movs	r4, r0
+  25              		@ sp needed
+  26 0004 1022     		movs	r2, #16
+  27 0006 0021     		movs	r1, #0
+  28 0008 F130     		adds	r0, r0, #241
+  29 000a FFF7FEFF 		bl	memset
+  30 000e 2300     		movs	r3, r4
+  31 0010 0021     		movs	r1, #0
+  32 0012 FC33     		adds	r3, r3, #252
+  33 0014 F022     		movs	r2, #240
+  34 0016 2000     		movs	r0, r4
+  35 0018 9961     		str	r1, [r3, #24]
+  36 001a FFF7FEFF 		bl	memset
+  37 001e 10BD     		pop	{r4, pc}
+  39              		.section	.text.AES_CMAC_SetKey,"ax",%progbits
+  40              		.align	1
+  41              		.global	AES_CMAC_SetKey
+  42              		.syntax unified
+  43              		.code	16
+  44              		.thumb_func
+  46              	AES_CMAC_SetKey:
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  49 0000 10B5     		push	{r4, lr}
+  50 0002 0200     		movs	r2, r0
+  51              		@ sp needed
+  52 0004 0800     		movs	r0, r1
+  53 0006 1021     		movs	r1, #16
+  54 0008 FFF7FEFF 		bl	aes_set_key
+  55 000c 10BD     		pop	{r4, pc}
+  57              		.section	.text.AES_CMAC_Update,"ax",%progbits
+  58              		.align	1
+  59              		.global	AES_CMAC_Update
+  60              		.syntax unified
+  61              		.code	16
+ARM GAS  /tmp/cctVHkfa.s 			page 2
+
+
+  62              		.thumb_func
+  64              	AES_CMAC_Update:
+  65              		@ args = 0, pretend = 0, frame = 24
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67 0000 0300     		movs	r3, r0
+  68 0002 F0B5     		push	{r4, r5, r6, r7, lr}
+  69 0004 FC33     		adds	r3, r3, #252
+  70 0006 0400     		movs	r4, r0
+  71 0008 9869     		ldr	r0, [r3, #24]
+  72 000a 0E00     		movs	r6, r1
+  73 000c 1500     		movs	r5, r2
+  74 000e 87B0     		sub	sp, sp, #28
+  75 0010 0028     		cmp	r0, #0
+  76 0012 34D0     		beq	.L8
+  77 0014 1027     		movs	r7, #16
+  78 0016 3F1A     		subs	r7, r7, r0
+  79 0018 0097     		str	r7, [sp]
+  80 001a 9742     		cmp	r7, r2
+  81 001c 00D9     		bls	.L5
+  82 001e 0092     		str	r2, [sp]
+  83              	.L5:
+  84 0020 A31C     		adds	r3, r4, #2
+  85 0022 FF33     		adds	r3, r3, #255
+  86 0024 3100     		movs	r1, r6
+  87 0026 009A     		ldr	r2, [sp]
+  88 0028 1818     		adds	r0, r3, r0
+  89 002a 0193     		str	r3, [sp, #4]
+  90 002c FFF7FEFF 		bl	memcpy
+  91 0030 2200     		movs	r2, r4
+  92 0032 FC32     		adds	r2, r2, #252
+  93 0034 9369     		ldr	r3, [r2, #24]
+  94 0036 0099     		ldr	r1, [sp]
+  95 0038 CB18     		adds	r3, r1, r3
+  96 003a 9361     		str	r3, [r2, #24]
+  97 003c 0F2B     		cmp	r3, #15
+  98 003e 28D9     		bls	.L3
+  99 0040 AF42     		cmp	r7, r5
+ 100 0042 26D2     		bcs	.L3
+ 101 0044 2700     		movs	r7, r4
+ 102 0046 F137     		adds	r7, r7, #241
+ 103 0048 3B00     		movs	r3, r7
+ 104              	.L7:
+ 105 004a 1A78     		ldrb	r2, [r3]
+ 106 004c 197C     		ldrb	r1, [r3, #16]
+ 107 004e 4A40     		eors	r2, r1
+ 108 0050 1A70     		strb	r2, [r3]
+ 109 0052 019A     		ldr	r2, [sp, #4]
+ 110 0054 0133     		adds	r3, r3, #1
+ 111 0056 9A42     		cmp	r2, r3
+ 112 0058 F7D1     		bne	.L7
+ 113 005a 1022     		movs	r2, #16
+ 114 005c 3900     		movs	r1, r7
+ 115 005e 02A8     		add	r0, sp, #8
+ 116 0060 FFF7FEFF 		bl	memcpy
+ 117 0064 02A9     		add	r1, sp, #8
+ 118 0066 2200     		movs	r2, r4
+ 119 0068 0800     		movs	r0, r1
+ARM GAS  /tmp/cctVHkfa.s 			page 3
+
+
+ 120 006a FFF7FEFF 		bl	aes_encrypt
+ 121 006e 1022     		movs	r2, #16
+ 122 0070 3800     		movs	r0, r7
+ 123 0072 02A9     		add	r1, sp, #8
+ 124 0074 FFF7FEFF 		bl	memcpy
+ 125 0078 009B     		ldr	r3, [sp]
+ 126 007a F618     		adds	r6, r6, r3
+ 127 007c ED1A     		subs	r5, r5, r3
+ 128              	.L8:
+ 129 007e A01C     		adds	r0, r4, #2
+ 130 0080 FF30     		adds	r0, r0, #255
+ 131 0082 102D     		cmp	r5, #16
+ 132 0084 07D8     		bhi	.L10
+ 133 0086 2A00     		movs	r2, r5
+ 134 0088 3100     		movs	r1, r6
+ 135 008a FC34     		adds	r4, r4, #252
+ 136 008c FFF7FEFF 		bl	memcpy
+ 137 0090 A561     		str	r5, [r4, #24]
+ 138              	.L3:
+ 139 0092 07B0     		add	sp, sp, #28
+ 140              		@ sp needed
+ 141 0094 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 142              	.L10:
+ 143 0096 2700     		movs	r7, r4
+ 144 0098 F137     		adds	r7, r7, #241
+ 145 009a 3B00     		movs	r3, r7
+ 146 009c 0096     		str	r6, [sp]
+ 147              	.L9:
+ 148 009e 0099     		ldr	r1, [sp]
+ 149 00a0 1A78     		ldrb	r2, [r3]
+ 150 00a2 0978     		ldrb	r1, [r1]
+ 151 00a4 4A40     		eors	r2, r1
+ 152 00a6 1A70     		strb	r2, [r3]
+ 153 00a8 009A     		ldr	r2, [sp]
+ 154 00aa 0133     		adds	r3, r3, #1
+ 155 00ac 0132     		adds	r2, r2, #1
+ 156 00ae 0092     		str	r2, [sp]
+ 157 00b0 9842     		cmp	r0, r3
+ 158 00b2 F4D1     		bne	.L9
+ 159 00b4 1022     		movs	r2, #16
+ 160 00b6 3900     		movs	r1, r7
+ 161 00b8 02A8     		add	r0, sp, #8
+ 162 00ba FFF7FEFF 		bl	memcpy
+ 163 00be 02A9     		add	r1, sp, #8
+ 164 00c0 2200     		movs	r2, r4
+ 165 00c2 0800     		movs	r0, r1
+ 166 00c4 FFF7FEFF 		bl	aes_encrypt
+ 167 00c8 1022     		movs	r2, #16
+ 168 00ca 3800     		movs	r0, r7
+ 169 00cc 02A9     		add	r1, sp, #8
+ 170 00ce FFF7FEFF 		bl	memcpy
+ 171 00d2 1036     		adds	r6, r6, #16
+ 172 00d4 103D     		subs	r5, r5, #16
+ 173 00d6 D2E7     		b	.L8
+ 175              		.section	.text.AES_CMAC_Final,"ax",%progbits
+ 176              		.align	1
+ 177              		.global	AES_CMAC_Final
+ARM GAS  /tmp/cctVHkfa.s 			page 4
+
+
+ 178              		.syntax unified
+ 179              		.code	16
+ 180              		.thumb_func
+ 182              	AES_CMAC_Final:
+ 183              		@ args = 0, pretend = 0, frame = 32
+ 184              		@ frame_needed = 0, uses_anonymous_args = 0
+ 185 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 186 0002 0C00     		movs	r4, r1
+ 187 0004 89B0     		sub	sp, sp, #36
+ 188 0006 1022     		movs	r2, #16
+ 189 0008 0021     		movs	r1, #0
+ 190 000a 0500     		movs	r5, r0
+ 191 000c 6846     		mov	r0, sp
+ 192 000e FFF7FEFF 		bl	memset
+ 193 0012 2200     		movs	r2, r4
+ 194 0014 6946     		mov	r1, sp
+ 195 0016 6846     		mov	r0, sp
+ 196 0018 FFF7FEFF 		bl	aes_encrypt
+ 197 001c 6B46     		mov	r3, sp
+ 198 001e 1A78     		ldrb	r2, [r3]
+ 199 0020 0021     		movs	r1, #0
+ 200 0022 7F2A     		cmp	r2, #127
+ 201 0024 41D9     		bls	.L20
+ 202              	.L18:
+ 203 0026 1878     		ldrb	r0, [r3]
+ 204 0028 5A78     		ldrb	r2, [r3, #1]
+ 205 002a 4000     		lsls	r0, r0, #1
+ 206 002c D209     		lsrs	r2, r2, #7
+ 207 002e 0243     		orrs	r2, r0
+ 208 0030 0131     		adds	r1, r1, #1
+ 209 0032 1A70     		strb	r2, [r3]
+ 210 0034 0133     		adds	r3, r3, #1
+ 211 0036 0F29     		cmp	r1, #15
+ 212 0038 F5D1     		bne	.L18
+ 213 003a 6B46     		mov	r3, sp
+ 214 003c DA7B     		ldrb	r2, [r3, #15]
+ 215 003e 7923     		movs	r3, #121
+ 216 0040 5200     		lsls	r2, r2, #1
+ 217 0042 5B42     		rsbs	r3, r3, #0
+ 218 0044 5340     		eors	r3, r2
+ 219              	.L42:
+ 220 0046 2100     		movs	r1, r4
+ 221 0048 6A46     		mov	r2, sp
+ 222 004a DBB2     		uxtb	r3, r3
+ 223 004c FC31     		adds	r1, r1, #252
+ 224 004e D373     		strb	r3, [r2, #15]
+ 225 0050 8A69     		ldr	r2, [r1, #24]
+ 226 0052 102A     		cmp	r2, #16
+ 227 0054 37D1     		bne	.L21
+ 228 0056 2000     		movs	r0, r4
+ 229 0058 6A46     		mov	r2, sp
+ 230 005a A31C     		adds	r3, r4, #2
+ 231 005c 1230     		adds	r0, r0, #18
+ 232 005e FF33     		adds	r3, r3, #255
+ 233 0060 FF30     		adds	r0, r0, #255
+ 234              	.L22:
+ 235 0062 1978     		ldrb	r1, [r3]
+ARM GAS  /tmp/cctVHkfa.s 			page 5
+
+
+ 236 0064 1678     		ldrb	r6, [r2]
+ 237 0066 0132     		adds	r2, r2, #1
+ 238 0068 7140     		eors	r1, r6
+ 239 006a 1970     		strb	r1, [r3]
+ 240 006c 0133     		adds	r3, r3, #1
+ 241 006e 9842     		cmp	r0, r3
+ 242 0070 F7D1     		bne	.L22
+ 243              	.L33:
+ 244 0072 2100     		movs	r1, r4
+ 245 0074 F131     		adds	r1, r1, #241
+ 246 0076 0B00     		movs	r3, r1
+ 247 0078 A01C     		adds	r0, r4, #2
+ 248 007a FF30     		adds	r0, r0, #255
+ 249              	.L23:
+ 250 007c 1A78     		ldrb	r2, [r3]
+ 251 007e 1E7C     		ldrb	r6, [r3, #16]
+ 252 0080 7240     		eors	r2, r6
+ 253 0082 1A70     		strb	r2, [r3]
+ 254 0084 0133     		adds	r3, r3, #1
+ 255 0086 9842     		cmp	r0, r3
+ 256 0088 F8D1     		bne	.L23
+ 257 008a 1022     		movs	r2, #16
+ 258 008c 04A8     		add	r0, sp, #16
+ 259 008e FFF7FEFF 		bl	memcpy
+ 260 0092 2200     		movs	r2, r4
+ 261 0094 2900     		movs	r1, r5
+ 262 0096 04A8     		add	r0, sp, #16
+ 263 0098 FFF7FEFF 		bl	aes_encrypt
+ 264 009c 1022     		movs	r2, #16
+ 265 009e 0021     		movs	r1, #0
+ 266 00a0 6846     		mov	r0, sp
+ 267 00a2 FFF7FEFF 		bl	memset
+ 268 00a6 09B0     		add	sp, sp, #36
+ 269              		@ sp needed
+ 270 00a8 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 271              	.L20:
+ 272 00aa 1878     		ldrb	r0, [r3]
+ 273 00ac 5A78     		ldrb	r2, [r3, #1]
+ 274 00ae 4000     		lsls	r0, r0, #1
+ 275 00b0 D209     		lsrs	r2, r2, #7
+ 276 00b2 0243     		orrs	r2, r0
+ 277 00b4 0131     		adds	r1, r1, #1
+ 278 00b6 1A70     		strb	r2, [r3]
+ 279 00b8 0133     		adds	r3, r3, #1
+ 280 00ba 0F29     		cmp	r1, #15
+ 281 00bc F5D1     		bne	.L20
+ 282 00be 6B46     		mov	r3, sp
+ 283 00c0 DB7B     		ldrb	r3, [r3, #15]
+ 284 00c2 5B00     		lsls	r3, r3, #1
+ 285 00c4 BFE7     		b	.L42
+ 286              	.L21:
+ 287 00c6 6B46     		mov	r3, sp
+ 288 00c8 0020     		movs	r0, #0
+ 289 00ca 0026     		movs	r6, #0
+ 290 00cc 1856     		ldrsb	r0, [r3, r0]
+ 291 00ce B042     		cmp	r0, r6
+ 292 00d0 31DA     		bge	.L27
+ARM GAS  /tmp/cctVHkfa.s 			page 6
+
+
+ 293              	.L25:
+ 294 00d2 1F78     		ldrb	r7, [r3]
+ 295 00d4 5878     		ldrb	r0, [r3, #1]
+ 296 00d6 7F00     		lsls	r7, r7, #1
+ 297 00d8 C009     		lsrs	r0, r0, #7
+ 298 00da 3843     		orrs	r0, r7
+ 299 00dc 0136     		adds	r6, r6, #1
+ 300 00de 1870     		strb	r0, [r3]
+ 301 00e0 0133     		adds	r3, r3, #1
+ 302 00e2 0F2E     		cmp	r6, #15
+ 303 00e4 F5D1     		bne	.L25
+ 304 00e6 6B46     		mov	r3, sp
+ 305 00e8 D87B     		ldrb	r0, [r3, #15]
+ 306 00ea 7923     		movs	r3, #121
+ 307 00ec 4000     		lsls	r0, r0, #1
+ 308 00ee 5B42     		rsbs	r3, r3, #0
+ 309 00f0 4340     		eors	r3, r0
+ 310              	.L43:
+ 311 00f2 6846     		mov	r0, sp
+ 312 00f4 DBB2     		uxtb	r3, r3
+ 313 00f6 C373     		strb	r3, [r0, #15]
+ 314 00f8 8020     		movs	r0, #128
+ 315 00fa A318     		adds	r3, r4, r2
+ 316 00fc FF33     		adds	r3, r3, #255
+ 317 00fe 561C     		adds	r6, r2, #1
+ 318 0100 9870     		strb	r0, [r3, #2]
+ 319 0102 0027     		movs	r7, #0
+ 320 0104 3000     		movs	r0, r6
+ 321 0106 A31C     		adds	r3, r4, #2
+ 322 0108 FF33     		adds	r3, r3, #255
+ 323              	.L28:
+ 324 010a 0F28     		cmp	r0, #15
+ 325 010c 21D9     		bls	.L29
+ 326 010e 0020     		movs	r0, #0
+ 327 0110 102E     		cmp	r6, #16
+ 328 0112 01D8     		bhi	.L31
+ 329 0114 0F30     		adds	r0, r0, #15
+ 330 0116 801A     		subs	r0, r0, r2
+ 331              	.L31:
+ 332 0118 8019     		adds	r0, r0, r6
+ 333 011a 8861     		str	r0, [r1, #24]
+ 334 011c 2000     		movs	r0, r4
+ 335 011e 6A46     		mov	r2, sp
+ 336 0120 1230     		adds	r0, r0, #18
+ 337 0122 FF30     		adds	r0, r0, #255
+ 338              	.L32:
+ 339 0124 1978     		ldrb	r1, [r3]
+ 340 0126 1678     		ldrb	r6, [r2]
+ 341 0128 0132     		adds	r2, r2, #1
+ 342 012a 7140     		eors	r1, r6
+ 343 012c 1970     		strb	r1, [r3]
+ 344 012e 0133     		adds	r3, r3, #1
+ 345 0130 9842     		cmp	r0, r3
+ 346 0132 F7D1     		bne	.L32
+ 347 0134 9DE7     		b	.L33
+ 348              	.L27:
+ 349 0136 1F78     		ldrb	r7, [r3]
+ARM GAS  /tmp/cctVHkfa.s 			page 7
+
+
+ 350 0138 5878     		ldrb	r0, [r3, #1]
+ 351 013a 7F00     		lsls	r7, r7, #1
+ 352 013c C009     		lsrs	r0, r0, #7
+ 353 013e 3843     		orrs	r0, r7
+ 354 0140 0136     		adds	r6, r6, #1
+ 355 0142 1870     		strb	r0, [r3]
+ 356 0144 0133     		adds	r3, r3, #1
+ 357 0146 0F2E     		cmp	r6, #15
+ 358 0148 F5D1     		bne	.L27
+ 359 014a 6B46     		mov	r3, sp
+ 360 014c DB7B     		ldrb	r3, [r3, #15]
+ 361 014e 5B00     		lsls	r3, r3, #1
+ 362 0150 CFE7     		b	.L43
+ 363              	.L29:
+ 364 0152 1F54     		strb	r7, [r3, r0]
+ 365 0154 0130     		adds	r0, r0, #1
+ 366 0156 D8E7     		b	.L28
+ 368              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/cctVHkfa.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 cmac.c
+     /tmp/cctVHkfa.s:14     .text.AES_CMAC_Init:00000000 $t
+     /tmp/cctVHkfa.s:20     .text.AES_CMAC_Init:00000000 AES_CMAC_Init
+     /tmp/cctVHkfa.s:40     .text.AES_CMAC_SetKey:00000000 $t
+     /tmp/cctVHkfa.s:46     .text.AES_CMAC_SetKey:00000000 AES_CMAC_SetKey
+     /tmp/cctVHkfa.s:58     .text.AES_CMAC_Update:00000000 $t
+     /tmp/cctVHkfa.s:64     .text.AES_CMAC_Update:00000000 AES_CMAC_Update
+     /tmp/cctVHkfa.s:176    .text.AES_CMAC_Final:00000000 $t
+     /tmp/cctVHkfa.s:182    .text.AES_CMAC_Final:00000000 AES_CMAC_Final
+
+UNDEFINED SYMBOLS
+memset
+aes_set_key
+memcpy
+aes_encrypt

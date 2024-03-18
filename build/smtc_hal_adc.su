@@ -1,0 +1,8 @@
+bsp_l0/smtc_hal/smtc_hal_adc.c:168:17:adc_read	24	static
+bsp_l0/smtc_hal/smtc_hal_adc.c:80:6:hal_adc_init	16	static
+bsp_l0/smtc_hal/smtc_hal_adc.c:115:10:hal_adc_get_vref_int	8	static
+bsp_l0/smtc_hal/smtc_hal_adc.c:132:8:hal_adc_get_temp	16	static
+bsp_l0/smtc_hal/smtc_hal_adc.c:144:6:hal_adc_deinit	8	static
+bsp_l0/smtc_hal/smtc_hal_adc.c:148:6:HAL_ADC_MspInit	0	static
+bsp_l0/smtc_hal/smtc_hal_adc.c:152:6:HAL_ADC_MspDeInit	0	static
+bsp_l0/smtc_hal/smtc_hal_adc.c:205:10:hal_adc_read_channel	8	static

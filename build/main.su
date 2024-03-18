@@ -1,0 +1,5 @@
+application/main.c:90:17:periodic_timer_cb	8	static
+application/main.c:350:13:get_event	312	static
+application/main.c:103:5:main	32	static
+application/main.c:244:7:GETtemperature	16	static
+application/main.c:261:7:GETvoltage	16	static

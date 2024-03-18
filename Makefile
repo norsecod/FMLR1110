@@ -1,7 +1,7 @@
 
-PROJECT=evk_example
-#RADIO ?= lr1110
-RADIO ?= sx1261
+PROJECT=test
+RADIO ?= lr1110
+#RADIO ?= sx1261
 #RADIO ?= sx128x
 
 BSP=bsp_l0
