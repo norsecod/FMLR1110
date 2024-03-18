@@ -82,7 +82,7 @@ build/main.o: application/main.c lbm/smtc_modem_api/smtc_modem_api.h \
  lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_gnss_types.h \
  lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_system_types.h \
  lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_types.h \
- bsp_l0/common/settings.h
+ bsp_l0/common/cayenne_lpp.h bsp_l0/common/settings.h
 lbm/smtc_modem_api/smtc_modem_api.h:
 lbm/smtc_modem_api/smtc_modem_utilities.h:
 lbm/smtc_modem_api/smtc_modem_api.h:
@@ -171,4 +171,5 @@ lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_gnss.h:
 lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_gnss_types.h:
 lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_system_types.h:
 lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_types.h:
+bsp_l0/common/cayenne_lpp.h:
 bsp_l0/common/settings.h:

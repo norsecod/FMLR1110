@@ -18,7 +18,7 @@
 #include "ralf_lr11xx.h"
 #include "lr11xx_gnss.h"
 
-
+#include "cayenne_lpp.h"
 #include "string.h"
 
 #include "settings.h"
@@ -83,6 +83,9 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     static void get_event( void );
     static void gps_snap( void );
     static void sensor_read( void );
+    void printCayenneLPPBuffer(const cayenne_lpp_t *lpp);
+    void sendLoRaWANPacket(const uint8_t* payload, uint8_t payloadSize);
+    void sendData(float temperature, float analogValue, bool digitalValue1, bool digitalValue2);
     float GETtemperature(const uint32_t id);
     float GETvoltage(ADC_HandleTypeDef *hadc);
 
@@ -163,9 +166,9 @@ int main( void )
     {
 
         periodic_message_flag = false;
-        //sensor_read();
+        sensor_read();
     
-       /*if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD ) 
+       if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD ) 
         {
             txdone_counter = 0;
             SMTC_HAL_TRACE_INFO( "Send link check\n" );
@@ -174,8 +177,8 @@ int main( void )
 
         if( is_joined() )
         {
-            //tx_measurement_data_keep_alive();
-        }*/ 
+            sendData(temperature, Voltage, Door, Waterlevel); 
+        }
     }
 
 
@@ -510,6 +513,37 @@ static void sensor_read( void ) {
             //gps_snap();
 #endif
 
+}
+
+void sendLoRaWANPacket(const uint8_t* payload, uint8_t payloadSize) {
+    uint8_t port = 85; // Example application port
+    bool confirmed = false; // False for unconfirmed messages, true for confirmed
+    // Use the appropriate function to send the data over LoRaWAN
+    smtc_modem_request_uplink(STACK_ID, port, confirmed, payload, payloadSize);
+}
+
+void sendData(float temperature, float analogValue, bool digitalValue1, bool digitalValue2) {
+    cayenne_lpp_t lpp;
+    cayenne_lpp_reset(&lpp);
+
+    cayenne_lpp_add_temperature(&lpp, 1, temperature);         // Channel 1 for thermostat (temperature)
+    cayenne_lpp_add_analog_input(&lpp, 2, analogValue);        // Channel 2 for analog value
+    cayenne_lpp_add_digital_input(&lpp, 3, digitalValue1);     // Channel 3 for digital value 1
+    cayenne_lpp_add_digital_input(&lpp, 4, digitalValue2);     // Channel 4 for digital value 2
+
+    // lpp.buffer contains encoded data, and lpp.cursor indicates the size of the payload.
+    //sendLoRaWANPacket(lpp.buffer, lpp.cursor);
+    printCayenneLPPBuffer(&lpp); //used only for debugging
+
+
+}
+
+void printCayenneLPPBuffer(const cayenne_lpp_t *lpp) {
+    SMTC_HAL_TRACE_PRINTF("CayenneLPP Buffer Content (Hex): ");
+    for(uint8_t i = 0; i < lpp->cursor; ++i) {
+        SMTC_HAL_TRACE_PRINTF("%02X ", lpp->buffer[i]);
+    }
+    SMTC_HAL_TRACE_PRINTF("\n");
 }
 
 

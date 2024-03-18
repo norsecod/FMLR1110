@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccSVqLmE.s 			page 1
+ARM GAS  /tmp/ccyYhnPd.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccSVqLmE.s 			page 1
   48      3A204576 
   48      656E7420 
   48      72656365 
-ARM GAS  /tmp/ccSVqLmE.s 			page 2
+ARM GAS  /tmp/ccyYhnPd.s 			page 2
 
 
   48      69766564 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccSVqLmE.s 			page 1
   66      3A0A00
   67              	.LC35:
   68 0135 0A00     		.ascii	"\012\000"
-ARM GAS  /tmp/ccSVqLmE.s 			page 3
+ARM GAS  /tmp/ccyYhnPd.s 			page 3
 
 
   69              	.LC37:
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccSVqLmE.s 			page 1
   88      656E7420 
   88      72656365 
   88      69766564 
-ARM GAS  /tmp/ccSVqLmE.s 			page 4
+ARM GAS  /tmp/ccyYhnPd.s 			page 4
 
 
   89              	.LC57:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccSVqLmE.s 			page 1
  108      776E2065 
  108      76656E74 
  109              	.LC19:
-ARM GAS  /tmp/ccSVqLmE.s 			page 5
+ARM GAS  /tmp/ccyYhnPd.s 			page 5
 
 
  110 03bb 68656C6C 		.ascii	"hello_world\000"
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccSVqLmE.s 			page 1
  163 003e 2800     		movs	r0, r5
  164 0040 FFF7FEFF 		bl	hal_trace_print_var
  165 0044 634C     		ldr	r4, .L39+8
-ARM GAS  /tmp/ccSVqLmE.s 			page 6
+ARM GAS  /tmp/ccyYhnPd.s 			page 6
 
 
  166 0046 0020     		movs	r0, #0
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccSVqLmE.s 			page 1
  220 00c0 F0BD     		pop	{r4, r5, r6, r7, pc}
  221              	.L21:
  222 00c2 4C48     		ldr	r0, .L39+40
-ARM GAS  /tmp/ccSVqLmE.s 			page 7
+ARM GAS  /tmp/ccyYhnPd.s 			page 7
 
 
  223 00c4 FFF7FEFF 		bl	hal_trace_print_var
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccSVqLmE.s 			page 1
  277 0136 3A48     		ldr	r0, .L39+84
  278 0138 9BE7     		b	.L38
  279              	.L17:
-ARM GAS  /tmp/ccSVqLmE.s 			page 8
+ARM GAS  /tmp/ccyYhnPd.s 			page 8
 
 
  280 013a 3A48     		ldr	r0, .L39+88
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccSVqLmE.s 			page 1
  334 01aa FFF7FEFF 		bl	smtc_modem_leave_network
  335 01ae 5BE7     		b	.L35
  336              	.L10:
-ARM GAS  /tmp/ccSVqLmE.s 			page 9
+ARM GAS  /tmp/ccyYhnPd.s 			page 9
 
 
  337 01b0 2848     		ldr	r0, .L39+136
@@ -538,584 +538,773 @@ ARM GAS  /tmp/ccSVqLmE.s 			page 1
  391 0258 21030000 		.word	.LC68
  392 025c 4B030000 		.word	.LC70
  393 0260 7A030000 		.word	.LC72
-ARM GAS  /tmp/ccSVqLmE.s 			page 10
+ARM GAS  /tmp/ccyYhnPd.s 			page 10
 
 
  394 0264 A1030000 		.word	.LC74
- 396              		.section	.rodata.main.str1.1,"aMS",%progbits,1
- 397              	.LC77:
- 398 0000 5F5F5F5F 		.ascii	"___________________________________________________"
- 398      5F5F5F5F 
- 398      5F5F5F5F 
- 398      5F5F5F5F 
- 398      5F5F5F5F 
- 399 0033 5F5F5F5F 		.ascii	"____________________________\012\015\000"
- 399      5F5F5F5F 
- 399      5F5F5F5F 
- 399      5F5F5F5F 
- 399      5F5F5F5F 
- 400              	.LC79:
- 401 0052 4D69726F 		.ascii	"Miromico-FMLR1110\012\012\015\000"
- 401      6D69636F 
- 401      2D464D4C 
- 401      52313131 
- 401      300A0A0D 
- 402              	.LC81:
- 403 0067 4C523131 		.ascii	"LR11XX\000"
- 403      585800
- 404              	.LC83:
- 405 006e 52616469 		.ascii	"Radio:%s\012\015\000"
- 405      6F3A2573 
- 405      0A0D00
- 406              	.LC87:
- 407 0079 494E464F 		.ascii	"INFO: Modem driver version: %d.%d.%d\012\015\000"
- 407      3A204D6F 
- 407      64656D20 
- 407      64726976 
- 407      65722076 
- 408              	.LC92:
- 409 00a0 4552524F 		.ascii	"ERROR: mcu_panic:%s\012\000"
- 409      523A206D 
- 409      63755F70 
- 409      616E6963 
- 409      3A25730A 
- 410              	.LC94:
- 411 00b5 4552524F 		.ascii	"ERROR: -> \000"
- 411      523A202D 
- 411      3E2000
- 412              	.LC98:
- 413 00c0 4C523131 		.ascii	"LR11xx Version: HW: %x, type: %x, fw: %x\012\015\000"
- 413      78782056 
- 413      65727369 
- 413      6F6E3A20 
- 413      48573A20 
- 414              		.section	.text.startup.main,"ax",%progbits
- 415              		.align	1
- 416              		.global	main
- 417              		.syntax unified
- 418              		.code	16
- 419              		.thumb_func
- 421              	main:
- 422              		@ args = 0, pretend = 0, frame = 16
- 423              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccSVqLmE.s 			page 11
+ 396              		.global	__aeabi_i2f
+ 397              		.section	.text.GETtemperature,"ax",%progbits
+ 398              		.align	1
+ 399              		.global	GETtemperature
+ 400              		.syntax unified
+ 401              		.code	16
+ 402              		.thumb_func
+ 404              	GETtemperature:
+ 405              		@ args = 0, pretend = 0, frame = 8
+ 406              		@ frame_needed = 0, uses_anonymous_args = 0
+ 407 0000 13B5     		push	{r0, r1, r4, lr}
+ 408 0002 6B46     		mov	r3, sp
+ 409 0004 DC1D     		adds	r4, r3, #7
+ 410 0006 2300     		movs	r3, r4
+ 411 0008 0022     		movs	r2, #0
+ 412 000a 9021     		movs	r1, #144
+ 413 000c FFF7FEFF 		bl	hal_i2c_read
+ 414 0010 0028     		cmp	r0, #0
+ 415 0012 04D1     		bne	.L43
+ 416 0014 0020     		movs	r0, #0
+ 417 0016 2056     		ldrsb	r0, [r4, r0]
+ 418 0018 FFF7FEFF 		bl	__aeabi_i2f
+ 419              	.L41:
+ 420              		@ sp needed
+ 421 001c 16BD     		pop	{r1, r2, r4, pc}
+ 422              	.L43:
+ 423 001e C320     		movs	r0, #195
+ 424 0020 0006     		lsls	r0, r0, #24
+ 425 0022 FBE7     		b	.L41
+ 427              		.global	__aeabi_ui2f
+ 428              		.global	__aeabi_fmul
+ 429              		.section	.text.GETvoltage,"ax",%progbits
+ 430              		.align	1
+ 431              		.global	GETvoltage
+ 432              		.syntax unified
+ 433              		.code	16
+ 434              		.thumb_func
+ 436              	GETvoltage:
+ 437              		@ args = 0, pretend = 0, frame = 0
+ 438              		@ frame_needed = 0, uses_anonymous_args = 0
+ 439 0000 70B5     		push	{r4, r5, r6, lr}
+ 440 0002 0400     		movs	r4, r0
+ 441 0004 0121     		movs	r1, #1
+ 442 0006 0320     		movs	r0, #3
+ 443 0008 FFF7FEFF 		bl	hal_gpio_set_value
+ 444 000c C820     		movs	r0, #200
+ 445 000e FFF7FEFF 		bl	hal_mcu_delay_ms
+ 446 0012 2000     		movs	r0, r4
+ 447 0014 FFF7FEFF 		bl	HAL_ADC_Start
+ 448 0018 0025     		movs	r5, #0
+ 449 001a 0028     		cmp	r0, #0
+ 450 001c 17D1     		bne	.L44
+ 451 001e 0121     		movs	r1, #1
+ 452 0020 2000     		movs	r0, r4
+ 453 0022 4942     		rsbs	r1, r1, #0
+ 454 0024 FFF7FEFF 		bl	HAL_ADC_PollForConversion
+ARM GAS  /tmp/ccyYhnPd.s 			page 11
 
 
- 424 0000 30B5     		push	{r4, r5, lr}
- 425 0002 85B0     		sub	sp, sp, #20
- 426 0004 FFF7FEFF 		bl	hal_mcu_disable_irq
- 427 0008 FFF7FEFF 		bl	hal_mcu_init
- 428 000c 7048     		ldr	r0, .L62
- 429 000e FFF7FEFF 		bl	hal_trace_print_var
- 430 0012 7048     		ldr	r0, .L62+4
- 431 0014 FFF7FEFF 		bl	hal_trace_print_var
- 432 0018 6F49     		ldr	r1, .L62+8
- 433 001a 7048     		ldr	r0, .L62+12
- 434 001c FFF7FEFF 		bl	hal_trace_print_var
- 435 0020 01AC     		add	r4, sp, #4
- 436 0022 6F49     		ldr	r1, .L62+16
- 437 0024 6F48     		ldr	r0, .L62+20
- 438 0026 FFF7FEFF 		bl	smtc_modem_init
- 439 002a 2000     		movs	r0, r4
- 440 002c FFF7FEFF 		bl	smtc_modem_get_modem_version
- 441 0030 FFF7FEFF 		bl	settings_init
- 442 0034 FFF7FEFF 		bl	settings_print
- 443 0038 A378     		ldrb	r3, [r4, #2]
- 444 003a 6278     		ldrb	r2, [r4, #1]
- 445 003c 2178     		ldrb	r1, [r4]
- 446 003e 6A48     		ldr	r0, .L62+24
- 447 0040 FFF7FEFF 		bl	hal_trace_print_var
- 448 0044 694D     		ldr	r5, .L62+28
- 449 0046 2800     		movs	r0, r5
- 450 0048 FFF7FEFF 		bl	hal_trace_print_var
- 451 004c 0822     		movs	r2, #8
- 452 004e 0021     		movs	r1, #0
- 453 0050 02A8     		add	r0, sp, #8
- 454 0052 FFF7FEFF 		bl	memset
- 455 0056 C221     		movs	r1, #194
- 456 0058 654C     		ldr	r4, .L62+32
- 457 005a 664B     		ldr	r3, .L62+36
- 458 005c FF31     		adds	r1, r1, #255
- 459 005e C022     		movs	r2, #192
- 460 0060 6162     		str	r1, [r4, #36]
- 461 0062 2100     		movs	r1, r4
- 462 0064 2360     		str	r3, [r4]
- 463 0066 0023     		movs	r3, #0
- 464 0068 1206     		lsls	r2, r2, #24
- 465 006a 2C31     		adds	r1, r1, #44
- 466 006c 6260     		str	r2, [r4, #4]
- 467 006e 0B70     		strb	r3, [r1]
- 468 0070 0122     		movs	r2, #1
- 469 0072 0421     		movs	r1, #4
- 470 0074 2000     		movs	r0, r4
- 471 0076 E363     		str	r3, [r4, #60]
- 472 0078 A360     		str	r3, [r4, #8]
- 473 007a A363     		str	r3, [r4, #56]
- 474 007c 2261     		str	r2, [r4, #16]
- 475 007e E360     		str	r3, [r4, #12]
- 476 0080 2384     		strh	r3, [r4, #32]
- 477 0082 A362     		str	r3, [r4, #40]
- 478 0084 6161     		str	r1, [r4, #20]
- 479 0086 2363     		str	r3, [r4, #48]
- 480 0088 A361     		str	r3, [r4, #24]
-ARM GAS  /tmp/ccSVqLmE.s 			page 12
+ 455 0028 0025     		movs	r5, #0
+ 456 002a 0028     		cmp	r0, #0
+ 457 002c 08D1     		bne	.L46
+ 458 002e 2000     		movs	r0, r4
+ 459 0030 FFF7FEFF 		bl	HAL_ADC_GetValue
+ 460 0034 FFF7FEFF 		bl	__aeabi_ui2f
+ 461 0038 0649     		ldr	r1, .L49
+ 462 003a FFF7FEFF 		bl	__aeabi_fmul
+ 463 003e 051C     		adds	r5, r0, #0
+ 464              	.L46:
+ 465 0040 2000     		movs	r0, r4
+ 466 0042 FFF7FEFF 		bl	HAL_ADC_Stop
+ 467 0046 0021     		movs	r1, #0
+ 468 0048 0320     		movs	r0, #3
+ 469 004a FFF7FEFF 		bl	hal_gpio_set_value
+ 470              	.L44:
+ 471              		@ sp needed
+ 472 004e 281C     		adds	r0, r5, #0
+ 473 0050 70BD     		pop	{r4, r5, r6, pc}
+ 474              	.L50:
+ 475 0052 C046     		.align	2
+ 476              	.L49:
+ 477 0054 6840533A 		.word	978534504
+ 479              		.section	.text.sendLoRaWANPacket,"ax",%progbits
+ 480              		.align	1
+ 481              		.global	sendLoRaWANPacket
+ 482              		.syntax unified
+ 483              		.code	16
+ 484              		.thumb_func
+ 486              	sendLoRaWANPacket:
+ 487              		@ args = 0, pretend = 0, frame = 0
+ 488              		@ frame_needed = 0, uses_anonymous_args = 0
+ 489 0000 07B5     		push	{r0, r1, r2, lr}
+ 490 0002 0022     		movs	r2, #0
+ 491              		@ sp needed
+ 492 0004 0300     		movs	r3, r0
+ 493 0006 0091     		str	r1, [sp]
+ 494 0008 1000     		movs	r0, r2
+ 495 000a 5521     		movs	r1, #85
+ 496 000c FFF7FEFF 		bl	smtc_modem_request_uplink
+ 497 0010 07BD     		pop	{r0, r1, r2, pc}
+ 499              		.section	.rodata.printCayenneLPPBuffer.str1.1,"aMS",%progbits,1
+ 500              	.LC77:
+ 501 0000 43617965 		.ascii	"CayenneLPP Buffer Content (Hex): \000"
+ 501      6E6E654C 
+ 501      50502042 
+ 501      75666665 
+ 501      7220436F 
+ 502              	.LC79:
+ 503 0022 25303258 		.ascii	"%02X \000"
+ 503      2000
+ 504              		.section	.text.printCayenneLPPBuffer,"ax",%progbits
+ 505              		.align	1
+ 506              		.global	printCayenneLPPBuffer
+ 507              		.syntax unified
+ 508              		.code	16
+ 509              		.thumb_func
+ARM GAS  /tmp/ccyYhnPd.s 			page 12
 
 
- 481 008a 6263     		str	r2, [r4, #52]
- 482 008c E361     		str	r3, [r4, #28]
- 483 008e FFF7FEFF 		bl	HAL_ADC_Init
- 484 0092 0028     		cmp	r0, #0
- 485 0094 0ED0     		beq	.L42
- 486 0096 5849     		ldr	r1, .L62+40
- 487 0098 5848     		ldr	r0, .L62+44
- 488 009a FFF7FEFF 		bl	hal_trace_print_var
- 489 009e 2800     		movs	r0, r5
- 490 00a0 FFF7FEFF 		bl	hal_trace_print_var
- 491 00a4 5648     		ldr	r0, .L62+48
- 492 00a6 FFF7FEFF 		bl	hal_trace_print_var
- 493 00aa 2800     		movs	r0, r5
- 494 00ac FFF7FEFF 		bl	hal_trace_print_var
- 495 00b0 FFF7FEFF 		bl	hal_mcu_reset
- 496              	.L42:
- 497 00b4 534B     		ldr	r3, .L62+52
- 498 00b6 2000     		movs	r0, r4
- 499 00b8 0293     		str	r3, [sp, #8]
- 500 00ba 8023     		movs	r3, #128
- 501 00bc 02A9     		add	r1, sp, #8
- 502 00be 5B01     		lsls	r3, r3, #5
- 503 00c0 0393     		str	r3, [sp, #12]
- 504 00c2 FFF7FEFF 		bl	HAL_ADC_ConfigChannel
- 505 00c6 0028     		cmp	r0, #0
- 506 00c8 0ED0     		beq	.L43
- 507 00ca 4B49     		ldr	r1, .L62+40
- 508 00cc 4B48     		ldr	r0, .L62+44
- 509 00ce FFF7FEFF 		bl	hal_trace_print_var
- 510 00d2 2800     		movs	r0, r5
- 511 00d4 FFF7FEFF 		bl	hal_trace_print_var
- 512 00d8 4948     		ldr	r0, .L62+48
- 513 00da FFF7FEFF 		bl	hal_trace_print_var
- 514 00de 2800     		movs	r0, r5
- 515 00e0 FFF7FEFF 		bl	hal_trace_print_var
- 516 00e4 FFF7FEFF 		bl	hal_mcu_reset
- 517              	.L43:
- 518 00e8 0021     		movs	r1, #0
- 519 00ea 2720     		movs	r0, #39
- 520 00ec FFF7FEFF 		bl	hal_gpio_init_out
- 521 00f0 0121     		movs	r1, #1
- 522 00f2 2120     		movs	r0, #33
- 523 00f4 FFF7FEFF 		bl	hal_gpio_init_out
- 524 00f8 0021     		movs	r1, #0
- 525 00fa 1020     		movs	r0, #16
- 526 00fc FFF7FEFF 		bl	hal_gpio_init_out
- 527 0100 0021     		movs	r1, #0
- 528 0102 0320     		movs	r0, #3
- 529 0104 FFF7FEFF 		bl	hal_gpio_init_out
- 530 0108 0123     		movs	r3, #1
- 531 010a 0022     		movs	r2, #0
- 532 010c 0221     		movs	r1, #2
- 533 010e 1120     		movs	r0, #17
- 534 0110 FFF7FEFF 		bl	hal_gpio_init_in
- 535 0114 0123     		movs	r3, #1
- 536 0116 0022     		movs	r2, #0
- 537 0118 0221     		movs	r1, #2
-ARM GAS  /tmp/ccSVqLmE.s 			page 13
+ 511              	printCayenneLPPBuffer:
+ 512              		@ args = 0, pretend = 0, frame = 0
+ 513              		@ frame_needed = 0, uses_anonymous_args = 0
+ 514 0000 70B5     		push	{r4, r5, r6, lr}
+ 515 0002 0500     		movs	r5, r0
+ 516 0004 0948     		ldr	r0, .L55
+ 517 0006 FFF7FEFF 		bl	hal_trace_print_var
+ 518 000a 0024     		movs	r4, #0
+ 519              	.L53:
+ 520 000c 2B00     		movs	r3, r5
+ 521 000e 2A33     		adds	r3, r3, #42
+ 522 0010 1B78     		ldrb	r3, [r3]
+ 523 0012 A342     		cmp	r3, r4
+ 524 0014 03D8     		bhi	.L54
+ 525              		@ sp needed
+ 526 0016 0648     		ldr	r0, .L55+4
+ 527 0018 FFF7FEFF 		bl	hal_trace_print_var
+ 528 001c 70BD     		pop	{r4, r5, r6, pc}
+ 529              	.L54:
+ 530 001e 295D     		ldrb	r1, [r5, r4]
+ 531 0020 0448     		ldr	r0, .L55+8
+ 532 0022 0134     		adds	r4, r4, #1
+ 533 0024 FFF7FEFF 		bl	hal_trace_print_var
+ 534 0028 E4B2     		uxtb	r4, r4
+ 535 002a EFE7     		b	.L53
+ 536              	.L56:
+ 537              		.align	2
+ 538              	.L55:
+ 539 002c 00000000 		.word	.LC77
+ 540 0030 35010000 		.word	.LC35
+ 541 0034 22000000 		.word	.LC79
+ 543              		.section	.text.sendData,"ax",%progbits
+ 544              		.align	1
+ 545              		.global	sendData
+ 546              		.syntax unified
+ 547              		.code	16
+ 548              		.thumb_func
+ 550              	sendData:
+ 551              		@ args = 0, pretend = 0, frame = 48
+ 552              		@ frame_needed = 0, uses_anonymous_args = 0
+ 553 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 554 0002 1500     		movs	r5, r2
+ 555 0004 1C00     		movs	r4, r3
+ 556 0006 8DB0     		sub	sp, sp, #52
+ 557 0008 071C     		adds	r7, r0, #0
+ 558 000a 01A8     		add	r0, sp, #4
+ 559 000c 0E1C     		adds	r6, r1, #0
+ 560 000e FFF7FEFF 		bl	cayenne_lpp_reset
+ 561 0012 3A1C     		adds	r2, r7, #0
+ 562 0014 01A8     		add	r0, sp, #4
+ 563 0016 0121     		movs	r1, #1
+ 564 0018 FFF7FEFF 		bl	cayenne_lpp_add_temperature
+ 565 001c 321C     		adds	r2, r6, #0
+ 566 001e 01A8     		add	r0, sp, #4
+ 567 0020 0221     		movs	r1, #2
+ 568 0022 FFF7FEFF 		bl	cayenne_lpp_add_analog_input
+ 569 0026 2A00     		movs	r2, r5
+ARM GAS  /tmp/ccyYhnPd.s 			page 13
 
 
- 538 011a 1220     		movs	r0, #18
- 539 011c FFF7FEFF 		bl	hal_gpio_init_in
- 540 0120 FFF7FEFF 		bl	hal_mcu_enable_irq
- 541 0124 384C     		ldr	r4, .L62+56
- 542 0126 3949     		ldr	r1, .L62+60
- 543 0128 2000     		movs	r0, r4
- 544 012a FFF7FEFF 		bl	TimerInit
- 545 012e 2000     		movs	r0, r4
- 546 0130 3749     		ldr	r1, .L62+64
- 547 0132 FFF7FEFF 		bl	TimerSetValue
- 548 0136 0021     		movs	r1, #0
- 549 0138 2000     		movs	r0, r4
- 550 013a FFF7FEFF 		bl	TimerSetContext
- 551 013e 2000     		movs	r0, r4
- 552 0140 FFF7FEFF 		bl	TimerStart
- 553 0144 02A9     		add	r1, sp, #8
- 554 0146 0020     		movs	r0, #0
- 555 0148 FFF7FEFF 		bl	lr11xx_system_get_version
- 556 014c 6B46     		mov	r3, sp
- 557 014e 6A46     		mov	r2, sp
- 558 0150 6946     		mov	r1, sp
- 559 0152 FA24     		movs	r4, #250
- 560 0154 5B89     		ldrh	r3, [r3, #10]
- 561 0156 527A     		ldrb	r2, [r2, #9]
- 562 0158 097A     		ldrb	r1, [r1, #8]
- 563 015a 2E48     		ldr	r0, .L62+68
- 564 015c FFF7FEFF 		bl	hal_trace_print_var
- 565 0160 A400     		lsls	r4, r4, #2
- 566              	.L51:
- 567 0162 FFF7FEFF 		bl	hal_rtc_get_time_ms
- 568 0166 FFF7FEFF 		bl	smtc_modem_run_engine
- 569 016a 2B4B     		ldr	r3, .L62+72
- 570 016c 1A78     		ldrb	r2, [r3]
- 571 016e 002A     		cmp	r2, #0
- 572 0170 01D0     		beq	.L44
- 573 0172 0022     		movs	r2, #0
- 574 0174 1A70     		strb	r2, [r3]
- 575              	.L44:
- 576 0176 FFF7FEFF 		bl	smtc_modem_run_engine
- 577 017a FFF7FEFF 		bl	hal_mcu_set_sleep_for_ms
- 578 017e 2720     		movs	r0, #39
- 579 0180 FFF7FEFF 		bl	hal_gpio_get_value
- 580 0184 0100     		movs	r1, r0
- 581 0186 0128     		cmp	r0, #1
- 582 0188 1CD1     		bne	.L45
- 583 018a 2120     		movs	r0, #33
- 584 018c FFF7FEFF 		bl	hal_gpio_set_value
- 585 0190 0021     		movs	r1, #0
- 586              	.L61:
- 587 0192 2720     		movs	r0, #39
- 588 0194 FFF7FEFF 		bl	hal_gpio_set_value
- 589 0198 1120     		movs	r0, #17
- 590 019a FFF7FEFF 		bl	hal_gpio_get_value
- 591 019e 0028     		cmp	r0, #0
- 592 01a0 01D0     		beq	.L47
- 593 01a2 0128     		cmp	r0, #1
- 594 01a4 01D1     		bne	.L48
-ARM GAS  /tmp/ccSVqLmE.s 			page 14
+ 570 0028 01A8     		add	r0, sp, #4
+ 571 002a 0321     		movs	r1, #3
+ 572 002c FFF7FEFF 		bl	cayenne_lpp_add_digital_input
+ 573 0030 2200     		movs	r2, r4
+ 574 0032 0421     		movs	r1, #4
+ 575 0034 01A8     		add	r0, sp, #4
+ 576 0036 FFF7FEFF 		bl	cayenne_lpp_add_digital_input
+ 577 003a 01A8     		add	r0, sp, #4
+ 578 003c FFF7FEFF 		bl	printCayenneLPPBuffer
+ 579 0040 0DB0     		add	sp, sp, #52
+ 580              		@ sp needed
+ 581 0042 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 583              		.section	.rodata.main.str1.1,"aMS",%progbits,1
+ 584              	.LC82:
+ 585 0000 5F5F5F5F 		.ascii	"___________________________________________________"
+ 585      5F5F5F5F 
+ 585      5F5F5F5F 
+ 585      5F5F5F5F 
+ 585      5F5F5F5F 
+ 586 0033 5F5F5F5F 		.ascii	"____________________________\012\015\000"
+ 586      5F5F5F5F 
+ 586      5F5F5F5F 
+ 586      5F5F5F5F 
+ 586      5F5F5F5F 
+ 587              	.LC84:
+ 588 0052 4D69726F 		.ascii	"Miromico-FMLR1110\012\012\015\000"
+ 588      6D69636F 
+ 588      2D464D4C 
+ 588      52313131 
+ 588      300A0A0D 
+ 589              	.LC86:
+ 590 0067 4C523131 		.ascii	"LR11XX\000"
+ 590      585800
+ 591              	.LC88:
+ 592 006e 52616469 		.ascii	"Radio:%s\012\015\000"
+ 592      6F3A2573 
+ 592      0A0D00
+ 593              	.LC92:
+ 594 0079 494E464F 		.ascii	"INFO: Modem driver version: %d.%d.%d\012\015\000"
+ 594      3A204D6F 
+ 594      64656D20 
+ 594      64726976 
+ 594      65722076 
+ 595              	.LC97:
+ 596 00a0 4552524F 		.ascii	"ERROR: mcu_panic:%s\012\000"
+ 596      523A206D 
+ 596      63755F70 
+ 596      616E6963 
+ 596      3A25730A 
+ 597              	.LC99:
+ 598 00b5 4552524F 		.ascii	"ERROR: -> \000"
+ 598      523A202D 
+ 598      3E2000
+ 599              	.LC103:
+ 600 00c0 4C523131 		.ascii	"LR11xx Version: HW: %x, type: %x, fw: %x\012\015\000"
+ 600      78782056 
+ 600      65727369 
+ARM GAS  /tmp/ccyYhnPd.s 			page 14
 
 
- 595              	.L47:
- 596 01a6 1D4B     		ldr	r3, .L62+76
- 597 01a8 1860     		str	r0, [r3]
- 598              	.L48:
- 599 01aa 1220     		movs	r0, #18
- 600 01ac FFF7FEFF 		bl	hal_gpio_get_value
- 601 01b0 0028     		cmp	r0, #0
- 602 01b2 01D0     		beq	.L49
- 603 01b4 0128     		cmp	r0, #1
- 604 01b6 01D1     		bne	.L50
- 605              	.L49:
- 606 01b8 194B     		ldr	r3, .L62+80
- 607 01ba 1860     		str	r0, [r3]
- 608              	.L50:
- 609 01bc 2000     		movs	r0, r4
- 610 01be FFF7FEFF 		bl	hal_mcu_delay_ms
- 611 01c2 CEE7     		b	.L51
- 612              	.L45:
- 613 01c4 0021     		movs	r1, #0
- 614 01c6 2120     		movs	r0, #33
- 615 01c8 FFF7FEFF 		bl	hal_gpio_set_value
- 616 01cc 0121     		movs	r1, #1
- 617 01ce E0E7     		b	.L61
- 618              	.L63:
- 619              		.align	2
- 620              	.L62:
- 621 01d0 00000000 		.word	.LC77
- 622 01d4 52000000 		.word	.LC79
- 623 01d8 67000000 		.word	.LC81
- 624 01dc 6E000000 		.word	.LC83
- 625 01e0 00000000 		.word	get_event
- 626 01e4 00000000 		.word	modem_radio
- 627 01e8 79000000 		.word	.LC87
- 628 01ec 1E000000 		.word	.LC6
- 629 01f0 00000000 		.word	hadc
- 630 01f4 00240140 		.word	1073816576
- 631 01f8 00000000 		.word	__func__.0
- 632 01fc A0000000 		.word	.LC92
- 633 0200 B5000000 		.word	.LC94
- 634 0204 20000014 		.word	335544352
- 635 0208 00000000 		.word	periodic_timer
- 636 020c 00000000 		.word	periodic_timer_cb
- 637 0210 204E0000 		.word	20000
- 638 0214 C0000000 		.word	.LC98
- 639 0218 00000000 		.word	periodic_message_flag
- 640 021c 00000000 		.word	Waterlevel
- 641 0220 00000000 		.word	Door
- 643              		.global	__aeabi_i2f
- 644              		.section	.text.GETtemperature,"ax",%progbits
- 645              		.align	1
- 646              		.global	GETtemperature
- 647              		.syntax unified
- 648              		.code	16
- 649              		.thumb_func
- 651              	GETtemperature:
- 652              		@ args = 0, pretend = 0, frame = 8
- 653              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccSVqLmE.s 			page 15
+ 600      6F6E3A20 
+ 600      48573A20 
+ 601              	.LC106:
+ 602 00eb 2D2D2D2D 		.ascii	"----- sensor_read -----\012\015\000"
+ 602      2D207365 
+ 602      6E736F72 
+ 602      5F726561 
+ 602      64202D2D 
+ 603              	.LC113:
+ 604 0105 494E464F 		.ascii	"INFO: Send link check\012\000"
+ 604      3A205365 
+ 604      6E64206C 
+ 604      696E6B20 
+ 604      63686563 
+ 605              		.section	.text.startup.main,"ax",%progbits
+ 606              		.align	1
+ 607              		.global	main
+ 608              		.syntax unified
+ 609              		.code	16
+ 610              		.thumb_func
+ 612              	main:
+ 613              		@ args = 0, pretend = 0, frame = 16
+ 614              		@ frame_needed = 0, uses_anonymous_args = 0
+ 615 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 616 0002 85B0     		sub	sp, sp, #20
+ 617 0004 FFF7FEFF 		bl	hal_mcu_disable_irq
+ 618 0008 FFF7FEFF 		bl	hal_mcu_init
+ 619 000c 8C48     		ldr	r0, .L84
+ 620 000e FFF7FEFF 		bl	hal_trace_print_var
+ 621 0012 8C48     		ldr	r0, .L84+4
+ 622 0014 FFF7FEFF 		bl	hal_trace_print_var
+ 623 0018 8B49     		ldr	r1, .L84+8
+ 624 001a 8C48     		ldr	r0, .L84+12
+ 625 001c FFF7FEFF 		bl	hal_trace_print_var
+ 626 0020 8B49     		ldr	r1, .L84+16
+ 627 0022 8C48     		ldr	r0, .L84+20
+ 628 0024 FFF7FEFF 		bl	smtc_modem_init
+ 629 0028 6846     		mov	r0, sp
+ 630 002a FFF7FEFF 		bl	smtc_modem_get_modem_version
+ 631 002e FFF7FEFF 		bl	settings_init
+ 632 0032 6B46     		mov	r3, sp
+ 633 0034 6A46     		mov	r2, sp
+ 634 0036 6946     		mov	r1, sp
+ 635 0038 9B78     		ldrb	r3, [r3, #2]
+ 636 003a 5278     		ldrb	r2, [r2, #1]
+ 637 003c 0978     		ldrb	r1, [r1]
+ 638 003e 8648     		ldr	r0, .L84+24
+ 639 0040 FFF7FEFF 		bl	hal_trace_print_var
+ 640 0044 854D     		ldr	r5, .L84+28
+ 641 0046 2800     		movs	r0, r5
+ 642 0048 FFF7FEFF 		bl	hal_trace_print_var
+ 643 004c 0822     		movs	r2, #8
+ 644 004e 0021     		movs	r1, #0
+ 645 0050 02A8     		add	r0, sp, #8
+ 646 0052 FFF7FEFF 		bl	memset
+ 647 0056 C221     		movs	r1, #194
+ 648 0058 814C     		ldr	r4, .L84+32
+ARM GAS  /tmp/ccyYhnPd.s 			page 15
 
 
- 654 0000 13B5     		push	{r0, r1, r4, lr}
- 655 0002 6B46     		mov	r3, sp
- 656 0004 DC1D     		adds	r4, r3, #7
- 657 0006 2300     		movs	r3, r4
- 658 0008 0022     		movs	r2, #0
- 659 000a 9021     		movs	r1, #144
- 660 000c FFF7FEFF 		bl	hal_i2c_read
- 661 0010 0028     		cmp	r0, #0
- 662 0012 04D1     		bne	.L66
- 663 0014 0020     		movs	r0, #0
- 664 0016 2056     		ldrsb	r0, [r4, r0]
- 665 0018 FFF7FEFF 		bl	__aeabi_i2f
- 666              	.L64:
- 667              		@ sp needed
- 668 001c 16BD     		pop	{r1, r2, r4, pc}
- 669              	.L66:
- 670 001e C320     		movs	r0, #195
- 671 0020 0006     		lsls	r0, r0, #24
- 672 0022 FBE7     		b	.L64
- 674              		.global	__aeabi_ui2f
- 675              		.global	__aeabi_fmul
- 676              		.section	.text.GETvoltage,"ax",%progbits
- 677              		.align	1
- 678              		.global	GETvoltage
- 679              		.syntax unified
- 680              		.code	16
- 681              		.thumb_func
- 683              	GETvoltage:
- 684              		@ args = 0, pretend = 0, frame = 0
- 685              		@ frame_needed = 0, uses_anonymous_args = 0
- 686 0000 70B5     		push	{r4, r5, r6, lr}
- 687 0002 0400     		movs	r4, r0
- 688 0004 0121     		movs	r1, #1
- 689 0006 0320     		movs	r0, #3
- 690 0008 FFF7FEFF 		bl	hal_gpio_set_value
- 691 000c C820     		movs	r0, #200
- 692 000e FFF7FEFF 		bl	hal_mcu_delay_ms
- 693 0012 2000     		movs	r0, r4
- 694 0014 FFF7FEFF 		bl	HAL_ADC_Start
- 695 0018 0025     		movs	r5, #0
- 696 001a 0028     		cmp	r0, #0
- 697 001c 17D1     		bne	.L67
- 698 001e 0121     		movs	r1, #1
- 699 0020 2000     		movs	r0, r4
- 700 0022 4942     		rsbs	r1, r1, #0
- 701 0024 FFF7FEFF 		bl	HAL_ADC_PollForConversion
- 702 0028 0025     		movs	r5, #0
- 703 002a 0028     		cmp	r0, #0
- 704 002c 08D1     		bne	.L69
- 705 002e 2000     		movs	r0, r4
- 706 0030 FFF7FEFF 		bl	HAL_ADC_GetValue
- 707 0034 FFF7FEFF 		bl	__aeabi_ui2f
- 708 0038 0649     		ldr	r1, .L72
- 709 003a FFF7FEFF 		bl	__aeabi_fmul
- 710 003e 051C     		adds	r5, r0, #0
- 711              	.L69:
- 712 0040 2000     		movs	r0, r4
-ARM GAS  /tmp/ccSVqLmE.s 			page 16
+ 649 005a 824B     		ldr	r3, .L84+36
+ 650 005c FF31     		adds	r1, r1, #255
+ 651 005e C022     		movs	r2, #192
+ 652 0060 6162     		str	r1, [r4, #36]
+ 653 0062 2100     		movs	r1, r4
+ 654 0064 2360     		str	r3, [r4]
+ 655 0066 0023     		movs	r3, #0
+ 656 0068 1206     		lsls	r2, r2, #24
+ 657 006a 2C31     		adds	r1, r1, #44
+ 658 006c 6260     		str	r2, [r4, #4]
+ 659 006e 0B70     		strb	r3, [r1]
+ 660 0070 0122     		movs	r2, #1
+ 661 0072 0421     		movs	r1, #4
+ 662 0074 2000     		movs	r0, r4
+ 663 0076 E363     		str	r3, [r4, #60]
+ 664 0078 A360     		str	r3, [r4, #8]
+ 665 007a A363     		str	r3, [r4, #56]
+ 666 007c 2261     		str	r2, [r4, #16]
+ 667 007e E360     		str	r3, [r4, #12]
+ 668 0080 2384     		strh	r3, [r4, #32]
+ 669 0082 A362     		str	r3, [r4, #40]
+ 670 0084 6161     		str	r1, [r4, #20]
+ 671 0086 2363     		str	r3, [r4, #48]
+ 672 0088 A361     		str	r3, [r4, #24]
+ 673 008a 6263     		str	r2, [r4, #52]
+ 674 008c E361     		str	r3, [r4, #28]
+ 675 008e FFF7FEFF 		bl	HAL_ADC_Init
+ 676 0092 0028     		cmp	r0, #0
+ 677 0094 0ED0     		beq	.L59
+ 678 0096 7449     		ldr	r1, .L84+40
+ 679 0098 7448     		ldr	r0, .L84+44
+ 680 009a FFF7FEFF 		bl	hal_trace_print_var
+ 681 009e 2800     		movs	r0, r5
+ 682 00a0 FFF7FEFF 		bl	hal_trace_print_var
+ 683 00a4 7248     		ldr	r0, .L84+48
+ 684 00a6 FFF7FEFF 		bl	hal_trace_print_var
+ 685 00aa 2800     		movs	r0, r5
+ 686 00ac FFF7FEFF 		bl	hal_trace_print_var
+ 687 00b0 FFF7FEFF 		bl	hal_mcu_reset
+ 688              	.L59:
+ 689 00b4 6F4B     		ldr	r3, .L84+52
+ 690 00b6 2000     		movs	r0, r4
+ 691 00b8 0293     		str	r3, [sp, #8]
+ 692 00ba 8023     		movs	r3, #128
+ 693 00bc 02A9     		add	r1, sp, #8
+ 694 00be 5B01     		lsls	r3, r3, #5
+ 695 00c0 0393     		str	r3, [sp, #12]
+ 696 00c2 FFF7FEFF 		bl	HAL_ADC_ConfigChannel
+ 697 00c6 0028     		cmp	r0, #0
+ 698 00c8 0ED0     		beq	.L60
+ 699 00ca 6749     		ldr	r1, .L84+40
+ 700 00cc 6748     		ldr	r0, .L84+44
+ 701 00ce FFF7FEFF 		bl	hal_trace_print_var
+ 702 00d2 2800     		movs	r0, r5
+ 703 00d4 FFF7FEFF 		bl	hal_trace_print_var
+ 704 00d8 6548     		ldr	r0, .L84+48
+ 705 00da FFF7FEFF 		bl	hal_trace_print_var
+ARM GAS  /tmp/ccyYhnPd.s 			page 16
 
 
- 713 0042 FFF7FEFF 		bl	HAL_ADC_Stop
- 714 0046 0021     		movs	r1, #0
- 715 0048 0320     		movs	r0, #3
- 716 004a FFF7FEFF 		bl	hal_gpio_set_value
- 717              	.L67:
- 718              		@ sp needed
- 719 004e 281C     		adds	r0, r5, #0
- 720 0050 70BD     		pop	{r4, r5, r6, pc}
- 721              	.L73:
- 722 0052 C046     		.align	2
- 723              	.L72:
- 724 0054 6840533A 		.word	978534504
- 726              		.section	.rodata.__func__.0,"a"
- 729              	__func__.0:
- 730 0000 4D585F41 		.ascii	"MX_ADC_Init\000"
- 730      44435F49 
- 730      6E697400 
- 731              		.section	.bss.periodic_timer,"aw",%nobits
- 732              		.align	2
- 735              	periodic_timer:
- 736 0000 00000000 		.space	24
- 736      00000000 
- 736      00000000 
- 736      00000000 
- 736      00000000 
- 737              		.global	link_check_attempts
- 738              		.section	.bss.link_check_attempts,"aw",%nobits
- 739              		.align	2
- 742              	link_check_attempts:
- 743 0000 00000000 		.space	4
- 744              		.global	txdone_counter
- 745              		.section	.bss.txdone_counter,"aw",%nobits
- 746              		.align	2
- 749              	txdone_counter:
- 750 0000 00000000 		.space	4
- 751              		.section	.bss.rx_payload_size,"aw",%nobits
- 754              	rx_payload_size:
- 755 0000 00       		.space	1
- 756              		.section	.bss.rx_payload,"aw",%nobits
- 757              		.align	2
- 760              	rx_payload:
- 761 0000 00000000 		.space	255
- 761      00000000 
- 761      00000000 
- 761      00000000 
- 761      00000000 
- 762              		.global	Waterlevel
- 763              		.section	.bss.Waterlevel,"aw",%nobits
- 764              		.align	2
- 767              	Waterlevel:
- 768 0000 00000000 		.space	4
- 769              		.global	Door
- 770              		.section	.bss.Door,"aw",%nobits
- 771              		.align	2
- 774              	Door:
- 775 0000 00000000 		.space	4
- 776              		.global	ADCmeas
-ARM GAS  /tmp/ccSVqLmE.s 			page 17
+ 706 00de 2800     		movs	r0, r5
+ 707 00e0 FFF7FEFF 		bl	hal_trace_print_var
+ 708 00e4 FFF7FEFF 		bl	hal_mcu_reset
+ 709              	.L60:
+ 710 00e8 0021     		movs	r1, #0
+ 711 00ea 2720     		movs	r0, #39
+ 712 00ec FFF7FEFF 		bl	hal_gpio_init_out
+ 713 00f0 0121     		movs	r1, #1
+ 714 00f2 2120     		movs	r0, #33
+ 715 00f4 FFF7FEFF 		bl	hal_gpio_init_out
+ 716 00f8 0021     		movs	r1, #0
+ 717 00fa 1020     		movs	r0, #16
+ 718 00fc FFF7FEFF 		bl	hal_gpio_init_out
+ 719 0100 0021     		movs	r1, #0
+ 720 0102 0320     		movs	r0, #3
+ 721 0104 FFF7FEFF 		bl	hal_gpio_init_out
+ 722 0108 0123     		movs	r3, #1
+ 723 010a 0022     		movs	r2, #0
+ 724 010c 0221     		movs	r1, #2
+ 725 010e 1120     		movs	r0, #17
+ 726 0110 FFF7FEFF 		bl	hal_gpio_init_in
+ 727 0114 0123     		movs	r3, #1
+ 728 0116 0022     		movs	r2, #0
+ 729 0118 0221     		movs	r1, #2
+ 730 011a 1220     		movs	r0, #18
+ 731 011c FFF7FEFF 		bl	hal_gpio_init_in
+ 732 0120 FFF7FEFF 		bl	hal_mcu_enable_irq
+ 733 0124 544E     		ldr	r6, .L84+56
+ 734 0126 5549     		ldr	r1, .L84+60
+ 735 0128 3000     		movs	r0, r6
+ 736 012a FFF7FEFF 		bl	TimerInit
+ 737 012e 3000     		movs	r0, r6
+ 738 0130 5349     		ldr	r1, .L84+64
+ 739 0132 FFF7FEFF 		bl	TimerSetValue
+ 740 0136 0021     		movs	r1, #0
+ 741 0138 3000     		movs	r0, r6
+ 742 013a FFF7FEFF 		bl	TimerSetContext
+ 743 013e 3000     		movs	r0, r6
+ 744 0140 01AE     		add	r6, sp, #4
+ 745 0142 FFF7FEFF 		bl	TimerStart
+ 746 0146 3100     		movs	r1, r6
+ 747 0148 0020     		movs	r0, #0
+ 748 014a FFF7FEFF 		bl	lr11xx_system_get_version
+ 749 014e 7388     		ldrh	r3, [r6, #2]
+ 750 0150 7278     		ldrb	r2, [r6, #1]
+ 751 0152 3178     		ldrb	r1, [r6]
+ 752 0154 4B48     		ldr	r0, .L84+68
+ 753 0156 FFF7FEFF 		bl	hal_trace_print_var
+ 754              	.L70:
+ 755 015a FFF7FEFF 		bl	hal_rtc_get_time_ms
+ 756 015e FFF7FEFF 		bl	smtc_modem_run_engine
+ 757 0162 494B     		ldr	r3, .L84+72
+ 758 0164 1A78     		ldrb	r2, [r3]
+ 759 0166 002A     		cmp	r2, #0
+ 760 0168 3BD0     		beq	.L61
+ 761 016a 0022     		movs	r2, #0
+ 762 016c 4748     		ldr	r0, .L84+76
+ARM GAS  /tmp/ccyYhnPd.s 			page 17
 
 
- 777              		.section	.bss.ADCmeas,"aw",%nobits
- 778              		.align	2
- 781              	ADCmeas:
- 782 0000 00000000 		.space	4
- 783              		.global	VDR
- 784              		.section	.data.VDR,"aw"
- 785              		.align	2
- 788              	VDR:
- 789 0000 CA269B40 		.word	1083909834
- 790              		.global	Voltage
- 791              		.section	.bss.Voltage,"aw",%nobits
- 792              		.align	2
- 795              	Voltage:
- 796 0000 00000000 		.space	4
- 797              		.global	temperature
- 798              		.section	.bss.temperature,"aw",%nobits
- 799              		.align	2
- 802              	temperature:
- 803 0000 00000000 		.space	4
- 804              		.section	.bss.periodic_message_flag,"aw",%nobits
- 807              	periodic_message_flag:
- 808 0000 00       		.space	1
- 809              		.global	hadc
- 810              		.section	.bss.hadc,"aw",%nobits
- 811              		.align	2
- 814              	hadc:
- 815 0000 00000000 		.space	92
- 815      00000000 
- 815      00000000 
- 815      00000000 
- 815      00000000 
- 816              		.global	modem_radio
- 817              		.section	.rodata.modem_radio,"a"
- 818              		.align	2
- 821              	modem_radio:
- 822 0000 00000000 		.word	0
- 823 0004 00000000 		.word	ral_lr11xx_handles_part
- 824 0008 00000000 		.word	ral_lr11xx_reset
- 825 000c 00000000 		.word	ral_lr11xx_init
- 826 0010 00000000 		.word	ral_lr11xx_wakeup
- 827 0014 00000000 		.word	ral_lr11xx_set_sleep
- 828 0018 00000000 		.word	ral_lr11xx_set_standby
- 829 001c 00000000 		.word	ral_lr11xx_set_fs
- 830 0020 00000000 		.word	ral_lr11xx_set_tx
- 831 0024 00000000 		.word	ral_lr11xx_set_rx
- 832 0028 00000000 		.word	ral_lr11xx_cfg_rx_boosted
- 833 002c 00000000 		.word	ral_lr11xx_set_rx_tx_fallback_mode
- 834 0030 00000000 		.word	ral_lr11xx_stop_timer_on_preamble
- 835 0034 00000000 		.word	ral_lr11xx_set_rx_duty_cycle
- 836 0038 00000000 		.word	ral_lr11xx_set_lora_cad
- 837 003c 00000000 		.word	ral_lr11xx_set_tx_cw
- 838 0040 00000000 		.word	ral_lr11xx_set_tx_infinite_preamble
- 839 0044 00000000 		.word	ral_lr11xx_cal_img
- 840 0048 00000000 		.word	ral_lr11xx_set_tx_cfg
- 841 004c 00000000 		.word	ral_lr11xx_set_pkt_payload
- 842 0050 00000000 		.word	ral_lr11xx_get_pkt_payload
- 843 0054 00000000 		.word	ral_lr11xx_get_irq_status
-ARM GAS  /tmp/ccSVqLmE.s 			page 18
+ 763 016e 1A70     		strb	r2, [r3]
+ 764 0170 FFF7FEFF 		bl	hal_trace_print_var
+ 765 0174 2000     		movs	r0, r4
+ 766 0176 FFF7FEFF 		bl	GETvoltage
+ 767 017a 454B     		ldr	r3, .L84+80
+ 768 017c 011C     		adds	r1, r0, #0
+ 769 017e 1860     		str	r0, [r3]
+ 770 0180 444B     		ldr	r3, .L84+84
+ 771 0182 454F     		ldr	r7, .L84+88
+ 772 0184 1868     		ldr	r0, [r3]
+ 773 0186 FFF7FEFF 		bl	__aeabi_fmul
+ 774 018a 3860     		str	r0, [r7]
+ 775 018c 0120     		movs	r0, #1
+ 776 018e FFF7FEFF 		bl	GETtemperature
+ 777 0192 424B     		ldr	r3, .L84+92
+ 778 0194 424E     		ldr	r6, .L84+96
+ 779 0196 1A68     		ldr	r2, [r3]
+ 780 0198 3060     		str	r0, [r6]
+ 781 019a 312A     		cmp	r2, #49
+ 782 019c 0AD9     		bls	.L62
+ 783 019e 0022     		movs	r2, #0
+ 784 01a0 4048     		ldr	r0, .L84+100
+ 785 01a2 1A60     		str	r2, [r3]
+ 786 01a4 FFF7FEFF 		bl	hal_trace_print_var
+ 787 01a8 2800     		movs	r0, r5
+ 788 01aa FFF7FEFF 		bl	hal_trace_print_var
+ 789 01ae 0020     		movs	r0, #0
+ 790 01b0 FFF7FEFF 		bl	smtc_modem_lorawan_request_link_check
+ 791              	.L62:
+ 792 01b4 0020     		movs	r0, #0
+ 793 01b6 02A9     		add	r1, sp, #8
+ 794 01b8 0290     		str	r0, [sp, #8]
+ 795 01ba FFF7FEFF 		bl	smtc_modem_get_status
+ 796 01be 0822     		movs	r2, #8
+ 797 01c0 029B     		ldr	r3, [sp, #8]
+ 798 01c2 1342     		tst	r3, r2
+ 799 01c4 0DD0     		beq	.L61
+ 800 01c6 384B     		ldr	r3, .L84+104
+ 801 01c8 3068     		ldr	r0, [r6]
+ 802 01ca 1B68     		ldr	r3, [r3]
+ 803 01cc 5A1E     		subs	r2, r3, #1
+ 804 01ce 9341     		sbcs	r3, r3, r2
+ 805 01d0 364A     		ldr	r2, .L84+108
+ 806 01d2 DBB2     		uxtb	r3, r3
+ 807 01d4 1268     		ldr	r2, [r2]
+ 808 01d6 511E     		subs	r1, r2, #1
+ 809 01d8 8A41     		sbcs	r2, r2, r1
+ 810 01da 3968     		ldr	r1, [r7]
+ 811 01dc D2B2     		uxtb	r2, r2
+ 812 01de FFF7FEFF 		bl	sendData
+ 813              	.L61:
+ 814 01e2 FFF7FEFF 		bl	smtc_modem_run_engine
+ 815 01e6 FFF7FEFF 		bl	hal_mcu_set_sleep_for_ms
+ 816 01ea 2720     		movs	r0, #39
+ 817 01ec FFF7FEFF 		bl	hal_gpio_get_value
+ 818 01f0 0100     		movs	r1, r0
+ 819 01f2 0128     		cmp	r0, #1
+ARM GAS  /tmp/ccyYhnPd.s 			page 18
 
 
- 844 0058 00000000 		.word	ral_lr11xx_clear_irq_status
- 845 005c 00000000 		.word	ral_lr11xx_get_and_clear_irq_status
- 846 0060 00000000 		.word	ral_lr11xx_set_dio_irq_params
- 847 0064 00000000 		.word	ral_lr11xx_set_rf_freq
- 848 0068 00000000 		.word	ral_lr11xx_set_pkt_type
- 849 006c 00000000 		.word	ral_lr11xx_get_pkt_type
- 850 0070 00000000 		.word	ral_lr11xx_set_gfsk_mod_params
- 851 0074 00000000 		.word	ral_lr11xx_set_gfsk_pkt_params
- 852 0078 00000000 		.word	ral_lr11xx_set_lora_mod_params
- 853 007c 00000000 		.word	ral_lr11xx_set_lora_pkt_params
- 854 0080 00000000 		.word	ral_lr11xx_set_lora_cad_params
- 855 0084 00000000 		.word	ral_lr11xx_set_lora_symb_nb_timeout
- 856 0088 00000000 		.word	ral_lr11xx_set_flrc_mod_params
- 857 008c 00000000 		.word	ral_lr11xx_set_flrc_pkt_params
- 858 0090 00000000 		.word	ral_lr11xx_get_gfsk_rx_pkt_status
- 859 0094 00000000 		.word	ral_lr11xx_get_lora_rx_pkt_status
- 860 0098 00000000 		.word	ral_lr11xx_get_flrc_rx_pkt_status
- 861 009c 00000000 		.word	ral_lr11xx_get_rssi_inst
- 862 00a0 00000000 		.word	ral_lr11xx_get_lora_time_on_air_in_ms
- 863 00a4 00000000 		.word	ral_lr11xx_get_gfsk_time_on_air_in_ms
- 864 00a8 00000000 		.word	ral_lr11xx_get_flrc_time_on_air_in_ms
- 865 00ac 00000000 		.word	ral_lr11xx_set_gfsk_sync_word
- 866 00b0 00000000 		.word	ral_lr11xx_set_lora_sync_word
- 867 00b4 00000000 		.word	ral_lr11xx_set_flrc_sync_word
- 868 00b8 00000000 		.word	ral_lr11xx_set_gfsk_crc_params
- 869 00bc 00000000 		.word	ral_lr11xx_set_flrc_crc_params
- 870 00c0 00000000 		.word	ral_lr11xx_set_gfsk_whitening_seed
- 871 00c4 00000000 		.word	ral_lr11xx_lr_fhss_init
- 872 00c8 00000000 		.word	ral_lr11xx_lr_fhss_build_frame
- 873 00cc 00000000 		.word	ral_lr11xx_lr_fhss_handle_hop
- 874 00d0 00000000 		.word	ral_lr11xx_lr_fhss_handle_tx_done
- 875 00d4 00000000 		.word	ral_lr11xx_lr_fhss_get_time_on_air_in_ms
- 876 00d8 00000000 		.word	ral_lr11xx_lr_fhss_get_hop_sequence_count
- 877 00dc 00000000 		.word	ral_lr11xx_get_lora_rx_pkt_cr_crc
- 878 00e0 00000000 		.word	ral_lr11xx_get_tx_consumption_in_ua
- 879 00e4 00000000 		.word	ral_lr11xx_get_gfsk_rx_consumption_in_ua
- 880 00e8 00000000 		.word	ral_lr11xx_get_lora_rx_consumption_in_ua
- 881 00ec 00000000 		.word	ral_lr11xx_get_random_numbers
- 882 00f0 00000000 		.word	ralf_lr11xx_setup_gfsk
- 883 00f4 00000000 		.word	ralf_lr11xx_setup_lora
- 884 00f8 00000000 		.word	ralf_lr11xx_setup_flrc
- 885              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccSVqLmE.s 			page 19
+ 820 01f4 1DD1     		bne	.L64
+ 821 01f6 2120     		movs	r0, #33
+ 822 01f8 FFF7FEFF 		bl	hal_gpio_set_value
+ 823 01fc 0021     		movs	r1, #0
+ 824              	.L83:
+ 825 01fe 2720     		movs	r0, #39
+ 826 0200 FFF7FEFF 		bl	hal_gpio_set_value
+ 827 0204 1120     		movs	r0, #17
+ 828 0206 FFF7FEFF 		bl	hal_gpio_get_value
+ 829 020a 0028     		cmp	r0, #0
+ 830 020c 01D0     		beq	.L66
+ 831 020e 0128     		cmp	r0, #1
+ 832 0210 01D1     		bne	.L67
+ 833              	.L66:
+ 834 0212 254B     		ldr	r3, .L84+104
+ 835 0214 1860     		str	r0, [r3]
+ 836              	.L67:
+ 837 0216 1220     		movs	r0, #18
+ 838 0218 FFF7FEFF 		bl	hal_gpio_get_value
+ 839 021c 0028     		cmp	r0, #0
+ 840 021e 01D0     		beq	.L68
+ 841 0220 0128     		cmp	r0, #1
+ 842 0222 01D1     		bne	.L69
+ 843              	.L68:
+ 844 0224 214B     		ldr	r3, .L84+108
+ 845 0226 1860     		str	r0, [r3]
+ 846              	.L69:
+ 847 0228 FA20     		movs	r0, #250
+ 848 022a 8000     		lsls	r0, r0, #2
+ 849 022c FFF7FEFF 		bl	hal_mcu_delay_ms
+ 850 0230 93E7     		b	.L70
+ 851              	.L64:
+ 852 0232 0021     		movs	r1, #0
+ 853 0234 2120     		movs	r0, #33
+ 854 0236 FFF7FEFF 		bl	hal_gpio_set_value
+ 855 023a 0121     		movs	r1, #1
+ 856 023c DFE7     		b	.L83
+ 857              	.L85:
+ 858 023e C046     		.align	2
+ 859              	.L84:
+ 860 0240 00000000 		.word	.LC82
+ 861 0244 52000000 		.word	.LC84
+ 862 0248 67000000 		.word	.LC86
+ 863 024c 6E000000 		.word	.LC88
+ 864 0250 00000000 		.word	get_event
+ 865 0254 00000000 		.word	modem_radio
+ 866 0258 79000000 		.word	.LC92
+ 867 025c 1E000000 		.word	.LC6
+ 868 0260 00000000 		.word	hadc
+ 869 0264 00240140 		.word	1073816576
+ 870 0268 00000000 		.word	__func__.0
+ 871 026c A0000000 		.word	.LC97
+ 872 0270 B5000000 		.word	.LC99
+ 873 0274 20000014 		.word	335544352
+ 874 0278 00000000 		.word	periodic_timer
+ 875 027c 00000000 		.word	periodic_timer_cb
+ 876 0280 204E0000 		.word	20000
+ARM GAS  /tmp/ccyYhnPd.s 			page 19
+
+
+ 877 0284 C0000000 		.word	.LC103
+ 878 0288 00000000 		.word	periodic_message_flag
+ 879 028c EB000000 		.word	.LC106
+ 880 0290 00000000 		.word	ADCmeas
+ 881 0294 00000000 		.word	VDR
+ 882 0298 00000000 		.word	Voltage
+ 883 029c 00000000 		.word	txdone_counter
+ 884 02a0 00000000 		.word	temperature
+ 885 02a4 05010000 		.word	.LC113
+ 886 02a8 00000000 		.word	Waterlevel
+ 887 02ac 00000000 		.word	Door
+ 889              		.section	.rodata.__func__.0,"a"
+ 892              	__func__.0:
+ 893 0000 4D585F41 		.ascii	"MX_ADC_Init\000"
+ 893      44435F49 
+ 893      6E697400 
+ 894              		.section	.bss.periodic_timer,"aw",%nobits
+ 895              		.align	2
+ 898              	periodic_timer:
+ 899 0000 00000000 		.space	24
+ 899      00000000 
+ 899      00000000 
+ 899      00000000 
+ 899      00000000 
+ 900              		.global	link_check_attempts
+ 901              		.section	.bss.link_check_attempts,"aw",%nobits
+ 902              		.align	2
+ 905              	link_check_attempts:
+ 906 0000 00000000 		.space	4
+ 907              		.global	txdone_counter
+ 908              		.section	.bss.txdone_counter,"aw",%nobits
+ 909              		.align	2
+ 912              	txdone_counter:
+ 913 0000 00000000 		.space	4
+ 914              		.section	.bss.rx_payload_size,"aw",%nobits
+ 917              	rx_payload_size:
+ 918 0000 00       		.space	1
+ 919              		.section	.bss.rx_payload,"aw",%nobits
+ 920              		.align	2
+ 923              	rx_payload:
+ 924 0000 00000000 		.space	255
+ 924      00000000 
+ 924      00000000 
+ 924      00000000 
+ 924      00000000 
+ 925              		.global	Waterlevel
+ 926              		.section	.bss.Waterlevel,"aw",%nobits
+ 927              		.align	2
+ 930              	Waterlevel:
+ 931 0000 00000000 		.space	4
+ 932              		.global	Door
+ 933              		.section	.bss.Door,"aw",%nobits
+ 934              		.align	2
+ 937              	Door:
+ 938 0000 00000000 		.space	4
+ 939              		.global	ADCmeas
+ 940              		.section	.bss.ADCmeas,"aw",%nobits
+ARM GAS  /tmp/ccyYhnPd.s 			page 20
+
+
+ 941              		.align	2
+ 944              	ADCmeas:
+ 945 0000 00000000 		.space	4
+ 946              		.global	VDR
+ 947              		.section	.data.VDR,"aw"
+ 948              		.align	2
+ 951              	VDR:
+ 952 0000 CA269B40 		.word	1083909834
+ 953              		.global	Voltage
+ 954              		.section	.bss.Voltage,"aw",%nobits
+ 955              		.align	2
+ 958              	Voltage:
+ 959 0000 00000000 		.space	4
+ 960              		.global	temperature
+ 961              		.section	.bss.temperature,"aw",%nobits
+ 962              		.align	2
+ 965              	temperature:
+ 966 0000 00000000 		.space	4
+ 967              		.section	.bss.periodic_message_flag,"aw",%nobits
+ 970              	periodic_message_flag:
+ 971 0000 00       		.space	1
+ 972              		.global	hadc
+ 973              		.section	.bss.hadc,"aw",%nobits
+ 974              		.align	2
+ 977              	hadc:
+ 978 0000 00000000 		.space	92
+ 978      00000000 
+ 978      00000000 
+ 978      00000000 
+ 978      00000000 
+ 979              		.global	modem_radio
+ 980              		.section	.rodata.modem_radio,"a"
+ 981              		.align	2
+ 984              	modem_radio:
+ 985 0000 00000000 		.word	0
+ 986 0004 00000000 		.word	ral_lr11xx_handles_part
+ 987 0008 00000000 		.word	ral_lr11xx_reset
+ 988 000c 00000000 		.word	ral_lr11xx_init
+ 989 0010 00000000 		.word	ral_lr11xx_wakeup
+ 990 0014 00000000 		.word	ral_lr11xx_set_sleep
+ 991 0018 00000000 		.word	ral_lr11xx_set_standby
+ 992 001c 00000000 		.word	ral_lr11xx_set_fs
+ 993 0020 00000000 		.word	ral_lr11xx_set_tx
+ 994 0024 00000000 		.word	ral_lr11xx_set_rx
+ 995 0028 00000000 		.word	ral_lr11xx_cfg_rx_boosted
+ 996 002c 00000000 		.word	ral_lr11xx_set_rx_tx_fallback_mode
+ 997 0030 00000000 		.word	ral_lr11xx_stop_timer_on_preamble
+ 998 0034 00000000 		.word	ral_lr11xx_set_rx_duty_cycle
+ 999 0038 00000000 		.word	ral_lr11xx_set_lora_cad
+ 1000 003c 00000000 		.word	ral_lr11xx_set_tx_cw
+ 1001 0040 00000000 		.word	ral_lr11xx_set_tx_infinite_preamble
+ 1002 0044 00000000 		.word	ral_lr11xx_cal_img
+ 1003 0048 00000000 		.word	ral_lr11xx_set_tx_cfg
+ 1004 004c 00000000 		.word	ral_lr11xx_set_pkt_payload
+ 1005 0050 00000000 		.word	ral_lr11xx_get_pkt_payload
+ 1006 0054 00000000 		.word	ral_lr11xx_get_irq_status
+ 1007 0058 00000000 		.word	ral_lr11xx_clear_irq_status
+ARM GAS  /tmp/ccyYhnPd.s 			page 21
+
+
+ 1008 005c 00000000 		.word	ral_lr11xx_get_and_clear_irq_status
+ 1009 0060 00000000 		.word	ral_lr11xx_set_dio_irq_params
+ 1010 0064 00000000 		.word	ral_lr11xx_set_rf_freq
+ 1011 0068 00000000 		.word	ral_lr11xx_set_pkt_type
+ 1012 006c 00000000 		.word	ral_lr11xx_get_pkt_type
+ 1013 0070 00000000 		.word	ral_lr11xx_set_gfsk_mod_params
+ 1014 0074 00000000 		.word	ral_lr11xx_set_gfsk_pkt_params
+ 1015 0078 00000000 		.word	ral_lr11xx_set_lora_mod_params
+ 1016 007c 00000000 		.word	ral_lr11xx_set_lora_pkt_params
+ 1017 0080 00000000 		.word	ral_lr11xx_set_lora_cad_params
+ 1018 0084 00000000 		.word	ral_lr11xx_set_lora_symb_nb_timeout
+ 1019 0088 00000000 		.word	ral_lr11xx_set_flrc_mod_params
+ 1020 008c 00000000 		.word	ral_lr11xx_set_flrc_pkt_params
+ 1021 0090 00000000 		.word	ral_lr11xx_get_gfsk_rx_pkt_status
+ 1022 0094 00000000 		.word	ral_lr11xx_get_lora_rx_pkt_status
+ 1023 0098 00000000 		.word	ral_lr11xx_get_flrc_rx_pkt_status
+ 1024 009c 00000000 		.word	ral_lr11xx_get_rssi_inst
+ 1025 00a0 00000000 		.word	ral_lr11xx_get_lora_time_on_air_in_ms
+ 1026 00a4 00000000 		.word	ral_lr11xx_get_gfsk_time_on_air_in_ms
+ 1027 00a8 00000000 		.word	ral_lr11xx_get_flrc_time_on_air_in_ms
+ 1028 00ac 00000000 		.word	ral_lr11xx_set_gfsk_sync_word
+ 1029 00b0 00000000 		.word	ral_lr11xx_set_lora_sync_word
+ 1030 00b4 00000000 		.word	ral_lr11xx_set_flrc_sync_word
+ 1031 00b8 00000000 		.word	ral_lr11xx_set_gfsk_crc_params
+ 1032 00bc 00000000 		.word	ral_lr11xx_set_flrc_crc_params
+ 1033 00c0 00000000 		.word	ral_lr11xx_set_gfsk_whitening_seed
+ 1034 00c4 00000000 		.word	ral_lr11xx_lr_fhss_init
+ 1035 00c8 00000000 		.word	ral_lr11xx_lr_fhss_build_frame
+ 1036 00cc 00000000 		.word	ral_lr11xx_lr_fhss_handle_hop
+ 1037 00d0 00000000 		.word	ral_lr11xx_lr_fhss_handle_tx_done
+ 1038 00d4 00000000 		.word	ral_lr11xx_lr_fhss_get_time_on_air_in_ms
+ 1039 00d8 00000000 		.word	ral_lr11xx_lr_fhss_get_hop_sequence_count
+ 1040 00dc 00000000 		.word	ral_lr11xx_get_lora_rx_pkt_cr_crc
+ 1041 00e0 00000000 		.word	ral_lr11xx_get_tx_consumption_in_ua
+ 1042 00e4 00000000 		.word	ral_lr11xx_get_gfsk_rx_consumption_in_ua
+ 1043 00e8 00000000 		.word	ral_lr11xx_get_lora_rx_consumption_in_ua
+ 1044 00ec 00000000 		.word	ral_lr11xx_get_random_numbers
+ 1045 00f0 00000000 		.word	ralf_lr11xx_setup_gfsk
+ 1046 00f4 00000000 		.word	ralf_lr11xx_setup_lora
+ 1047 00f8 00000000 		.word	ralf_lr11xx_setup_flrc
+ 1048              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccyYhnPd.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-     /tmp/ccSVqLmE.s:17     .text.periodic_timer_cb:00000000 $t
-     /tmp/ccSVqLmE.s:22     .text.periodic_timer_cb:00000000 periodic_timer_cb
-     /tmp/ccSVqLmE.s:38     .text.periodic_timer_cb:00000018 $d
-     /tmp/ccSVqLmE.s:807    .bss.periodic_message_flag:00000000 periodic_message_flag
-     /tmp/ccSVqLmE.s:735    .bss.periodic_timer:00000000 periodic_timer
-     /tmp/ccSVqLmE.s:112    .text.get_event:00000000 $t
-     /tmp/ccSVqLmE.s:117    .text.get_event:00000000 get_event
-     /tmp/ccSVqLmE.s:138    .text.get_event:00000022 $d
-     /tmp/ccSVqLmE.s:356    .text.get_event:000001cc $d
-     /tmp/ccSVqLmE.s:760    .bss.rx_payload:00000000 rx_payload
-     /tmp/ccSVqLmE.s:754    .bss.rx_payload_size:00000000 rx_payload_size
-     /tmp/ccSVqLmE.s:742    .bss.link_check_attempts:00000000 link_check_attempts
-     /tmp/ccSVqLmE.s:415    .text.startup.main:00000000 $t
-     /tmp/ccSVqLmE.s:421    .text.startup.main:00000000 main
-     /tmp/ccSVqLmE.s:621    .text.startup.main:000001d0 $d
-     /tmp/ccSVqLmE.s:821    .rodata.modem_radio:00000000 modem_radio
-     /tmp/ccSVqLmE.s:814    .bss.hadc:00000000 hadc
-     /tmp/ccSVqLmE.s:729    .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccSVqLmE.s:767    .bss.Waterlevel:00000000 Waterlevel
-     /tmp/ccSVqLmE.s:774    .bss.Door:00000000 Door
-     /tmp/ccSVqLmE.s:645    .text.GETtemperature:00000000 $t
-     /tmp/ccSVqLmE.s:651    .text.GETtemperature:00000000 GETtemperature
-     /tmp/ccSVqLmE.s:677    .text.GETvoltage:00000000 $t
-     /tmp/ccSVqLmE.s:683    .text.GETvoltage:00000000 GETvoltage
-     /tmp/ccSVqLmE.s:724    .text.GETvoltage:00000054 $d
-     /tmp/ccSVqLmE.s:732    .bss.periodic_timer:00000000 $d
-     /tmp/ccSVqLmE.s:739    .bss.link_check_attempts:00000000 $d
-     /tmp/ccSVqLmE.s:749    .bss.txdone_counter:00000000 txdone_counter
-     /tmp/ccSVqLmE.s:746    .bss.txdone_counter:00000000 $d
-     /tmp/ccSVqLmE.s:755    .bss.rx_payload_size:00000000 $d
-     /tmp/ccSVqLmE.s:757    .bss.rx_payload:00000000 $d
-     /tmp/ccSVqLmE.s:764    .bss.Waterlevel:00000000 $d
-     /tmp/ccSVqLmE.s:771    .bss.Door:00000000 $d
-     /tmp/ccSVqLmE.s:781    .bss.ADCmeas:00000000 ADCmeas
-     /tmp/ccSVqLmE.s:778    .bss.ADCmeas:00000000 $d
-     /tmp/ccSVqLmE.s:788    .data.VDR:00000000 VDR
-     /tmp/ccSVqLmE.s:785    .data.VDR:00000000 $d
-     /tmp/ccSVqLmE.s:795    .bss.Voltage:00000000 Voltage
-     /tmp/ccSVqLmE.s:792    .bss.Voltage:00000000 $d
-     /tmp/ccSVqLmE.s:802    .bss.temperature:00000000 temperature
-     /tmp/ccSVqLmE.s:799    .bss.temperature:00000000 $d
-     /tmp/ccSVqLmE.s:808    .bss.periodic_message_flag:00000000 $d
-     /tmp/ccSVqLmE.s:811    .bss.hadc:00000000 $d
-     /tmp/ccSVqLmE.s:818    .rodata.modem_radio:00000000 $d
-     /tmp/ccSVqLmE.s:159    .text.get_event:00000037 $d
-     /tmp/ccSVqLmE.s:159    .text.get_event:00000038 $t
+     /tmp/ccyYhnPd.s:17     .text.periodic_timer_cb:00000000 $t
+     /tmp/ccyYhnPd.s:22     .text.periodic_timer_cb:00000000 periodic_timer_cb
+     /tmp/ccyYhnPd.s:38     .text.periodic_timer_cb:00000018 $d
+     /tmp/ccyYhnPd.s:970    .bss.periodic_message_flag:00000000 periodic_message_flag
+     /tmp/ccyYhnPd.s:898    .bss.periodic_timer:00000000 periodic_timer
+     /tmp/ccyYhnPd.s:112    .text.get_event:00000000 $t
+     /tmp/ccyYhnPd.s:117    .text.get_event:00000000 get_event
+     /tmp/ccyYhnPd.s:138    .text.get_event:00000022 $d
+     /tmp/ccyYhnPd.s:356    .text.get_event:000001cc $d
+     /tmp/ccyYhnPd.s:923    .bss.rx_payload:00000000 rx_payload
+     /tmp/ccyYhnPd.s:917    .bss.rx_payload_size:00000000 rx_payload_size
+     /tmp/ccyYhnPd.s:905    .bss.link_check_attempts:00000000 link_check_attempts
+     /tmp/ccyYhnPd.s:398    .text.GETtemperature:00000000 $t
+     /tmp/ccyYhnPd.s:404    .text.GETtemperature:00000000 GETtemperature
+     /tmp/ccyYhnPd.s:430    .text.GETvoltage:00000000 $t
+     /tmp/ccyYhnPd.s:436    .text.GETvoltage:00000000 GETvoltage
+     /tmp/ccyYhnPd.s:477    .text.GETvoltage:00000054 $d
+     /tmp/ccyYhnPd.s:480    .text.sendLoRaWANPacket:00000000 $t
+     /tmp/ccyYhnPd.s:486    .text.sendLoRaWANPacket:00000000 sendLoRaWANPacket
+     /tmp/ccyYhnPd.s:505    .text.printCayenneLPPBuffer:00000000 $t
+     /tmp/ccyYhnPd.s:511    .text.printCayenneLPPBuffer:00000000 printCayenneLPPBuffer
+     /tmp/ccyYhnPd.s:539    .text.printCayenneLPPBuffer:0000002c $d
+     /tmp/ccyYhnPd.s:544    .text.sendData:00000000 $t
+     /tmp/ccyYhnPd.s:550    .text.sendData:00000000 sendData
+     /tmp/ccyYhnPd.s:606    .text.startup.main:00000000 $t
+     /tmp/ccyYhnPd.s:612    .text.startup.main:00000000 main
+     /tmp/ccyYhnPd.s:860    .text.startup.main:00000240 $d
+     /tmp/ccyYhnPd.s:984    .rodata.modem_radio:00000000 modem_radio
+     /tmp/ccyYhnPd.s:977    .bss.hadc:00000000 hadc
+     /tmp/ccyYhnPd.s:892    .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccyYhnPd.s:944    .bss.ADCmeas:00000000 ADCmeas
+     /tmp/ccyYhnPd.s:951    .data.VDR:00000000 VDR
+     /tmp/ccyYhnPd.s:958    .bss.Voltage:00000000 Voltage
+     /tmp/ccyYhnPd.s:912    .bss.txdone_counter:00000000 txdone_counter
+     /tmp/ccyYhnPd.s:965    .bss.temperature:00000000 temperature
+     /tmp/ccyYhnPd.s:930    .bss.Waterlevel:00000000 Waterlevel
+     /tmp/ccyYhnPd.s:937    .bss.Door:00000000 Door
+     /tmp/ccyYhnPd.s:895    .bss.periodic_timer:00000000 $d
+     /tmp/ccyYhnPd.s:902    .bss.link_check_attempts:00000000 $d
+     /tmp/ccyYhnPd.s:909    .bss.txdone_counter:00000000 $d
+     /tmp/ccyYhnPd.s:918    .bss.rx_payload_size:00000000 $d
+     /tmp/ccyYhnPd.s:920    .bss.rx_payload:00000000 $d
+     /tmp/ccyYhnPd.s:927    .bss.Waterlevel:00000000 $d
+     /tmp/ccyYhnPd.s:934    .bss.Door:00000000 $d
+     /tmp/ccyYhnPd.s:941    .bss.ADCmeas:00000000 $d
+     /tmp/ccyYhnPd.s:948    .data.VDR:00000000 $d
+     /tmp/ccyYhnPd.s:955    .bss.Voltage:00000000 $d
+     /tmp/ccyYhnPd.s:962    .bss.temperature:00000000 $d
+     /tmp/ccyYhnPd.s:971    .bss.periodic_message_flag:00000000 $d
+     /tmp/ccyYhnPd.s:974    .bss.hadc:00000000 $d
+     /tmp/ccyYhnPd.s:981    .rodata.modem_radio:00000000 $d
+     /tmp/ccyYhnPd.s:159    .text.get_event:00000037 $d
+     /tmp/ccyYhnPd.s:159    .text.get_event:00000038 $t
 
 UNDEFINED SYMBOLS
+ARM GAS  /tmp/ccyYhnPd.s 			page 23
+
+
 hal_trace_print_var
 TimerStart
 smtc_modem_get_event
@@ -1123,21 +1312,31 @@ __gnu_thumb1_case_uqi
 smtc_modem_set_deveui
 smtc_modem_set_joineui
 smtc_modem_set_nwkkey
-ARM GAS  /tmp/ccSVqLmE.s 			page 20
-
-
 smtc_modem_set_region
 smtc_modem_join_network
 memcpy
 smtc_modem_request_uplink
 smtc_modem_leave_network
 settings
+__aeabi_i2f
+hal_i2c_read
+__aeabi_ui2f
+__aeabi_fmul
+hal_gpio_set_value
+hal_mcu_delay_ms
+HAL_ADC_Start
+HAL_ADC_PollForConversion
+HAL_ADC_GetValue
+HAL_ADC_Stop
+cayenne_lpp_reset
+cayenne_lpp_add_temperature
+cayenne_lpp_add_analog_input
+cayenne_lpp_add_digital_input
 hal_mcu_disable_irq
 hal_mcu_init
 smtc_modem_init
 smtc_modem_get_modem_version
 settings_init
-settings_print
 memset
 HAL_ADC_Init
 hal_mcu_reset
@@ -1151,18 +1350,10 @@ TimerSetContext
 lr11xx_system_get_version
 hal_rtc_get_time_ms
 smtc_modem_run_engine
+smtc_modem_lorawan_request_link_check
+smtc_modem_get_status
 hal_mcu_set_sleep_for_ms
 hal_gpio_get_value
-hal_gpio_set_value
-hal_mcu_delay_ms
-__aeabi_i2f
-hal_i2c_read
-__aeabi_ui2f
-__aeabi_fmul
-HAL_ADC_Start
-HAL_ADC_PollForConversion
-HAL_ADC_GetValue
-HAL_ADC_Stop
 ral_lr11xx_handles_part
 ral_lr11xx_reset
 ral_lr11xx_init
@@ -1171,6 +1362,9 @@ ral_lr11xx_set_sleep
 ral_lr11xx_set_standby
 ral_lr11xx_set_fs
 ral_lr11xx_set_tx
+ARM GAS  /tmp/ccyYhnPd.s 			page 24
+
+
 ral_lr11xx_set_rx
 ral_lr11xx_cfg_rx_boosted
 ral_lr11xx_set_rx_tx_fallback_mode
@@ -1183,9 +1377,6 @@ ral_lr11xx_cal_img
 ral_lr11xx_set_tx_cfg
 ral_lr11xx_set_pkt_payload
 ral_lr11xx_get_pkt_payload
-ARM GAS  /tmp/ccSVqLmE.s 			page 21
-
-
 ral_lr11xx_get_irq_status
 ral_lr11xx_clear_irq_status
 ral_lr11xx_get_and_clear_irq_status
