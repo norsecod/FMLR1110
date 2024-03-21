@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cccyLNUC.s 			page 1
+ARM GAS  /tmp/ccuLhBzL.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
   56 0040 194C     		ldr	r4, .L31+4
   57 0042 0343     		orrs	r3, r0
   58 0044 6569     		ldr	r5, [r4, #20]
-ARM GAS  /tmp/cccyLNUC.s 			page 2
+ARM GAS  /tmp/ccuLhBzL.s 			page 2
 
 
   59 0046 2943     		orrs	r1, r5
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
  113              	.L31:
  114 00a4 00200240 		.word	1073881088
  115 00a8 00000000 		.word	pFlash
-ARM GAS  /tmp/cccyLNUC.s 			page 3
+ARM GAS  /tmp/ccuLhBzL.s 			page 3
 
 
  117              		.section	.text.HAL_FLASH_Program_IT,"ax",%progbits
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
  174              		@ sp needed
  175 0000 7047     		bx	lr
  177              		.section	.text.HAL_FLASH_OperationErrorCallback,"ax",%progbits
-ARM GAS  /tmp/cccyLNUC.s 			page 4
+ARM GAS  /tmp/ccuLhBzL.s 			page 4
 
 
  178              		.align	1
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
  235 0042 FFF7FEFF 		bl	HAL_FLASH_OperationErrorCallback
  236 0046 0023     		movs	r3, #0
  237 0048 2370     		strb	r3, [r4]
-ARM GAS  /tmp/cccyLNUC.s 			page 5
+ARM GAS  /tmp/ccuLhBzL.s 			page 5
 
 
  238              	.L44:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
  292 00b0 E8E7     		b	.L48
  293              	.L50:
  294 00b2 0822     		movs	r2, #8
-ARM GAS  /tmp/cccyLNUC.s 			page 6
+ARM GAS  /tmp/ccuLhBzL.s 			page 6
 
 
  295 00b4 6B68     		ldr	r3, [r5, #4]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
  351 001e 0D48     		ldr	r0, .L74+4
  352 0020 D860     		str	r0, [r3, #12]
  353 0022 0D48     		ldr	r0, .L74+8
-ARM GAS  /tmp/cccyLNUC.s 			page 7
+ARM GAS  /tmp/ccuLhBzL.s 			page 7
 
 
  354 0024 D860     		str	r0, [r3, #12]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
  410 0000 0222     		movs	r2, #2
  411              		@ sp needed
  412 0002 054B     		ldr	r3, .L77
-ARM GAS  /tmp/cccyLNUC.s 			page 8
+ARM GAS  /tmp/ccuLhBzL.s 			page 8
 
 
  413 0004 0020     		movs	r0, #0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
  469              		.syntax unified
  470 002a 0020     		movs	r0, #0
  471              	.L80:
-ARM GAS  /tmp/cccyLNUC.s 			page 9
+ARM GAS  /tmp/ccuLhBzL.s 			page 9
 
 
  472              		@ sp needed
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
  531              		.code	16
  532              		.thumb_func
  534              	FLASH_WaitForLastOperation:
-ARM GAS  /tmp/cccyLNUC.s 			page 10
+ARM GAS  /tmp/ccuLhBzL.s 			page 10
 
 
  535              		@ args = 0, pretend = 0, frame = 0
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
  589 0060 0320     		movs	r0, #3
  590              	.L100:
  591              		@ sp needed
-ARM GAS  /tmp/cccyLNUC.s 			page 11
+ARM GAS  /tmp/ccuLhBzL.s 			page 11
 
 
  592 0062 70BD     		pop	{r4, r5, r6, pc}
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
  649              		.thumb_func
  651              	HAL_FLASH_OB_Launch:
  652              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/cccyLNUC.s 			page 12
+ARM GAS  /tmp/ccuLhBzL.s 			page 12
 
 
  653              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -688,50 +688,50 @@ ARM GAS  /tmp/cccyLNUC.s 			page 1
  677      00000000 
  677      00000000 
  678              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cccyLNUC.s 			page 13
+ARM GAS  /tmp/ccuLhBzL.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32l0xx_hal_flash.c
-     /tmp/cccyLNUC.s:14     .text.FLASH_SetErrorCode:00000000 $t
-     /tmp/cccyLNUC.s:19     .text.FLASH_SetErrorCode:00000000 FLASH_SetErrorCode
-     /tmp/cccyLNUC.s:114    .text.FLASH_SetErrorCode:000000a4 $d
-     /tmp/cccyLNUC.s:676    .bss.pFlash:00000000 pFlash
-     /tmp/cccyLNUC.s:118    .text.HAL_FLASH_Program_IT:00000000 $t
-     /tmp/cccyLNUC.s:124    .text.HAL_FLASH_Program_IT:00000000 HAL_FLASH_Program_IT
-     /tmp/cccyLNUC.s:160    .text.HAL_FLASH_Program_IT:00000034 $d
-     /tmp/cccyLNUC.s:164    .text.HAL_FLASH_EndOfOperationCallback:00000000 $t
-     /tmp/cccyLNUC.s:170    .text.HAL_FLASH_EndOfOperationCallback:00000000 HAL_FLASH_EndOfOperationCallback
-     /tmp/cccyLNUC.s:178    .text.HAL_FLASH_OperationErrorCallback:00000000 $t
-     /tmp/cccyLNUC.s:184    .text.HAL_FLASH_OperationErrorCallback:00000000 HAL_FLASH_OperationErrorCallback
-     /tmp/cccyLNUC.s:192    .text.HAL_FLASH_IRQHandler:00000000 $t
-     /tmp/cccyLNUC.s:198    .text.HAL_FLASH_IRQHandler:00000000 HAL_FLASH_IRQHandler
-     /tmp/cccyLNUC.s:309    .text.HAL_FLASH_IRQHandler:000000cc $d
-     /tmp/cccyLNUC.s:316    .text.HAL_FLASH_Unlock:00000000 $t
-     /tmp/cccyLNUC.s:322    .text.HAL_FLASH_Unlock:00000000 HAL_FLASH_Unlock
-     /tmp/cccyLNUC.s:393    .text.HAL_FLASH_Unlock:00000050 $d
-     /tmp/cccyLNUC.s:400    .text.HAL_FLASH_Lock:00000000 $t
-     /tmp/cccyLNUC.s:406    .text.HAL_FLASH_Lock:00000000 HAL_FLASH_Lock
-     /tmp/cccyLNUC.s:425    .text.HAL_FLASH_Lock:00000018 $d
-     /tmp/cccyLNUC.s:428    .text.HAL_FLASH_OB_Unlock:00000000 $t
-     /tmp/cccyLNUC.s:434    .text.HAL_FLASH_OB_Unlock:00000000 HAL_FLASH_OB_Unlock
-     /tmp/cccyLNUC.s:477    .text.HAL_FLASH_OB_Unlock:00000030 $d
-     /tmp/cccyLNUC.s:484    .text.HAL_FLASH_OB_Lock:00000000 $t
-     /tmp/cccyLNUC.s:490    .text.HAL_FLASH_OB_Lock:00000000 HAL_FLASH_OB_Lock
-     /tmp/cccyLNUC.s:505    .text.HAL_FLASH_OB_Lock:00000010 $d
-     /tmp/cccyLNUC.s:508    .text.HAL_FLASH_GetError:00000000 $t
-     /tmp/cccyLNUC.s:514    .text.HAL_FLASH_GetError:00000000 HAL_FLASH_GetError
-     /tmp/cccyLNUC.s:525    .text.HAL_FLASH_GetError:00000008 $d
-     /tmp/cccyLNUC.s:528    .text.FLASH_WaitForLastOperation:00000000 $t
-     /tmp/cccyLNUC.s:534    .text.FLASH_WaitForLastOperation:00000000 FLASH_WaitForLastOperation
-     /tmp/cccyLNUC.s:602    .text.FLASH_WaitForLastOperation:00000070 $d
-     /tmp/cccyLNUC.s:605    .text.HAL_FLASH_Program:00000000 $t
-     /tmp/cccyLNUC.s:611    .text.HAL_FLASH_Program:00000000 HAL_FLASH_Program
-     /tmp/cccyLNUC.s:641    .text.HAL_FLASH_Program:00000030 $d
-     /tmp/cccyLNUC.s:645    .text.HAL_FLASH_OB_Launch:00000000 $t
-     /tmp/cccyLNUC.s:651    .text.HAL_FLASH_OB_Launch:00000000 HAL_FLASH_OB_Launch
-     /tmp/cccyLNUC.s:668    .text.HAL_FLASH_OB_Launch:00000018 $d
-     /tmp/cccyLNUC.s:673    .bss.pFlash:00000000 $d
+     /tmp/ccuLhBzL.s:14     .text.FLASH_SetErrorCode:00000000 $t
+     /tmp/ccuLhBzL.s:19     .text.FLASH_SetErrorCode:00000000 FLASH_SetErrorCode
+     /tmp/ccuLhBzL.s:114    .text.FLASH_SetErrorCode:000000a4 $d
+     /tmp/ccuLhBzL.s:676    .bss.pFlash:00000000 pFlash
+     /tmp/ccuLhBzL.s:118    .text.HAL_FLASH_Program_IT:00000000 $t
+     /tmp/ccuLhBzL.s:124    .text.HAL_FLASH_Program_IT:00000000 HAL_FLASH_Program_IT
+     /tmp/ccuLhBzL.s:160    .text.HAL_FLASH_Program_IT:00000034 $d
+     /tmp/ccuLhBzL.s:164    .text.HAL_FLASH_EndOfOperationCallback:00000000 $t
+     /tmp/ccuLhBzL.s:170    .text.HAL_FLASH_EndOfOperationCallback:00000000 HAL_FLASH_EndOfOperationCallback
+     /tmp/ccuLhBzL.s:178    .text.HAL_FLASH_OperationErrorCallback:00000000 $t
+     /tmp/ccuLhBzL.s:184    .text.HAL_FLASH_OperationErrorCallback:00000000 HAL_FLASH_OperationErrorCallback
+     /tmp/ccuLhBzL.s:192    .text.HAL_FLASH_IRQHandler:00000000 $t
+     /tmp/ccuLhBzL.s:198    .text.HAL_FLASH_IRQHandler:00000000 HAL_FLASH_IRQHandler
+     /tmp/ccuLhBzL.s:309    .text.HAL_FLASH_IRQHandler:000000cc $d
+     /tmp/ccuLhBzL.s:316    .text.HAL_FLASH_Unlock:00000000 $t
+     /tmp/ccuLhBzL.s:322    .text.HAL_FLASH_Unlock:00000000 HAL_FLASH_Unlock
+     /tmp/ccuLhBzL.s:393    .text.HAL_FLASH_Unlock:00000050 $d
+     /tmp/ccuLhBzL.s:400    .text.HAL_FLASH_Lock:00000000 $t
+     /tmp/ccuLhBzL.s:406    .text.HAL_FLASH_Lock:00000000 HAL_FLASH_Lock
+     /tmp/ccuLhBzL.s:425    .text.HAL_FLASH_Lock:00000018 $d
+     /tmp/ccuLhBzL.s:428    .text.HAL_FLASH_OB_Unlock:00000000 $t
+     /tmp/ccuLhBzL.s:434    .text.HAL_FLASH_OB_Unlock:00000000 HAL_FLASH_OB_Unlock
+     /tmp/ccuLhBzL.s:477    .text.HAL_FLASH_OB_Unlock:00000030 $d
+     /tmp/ccuLhBzL.s:484    .text.HAL_FLASH_OB_Lock:00000000 $t
+     /tmp/ccuLhBzL.s:490    .text.HAL_FLASH_OB_Lock:00000000 HAL_FLASH_OB_Lock
+     /tmp/ccuLhBzL.s:505    .text.HAL_FLASH_OB_Lock:00000010 $d
+     /tmp/ccuLhBzL.s:508    .text.HAL_FLASH_GetError:00000000 $t
+     /tmp/ccuLhBzL.s:514    .text.HAL_FLASH_GetError:00000000 HAL_FLASH_GetError
+     /tmp/ccuLhBzL.s:525    .text.HAL_FLASH_GetError:00000008 $d
+     /tmp/ccuLhBzL.s:528    .text.FLASH_WaitForLastOperation:00000000 $t
+     /tmp/ccuLhBzL.s:534    .text.FLASH_WaitForLastOperation:00000000 FLASH_WaitForLastOperation
+     /tmp/ccuLhBzL.s:602    .text.FLASH_WaitForLastOperation:00000070 $d
+     /tmp/ccuLhBzL.s:605    .text.HAL_FLASH_Program:00000000 $t
+     /tmp/ccuLhBzL.s:611    .text.HAL_FLASH_Program:00000000 HAL_FLASH_Program
+     /tmp/ccuLhBzL.s:641    .text.HAL_FLASH_Program:00000030 $d
+     /tmp/ccuLhBzL.s:645    .text.HAL_FLASH_OB_Launch:00000000 $t
+     /tmp/ccuLhBzL.s:651    .text.HAL_FLASH_OB_Launch:00000000 HAL_FLASH_OB_Launch
+     /tmp/ccuLhBzL.s:668    .text.HAL_FLASH_OB_Launch:00000018 $d
+     /tmp/ccuLhBzL.s:673    .bss.pFlash:00000000 $d
 
 UNDEFINED SYMBOLS
 FLASH_PageErase

@@ -30,6 +30,7 @@
 #define DEFAULT_DL_PORT         100
 
 #define PERIODIC_TIMER_PERIOD 20000
+#define PERIODIC_TIMER_PERIOD_1 300000
 
 #define LINK_CHECK_RATIO_THRESHOLD 50
 #define LINK_CHECK_ATTEMPTS_THRESHOLD 10
@@ -58,12 +59,13 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
  */ 
     ADC_HandleTypeDef hadc;
     static bool          periodic_message_flag;
-    float temperature = 0.0f;
+    static bool          periodic_message_flag1;
+    float temp = 0.0f;
     float Voltage = 0;
     float VDR = 16/3.3;
     float ADCmeas = 0.0f;
     int Door = 0;
-    int Waterlevel = 0;
+    int water = 0;
     static uint8_t gnss_count;
     static uint8_t       rx_payload[255]      = { 0 };  // Buffer for rx payload
     static uint8_t       rx_payload_size      = 0;      // Size of the payload in the rx_payload buffer
@@ -91,9 +93,16 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
 
     static TimerEvent_t periodic_timer;
     static void periodic_timer_cb( void* context ) {
-    SMTC_HAL_TRACE_PRINTF( "periodic_timer_cb\n" );
+    SMTC_HAL_TRACE_PRINTF( "periodic_timer_cb\n\r" );
     periodic_message_flag = true;
     TimerStart( &periodic_timer );
+}
+
+    static TimerEvent_t periodic_timer1;
+    static void periodic_timer_cb1( void* context ) {
+    SMTC_HAL_TRACE_PRINTF( "send cayenne\n\r" );
+    periodic_message_flag1 = true;
+    TimerStart( &periodic_timer1 );
 }
 
   
@@ -117,7 +126,7 @@ int main( void )
 
     // Init the modem and use get_event as event callback, please note that the callback will be
     // called immediately after the first call to smtc_modem_run_engine because of the reset detection
-//    SMTC_HAL_TRACE_PRINTF("calling: smtc_modem_init\n");
+//    SMTC_HAL_TRACE_PRINTF("calling: smtc_modem_init\n\r");
     smtc_modem_init( &modem_radio, &get_event );
     smtc_modem_version_t version;
     smtc_modem_get_modem_version( &version );
@@ -146,6 +155,11 @@ int main( void )
     TimerSetContext( &periodic_timer, NULL );
     TimerStart(&periodic_timer);
 
+    TimerInit( &periodic_timer1, &periodic_timer_cb1 );
+    TimerSetValue( &periodic_timer1, PERIODIC_TIMER_PERIOD_1 );
+    TimerSetContext( &periodic_timer1, NULL );
+    TimerStart(&periodic_timer1);
+
 
     lr11xx_status_t ret;
     lr11xx_system_version_t lr11xx_version;
@@ -161,28 +175,32 @@ int main( void )
 
         // Execute modem runtime, this function must be recalled in sleep_time_ms (max value, can be recalled sooner)
         uint32_t sleep_time_ms = smtc_modem_run_engine( );
-
+        
     if( periodic_message_flag ) 
     {
-
-        periodic_message_flag = false;
         sensor_read();
+        periodic_message_flag = false;
+        
     
        if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD ) 
         {
             txdone_counter = 0;
-            SMTC_HAL_TRACE_INFO( "Send link check\n" );
+            SMTC_HAL_TRACE_INFO( "Send link check\n\r" );
             smtc_modem_lorawan_request_link_check( STACK_ID );
         }
 
-        if( is_joined() )
-        {
-            sendData(temperature, Voltage, Door, Waterlevel); 
+    }
+    if(periodic_message_flag1)
+    {
+                if( is_joined() )
+        {   sensor_read();
+            sendData(temp, Voltage, Door, water);
+            periodic_message_flag1 = false; 
         }
     }
 
 
-        // sleep_time_ms -= ( hal_rtc_get_time_ms( ) - start );
+        //sleep_time_ms -= ( hal_rtc_get_time_ms( ) - start );
         sleep_time_ms = smtc_modem_run_engine( );
         hal_mcu_set_sleep_for_ms( sleep_time_ms );
 
@@ -206,11 +224,11 @@ int main( void )
      switch (hal_gpio_get_value(PB_1))
 	  	  {
 	      	  case GPIO_PIN_SET:
-	             Waterlevel = 1;
+	             water = 1;
 	              break;
 
 	          case GPIO_PIN_RESET:
-	              Waterlevel = 0;
+	              water = 0;
 	              break;
 	      }
 
@@ -227,11 +245,11 @@ int main( void )
 	      }
 
 hal_mcu_delay_ms(1000);
-/*SMTC_HAL_TRACE_PRINTF("Hello World! Temp: %.2f°C Voltage: %.2fV Door: %s Waterlevel: %s\n\r",
-                      temperature,
+SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C Voltage: %.2fV Door: %s water: %s\n\r",
+                      temp,
                       Voltage,
                       Door == 1 ? "open" : "closed",
-                      Waterlevel == 1 ? "high" : "low");*/
+                      water == 1 ? "high" : "low");
 
     }
 
@@ -351,7 +369,7 @@ static void gps_snap( void ) {
 }
 
 static void get_event( void ) {
-    //SMTC_HAL_TRACE_MSG_COLOR( "get_event () callback\n", HAL_DBG_TRACE_COLOR_BLUE );
+    //SMTC_HAL_TRACE_MSG_COLOR( "get_event () callback\n\r", HAL_DBG_TRACE_COLOR_BLUE );
 
     smtc_modem_event_t current_event;
     uint8_t            event_pending_count;
@@ -401,8 +419,8 @@ static void get_event( void ) {
             SMTC_HAL_TRACE_INFO( "Event received: DOWNDATA\n\r" );
             rx_payload_size = ( uint8_t ) current_event.event_data.downdata.length;
             memcpy( rx_payload, current_event.event_data.downdata.data, rx_payload_size );
-            SMTC_HAL_TRACE_PRINTF( "Data received on port %u\n\r", current_event.event_data.downdata.fport );
-            SMTC_HAL_TRACE_ARRAY( "Received payload", rx_payload, rx_payload_size );
+            SMTC_HAL_TRACE_PRINTF( "Data received on port %u \n\r", current_event.event_data.downdata.fport );
+            SMTC_HAL_TRACE_ARRAY( "Received payload \n\r", rx_payload, rx_payload_size );
             break;
 
         case SMTC_MODEM_EVENT_UPLOADDONE:
@@ -505,7 +523,7 @@ static void sensor_read( void ) {
     SMTC_HAL_TRACE_PRINTF( "----- sensor_read -----\n\r" );
         ADCmeas = GETvoltage(&hadc);
         Voltage = ADCmeas*VDR;
-        temperature = GETtemperature(1);
+        temp = GETtemperature(1);
 
 
 #if defined( LR11XX )
@@ -532,7 +550,7 @@ void sendData(float temperature, float analogValue, bool digitalValue1, bool dig
     cayenne_lpp_add_digital_input(&lpp, 4, digitalValue2);     // Channel 4 for digital value 2
 
     // lpp.buffer contains encoded data, and lpp.cursor indicates the size of the payload.
-    //sendLoRaWANPacket(lpp.buffer, lpp.cursor);
+    sendLoRaWANPacket(lpp.buffer, lpp.cursor);
     printCayenneLPPBuffer(&lpp); //used only for debugging
 
 
@@ -543,7 +561,7 @@ void printCayenneLPPBuffer(const cayenne_lpp_t *lpp) {
     for(uint8_t i = 0; i < lpp->cursor; ++i) {
         SMTC_HAL_TRACE_PRINTF("%02X ", lpp->buffer[i]);
     }
-    SMTC_HAL_TRACE_PRINTF("\n");
+    SMTC_HAL_TRACE_PRINTF("\n\r");
 }
 
 

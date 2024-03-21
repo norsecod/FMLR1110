@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccLigRZw.s 			page 1
+ARM GAS  /tmp/ccmJ0TP7.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
   59              		.align	1
   60              		.global	ral_lr11xx_bsp_get_xosc_cfg
   61              		.syntax unified
-ARM GAS  /tmp/ccLigRZw.s 			page 2
+ARM GAS  /tmp/ccmJ0TP7.s 			page 2
 
 
   62              		.code	16
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  121 0022 0621     		movs	r1, #6
  122 0024 0E24     		movs	r4, #14
  123 0026 0593     		str	r3, [sp, #20]
-ARM GAS  /tmp/ccLigRZw.s 			page 3
+ARM GAS  /tmp/ccmJ0TP7.s 			page 3
 
 
  124 0028 0933     		adds	r3, r3, #9
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  178 008e 0791     		str	r1, [sp, #28]
  179 0090 0494     		str	r4, [sp, #16]
  180 0092 0395     		str	r5, [sp, #12]
-ARM GAS  /tmp/ccLigRZw.s 			page 4
+ARM GAS  /tmp/ccmJ0TP7.s 			page 4
 
 
  181 0094 0093     		str	r3, [sp]
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  237 000f 1E       		.byte	(.L16-.L14)/2
  238 0010 3E       		.byte	(.L15-.L14)/2
  239 0011 63       		.byte	(.L13-.L14)/2
-ARM GAS  /tmp/ccLigRZw.s 			page 5
+ARM GAS  /tmp/ccmJ0TP7.s 			page 5
 
 
  240              		.p2align 1
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  294 006e 0918     		adds	r1, r1, r0
  295 0070 4C78     		ldrb	r4, [r1, #1]
  296 0072 8978     		ldrb	r1, [r1, #2]
-ARM GAS  /tmp/ccLigRZw.s 			page 6
+ARM GAS  /tmp/ccmJ0TP7.s 			page 6
 
 
  297 0074 C35C     		ldrb	r3, [r0, r3]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  351 00cc 9171     		strb	r1, [r2, #6]
  352 00ce 0F29     		cmp	r1, #15
  353 00d0 F5DC     		bgt	.L26
-ARM GAS  /tmp/ccLigRZw.s 			page 7
+ARM GAS  /tmp/ccmJ0TP7.s 			page 7
 
 
  354 00d2 E1E7     		b	.L24
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  410 001a 6B46     		mov	r3, sp
  411              		@ sp needed
  412 001c 6A68     		ldr	r2, [r5, #4]
-ARM GAS  /tmp/ccLigRZw.s 			page 8
+ARM GAS  /tmp/ccmJ0TP7.s 			page 8
 
 
  413 001e 0021     		movs	r1, #0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  470 0021 F9       		.byte	-7
  471 0022 04       		.byte	4
  472 0023 00       		.byte	0
-ARM GAS  /tmp/ccLigRZw.s 			page 9
+ARM GAS  /tmp/ccmJ0TP7.s 			page 9
 
 
  473 0024 FA       		.byte	-6
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  527 005a 0D       		.byte	13
  528 005b 04       		.byte	4
  529 005c 00       		.byte	0
-ARM GAS  /tmp/ccLigRZw.s 			page 10
+ARM GAS  /tmp/ccmJ0TP7.s 			page 10
 
 
  530 005d 0D       		.byte	13
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  586 0030 0E       		.byte	14
  587 0031 01       		.byte	1
  588 0032 03       		.byte	3
-ARM GAS  /tmp/ccLigRZw.s 			page 11
+ARM GAS  /tmp/ccmJ0TP7.s 			page 11
 
 
  589 0033 11       		.byte	17
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  645 0006 F3       		.byte	-13
  646 0007 00       		.byte	0
  647 0008 00       		.byte	0
-ARM GAS  /tmp/ccLigRZw.s 			page 12
+ARM GAS  /tmp/ccmJ0TP7.s 			page 12
 
 
  648 0009 F4       		.byte	-12
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  702 003f 08       		.byte	8
  703 0040 00       		.byte	0
  704 0041 00       		.byte	0
-ARM GAS  /tmp/ccLigRZw.s 			page 13
+ARM GAS  /tmp/ccmJ0TP7.s 			page 13
 
 
  705 0042 09       		.byte	9
@@ -755,33 +755,33 @@ ARM GAS  /tmp/ccLigRZw.s 			page 1
  736 0061 07       		.byte	7
  737 0062 00       		.byte	0
  738              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccLigRZw.s 			page 14
+ARM GAS  /tmp/ccmJ0TP7.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ral_lr11xx_bsp.c
-     /tmp/ccLigRZw.s:14     .text.ral_lr11xx_bsp_get_rf_switch_cfg:00000000 $t
-     /tmp/ccLigRZw.s:20     .text.ral_lr11xx_bsp_get_rf_switch_cfg:00000000 ral_lr11xx_bsp_get_rf_switch_cfg
-     /tmp/ccLigRZw.s:43     .text.ral_lr11xx_bsp_get_reg_mode:00000000 $t
-     /tmp/ccLigRZw.s:49     .text.ral_lr11xx_bsp_get_reg_mode:00000000 ral_lr11xx_bsp_get_reg_mode
-     /tmp/ccLigRZw.s:59     .text.ral_lr11xx_bsp_get_xosc_cfg:00000000 $t
-     /tmp/ccLigRZw.s:65     .text.ral_lr11xx_bsp_get_xosc_cfg:00000000 ral_lr11xx_bsp_get_xosc_cfg
-     /tmp/ccLigRZw.s:79     .text.ral_lr11xx_bsp_get_crc_state:00000000 $t
-     /tmp/ccLigRZw.s:85     .text.ral_lr11xx_bsp_get_crc_state:00000000 ral_lr11xx_bsp_get_crc_state
-     /tmp/ccLigRZw.s:95     .text.ral_lr11xx_bsp_get_rssi_calibration_table:00000000 $t
-     /tmp/ccLigRZw.s:101    .text.ral_lr11xx_bsp_get_rssi_calibration_table:00000000 ral_lr11xx_bsp_get_rssi_calibration_table
-     /tmp/ccLigRZw.s:207    .text.ral_lr11xx_bsp_get_rssi_calibration_table:000000c0 $d
-     /tmp/ccLigRZw.s:220    .text.lr11xx_get_tx_cfg:00000000 $t
-     /tmp/ccLigRZw.s:226    .text.lr11xx_get_tx_cfg:00000000 lr11xx_get_tx_cfg
-     /tmp/ccLigRZw.s:236    .text.lr11xx_get_tx_cfg:0000000e $d
-     /tmp/ccLigRZw.s:240    .text.lr11xx_get_tx_cfg:00000012 $t
-     /tmp/ccLigRZw.s:380    .text.lr11xx_get_tx_cfg:000000fc $d
-     /tmp/ccLigRZw.s:638    .rodata.pa_lp_cfg_table:00000000 pa_lp_cfg_table
-     /tmp/ccLigRZw.s:537    .rodata.pa_hp_cfg_table:00000000 pa_hp_cfg_table
-     /tmp/ccLigRZw.s:436    .rodata.pa_hf_cfg_table:00000000 pa_hf_cfg_table
-     /tmp/ccLigRZw.s:388    .text.ral_lr11xx_bsp_get_tx_cfg:00000000 $t
-     /tmp/ccLigRZw.s:394    .text.ral_lr11xx_bsp_get_tx_cfg:00000000 ral_lr11xx_bsp_get_tx_cfg
-     /tmp/ccLigRZw.s:430    .text.ral_lr11xx_bsp_get_tx_cfg:0000003c $d
+     /tmp/ccmJ0TP7.s:14     .text.ral_lr11xx_bsp_get_rf_switch_cfg:00000000 $t
+     /tmp/ccmJ0TP7.s:20     .text.ral_lr11xx_bsp_get_rf_switch_cfg:00000000 ral_lr11xx_bsp_get_rf_switch_cfg
+     /tmp/ccmJ0TP7.s:43     .text.ral_lr11xx_bsp_get_reg_mode:00000000 $t
+     /tmp/ccmJ0TP7.s:49     .text.ral_lr11xx_bsp_get_reg_mode:00000000 ral_lr11xx_bsp_get_reg_mode
+     /tmp/ccmJ0TP7.s:59     .text.ral_lr11xx_bsp_get_xosc_cfg:00000000 $t
+     /tmp/ccmJ0TP7.s:65     .text.ral_lr11xx_bsp_get_xosc_cfg:00000000 ral_lr11xx_bsp_get_xosc_cfg
+     /tmp/ccmJ0TP7.s:79     .text.ral_lr11xx_bsp_get_crc_state:00000000 $t
+     /tmp/ccmJ0TP7.s:85     .text.ral_lr11xx_bsp_get_crc_state:00000000 ral_lr11xx_bsp_get_crc_state
+     /tmp/ccmJ0TP7.s:95     .text.ral_lr11xx_bsp_get_rssi_calibration_table:00000000 $t
+     /tmp/ccmJ0TP7.s:101    .text.ral_lr11xx_bsp_get_rssi_calibration_table:00000000 ral_lr11xx_bsp_get_rssi_calibration_table
+     /tmp/ccmJ0TP7.s:207    .text.ral_lr11xx_bsp_get_rssi_calibration_table:000000c0 $d
+     /tmp/ccmJ0TP7.s:220    .text.lr11xx_get_tx_cfg:00000000 $t
+     /tmp/ccmJ0TP7.s:226    .text.lr11xx_get_tx_cfg:00000000 lr11xx_get_tx_cfg
+     /tmp/ccmJ0TP7.s:236    .text.lr11xx_get_tx_cfg:0000000e $d
+     /tmp/ccmJ0TP7.s:240    .text.lr11xx_get_tx_cfg:00000012 $t
+     /tmp/ccmJ0TP7.s:380    .text.lr11xx_get_tx_cfg:000000fc $d
+     /tmp/ccmJ0TP7.s:638    .rodata.pa_lp_cfg_table:00000000 pa_lp_cfg_table
+     /tmp/ccmJ0TP7.s:537    .rodata.pa_hp_cfg_table:00000000 pa_hp_cfg_table
+     /tmp/ccmJ0TP7.s:436    .rodata.pa_hf_cfg_table:00000000 pa_hf_cfg_table
+     /tmp/ccmJ0TP7.s:388    .text.ral_lr11xx_bsp_get_tx_cfg:00000000 $t
+     /tmp/ccmJ0TP7.s:394    .text.ral_lr11xx_bsp_get_tx_cfg:00000000 ral_lr11xx_bsp_get_tx_cfg
+     /tmp/ccmJ0TP7.s:430    .text.ral_lr11xx_bsp_get_tx_cfg:0000003c $d
 
 UNDEFINED SYMBOLS
 __gnu_thumb1_case_uqi

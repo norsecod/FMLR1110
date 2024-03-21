@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccnbbXUE.s 			page 1
+ARM GAS  /tmp/ccGsRMXT.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccnbbXUE.s 			page 1
   56 003e 0A43     		orrs	r2, r1
   57 0040 0321     		movs	r1, #3
   58 0042 6265     		str	r2, [r4, #84]
-ARM GAS  /tmp/ccnbbXUE.s 			page 2
+ARM GAS  /tmp/ccGsRMXT.s 			page 2
 
 
   59 0044 DE68     		ldr	r6, [r3, #12]
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccnbbXUE.s 			page 1
  114              		.align	1
  115              		.global	HAL_ADCEx_Calibration_GetValue
  116              		.syntax unified
-ARM GAS  /tmp/ccnbbXUE.s 			page 3
+ARM GAS  /tmp/ccGsRMXT.s 			page 3
 
 
  117              		.code	16
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccnbbXUE.s 			page 1
  174 0040 2A43     		orrs	r2, r5
  175 0042 1A60     		str	r2, [r3]
  176              	.L18:
-ARM GAS  /tmp/ccnbbXUE.s 			page 4
+ARM GAS  /tmp/ccGsRMXT.s 			page 4
 
 
  177 0044 0023     		movs	r3, #0
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccnbbXUE.s 			page 1
  233 0036 C046     		.align	2
  234              	.L29:
  235 0038 00000140 		.word	1073807360
-ARM GAS  /tmp/ccnbbXUE.s 			page 5
+ARM GAS  /tmp/ccGsRMXT.s 			page 5
 
 
  237              		.section	.text.HAL_ADCEx_DisableVREFINT,"ax",%progbits
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccnbbXUE.s 			page 1
  294 002a F5D9     		bls	.L39
  295 002c 236A     		ldr	r3, [r4, #32]
  296 002e 3342     		tst	r3, r6
-ARM GAS  /tmp/ccnbbXUE.s 			page 6
+ARM GAS  /tmp/ccGsRMXT.s 			page 6
 
 
  297 0030 F2D1     		bne	.L39
@@ -331,30 +331,30 @@ ARM GAS  /tmp/ccnbbXUE.s 			page 1
  326 000c 00000140 		.word	1073807360
  327 0010 FFFDFFFF 		.word	-513
  329              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccnbbXUE.s 			page 7
+ARM GAS  /tmp/ccGsRMXT.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32l0xx_hal_adc_ex.c
-     /tmp/ccnbbXUE.s:14     .text.HAL_ADCEx_Calibration_Start:00000000 $t
-     /tmp/ccnbbXUE.s:20     .text.HAL_ADCEx_Calibration_Start:00000000 HAL_ADCEx_Calibration_Start
-     /tmp/ccnbbXUE.s:111    .text.HAL_ADCEx_Calibration_Start:000000a4 $d
-     /tmp/ccnbbXUE.s:114    .text.HAL_ADCEx_Calibration_GetValue:00000000 $t
-     /tmp/ccnbbXUE.s:120    .text.HAL_ADCEx_Calibration_GetValue:00000000 HAL_ADCEx_Calibration_GetValue
-     /tmp/ccnbbXUE.s:133    .text.HAL_ADCEx_Calibration_SetValue:00000000 $t
-     /tmp/ccnbbXUE.s:139    .text.HAL_ADCEx_Calibration_SetValue:00000000 HAL_ADCEx_Calibration_SetValue
-     /tmp/ccnbbXUE.s:194    .text.HAL_ADCEx_EnableVREFINT:00000000 $t
-     /tmp/ccnbbXUE.s:200    .text.HAL_ADCEx_EnableVREFINT:00000000 HAL_ADCEx_EnableVREFINT
-     /tmp/ccnbbXUE.s:235    .text.HAL_ADCEx_EnableVREFINT:00000038 $d
-     /tmp/ccnbbXUE.s:238    .text.HAL_ADCEx_DisableVREFINT:00000000 $t
-     /tmp/ccnbbXUE.s:244    .text.HAL_ADCEx_DisableVREFINT:00000000 HAL_ADCEx_DisableVREFINT
-     /tmp/ccnbbXUE.s:258    .text.HAL_ADCEx_DisableVREFINT:0000000c $d
-     /tmp/ccnbbXUE.s:262    .text.HAL_ADCEx_EnableVREFINTTempSensor:00000000 $t
-     /tmp/ccnbbXUE.s:268    .text.HAL_ADCEx_EnableVREFINTTempSensor:00000000 HAL_ADCEx_EnableVREFINTTempSensor
-     /tmp/ccnbbXUE.s:303    .text.HAL_ADCEx_EnableVREFINTTempSensor:00000038 $d
-     /tmp/ccnbbXUE.s:306    .text.HAL_ADCEx_DisableVREFINTTempSensor:00000000 $t
-     /tmp/ccnbbXUE.s:312    .text.HAL_ADCEx_DisableVREFINTTempSensor:00000000 HAL_ADCEx_DisableVREFINTTempSensor
-     /tmp/ccnbbXUE.s:326    .text.HAL_ADCEx_DisableVREFINTTempSensor:0000000c $d
+     /tmp/ccGsRMXT.s:14     .text.HAL_ADCEx_Calibration_Start:00000000 $t
+     /tmp/ccGsRMXT.s:20     .text.HAL_ADCEx_Calibration_Start:00000000 HAL_ADCEx_Calibration_Start
+     /tmp/ccGsRMXT.s:111    .text.HAL_ADCEx_Calibration_Start:000000a4 $d
+     /tmp/ccGsRMXT.s:114    .text.HAL_ADCEx_Calibration_GetValue:00000000 $t
+     /tmp/ccGsRMXT.s:120    .text.HAL_ADCEx_Calibration_GetValue:00000000 HAL_ADCEx_Calibration_GetValue
+     /tmp/ccGsRMXT.s:133    .text.HAL_ADCEx_Calibration_SetValue:00000000 $t
+     /tmp/ccGsRMXT.s:139    .text.HAL_ADCEx_Calibration_SetValue:00000000 HAL_ADCEx_Calibration_SetValue
+     /tmp/ccGsRMXT.s:194    .text.HAL_ADCEx_EnableVREFINT:00000000 $t
+     /tmp/ccGsRMXT.s:200    .text.HAL_ADCEx_EnableVREFINT:00000000 HAL_ADCEx_EnableVREFINT
+     /tmp/ccGsRMXT.s:235    .text.HAL_ADCEx_EnableVREFINT:00000038 $d
+     /tmp/ccGsRMXT.s:238    .text.HAL_ADCEx_DisableVREFINT:00000000 $t
+     /tmp/ccGsRMXT.s:244    .text.HAL_ADCEx_DisableVREFINT:00000000 HAL_ADCEx_DisableVREFINT
+     /tmp/ccGsRMXT.s:258    .text.HAL_ADCEx_DisableVREFINT:0000000c $d
+     /tmp/ccGsRMXT.s:262    .text.HAL_ADCEx_EnableVREFINTTempSensor:00000000 $t
+     /tmp/ccGsRMXT.s:268    .text.HAL_ADCEx_EnableVREFINTTempSensor:00000000 HAL_ADCEx_EnableVREFINTTempSensor
+     /tmp/ccGsRMXT.s:303    .text.HAL_ADCEx_EnableVREFINTTempSensor:00000038 $d
+     /tmp/ccGsRMXT.s:306    .text.HAL_ADCEx_DisableVREFINTTempSensor:00000000 $t
+     /tmp/ccGsRMXT.s:312    .text.HAL_ADCEx_DisableVREFINTTempSensor:00000000 HAL_ADCEx_DisableVREFINTTempSensor
+     /tmp/ccGsRMXT.s:326    .text.HAL_ADCEx_DisableVREFINTTempSensor:0000000c $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick

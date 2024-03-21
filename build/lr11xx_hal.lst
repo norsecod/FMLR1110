@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccFwDo54.s 			page 1
+ARM GAS  /tmp/ccJyF9eV.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccFwDo54.s 			page 1
   58              		@ args = 0, pretend = 0, frame = 0
   59              		@ frame_needed = 0, uses_anonymous_args = 0
   60 0000 10B5     		push	{r4, lr}
-ARM GAS  /tmp/ccFwDo54.s 			page 2
+ARM GAS  /tmp/ccJyF9eV.s 			page 2
 
 
   61              	.L5:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccFwDo54.s 			page 1
  119 000a 1600     		movs	r6, r2
  120 000c 0193     		str	r3, [sp, #4]
  121 000e FFF7FEFF 		bl	lr11xx_hal_check_device_ready
-ARM GAS  /tmp/ccFwDo54.s 			page 3
+ARM GAS  /tmp/ccJyF9eV.s 			page 3
 
 
  122 0012 0021     		movs	r1, #0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccFwDo54.s 			page 1
  178              	lr11xx_hal_read:
  179              		@ args = 4, pretend = 0, frame = 0
  180              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccFwDo54.s 			page 4
+ARM GAS  /tmp/ccJyF9eV.s 			page 4
 
 
  181 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccFwDo54.s 			page 1
  237              	lr11xx_hal_direct_read:
  238              		@ args = 0, pretend = 0, frame = 0
  239              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccFwDo54.s 			page 5
+ARM GAS  /tmp/ccJyF9eV.s 			page 5
 
 
  240 0000 70B5     		push	{r4, r5, r6, lr}
@@ -283,29 +283,29 @@ ARM GAS  /tmp/ccFwDo54.s 			page 1
  284              	radio_mode:
  285 0000 01       		.byte	1
  286              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccFwDo54.s 			page 6
+ARM GAS  /tmp/ccJyF9eV.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lr11xx_hal.c
-     /tmp/ccFwDo54.s:14     .text.lr11xx_hal_reset:00000000 $t
-     /tmp/ccFwDo54.s:20     .text.lr11xx_hal_reset:00000000 lr11xx_hal_reset
-     /tmp/ccFwDo54.s:46     .text.lr11xx_hal_reset:00000030 $d
-     /tmp/ccFwDo54.s:284    .data.radio_mode:00000000 radio_mode
-     /tmp/ccFwDo54.s:51     .text.lr11xx_hal_wait_on_busy:00000000 $t
-     /tmp/ccFwDo54.s:57     .text.lr11xx_hal_wait_on_busy:00000000 lr11xx_hal_wait_on_busy
-     /tmp/ccFwDo54.s:70     .text.lr11xx_hal_check_device_ready:00000000 $t
-     /tmp/ccFwDo54.s:76     .text.lr11xx_hal_check_device_ready:00000000 lr11xx_hal_check_device_ready
-     /tmp/ccFwDo54.s:102    .text.lr11xx_hal_check_device_ready:0000002c $d
-     /tmp/ccFwDo54.s:105    .text.lr11xx_hal_write:00000000 $t
-     /tmp/ccFwDo54.s:111    .text.lr11xx_hal_write:00000000 lr11xx_hal_write
-     /tmp/ccFwDo54.s:169    .text.lr11xx_hal_write:00000068 $d
-     /tmp/ccFwDo54.s:172    .text.lr11xx_hal_read:00000000 $t
-     /tmp/ccFwDo54.s:178    .text.lr11xx_hal_read:00000000 lr11xx_hal_read
-     /tmp/ccFwDo54.s:231    .text.lr11xx_hal_direct_read:00000000 $t
-     /tmp/ccFwDo54.s:237    .text.lr11xx_hal_direct_read:00000000 lr11xx_hal_direct_read
-     /tmp/ccFwDo54.s:266    .text.lr11xx_hal_wakeup:00000000 $t
-     /tmp/ccFwDo54.s:272    .text.lr11xx_hal_wakeup:00000000 lr11xx_hal_wakeup
+     /tmp/ccJyF9eV.s:14     .text.lr11xx_hal_reset:00000000 $t
+     /tmp/ccJyF9eV.s:20     .text.lr11xx_hal_reset:00000000 lr11xx_hal_reset
+     /tmp/ccJyF9eV.s:46     .text.lr11xx_hal_reset:00000030 $d
+     /tmp/ccJyF9eV.s:284    .data.radio_mode:00000000 radio_mode
+     /tmp/ccJyF9eV.s:51     .text.lr11xx_hal_wait_on_busy:00000000 $t
+     /tmp/ccJyF9eV.s:57     .text.lr11xx_hal_wait_on_busy:00000000 lr11xx_hal_wait_on_busy
+     /tmp/ccJyF9eV.s:70     .text.lr11xx_hal_check_device_ready:00000000 $t
+     /tmp/ccJyF9eV.s:76     .text.lr11xx_hal_check_device_ready:00000000 lr11xx_hal_check_device_ready
+     /tmp/ccJyF9eV.s:102    .text.lr11xx_hal_check_device_ready:0000002c $d
+     /tmp/ccJyF9eV.s:105    .text.lr11xx_hal_write:00000000 $t
+     /tmp/ccJyF9eV.s:111    .text.lr11xx_hal_write:00000000 lr11xx_hal_write
+     /tmp/ccJyF9eV.s:169    .text.lr11xx_hal_write:00000068 $d
+     /tmp/ccJyF9eV.s:172    .text.lr11xx_hal_read:00000000 $t
+     /tmp/ccJyF9eV.s:178    .text.lr11xx_hal_read:00000000 lr11xx_hal_read
+     /tmp/ccJyF9eV.s:231    .text.lr11xx_hal_direct_read:00000000 $t
+     /tmp/ccJyF9eV.s:237    .text.lr11xx_hal_direct_read:00000000 lr11xx_hal_direct_read
+     /tmp/ccJyF9eV.s:266    .text.lr11xx_hal_wakeup:00000000 $t
+     /tmp/ccJyF9eV.s:272    .text.lr11xx_hal_wakeup:00000000 lr11xx_hal_wakeup
 
 UNDEFINED SYMBOLS
 hal_gpio_set_value

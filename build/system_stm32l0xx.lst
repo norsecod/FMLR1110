@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc7RrRf8.s 			page 1
+ARM GAS  /tmp/cckj1TOc.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc7RrRf8.s 			page 1
   58              		@ sp needed
   59 0024 E368     		ldr	r3, [r4, #12]
   60 0026 164A     		ldr	r2, .L11+4
-ARM GAS  /tmp/cc7RrRf8.s 			page 2
+ARM GAS  /tmp/cckj1TOc.s 			page 2
 
 
   61 0028 1B06     		lsls	r3, r3, #24
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc7RrRf8.s 			page 1
  115 0090 00000000 		.word	PLLMulTable
  116 0094 00093D00 		.word	4000000
  117 0098 00127A00 		.word	8000000
-ARM GAS  /tmp/cc7RrRf8.s 			page 3
+ARM GAS  /tmp/cckj1TOc.s 			page 3
 
 
  119              		.global	PLLMulTable
@@ -149,24 +149,24 @@ ARM GAS  /tmp/cc7RrRf8.s 			page 1
  146              	SystemCoreClock:
  147 0000 00002000 		.word	2097152
  148              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc7RrRf8.s 			page 4
+ARM GAS  /tmp/cckj1TOc.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_stm32l0xx.c
-     /tmp/cc7RrRf8.s:14     .text.SystemInit:00000000 $t
-     /tmp/cc7RrRf8.s:20     .text.SystemInit:00000000 SystemInit
-     /tmp/cc7RrRf8.s:30     .text.SystemCoreClockUpdate:00000000 $t
-     /tmp/cc7RrRf8.s:36     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
-     /tmp/cc7RrRf8.s:110    .text.SystemCoreClockUpdate:0000007c $d
-     /tmp/cc7RrRf8.s:138    .rodata.AHBPrescTable:00000000 AHBPrescTable
-     /tmp/cc7RrRf8.s:146    .data.SystemCoreClock:00000000 SystemCoreClock
-     /tmp/cc7RrRf8.s:124    .rodata.PLLMulTable:00000000 PLLMulTable
-     /tmp/cc7RrRf8.s:121    .rodata.PLLMulTable:00000000 $d
-     /tmp/cc7RrRf8.s:131    .rodata.APBPrescTable:00000000 APBPrescTable
-     /tmp/cc7RrRf8.s:128    .rodata.APBPrescTable:00000000 $d
-     /tmp/cc7RrRf8.s:135    .rodata.AHBPrescTable:00000000 $d
-     /tmp/cc7RrRf8.s:143    .data.SystemCoreClock:00000000 $d
+     /tmp/cckj1TOc.s:14     .text.SystemInit:00000000 $t
+     /tmp/cckj1TOc.s:20     .text.SystemInit:00000000 SystemInit
+     /tmp/cckj1TOc.s:30     .text.SystemCoreClockUpdate:00000000 $t
+     /tmp/cckj1TOc.s:36     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+     /tmp/cckj1TOc.s:110    .text.SystemCoreClockUpdate:0000007c $d
+     /tmp/cckj1TOc.s:138    .rodata.AHBPrescTable:00000000 AHBPrescTable
+     /tmp/cckj1TOc.s:146    .data.SystemCoreClock:00000000 SystemCoreClock
+     /tmp/cckj1TOc.s:124    .rodata.PLLMulTable:00000000 PLLMulTable
+     /tmp/cckj1TOc.s:121    .rodata.PLLMulTable:00000000 $d
+     /tmp/cckj1TOc.s:131    .rodata.APBPrescTable:00000000 APBPrescTable
+     /tmp/cckj1TOc.s:128    .rodata.APBPrescTable:00000000 $d
+     /tmp/cckj1TOc.s:135    .rodata.AHBPrescTable:00000000 $d
+     /tmp/cckj1TOc.s:143    .data.SystemCoreClock:00000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_uidiv
