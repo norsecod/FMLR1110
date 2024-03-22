@@ -98,13 +98,13 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     periodic_message_flag = true;
     TimerStart( &periodic_timer );
 }
-/*
+
     static TimerEvent_t periodic_timer1;
     static void periodic_timer_cb1( void* context ) {
     SMTC_HAL_TRACE_PRINTF( "send cayenne\n\r" );
     periodic_message_flag1 = true;
     TimerStart( &periodic_timer1 );
-}*/
+}
 
   
 /*
@@ -136,8 +136,6 @@ int main( void )
 
     SMTC_HAL_TRACE_INFO( "Modem driver version: %d.%d.%d\n\r", version.major, version.minor, version.patch );
 
-
-    // Initialize ADC
     MX_ADC_Init();
     hal_gpio_init_out(PC_7,0);
     hal_gpio_init_out(PC_1,1);
@@ -155,12 +153,12 @@ int main( void )
     TimerSetValue( &periodic_timer, PERIODIC_TIMER_PERIOD );
     TimerSetContext( &periodic_timer, NULL );
     TimerStart(&periodic_timer);
-/*
+
     TimerInit( &periodic_timer1, &periodic_timer_cb1 );
     TimerSetValue( &periodic_timer1, PERIODIC_TIMER_PERIOD_1 );
     TimerSetContext( &periodic_timer1, NULL );
     TimerStart(&periodic_timer1);
-*/
+
 
     lr11xx_status_t ret;
     lr11xx_system_version_t lr11xx_version;
@@ -197,23 +195,23 @@ int main( void )
             smtc_modem_lorawan_request_link_check( STACK_ID );
         }
 
-      if( cntup == 3 )
-        {   
-           
-            //sendData(temp,Voltage, Door, water);
-            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s\n\r",
-                      temp, ADCmeas,
-                      Voltage,
-                      Door == 1 ? "open" : "closed",
-                      water == 1 ? "high" : "low");
-        }
+
     }
 
         //sleep_time_ms -= ( hal_rtc_get_time_ms( ) - start );
         sleep_time_ms = smtc_modem_run_engine( );
         hal_mcu_set_sleep_for_ms( sleep_time_ms );
 
-    
+          if( periodic_message_flag1 )
+        {   
+           
+            sendData(temp,Voltage, Door, water);
+            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s\n\r",
+                      temp, ADCmeas,
+                      Voltage,
+                      Door == 1 ? "open" : "closed",
+                      water == 1 ? "high" : "low");
+        }
     
     if (hal_gpio_get_value(PC_7) == 1)
     {
@@ -286,8 +284,11 @@ float GETtemperature(const uint32_t id) {
 
 float GETvoltage(ADC_HandleTypeDef *hadc)
 {	float batt = 0;
+        // Initialize ADC
+    HAL_ADC_Init(&hadc);
+    hal_mcu_delay_ms(20);
     hal_gpio_set_value(PA_3, 1); //activates mosfet
-    hal_mcu_delay_ms(200);
+    hal_mcu_delay_ms(20);
 
     // Start ADC conversion
     if (HAL_ADC_Start(hadc) != HAL_OK) {
@@ -295,7 +296,7 @@ float GETvoltage(ADC_HandleTypeDef *hadc)
         // You can add error handling code here, such as logging or recovery actions
         return 0.0f; // Return 0 voltage in case of error
     }
-    hal_mcu_delay_ms(200);
+    hal_mcu_delay_ms(20);
     // Wait for conversion to complete
     if (HAL_ADC_PollForConversion(hadc, HAL_MAX_DELAY) == HAL_OK)
     {
@@ -304,10 +305,12 @@ float GETvoltage(ADC_HandleTypeDef *hadc)
         // For example, if your ADC reference voltage is 3.3V and resolution is 12 bits:
         batt = (3.3f * adc_value) / 4095.0f;
     }
-    hal_mcu_delay_ms(200);
+    hal_mcu_delay_ms(20);
     HAL_ADC_Stop(hadc);
-    hal_mcu_delay_ms(200);
+    hal_mcu_delay_ms(20);
     hal_gpio_set_value(PA_3, 0); //turns of mosfet
+    hal_mcu_delay_ms(20);
+    HAL_ADC_DeInit(&hadc);
     return batt;
 }
 
