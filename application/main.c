@@ -174,7 +174,8 @@ int main( void )
 
         // Execute modem runtime, this function must be recalled in sleep_time_ms (max value, can be recalled sooner)
         uint32_t sleep_time_ms = smtc_modem_run_engine( );
-        
+        ADCmeas = GETvoltage(&hadc);
+        Voltage = ADCmeas*VDR;
     if( periodic_message_flag ) 
     {
            
@@ -211,6 +212,7 @@ int main( void )
                       Voltage,
                       Door == 1 ? "open" : "closed",
                       water == 1 ? "high" : "low");
+                      periodic_message_flag1 = false;
         }
     
     if (hal_gpio_get_value(PC_7) == 1)
@@ -529,8 +531,6 @@ static bool is_joined( void ) {
 
 static void sensor_read( void ) {
     SMTC_HAL_TRACE_PRINTF( "----- sensor_read -----\n\r" );
-        ADCmeas = GETvoltage(&hadc);
-        Voltage = ADCmeas*VDR;
         temp = GETtemperature(1);
 
 

@@ -1,9 +1,9 @@
 application/main.c:103:17:periodic_timer_cb1	8	static
 application/main.c:96:17:periodic_timer_cb	8	static
-application/main.c:379:13:get_event	312	static
-application/main.c:268:7:GETtemperature	16	static
-application/main.c:285:7:GETvoltage	16	static
-application/main.c:544:6:sendLoRaWANPacket	16	static
-application/main.c:567:6:printCayenneLPPBuffer	16	static
-application/main.c:551:6:sendData	72	static
+application/main.c:380:13:get_event	312	static
+application/main.c:269:7:GETtemperature	16	static
+application/main.c:286:7:GETvoltage	16	static
+application/main.c:543:6:sendLoRaWANPacket	16	static
+application/main.c:566:6:printCayenneLPPBuffer	16	static
+application/main.c:550:6:sendData	72	static
 application/main.c:116:5:main	88	static
