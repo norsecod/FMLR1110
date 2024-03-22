@@ -59,7 +59,7 @@ extern "C" {
 #define mcu_panic( ... )                                    \
     do                                                      \
     {                                                       \
-        SMTC_HAL_TRACE_ERROR( "mcu_panic:%s\n", __func__ ); \
+        SMTC_HAL_TRACE_ERROR( "mcu_panic:%s\n\r", __func__ ); \
         SMTC_HAL_TRACE_ERROR( "-> "__VA_ARGS__ );           \
         hal_mcu_reset( );                                   \
     } while( 0 );

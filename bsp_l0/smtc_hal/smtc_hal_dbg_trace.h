@@ -137,16 +137,16 @@ extern "C" {
 #define SMTC_HAL_TRACE_ARRAY( msg, array, len )                                 \
     do                                                                              \
     {                                                                               \
-        SMTC_HAL_TRACE_PRINTF("%s - (%lu bytes):\n", msg, ( uint32_t )len );        \
+        SMTC_HAL_TRACE_PRINTF("%s - (%lu bytes):\n\r", msg, ( uint32_t )len );        \
         for( uint32_t i = 0; i < ( uint32_t )len; i++ )                             \
         {                                                                           \
             if( ( ( i % 16 ) == 0 ) && ( i > 0 ) )                                  \
             {                                                                       \
-                SMTC_HAL_TRACE_PRINTF("\n");                                        \
+                SMTC_HAL_TRACE_PRINTF("\n\r");                                        \
             }                                                                       \
             SMTC_HAL_TRACE_PRINTF( " %02X", array[i] );                             \
         }                                                                           \
-        SMTC_HAL_TRACE_PRINTF( "\n" );                                              \
+        SMTC_HAL_TRACE_PRINTF( "\n\r" );                                              \
     } while ( 0 );
 
 #define SMTC_HAL_TRACE_PACKARRAY( msg, array, len )                             \

@@ -1,4 +1,4 @@
-/*!
+S/*!
  * \file      smtc_hal_flash.c
  *
  * \brief     FLASH Hardware Abstraction Layer implementation
@@ -117,7 +117,7 @@ uint8_t hal_flash_erase_page( uint32_t addr, uint8_t nb_page ) {
     EraseInitStruct.PageAddress = FirstUserPage*FLASH_PAGE_SIZE;
     EraseInitStruct.NbPages = nb_page;
 
-    SMTC_HAL_TRACE_INFO( "Erase page %u\r\n", FirstUserPage );
+    SMTC_HAL_TRACE_INFO( "Erase page %u\r\n\r", FirstUserPage );
 
     /* Note: If an erase operation in Flash memory also concerns data in the data or instruction cache,
      you have to make sure that these data are rewritten before they are accessed during code
@@ -135,7 +135,7 @@ uint8_t hal_flash_erase_page( uint32_t addr, uint8_t nb_page ) {
           PageError will contain the faulty  and then to know the code error on this ,
           user can call function 'HAL_FLASH_GetError()'
         */
-        SMTC_HAL_TRACE_ERROR( "FLASH_OPERATION_MAX_RETRY\r\n" );
+        SMTC_HAL_TRACE_ERROR( "FLASH_OPERATION_MAX_RETRY\r\n\r" );
 
         /* Infinite loop */
         while( 1 ) {

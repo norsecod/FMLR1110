@@ -285,9 +285,9 @@ void hal_mcu_disable_once_low_power_wait( void ) {
 void assert_failed( uint8_t* file, uint32_t line ) {
     // User can add his own implementation to report the file name and line
     // number,
-    // ex: printf("Wrong parameters value: file %s on line %lu\r\n", file, line)
+    // ex: printf("Wrong parameters value: file %s on line %lu\r\n\r", file, line)
 
-    SMTC_HAL_TRACE_PRINTF( "Wrong parameters value: file %s on line %lu\r\n", ( const char* ) file, line );
+    SMTC_HAL_TRACE_PRINTF( "Wrong parameters value: file %s on line %lu\r\n\r", ( const char* ) file, line );
 
     // Infinite loop
     while( 1 ) {
@@ -570,7 +570,7 @@ void hal_mcu_delay_ms( const uint32_t milliseconds ) {
  */
 void HardFault_Handler( void ) {
     SMTC_HAL_TRACE_ERROR( "\x1B[0;31m" );  // red color
-    SMTC_HAL_TRACE_ERROR( "HARDFAULT_Handler\n" );
+    SMTC_HAL_TRACE_ERROR( "HARDFAULT_Handler\n\r" );
     SMTC_HAL_TRACE_ERROR( "\x1B[0m" );  // default color
 
     while( 1 ) {

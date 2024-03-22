@@ -169,7 +169,7 @@ uint16_t hal_spi_in_out( const uint32_t id, const uint16_t out_data ) {
 #ifdef SPI_DEBUG
     int16_t in = LL_SPI_ReceiveData8( spi_periph[local_id].interface );
 
-    SMTC_HAL_TRACE_PRINTF( "in: %x,          \n", in );
+    SMTC_HAL_TRACE_PRINTF( "in: %x,          \n\r", in );
 
     return in;
 

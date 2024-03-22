@@ -19,9 +19,9 @@ void settings_init( void ) {
 }
 
 void settings_print( void ) {
-    SMTC_HAL_TRACE_INFO("Settings:\n"); \
-    SMTC_HAL_TRACE_INFO(" - deveui:                   %02X%02X%02X%02X%02X%02X%02X%02X\n", settings.deveui[0], settings.deveui[1], settings.deveui[2], settings.deveui[3], settings.deveui[4], settings.deveui[5], settings.deveui[6], settings.deveui[7]);
-    SMTC_HAL_TRACE_INFO(" - joineui:                  %02X%02X%02X%02X%02X%02X%02X%02X\n", settings.joineui[0], settings.joineui[1], settings.joineui[2], settings.joineui[3], settings.joineui[4], settings.joineui[5], settings.joineui[6], settings.joineui[7]);
-    SMTC_HAL_TRACE_INFO(" - nwkey:                    %02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X\n", settings.nwkey[0], settings.nwkey[1], settings.nwkey[2], settings.nwkey[3], settings.nwkey[4], settings.nwkey[5], settings.nwkey[6], settings.nwkey[7], settings.nwkey[8], settings.nwkey[9], settings.nwkey[10], settings.nwkey[11], settings.nwkey[12], settings.nwkey[13], settings.nwkey[14], settings.nwkey[15]);
-    SMTC_HAL_TRACE_INFO(" - region:                   %u\n", settings.region);
+    SMTC_HAL_TRACE_INFO("Settings:\n\r"); \
+    SMTC_HAL_TRACE_INFO(" - deveui:                   %02X%02X%02X%02X%02X%02X%02X%02X\n\r", settings.deveui[0], settings.deveui[1], settings.deveui[2], settings.deveui[3], settings.deveui[4], settings.deveui[5], settings.deveui[6], settings.deveui[7]);
+    SMTC_HAL_TRACE_INFO(" - joineui:                  %02X%02X%02X%02X%02X%02X%02X%02X\n\r", settings.joineui[0], settings.joineui[1], settings.joineui[2], settings.joineui[3], settings.joineui[4], settings.joineui[5], settings.joineui[6], settings.joineui[7]);
+    SMTC_HAL_TRACE_INFO(" - nwkey:                    %02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X\n\r", settings.nwkey[0], settings.nwkey[1], settings.nwkey[2], settings.nwkey[3], settings.nwkey[4], settings.nwkey[5], settings.nwkey[6], settings.nwkey[7], settings.nwkey[8], settings.nwkey[9], settings.nwkey[10], settings.nwkey[11], settings.nwkey[12], settings.nwkey[13], settings.nwkey[14], settings.nwkey[15]);
+    SMTC_HAL_TRACE_INFO(" - region:                   %u\n\r", settings.region);
 }
