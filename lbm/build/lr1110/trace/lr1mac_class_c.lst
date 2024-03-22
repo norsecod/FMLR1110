@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cce2h3v5.s 			page 1
+ARM GAS  /tmp/ccaTBwBX.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
   30      735F635F 
   30      6F626A20 
   30      53544152 
-ARM GAS  /tmp/cce2h3v5.s 			page 2
+ARM GAS  /tmp/ccaTBwBX.s 			page 2
 
 
   30      54204552 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
   85 0062 1A61     		str	r2, [r3, #16]
   86 0064 0523     		movs	r3, #5
   87 0066 2200     		movs	r2, r4
-ARM GAS  /tmp/cce2h3v5.s 			page 3
+ARM GAS  /tmp/ccaTBwBX.s 			page 3
 
 
   88 0068 4900     		lsls	r1, r1, #1
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  142 00d6 FFF7FEFF 		bl	smtc_real_get_sync_word
  143 00da 9C23     		movs	r3, #156
  144 00dc 7074     		strb	r0, [r6, #17]
-ARM GAS  /tmp/cce2h3v5.s 			page 4
+ARM GAS  /tmp/ccaTBwBX.s 			page 4
 
 
  145 00de B574     		strb	r5, [r6, #18]
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  199 0140 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
  200 0144 2900     		movs	r1, r5
  201 0146 6048     		ldr	r0, .L25+8
-ARM GAS  /tmp/cce2h3v5.s 			page 5
+ARM GAS  /tmp/ccaTBwBX.s 			page 5
 
 
  202 0148 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  256 01ba 3932     		adds	r2, r2, #57
  257 01bc FFF7FEFF 		bl	rp_task_enqueue
  258 01c0 0028     		cmp	r0, #0
-ARM GAS  /tmp/cce2h3v5.s 			page 6
+ARM GAS  /tmp/ccaTBwBX.s 			page 6
 
 
  259 01c2 79D0     		beq	.L19
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  313 022a 314B     		ldr	r3, .L25+48
  314 022c 6A44     		add	r2, r2, sp
  315 022e 0B90     		str	r0, [sp, #44]
-ARM GAS  /tmp/cce2h3v5.s 			page 7
+ARM GAS  /tmp/ccaTBwBX.s 			page 7
 
 
  316 0230 1670     		strb	r6, [r2]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  370 02a0 2800     		movs	r0, r5
  371 02a2 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  372 02a6 1748     		ldr	r0, .L25+68
-ARM GAS  /tmp/cce2h3v5.s 			page 8
+ARM GAS  /tmp/ccaTBwBX.s 			page 8
 
 
  373 02a8 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  429 001e 002B     		cmp	r3, #0
  430 0020 02D0     		beq	.L27
  431 0022 2000     		movs	r0, r4
-ARM GAS  /tmp/cce2h3v5.s 			page 9
+ARM GAS  /tmp/ccaTBwBX.s 			page 9
 
 
  432 0024 FFF7FEFF 		bl	lr1mac_class_c_launch
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  488 0054 2C32     		adds	r2, r2, #44
  489 0056 1D67     		str	r5, [r3, #112]
  490 0058 5A67     		str	r2, [r3, #116]
-ARM GAS  /tmp/cce2h3v5.s 			page 10
+ARM GAS  /tmp/ccaTBwBX.s 			page 10
 
 
  491 005a 8435     		adds	r5, r5, #132
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  538      3A0A00
  539              	.LC26:
  540 0050 0A00     		.ascii	"\012\000"
-ARM GAS  /tmp/cce2h3v5.s 			page 11
+ARM GAS  /tmp/ccaTBwBX.s 			page 11
 
 
  541              	.LC28:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  560      7574200A 
  561              	.LC47:
  562 0183 6C72316D 		.ascii	"lr1mac RxC aborted by the radioplanner \012\000"
-ARM GAS  /tmp/cce2h3v5.s 			page 12
+ARM GAS  /tmp/ccaTBwBX.s 			page 12
 
 
  562      61632052 
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  610 0048 AD01     		.2byte	(.L44-.L45)/2
  611              		.p2align 1
  612              	.L47:
-ARM GAS  /tmp/cce2h3v5.s 			page 13
+ARM GAS  /tmp/ccaTBwBX.s 			page 13
 
 
  613 004a 0B9B     		ldr	r3, [sp, #44]
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  667 00ba BC48     		ldr	r0, .L97+16
  668 00bc FFF7FEFF 		bl	smtc_modem_hal_print_trace
  669 00c0 0123     		movs	r3, #1
-ARM GAS  /tmp/cce2h3v5.s 			page 14
+ARM GAS  /tmp/ccaTBwBX.s 			page 14
 
 
  670 00c2 5B42     		rsbs	r3, r3, #0
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  724 011c 0029     		cmp	r1, #0
  725 011e 00D1     		bne	.LCB691
  726 0120 D5E0     		b	.L57	@long jump
-ARM GAS  /tmp/cce2h3v5.s 			page 15
+ARM GAS  /tmp/ccaTBwBX.s 			page 15
 
 
  727              	.LCB691:
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  781 018e 1B59     		ldr	r3, [r3, r4]
  782 0190 02A9     		add	r1, sp, #8
  783 0192 4A84     		strh	r2, [r1, #34]
-ARM GAS  /tmp/cce2h3v5.s 			page 16
+ARM GAS  /tmp/ccaTBwBX.s 			page 16
 
 
  784 0194 9A68     		ldr	r2, [r3, #8]
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  838 0202 9B00     		lsls	r3, r3, #2
  839 0204 1B59     		ldr	r3, [r3, r4]
  840 0206 2978     		ldrb	r1, [r5]
-ARM GAS  /tmp/cce2h3v5.s 			page 17
+ARM GAS  /tmp/ccaTBwBX.s 			page 17
 
 
  841 0208 1A7B     		ldrb	r2, [r3, #12]
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  895 0274 5F3B     		subs	r3, r3, #95
  896 0276 02AA     		add	r2, sp, #8
  897 0278 FF3B     		subs	r3, r3, #255
-ARM GAS  /tmp/cce2h3v5.s 			page 18
+ARM GAS  /tmp/ccaTBwBX.s 			page 18
 
 
  898 027a 9B18     		adds	r3, r3, r2
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  952 02e0 0429     		cmp	r1, #4
  953 02e2 00D8     		bhi	.LCB922
  954 02e4 20E7     		b	.L58	@long jump
-ARM GAS  /tmp/cce2h3v5.s 			page 19
+ARM GAS  /tmp/ccaTBwBX.s 			page 19
 
 
  955              	.LCB922:
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  1009 035a A35D     		ldrb	r3, [r4, r6]
  1010 035c 002B     		cmp	r3, #0
  1011 035e 06D0     		beq	.L69
-ARM GAS  /tmp/cce2h3v5.s 			page 20
+ARM GAS  /tmp/ccaTBwBX.s 			page 20
 
 
  1012              	.L71:
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  1066 03dc 83010000 		.word	.LC47
  1067 03e0 AC010000 		.word	.LC49
  1069              		.section	.text.lr1mac_class_c_multicast_start_session,"ax",%progbits
-ARM GAS  /tmp/cce2h3v5.s 			page 21
+ARM GAS  /tmp/ccaTBwBX.s 			page 21
 
 
  1070              		.align	1
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  1125 0056 0428     		cmp	r0, #4
  1126 0058 F6D1     		bne	.L104
  1127              	.L105:
-ARM GAS  /tmp/cce2h3v5.s 			page 22
+ARM GAS  /tmp/ccaTBwBX.s 			page 22
 
 
  1128 005a 0122     		movs	r2, #1
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  1184 000e 8900     		lsls	r1, r1, #2
  1185 0010 8958     		ldr	r1, [r1, r2]
  1186 0012 FE30     		adds	r0, r0, #254
-ARM GAS  /tmp/cce2h3v5.s 			page 23
+ARM GAS  /tmp/ccaTBwBX.s 			page 23
 
 
  1187 0014 0875     		strb	r0, [r1, #20]
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  1243 0010 FF32     		adds	r2, r2, #255
  1244 0012 FF35     		adds	r5, r5, #255
  1245              	.L127:
-ARM GAS  /tmp/cce2h3v5.s 			page 24
+ARM GAS  /tmp/ccaTBwBX.s 			page 24
 
 
  1246 0014 1168     		ldr	r1, [r2]
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  1303              		.global	lr1mac_class_c_enabled
  1304              		.syntax unified
  1305              		.code	16
-ARM GAS  /tmp/cce2h3v5.s 			page 25
+ARM GAS  /tmp/ccaTBwBX.s 			page 25
 
 
  1306              		.thumb_func
@@ -1497,43 +1497,43 @@ ARM GAS  /tmp/cce2h3v5.s 			page 1
  1360      5F635F6C 
  1360      61756E63 
  1361              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cce2h3v5.s 			page 26
+ARM GAS  /tmp/ccaTBwBX.s 			page 26
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lr1mac_class_c.c
-     /tmp/cce2h3v5.s:32     .text.lr1mac_class_c_launch:00000000 $t
-     /tmp/cce2h3v5.s:37     .text.lr1mac_class_c_launch:00000000 lr1mac_class_c_launch
-     /tmp/cce2h3v5.s:175    .text.lr1mac_class_c_launch:0000011e $d
-     /tmp/cce2h3v5.s:385    .text.lr1mac_class_c_launch:000002c0 $d
-     /tmp/cce2h3v5.s:1359   .rodata.__func__.1:00000000 __func__.1
-     /tmp/cce2h3v5.s:405    .text.lr1mac_class_c_rp_callback:00000000 $t
-     /tmp/cce2h3v5.s:410    .text.lr1mac_class_c_rp_callback:00000000 lr1mac_class_c_rp_callback
-     /tmp/cce2h3v5.s:438    .text.lr1mac_class_c_init:00000000 $t
-     /tmp/cce2h3v5.s:444    .text.lr1mac_class_c_init:00000000 lr1mac_class_c_init
-     /tmp/cce2h3v5.s:509    .text.lr1mac_class_c_init:00000078 $d
-     /tmp/cce2h3v5.s:513    .text.lr1mac_class_c_start:00000000 $t
-     /tmp/cce2h3v5.s:519    .text.lr1mac_class_c_start:00000000 lr1mac_class_c_start
-     /tmp/cce2h3v5.s:566    .text.lr1mac_class_c_mac_rp_callback:00000000 $t
-     /tmp/cce2h3v5.s:572    .text.lr1mac_class_c_mac_rp_callback:00000000 lr1mac_class_c_mac_rp_callback
-     /tmp/cce2h3v5.s:600    .text.lr1mac_class_c_mac_rp_callback:00000034 $d
-     /tmp/cce2h3v5.s:611    .text.lr1mac_class_c_mac_rp_callback:0000004a $t
-     /tmp/cce2h3v5.s:1050   .text.lr1mac_class_c_mac_rp_callback:0000039c $d
-     /tmp/cce2h3v5.s:1354   .rodata.__func__.0:00000000 __func__.0
-     /tmp/cce2h3v5.s:1070   .text.lr1mac_class_c_multicast_start_session:00000000 $t
-     /tmp/cce2h3v5.s:1076   .text.lr1mac_class_c_multicast_start_session:00000000 lr1mac_class_c_multicast_start_session
-     /tmp/cce2h3v5.s:1168   .text.lr1mac_class_c_multicast_stop_session:00000000 $t
-     /tmp/cce2h3v5.s:1174   .text.lr1mac_class_c_multicast_stop_session:00000000 lr1mac_class_c_multicast_stop_session
-     /tmp/cce2h3v5.s:1226   .text.lr1mac_class_c_multicast_stop_all_sessions:00000000 $t
-     /tmp/cce2h3v5.s:1232   .text.lr1mac_class_c_multicast_stop_all_sessions:00000000 lr1mac_class_c_multicast_stop_all_sessions
-     /tmp/cce2h3v5.s:1275   .text.lr1mac_class_c_stop:00000000 $t
-     /tmp/cce2h3v5.s:1281   .text.lr1mac_class_c_stop:00000000 lr1mac_class_c_stop
-     /tmp/cce2h3v5.s:1302   .text.lr1mac_class_c_enabled:00000000 $t
-     /tmp/cce2h3v5.s:1308   .text.lr1mac_class_c_enabled:00000000 lr1mac_class_c_enabled
-     /tmp/cce2h3v5.s:1322   .text.lr1mac_class_c_multicast_get_session_status:00000000 $t
-     /tmp/cce2h3v5.s:1328   .text.lr1mac_class_c_multicast_get_session_status:00000000 lr1mac_class_c_multicast_get_session_status
-     /tmp/cce2h3v5.s:188    .text.lr1mac_class_c_launch:0000012b $d
-     /tmp/cce2h3v5.s:188    .text.lr1mac_class_c_launch:0000012c $t
+     /tmp/ccaTBwBX.s:32     .text.lr1mac_class_c_launch:00000000 $t
+     /tmp/ccaTBwBX.s:37     .text.lr1mac_class_c_launch:00000000 lr1mac_class_c_launch
+     /tmp/ccaTBwBX.s:175    .text.lr1mac_class_c_launch:0000011e $d
+     /tmp/ccaTBwBX.s:385    .text.lr1mac_class_c_launch:000002c0 $d
+     /tmp/ccaTBwBX.s:1359   .rodata.__func__.1:00000000 __func__.1
+     /tmp/ccaTBwBX.s:405    .text.lr1mac_class_c_rp_callback:00000000 $t
+     /tmp/ccaTBwBX.s:410    .text.lr1mac_class_c_rp_callback:00000000 lr1mac_class_c_rp_callback
+     /tmp/ccaTBwBX.s:438    .text.lr1mac_class_c_init:00000000 $t
+     /tmp/ccaTBwBX.s:444    .text.lr1mac_class_c_init:00000000 lr1mac_class_c_init
+     /tmp/ccaTBwBX.s:509    .text.lr1mac_class_c_init:00000078 $d
+     /tmp/ccaTBwBX.s:513    .text.lr1mac_class_c_start:00000000 $t
+     /tmp/ccaTBwBX.s:519    .text.lr1mac_class_c_start:00000000 lr1mac_class_c_start
+     /tmp/ccaTBwBX.s:566    .text.lr1mac_class_c_mac_rp_callback:00000000 $t
+     /tmp/ccaTBwBX.s:572    .text.lr1mac_class_c_mac_rp_callback:00000000 lr1mac_class_c_mac_rp_callback
+     /tmp/ccaTBwBX.s:600    .text.lr1mac_class_c_mac_rp_callback:00000034 $d
+     /tmp/ccaTBwBX.s:611    .text.lr1mac_class_c_mac_rp_callback:0000004a $t
+     /tmp/ccaTBwBX.s:1050   .text.lr1mac_class_c_mac_rp_callback:0000039c $d
+     /tmp/ccaTBwBX.s:1354   .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccaTBwBX.s:1070   .text.lr1mac_class_c_multicast_start_session:00000000 $t
+     /tmp/ccaTBwBX.s:1076   .text.lr1mac_class_c_multicast_start_session:00000000 lr1mac_class_c_multicast_start_session
+     /tmp/ccaTBwBX.s:1168   .text.lr1mac_class_c_multicast_stop_session:00000000 $t
+     /tmp/ccaTBwBX.s:1174   .text.lr1mac_class_c_multicast_stop_session:00000000 lr1mac_class_c_multicast_stop_session
+     /tmp/ccaTBwBX.s:1226   .text.lr1mac_class_c_multicast_stop_all_sessions:00000000 $t
+     /tmp/ccaTBwBX.s:1232   .text.lr1mac_class_c_multicast_stop_all_sessions:00000000 lr1mac_class_c_multicast_stop_all_sessions
+     /tmp/ccaTBwBX.s:1275   .text.lr1mac_class_c_stop:00000000 $t
+     /tmp/ccaTBwBX.s:1281   .text.lr1mac_class_c_stop:00000000 lr1mac_class_c_stop
+     /tmp/ccaTBwBX.s:1302   .text.lr1mac_class_c_enabled:00000000 $t
+     /tmp/ccaTBwBX.s:1308   .text.lr1mac_class_c_enabled:00000000 lr1mac_class_c_enabled
+     /tmp/ccaTBwBX.s:1322   .text.lr1mac_class_c_multicast_get_session_status:00000000 $t
+     /tmp/ccaTBwBX.s:1328   .text.lr1mac_class_c_multicast_get_session_status:00000000 lr1mac_class_c_multicast_get_session_status
+     /tmp/ccaTBwBX.s:188    .text.lr1mac_class_c_launch:0000012b $d
+     /tmp/ccaTBwBX.s:188    .text.lr1mac_class_c_launch:0000012c $t
 
 UNDEFINED SYMBOLS
 smtc_modem_hal_print_trace
@@ -1557,7 +1557,7 @@ rp_release_hook
 rp_hook_init
 rp_hook_get_id
 rp_get_status
-ARM GAS  /tmp/cce2h3v5.s 			page 27
+ARM GAS  /tmp/ccaTBwBX.s 			page 27
 
 
 __gnu_thumb1_case_uhi

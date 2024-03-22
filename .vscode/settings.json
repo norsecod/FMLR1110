@@ -10,7 +10,9 @@
         "smtc_modem_hal.h": "c",
         "smtc_modem_utilities.h": "c",
         "smtc_modem_api.h": "c",
-        "ral_lr11xx.h": "c"
+        "ral_lr11xx.h": "c",
+        "cayenne_lpp.h": "c",
+        "inttypes.h": "c"
     },
  
 }

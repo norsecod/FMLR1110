@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc2Yojzh.s 			page 1
+ARM GAS  /tmp/ccZM8kdS.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
   56 002c 0122     		movs	r2, #1
   57 002e 0B3B     		subs	r3, r3, #11
   58 0030 DBB2     		uxtb	r3, r3
-ARM GAS  /tmp/cc2Yojzh.s 			page 2
+ARM GAS  /tmp/ccZM8kdS.s 			page 2
 
 
   59              	.L10:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  117 0016 F433     		adds	r3, r3, #244
  118 0018 1B68     		ldr	r3, [r3]
  119 001a 6118     		adds	r1, r4, r1
-ARM GAS  /tmp/cc2Yojzh.s 			page 3
+ARM GAS  /tmp/ccZM8kdS.s 			page 3
 
 
  120 001c 9847     		blx	r3
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  174 008c 1A6A     		ldr	r2, [r3, #32]
  175 008e 1868     		ldr	r0, [r3]
  176 0090 9047     		blx	r2
-ARM GAS  /tmp/cc2Yojzh.s 			page 4
+ARM GAS  /tmp/ccZM8kdS.s 			page 4
 
 
  177 0092 0028     		cmp	r0, #0
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  233 0036 04D0     		beq	.L35
  234 0038 3421     		movs	r1, #52
  235 003a 1548     		ldr	r0, .L48+4
-ARM GAS  /tmp/cc2Yojzh.s 			page 5
+ARM GAS  /tmp/ccZM8kdS.s 			page 5
 
 
  236 003c FF31     		adds	r1, r1, #255
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  292 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
  293 0002 9C25     		movs	r5, #156
  294 0004 214B     		ldr	r3, .L65
-ARM GAS  /tmp/cc2Yojzh.s 			page 6
+ARM GAS  /tmp/ccZM8kdS.s 			page 6
 
 
  295 0006 8421     		movs	r1, #132
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  349 0076 0648     		ldr	r0, .L65+4
  350 0078 4900     		lsls	r1, r1, #1
  351 007a FFF7FEFF 		bl	smtc_modem_hal_assert_fail
-ARM GAS  /tmp/cc2Yojzh.s 			page 7
+ARM GAS  /tmp/ccZM8kdS.s 			page 7
 
 
  352              	.L54:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  408 003e A218     		adds	r2, r4, r2
  409 0040 5156     		ldrsb	r1, [r2, r1]
  410 0042 836C     		ldr	r3, [r0, #72]
-ARM GAS  /tmp/cc2Yojzh.s 			page 8
+ARM GAS  /tmp/ccZM8kdS.s 			page 8
 
 
  411 0044 D26A     		ldr	r2, [r2, #44]
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  465 00b2 FFF7FEFF 		bl	smtc_modem_hal_assert_fail
  466              	.L71:
  467 00b6 1C23     		movs	r3, #28
-ARM GAS  /tmp/cc2Yojzh.s 			page 9
+ARM GAS  /tmp/ccZM8kdS.s 			page 9
 
 
  468 00b8 5D43     		muls	r5, r3
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  524 000c 0400     		movs	r4, r0
  525 000e 4059     		ldr	r0, [r0, r5]
  526 0010 7143     		muls	r1, r6
-ARM GAS  /tmp/cc2Yojzh.s 			page 10
+ARM GAS  /tmp/ccZM8kdS.s 			page 10
 
 
  527 0012 0300     		movs	r3, r0
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  581 007e FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
  582 0082 361A     		subs	r6, r6, r0
  583 0084 002E     		cmp	r6, #0
-ARM GAS  /tmp/cc2Yojzh.s 			page 11
+ARM GAS  /tmp/ccZM8kdS.s 			page 11
 
 
  584 0086 F9DC     		bgt	.L96
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  640 0020 F523     		movs	r3, #245
  641 0022 5B00     		lsls	r3, r3, #1
  642 0024 C554     		strb	r5, [r0, r3]
-ARM GAS  /tmp/cc2Yojzh.s 			page 12
+ARM GAS  /tmp/ccZM8kdS.s 			page 12
 
 
  643 0026 7A23     		movs	r3, #122
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  699 0008 0370     		strb	r3, [r0]
  700 000a 2348     		ldr	r0, .L117
  701 000c 2354     		strb	r3, [r4, r0]
-ARM GAS  /tmp/cc2Yojzh.s 			page 13
+ARM GAS  /tmp/ccZM8kdS.s 			page 13
 
 
  702 000e 2348     		ldr	r0, .L117+4
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  756 007a A018     		adds	r0, r4, r2
  757 007c 2022     		movs	r2, #32
  758 007e FFF7FEFF 		bl	memset
-ARM GAS  /tmp/cc2Yojzh.s 			page 14
+ARM GAS  /tmp/ccZM8kdS.s 			page 14
 
 
  759 0082 114B     		ldr	r3, .L117+48
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  815 0028 2578     		ldrb	r5, [r4]
  816 002a 0600     		movs	r6, r0
  817 002c 6D01     		lsls	r5, r5, #5
-ARM GAS  /tmp/cc2Yojzh.s 			page 15
+ARM GAS  /tmp/ccZM8kdS.s 			page 15
 
 
  818 002e 5B19     		adds	r3, r3, r5
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  872 0098 17DB     		blt	.L124
  873 009a 0300     		movs	r3, r0
  874 009c 7233     		adds	r3, r3, #114
-ARM GAS  /tmp/cc2Yojzh.s 			page 16
+ARM GAS  /tmp/ccZM8kdS.s 			page 16
 
 
  875 009e 1B78     		ldrb	r3, [r3]
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  919 005b 1B5B303B 		.ascii	"\033[0;31mERROR: -> Crypto error during mic computa"
  919      33316D45 
  919      52524F52 
-ARM GAS  /tmp/cc2Yojzh.s 			page 17
+ARM GAS  /tmp/ccZM8kdS.s 			page 17
 
 
  919      3A202D3E 
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  972 0056 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  973 005a 1D4D     		ldr	r5, .L146+8
  974 005c 2800     		movs	r0, r5
-ARM GAS  /tmp/cc2Yojzh.s 			page 18
+ARM GAS  /tmp/ccZM8kdS.s 			page 18
 
 
  975 005e FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1030              		.global	lr1_stack_mac_radio_busy_lbt
  1031              		.syntax unified
  1032              		.code	16
-ARM GAS  /tmp/cc2Yojzh.s 			page 19
+ARM GAS  /tmp/ccZM8kdS.s 			page 19
 
 
  1033              		.thumb_func
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1087 002d 00       		.ascii	"\000"
  1088              	.LC22:
  1089 002e 1B5B303B 		.ascii	"\033[0;31mERROR: -> \000"
-ARM GAS  /tmp/cc2Yojzh.s 			page 20
+ARM GAS  /tmp/ccZM8kdS.s 			page 20
 
 
  1089      33316D45 
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1137 004c 0399     		ldr	r1, [sp, #12]
  1138 004e 2800     		movs	r0, r5
  1139 0050 FFF7FEFF 		bl	memset
-ARM GAS  /tmp/cc2Yojzh.s 			page 21
+ARM GAS  /tmp/ccZM8kdS.s 			page 21
 
 
  1140 0054 9623     		movs	r3, #150
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1194 00ca E258     		ldr	r2, [r4, r3]
  1195 00cc 9C23     		movs	r3, #156
  1196 00ce 1B01     		lsls	r3, r3, #4
-ARM GAS  /tmp/cc2Yojzh.s 			page 22
+ARM GAS  /tmp/ccZM8kdS.s 			page 22
 
 
  1197 00d0 D358     		ldr	r3, [r2, r3]
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1251 0148 01D1     		bne	.L160
  1252 014a 0023     		movs	r3, #0
  1253 014c A354     		strb	r3, [r4, r2]
-ARM GAS  /tmp/cc2Yojzh.s 			page 23
+ARM GAS  /tmp/ccZM8kdS.s 			page 23
 
 
  1254              	.L160:
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1308 01ba 2B85     		strh	r3, [r5, #40]
  1309 01bc 6D4B     		ldr	r3, .L170+40
  1310 01be 1793     		str	r3, [sp, #92]
-ARM GAS  /tmp/cc2Yojzh.s 			page 24
+ARM GAS  /tmp/ccZM8kdS.s 			page 24
 
 
  1311 01c0 9623     		movs	r3, #150
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1365 0230 83CA     		ldmia	r2!, {r0, r1, r7}
  1366 0232 83C3     		stmia	r3!, {r0, r1, r7}
  1367 0234 03CA     		ldmia	r2!, {r0, r1}
-ARM GAS  /tmp/cc2Yojzh.s 			page 25
+ARM GAS  /tmp/ccZM8kdS.s 			page 25
 
 
  1368 0236 03C3     		stmia	r3!, {r0, r1}
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1422 02a6 0100     		movs	r1, r0
  1423 02a8 0020     		movs	r0, #0
  1424 02aa FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
-ARM GAS  /tmp/cc2Yojzh.s 			page 26
+ARM GAS  /tmp/ccZM8kdS.s 			page 26
 
 
  1425 02ae 0021     		movs	r1, #0
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1479 031e FFF7FEFF 		bl	smtc_modem_hal_store_crashlog
  1480 0322 0120     		movs	r0, #1
  1481 0324 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
-ARM GAS  /tmp/cc2Yojzh.s 			page 27
+ARM GAS  /tmp/ccZM8kdS.s 			page 27
 
 
  1482 0328 2900     		movs	r1, r5
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1538 001c A323     		movs	r3, #163
  1539 001e 0122     		movs	r2, #1
  1540 0020 DB00     		lsls	r3, r3, #3
-ARM GAS  /tmp/cc2Yojzh.s 			page 28
+ARM GAS  /tmp/ccZM8kdS.s 			page 28
 
 
  1541 0022 2000     		movs	r0, r4
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1576 0002 F0B5     		push	{r4, r5, r6, r7, lr}
  1577 0004 B7B0     		sub	sp, sp, #220
  1578 0006 DB00     		lsls	r3, r3, #3
-ARM GAS  /tmp/cc2Yojzh.s 			page 29
+ARM GAS  /tmp/ccZM8kdS.s 			page 29
 
 
  1579 0008 0591     		str	r1, [sp, #20]
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1633 007e 0AAD     		add	r5, sp, #40
  1634 0080 FFF7FEFF 		bl	smtc_real_lora_dr_to_sf_bw
  1635 0084 1422     		movs	r2, #20
-ARM GAS  /tmp/cc2Yojzh.s 			page 30
+ARM GAS  /tmp/ccZM8kdS.s 			page 30
 
 
  1636 0086 3100     		movs	r1, r6
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1690 00f8 ED18     		adds	r5, r5, r3
  1691 00fa 2A00     		movs	r2, r5
  1692 00fc 2100     		movs	r1, r4
-ARM GAS  /tmp/cc2Yojzh.s 			page 31
+ARM GAS  /tmp/ccZM8kdS.s 			page 31
 
 
  1693 00fe E059     		ldr	r0, [r4, r7]
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1747 0178 FF23     		movs	r3, #255
  1748 017a A218     		adds	r2, r4, r2
  1749 017c 0AA9     		add	r1, sp, #40
-ARM GAS  /tmp/cc2Yojzh.s 			page 32
+ARM GAS  /tmp/ccZM8kdS.s 			page 32
 
 
  1750 017e FFF7FEFF 		bl	rp_task_enqueue
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1804 01e6 1723     		movs	r3, #23
  1805 01e8 04AA     		add	r2, sp, #16
  1806 01ea 9B18     		adds	r3, r3, r2
-ARM GAS  /tmp/cc2Yojzh.s 			page 33
+ARM GAS  /tmp/ccZM8kdS.s 			page 33
 
 
  1807 01ec 1A00     		movs	r2, r3
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1861 025e 46E7     		b	.L193
  1862              	.L182:
  1863 0260 134D     		ldr	r5, .L194+4
-ARM GAS  /tmp/cc2Yojzh.s 			page 34
+ARM GAS  /tmp/ccZM8kdS.s 			page 34
 
 
  1864 0262 2800     		movs	r0, r5
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1918 0304 A0860100 		.word	100000
  1919 0308 24000000 		.word	.LC33
  1920 030c A8000000 		.word	.LC42
-ARM GAS  /tmp/cc2Yojzh.s 			page 35
+ARM GAS  /tmp/ccZM8kdS.s 			page 35
 
 
  1921 0310 40000000 		.word	.LC24
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  1946              		.code	16
  1947              		.thumb_func
  1949              	lr1_stack_mac_rp_callback:
-ARM GAS  /tmp/cc2Yojzh.s 			page 36
+ARM GAS  /tmp/ccZM8kdS.s 			page 36
 
 
  1950              		@ args = 0, pretend = 0, frame = 16
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2004              	.LCB2084:
  2005 0058 0A29     		cmp	r1, #10
  2006 005a 00D0     		beq	.LCB2086
-ARM GAS  /tmp/cc2Yojzh.s 			page 37
+ARM GAS  /tmp/ccZM8kdS.s 			page 37
 
 
  2007 005c A6E0     		b	.L216	@long jump
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2061 00c0 0023     		movs	r3, #0
  2062 00c2 6355     		strb	r3, [r4, r5]
  2063 00c4 BFE7     		b	.L204
-ARM GAS  /tmp/cc2Yojzh.s 			page 38
+ARM GAS  /tmp/ccZM8kdS.s 			page 38
 
 
  2064              	.L205:
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2118 012e DB00     		lsls	r3, r3, #3
  2119 0130 E358     		ldr	r3, [r4, r3]
  2120 0132 FF00     		lsls	r7, r7, #3
-ARM GAS  /tmp/cc2Yojzh.s 			page 39
+ARM GAS  /tmp/ccZM8kdS.s 			page 39
 
 
  2121 0134 ED1A     		subs	r5, r5, r3
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2175 019a E254     		strb	r2, [r4, r3]
  2176              	.L215:
  2177 019c A35D     		ldrb	r3, [r4, r6]
-ARM GAS  /tmp/cc2Yojzh.s 			page 40
+ARM GAS  /tmp/ccZM8kdS.s 			page 40
 
 
  2178 019e 0A2B     		cmp	r3, #10
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2232 0238 00000000 		.word	__func__.5
  2233 023c 00000000 		.word	.LC6
  2234 0240 2E000000 		.word	.LC22
-ARM GAS  /tmp/cc2Yojzh.s 			page 41
+ARM GAS  /tmp/ccZM8kdS.s 			page 41
 
 
  2236              		.section	.rodata.lr1_stack_mac_rx_timer_configure.str1.1,"aMS",%progbits,1
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2287 0056 1E78     		ldrb	r6, [r3]
  2288              	.L234:
  2289 0058 9727     		movs	r7, #151
-ARM GAS  /tmp/cc2Yojzh.s 			page 42
+ARM GAS  /tmp/ccZM8kdS.s 			page 42
 
 
  2290 005a FF00     		lsls	r7, r7, #3
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2344 00ce 0090     		str	r0, [sp]
  2345 00d0 2000     		movs	r0, r4
  2346 00d2 FFF7FEFF 		bl	smtc_real_get_rx_start_time_offset_ms
-ARM GAS  /tmp/cc2Yojzh.s 			page 43
+ARM GAS  /tmp/ccZM8kdS.s 			page 43
 
 
  2347 00d6 264B     		ldr	r3, .L242+24
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2401 014c 0B48     		ldr	r0, .L242+36
  2402 014e 7118     		adds	r1, r6, r1
  2403 0150 FFF7FEFF 		bl	smtc_modem_hal_print_trace
-ARM GAS  /tmp/cc2Yojzh.s 			page 44
+ARM GAS  /tmp/ccZM8kdS.s 			page 44
 
 
  2404 0154 7BE7     		b	.L230
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2460 0038 05D1     		bne	.L248
  2461 003a 0132     		adds	r2, r2, #1
  2462 003c C254     		strb	r2, [r0, r3]
-ARM GAS  /tmp/cc2Yojzh.s 			page 45
+ARM GAS  /tmp/ccZM8kdS.s 			page 45
 
 
  2463 003e 0A4B     		ldr	r3, .L253+20
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2498      780A00
  2499              	.LC81:
  2500 00bd 1B5B303B 		.ascii	"\033[0;33mWARN: INVALID CHANNEL CNTL\012\000"
-ARM GAS  /tmp/cc2Yojzh.s 			page 46
+ARM GAS  /tmp/ccZM8kdS.s 			page 46
 
 
  2500      33336D57 
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2519 01c5 20436D64 		.ascii	" Cmd rx_param_setup_parser = %x %x %x %x\012\000"
  2519      2072785F 
  2519      70617261 
-ARM GAS  /tmp/cc2Yojzh.s 			page 47
+ARM GAS  /tmp/ccZM8kdS.s 			page 47
 
 
  2519      6D5F7365 
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2537      4368616E 
  2538 02e4 74686973 		.ascii	"this region\012\000"
  2538      20726567 
-ARM GAS  /tmp/cc2Yojzh.s 			page 48
+ARM GAS  /tmp/ccZM8kdS.s 			page 48
 
 
  2538      696F6E0A 
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2557      6172616D 
  2558 03f9 72207468 		.ascii	"r this region\012\000"
  2558      69732072 
-ARM GAS  /tmp/cc2Yojzh.s 			page 49
+ARM GAS  /tmp/ccZM8kdS.s 			page 49
 
 
  2558      6567696F 
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2577              	.LC155:
  2578 053f 494E5641 		.ascii	"INVALID PING SLOT DR\012\000"
  2578      4C494420 
-ARM GAS  /tmp/cc2Yojzh.s 			page 50
+ARM GAS  /tmp/ccZM8kdS.s 			page 50
 
 
  2578      50494E47 
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2607 000c 8354     		strb	r3, [r0, r2]
  2608 000e 7A22     		movs	r2, #122
  2609 0010 FF32     		adds	r2, r2, #255
-ARM GAS  /tmp/cc2Yojzh.s 			page 51
+ARM GAS  /tmp/ccZM8kdS.s 			page 51
 
 
  2610 0012 8354     		strb	r3, [r0, r2]
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2664 0076 DD05     		.2byte	(.L259-.L261)/2
  2665 0078 DD05     		.2byte	(.L259-.L261)/2
  2666 007a C404     		.2byte	(.L263-.L261)/2
-ARM GAS  /tmp/cc2Yojzh.s 			page 52
+ARM GAS  /tmp/ccZM8kdS.s 			page 52
 
 
  2667 007c D804     		.2byte	(.L262-.L261)/2
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2721 00dc 8000     		lsls	r0, r0, #2
  2722 00de 4A43     		muls	r2, r1
  2723 00e0 B118     		adds	r1, r6, r2
-ARM GAS  /tmp/cc2Yojzh.s 			page 53
+ARM GAS  /tmp/ccZM8kdS.s 			page 53
 
 
  2724 00e2 0918     		adds	r1, r1, r0
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2778 014a 764A     		ldr	r2, .L385+40
  2779 014c EB18     		adds	r3, r5, r3
  2780 014e 9A18     		adds	r2, r3, r2
-ARM GAS  /tmp/cc2Yojzh.s 			page 54
+ARM GAS  /tmp/ccZM8kdS.s 			page 54
 
 
  2781 0150 1178     		ldrb	r1, [r2]
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2835 01c4 5148     		ldr	r0, .L385+16
  2836 01c6 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  2837 01ca 0026     		movs	r6, #0
-ARM GAS  /tmp/cc2Yojzh.s 			page 55
+ARM GAS  /tmp/ccZM8kdS.s 			page 55
 
 
  2838 01cc 0AE0     		b	.L287
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2892 022e 5A1E     		subs	r2, r3, #1
  2893 0230 6243     		muls	r2, r4
  2894 0232 EB5D     		ldrb	r3, [r5, r7]
-ARM GAS  /tmp/cc2Yojzh.s 			page 56
+ARM GAS  /tmp/ccZM8kdS.s 			page 56
 
 
  2895 0234 AA18     		adds	r2, r5, r2
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  2949 02a6 FFF7FEFF 		bl	smtc_real_set_power
  2950              	.L294:
  2951 02aa 0F22     		movs	r2, #15
-ARM GAS  /tmp/cc2Yojzh.s 			page 57
+ARM GAS  /tmp/ccZM8kdS.s 			page 57
 
 
  2952 02ac 079B     		ldr	r3, [sp, #28]
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3006 0334 92040000 		.word	1170
  3007 0338 12010000 		.word	.LC85
  3008 033c E0000000 		.word	.LC83
-ARM GAS  /tmp/cc2Yojzh.s 			page 58
+ARM GAS  /tmp/ccZM8kdS.s 			page 58
 
 
  3009 0340 19050000 		.word	1305
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3063              	.LCB3125:
  3064 03ae CB49     		ldr	r1, .L387+4
  3065 03b0 CC4B     		ldr	r3, .L387+12
-ARM GAS  /tmp/cc2Yojzh.s 			page 59
+ARM GAS  /tmp/ccZM8kdS.s 			page 59
 
 
  3066 03b2 CD4A     		ldr	r2, .L387+16
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3120 0424 E95D     		ldrb	r1, [r5, r7]
  3121 0426 B04B     		ldr	r3, .L387+16
  3122 0428 2800     		movs	r0, r5
-ARM GAS  /tmp/cc2Yojzh.s 			page 60
+ARM GAS  /tmp/ccZM8kdS.s 			page 60
 
 
  3123 042a C918     		adds	r1, r1, r3
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3177 0494 3170     		strb	r1, [r6]
  3178 0496 0233     		adds	r3, r3, #2
  3179 0498 1470     		strb	r4, [r2]
-ARM GAS  /tmp/cc2Yojzh.s 			page 61
+ARM GAS  /tmp/ccZM8kdS.s 			page 61
 
 
  3180 049a 82E7     		b	.L375
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3234 050a 1300     		movs	r3, r2
  3235 050c 0622     		movs	r2, #6
  3236 050e 1A70     		strb	r2, [r3]
-ARM GAS  /tmp/cc2Yojzh.s 			page 62
+ARM GAS  /tmp/ccZM8kdS.s 			page 62
 
 
  3237 0510 FFF7FEFF 		bl	smtc_modem_hal_get_battery_level
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3291 057a FFF7FEFF 		bl	smtc_modem_hal_print_trace
  3292 057e 2800     		movs	r0, r5
  3293 0580 FFF7FEFF 		bl	smtc_real_is_new_channel_req_supported
-ARM GAS  /tmp/cc2Yojzh.s 			page 63
+ARM GAS  /tmp/ccZM8kdS.s 			page 63
 
 
  3294 0584 0028     		cmp	r0, #0
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3348 05f8 1100     		movs	r1, r2
  3349 05fa 2800     		movs	r0, r5
  3350 05fc 0692     		str	r2, [sp, #24]
-ARM GAS  /tmp/cc2Yojzh.s 			page 64
+ARM GAS  /tmp/ccZM8kdS.s 			page 64
 
 
  3351 05fe FFF7FEFF 		bl	smtc_real_is_tx_dr_valid
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3405 066c EA18     		adds	r2, r5, r3
  3406 066e 1100     		movs	r1, r2
  3407 0670 7C32     		adds	r2, r2, #124
-ARM GAS  /tmp/cc2Yojzh.s 			page 65
+ARM GAS  /tmp/ccZM8kdS.s 			page 65
 
 
  3408 0672 7B31     		adds	r1, r1, #123
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3462 06e4 37030000 		.word	823
  3463 06e8 36030000 		.word	822
  3464 06ec C5010000 		.word	.LC99
-ARM GAS  /tmp/cc2Yojzh.s 			page 66
+ARM GAS  /tmp/ccZM8kdS.s 			page 66
 
 
  3465 06f0 EF010000 		.word	.LC101
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3519 077e 4CE4     		b	.L256	@long jump
  3520              	.LCB3635:
  3521 0780 7A20     		movs	r0, #122
-ARM GAS  /tmp/cc2Yojzh.s 			page 67
+ARM GAS  /tmp/ccZM8kdS.s 			page 67
 
 
  3522 0782 0821     		movs	r1, #8
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3576 07ec A86B     		ldr	r0, [r5, #56]
  3577 07ee 0239     		subs	r1, r1, #2
  3578 07f0 847A     		ldrb	r4, [r0, #10]
-ARM GAS  /tmp/cc2Yojzh.s 			page 68
+ARM GAS  /tmp/ccZM8kdS.s 			page 68
 
 
  3579 07f2 081C     		adds	r0, r1, #0
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3633 0858 2478     		ldrb	r4, [r4]
  3634 085a 1B78     		ldrb	r3, [r3]
  3635 085c 1278     		ldrb	r2, [r2]
-ARM GAS  /tmp/cc2Yojzh.s 			page 69
+ARM GAS  /tmp/ccZM8kdS.s 			page 69
 
 
  3636 085e AA48     		ldr	r0, .L389+36
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3690 08d4 0533     		adds	r3, r3, #5
  3691 08d6 DBB2     		uxtb	r3, r3
  3692 08d8 EB55     		strb	r3, [r5, r7]
-ARM GAS  /tmp/cc2Yojzh.s 			page 70
+ARM GAS  /tmp/ccZM8kdS.s 			page 70
 
 
  3693 08da AA5C     		ldrb	r2, [r5, r2]
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3747 0944 CD23     		movs	r3, #205
  3748 0946 9B00     		lsls	r3, r3, #2
  3749 0948 6748     		ldr	r0, .L389+4
-ARM GAS  /tmp/cc2Yojzh.s 			page 71
+ARM GAS  /tmp/ccZM8kdS.s 			page 71
 
 
  3750 094a E418     		adds	r4, r4, r3
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3804 09ba AB54     		strb	r3, [r5, r2]
  3805 09bc A623     		movs	r3, #166
  3806 09be DB00     		lsls	r3, r3, #3
-ARM GAS  /tmp/cc2Yojzh.s 			page 72
+ARM GAS  /tmp/ccZM8kdS.s 			page 72
 
 
  3807 09c0 EA58     		ldr	r2, [r5, r3]
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3861 0a30 1B78     		ldrb	r3, [r3]
  3862 0a32 1278     		ldrb	r2, [r2]
  3863 0a34 4648     		ldr	r0, .L389+108
-ARM GAS  /tmp/cc2Yojzh.s 			page 73
+ARM GAS  /tmp/ccZM8kdS.s 			page 73
 
 
  3864 0a36 0094     		str	r4, [sp]
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3918 0aa2 0100     		movs	r1, r0
  3919 0aa4 2800     		movs	r0, r5
  3920 0aa6 FFF7FEFF 		bl	smtc_real_is_frequency_valid
-ARM GAS  /tmp/cc2Yojzh.s 			page 74
+ARM GAS  /tmp/ccZM8kdS.s 			page 74
 
 
  3921 0aaa 0130     		adds	r0, r0, #1
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  3975 0b44 DF040000 		.word	.LC149
  3976 0b48 51050000 		.word	1361
  3977 0b4c 52050000 		.word	1362
-ARM GAS  /tmp/cc2Yojzh.s 			page 75
+ARM GAS  /tmp/ccZM8kdS.s 			page 75
 
 
  3978 0b50 F1040000 		.word	.LC151
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4032 0bcc 695C     		ldrb	r1, [r5, r1]
  4033 0bce 9942     		cmp	r1, r3
  4034 0bd0 01D2     		bcs	.LCB4220
-ARM GAS  /tmp/cc2Yojzh.s 			page 76
+ARM GAS  /tmp/ccZM8kdS.s 			page 76
 
 
  4035 0bd2 FFF722FA 		bl	.L256	@far jump
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4090              		.section	.rodata.lr1_stack_mac_join_request_build.str1.1,"aMS",%progbits,1
  4091              	.LC169:
  4092 0000 44657645 		.ascii	"DevEUI\000"
-ARM GAS  /tmp/cc2Yojzh.s 			page 77
+ARM GAS  /tmp/ccZM8kdS.s 			page 77
 
 
  4092      554900
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4132 0024 9B18     		adds	r3, r3, r2
  4133 0026 595D     		ldrb	r1, [r3, r5]
  4134 0028 414B     		ldr	r3, .L406+8
-ARM GAS  /tmp/cc2Yojzh.s 			page 78
+ARM GAS  /tmp/ccZM8kdS.s 			page 78
 
 
  4135 002a 0135     		adds	r5, r5, #1
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4189 009e 0370     		strb	r3, [r0]
  4190 00a0 0723     		movs	r3, #7
  4191 00a2 7B32     		adds	r2, r2, #123
-ARM GAS  /tmp/cc2Yojzh.s 			page 79
+ARM GAS  /tmp/ccZM8kdS.s 			page 79
 
 
  4192              	.L397:
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4246 011e 0433     		adds	r3, r3, #4
  4247 0120 2B70     		strb	r3, [r5]
  4248 0122 09B0     		add	sp, sp, #36
-ARM GAS  /tmp/cc2Yojzh.s 			page 80
+ARM GAS  /tmp/ccZM8kdS.s 			page 80
 
 
  4249              		@ sp needed
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4281      2025640A 
  4282              	.LC199:
  4283 00d2 204D6163 		.ascii	" MacRx1Delay= %d\012\000"
-ARM GAS  /tmp/cc2Yojzh.s 			page 81
+ARM GAS  /tmp/ccZM8kdS.s 			page 81
 
 
  4283      52783144 
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4331 0048 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  4332 004c 6D42     		rsbs	r5, r5, #0
  4333              	.L416:
-ARM GAS  /tmp/cc2Yojzh.s 			page 82
+ARM GAS  /tmp/ccZM8kdS.s 			page 82
 
 
  4334 004e 2800     		movs	r0, r5
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4388 00b8 2E4B     		ldr	r3, .L421+32
  4389 00ba E35C     		ldrb	r3, [r4, r3]
  4390 00bc 5906     		lsls	r1, r3, #25
-ARM GAS  /tmp/cc2Yojzh.s 			page 83
+ARM GAS  /tmp/ccZM8kdS.s 			page 83
 
 
  4391 00be 490F     		lsrs	r1, r1, #29
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4445 012e 1648     		ldr	r0, .L421+52
  4446 0130 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  4447 0134 3178     		ldrb	r1, [r6]
-ARM GAS  /tmp/cc2Yojzh.s 			page 84
+ARM GAS  /tmp/ccZM8kdS.s 			page 84
 
 
  4448 0136 1548     		ldr	r0, .L421+56
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4504 0012 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
  4505 0016 C623     		movs	r3, #198
  4506 0018 9B00     		lsls	r3, r3, #2
-ARM GAS  /tmp/cc2Yojzh.s 			page 85
+ARM GAS  /tmp/ccZM8kdS.s 			page 85
 
 
  4507 001a E158     		ldr	r1, [r4, r3]
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4563 004a A870     		strb	r0, [r5, #2]
  4564 004c 3800     		movs	r0, r7
  4565 004e FFF7FEFF 		bl	ral_compute_lora_ldro
-ARM GAS  /tmp/cc2Yojzh.s 			page 86
+ARM GAS  /tmp/ccZM8kdS.s 			page 86
 
 
  4566 0052 0123     		movs	r3, #1
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4620 00be 2B85     		strh	r3, [r5, #40]
  4621 00c0 314B     		ldr	r3, .L435+8
  4622 00c2 07A8     		add	r0, sp, #28
-ARM GAS  /tmp/cc2Yojzh.s 			page 87
+ARM GAS  /tmp/ccZM8kdS.s 			page 87
 
 
  4623 00c4 0C93     		str	r3, [sp, #48]
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4677 0134 9C23     		movs	r3, #156
  4678 0136 1B01     		lsls	r3, r3, #4
  4679 0138 D058     		ldr	r0, [r2, r3]
-ARM GAS  /tmp/cc2Yojzh.s 			page 88
+ARM GAS  /tmp/ccZM8kdS.s 			page 88
 
 
  4680 013a 7934     		adds	r4, r4, #121
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4727      52524F52 
  4727      3A202D3E 
  4727      20204461 
-ARM GAS  /tmp/cc2Yojzh.s 			page 89
+ARM GAS  /tmp/ccZM8kdS.s 			page 89
 
 
  4728 006b 616E6E65 		.ascii	"annel mask\012\000"
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4781 0054 A354     		strb	r3, [r4, r2]
  4782              	.L438:
  4783 0056 9120     		movs	r0, #145
-ARM GAS  /tmp/cc2Yojzh.s 			page 90
+ARM GAS  /tmp/ccZM8kdS.s 			page 90
 
 
  4784 0058 0026     		movs	r6, #0
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4838 00c4 635D     		ldrb	r3, [r4, r5]
  4839 00c6 E351     		str	r3, [r4, r7]
  4840              	.L445:
-ARM GAS  /tmp/cc2Yojzh.s 			page 91
+ARM GAS  /tmp/ccZM8kdS.s 			page 91
 
 
  4841 00c8 9127     		movs	r7, #145
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4895 013e 2300     		movs	r3, r4
  4896 0140 5133     		adds	r3, r3, #81
  4897 0142 1B78     		ldrb	r3, [r3]
-ARM GAS  /tmp/cc2Yojzh.s 			page 92
+ARM GAS  /tmp/ccZM8kdS.s 			page 92
 
 
  4898 0144 3370     		strb	r3, [r6]
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  4952 01be 635D     		ldrb	r3, [r4, r5]
  4953 01c0 2000     		movs	r0, r4
  4954 01c2 0193     		str	r3, [sp, #4]
-ARM GAS  /tmp/cc2Yojzh.s 			page 93
+ARM GAS  /tmp/ccZM8kdS.s 			page 93
 
 
  4955 01c4 3A78     		ldrb	r2, [r7]
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5009 0232 A054     		strb	r0, [r4, r2]
  5010 0234 DBB2     		uxtb	r3, r3
  5011 0236 25E7     		b	.L443
-ARM GAS  /tmp/cc2Yojzh.s 			page 94
+ARM GAS  /tmp/ccZM8kdS.s 			page 94
 
 
  5012              	.L449:
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5070 0000 064B     		ldr	r3, .L476
  5071 0002 C35C     		ldrb	r3, [r0, r3]
  5072 0004 002B     		cmp	r3, #0
-ARM GAS  /tmp/cc2Yojzh.s 			page 95
+ARM GAS  /tmp/ccZM8kdS.s 			page 95
 
 
  5073 0006 06D0     		beq	.L475
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5132              		.section	.rodata.lr1mac_rx_payload_max_size_check.str1.1,"aMS",%progbits,1
  5133              	.LC215:
  5134 0000 73697A65 		.ascii	"size (%d)> size_max (%d)\000"
-ARM GAS  /tmp/cc2Yojzh.s 			page 96
+ARM GAS  /tmp/ccZM8kdS.s 			page 96
 
 
  5134      20282564 
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5177 005e 1B5B303B 		.ascii	"\033[0;31mERROR: -> Crypto error during payload dec"
  5177      33316D45 
  5177      52524F52 
-ARM GAS  /tmp/cc2Yojzh.s 			page 97
+ARM GAS  /tmp/ccZM8kdS.s 			page 97
 
 
  5177      3A202D3E 
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5213 0026 03D0     		beq	.L490
  5214              	.L492:
  5215 0028 0025     		movs	r5, #0
-ARM GAS  /tmp/cc2Yojzh.s 			page 98
+ARM GAS  /tmp/ccZM8kdS.s 			page 98
 
 
  5216              	.L491:
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5270 0092 1A70     		strb	r2, [r3]
  5271 0094 0B9B     		ldr	r3, [sp, #44]
  5272 0096 9122     		movs	r2, #145
-ARM GAS  /tmp/cc2Yojzh.s 			page 99
+ARM GAS  /tmp/ccZM8kdS.s 			page 99
 
 
  5273 0098 A366     		str	r3, [r4, #104]
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5327 0102 D88B     		ldrh	r0, [r3, #30]
  5328 0104 0BA9     		add	r1, sp, #44
  5329 0106 FFF7FEFF 		bl	lr1mac_fcnt_dwn_accept
-ARM GAS  /tmp/cc2Yojzh.s 			page 100
+ARM GAS  /tmp/ccZM8kdS.s 			page 100
 
 
  5330 010a 0028     		cmp	r0, #0
@@ -5998,7 +5998,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5384 0174 A354     		strb	r3, [r4, r2]
  5385 0176 694B     		ldr	r3, .L524+28
  5386 0178 E35C     		ldrb	r3, [r4, r3]
-ARM GAS  /tmp/cc2Yojzh.s 			page 101
+ARM GAS  /tmp/ccZM8kdS.s 			page 101
 
 
  5387 017a 002B     		cmp	r3, #0
@@ -6058,7 +6058,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5441 01e4 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
  5442 01e8 0699     		ldr	r1, [sp, #24]
  5443 01ea 5148     		ldr	r0, .L524+48
-ARM GAS  /tmp/cc2Yojzh.s 			page 102
+ARM GAS  /tmp/ccZM8kdS.s 			page 102
 
 
  5444 01ec FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -6118,7 +6118,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5498 0268 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  5499 026c DDE6     		b	.L491
  5500              	.L504:
-ARM GAS  /tmp/cc2Yojzh.s 			page 103
+ARM GAS  /tmp/ccZM8kdS.s 			page 103
 
 
  5501 026e 0126     		movs	r6, #1
@@ -6178,7 +6178,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5555 02e6 9B00     		lsls	r3, r3, #2
  5556 02e8 2A00     		movs	r2, r5
  5557 02ea E018     		adds	r0, r4, r3
-ARM GAS  /tmp/cc2Yojzh.s 			page 104
+ARM GAS  /tmp/ccZM8kdS.s 			page 104
 
 
  5558 02ec 0799     		ldr	r1, [sp, #28]
@@ -6238,7 +6238,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5609              	__func__.3:
  5610 0000 6C72315F 		.ascii	"lr1_stack_mac_rx_frame_decode\000"
  5610      73746163 
-ARM GAS  /tmp/cc2Yojzh.s 			page 105
+ARM GAS  /tmp/ccZM8kdS.s 			page 105
 
 
  5610      6B5F6D61 
@@ -6298,7 +6298,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5650 0000 6C72315F 		.ascii	"lr1_stack_mac_tx_gfsk_launch_callback_for_rp\000"
  5650      73746163 
  5650      6B5F6D61 
-ARM GAS  /tmp/cc2Yojzh.s 			page 106
+ARM GAS  /tmp/ccZM8kdS.s 			page 106
 
 
  5650      635F7478 
@@ -6358,7 +6358,7 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5687 0048 42573830 		.ascii	"BW800\000"
  5687      3000
  5688              	.LC245:
-ARM GAS  /tmp/cc2Yojzh.s 			page 107
+ARM GAS  /tmp/ccZM8kdS.s 			page 107
 
 
  5689 004e 42573136 		.ascii	"BW1600\000"
@@ -6399,140 +6399,140 @@ ARM GAS  /tmp/cc2Yojzh.s 			page 1
  5726      1D
  5727 000d 1E2124   		.ascii	"\036!$"
  5728              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc2Yojzh.s 			page 108
+ARM GAS  /tmp/ccZM8kdS.s 			page 108
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lr1_stack_mac_layer.c
-     /tmp/cc2Yojzh.s:14     .text.ral_compute_lora_ldro:00000000 $t
-     /tmp/cc2Yojzh.s:19     .text.ral_compute_lora_ldro:00000000 ral_compute_lora_ldro
-     /tmp/cc2Yojzh.s:29     .text.ral_compute_lora_ldro:0000000e $d
-     /tmp/cc2Yojzh.s:81     .text.ral_set_dio_irq_params:00000000 $t
-     /tmp/cc2Yojzh.s:86     .text.ral_set_dio_irq_params:00000000 ral_set_dio_irq_params
-     /tmp/cc2Yojzh.s:97     .text.lr1_stack_mac_tx_lora_launch_callback_for_rp:00000000 $t
-     /tmp/cc2Yojzh.s:103    .text.lr1_stack_mac_tx_lora_launch_callback_for_rp:00000000 lr1_stack_mac_tx_lora_launch_callback_for_rp
-     /tmp/cc2Yojzh.s:193    .text.lr1_stack_mac_tx_lora_launch_callback_for_rp:000000ac $d
-     /tmp/cc2Yojzh.s:5654   .rodata.__func__.12:00000000 __func__.12
-     /tmp/cc2Yojzh.s:198    .text.lr1_stack_mac_rx_lora_launch_callback_for_rp:00000000 $t
-     /tmp/cc2Yojzh.s:204    .text.lr1_stack_mac_rx_lora_launch_callback_for_rp:00000000 lr1_stack_mac_rx_lora_launch_callback_for_rp
-     /tmp/cc2Yojzh.s:278    .text.lr1_stack_mac_rx_lora_launch_callback_for_rp:0000008c $d
-     /tmp/cc2Yojzh.s:5639   .rodata.__func__.9:00000000 __func__.9
-     /tmp/cc2Yojzh.s:283    .text.lr1_stack_mac_rx_gfsk_launch_callback_for_rp:00000000 $t
-     /tmp/cc2Yojzh.s:289    .text.lr1_stack_mac_rx_gfsk_launch_callback_for_rp:00000000 lr1_stack_mac_rx_gfsk_launch_callback_for_rp
-     /tmp/cc2Yojzh.s:363    .text.lr1_stack_mac_rx_gfsk_launch_callback_for_rp:0000008c $d
-     /tmp/cc2Yojzh.s:5634   .rodata.__func__.8:00000000 __func__.8
-     /tmp/cc2Yojzh.s:368    .text.lr1_stack_mac_tx_lr_fhss_launch_callback_for_rp:00000000 $t
-     /tmp/cc2Yojzh.s:374    .text.lr1_stack_mac_tx_lr_fhss_launch_callback_for_rp:00000000 lr1_stack_mac_tx_lr_fhss_launch_callback_for_rp
-     /tmp/cc2Yojzh.s:503    .text.lr1_stack_mac_tx_lr_fhss_launch_callback_for_rp:000000fc $d
-     /tmp/cc2Yojzh.s:5644   .rodata.__func__.10:00000000 __func__.10
-     /tmp/cc2Yojzh.s:509    .text.lr1_stack_mac_tx_gfsk_launch_callback_for_rp:00000000 $t
-     /tmp/cc2Yojzh.s:515    .text.lr1_stack_mac_tx_gfsk_launch_callback_for_rp:00000000 lr1_stack_mac_tx_gfsk_launch_callback_for_rp
-     /tmp/cc2Yojzh.s:609    .text.lr1_stack_mac_tx_gfsk_launch_callback_for_rp:000000b4 $d
-     /tmp/cc2Yojzh.s:5649   .rodata.__func__.11:00000000 __func__.11
-     /tmp/cc2Yojzh.s:614    .text.lr1_stack_mac_session_init:00000000 $t
-     /tmp/cc2Yojzh.s:620    .text.lr1_stack_mac_session_init:00000000 lr1_stack_mac_session_init
-     /tmp/cc2Yojzh.s:676    .text.lr1_stack_mac_session_init:00000064 $d
-     /tmp/cc2Yojzh.s:685    .text.lr1_stack_mac_init:00000000 $t
-     /tmp/cc2Yojzh.s:691    .text.lr1_stack_mac_init:00000000 lr1_stack_mac_init
-     /tmp/cc2Yojzh.s:770    .text.lr1_stack_mac_init:00000098 $d
-     /tmp/cc2Yojzh.s:785    .text.lr1_stack_mac_tx_frame_build:00000000 $t
-     /tmp/cc2Yojzh.s:791    .text.lr1_stack_mac_tx_frame_build:00000000 lr1_stack_mac_tx_frame_build
-     /tmp/cc2Yojzh.s:908    .text.lr1_stack_mac_tx_frame_build:000000d4 $d
-     /tmp/cc2Yojzh.s:922    .text.lr1_stack_mac_tx_frame_encrypt:00000000 $t
-     /tmp/cc2Yojzh.s:928    .text.lr1_stack_mac_tx_frame_encrypt:00000000 lr1_stack_mac_tx_frame_encrypt
-     /tmp/cc2Yojzh.s:1022   .text.lr1_stack_mac_tx_frame_encrypt:000000c8 $d
-     /tmp/cc2Yojzh.s:5659   .rodata.__func__.13:00000000 __func__.13
-     /tmp/cc2Yojzh.s:1029   .text.lr1_stack_mac_radio_busy_lbt:00000000 $t
-     /tmp/cc2Yojzh.s:1035   .text.lr1_stack_mac_radio_busy_lbt:00000000 lr1_stack_mac_radio_busy_lbt
-     /tmp/cc2Yojzh.s:1058   .text.lr1_stack_mac_radio_busy_lbt:00000024 $d
-     /tmp/cc2Yojzh.s:1064   .text.lr1_stack_mac_radio_abort_lbt:00000000 $t
-     /tmp/cc2Yojzh.s:1070   .text.lr1_stack_mac_radio_abort_lbt:00000000 lr1_stack_mac_radio_abort_lbt
-     /tmp/cc2Yojzh.s:1082   .text.lr1_stack_mac_radio_abort_lbt:00000008 $d
-     /tmp/cc2Yojzh.s:1093   .text.lr1_stack_mac_tx_radio_start:00000000 $t
-     /tmp/cc2Yojzh.s:1099   .text.lr1_stack_mac_tx_radio_start:00000000 lr1_stack_mac_tx_radio_start
-     /tmp/cc2Yojzh.s:1497   .text.lr1_stack_mac_tx_radio_start:0000034c $d
-     /tmp/cc2Yojzh.s:5629   .rodata.__func__.7:00000000 __func__.7
-     /tmp/cc2Yojzh.s:1515   .text.lr1_stack_mac_tx_radio_free_lbt:00000000 $t
-     /tmp/cc2Yojzh.s:1521   .text.lr1_stack_mac_tx_radio_free_lbt:00000000 lr1_stack_mac_tx_radio_free_lbt
-     /tmp/cc2Yojzh.s:1548   .text.lr1_stack_mac_tx_radio_free_lbt:0000002c $d
-     /tmp/cc2Yojzh.s:1566   .text.lr1_stack_mac_rx_radio_start:00000000 $t
-     /tmp/cc2Yojzh.s:1572   .text.lr1_stack_mac_rx_radio_start:00000000 lr1_stack_mac_rx_radio_start
-     /tmp/cc2Yojzh.s:1896   .text.lr1_stack_mac_rx_radio_start:000002ac $d
-     /tmp/cc2Yojzh.s:5624   .rodata.__func__.6:00000000 __func__.6
-ARM GAS  /tmp/cc2Yojzh.s 			page 109
+     /tmp/ccZM8kdS.s:14     .text.ral_compute_lora_ldro:00000000 $t
+     /tmp/ccZM8kdS.s:19     .text.ral_compute_lora_ldro:00000000 ral_compute_lora_ldro
+     /tmp/ccZM8kdS.s:29     .text.ral_compute_lora_ldro:0000000e $d
+     /tmp/ccZM8kdS.s:81     .text.ral_set_dio_irq_params:00000000 $t
+     /tmp/ccZM8kdS.s:86     .text.ral_set_dio_irq_params:00000000 ral_set_dio_irq_params
+     /tmp/ccZM8kdS.s:97     .text.lr1_stack_mac_tx_lora_launch_callback_for_rp:00000000 $t
+     /tmp/ccZM8kdS.s:103    .text.lr1_stack_mac_tx_lora_launch_callback_for_rp:00000000 lr1_stack_mac_tx_lora_launch_callback_for_rp
+     /tmp/ccZM8kdS.s:193    .text.lr1_stack_mac_tx_lora_launch_callback_for_rp:000000ac $d
+     /tmp/ccZM8kdS.s:5654   .rodata.__func__.12:00000000 __func__.12
+     /tmp/ccZM8kdS.s:198    .text.lr1_stack_mac_rx_lora_launch_callback_for_rp:00000000 $t
+     /tmp/ccZM8kdS.s:204    .text.lr1_stack_mac_rx_lora_launch_callback_for_rp:00000000 lr1_stack_mac_rx_lora_launch_callback_for_rp
+     /tmp/ccZM8kdS.s:278    .text.lr1_stack_mac_rx_lora_launch_callback_for_rp:0000008c $d
+     /tmp/ccZM8kdS.s:5639   .rodata.__func__.9:00000000 __func__.9
+     /tmp/ccZM8kdS.s:283    .text.lr1_stack_mac_rx_gfsk_launch_callback_for_rp:00000000 $t
+     /tmp/ccZM8kdS.s:289    .text.lr1_stack_mac_rx_gfsk_launch_callback_for_rp:00000000 lr1_stack_mac_rx_gfsk_launch_callback_for_rp
+     /tmp/ccZM8kdS.s:363    .text.lr1_stack_mac_rx_gfsk_launch_callback_for_rp:0000008c $d
+     /tmp/ccZM8kdS.s:5634   .rodata.__func__.8:00000000 __func__.8
+     /tmp/ccZM8kdS.s:368    .text.lr1_stack_mac_tx_lr_fhss_launch_callback_for_rp:00000000 $t
+     /tmp/ccZM8kdS.s:374    .text.lr1_stack_mac_tx_lr_fhss_launch_callback_for_rp:00000000 lr1_stack_mac_tx_lr_fhss_launch_callback_for_rp
+     /tmp/ccZM8kdS.s:503    .text.lr1_stack_mac_tx_lr_fhss_launch_callback_for_rp:000000fc $d
+     /tmp/ccZM8kdS.s:5644   .rodata.__func__.10:00000000 __func__.10
+     /tmp/ccZM8kdS.s:509    .text.lr1_stack_mac_tx_gfsk_launch_callback_for_rp:00000000 $t
+     /tmp/ccZM8kdS.s:515    .text.lr1_stack_mac_tx_gfsk_launch_callback_for_rp:00000000 lr1_stack_mac_tx_gfsk_launch_callback_for_rp
+     /tmp/ccZM8kdS.s:609    .text.lr1_stack_mac_tx_gfsk_launch_callback_for_rp:000000b4 $d
+     /tmp/ccZM8kdS.s:5649   .rodata.__func__.11:00000000 __func__.11
+     /tmp/ccZM8kdS.s:614    .text.lr1_stack_mac_session_init:00000000 $t
+     /tmp/ccZM8kdS.s:620    .text.lr1_stack_mac_session_init:00000000 lr1_stack_mac_session_init
+     /tmp/ccZM8kdS.s:676    .text.lr1_stack_mac_session_init:00000064 $d
+     /tmp/ccZM8kdS.s:685    .text.lr1_stack_mac_init:00000000 $t
+     /tmp/ccZM8kdS.s:691    .text.lr1_stack_mac_init:00000000 lr1_stack_mac_init
+     /tmp/ccZM8kdS.s:770    .text.lr1_stack_mac_init:00000098 $d
+     /tmp/ccZM8kdS.s:785    .text.lr1_stack_mac_tx_frame_build:00000000 $t
+     /tmp/ccZM8kdS.s:791    .text.lr1_stack_mac_tx_frame_build:00000000 lr1_stack_mac_tx_frame_build
+     /tmp/ccZM8kdS.s:908    .text.lr1_stack_mac_tx_frame_build:000000d4 $d
+     /tmp/ccZM8kdS.s:922    .text.lr1_stack_mac_tx_frame_encrypt:00000000 $t
+     /tmp/ccZM8kdS.s:928    .text.lr1_stack_mac_tx_frame_encrypt:00000000 lr1_stack_mac_tx_frame_encrypt
+     /tmp/ccZM8kdS.s:1022   .text.lr1_stack_mac_tx_frame_encrypt:000000c8 $d
+     /tmp/ccZM8kdS.s:5659   .rodata.__func__.13:00000000 __func__.13
+     /tmp/ccZM8kdS.s:1029   .text.lr1_stack_mac_radio_busy_lbt:00000000 $t
+     /tmp/ccZM8kdS.s:1035   .text.lr1_stack_mac_radio_busy_lbt:00000000 lr1_stack_mac_radio_busy_lbt
+     /tmp/ccZM8kdS.s:1058   .text.lr1_stack_mac_radio_busy_lbt:00000024 $d
+     /tmp/ccZM8kdS.s:1064   .text.lr1_stack_mac_radio_abort_lbt:00000000 $t
+     /tmp/ccZM8kdS.s:1070   .text.lr1_stack_mac_radio_abort_lbt:00000000 lr1_stack_mac_radio_abort_lbt
+     /tmp/ccZM8kdS.s:1082   .text.lr1_stack_mac_radio_abort_lbt:00000008 $d
+     /tmp/ccZM8kdS.s:1093   .text.lr1_stack_mac_tx_radio_start:00000000 $t
+     /tmp/ccZM8kdS.s:1099   .text.lr1_stack_mac_tx_radio_start:00000000 lr1_stack_mac_tx_radio_start
+     /tmp/ccZM8kdS.s:1497   .text.lr1_stack_mac_tx_radio_start:0000034c $d
+     /tmp/ccZM8kdS.s:5629   .rodata.__func__.7:00000000 __func__.7
+     /tmp/ccZM8kdS.s:1515   .text.lr1_stack_mac_tx_radio_free_lbt:00000000 $t
+     /tmp/ccZM8kdS.s:1521   .text.lr1_stack_mac_tx_radio_free_lbt:00000000 lr1_stack_mac_tx_radio_free_lbt
+     /tmp/ccZM8kdS.s:1548   .text.lr1_stack_mac_tx_radio_free_lbt:0000002c $d
+     /tmp/ccZM8kdS.s:1566   .text.lr1_stack_mac_rx_radio_start:00000000 $t
+     /tmp/ccZM8kdS.s:1572   .text.lr1_stack_mac_rx_radio_start:00000000 lr1_stack_mac_rx_radio_start
+     /tmp/ccZM8kdS.s:1896   .text.lr1_stack_mac_rx_radio_start:000002ac $d
+     /tmp/ccZM8kdS.s:5624   .rodata.__func__.6:00000000 __func__.6
+ARM GAS  /tmp/ccZM8kdS.s 			page 109
 
 
-     /tmp/cc2Yojzh.s:5718   .rodata.smtc_name_rx_windows:00000000 smtc_name_rx_windows
-     /tmp/cc2Yojzh.s:5694   .rodata.smtc_name_bw:00000000 smtc_name_bw
-     /tmp/cc2Yojzh.s:1943   .text.lr1_stack_mac_rp_callback:00000000 $t
-     /tmp/cc2Yojzh.s:1949   .text.lr1_stack_mac_rp_callback:00000000 lr1_stack_mac_rp_callback
-     /tmp/cc2Yojzh.s:1977   .text.lr1_stack_mac_rp_callback:00000034 $d
-     /tmp/cc2Yojzh.s:2213   .text.lr1_stack_mac_rp_callback:000001ec $d
-     /tmp/cc2Yojzh.s:5619   .rodata.__func__.5:00000000 __func__.5
-     /tmp/cc2Yojzh.s:2240   .text.lr1_stack_mac_rx_timer_configure:00000000 $t
-     /tmp/cc2Yojzh.s:2246   .text.lr1_stack_mac_rx_timer_configure:00000000 lr1_stack_mac_rx_timer_configure
-     /tmp/cc2Yojzh.s:2408   .text.lr1_stack_mac_rx_timer_configure:00000158 $d
-     /tmp/cc2Yojzh.s:5614   .rodata.__func__.4:00000000 __func__.4
-     /tmp/cc2Yojzh.s:2420   .text.lr1_stack_mac_update_tx_done:00000000 $t
-     /tmp/cc2Yojzh.s:2426   .text.lr1_stack_mac_update_tx_done:00000000 lr1_stack_mac_update_tx_done
-     /tmp/cc2Yojzh.s:2480   .text.lr1_stack_mac_update_tx_done:00000054 $d
-     /tmp/cc2Yojzh.s:2592   .text.lr1_stack_mac_cmd_parse:00000000 $t
-     /tmp/cc2Yojzh.s:2598   .text.lr1_stack_mac_cmd_parse:00000000 lr1_stack_mac_cmd_parse
-     /tmp/cc2Yojzh.s:2652   .text.lr1_stack_mac_cmd_parse:0000005e $d
-     /tmp/cc2Yojzh.s:2670   .text.lr1_stack_mac_cmd_parse:00000082 $t
-     /tmp/cc2Yojzh.s:2992   .text.lr1_stack_mac_cmd_parse:000002fc $d
-     /tmp/cc2Yojzh.s:3016   .text.lr1_stack_mac_cmd_parse:00000358 $t
-     /tmp/cc2Yojzh.s:3459   .text.lr1_stack_mac_cmd_parse:000006d8 $d
-     /tmp/cc2Yojzh.s:3485   .text.lr1_stack_mac_cmd_parse:0000073c $t
-     /tmp/cc2Yojzh.s:3951   .text.lr1_stack_mac_cmd_parse:00000ae4 $d
-     /tmp/cc2Yojzh.s:5725   .rodata.smtc_real_max_eirp_dbm_from_idx:00000000 smtc_real_max_eirp_dbm_from_idx
-     /tmp/cc2Yojzh.s:3985   .text.lr1_stack_mac_cmd_parse:00000b68 $t
-     /tmp/cc2Yojzh.s:4080   .text.lr1_stack_mac_cmd_parse:00000c28 $d
-     /tmp/cc2Yojzh.s:4107   .text.lr1_stack_mac_join_request_build:00000000 $t
-     /tmp/cc2Yojzh.s:4113   .text.lr1_stack_mac_join_request_build:00000000 lr1_stack_mac_join_request_build
-     /tmp/cc2Yojzh.s:4254   .text.lr1_stack_mac_join_request_build:00000128 $d
-     /tmp/cc2Yojzh.s:5599   .rodata.__func__.1:00000000 __func__.1
-     /tmp/cc2Yojzh.s:4287   .text.lr1_stack_mac_join_accept:00000000 $t
-     /tmp/cc2Yojzh.s:4293   .text.lr1_stack_mac_join_accept:00000000 lr1_stack_mac_join_accept
-     /tmp/cc2Yojzh.s:4462   .text.lr1_stack_mac_join_accept:00000154 $d
-     /tmp/cc2Yojzh.s:4482   .text.lr1_stack_network_next_free_duty_cycle_ms_get:00000000 $t
-     /tmp/cc2Yojzh.s:4488   .text.lr1_stack_network_next_free_duty_cycle_ms_get:00000000 lr1_stack_network_next_free_duty_cycle_ms_get
-     /tmp/cc2Yojzh.s:4521   .text.lr1_stack_toa_get:00000000 $t
-     /tmp/cc2Yojzh.s:4527   .text.lr1_stack_toa_get:00000000 lr1_stack_toa_get
-     /tmp/cc2Yojzh.s:4711   .text.lr1_stack_toa_get:00000180 $d
-     /tmp/cc2Yojzh.s:5594   .rodata.__func__.0:00000000 __func__.0
-     /tmp/cc2Yojzh.s:4730   .text.lr1_stack_mac_update:00000000 $t
-     /tmp/cc2Yojzh.s:4736   .text.lr1_stack_mac_update:00000000 lr1_stack_mac_update
-     /tmp/cc2Yojzh.s:5027   .text.lr1_stack_mac_update:00000250 $d
-     /tmp/cc2Yojzh.s:5604   .rodata.__func__.2:00000000 __func__.2
-     /tmp/cc2Yojzh.s:5044   .text.lr1_stack_nb_trans_get:00000000 $t
-     /tmp/cc2Yojzh.s:5050   .text.lr1_stack_nb_trans_get:00000000 lr1_stack_nb_trans_get
-     /tmp/cc2Yojzh.s:5060   .text.lr1_stack_nb_trans_set:00000000 $t
-     /tmp/cc2Yojzh.s:5066   .text.lr1_stack_nb_trans_set:00000000 lr1_stack_nb_trans_set
-     /tmp/cc2Yojzh.s:5090   .text.lr1_stack_nb_trans_set:0000001c $d
-     /tmp/cc2Yojzh.s:5093   .text.lr1_stack_get_crystal_error:00000000 $t
-     /tmp/cc2Yojzh.s:5099   .text.lr1_stack_get_crystal_error:00000000 lr1_stack_get_crystal_error
-     /tmp/cc2Yojzh.s:5110   .text.lr1_stack_get_crystal_error:00000008 $d
-     /tmp/cc2Yojzh.s:5113   .text.lr1_stack_set_crystal_error:00000000 $t
-     /tmp/cc2Yojzh.s:5119   .text.lr1_stack_set_crystal_error:00000000 lr1_stack_set_crystal_error
-     /tmp/cc2Yojzh.s:5130   .text.lr1_stack_set_crystal_error:00000008 $d
-     /tmp/cc2Yojzh.s:5136   .text.lr1mac_rx_payload_max_size_check:00000000 $t
-     /tmp/cc2Yojzh.s:5142   .text.lr1mac_rx_payload_max_size_check:00000000 lr1mac_rx_payload_max_size_check
-     /tmp/cc2Yojzh.s:5168   .text.lr1mac_rx_payload_max_size_check:00000028 $d
-ARM GAS  /tmp/cc2Yojzh.s 			page 110
+     /tmp/ccZM8kdS.s:5718   .rodata.smtc_name_rx_windows:00000000 smtc_name_rx_windows
+     /tmp/ccZM8kdS.s:5694   .rodata.smtc_name_bw:00000000 smtc_name_bw
+     /tmp/ccZM8kdS.s:1943   .text.lr1_stack_mac_rp_callback:00000000 $t
+     /tmp/ccZM8kdS.s:1949   .text.lr1_stack_mac_rp_callback:00000000 lr1_stack_mac_rp_callback
+     /tmp/ccZM8kdS.s:1977   .text.lr1_stack_mac_rp_callback:00000034 $d
+     /tmp/ccZM8kdS.s:2213   .text.lr1_stack_mac_rp_callback:000001ec $d
+     /tmp/ccZM8kdS.s:5619   .rodata.__func__.5:00000000 __func__.5
+     /tmp/ccZM8kdS.s:2240   .text.lr1_stack_mac_rx_timer_configure:00000000 $t
+     /tmp/ccZM8kdS.s:2246   .text.lr1_stack_mac_rx_timer_configure:00000000 lr1_stack_mac_rx_timer_configure
+     /tmp/ccZM8kdS.s:2408   .text.lr1_stack_mac_rx_timer_configure:00000158 $d
+     /tmp/ccZM8kdS.s:5614   .rodata.__func__.4:00000000 __func__.4
+     /tmp/ccZM8kdS.s:2420   .text.lr1_stack_mac_update_tx_done:00000000 $t
+     /tmp/ccZM8kdS.s:2426   .text.lr1_stack_mac_update_tx_done:00000000 lr1_stack_mac_update_tx_done
+     /tmp/ccZM8kdS.s:2480   .text.lr1_stack_mac_update_tx_done:00000054 $d
+     /tmp/ccZM8kdS.s:2592   .text.lr1_stack_mac_cmd_parse:00000000 $t
+     /tmp/ccZM8kdS.s:2598   .text.lr1_stack_mac_cmd_parse:00000000 lr1_stack_mac_cmd_parse
+     /tmp/ccZM8kdS.s:2652   .text.lr1_stack_mac_cmd_parse:0000005e $d
+     /tmp/ccZM8kdS.s:2670   .text.lr1_stack_mac_cmd_parse:00000082 $t
+     /tmp/ccZM8kdS.s:2992   .text.lr1_stack_mac_cmd_parse:000002fc $d
+     /tmp/ccZM8kdS.s:3016   .text.lr1_stack_mac_cmd_parse:00000358 $t
+     /tmp/ccZM8kdS.s:3459   .text.lr1_stack_mac_cmd_parse:000006d8 $d
+     /tmp/ccZM8kdS.s:3485   .text.lr1_stack_mac_cmd_parse:0000073c $t
+     /tmp/ccZM8kdS.s:3951   .text.lr1_stack_mac_cmd_parse:00000ae4 $d
+     /tmp/ccZM8kdS.s:5725   .rodata.smtc_real_max_eirp_dbm_from_idx:00000000 smtc_real_max_eirp_dbm_from_idx
+     /tmp/ccZM8kdS.s:3985   .text.lr1_stack_mac_cmd_parse:00000b68 $t
+     /tmp/ccZM8kdS.s:4080   .text.lr1_stack_mac_cmd_parse:00000c28 $d
+     /tmp/ccZM8kdS.s:4107   .text.lr1_stack_mac_join_request_build:00000000 $t
+     /tmp/ccZM8kdS.s:4113   .text.lr1_stack_mac_join_request_build:00000000 lr1_stack_mac_join_request_build
+     /tmp/ccZM8kdS.s:4254   .text.lr1_stack_mac_join_request_build:00000128 $d
+     /tmp/ccZM8kdS.s:5599   .rodata.__func__.1:00000000 __func__.1
+     /tmp/ccZM8kdS.s:4287   .text.lr1_stack_mac_join_accept:00000000 $t
+     /tmp/ccZM8kdS.s:4293   .text.lr1_stack_mac_join_accept:00000000 lr1_stack_mac_join_accept
+     /tmp/ccZM8kdS.s:4462   .text.lr1_stack_mac_join_accept:00000154 $d
+     /tmp/ccZM8kdS.s:4482   .text.lr1_stack_network_next_free_duty_cycle_ms_get:00000000 $t
+     /tmp/ccZM8kdS.s:4488   .text.lr1_stack_network_next_free_duty_cycle_ms_get:00000000 lr1_stack_network_next_free_duty_cycle_ms_get
+     /tmp/ccZM8kdS.s:4521   .text.lr1_stack_toa_get:00000000 $t
+     /tmp/ccZM8kdS.s:4527   .text.lr1_stack_toa_get:00000000 lr1_stack_toa_get
+     /tmp/ccZM8kdS.s:4711   .text.lr1_stack_toa_get:00000180 $d
+     /tmp/ccZM8kdS.s:5594   .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccZM8kdS.s:4730   .text.lr1_stack_mac_update:00000000 $t
+     /tmp/ccZM8kdS.s:4736   .text.lr1_stack_mac_update:00000000 lr1_stack_mac_update
+     /tmp/ccZM8kdS.s:5027   .text.lr1_stack_mac_update:00000250 $d
+     /tmp/ccZM8kdS.s:5604   .rodata.__func__.2:00000000 __func__.2
+     /tmp/ccZM8kdS.s:5044   .text.lr1_stack_nb_trans_get:00000000 $t
+     /tmp/ccZM8kdS.s:5050   .text.lr1_stack_nb_trans_get:00000000 lr1_stack_nb_trans_get
+     /tmp/ccZM8kdS.s:5060   .text.lr1_stack_nb_trans_set:00000000 $t
+     /tmp/ccZM8kdS.s:5066   .text.lr1_stack_nb_trans_set:00000000 lr1_stack_nb_trans_set
+     /tmp/ccZM8kdS.s:5090   .text.lr1_stack_nb_trans_set:0000001c $d
+     /tmp/ccZM8kdS.s:5093   .text.lr1_stack_get_crystal_error:00000000 $t
+     /tmp/ccZM8kdS.s:5099   .text.lr1_stack_get_crystal_error:00000000 lr1_stack_get_crystal_error
+     /tmp/ccZM8kdS.s:5110   .text.lr1_stack_get_crystal_error:00000008 $d
+     /tmp/ccZM8kdS.s:5113   .text.lr1_stack_set_crystal_error:00000000 $t
+     /tmp/ccZM8kdS.s:5119   .text.lr1_stack_set_crystal_error:00000000 lr1_stack_set_crystal_error
+     /tmp/ccZM8kdS.s:5130   .text.lr1_stack_set_crystal_error:00000008 $d
+     /tmp/ccZM8kdS.s:5136   .text.lr1mac_rx_payload_max_size_check:00000000 $t
+     /tmp/ccZM8kdS.s:5142   .text.lr1mac_rx_payload_max_size_check:00000000 lr1mac_rx_payload_max_size_check
+     /tmp/ccZM8kdS.s:5168   .text.lr1mac_rx_payload_max_size_check:00000028 $d
+ARM GAS  /tmp/ccZM8kdS.s 			page 110
 
 
-     /tmp/cc2Yojzh.s:5187   .text.lr1_stack_mac_rx_frame_decode:00000000 $t
-     /tmp/cc2Yojzh.s:5193   .text.lr1_stack_mac_rx_frame_decode:00000000 lr1_stack_mac_rx_frame_decode
-     /tmp/cc2Yojzh.s:5571   .text.lr1_stack_mac_rx_frame_decode:00000300 $d
-     /tmp/cc2Yojzh.s:5609   .rodata.__func__.3:00000000 __func__.3
-     /tmp/cc2Yojzh.s:5691   .rodata.smtc_name_bw:00000000 $d
-     /tmp/cc2Yojzh.s:5715   .rodata.smtc_name_rx_windows:00000000 $d
-     /tmp/cc2Yojzh.s:5722   .rodata.smtc_real_max_eirp_dbm_from_idx:00000000 $d
-     /tmp/cc2Yojzh.s:42     .text.ral_compute_lora_ldro:0000001b $d
-     /tmp/cc2Yojzh.s:42     .text.ral_compute_lora_ldro:0000001c $t
-     /tmp/cc2Yojzh.s:1988   .text.lr1_stack_mac_rp_callback:0000003f $d
-     /tmp/cc2Yojzh.s:1988   .text.lr1_stack_mac_rp_callback:00000040 $t
+     /tmp/ccZM8kdS.s:5187   .text.lr1_stack_mac_rx_frame_decode:00000000 $t
+     /tmp/ccZM8kdS.s:5193   .text.lr1_stack_mac_rx_frame_decode:00000000 lr1_stack_mac_rx_frame_decode
+     /tmp/ccZM8kdS.s:5571   .text.lr1_stack_mac_rx_frame_decode:00000300 $d
+     /tmp/ccZM8kdS.s:5609   .rodata.__func__.3:00000000 __func__.3
+     /tmp/ccZM8kdS.s:5691   .rodata.smtc_name_bw:00000000 $d
+     /tmp/ccZM8kdS.s:5715   .rodata.smtc_name_rx_windows:00000000 $d
+     /tmp/ccZM8kdS.s:5722   .rodata.smtc_real_max_eirp_dbm_from_idx:00000000 $d
+     /tmp/ccZM8kdS.s:42     .text.ral_compute_lora_ldro:0000001b $d
+     /tmp/ccZM8kdS.s:42     .text.ral_compute_lora_ldro:0000001c $t
+     /tmp/ccZM8kdS.s:1988   .text.lr1_stack_mac_rp_callback:0000003f $d
+     /tmp/ccZM8kdS.s:1988   .text.lr1_stack_mac_rp_callback:00000040 $t
 
 UNDEFINED SYMBOLS
 __gnu_thumb1_case_uqi
@@ -6579,7 +6579,7 @@ smtc_real_is_rx1_dr_offset_valid
 smtc_real_is_rx_dr_valid
 smtc_real_decode_freq_from_buf
 smtc_real_is_frequency_valid
-ARM GAS  /tmp/cc2Yojzh.s 			page 111
+ARM GAS  /tmp/ccZM8kdS.s 			page 111
 
 
 smtc_modem_hal_get_battery_level

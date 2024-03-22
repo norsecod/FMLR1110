@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccUaWfU5.s 			page 1
+ARM GAS  /tmp/cc1EZN7F.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
   56 002c 0122     		movs	r2, #1
   57 002e 0B3B     		subs	r3, r3, #11
   58 0030 DBB2     		uxtb	r3, r3
-ARM GAS  /tmp/ccUaWfU5.s 			page 2
+ARM GAS  /tmp/cc1EZN7F.s 			page 2
 
 
   59              	.L10:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  109      642C2063 
  109      6E743A25 
  110              		.section	.text.modem_test_compute_rssi_callback,"ax",%progbits
-ARM GAS  /tmp/ccUaWfU5.s 			page 3
+ARM GAS  /tmp/cc1EZN7F.s 			page 3
 
 
  111              		.align	1
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  163 0028 72785F70 		.ascii	"rx_payload\000"
  163      61796C6F 
  163      616400
-ARM GAS  /tmp/ccUaWfU5.s 			page 4
+ARM GAS  /tmp/cc1EZN7F.s 			page 4
 
 
  164              	.LC9:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  210 003a 8900     		lsls	r1, r1, #2
  211 003c 0026     		movs	r6, #0
  212 003e 9B5F     		ldrsh	r3, [r3, r6]
-ARM GAS  /tmp/ccUaWfU5.s 			page 5
+ARM GAS  /tmp/cc1EZN7F.s 			page 5
 
 
  213 0040 4118     		adds	r1, r0, r1
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  267 00b4 2200     		movs	r2, r4
  268 00b6 3378     		ldrb	r3, [r6]
  269 00b8 0932     		adds	r2, r2, #9
-ARM GAS  /tmp/ccUaWfU5.s 			page 6
+ARM GAS  /tmp/cc1EZN7F.s 			page 6
 
 
  270 00ba 012B     		cmp	r3, #1
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  324 0124 48000000 		.word	.LC13
  325 0128 4E000000 		.word	.LC15
  326 012c 00000000 		.word	lr1_stack_mac_rx_gfsk_launch_callback_for_rp
-ARM GAS  /tmp/ccUaWfU5.s 			page 7
+ARM GAS  /tmp/cc1EZN7F.s 			page 7
 
 
  328              		.section	.text.test_mode_cw_callback_for_rp,"ax",%progbits
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  383              	.L46:
  384              		.align	2
  385              	.L45:
-ARM GAS  /tmp/ccUaWfU5.s 			page 8
+ARM GAS  /tmp/cc1EZN7F.s 			page 8
 
 
  386 0058 84090000 		.word	2436
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  438 0044 2168     		ldr	r1, [r4]
  439 0046 5343     		muls	r3, r2
  440 0048 09AE     		add	r6, sp, #36
-ARM GAS  /tmp/ccUaWfU5.s 			page 9
+ARM GAS  /tmp/cc1EZN7F.s 			page 9
 
 
  441 004a C918     		adds	r1, r1, r3
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  495 00b0 6A60     		str	r2, [r5, #4]
  496 00b2 5B7C     		ldrb	r3, [r3, #17]
  497 00b4 002B     		cmp	r3, #0
-ARM GAS  /tmp/ccUaWfU5.s 			page 10
+ARM GAS  /tmp/cc1EZN7F.s 			page 10
 
 
  498 00b6 15D1     		bne	.L59
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  542      4E464F3A 
  542      20545354 
  542      204D4F44 
-ARM GAS  /tmp/ccUaWfU5.s 			page 11
+ARM GAS  /tmp/cc1EZN7F.s 			page 11
 
 
  543              		.section	.text.smtc_modem_test_start,"ax",%progbits
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  598 006c FFF7FEFF 		bl	rp_release_hook
  599 0070 2868     		ldr	r0, [r5]
  600 0072 FFF7FEFF 		bl	lorawan_api_init
-ARM GAS  /tmp/ccUaWfU5.s 			page 12
+ARM GAS  /tmp/cc1EZN7F.s 			page 12
 
 
  601 0076 D0E7     		b	.L65
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  647      76616C69 
  648              	.LC42:
  649 0024 52616469 		.ascii	"Radio planner hook %d is busy \012\000"
-ARM GAS  /tmp/ccUaWfU5.s 			page 13
+ARM GAS  /tmp/cc1EZN7F.s 			page 13
 
 
  649      6F20706C 
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  697 0048 7868     		ldr	r0, [r7, #4]
  698 004a E360     		str	r3, [r4, #12]
  699 004c 254B     		ldr	r3, .L84+16
-ARM GAS  /tmp/ccUaWfU5.s 			page 14
+ARM GAS  /tmp/cc1EZN7F.s 			page 14
 
 
  700 004e 2574     		strb	r5, [r4, #16]
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  754 00c6 0A48     		ldr	r0, .L84+28
  755 00c8 A256     		ldrsb	r2, [r4, r2]
  756 00ca 0399     		ldr	r1, [sp, #12]
-ARM GAS  /tmp/ccUaWfU5.s 			page 15
+ARM GAS  /tmp/cc1EZN7F.s 			page 15
 
 
  757 00cc FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  810      6E76616C 
  811              	.LC56:
  812 0025 1B5B303B 		.ascii	"\033[0;31mERROR: Invalid bw %d\012\000"
-ARM GAS  /tmp/ccUaWfU5.s 			page 16
+ARM GAS  /tmp/cc1EZN7F.s 			page 16
 
 
  812      33316D45 
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  864 004e 9F42     		cmp	r7, r3
  865 0050 00D9     		bls	.L97
  866 0052 1F00     		movs	r7, r3
-ARM GAS  /tmp/ccUaWfU5.s 			page 17
+ARM GAS  /tmp/cc1EZN7F.s 			page 17
 
 
  867              	.L97:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  920      41524E3A 
  920      20525353 
  920      49205445 
-ARM GAS  /tmp/ccUaWfU5.s 			page 18
+ARM GAS  /tmp/cc1EZN7F.s 			page 18
 
 
  921              		.section	.text.smtc_modem_test_get_rssi,"ax",%progbits
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  977              		.thumb_func
  979              	modem_test_set_rssi:
  980              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccUaWfU5.s 			page 19
+ARM GAS  /tmp/cc1EZN7F.s 			page 19
 
 
  981              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1037 0042 2B68     		ldr	r3, [r5]
  1038 0044 0121     		movs	r1, #1
  1039 0046 1B59     		ldr	r3, [r3, r4]
-ARM GAS  /tmp/ccUaWfU5.s 			page 20
+ARM GAS  /tmp/cc1EZN7F.s 			page 20
 
 
  1040 0048 5A69     		ldr	r2, [r3, #20]
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1098              	smtc_modem_test_stop:
  1099              		@ args = 0, pretend = 0, frame = 0
  1100              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccUaWfU5.s 			page 21
+ARM GAS  /tmp/cc1EZN7F.s 			page 21
 
 
  1101 0000 70B5     		push	{r4, r5, r6, lr}
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1144              	.LC95:
  1145 0062 4C6F5261 		.ascii	"LoRa Tx - Freq:%u, Power:%d, sf:%u, bw:%u, cr:%u, l"
  1145      20547820 
-ARM GAS  /tmp/ccUaWfU5.s 			page 22
+ARM GAS  /tmp/cc1EZN7F.s 			page 22
 
 
  1145      2D204672 
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1196 004e 8348     		ldr	r0, .L151+12
  1197 0050 0599     		ldr	r1, [sp, #20]
  1198              	.L147:
-ARM GAS  /tmp/ccUaWfU5.s 			page 23
+ARM GAS  /tmp/cc1EZN7F.s 			page 23
 
 
  1199 0052 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1253 00c0 E061     		str	r0, [r4, #28]
  1254 00c2 1A70     		strb	r2, [r3]
  1255 00c4 694B     		ldr	r3, .L151+28
-ARM GAS  /tmp/ccUaWfU5.s 			page 24
+ARM GAS  /tmp/cc1EZN7F.s 			page 24
 
 
  1256 00c6 2385     		strh	r3, [r4, #40]
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1310 0134 051E     		subs	r5, r0, #0
  1311 0136 00D0     		beq	.LCB1381
  1312 0138 87E0     		b	.L145	@long jump
-ARM GAS  /tmp/ccUaWfU5.s 			page 25
+ARM GAS  /tmp/cc1EZN7F.s 			page 25
 
 
  1313              	.LCB1381:
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1367 01a8 A371     		strb	r3, [r4, #6]
  1368 01aa 049B     		ldr	r3, [sp, #16]
  1369 01ac E371     		strb	r3, [r4, #7]
-ARM GAS  /tmp/ccUaWfU5.s 			page 26
+ARM GAS  /tmp/cc1EZN7F.s 			page 26
 
 
  1370 01ae 0123     		movs	r3, #1
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1424 021e 1B68     		ldr	r3, [r3]
  1425 0220 21A8     		add	r0, sp, #132
  1426 0222 83E7     		b	.L148
-ARM GAS  /tmp/ccUaWfU5.s 			page 27
+ARM GAS  /tmp/cc1EZN7F.s 			page 27
 
 
  1427              	.L139:
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1478              	.LC110:
  1479 0024 4746534B 		.ascii	"GFSK Rx - Freq:%d\012\000"
  1479      20527820 
-ARM GAS  /tmp/ccUaWfU5.s 			page 28
+ARM GAS  /tmp/cc1EZN7F.s 			page 28
 
 
  1479      2D204672 
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1528 0046 2900     		movs	r1, r5
  1529 0048 6348     		ldr	r0, .L168+16
  1530 004a F7E7     		b	.L165
-ARM GAS  /tmp/ccUaWfU5.s 			page 29
+ARM GAS  /tmp/cc1EZN7F.s 			page 29
 
 
  1531              	.L158:
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1585 00ba 1993     		str	r3, [sp, #100]
  1586 00bc 2823     		movs	r3, #40
  1587 00be 2382     		strh	r3, [r4, #16]
-ARM GAS  /tmp/ccUaWfU5.s 			page 30
+ARM GAS  /tmp/cc1EZN7F.s 			page 30
 
 
  1588 00c0 103B     		subs	r3, r3, #16
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1642 0134 344A     		ldr	r2, .L168+64
  1643 0136 2868     		ldr	r0, [r5]
  1644 0138 09A9     		add	r1, sp, #36
-ARM GAS  /tmp/ccUaWfU5.s 			page 31
+ARM GAS  /tmp/cc1EZN7F.s 			page 31
 
 
  1645 013a FFF7FEFF 		bl	rp_task_enqueue
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1699 01ae 1B48     		ldr	r0, .L168+84
  1700 01b0 0093     		str	r3, [sp]
  1701 01b2 059A     		ldr	r2, [sp, #20]
-ARM GAS  /tmp/ccUaWfU5.s 			page 32
+ARM GAS  /tmp/cc1EZN7F.s 			page 32
 
 
  1702 01b4 069B     		ldr	r3, [sp, #24]
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1758 0014 FFF7FEFF 		bl	lorawan_api_duty_cycle_enable_set
  1759 0018 0423     		movs	r3, #4
  1760 001a 051E     		subs	r5, r0, #0
-ARM GAS  /tmp/ccUaWfU5.s 			page 33
+ARM GAS  /tmp/cc1EZN7F.s 			page 33
 
 
  1761 001c 04D1     		bne	.L171
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1817 0048 28000000 		.word	.LC26
  1818 004c 00000000 		.word	modem_test_context
  1820              		.section	.text.smtc_modem_test_direct_radio_read,"ax",%progbits
-ARM GAS  /tmp/ccUaWfU5.s 			page 34
+ARM GAS  /tmp/cc1EZN7F.s 			page 34
 
 
  1821              		.align	1
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1875              		.align	2
  1878              	modem_test_context:
  1879 0000 00000000 		.space	276
-ARM GAS  /tmp/ccUaWfU5.s 			page 35
+ARM GAS  /tmp/cc1EZN7F.s 			page 35
 
 
  1879      00000000 
@@ -2072,89 +2072,89 @@ ARM GAS  /tmp/ccUaWfU5.s 			page 1
  1909      08090A0B 
  1909      0C
  1910              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccUaWfU5.s 			page 36
+ARM GAS  /tmp/cc1EZN7F.s 			page 36
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_modem_test.c
-     /tmp/ccUaWfU5.s:14     .text.ral_compute_lora_ldro:00000000 $t
-     /tmp/ccUaWfU5.s:19     .text.ral_compute_lora_ldro:00000000 ral_compute_lora_ldro
-     /tmp/ccUaWfU5.s:29     .text.ral_compute_lora_ldro:0000000e $d
-     /tmp/ccUaWfU5.s:84     .text.modem_test_empty_callback:00000000 $t
-     /tmp/ccUaWfU5.s:90     .text.modem_test_empty_callback:00000000 modem_test_empty_callback
-     /tmp/ccUaWfU5.s:101    .text.modem_test_empty_callback:0000000c $d
-     /tmp/ccUaWfU5.s:111    .text.modem_test_compute_rssi_callback:00000000 $t
-     /tmp/ccUaWfU5.s:117    .text.modem_test_compute_rssi_callback:00000000 modem_test_compute_rssi_callback
-     /tmp/ccUaWfU5.s:156    .text.modem_test_compute_rssi_callback:0000004c $d
-     /tmp/ccUaWfU5.s:1878   .bss.modem_test_context:00000000 modem_test_context
-     /tmp/ccUaWfU5.s:173    .text.modem_test_rx_callback:00000000 $t
-     /tmp/ccUaWfU5.s:179    .text.modem_test_rx_callback:00000000 modem_test_rx_callback
-     /tmp/ccUaWfU5.s:319    .text.modem_test_rx_callback:00000110 $d
-     /tmp/ccUaWfU5.s:329    .text.test_mode_cw_callback_for_rp:00000000 $t
-     /tmp/ccUaWfU5.s:335    .text.test_mode_cw_callback_for_rp:00000000 test_mode_cw_callback_for_rp
-     /tmp/ccUaWfU5.s:386    .text.test_mode_cw_callback_for_rp:00000058 $d
-     /tmp/ccUaWfU5.s:1872   .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccUaWfU5.s:396    .text.modem_test_tx_callback:00000000 $t
-     /tmp/ccUaWfU5.s:402    .text.modem_test_tx_callback:00000000 modem_test_tx_callback
-     /tmp/ccUaWfU5.s:529    .text.modem_test_tx_callback:000000e8 $d
-     /tmp/ccUaWfU5.s:544    .text.smtc_modem_test_start:00000000 $t
-     /tmp/ccUaWfU5.s:550    .text.smtc_modem_test_start:00000000 smtc_modem_test_start
-     /tmp/ccUaWfU5.s:605    .text.smtc_modem_test_start:00000078 $d
-     /tmp/ccUaWfU5.s:616    .text.smtc_modem_test_tx_hop:00000000 $t
-     /tmp/ccUaWfU5.s:622    .text.smtc_modem_test_tx_hop:00000000 smtc_modem_test_tx_hop
-     /tmp/ccUaWfU5.s:642    .text.smtc_modem_test_tx_hop:00000020 $d
-     /tmp/ccUaWfU5.s:653    .text.smtc_modem_test_tx_cw:00000000 $t
-     /tmp/ccUaWfU5.s:659    .text.smtc_modem_test_tx_cw:00000000 smtc_modem_test_tx_cw
-     /tmp/ccUaWfU5.s:763    .text.smtc_modem_test_tx_cw:000000d4 $d
-     /tmp/ccUaWfU5.s:773    .text.smtc_modem_test_get_nb_rx_packets:00000000 $t
-     /tmp/ccUaWfU5.s:779    .text.smtc_modem_test_get_nb_rx_packets:00000000 smtc_modem_test_get_nb_rx_packets
-     /tmp/ccUaWfU5.s:804    .text.smtc_modem_test_get_nb_rx_packets:00000028 $d
-     /tmp/ccUaWfU5.s:814    .text.smtc_modem_test_rssi:00000000 $t
-     /tmp/ccUaWfU5.s:820    .text.smtc_modem_test_rssi:00000000 smtc_modem_test_rssi
-     /tmp/ccUaWfU5.s:908    .text.smtc_modem_test_rssi:000000a8 $d
-     /tmp/ccUaWfU5.s:1884   .rodata.modem_test_bw_helper:00000000 modem_test_bw_helper
-     /tmp/ccUaWfU5.s:922    .text.smtc_modem_test_get_rssi:00000000 $t
-     /tmp/ccUaWfU5.s:928    .text.smtc_modem_test_get_rssi:00000000 smtc_modem_test_get_rssi
-     /tmp/ccUaWfU5.s:966    .text.smtc_modem_test_get_rssi:00000044 $d
-     /tmp/ccUaWfU5.s:973    .text.modem_test_set_rssi:00000000 $t
-     /tmp/ccUaWfU5.s:979    .text.modem_test_set_rssi:00000000 modem_test_set_rssi
-     /tmp/ccUaWfU5.s:990    .text.modem_test_set_rssi:00000008 $d
-     /tmp/ccUaWfU5.s:993    .text.smtc_modem_test_radio_reset:00000000 $t
-     /tmp/ccUaWfU5.s:999    .text.smtc_modem_test_radio_reset:00000000 smtc_modem_test_radio_reset
-     /tmp/ccUaWfU5.s:1050   .text.smtc_modem_test_radio_reset:00000058 $d
-     /tmp/ccUaWfU5.s:1055   .text.smtc_modem_test_nop:00000000 $t
-     /tmp/ccUaWfU5.s:1061   .text.smtc_modem_test_nop:00000000 smtc_modem_test_nop
-     /tmp/ccUaWfU5.s:1087   .text.smtc_modem_test_nop:0000002c $d
-     /tmp/ccUaWfU5.s:1092   .text.smtc_modem_test_stop:00000000 $t
-     /tmp/ccUaWfU5.s:1098   .text.smtc_modem_test_stop:00000000 smtc_modem_test_stop
-     /tmp/ccUaWfU5.s:1133   .text.smtc_modem_test_stop:00000040 $d
-     /tmp/ccUaWfU5.s:1148   .text.smtc_modem_test_tx:00000000 $t
-     /tmp/ccUaWfU5.s:1154   .text.smtc_modem_test_tx:00000000 smtc_modem_test_tx
-     /tmp/ccUaWfU5.s:1452   .text.smtc_modem_test_tx:00000250 $d
-     /tmp/ccUaWfU5.s:1908   .rodata.modem_test_sf_convert:00000000 modem_test_sf_convert
-ARM GAS  /tmp/ccUaWfU5.s 			page 37
+     /tmp/cc1EZN7F.s:14     .text.ral_compute_lora_ldro:00000000 $t
+     /tmp/cc1EZN7F.s:19     .text.ral_compute_lora_ldro:00000000 ral_compute_lora_ldro
+     /tmp/cc1EZN7F.s:29     .text.ral_compute_lora_ldro:0000000e $d
+     /tmp/cc1EZN7F.s:84     .text.modem_test_empty_callback:00000000 $t
+     /tmp/cc1EZN7F.s:90     .text.modem_test_empty_callback:00000000 modem_test_empty_callback
+     /tmp/cc1EZN7F.s:101    .text.modem_test_empty_callback:0000000c $d
+     /tmp/cc1EZN7F.s:111    .text.modem_test_compute_rssi_callback:00000000 $t
+     /tmp/cc1EZN7F.s:117    .text.modem_test_compute_rssi_callback:00000000 modem_test_compute_rssi_callback
+     /tmp/cc1EZN7F.s:156    .text.modem_test_compute_rssi_callback:0000004c $d
+     /tmp/cc1EZN7F.s:1878   .bss.modem_test_context:00000000 modem_test_context
+     /tmp/cc1EZN7F.s:173    .text.modem_test_rx_callback:00000000 $t
+     /tmp/cc1EZN7F.s:179    .text.modem_test_rx_callback:00000000 modem_test_rx_callback
+     /tmp/cc1EZN7F.s:319    .text.modem_test_rx_callback:00000110 $d
+     /tmp/cc1EZN7F.s:329    .text.test_mode_cw_callback_for_rp:00000000 $t
+     /tmp/cc1EZN7F.s:335    .text.test_mode_cw_callback_for_rp:00000000 test_mode_cw_callback_for_rp
+     /tmp/cc1EZN7F.s:386    .text.test_mode_cw_callback_for_rp:00000058 $d
+     /tmp/cc1EZN7F.s:1872   .rodata.__func__.0:00000000 __func__.0
+     /tmp/cc1EZN7F.s:396    .text.modem_test_tx_callback:00000000 $t
+     /tmp/cc1EZN7F.s:402    .text.modem_test_tx_callback:00000000 modem_test_tx_callback
+     /tmp/cc1EZN7F.s:529    .text.modem_test_tx_callback:000000e8 $d
+     /tmp/cc1EZN7F.s:544    .text.smtc_modem_test_start:00000000 $t
+     /tmp/cc1EZN7F.s:550    .text.smtc_modem_test_start:00000000 smtc_modem_test_start
+     /tmp/cc1EZN7F.s:605    .text.smtc_modem_test_start:00000078 $d
+     /tmp/cc1EZN7F.s:616    .text.smtc_modem_test_tx_hop:00000000 $t
+     /tmp/cc1EZN7F.s:622    .text.smtc_modem_test_tx_hop:00000000 smtc_modem_test_tx_hop
+     /tmp/cc1EZN7F.s:642    .text.smtc_modem_test_tx_hop:00000020 $d
+     /tmp/cc1EZN7F.s:653    .text.smtc_modem_test_tx_cw:00000000 $t
+     /tmp/cc1EZN7F.s:659    .text.smtc_modem_test_tx_cw:00000000 smtc_modem_test_tx_cw
+     /tmp/cc1EZN7F.s:763    .text.smtc_modem_test_tx_cw:000000d4 $d
+     /tmp/cc1EZN7F.s:773    .text.smtc_modem_test_get_nb_rx_packets:00000000 $t
+     /tmp/cc1EZN7F.s:779    .text.smtc_modem_test_get_nb_rx_packets:00000000 smtc_modem_test_get_nb_rx_packets
+     /tmp/cc1EZN7F.s:804    .text.smtc_modem_test_get_nb_rx_packets:00000028 $d
+     /tmp/cc1EZN7F.s:814    .text.smtc_modem_test_rssi:00000000 $t
+     /tmp/cc1EZN7F.s:820    .text.smtc_modem_test_rssi:00000000 smtc_modem_test_rssi
+     /tmp/cc1EZN7F.s:908    .text.smtc_modem_test_rssi:000000a8 $d
+     /tmp/cc1EZN7F.s:1884   .rodata.modem_test_bw_helper:00000000 modem_test_bw_helper
+     /tmp/cc1EZN7F.s:922    .text.smtc_modem_test_get_rssi:00000000 $t
+     /tmp/cc1EZN7F.s:928    .text.smtc_modem_test_get_rssi:00000000 smtc_modem_test_get_rssi
+     /tmp/cc1EZN7F.s:966    .text.smtc_modem_test_get_rssi:00000044 $d
+     /tmp/cc1EZN7F.s:973    .text.modem_test_set_rssi:00000000 $t
+     /tmp/cc1EZN7F.s:979    .text.modem_test_set_rssi:00000000 modem_test_set_rssi
+     /tmp/cc1EZN7F.s:990    .text.modem_test_set_rssi:00000008 $d
+     /tmp/cc1EZN7F.s:993    .text.smtc_modem_test_radio_reset:00000000 $t
+     /tmp/cc1EZN7F.s:999    .text.smtc_modem_test_radio_reset:00000000 smtc_modem_test_radio_reset
+     /tmp/cc1EZN7F.s:1050   .text.smtc_modem_test_radio_reset:00000058 $d
+     /tmp/cc1EZN7F.s:1055   .text.smtc_modem_test_nop:00000000 $t
+     /tmp/cc1EZN7F.s:1061   .text.smtc_modem_test_nop:00000000 smtc_modem_test_nop
+     /tmp/cc1EZN7F.s:1087   .text.smtc_modem_test_nop:0000002c $d
+     /tmp/cc1EZN7F.s:1092   .text.smtc_modem_test_stop:00000000 $t
+     /tmp/cc1EZN7F.s:1098   .text.smtc_modem_test_stop:00000000 smtc_modem_test_stop
+     /tmp/cc1EZN7F.s:1133   .text.smtc_modem_test_stop:00000040 $d
+     /tmp/cc1EZN7F.s:1148   .text.smtc_modem_test_tx:00000000 $t
+     /tmp/cc1EZN7F.s:1154   .text.smtc_modem_test_tx:00000000 smtc_modem_test_tx
+     /tmp/cc1EZN7F.s:1452   .text.smtc_modem_test_tx:00000250 $d
+     /tmp/cc1EZN7F.s:1908   .rodata.modem_test_sf_convert:00000000 modem_test_sf_convert
+ARM GAS  /tmp/cc1EZN7F.s 			page 37
 
 
-     /tmp/ccUaWfU5.s:1902   .rodata.modem_test_bw_convert:00000000 modem_test_bw_convert
-     /tmp/ccUaWfU5.s:1896   .rodata.modem_test_cr_convert:00000000 modem_test_cr_convert
-     /tmp/ccUaWfU5.s:1483   .text.smtc_modem_test_rx_continuous:00000000 $t
-     /tmp/ccUaWfU5.s:1489   .text.smtc_modem_test_rx_continuous:00000000 smtc_modem_test_rx_continuous
-     /tmp/ccUaWfU5.s:1715   .text.smtc_modem_test_rx_continuous:000001c8 $d
-     /tmp/ccUaWfU5.s:1740   .text.smtc_modem_test_duty_cycle_app_activate:00000000 $t
-     /tmp/ccUaWfU5.s:1746   .text.smtc_modem_test_duty_cycle_app_activate:00000000 smtc_modem_test_duty_cycle_app_activate
-     /tmp/ccUaWfU5.s:1772   .text.smtc_modem_test_direct_radio_write:00000000 $t
-     /tmp/ccUaWfU5.s:1778   .text.smtc_modem_test_direct_radio_write:00000000 smtc_modem_test_direct_radio_write
-     /tmp/ccUaWfU5.s:1816   .text.smtc_modem_test_direct_radio_write:00000044 $d
-     /tmp/ccUaWfU5.s:1821   .text.smtc_modem_test_direct_radio_read:00000000 $t
-     /tmp/ccUaWfU5.s:1827   .text.smtc_modem_test_direct_radio_read:00000000 smtc_modem_test_direct_radio_read
-     /tmp/ccUaWfU5.s:1865   .text.smtc_modem_test_direct_radio_read:00000044 $d
-     /tmp/ccUaWfU5.s:1875   .bss.modem_test_context:00000000 $d
-     /tmp/ccUaWfU5.s:1881   .rodata.modem_test_bw_helper:00000000 $d
-     /tmp/ccUaWfU5.s:1893   .rodata.modem_test_cr_convert:00000000 $d
-     /tmp/ccUaWfU5.s:1899   .rodata.modem_test_bw_convert:00000000 $d
-     /tmp/ccUaWfU5.s:1905   .rodata.modem_test_sf_convert:00000000 $d
-     /tmp/ccUaWfU5.s:42     .text.ral_compute_lora_ldro:0000001b $d
-     /tmp/ccUaWfU5.s:42     .text.ral_compute_lora_ldro:0000001c $t
+     /tmp/cc1EZN7F.s:1902   .rodata.modem_test_bw_convert:00000000 modem_test_bw_convert
+     /tmp/cc1EZN7F.s:1896   .rodata.modem_test_cr_convert:00000000 modem_test_cr_convert
+     /tmp/cc1EZN7F.s:1483   .text.smtc_modem_test_rx_continuous:00000000 $t
+     /tmp/cc1EZN7F.s:1489   .text.smtc_modem_test_rx_continuous:00000000 smtc_modem_test_rx_continuous
+     /tmp/cc1EZN7F.s:1715   .text.smtc_modem_test_rx_continuous:000001c8 $d
+     /tmp/cc1EZN7F.s:1740   .text.smtc_modem_test_duty_cycle_app_activate:00000000 $t
+     /tmp/cc1EZN7F.s:1746   .text.smtc_modem_test_duty_cycle_app_activate:00000000 smtc_modem_test_duty_cycle_app_activate
+     /tmp/cc1EZN7F.s:1772   .text.smtc_modem_test_direct_radio_write:00000000 $t
+     /tmp/cc1EZN7F.s:1778   .text.smtc_modem_test_direct_radio_write:00000000 smtc_modem_test_direct_radio_write
+     /tmp/cc1EZN7F.s:1816   .text.smtc_modem_test_direct_radio_write:00000044 $d
+     /tmp/cc1EZN7F.s:1821   .text.smtc_modem_test_direct_radio_read:00000000 $t
+     /tmp/cc1EZN7F.s:1827   .text.smtc_modem_test_direct_radio_read:00000000 smtc_modem_test_direct_radio_read
+     /tmp/cc1EZN7F.s:1865   .text.smtc_modem_test_direct_radio_read:00000044 $d
+     /tmp/cc1EZN7F.s:1875   .bss.modem_test_context:00000000 $d
+     /tmp/cc1EZN7F.s:1881   .rodata.modem_test_bw_helper:00000000 $d
+     /tmp/cc1EZN7F.s:1893   .rodata.modem_test_cr_convert:00000000 $d
+     /tmp/cc1EZN7F.s:1899   .rodata.modem_test_bw_convert:00000000 $d
+     /tmp/cc1EZN7F.s:1905   .rodata.modem_test_sf_convert:00000000 $d
+     /tmp/cc1EZN7F.s:42     .text.ral_compute_lora_ldro:0000001b $d
+     /tmp/cc1EZN7F.s:42     .text.ral_compute_lora_ldro:0000001c $t
 
 UNDEFINED SYMBOLS
 __gnu_thumb1_case_uqi
@@ -2192,7 +2192,7 @@ smtc_lbt_listen_channel
 smtc_modem_hal_stop_radio_tcxo
 rp_task_abort
 smtc_real_get_gfsk_sync_word
-ARM GAS  /tmp/ccUaWfU5.s 			page 38
+ARM GAS  /tmp/cc1EZN7F.s 			page 38
 
 
 rp_hook_init

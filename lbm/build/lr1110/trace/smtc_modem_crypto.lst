@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccgdFAZE.s 			page 1
+ARM GAS  /tmp/cc4ucvbx.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
   56 0046 360E     		lsrs	r6, r6, #24
   57 0048 1B0E     		lsrs	r3, r3, #24
   58 004a 2A70     		strb	r2, [r5]
-ARM GAS  /tmp/ccgdFAZE.s 			page 2
+ARM GAS  /tmp/cc4ucvbx.s 			page 2
 
 
   59 004c 6F71     		strb	r7, [r5, #5]
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
  114              		.align	1
  115              		.global	smtc_modem_crypto_payload_decrypt
  116              		.syntax unified
-ARM GAS  /tmp/ccgdFAZE.s 			page 3
+ARM GAS  /tmp/cc4ucvbx.s 			page 3
 
 
  117              		.code	16
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
  176 000a 6844     		add	r0, r0, sp
  177 000c C9B2     		uxtb	r1, r1
  178 000e 0470     		strb	r4, [r0]
-ARM GAS  /tmp/ccgdFAZE.s 			page 4
+ARM GAS  /tmp/cc4ucvbx.s 			page 4
 
 
  179 0010 0290     		str	r0, [sp, #8]
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
  235 0040 FFF7FEFF 		bl	smtc_secure_element_derive_and_store_key
  236 0044 011E     		subs	r1, r0, #0
  237 0046 01D0     		beq	.L19
-ARM GAS  /tmp/ccgdFAZE.s 			page 5
+ARM GAS  /tmp/cc4ucvbx.s 			page 5
 
 
  238              	.L23:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
  294 0016 8023     		movs	r3, #128
  295 0018 0430     		adds	r0, r0, #4
  296 001a 5B00     		lsls	r3, r3, #1
-ARM GAS  /tmp/ccgdFAZE.s 			page 6
+ARM GAS  /tmp/cc4ucvbx.s 			page 6
 
 
  297 001c 9942     		cmp	r1, r3
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
  353 0004 0D00     		movs	r5, r1
  354 0006 10A9     		add	r1, sp, #64
  355 0008 0978     		ldrb	r1, [r1]
-ARM GAS  /tmp/ccgdFAZE.s 			page 7
+ARM GAS  /tmp/cc4ucvbx.s 			page 7
 
 
  356 000a 0400     		movs	r4, r0
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
  411              		.thumb_func
  413              	smtc_modem_crypto_set_key:
  414              		@ args = 0, pretend = 0, frame = 16
-ARM GAS  /tmp/ccgdFAZE.s 			page 8
+ARM GAS  /tmp/cc4ucvbx.s 			page 8
 
 
  415              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
  471 0012 33D8     		bhi	.L46
  472 0014 0023     		movs	r3, #0
  473 0016 1E49     		ldr	r1, .L55
-ARM GAS  /tmp/ccgdFAZE.s 			page 9
+ARM GAS  /tmp/cc4ucvbx.s 			page 9
 
 
  474              	.L50:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
  528              	.L54:
  529 0080 2800     		movs	r0, r5
  530 0082 B278     		ldrb	r2, [r6, #2]
-ARM GAS  /tmp/ccgdFAZE.s 			page 10
+ARM GAS  /tmp/cc4ucvbx.s 			page 10
 
 
  531 0084 F178     		ldrb	r1, [r6, #3]
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
  589              	smtc_modem_crypto_service_encrypt:
  590              		@ args = 0, pretend = 0, frame = 40
  591              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccgdFAZE.s 			page 11
+ARM GAS  /tmp/cc4ucvbx.s 			page 11
 
 
  592 0000 F0B5     		push	{r4, r5, r6, r7, lr}
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
  646 006a 0199     		ldr	r1, [sp, #4]
  647 006c 0023     		movs	r3, #0
  648 006e 8C46     		mov	ip, r1
-ARM GAS  /tmp/ccgdFAZE.s 			page 12
+ARM GAS  /tmp/cc4ucvbx.s 			page 12
 
 
  649 0070 12B2     		sxth	r2, r2
@@ -699,35 +699,35 @@ ARM GAS  /tmp/ccgdFAZE.s 			page 1
  687 000e 8B       		.byte	-117
  688 000f 89       		.byte	-119
  689              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccgdFAZE.s 			page 13
+ARM GAS  /tmp/cc4ucvbx.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_modem_crypto.c
-     /tmp/ccgdFAZE.s:14     .text.smtc_modem_crypto_payload_encrypt:00000000 $t
-     /tmp/ccgdFAZE.s:20     .text.smtc_modem_crypto_payload_encrypt:00000000 smtc_modem_crypto_payload_encrypt
-     /tmp/ccgdFAZE.s:114    .text.smtc_modem_crypto_payload_decrypt:00000000 $t
-     /tmp/ccgdFAZE.s:120    .text.smtc_modem_crypto_payload_decrypt:00000000 smtc_modem_crypto_payload_decrypt
-     /tmp/ccgdFAZE.s:138    .text.smtc_modem_crypto_compute_join_mic:00000000 $t
-     /tmp/ccgdFAZE.s:144    .text.smtc_modem_crypto_compute_join_mic:00000000 smtc_modem_crypto_compute_join_mic
-     /tmp/ccgdFAZE.s:162    .text.smtc_modem_crypto_process_join_accept:00000000 $t
-     /tmp/ccgdFAZE.s:168    .text.smtc_modem_crypto_process_join_accept:00000000 smtc_modem_crypto_process_join_accept
-     /tmp/ccgdFAZE.s:195    .text.smtc_modem_crypto_derive_skeys:00000000 $t
-     /tmp/ccgdFAZE.s:201    .text.smtc_modem_crypto_derive_skeys:00000000 smtc_modem_crypto_derive_skeys
-     /tmp/ccgdFAZE.s:274    .text.smtc_modem_crypto_verify_mic:00000000 $t
-     /tmp/ccgdFAZE.s:280    .text.smtc_modem_crypto_verify_mic:00000000 smtc_modem_crypto_verify_mic
-     /tmp/ccgdFAZE.s:342    .text.smtc_modem_crypto_compute_and_add_mic:00000000 $t
-     /tmp/ccgdFAZE.s:348    .text.smtc_modem_crypto_compute_and_add_mic:00000000 smtc_modem_crypto_compute_and_add_mic
-     /tmp/ccgdFAZE.s:407    .text.smtc_modem_crypto_set_key:00000000 $t
-     /tmp/ccgdFAZE.s:413    .text.smtc_modem_crypto_set_key:00000000 smtc_modem_crypto_set_key
-     /tmp/ccgdFAZE.s:453    .text.smtc_modem_crypto_derive_multicast_session_keys:00000000 $t
-     /tmp/ccgdFAZE.s:459    .text.smtc_modem_crypto_derive_multicast_session_keys:00000000 smtc_modem_crypto_derive_multicast_session_keys
-     /tmp/ccgdFAZE.s:539    .text.smtc_modem_crypto_derive_multicast_session_keys:00000090 $d
-     /tmp/ccgdFAZE.s:672    .data.smtc_crypto_key_addr_list:00000000 smtc_crypto_key_addr_list
-     /tmp/ccgdFAZE.s:542    .text.smtc_modem_crypto_get_class_b_rand:00000000 $t
-     /tmp/ccgdFAZE.s:548    .text.smtc_modem_crypto_get_class_b_rand:00000000 smtc_modem_crypto_get_class_b_rand
-     /tmp/ccgdFAZE.s:583    .text.smtc_modem_crypto_service_encrypt:00000000 $t
-     /tmp/ccgdFAZE.s:589    .text.smtc_modem_crypto_service_encrypt:00000000 smtc_modem_crypto_service_encrypt
+     /tmp/cc4ucvbx.s:14     .text.smtc_modem_crypto_payload_encrypt:00000000 $t
+     /tmp/cc4ucvbx.s:20     .text.smtc_modem_crypto_payload_encrypt:00000000 smtc_modem_crypto_payload_encrypt
+     /tmp/cc4ucvbx.s:114    .text.smtc_modem_crypto_payload_decrypt:00000000 $t
+     /tmp/cc4ucvbx.s:120    .text.smtc_modem_crypto_payload_decrypt:00000000 smtc_modem_crypto_payload_decrypt
+     /tmp/cc4ucvbx.s:138    .text.smtc_modem_crypto_compute_join_mic:00000000 $t
+     /tmp/cc4ucvbx.s:144    .text.smtc_modem_crypto_compute_join_mic:00000000 smtc_modem_crypto_compute_join_mic
+     /tmp/cc4ucvbx.s:162    .text.smtc_modem_crypto_process_join_accept:00000000 $t
+     /tmp/cc4ucvbx.s:168    .text.smtc_modem_crypto_process_join_accept:00000000 smtc_modem_crypto_process_join_accept
+     /tmp/cc4ucvbx.s:195    .text.smtc_modem_crypto_derive_skeys:00000000 $t
+     /tmp/cc4ucvbx.s:201    .text.smtc_modem_crypto_derive_skeys:00000000 smtc_modem_crypto_derive_skeys
+     /tmp/cc4ucvbx.s:274    .text.smtc_modem_crypto_verify_mic:00000000 $t
+     /tmp/cc4ucvbx.s:280    .text.smtc_modem_crypto_verify_mic:00000000 smtc_modem_crypto_verify_mic
+     /tmp/cc4ucvbx.s:342    .text.smtc_modem_crypto_compute_and_add_mic:00000000 $t
+     /tmp/cc4ucvbx.s:348    .text.smtc_modem_crypto_compute_and_add_mic:00000000 smtc_modem_crypto_compute_and_add_mic
+     /tmp/cc4ucvbx.s:407    .text.smtc_modem_crypto_set_key:00000000 $t
+     /tmp/cc4ucvbx.s:413    .text.smtc_modem_crypto_set_key:00000000 smtc_modem_crypto_set_key
+     /tmp/cc4ucvbx.s:453    .text.smtc_modem_crypto_derive_multicast_session_keys:00000000 $t
+     /tmp/cc4ucvbx.s:459    .text.smtc_modem_crypto_derive_multicast_session_keys:00000000 smtc_modem_crypto_derive_multicast_session_keys
+     /tmp/cc4ucvbx.s:539    .text.smtc_modem_crypto_derive_multicast_session_keys:00000090 $d
+     /tmp/cc4ucvbx.s:672    .data.smtc_crypto_key_addr_list:00000000 smtc_crypto_key_addr_list
+     /tmp/cc4ucvbx.s:542    .text.smtc_modem_crypto_get_class_b_rand:00000000 $t
+     /tmp/cc4ucvbx.s:548    .text.smtc_modem_crypto_get_class_b_rand:00000000 smtc_modem_crypto_get_class_b_rand
+     /tmp/cc4ucvbx.s:583    .text.smtc_modem_crypto_service_encrypt:00000000 $t
+     /tmp/cc4ucvbx.s:589    .text.smtc_modem_crypto_service_encrypt:00000000 smtc_modem_crypto_service_encrypt
 
 UNDEFINED SYMBOLS
 memset
