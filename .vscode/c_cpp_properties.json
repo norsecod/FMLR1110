@@ -3,6 +3,8 @@
         {
             "name": "Linux",
             "includePath": [
+                "/home/terje/Documents/Github/FMLR1110-1",
+                "/home/terje/Documents/Github/FMLR1110-1/lbm/smtc_modem_hal/",
                 "${workspaceFolder}/**"
             ],
             "defines": [],

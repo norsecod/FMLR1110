@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccJf8O7r.s 			page 1
+ARM GAS  /tmp/ccMgNTln.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -52,52 +52,52 @@ ARM GAS  /tmp/ccJf8O7r.s 			page 1
   50 0040 10000000 		.word	settings+16
   52              		.section	.rodata.settings_print.str1.1,"aMS",%progbits,1
   53              	.LC7:
-  54 0000 494E464F 		.ascii	"INFO: Settings:\012\000"
+  54 0000 494E464F 		.ascii	"INFO: Settings:\012\015\000"
   54      3A205365 
   54      7474696E 
   54      67733A0A 
-  54      00
+  54      0D00
   55              	.LC9:
-ARM GAS  /tmp/ccJf8O7r.s 			page 2
+ARM GAS  /tmp/ccMgNTln.s 			page 2
 
 
-  56 0011 00       		.ascii	"\000"
+  56 0012 00       		.ascii	"\000"
   57              	.LC12:
-  58 0012 494E464F 		.ascii	"INFO:  - deveui:                   %02X%02X%02X%02X"
+  58 0013 494E464F 		.ascii	"INFO:  - deveui:                   %02X%02X%02X%02X"
   58      3A20202D 
   58      20646576 
   58      6575693A 
   58      20202020 
-  59 0045 25303258 		.ascii	"%02X%02X%02X%02X\012\000"
+  59 0046 25303258 		.ascii	"%02X%02X%02X%02X\012\015\000"
   59      25303258 
   59      25303258 
   59      25303258 
-  59      0A00
+  59      0A0D00
   60              	.LC14:
-  61 0057 494E464F 		.ascii	"INFO:  - joineui:                  %02X%02X%02X%02X"
+  61 0059 494E464F 		.ascii	"INFO:  - joineui:                  %02X%02X%02X%02X"
   61      3A20202D 
   61      206A6F69 
   61      6E657569 
   61      3A202020 
-  62 008a 25303258 		.ascii	"%02X%02X%02X%02X\012\000"
+  62 008c 25303258 		.ascii	"%02X%02X%02X%02X\012\015\000"
   62      25303258 
   62      25303258 
   62      25303258 
-  62      0A00
+  62      0A0D00
   63              	.LC16:
-  64 009c 494E464F 		.ascii	"INFO:  - nwkey:                    %02X%02X%02X%02X"
+  64 009f 494E464F 		.ascii	"INFO:  - nwkey:                    %02X%02X%02X%02X"
   64      3A20202D 
   64      206E776B 
   64      65793A20 
   64      20202020 
-  65 00cf 25303258 		.ascii	"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X\012"
+  65 00d2 25303258 		.ascii	"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X\012"
   65      25303258 
   65      25303258 
   65      25303258 
   65      25303258 
-  66 0100 00       		.ascii	"\000"
+  66 0103 0D00     		.ascii	"\015\000"
   67              	.LC18:
-  68 0101 494E464F 		.ascii	"INFO:  - region:                   %u\012\000"
+  68 0105 494E464F 		.ascii	"INFO:  - region:                   %u\012\015\000"
   68      3A20202D 
   68      20726567 
   68      696F6E3A 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccJf8O7r.s 			page 1
   83 000a 2D4D     		ldr	r5, .L5+4
   84 000c 2800     		movs	r0, r5
   85 000e FFF7FEFF 		bl	hal_trace_print_var
-ARM GAS  /tmp/ccJf8O7r.s 			page 3
+ARM GAS  /tmp/ccMgNTln.s 			page 3
 
 
   86 0012 2C4C     		ldr	r4, .L5+8
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccJf8O7r.s 			page 1
  140 0086 E67D     		ldrb	r6, [r4, #23]
  141 0088 0596     		str	r6, [sp, #20]
  142 008a A67D     		ldrb	r6, [r4, #22]
-ARM GAS  /tmp/ccJf8O7r.s 			page 4
+ARM GAS  /tmp/ccMgNTln.s 			page 4
 
 
  143 008c 0496     		str	r6, [sp, #16]
@@ -205,12 +205,12 @@ ARM GAS  /tmp/ccJf8O7r.s 			page 1
  164 00ba C046     		.align	2
  165              	.L5:
  166 00bc 00000000 		.word	.LC7
- 167 00c0 11000000 		.word	.LC9
+ 167 00c0 12000000 		.word	.LC9
  168 00c4 00000000 		.word	settings
- 169 00c8 12000000 		.word	.LC12
- 170 00cc 57000000 		.word	.LC14
- 171 00d0 9C000000 		.word	.LC16
- 172 00d4 01010000 		.word	.LC18
+ 169 00c8 13000000 		.word	.LC12
+ 170 00cc 59000000 		.word	.LC14
+ 171 00d0 9F000000 		.word	.LC16
+ 172 00d4 05010000 		.word	.LC18
  174              		.section	.data.nwkey,"aw"
  175              		.align	2
  178              	nwkey:
@@ -238,28 +238,28 @@ ARM GAS  /tmp/ccJf8O7r.s 			page 1
  198      00000000 
  198      00000000 
  199              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccJf8O7r.s 			page 5
+ARM GAS  /tmp/ccMgNTln.s 			page 5
 
 
-ARM GAS  /tmp/ccJf8O7r.s 			page 6
+ARM GAS  /tmp/ccMgNTln.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 settings.c
-     /tmp/ccJf8O7r.s:14     .text.settings_init:00000000 $t
-     /tmp/ccJf8O7r.s:20     .text.settings_init:00000000 settings_init
-     /tmp/ccJf8O7r.s:45     .text.settings_init:0000002c $d
-     /tmp/ccJf8O7r.s:197    .bss.settings:00000000 settings
-     /tmp/ccJf8O7r.s:190    .data.deveui:00000000 deveui
-     /tmp/ccJf8O7r.s:184    .data.joineui:00000000 joineui
-     /tmp/ccJf8O7r.s:178    .data.nwkey:00000000 nwkey
-     /tmp/ccJf8O7r.s:70     .text.settings_print:00000000 $t
-     /tmp/ccJf8O7r.s:76     .text.settings_print:00000000 settings_print
-     /tmp/ccJf8O7r.s:166    .text.settings_print:000000bc $d
-     /tmp/ccJf8O7r.s:175    .data.nwkey:00000000 $d
-     /tmp/ccJf8O7r.s:181    .data.joineui:00000000 $d
-     /tmp/ccJf8O7r.s:187    .data.deveui:00000000 $d
-     /tmp/ccJf8O7r.s:194    .bss.settings:00000000 $d
+     /tmp/ccMgNTln.s:14     .text.settings_init:00000000 $t
+     /tmp/ccMgNTln.s:20     .text.settings_init:00000000 settings_init
+     /tmp/ccMgNTln.s:45     .text.settings_init:0000002c $d
+     /tmp/ccMgNTln.s:197    .bss.settings:00000000 settings
+     /tmp/ccMgNTln.s:190    .data.deveui:00000000 deveui
+     /tmp/ccMgNTln.s:184    .data.joineui:00000000 joineui
+     /tmp/ccMgNTln.s:178    .data.nwkey:00000000 nwkey
+     /tmp/ccMgNTln.s:70     .text.settings_print:00000000 $t
+     /tmp/ccMgNTln.s:76     .text.settings_print:00000000 settings_print
+     /tmp/ccMgNTln.s:166    .text.settings_print:000000bc $d
+     /tmp/ccMgNTln.s:175    .data.nwkey:00000000 $d
+     /tmp/ccMgNTln.s:181    .data.joineui:00000000 $d
+     /tmp/ccMgNTln.s:187    .data.deveui:00000000 $d
+     /tmp/ccMgNTln.s:194    .bss.settings:00000000 $d
 
 UNDEFINED SYMBOLS
 memcpy

@@ -10,7 +10,8 @@
         "smtc_modem_hal.h": "c",
         "smtc_modem_utilities.h": "c",
         "smtc_modem_api.h": "c",
-        "ral_lr11xx.h": "c"
+        "ral_lr11xx.h": "c",
+        "smtc_modem_hal_dbg_trace.h": "c"
     },
  
 }
