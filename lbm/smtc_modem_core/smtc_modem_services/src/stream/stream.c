@@ -148,7 +148,7 @@ stream_return_code_t stream_add_data( rose_t* ROSE, const uint8_t* data, uint8_t
 
     // LOG_PRINTF( "stream_add_data (%d) [", len );
     // LOG_PACKARRAY( "", data, len );
-    // LOG_MSG( "]\n" );
+    // LOG_MSG( "]\n\r" );
     return STREAM_OK;
 }
 
@@ -181,7 +181,7 @@ stream_return_code_t stream_get_fragment( rose_t* ROSE, uint8_t* buf, uint32_t f
 
     // LOG_PRINTF( "stream_get_fragment (%d) [", *len );
     // LOG_PACKARRAY( "", buf, *len );
-    // LOG_MSG( "]\n" );
+    // LOG_MSG( "]\n\r" );
     return STREAM_OK;
 }
 

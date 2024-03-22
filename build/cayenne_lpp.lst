@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccu3uxp9.s 			page 1
+ARM GAS  /tmp/cce6rP9B.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
   45              		.thumb_func
   47              	cayenne_lpp_add_digital_input:
   48              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccu3uxp9.s 			page 2
+ARM GAS  /tmp/cce6rP9B.s 			page 2
 
 
   49              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
   97 0004 2A34     		adds	r4, r4, #42
   98 0006 2378     		ldrb	r3, [r4]
   99 0008 DD1C     		adds	r5, r3, #3
-ARM GAS  /tmp/ccu3uxp9.s 			page 3
+ARM GAS  /tmp/cce6rP9B.s 			page 3
 
 
  100 000a 292D     		cmp	r5, #41
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  148 000c 101C     		adds	r0, r2, #0
  149 000e 271D     		adds	r7, r4, #4
  150 0010 292F     		cmp	r7, #41
-ARM GAS  /tmp/ccu3uxp9.s 			page 4
+ARM GAS  /tmp/cce6rP9B.s 			page 4
 
 
  151 0012 05D9     		bls	.L11
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  199              		@ frame_needed = 0, uses_anonymous_args = 0
  200 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
  201 0002 0500     		movs	r5, r0
-ARM GAS  /tmp/ccu3uxp9.s 			page 5
+ARM GAS  /tmp/cce6rP9B.s 			page 5
 
 
  202 0004 2E00     		movs	r6, r5
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  249              		.align	1
  250              		.global	cayenne_lpp_add_luminosity
  251              		.syntax unified
-ARM GAS  /tmp/ccu3uxp9.s 			page 6
+ARM GAS  /tmp/cce6rP9B.s 			page 6
 
 
  252              		.code	16
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  300              		.syntax unified
  301              		.code	16
  302              		.thumb_func
-ARM GAS  /tmp/ccu3uxp9.s 			page 7
+ARM GAS  /tmp/cce6rP9B.s 			page 7
 
 
  304              	cayenne_lpp_add_presence:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  352 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
  353 0002 0500     		movs	r5, r0
  354 0004 2E00     		movs	r6, r5
-ARM GAS  /tmp/ccu3uxp9.s 			page 8
+ARM GAS  /tmp/cce6rP9B.s 			page 8
 
 
  355 0006 0191     		str	r1, [sp, #4]
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  402              		.section	.text.cayenne_lpp_add_relative_humidity,"ax",%progbits
  403              		.align	1
  404              		.global	cayenne_lpp_add_relative_humidity
-ARM GAS  /tmp/ccu3uxp9.s 			page 9
+ARM GAS  /tmp/cce6rP9B.s 			page 9
 
 
  405              		.syntax unified
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  453              		.align	1
  454              		.global	cayenne_lpp_add_accelerometer
  455              		.syntax unified
-ARM GAS  /tmp/ccu3uxp9.s 			page 10
+ARM GAS  /tmp/cce6rP9B.s 			page 10
 
 
  456              		.code	16
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  511 006e 3212     		asrs	r2, r6, #8
  512 0070 DBB2     		uxtb	r3, r3
  513 0072 EA54     		strb	r2, [r5, r3]
-ARM GAS  /tmp/ccu3uxp9.s 			page 11
+ARM GAS  /tmp/cce6rP9B.s 			page 11
 
 
  514 0074 631D     		adds	r3, r4, #5
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  562 0014 8921     		movs	r1, #137
  563 0016 0D4B     		ldr	r3, .L40
  564 0018 0D4A     		ldr	r2, .L40+4
-ARM GAS  /tmp/ccu3uxp9.s 			page 12
+ARM GAS  /tmp/cce6rP9B.s 			page 12
 
 
  565 001a 0E48     		ldr	r0, .L40+8
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  613 0006 2B00     		movs	r3, r5
  614 0008 85B0     		sub	sp, sp, #20
  615 000a 2A33     		adds	r3, r3, #42
-ARM GAS  /tmp/ccu3uxp9.s 			page 13
+ARM GAS  /tmp/cce6rP9B.s 			page 13
 
 
  616 000c 0193     		str	r3, [sp, #4]
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  670 0084 019B     		ldr	r3, [sp, #4]
  671 0086 029A     		ldr	r2, [sp, #8]
  672 0088 E4B2     		uxtb	r4, r4
-ARM GAS  /tmp/ccu3uxp9.s 			page 14
+ARM GAS  /tmp/cce6rP9B.s 			page 14
 
 
  673 008a 1A70     		strb	r2, [r3]
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  722 002c FFF7FEFF 		bl	__aeabi_fmul
  723 0030 FFF7FEFF 		bl	__aeabi_f2iz
  724 0034 2049     		ldr	r1, .L48+12
-ARM GAS  /tmp/ccu3uxp9.s 			page 15
+ARM GAS  /tmp/cce6rP9B.s 			page 15
 
 
  725 0036 0700     		movs	r7, r0
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  779              		@ sp needed
  780 00aa F0BD     		pop	{r4, r5, r6, r7, pc}
  781              	.L49:
-ARM GAS  /tmp/ccu3uxp9.s 			page 16
+ARM GAS  /tmp/cce6rP9B.s 			page 16
 
 
  782              		.align	2
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  824      6164645F 
  824      70726573 
  825              		.section	.rodata.__func__.7,"a"
-ARM GAS  /tmp/ccu3uxp9.s 			page 17
+ARM GAS  /tmp/cce6rP9B.s 			page 17
 
 
  828              	__func__.7:
@@ -996,67 +996,67 @@ ARM GAS  /tmp/ccu3uxp9.s 			page 1
  849      6164645F 
  849      64696769 
  850              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccu3uxp9.s 			page 18
+ARM GAS  /tmp/cce6rP9B.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 cayenne_lpp.c
-     /tmp/ccu3uxp9.s:14     .text.cayenne_lpp_reset:00000000 $t
-     /tmp/ccu3uxp9.s:20     .text.cayenne_lpp_reset:00000000 cayenne_lpp_reset
-     /tmp/ccu3uxp9.s:41     .text.cayenne_lpp_add_digital_input:00000000 $t
-     /tmp/ccu3uxp9.s:47     .text.cayenne_lpp_add_digital_input:00000000 cayenne_lpp_add_digital_input
-     /tmp/ccu3uxp9.s:77     .text.cayenne_lpp_add_digital_input:00000030 $d
-     /tmp/ccu3uxp9.s:848    .rodata.__func__.11:00000000 __func__.11
-     /tmp/ccu3uxp9.s:86     .text.cayenne_lpp_add_digital_output:00000000 $t
-     /tmp/ccu3uxp9.s:92     .text.cayenne_lpp_add_digital_output:00000000 cayenne_lpp_add_digital_output
-     /tmp/ccu3uxp9.s:122    .text.cayenne_lpp_add_digital_output:00000030 $d
-     /tmp/ccu3uxp9.s:843    .rodata.__func__.10:00000000 __func__.10
-     /tmp/ccu3uxp9.s:133    .text.cayenne_lpp_add_analog_input:00000000 $t
-     /tmp/ccu3uxp9.s:139    .text.cayenne_lpp_add_analog_input:00000000 cayenne_lpp_add_analog_input
-     /tmp/ccu3uxp9.s:181    .text.cayenne_lpp_add_analog_input:0000004c $d
-     /tmp/ccu3uxp9.s:838    .rodata.__func__.9:00000000 __func__.9
-     /tmp/ccu3uxp9.s:191    .text.cayenne_lpp_add_analog_output:00000000 $t
-     /tmp/ccu3uxp9.s:197    .text.cayenne_lpp_add_analog_output:00000000 cayenne_lpp_add_analog_output
-     /tmp/ccu3uxp9.s:239    .text.cayenne_lpp_add_analog_output:0000004c $d
-     /tmp/ccu3uxp9.s:833    .rodata.__func__.8:00000000 __func__.8
-     /tmp/ccu3uxp9.s:249    .text.cayenne_lpp_add_luminosity:00000000 $t
-     /tmp/ccu3uxp9.s:255    .text.cayenne_lpp_add_luminosity:00000000 cayenne_lpp_add_luminosity
-     /tmp/ccu3uxp9.s:289    .text.cayenne_lpp_add_luminosity:00000038 $d
-     /tmp/ccu3uxp9.s:828    .rodata.__func__.7:00000000 __func__.7
-     /tmp/ccu3uxp9.s:298    .text.cayenne_lpp_add_presence:00000000 $t
-     /tmp/ccu3uxp9.s:304    .text.cayenne_lpp_add_presence:00000000 cayenne_lpp_add_presence
-     /tmp/ccu3uxp9.s:334    .text.cayenne_lpp_add_presence:00000030 $d
-     /tmp/ccu3uxp9.s:823    .rodata.__func__.6:00000000 __func__.6
-     /tmp/ccu3uxp9.s:343    .text.cayenne_lpp_add_temperature:00000000 $t
-     /tmp/ccu3uxp9.s:349    .text.cayenne_lpp_add_temperature:00000000 cayenne_lpp_add_temperature
-     /tmp/ccu3uxp9.s:391    .text.cayenne_lpp_add_temperature:0000004c $d
-     /tmp/ccu3uxp9.s:818    .rodata.__func__.5:00000000 __func__.5
-     /tmp/ccu3uxp9.s:403    .text.cayenne_lpp_add_relative_humidity:00000000 $t
-     /tmp/ccu3uxp9.s:409    .text.cayenne_lpp_add_relative_humidity:00000000 cayenne_lpp_add_relative_humidity
-     /tmp/ccu3uxp9.s:444    .text.cayenne_lpp_add_relative_humidity:0000003c $d
-     /tmp/ccu3uxp9.s:813    .rodata.__func__.4:00000000 __func__.4
-     /tmp/ccu3uxp9.s:453    .text.cayenne_lpp_add_accelerometer:00000000 $t
-     /tmp/ccu3uxp9.s:459    .text.cayenne_lpp_add_accelerometer:00000000 cayenne_lpp_add_accelerometer
-     /tmp/ccu3uxp9.s:533    .text.cayenne_lpp_add_accelerometer:00000094 $d
-     /tmp/ccu3uxp9.s:808    .rodata.__func__.3:00000000 __func__.3
-     /tmp/ccu3uxp9.s:543    .text.cayenne_lpp_add_barometric_pressure:00000000 $t
-     /tmp/ccu3uxp9.s:549    .text.cayenne_lpp_add_barometric_pressure:00000000 cayenne_lpp_add_barometric_pressure
-     /tmp/ccu3uxp9.s:591    .text.cayenne_lpp_add_barometric_pressure:0000004c $d
-     /tmp/ccu3uxp9.s:803    .rodata.__func__.2:00000000 __func__.2
-     /tmp/ccu3uxp9.s:601    .text.cayenne_lpp_add_gyrometer:00000000 $t
-     /tmp/ccu3uxp9.s:607    .text.cayenne_lpp_add_gyrometer:00000000 cayenne_lpp_add_gyrometer
-     /tmp/ccu3uxp9.s:681    .text.cayenne_lpp_add_gyrometer:00000094 $d
-     /tmp/ccu3uxp9.s:798    .rodata.__func__.1:00000000 __func__.1
-     /tmp/ccu3uxp9.s:691    .text.cayenne_lpp_add_gps:00000000 $t
-     /tmp/ccu3uxp9.s:697    .text.cayenne_lpp_add_gps:00000000 cayenne_lpp_add_gps
-     /tmp/ccu3uxp9.s:784    .text.cayenne_lpp_add_gps:000000ac $d
-     /tmp/ccu3uxp9.s:793    .rodata.__func__.0:00000000 __func__.0
+     /tmp/cce6rP9B.s:14     .text.cayenne_lpp_reset:00000000 $t
+     /tmp/cce6rP9B.s:20     .text.cayenne_lpp_reset:00000000 cayenne_lpp_reset
+     /tmp/cce6rP9B.s:41     .text.cayenne_lpp_add_digital_input:00000000 $t
+     /tmp/cce6rP9B.s:47     .text.cayenne_lpp_add_digital_input:00000000 cayenne_lpp_add_digital_input
+     /tmp/cce6rP9B.s:77     .text.cayenne_lpp_add_digital_input:00000030 $d
+     /tmp/cce6rP9B.s:848    .rodata.__func__.11:00000000 __func__.11
+     /tmp/cce6rP9B.s:86     .text.cayenne_lpp_add_digital_output:00000000 $t
+     /tmp/cce6rP9B.s:92     .text.cayenne_lpp_add_digital_output:00000000 cayenne_lpp_add_digital_output
+     /tmp/cce6rP9B.s:122    .text.cayenne_lpp_add_digital_output:00000030 $d
+     /tmp/cce6rP9B.s:843    .rodata.__func__.10:00000000 __func__.10
+     /tmp/cce6rP9B.s:133    .text.cayenne_lpp_add_analog_input:00000000 $t
+     /tmp/cce6rP9B.s:139    .text.cayenne_lpp_add_analog_input:00000000 cayenne_lpp_add_analog_input
+     /tmp/cce6rP9B.s:181    .text.cayenne_lpp_add_analog_input:0000004c $d
+     /tmp/cce6rP9B.s:838    .rodata.__func__.9:00000000 __func__.9
+     /tmp/cce6rP9B.s:191    .text.cayenne_lpp_add_analog_output:00000000 $t
+     /tmp/cce6rP9B.s:197    .text.cayenne_lpp_add_analog_output:00000000 cayenne_lpp_add_analog_output
+     /tmp/cce6rP9B.s:239    .text.cayenne_lpp_add_analog_output:0000004c $d
+     /tmp/cce6rP9B.s:833    .rodata.__func__.8:00000000 __func__.8
+     /tmp/cce6rP9B.s:249    .text.cayenne_lpp_add_luminosity:00000000 $t
+     /tmp/cce6rP9B.s:255    .text.cayenne_lpp_add_luminosity:00000000 cayenne_lpp_add_luminosity
+     /tmp/cce6rP9B.s:289    .text.cayenne_lpp_add_luminosity:00000038 $d
+     /tmp/cce6rP9B.s:828    .rodata.__func__.7:00000000 __func__.7
+     /tmp/cce6rP9B.s:298    .text.cayenne_lpp_add_presence:00000000 $t
+     /tmp/cce6rP9B.s:304    .text.cayenne_lpp_add_presence:00000000 cayenne_lpp_add_presence
+     /tmp/cce6rP9B.s:334    .text.cayenne_lpp_add_presence:00000030 $d
+     /tmp/cce6rP9B.s:823    .rodata.__func__.6:00000000 __func__.6
+     /tmp/cce6rP9B.s:343    .text.cayenne_lpp_add_temperature:00000000 $t
+     /tmp/cce6rP9B.s:349    .text.cayenne_lpp_add_temperature:00000000 cayenne_lpp_add_temperature
+     /tmp/cce6rP9B.s:391    .text.cayenne_lpp_add_temperature:0000004c $d
+     /tmp/cce6rP9B.s:818    .rodata.__func__.5:00000000 __func__.5
+     /tmp/cce6rP9B.s:403    .text.cayenne_lpp_add_relative_humidity:00000000 $t
+     /tmp/cce6rP9B.s:409    .text.cayenne_lpp_add_relative_humidity:00000000 cayenne_lpp_add_relative_humidity
+     /tmp/cce6rP9B.s:444    .text.cayenne_lpp_add_relative_humidity:0000003c $d
+     /tmp/cce6rP9B.s:813    .rodata.__func__.4:00000000 __func__.4
+     /tmp/cce6rP9B.s:453    .text.cayenne_lpp_add_accelerometer:00000000 $t
+     /tmp/cce6rP9B.s:459    .text.cayenne_lpp_add_accelerometer:00000000 cayenne_lpp_add_accelerometer
+     /tmp/cce6rP9B.s:533    .text.cayenne_lpp_add_accelerometer:00000094 $d
+     /tmp/cce6rP9B.s:808    .rodata.__func__.3:00000000 __func__.3
+     /tmp/cce6rP9B.s:543    .text.cayenne_lpp_add_barometric_pressure:00000000 $t
+     /tmp/cce6rP9B.s:549    .text.cayenne_lpp_add_barometric_pressure:00000000 cayenne_lpp_add_barometric_pressure
+     /tmp/cce6rP9B.s:591    .text.cayenne_lpp_add_barometric_pressure:0000004c $d
+     /tmp/cce6rP9B.s:803    .rodata.__func__.2:00000000 __func__.2
+     /tmp/cce6rP9B.s:601    .text.cayenne_lpp_add_gyrometer:00000000 $t
+     /tmp/cce6rP9B.s:607    .text.cayenne_lpp_add_gyrometer:00000000 cayenne_lpp_add_gyrometer
+     /tmp/cce6rP9B.s:681    .text.cayenne_lpp_add_gyrometer:00000094 $d
+     /tmp/cce6rP9B.s:798    .rodata.__func__.1:00000000 __func__.1
+     /tmp/cce6rP9B.s:691    .text.cayenne_lpp_add_gps:00000000 $t
+     /tmp/cce6rP9B.s:697    .text.cayenne_lpp_add_gps:00000000 cayenne_lpp_add_gps
+     /tmp/cce6rP9B.s:784    .text.cayenne_lpp_add_gps:000000ac $d
+     /tmp/cce6rP9B.s:793    .rodata.__func__.0:00000000 __func__.0
 
 UNDEFINED SYMBOLS
 memset
 __assert_func
 __aeabi_fmul
-ARM GAS  /tmp/ccu3uxp9.s 			page 19
+ARM GAS  /tmp/cce6rP9B.s 			page 19
 
 
 __aeabi_f2iz

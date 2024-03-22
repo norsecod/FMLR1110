@@ -193,7 +193,7 @@ uint8_t alc_sync_parser( alc_sync_ctx_t* ctx, uint8_t* alc_sync_rx_buffer, uint8
             }
             else
             {
-                LOG_ERROR( "%s\n", alc_sync_bad_size_str );
+                LOG_ERROR( "%s\n\r", alc_sync_bad_size_str );
             }
             alc_sync_rx_buffer_index += ALC_SYNC_PACKAGE_VERSION_REQ_SIZE;
             break;
@@ -206,7 +206,7 @@ uint8_t alc_sync_parser( alc_sync_ctx_t* ctx, uint8_t* alc_sync_rx_buffer, uint8
             }
             else
             {
-                LOG_ERROR( "%s\n", alc_sync_bad_size_str );
+                LOG_ERROR( "%s\n\r", alc_sync_bad_size_str );
             }
             alc_sync_rx_buffer_index += ALC_SYNC_APP_TIME_ANS_SIZE;
             break;
@@ -221,7 +221,7 @@ uint8_t alc_sync_parser( alc_sync_ctx_t* ctx, uint8_t* alc_sync_rx_buffer, uint8
             }
             else
             {
-                LOG_ERROR( "%s\n", alc_sync_bad_size_str );
+                LOG_ERROR( "%s\n\r", alc_sync_bad_size_str );
             }
             alc_sync_rx_buffer_index += ALC_SYNC_DEVICE_APP_TIME_PERIODICITY_REQ_SIZE;
             break;
@@ -240,13 +240,13 @@ uint8_t alc_sync_parser( alc_sync_ctx_t* ctx, uint8_t* alc_sync_rx_buffer, uint8
             }
             else
             {
-                LOG_ERROR( "%s\n", alc_sync_bad_size_str );
+                LOG_ERROR( "%s\n\r", alc_sync_bad_size_str );
             }
             alc_sync_rx_buffer_index += ALC_SYNC_FORCE_DEVICE_RESYNC_REQ_SIZE;
             break;
 
         default:
-            LOG_ERROR( "%s Illegal state\n ", __func__ );
+            LOG_ERROR( "%s Illegal state\n\r ", __func__ );
             alc_sync_rx_buffer_length = 0;
             break;
         }
@@ -271,13 +271,13 @@ bool alc_sync_set_interval_second( alc_sync_ctx_t* ctx, uint32_t interval_s )
 
 int32_t alc_sync_get_time_correction_second( alc_sync_ctx_t* ctx )
 {
-    // LOG_INFO( "GET TIME correction %d\n", ctx->time_correction_s );
+    // LOG_INFO( "GET TIME correction %d\n\r", ctx->time_correction_s );
     return ctx->time_correction_s;
 }
 
 void alc_sync_set_time_correction_second( alc_sync_ctx_t* ctx, int32_t time_correction_s )
 {
-    // LOG_INFO( "SET TIME correction %d\n", time_correction_s );
+    // LOG_INFO( "SET TIME correction %d\n\r", time_correction_s );
     ctx->time_correction_s = time_correction_s;
     alc_sync_update_timestamp_last_correction_s( ctx );
     ctx->sync_status = ALC_SYNC_MANUAL_SYNC;
@@ -286,7 +286,7 @@ void alc_sync_set_time_correction_second( alc_sync_ctx_t* ctx, int32_t time_corr
 uint32_t alc_sync_get_gps_time_second( alc_sync_ctx_t* ctx )
 {
     uint32_t gps_time_s = smtc_modem_services_get_time_s( ) + ctx->time_correction_s;
-    // LOG_INFO( "GET GPS time %d\n", gps_time_s );
+    // LOG_INFO( "GET GPS time %d\n\r", gps_time_s );
     return gps_time_s;
 }
 
@@ -418,7 +418,7 @@ static void alc_sync_construct_package_version_answer( alc_sync_ctx_t* ctx )
 
     if( is_alc_sync_tx_buffer_not_full( ctx, ALC_SYNC_PACKAGE_VERSION_ANS_SIZE ) == false )
     {
-        LOG_ERROR( "ctx->tx_payload buffer is full\n" );
+        LOG_ERROR( "ctx->tx_payload buffer is full\n\r" );
         return;
     }
 
@@ -448,7 +448,7 @@ static void alc_sync_construct_app_time_request( alc_sync_ctx_t* ctx, uint32_t d
 
     if( is_alc_sync_tx_buffer_not_full( ctx, ALC_SYNC_APP_TIME_REQ_SIZE ) == false )
     {
-        LOG_ERROR( "ctx->tx_payload buffer is full\n" );
+        LOG_ERROR( "ctx->tx_payload buffer is full\n\r" );
         return;
     }
 
@@ -474,7 +474,7 @@ static void alc_sync_construct_app_time_periodicity_answer( alc_sync_ctx_t* ctx,
 
     if( is_alc_sync_tx_buffer_not_full( ctx, ALC_SYNC_DEVICE_APP_TIME_PERIODICITY_ANS_SIZE ) == false )
     {
-        LOG_ERROR( "ctx->tx_payload buffer is full\n" );
+        LOG_ERROR( "ctx->tx_payload buffer is full\n\r" );
         return;
     }
 
@@ -528,12 +528,12 @@ void alc_sync_decode_app_time_ans( alc_sync_ctx_t* ctx, uint8_t* buffer )
         // Timestamp the last received data
         alc_sync_update_timestamp_last_correction_s( ctx );
 
-        LOG_INFO( "ALC Sync time correction %d s -> new GPS Time: %d s\n", ctx->time_correction_s,
+        LOG_INFO( "ALC Sync time correction %d s -> new GPS Time: %d s\n\r", ctx->time_correction_s,
                   ctx->timestamp_last_correction_s + ctx->time_correction_s );
     }
     else
     {
-        LOG_WARN( "ALC Sync token mismatch: %d - %d\n", ctx->token_req, ( buffer[4] & 0x0F ) );
+        LOG_WARN( "ALC Sync token mismatch: %d - %d\n\r", ctx->token_req, ( buffer[4] & 0x0F ) );
     }
 }
 

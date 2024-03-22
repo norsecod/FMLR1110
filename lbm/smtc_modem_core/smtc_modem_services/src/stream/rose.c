@@ -292,7 +292,7 @@ int ROSE_init( rose_t* ROSE, uint16_t windowLen, uint16_t minfree, uint8_t redun
 
     if( ( unitsz != 1 && unitsz != 2 && unitsz != 4 && unitsz != 8 ) || ROSE_FIFO_SIZE % unitsz != 0 )
     {
-        LOG_ERROR( "ROSE_BAD_UNITSZ\n" );
+        LOG_ERROR( "ROSE_BAD_UNITSZ\n\r" );
         return ROSE_BAD_UNITSZ;
     }
     uint16_t wl  = ROSE_decWL( ROSE_encWL( windowLen ) );
@@ -300,7 +300,7 @@ int ROSE_init( rose_t* ROSE, uint16_t windowLen, uint16_t minfree, uint8_t redun
     ROSE->unitsz = unitsz;
     if( &ROSE->fifo[wl * unitsz + minfree] > get_rvec( ROSE ) )
     {
-        LOG_ERROR( "ROSE_NOMEM\n" );
+        LOG_ERROR( "ROSE_NOMEM\n\r" );
         return ROSE_NOMEM;
     }
     ROSE->pctxintv = ROSE_DEFAULT_PCTXINTV;
@@ -311,7 +311,7 @@ int ROSE_init( rose_t* ROSE, uint16_t windowLen, uint16_t minfree, uint8_t redun
     // is lost it creates a big whole which makes recovery harder. This useless
     // redundancy data for 0x00 bytes lasts only for a few initial frames.
     ROSE->redcnt = targetRedCnt( ROSE );
-    // LOG_INFO( "INIT: ROSE->wl %d\tROSE.redcnt %d\n", ROSE->wl, ROSE->redcnt
+    // LOG_INFO( "INIT: ROSE->wl %d\tROSE.redcnt %d\n\r", ROSE->wl, ROSE->redcnt
     // );
     ROSE->fill   = wl;
     ROSE->unsent = wl;
@@ -461,7 +461,7 @@ int ROSE_getData( rose_t* ROSE, uint32_t fcntup, uint8_t* frame, uint8_t* pTrans
             redc = MIN( ROSE->wl, avail - sysc );
         }
     }
-    LOG_INFO( "getData %d redc %d sysc %d redc_target %d redcnt %d\n", fcntup, redc, sysc, redc_target, ROSE->redcnt );
+    LOG_INFO( "getData %d redc %d sysc %d redc_target %d redcnt %d\n\r", fcntup, redc, sysc, redc_target, ROSE->redcnt );
     if( sysc )
     {
         // Copy systematic octets into frame
@@ -472,7 +472,7 @@ int ROSE_getData( rose_t* ROSE, uint32_t fcntup, uint8_t* frame, uint8_t* pTrans
     if( redc )
     {
         ROSE->redcnt = MIN( redc_target, ROSE->redcnt + redc );
-        LOG_INFO( "GET: ROSE->redcnt %d redc %d\n", ROSE->redcnt, redc );
+        LOG_INFO( "GET: ROSE->redcnt %d redc %d\n\r", ROSE->redcnt, redc );
         buildRedundancyOctets( ROSE, fcntup, &frame[SDATA_HDR_LEN + sysc * ROSE->unitsz], redc );
     }
     ROSE->flags &= ~ROSE_FIRST_DATA;
@@ -483,7 +483,7 @@ addHdr:
         ROSE->fill -= shift;
         ROSE->unsent -= shift;
         ROSE->redcnt = diluteRedCnt( ROSE, shift );
-        LOG_INFO( "DILUTE: ROSE->redcnt %d shift %d\n", ROSE->redcnt, shift );
+        LOG_INFO( "DILUTE: ROSE->redcnt %d shift %d\n\r", ROSE->redcnt, shift );
         shiftFifo( ROSE, 0, shift, ROSE->fill );
         clearFifo( ROSE, ROSE->fill, shift );
     }
@@ -583,7 +583,7 @@ int ROSE_processDnFrame( rose_t* ROSE, const uint8_t* frmpayload, uint8_t flen )
         {
             // Ignore change request if bigger WL would lead
             // to overwriting FIFO contents thru increased rvec space.
-            LOG_WARN( "Ignoring WL increase to avoid overwriting pending data\n" );
+            LOG_WARN( "Ignoring WL increase to avoid overwriting pending data\n\r" );
         }
         else
         {
@@ -608,7 +608,7 @@ int ROSE_processDnFrame( rose_t* ROSE, const uint8_t* frmpayload, uint8_t flen )
             // in the redundancy buffer, it will be sent in priority.
             ROSE->wl = wl;
             ROSE->flags |= ROSE_PEND_WLACK;
-            LOG_INFO( "NEW WL: ROSE->wl %d\n", ROSE->wl );
+            LOG_INFO( "NEW WL: ROSE->wl %d\n\r", ROSE->wl );
         }
     }
     if( ( flags & SCMD_FLAGS_ACKWL ) != 0 && ROSE->wl == ROSE_decWL( frmpayload[SCMD_WL_OFF] ) )

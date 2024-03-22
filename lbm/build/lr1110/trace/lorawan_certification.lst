@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccbkZxNi.s 			page 1
+ARM GAS  /tmp/ccTmJ3G8.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
   59              		.global	lorawan_certification_get_enabled
   60              		.syntax unified
   61              		.code	16
-ARM GAS  /tmp/ccbkZxNi.s 			page 2
+ARM GAS  /tmp/ccTmJ3G8.s 			page 2
 
 
   62              		.thumb_func
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  124              		.align	1
  125              		.global	lorawan_certification_is_cw_running
  126              		.syntax unified
-ARM GAS  /tmp/ccbkZxNi.s 			page 3
+ARM GAS  /tmp/ccTmJ3G8.s 			page 3
 
 
  127              		.code	16
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  186      656D5F63 
  186      6F72652F 
  187 0033 6174696F 		.ascii	"ation.c\000"
-ARM GAS  /tmp/ccbkZxNi.s 			page 4
+ARM GAS  /tmp/ccTmJ3G8.s 			page 4
 
 
  187      6E2E6300 
@@ -190,21 +190,21 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  191      25733A25 
  191      64292000 
  192              	.LC6:
- 193 004d 62616420 		.ascii	"bad size\012\000"
+ 193 004d 62616420 		.ascii	"bad size\012\015\000"
  193      73697A65 
- 193      0A00
+ 193      0A0D00
  194              	.LC12:
- 195 0057 25732049 		.ascii	"%s Illegal state\012 \000"
+ 195 0058 25732049 		.ascii	"%s Illegal state\012\015 \000"
  195      6C6C6567 
  195      616C2073 
  195      74617465 
- 195      0A2000
+ 195      0A0D2000 
  196              	.LC8:
- 197 006a 05050505 		.ascii	"\005\005\005\005\005\005\005\005\005\005\005\005\005"
+ 197 006c 05050505 		.ascii	"\005\005\005\005\005\005\005\005\005\005\005\005\005"
  197      05050505 
  197      05050505 
  197      05
- 198 0077 050500   		.ascii	"\005\005\000"
+ 198 0079 050500   		.ascii	"\005\005\000"
  199              		.section	.text.lorawan_certification_parser,"ax",%progbits
  200              		.align	1
  201              		.global	lorawan_certification_parser
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  230              	.LCB181:
  231 0028 0B78     		ldrb	r3, [r1]
  232 002a 0193     		str	r3, [sp, #4]
-ARM GAS  /tmp/ccbkZxNi.s 			page 5
+ARM GAS  /tmp/ccTmJ3G8.s 			page 5
 
 
  233 002c 222B     		cmp	r3, #34
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  287 0090 93E2     		b	.L39	@long jump
  288              	.LCB201:
  289 0092 402B     		cmp	r3, #64
-ARM GAS  /tmp/ccbkZxNi.s 			page 6
+ARM GAS  /tmp/ccTmJ3G8.s 			page 6
 
 
  290 0094 00D1     		bne	.LCB203
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  344 0104 5A1C     		adds	r2, r3, #1
  345 0106 2270     		strb	r2, [r4]
  346 0108 02AA     		add	r2, sp, #8
-ARM GAS  /tmp/ccbkZxNi.s 			page 7
+ARM GAS  /tmp/ccTmJ3G8.s 			page 7
 
 
  347 010a 1278     		ldrb	r2, [r2]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  401 0176 2378     		ldrb	r3, [r4]
  402 0178 5A1C     		adds	r2, r3, #1
  403 017a 2270     		strb	r2, [r4]
-ARM GAS  /tmp/ccbkZxNi.s 			page 8
+ARM GAS  /tmp/ccTmJ3G8.s 			page 8
 
 
  404 017c EA78     		ldrb	r2, [r5, #3]
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  458 01de 012A     		cmp	r2, #1
  459 01e0 02D1     		bne	.L46
  460              	.L142:
-ARM GAS  /tmp/ccbkZxNi.s 			page 9
+ARM GAS  /tmp/ccTmJ3G8.s 			page 9
 
 
  461 01e2 FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  515 0254 02D1     		bne	.L51
  516              	.L144:
  517 0256 3B75     		strb	r3, [r7, #20]
-ARM GAS  /tmp/ccbkZxNi.s 			page 10
+ARM GAS  /tmp/ccTmJ3G8.s 			page 10
 
 
  518              	.L52:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  572 02bc FFF7FEFF 		bl	strrchr
  573 02c0 2200     		movs	r2, r4
  574 02c2 0028     		cmp	r0, #0
-ARM GAS  /tmp/ccbkZxNi.s 			page 11
+ARM GAS  /tmp/ccTmJ3G8.s 			page 11
 
 
  575 02c4 04D0     		beq	.L57
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  629              	.L61:
  630 032a 194A     		ldr	r2, .L147
  631 032c 2F21     		movs	r1, #47
-ARM GAS  /tmp/ccbkZxNi.s 			page 12
+ARM GAS  /tmp/ccTmJ3G8.s 			page 12
 
 
  632 032e 1000     		movs	r0, r2
@@ -718,14 +718,14 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  686 0390 00000000 		.word	.LC0
  687 0394 3B000000 		.word	.LC2
  688 0398 41000000 		.word	.LC4
-ARM GAS  /tmp/ccbkZxNi.s 			page 13
+ARM GAS  /tmp/ccTmJ3G8.s 			page 13
 
 
  689 039c 09020000 		.word	521
  690 03a0 00000000 		.word	__func__.0
- 691 03a4 57000000 		.word	.LC12
+ 691 03a4 58000000 		.word	.LC12
  692 03a8 4D000000 		.word	.LC6
- 693 03ac 6A000000 		.word	.LC8
+ 693 03ac 6C000000 		.word	.LC8
  694 03b0 00000000 		.word	lorawan_certification_periodicity_table
  695              	.L27:
  696 03b4 F22A     		cmp	r2, #242
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  743 0410 2000     		movs	r0, r4
  744 0412 FFF7FEFF 		bl	strrchr
  745 0416 421C     		adds	r2, r0, #1
-ARM GAS  /tmp/ccbkZxNi.s 			page 14
+ARM GAS  /tmp/ccTmJ3G8.s 			page 14
 
 
  746              	.L71:
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  800 047a 1000     		movs	r0, r2
  801 047c 1400     		movs	r4, r2
  802 047e FFF7FEFF 		bl	strrchr
-ARM GAS  /tmp/ccbkZxNi.s 			page 15
+ARM GAS  /tmp/ccTmJ3G8.s 			page 15
 
 
  803 0482 2200     		movs	r2, r4
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  857 04ee 2000     		movs	r0, r4
  858 04f0 FFF7FEFF 		bl	strrchr
  859 04f4 421C     		adds	r2, r0, #1
-ARM GAS  /tmp/ccbkZxNi.s 			page 16
+ARM GAS  /tmp/ccTmJ3G8.s 			page 16
 
 
  860              	.L79:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  914              	.L83:
  915 0562 CB23     		movs	r3, #203
  916 0564 4E49     		ldr	r1, .L149+4
-ARM GAS  /tmp/ccbkZxNi.s 			page 17
+ARM GAS  /tmp/ccTmJ3G8.s 			page 17
 
 
  917 0566 4F48     		ldr	r0, .L149+8
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  971 05cc FFF7FEFF 		bl	strrchr
  972 05d0 2200     		movs	r2, r4
  973 05d2 0028     		cmp	r0, #0
-ARM GAS  /tmp/ccbkZxNi.s 			page 18
+ARM GAS  /tmp/ccTmJ3G8.s 			page 18
 
 
  974 05d4 04D0     		beq	.L87
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  1028 063e 1849     		ldr	r1, .L149+4
  1029 0640 1848     		ldr	r0, .L149+8
  1030 0642 11E7     		b	.L146
-ARM GAS  /tmp/ccbkZxNi.s 			page 19
+ARM GAS  /tmp/ccTmJ3G8.s 			page 19
 
 
  1031              	.L41:
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  1086              		.global	lorawan_certification_build_beacon_rx_status_ind
  1087              		.syntax unified
  1088              		.code	16
-ARM GAS  /tmp/ccbkZxNi.s 			page 20
+ARM GAS  /tmp/ccTmJ3G8.s 			page 20
 
 
  1089              		.thumb_func
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  1144 006e 2378     		ldrb	r3, [r4]
  1145 0070 5A1C     		adds	r2, r3, #1
  1146 0072 2270     		strb	r2, [r4]
-ARM GAS  /tmp/ccbkZxNi.s 			page 21
+ARM GAS  /tmp/ccTmJ3G8.s 			page 21
 
 
  1147 0074 0122     		movs	r2, #1
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  1201 00e0 2378     		ldrb	r3, [r4]
  1202 00e2 5A1C     		adds	r2, r3, #1
  1203 00e4 2270     		strb	r2, [r4]
-ARM GAS  /tmp/ccbkZxNi.s 			page 22
+ARM GAS  /tmp/ccTmJ3G8.s 			page 22
 
 
  1204 00e6 EF54     		strb	r7, [r5, r3]
@@ -1310,43 +1310,43 @@ ARM GAS  /tmp/ccbkZxNi.s 			page 1
  1251 0012 F000     		.short	240
  1252 0014 E001     		.short	480
  1253              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccbkZxNi.s 			page 23
+ARM GAS  /tmp/ccTmJ3G8.s 			page 23
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lorawan_certification.c
-     /tmp/ccbkZxNi.s:14     .text.lorawan_certification_init:00000000 $t
-     /tmp/ccbkZxNi.s:20     .text.lorawan_certification_init:00000000 lorawan_certification_init
-     /tmp/ccbkZxNi.s:34     .text.lorawan_certification_set_enabled:00000000 $t
-     /tmp/ccbkZxNi.s:40     .text.lorawan_certification_set_enabled:00000000 lorawan_certification_set_enabled
-     /tmp/ccbkZxNi.s:58     .text.lorawan_certification_get_enabled:00000000 $t
-     /tmp/ccbkZxNi.s:64     .text.lorawan_certification_get_enabled:00000000 lorawan_certification_get_enabled
-     /tmp/ccbkZxNi.s:73     .text.lorawan_certification_get_ul_periodicity:00000000 $t
-     /tmp/ccbkZxNi.s:79     .text.lorawan_certification_get_ul_periodicity:00000000 lorawan_certification_get_ul_periodicity
-     /tmp/ccbkZxNi.s:88     .text.lorawan_certification_get_frame_type:00000000 $t
-     /tmp/ccbkZxNi.s:94     .text.lorawan_certification_get_frame_type:00000000 lorawan_certification_get_frame_type
-     /tmp/ccbkZxNi.s:103    .text.lorawan_certification_get_cw_config:00000000 $t
-     /tmp/ccbkZxNi.s:109    .text.lorawan_certification_get_cw_config:00000000 lorawan_certification_get_cw_config
-     /tmp/ccbkZxNi.s:124    .text.lorawan_certification_is_cw_running:00000000 $t
-     /tmp/ccbkZxNi.s:130    .text.lorawan_certification_is_cw_running:00000000 lorawan_certification_is_cw_running
-     /tmp/ccbkZxNi.s:139    .text.lorawan_certification_cw_set_as_stopped:00000000 $t
-     /tmp/ccbkZxNi.s:145    .text.lorawan_certification_cw_set_as_stopped:00000000 lorawan_certification_cw_set_as_stopped
-     /tmp/ccbkZxNi.s:155    .text.lorawan_certification_get_beacon_rx_status_ind_ctrl:00000000 $t
-     /tmp/ccbkZxNi.s:161    .text.lorawan_certification_get_beacon_rx_status_ind_ctrl:00000000 lorawan_certification_get_beacon_rx_status_ind_ctrl
-     /tmp/ccbkZxNi.s:170    .text.lorawan_certification_get_requested_class:00000000 $t
-     /tmp/ccbkZxNi.s:176    .text.lorawan_certification_get_requested_class:00000000 lorawan_certification_get_requested_class
-     /tmp/ccbkZxNi.s:200    .text.lorawan_certification_parser:00000000 $t
-     /tmp/ccbkZxNi.s:206    .text.lorawan_certification_parser:00000000 lorawan_certification_parser
-     /tmp/ccbkZxNi.s:238    .text.lorawan_certification_parser:00000036 $d
-     /tmp/ccbkZxNi.s:273    .text.lorawan_certification_parser:0000007c $t
-     /tmp/ccbkZxNi.s:686    .text.lorawan_certification_parser:00000390 $d
-     /tmp/ccbkZxNi.s:1235   .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccbkZxNi.s:1241   .rodata.lorawan_certification_periodicity_table:00000000 lorawan_certification_periodicity_table
-     /tmp/ccbkZxNi.s:696    .text.lorawan_certification_parser:000003b4 $t
-     /tmp/ccbkZxNi.s:1078   .text.lorawan_certification_parser:0000069c $d
-     /tmp/ccbkZxNi.s:1085   .text.lorawan_certification_build_beacon_rx_status_ind:00000000 $t
-     /tmp/ccbkZxNi.s:1091   .text.lorawan_certification_build_beacon_rx_status_ind:00000000 lorawan_certification_build_beacon_rx_status_ind
-     /tmp/ccbkZxNi.s:1238   .rodata.lorawan_certification_periodicity_table:00000000 $d
+     /tmp/ccTmJ3G8.s:14     .text.lorawan_certification_init:00000000 $t
+     /tmp/ccTmJ3G8.s:20     .text.lorawan_certification_init:00000000 lorawan_certification_init
+     /tmp/ccTmJ3G8.s:34     .text.lorawan_certification_set_enabled:00000000 $t
+     /tmp/ccTmJ3G8.s:40     .text.lorawan_certification_set_enabled:00000000 lorawan_certification_set_enabled
+     /tmp/ccTmJ3G8.s:58     .text.lorawan_certification_get_enabled:00000000 $t
+     /tmp/ccTmJ3G8.s:64     .text.lorawan_certification_get_enabled:00000000 lorawan_certification_get_enabled
+     /tmp/ccTmJ3G8.s:73     .text.lorawan_certification_get_ul_periodicity:00000000 $t
+     /tmp/ccTmJ3G8.s:79     .text.lorawan_certification_get_ul_periodicity:00000000 lorawan_certification_get_ul_periodicity
+     /tmp/ccTmJ3G8.s:88     .text.lorawan_certification_get_frame_type:00000000 $t
+     /tmp/ccTmJ3G8.s:94     .text.lorawan_certification_get_frame_type:00000000 lorawan_certification_get_frame_type
+     /tmp/ccTmJ3G8.s:103    .text.lorawan_certification_get_cw_config:00000000 $t
+     /tmp/ccTmJ3G8.s:109    .text.lorawan_certification_get_cw_config:00000000 lorawan_certification_get_cw_config
+     /tmp/ccTmJ3G8.s:124    .text.lorawan_certification_is_cw_running:00000000 $t
+     /tmp/ccTmJ3G8.s:130    .text.lorawan_certification_is_cw_running:00000000 lorawan_certification_is_cw_running
+     /tmp/ccTmJ3G8.s:139    .text.lorawan_certification_cw_set_as_stopped:00000000 $t
+     /tmp/ccTmJ3G8.s:145    .text.lorawan_certification_cw_set_as_stopped:00000000 lorawan_certification_cw_set_as_stopped
+     /tmp/ccTmJ3G8.s:155    .text.lorawan_certification_get_beacon_rx_status_ind_ctrl:00000000 $t
+     /tmp/ccTmJ3G8.s:161    .text.lorawan_certification_get_beacon_rx_status_ind_ctrl:00000000 lorawan_certification_get_beacon_rx_status_ind_ctrl
+     /tmp/ccTmJ3G8.s:170    .text.lorawan_certification_get_requested_class:00000000 $t
+     /tmp/ccTmJ3G8.s:176    .text.lorawan_certification_get_requested_class:00000000 lorawan_certification_get_requested_class
+     /tmp/ccTmJ3G8.s:200    .text.lorawan_certification_parser:00000000 $t
+     /tmp/ccTmJ3G8.s:206    .text.lorawan_certification_parser:00000000 lorawan_certification_parser
+     /tmp/ccTmJ3G8.s:238    .text.lorawan_certification_parser:00000036 $d
+     /tmp/ccTmJ3G8.s:273    .text.lorawan_certification_parser:0000007c $t
+     /tmp/ccTmJ3G8.s:686    .text.lorawan_certification_parser:00000390 $d
+     /tmp/ccTmJ3G8.s:1235   .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccTmJ3G8.s:1241   .rodata.lorawan_certification_periodicity_table:00000000 lorawan_certification_periodicity_table
+     /tmp/ccTmJ3G8.s:696    .text.lorawan_certification_parser:000003b4 $t
+     /tmp/ccTmJ3G8.s:1078   .text.lorawan_certification_parser:0000069c $d
+     /tmp/ccTmJ3G8.s:1085   .text.lorawan_certification_build_beacon_rx_status_ind:00000000 $t
+     /tmp/ccTmJ3G8.s:1091   .text.lorawan_certification_build_beacon_rx_status_ind:00000000 lorawan_certification_build_beacon_rx_status_ind
+     /tmp/ccTmJ3G8.s:1238   .rodata.lorawan_certification_periodicity_table:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
@@ -1370,7 +1370,7 @@ modem_supervisor_add_task_link_check_req
 modem_supervisor_add_task_device_time_req
 lorawan_api_set_ping_slot_periodicity
 modem_supervisor_add_task_ping_slot_info_req
-ARM GAS  /tmp/ccbkZxNi.s 			page 24
+ARM GAS  /tmp/ccTmJ3G8.s 			page 24
 
 
 lorawan_api_modem_certification_set

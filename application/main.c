@@ -30,7 +30,7 @@
 #define DEFAULT_DL_PORT         100
 
 #define PERIODIC_TIMER_PERIOD 20000
-#define PERIODIC_TIMER_PERIOD_1 300000
+#define PERIODIC_TIMER_PERIOD_1 60000
 
 #define LINK_CHECK_RATIO_THRESHOLD 50
 #define LINK_CHECK_ATTEMPTS_THRESHOLD 10
@@ -66,6 +66,7 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     float ADCmeas = 0.0f;
     int Door = 0;
     int water = 0;
+    int cntup = 0;
     static uint8_t gnss_count;
     static uint8_t       rx_payload[255]      = { 0 };  // Buffer for rx payload
     static uint8_t       rx_payload_size      = 0;      // Size of the payload in the rx_payload buffer
@@ -97,13 +98,13 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     periodic_message_flag = true;
     TimerStart( &periodic_timer );
 }
-
+/*
     static TimerEvent_t periodic_timer1;
     static void periodic_timer_cb1( void* context ) {
     SMTC_HAL_TRACE_PRINTF( "send cayenne\n\r" );
     periodic_message_flag1 = true;
     TimerStart( &periodic_timer1 );
-}
+}*/
 
   
 /*
@@ -154,12 +155,12 @@ int main( void )
     TimerSetValue( &periodic_timer, PERIODIC_TIMER_PERIOD );
     TimerSetContext( &periodic_timer, NULL );
     TimerStart(&periodic_timer);
-
+/*
     TimerInit( &periodic_timer1, &periodic_timer_cb1 );
     TimerSetValue( &periodic_timer1, PERIODIC_TIMER_PERIOD_1 );
     TimerSetContext( &periodic_timer1, NULL );
     TimerStart(&periodic_timer1);
-
+*/
 
     lr11xx_status_t ret;
     lr11xx_system_version_t lr11xx_version;
@@ -178,9 +179,16 @@ int main( void )
         
     if( periodic_message_flag ) 
     {
+           
         sensor_read();
-        periodic_message_flag = false;
+        SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s\n\r",
+                      temp, ADCmeas,
+                      Voltage,
+                      Door == 1 ? "open" : "closed",
+                      water == 1 ? "high" : "low");
         
+        periodic_message_flag = false;
+        cntup ++;
     
        if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD ) 
         {
@@ -189,16 +197,17 @@ int main( void )
             smtc_modem_lorawan_request_link_check( STACK_ID );
         }
 
-    }
-    if(periodic_message_flag1)
-    {
-                if( is_joined() )
-        {   sensor_read();
-            sendData(temp, Voltage, Door, water);
-            periodic_message_flag1 = false; 
+      if( cntup == 3 )
+        {   
+           
+            //sendData(temp,Voltage, Door, water);
+            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s\n\r",
+                      temp, ADCmeas,
+                      Voltage,
+                      Door == 1 ? "open" : "closed",
+                      water == 1 ? "high" : "low");
         }
     }
-
 
         //sleep_time_ms -= ( hal_rtc_get_time_ms( ) - start );
         sleep_time_ms = smtc_modem_run_engine( );
@@ -220,7 +229,7 @@ int main( void )
 
     }
 
-
+        // Read the state of GPIO pin PB1 on interrupt
      switch (hal_gpio_get_value(PB_1))
 	  	  {
 	      	  case GPIO_PIN_SET:
@@ -232,7 +241,7 @@ int main( void )
 	              break;
 	      }
 
-	      // Read the state of GPIO pin PC12 (MDoor)
+	      // Read the state of GPIO pin PB2 on interrupt
 	  switch (hal_gpio_get_value(PB_2))
 	      {
 	          case GPIO_PIN_SET:
@@ -245,11 +254,7 @@ int main( void )
 	      }
 
 hal_mcu_delay_ms(1000);
-SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C Voltage: %.2fV Door: %s water: %s\n\r",
-                      temp,
-                      Voltage,
-                      Door == 1 ? "open" : "closed",
-                      water == 1 ? "high" : "low");
+
 
     }
 
@@ -290,7 +295,7 @@ float GETvoltage(ADC_HandleTypeDef *hadc)
         // You can add error handling code here, such as logging or recovery actions
         return 0.0f; // Return 0 voltage in case of error
     }
-
+    hal_mcu_delay_ms(200);
     // Wait for conversion to complete
     if (HAL_ADC_PollForConversion(hadc, HAL_MAX_DELAY) == HAL_OK)
     {
@@ -299,9 +304,9 @@ float GETvoltage(ADC_HandleTypeDef *hadc)
         // For example, if your ADC reference voltage is 3.3V and resolution is 12 bits:
         batt = (3.3f * adc_value) / 4095.0f;
     }
-
+    hal_mcu_delay_ms(200);
     HAL_ADC_Stop(hadc);
-    
+    hal_mcu_delay_ms(200);
     hal_gpio_set_value(PA_3, 0); //turns of mosfet
     return batt;
 }

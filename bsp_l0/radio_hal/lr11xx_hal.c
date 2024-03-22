@@ -188,7 +188,7 @@ lr11xx_hal_status_t lr11xx_hal_read( const void* context, const uint8_t* command
         computed_crc         = lr11xx_hal_compute_crc( computed_crc, data, data_length );
 
         if( rx_crc != computed_crc ) {
-            SMTC_HAL_TRACE_ERROR( "\x1B[0;31mERROR: lr11xx read function - error on received crc\n" );
+            SMTC_HAL_TRACE_ERROR( "\x1B[0;31mERROR: lr11xx read function - error on received crc\n\r" );
             return LR11XX_HAL_STATUS_ERROR;
         }
 
@@ -220,7 +220,7 @@ lr11xx_hal_status_t lr11xx_hal_direct_read( const void* context, uint8_t* data, 
     uint8_t computed_crc = lr11xx_hal_compute_crc( 0xFF, data, data_length );
 
     if( rx_crc != computed_crc ) {
-        SMTC_HAL_TRACE_ERROR( "\x1B[0;31mERROR: lr11xx read function - error on received crc\n" );
+        SMTC_HAL_TRACE_ERROR( "\x1B[0;31mERROR: lr11xx read function - error on received crc\n\r" );
         return LR11XX_HAL_STATUS_ERROR;
     }
 

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccwuHT0L.s 			page 1
+ARM GAS  /tmp/ccnnfcPY.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccwuHT0L.s 			page 1
   56 0038 01050000 		.word	1281
   58              		.section	.text.lr11xx_regmem_read_regmem32,"ax",%progbits
   59              		.align	1
-ARM GAS  /tmp/ccwuHT0L.s 			page 2
+ARM GAS  /tmp/ccnnfcPY.s 			page 2
 
 
   60              		.global	lr11xx_regmem_read_regmem32
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccwuHT0L.s 			page 1
  116              		.section	.text.lr11xx_regmem_write_mem8,"ax",%progbits
  117              		.align	1
  118              		.global	lr11xx_regmem_write_mem8
-ARM GAS  /tmp/ccwuHT0L.s 			page 3
+ARM GAS  /tmp/ccnnfcPY.s 			page 3
 
 
  119              		.syntax unified
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccwuHT0L.s 			page 1
  176 0020 FFF7FEFF 		bl	lr11xx_hal_read
  177 0024 05B0     		add	sp, sp, #20
  178              		@ sp needed
-ARM GAS  /tmp/ccwuHT0L.s 			page 4
+ARM GAS  /tmp/ccnnfcPY.s 			page 4
 
 
  179 0026 30BD     		pop	{r4, r5, pc}
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccwuHT0L.s 			page 1
  237 001e C046     		.align	2
  238              	.L23:
  239 0020 010A0000 		.word	2561
-ARM GAS  /tmp/ccwuHT0L.s 			page 5
+ARM GAS  /tmp/ccnnfcPY.s 			page 5
 
 
  241              		.section	.text.lr11xx_regmem_clear_rxbuffer,"ax",%progbits
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccwuHT0L.s 			page 1
  298 002a 0023     		movs	r3, #0
  299 002c CA72     		strb	r2, [r1, #11]
  300 002e CD70     		strb	r5, [r1, #3]
-ARM GAS  /tmp/ccwuHT0L.s 			page 6
+ARM GAS  /tmp/ccnnfcPY.s 			page 6
 
 
  301 0030 CC71     		strb	r4, [r1, #7]
@@ -313,35 +313,35 @@ ARM GAS  /tmp/ccwuHT0L.s 			page 1
  310              	.L29:
  311 0040 010C0000 		.word	3073
  313              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccwuHT0L.s 			page 7
+ARM GAS  /tmp/ccnnfcPY.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lr11xx_regmem.c
-     /tmp/ccwuHT0L.s:14     .text.lr11xx_regmem_write_regmem32:00000000 $t
-     /tmp/ccwuHT0L.s:20     .text.lr11xx_regmem_write_regmem32:00000000 lr11xx_regmem_write_regmem32
-     /tmp/ccwuHT0L.s:56     .text.lr11xx_regmem_write_regmem32:00000038 $d
-     /tmp/ccwuHT0L.s:59     .text.lr11xx_regmem_read_regmem32:00000000 $t
-     /tmp/ccwuHT0L.s:65     .text.lr11xx_regmem_read_regmem32:00000000 lr11xx_regmem_read_regmem32
-     /tmp/ccwuHT0L.s:114    .text.lr11xx_regmem_read_regmem32:00000050 $d
-     /tmp/ccwuHT0L.s:117    .text.lr11xx_regmem_write_mem8:00000000 $t
-     /tmp/ccwuHT0L.s:123    .text.lr11xx_regmem_write_mem8:00000000 lr11xx_regmem_write_mem8
-     /tmp/ccwuHT0L.s:148    .text.lr11xx_regmem_write_mem8:00000028 $d
-     /tmp/ccwuHT0L.s:151    .text.lr11xx_regmem_read_mem8:00000000 $t
-     /tmp/ccwuHT0L.s:157    .text.lr11xx_regmem_read_mem8:00000000 lr11xx_regmem_read_mem8
-     /tmp/ccwuHT0L.s:183    .text.lr11xx_regmem_read_mem8:00000028 $d
-     /tmp/ccwuHT0L.s:186    .text.lr11xx_regmem_write_buffer8:00000000 $t
-     /tmp/ccwuHT0L.s:192    .text.lr11xx_regmem_write_buffer8:00000000 lr11xx_regmem_write_buffer8
-     /tmp/ccwuHT0L.s:209    .text.lr11xx_regmem_write_buffer8:00000018 $d
-     /tmp/ccwuHT0L.s:212    .text.lr11xx_regmem_read_buffer8:00000000 $t
-     /tmp/ccwuHT0L.s:218    .text.lr11xx_regmem_read_buffer8:00000000 lr11xx_regmem_read_buffer8
-     /tmp/ccwuHT0L.s:239    .text.lr11xx_regmem_read_buffer8:00000020 $d
-     /tmp/ccwuHT0L.s:242    .text.lr11xx_regmem_clear_rxbuffer:00000000 $t
-     /tmp/ccwuHT0L.s:248    .text.lr11xx_regmem_clear_rxbuffer:00000000 lr11xx_regmem_clear_rxbuffer
-     /tmp/ccwuHT0L.s:265    .text.lr11xx_regmem_clear_rxbuffer:00000018 $d
-     /tmp/ccwuHT0L.s:268    .text.lr11xx_regmem_write_regmem32_mask:00000000 $t
-     /tmp/ccwuHT0L.s:274    .text.lr11xx_regmem_write_regmem32_mask:00000000 lr11xx_regmem_write_regmem32_mask
-     /tmp/ccwuHT0L.s:311    .text.lr11xx_regmem_write_regmem32_mask:00000040 $d
+     /tmp/ccnnfcPY.s:14     .text.lr11xx_regmem_write_regmem32:00000000 $t
+     /tmp/ccnnfcPY.s:20     .text.lr11xx_regmem_write_regmem32:00000000 lr11xx_regmem_write_regmem32
+     /tmp/ccnnfcPY.s:56     .text.lr11xx_regmem_write_regmem32:00000038 $d
+     /tmp/ccnnfcPY.s:59     .text.lr11xx_regmem_read_regmem32:00000000 $t
+     /tmp/ccnnfcPY.s:65     .text.lr11xx_regmem_read_regmem32:00000000 lr11xx_regmem_read_regmem32
+     /tmp/ccnnfcPY.s:114    .text.lr11xx_regmem_read_regmem32:00000050 $d
+     /tmp/ccnnfcPY.s:117    .text.lr11xx_regmem_write_mem8:00000000 $t
+     /tmp/ccnnfcPY.s:123    .text.lr11xx_regmem_write_mem8:00000000 lr11xx_regmem_write_mem8
+     /tmp/ccnnfcPY.s:148    .text.lr11xx_regmem_write_mem8:00000028 $d
+     /tmp/ccnnfcPY.s:151    .text.lr11xx_regmem_read_mem8:00000000 $t
+     /tmp/ccnnfcPY.s:157    .text.lr11xx_regmem_read_mem8:00000000 lr11xx_regmem_read_mem8
+     /tmp/ccnnfcPY.s:183    .text.lr11xx_regmem_read_mem8:00000028 $d
+     /tmp/ccnnfcPY.s:186    .text.lr11xx_regmem_write_buffer8:00000000 $t
+     /tmp/ccnnfcPY.s:192    .text.lr11xx_regmem_write_buffer8:00000000 lr11xx_regmem_write_buffer8
+     /tmp/ccnnfcPY.s:209    .text.lr11xx_regmem_write_buffer8:00000018 $d
+     /tmp/ccnnfcPY.s:212    .text.lr11xx_regmem_read_buffer8:00000000 $t
+     /tmp/ccnnfcPY.s:218    .text.lr11xx_regmem_read_buffer8:00000000 lr11xx_regmem_read_buffer8
+     /tmp/ccnnfcPY.s:239    .text.lr11xx_regmem_read_buffer8:00000020 $d
+     /tmp/ccnnfcPY.s:242    .text.lr11xx_regmem_clear_rxbuffer:00000000 $t
+     /tmp/ccnnfcPY.s:248    .text.lr11xx_regmem_clear_rxbuffer:00000000 lr11xx_regmem_clear_rxbuffer
+     /tmp/ccnnfcPY.s:265    .text.lr11xx_regmem_clear_rxbuffer:00000018 $d
+     /tmp/ccnnfcPY.s:268    .text.lr11xx_regmem_write_regmem32_mask:00000000 $t
+     /tmp/ccnnfcPY.s:274    .text.lr11xx_regmem_write_regmem32_mask:00000000 lr11xx_regmem_write_regmem32_mask
+     /tmp/ccnnfcPY.s:311    .text.lr11xx_regmem_write_regmem32_mask:00000040 $d
 
 UNDEFINED SYMBOLS
 lr11xx_hal_write

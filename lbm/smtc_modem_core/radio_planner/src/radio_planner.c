@@ -276,7 +276,7 @@ rp_hook_status_t rp_task_enqueue( radio_planner_t* rp, const rp_task_t* task, ui
     }
     if( ( task->state ) > RP_TASK_STATE_ASAP )
     {
-        smtc_modem_hal_mcu_panic( " task invalid\n" );
+        smtc_modem_hal_mcu_panic( " task invalid\n\r" );
         return RP_HOOK_STATUS_ID_ERROR;
     }
     uint32_t now = rp_hal_get_time_in_ms( );
@@ -288,13 +288,13 @@ rp_hook_status_t rp_task_enqueue( radio_planner_t* rp, const rp_task_t* task, ui
 
     if( rp->tasks[hook_id].state == RP_TASK_STATE_RUNNING )
     {
-        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: Task enqueue impossible. Task is already running\n" );
+        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: Task enqueue impossible. Task is already running\n\r" );
         return RP_TASK_STATUS_ALREADY_RUNNING;
     }
     rp_hal_critical_section_begin( );
     if( rp->tasks[hook_id].state != RP_TASK_STATE_FINISHED )
     {
-        SMTC_MODEM_HAL_TRACE_PRINTF( " RP: WARNING Task is already running\n" );
+        SMTC_MODEM_HAL_TRACE_PRINTF( " RP: WARNING Task is already running\n\r" );
     }
     rp->status[hook_id]       = RP_STATUS_TASK_INIT;
     rp->tasks[hook_id]        = *task;
@@ -310,7 +310,7 @@ rp_hook_status_t rp_task_enqueue( radio_planner_t* rp, const rp_task_t* task, ui
         rp->tasks[hook_id].priority = ( rp->tasks[hook_id].state * RP_NB_HOOKS ) + hook_id;
     }
     rp->tasks[hook_id].start_time_init_ms = rp->tasks[hook_id].start_time_ms;
-    SMTC_MODEM_HAL_RP_TRACE_PRINTF( "RP: Task #%u enqueue with #%u priority\n", hook_id, rp->tasks[hook_id].priority );
+    SMTC_MODEM_HAL_RP_TRACE_PRINTF( "RP: Task #%u enqueue with #%u priority\n\r", hook_id, rp->tasks[hook_id].priority );
     rp_task_compute_ranking( rp );
     if( rp->semaphore_radio == 0 )
     {
@@ -322,7 +322,7 @@ rp_hook_status_t rp_task_enqueue( radio_planner_t* rp, const rp_task_t* task, ui
 
 rp_hook_status_t rp_task_abort( radio_planner_t* rp, const uint8_t hook_id )
 {
-    SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: rp_task_abort \n" );
+    SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: rp_task_abort \n\r" );
     rp_hal_critical_section_begin( );
     if( hook_id >= RP_NB_HOOKS )
     {
@@ -391,7 +391,7 @@ void rp_radio_irq( radio_planner_t* rp )
         uint32_t irq_timestamp_100us               = rp_hal_get_radio_irq_timestamp_in_100us( );
         rp->irq_timestamp_100us[rp->radio_task_id] = irq_timestamp_100us;
         rp->irq_timestamp_ms[rp->radio_task_id]    = rp_hal_get_time_in_ms( );
-        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: INFO - Radio IRQ received for hook #%u\n", rp->radio_task_id );
+        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: INFO - Radio IRQ received for hook #%u\n\r", rp->radio_task_id );
 
         rp_irq_get_status( rp, rp->radio_task_id );
         if( rp->status[rp->radio_task_id] == RP_STATUS_LR_FHSS_HOP )
@@ -430,7 +430,7 @@ void rp_radio_irq( radio_planner_t* rp )
     }
     else
     {
-        SMTC_MODEM_HAL_TRACE_PRINTF( " radio planner it but no more task activated\n" );
+        SMTC_MODEM_HAL_TRACE_PRINTF( " radio planner it but no more task activated\n\r" );
     }
 
     // Shut Down the TCXO
@@ -478,7 +478,7 @@ static void rp_task_update_time( radio_planner_t* rp, uint32_t now )
                     rp->tasks[i].priority = ( rp->tasks[i].state * RP_NB_HOOKS ) + i;
                 }
 
-                SMTC_MODEM_HAL_RP_TRACE_PRINTF( "RP: WARNING - SWITCH TASK FROM ASAP TO SCHEDULE \n" );
+                SMTC_MODEM_HAL_RP_TRACE_PRINTF( "RP: WARNING - SWITCH TASK FROM ASAP TO SCHEDULE \n\r" );
                 rp_task_compute_ranking( rp );
             }
         }
@@ -490,7 +490,7 @@ static void rp_task_update_time( radio_planner_t* rp, uint32_t now )
     {
         rp->tasks[rp->radio_task_id].duration_time_ms =
             now + rp->margin_delay + 2 - rp->tasks[rp->radio_task_id].start_time_ms;
-        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: Extended duration of radio task #%u time to %lu ms\n", rp->radio_task_id,
+        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: Extended duration of radio task #%u time to %lu ms\n\r", rp->radio_task_id,
                                         now );
     }
 }
@@ -507,7 +507,7 @@ static void rp_task_arbiter( radio_planner_t* rp, const char* caller_func_name )
     {  // Next task exists
         int32_t delay = ( int32_t )( rp->priority_task.start_time_ms - now );
         SMTC_MODEM_HAL_RP_TRACE_PRINTF(
-            " RP: Arbiter has been called by %s and priority-task #%d, timer hook #%d, delay %d, now %d\n ",
+            " RP: Arbiter has been called by %s and priority-task #%d, timer hook #%d, delay %d, now %d\n\r ",
             caller_func_name, rp->priority_task.hook_id, rp->timer_hook_id, delay, now );
 
         // Case where the high priority task is in the past, error case
@@ -516,7 +516,7 @@ static void rp_task_arbiter( radio_planner_t* rp, const char* caller_func_name )
             if( rp->priority_task.state != RP_TASK_STATE_RUNNING )
             {
                 rp->stats.rp_error++;
-                SMTC_MODEM_HAL_TRACE_ERROR( " RP: ERROR - delay #%d - hook #%d\n", delay, rp->priority_task.hook_id );
+                SMTC_MODEM_HAL_TRACE_ERROR( " RP: ERROR - delay #%d - hook #%d\n\r", delay, rp->priority_task.hook_id );
 
                 rp->tasks[rp->priority_task.hook_id].state = RP_TASK_STATE_ABORTED;
             }
@@ -524,7 +524,7 @@ static void rp_task_arbiter( radio_planner_t* rp, const char* caller_func_name )
         // Case where the high priority task is in the future
         else if( ( uint32_t ) delay > rp->margin_delay )
         {  // The high priority task is in the future
-            SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: High priority task is in the future\n" );
+            SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: High priority task is in the future\n\r" );
         }
         // Case where the high priority task is now
         else
@@ -534,7 +534,7 @@ static void rp_task_arbiter( radio_planner_t* rp, const char* caller_func_name )
                 if( rp->tasks[rp->radio_task_id].hook_id != rp->priority_task.hook_id )
                 {  // priority task not equal to radio task => abort radio task
                     rp->tasks[rp->radio_task_id].state = RP_TASK_STATE_ABORTED;
-                    SMTC_MODEM_HAL_RP_TRACE_PRINTF( "RP: Abort running task with hook #%u\n", rp->radio_task_id );
+                    SMTC_MODEM_HAL_RP_TRACE_PRINTF( "RP: Abort running task with hook #%u\n\r", rp->radio_task_id );
 
                     smtc_modem_hal_assert( ral_set_standby( &( rp->radio->ral ), RAL_STANDBY_CFG_RC ) ==
                                            RAL_STATUS_OK );
@@ -570,7 +570,7 @@ static void rp_task_arbiter( radio_planner_t* rp, const char* caller_func_name )
                 ( rp->timer_hook_id != rp->priority_task.hook_id ) &&
                 ( rp->tasks[rp->timer_hook_id].state == RP_TASK_STATE_SCHEDULE ) )
             {
-                SMTC_MODEM_HAL_TRACE_WARNING( " RP: Aborted task with hook #%u - not a priority task\n ",
+                SMTC_MODEM_HAL_TRACE_WARNING( " RP: Aborted task with hook #%u - not a priority task\n\r ",
                                               rp->timer_hook_id );
                 rp->tasks[rp->timer_hook_id].state = RP_TASK_STATE_ABORTED;
             }
@@ -599,7 +599,7 @@ static void rp_task_arbiter( radio_planner_t* rp, const char* caller_func_name )
     else
     {  // No more tasks in the radio planner
         rp_task_call_aborted( rp );
-        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: No more active tasks\n" );
+        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: No more active tasks\n\r" );
     }
 }
 
@@ -675,7 +675,7 @@ static void rp_irq_get_status( radio_planner_t* rp, const uint8_t hook_id )
     }
     else
     {
-        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: ERROR - IRQ source 0x%04X unknown\n", radio_irq );
+        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: ERROR - IRQ source 0x%04X unknown\n\r", radio_irq );
         rp->status[hook_id] = RP_STATUS_TASK_ABORTED;
     }
 }
@@ -700,11 +700,11 @@ static void rp_task_compute_ranking( radio_planner_t* rp )
 static void rp_task_launch_current( radio_planner_t* rp )
 {
     uint8_t id = rp->radio_task_id;
-    SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: Launch task #%u and start radio state %u, type %u\n", id, rp->tasks[id].state,
+    SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: Launch task #%u and start radio state %u, type %u\n\r", id, rp->tasks[id].state,
                                     rp->tasks[id].type );
     if( rp->tasks[id].launch_task_callbacks == NULL )
     {
-        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: ERROR - launch_task_callbacks == NULL \n" );
+        SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: ERROR - launch_task_callbacks == NULL \n\r" );
     }
     else
     {
@@ -881,7 +881,7 @@ static void rp_task_call_aborted( radio_planner_t* rp )
     {
         if( rp->tasks[i].state == RP_TASK_STATE_ABORTED )
         {
-            SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: INFO - Aborted hook # %d callback\n", i );
+            SMTC_MODEM_HAL_RP_TRACE_PRINTF( " RP: INFO - Aborted hook # %d callback\n\r", i );
             rp->stats.task_hook_aborted_nb[i]++;
             rp_task_free( rp, &rp->tasks[i] );
             rp->status[i] = RP_STATUS_TASK_ABORTED;
@@ -925,7 +925,7 @@ static void rp_hook_callback( radio_planner_t* rp, uint8_t id )
 
 static void rp_task_print( const radio_planner_t* rp, const rp_task_t* task )
 {
-    SMTC_MODEM_HAL_RP_TRACE_PRINTF( "\nRP- INFO - Radio task #%u  running - Timer task #%u running  - Hook ID #%u -",
+    SMTC_MODEM_HAL_RP_TRACE_PRINTF( "\n\rRP- INFO - Radio task #%u  running - Timer task #%u running  - Hook ID #%u -",
                                     rp->radio_task_id, rp->timer_task_id, task->hook_id );
     switch( task->type )
     {
@@ -964,7 +964,7 @@ static void rp_task_print( const radio_planner_t* rp, const rp_task_t* task )
         SMTC_MODEM_HAL_RP_TRACE_PRINTF( " TASK_ERROR " );
         break;
     };
-    SMTC_MODEM_HAL_RP_TRACE_PRINTF( " - start time @%lu - priority #%u\n", task->start_time_ms, task->priority );
+    SMTC_MODEM_HAL_RP_TRACE_PRINTF( " - start time @%lu - priority #%u\n\r", task->start_time_ms, task->priority );
 }
 
 static void rp_consumption_statistics_updated( radio_planner_t* rp, const uint8_t hook_id, const uint32_t time )

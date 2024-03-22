@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccW7IBLs.s 			page 1
+ARM GAS  /tmp/cclnlznN.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
   56 0046 6846     		mov	r0, sp
   57 0048 04A9     		add	r1, sp, #16
   58 004a FFF7FEFF 		bl	AES_CMAC_Final
-ARM GAS  /tmp/ccW7IBLs.s 			page 2
+ARM GAS  /tmp/cclnlznN.s 			page 2
 
 
   59 004e 009B     		ldr	r3, [sp]
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  106 000a 0949     		ldr	r1, .L13
  107 000c 01A8     		add	r0, sp, #4
  108 000e FFF7FEFF 		bl	memcpy
-ARM GAS  /tmp/ccW7IBLs.s 			page 3
+ARM GAS  /tmp/cclnlznN.s 			page 3
 
 
  109 0012 2200     		movs	r2, r4
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  167 000a 002D     		cmp	r5, #0
  168 000c 0ED0     		beq	.L19
  169 000e 0020     		movs	r0, #0
-ARM GAS  /tmp/ccW7IBLs.s 			page 4
+ARM GAS  /tmp/cclnlznN.s 			page 4
 
 
  170 0010 03AA     		add	r2, sp, #12
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  226 0038 1120     		movs	r0, #17
  227 003a 6043     		muls	r0, r4
  228 003c 1530     		adds	r0, r0, #21
-ARM GAS  /tmp/ccW7IBLs.s 			page 5
+ARM GAS  /tmp/cclnlznN.s 			page 5
 
 
  229 003e 1021     		movs	r1, #16
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  285 0016 8038     		subs	r0, r0, #128
  286 0018 1533     		adds	r3, r3, #21
  287 001a C0B2     		uxtb	r0, r0
-ARM GAS  /tmp/ccW7IBLs.s 			page 6
+ARM GAS  /tmp/cclnlznN.s 			page 6
 
 
  288 001c 1022     		movs	r2, #16
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  344 0002 10B5     		push	{r4, lr}
  345 0004 0029     		cmp	r1, #0
  346 0006 02D0     		beq	.L47
-ARM GAS  /tmp/ccW7IBLs.s 			page 7
+ARM GAS  /tmp/cclnlznN.s 			page 7
 
 
  347 0008 FFF7FEFF 		bl	smtc_secure_element_set_key.part.0
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  405              		@ frame_needed = 0, uses_anonymous_args = 0
  406 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
  407 0002 1D00     		movs	r5, r3
-ARM GAS  /tmp/ccW7IBLs.s 			page 8
+ARM GAS  /tmp/cclnlznN.s 			page 8
 
 
  408 0004 06AB     		add	r3, sp, #24
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  462 0072 1A43     		orrs	r2, r3
  463 0074 3000     		movs	r0, r6
  464 0076 0123     		movs	r3, #1
-ARM GAS  /tmp/ccW7IBLs.s 			page 9
+ARM GAS  /tmp/cclnlznN.s 			page 9
 
 
  465 0078 A1B2     		uxth	r1, r4
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  523 0014 10BD     		pop	{r4, pc}
  524              	.L73:
  525 0016 C046     		.align	2
-ARM GAS  /tmp/ccW7IBLs.s 			page 10
+ARM GAS  /tmp/cclnlznN.s 			page 10
 
 
  526              	.L72:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  585              		.global	smtc_secure_element_set_pin
  586              		.syntax unified
  587              		.code	16
-ARM GAS  /tmp/ccW7IBLs.s 			page 11
+ARM GAS  /tmp/cclnlznN.s 			page 11
 
 
  588              		.thumb_func
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  647 0000 0123     		movs	r3, #1
  648 0002 F0B5     		push	{r4, r5, r6, r7, lr}
  649 0004 0200     		movs	r2, r0
-ARM GAS  /tmp/ccW7IBLs.s 			page 12
+ARM GAS  /tmp/cclnlznN.s 			page 12
 
 
  650 0006 0125     		movs	r5, #1
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  698 0006 A544     		add	sp, sp, r4
  699 0008 CE24     		movs	r4, #206
  700 000a 5200     		lsls	r2, r2, #1
-ARM GAS  /tmp/ccW7IBLs.s 			page 13
+ARM GAS  /tmp/cclnlznN.s 			page 13
 
 
  701 000c 6400     		lsls	r4, r4, #1
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  756              		.global	smtc_secure_element_store_context
  757              		.syntax unified
  758              		.code	16
-ARM GAS  /tmp/ccW7IBLs.s 			page 14
+ARM GAS  /tmp/cclnlznN.s 			page 14
 
 
  759              		.thumb_func
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  810      00000000 
  810      00000000 
  810      00
-ARM GAS  /tmp/ccW7IBLs.s 			page 15
+ARM GAS  /tmp/cclnlznN.s 			page 15
 
 
  811 0022 000000   		.ascii	"\000\000\000"
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  838 00bb 000000   		.ascii	"\000\000\000"
  839 00be 80       		.byte	-128
  840 00bf 00000000 		.ascii	"\000\000\000\000\000\000\000\000\000\000\000\000\000"
-ARM GAS  /tmp/ccW7IBLs.s 			page 16
+ARM GAS  /tmp/cclnlznN.s 			page 16
 
 
  840      00000000 
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  867      00000000 
  867      00000000 
  867      00
-ARM GAS  /tmp/ccW7IBLs.s 			page 17
+ARM GAS  /tmp/cclnlznN.s 			page 17
 
 
  868 0165 000000   		.ascii	"\000\000\000"
@@ -981,67 +981,67 @@ ARM GAS  /tmp/ccW7IBLs.s 			page 1
  876      00
  877 0198 000000   		.ascii	"\000\000\000"
  878              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccW7IBLs.s 			page 18
+ARM GAS  /tmp/cclnlznN.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 soft_se.c
-     /tmp/ccW7IBLs.s:14     .text.compute_cmac:00000000 $t
-     /tmp/ccW7IBLs.s:19     .text.compute_cmac:00000000 compute_cmac
-     /tmp/ccW7IBLs.s:83     .text.compute_cmac:00000074 $d
-     /tmp/ccW7IBLs.s:802    .bss.soft_se_data:00000000 soft_se_data
-     /tmp/ccW7IBLs.s:92     .text.smtc_secure_element_init:00000000 $t
-     /tmp/ccW7IBLs.s:98     .text.smtc_secure_element_init:00000000 smtc_secure_element_init
-     /tmp/ccW7IBLs.s:124    .text.smtc_secure_element_init:00000030 $d
-     /tmp/ccW7IBLs.s:130    .text.smtc_secure_element_compute_aes_cmac:00000000 $t
-     /tmp/ccW7IBLs.s:136    .text.smtc_secure_element_compute_aes_cmac:00000000 smtc_secure_element_compute_aes_cmac
-     /tmp/ccW7IBLs.s:153    .text.smtc_secure_element_verify_aes_cmac:00000000 $t
-     /tmp/ccW7IBLs.s:159    .text.smtc_secure_element_verify_aes_cmac:00000000 smtc_secure_element_verify_aes_cmac
-     /tmp/ccW7IBLs.s:189    .text.smtc_secure_element_aes_encrypt:00000000 $t
-     /tmp/ccW7IBLs.s:195    .text.smtc_secure_element_aes_encrypt:00000000 smtc_secure_element_aes_encrypt
-     /tmp/ccW7IBLs.s:262    .text.smtc_secure_element_aes_encrypt:00000074 $d
-     /tmp/ccW7IBLs.s:265    .text.smtc_secure_element_set_key.part.0:00000000 $t
-     /tmp/ccW7IBLs.s:270    .text.smtc_secure_element_set_key.part.0:00000000 smtc_secure_element_set_key.part.0
-     /tmp/ccW7IBLs.s:330    .text.smtc_secure_element_set_key.part.0:0000006c $d
-     /tmp/ccW7IBLs.s:334    .text.smtc_secure_element_set_key:00000000 $t
-     /tmp/ccW7IBLs.s:340    .text.smtc_secure_element_set_key:00000000 smtc_secure_element_set_key
-     /tmp/ccW7IBLs.s:355    .text.smtc_secure_element_derive_and_store_key:00000000 $t
-     /tmp/ccW7IBLs.s:361    .text.smtc_secure_element_derive_and_store_key:00000000 smtc_secure_element_derive_and_store_key
-     /tmp/ccW7IBLs.s:397    .text.smtc_secure_element_process_join_accept:00000000 $t
-     /tmp/ccW7IBLs.s:403    .text.smtc_secure_element_process_join_accept:00000000 smtc_secure_element_process_join_accept
-     /tmp/ccW7IBLs.s:476    .text.smtc_secure_element_set_deveui:00000000 $t
-     /tmp/ccW7IBLs.s:482    .text.smtc_secure_element_set_deveui:00000000 smtc_secure_element_set_deveui
-     /tmp/ccW7IBLs.s:500    .text.smtc_secure_element_set_deveui:00000018 $d
-     /tmp/ccW7IBLs.s:503    .text.smtc_secure_element_get_deveui:00000000 $t
-     /tmp/ccW7IBLs.s:509    .text.smtc_secure_element_get_deveui:00000000 smtc_secure_element_get_deveui
-     /tmp/ccW7IBLs.s:527    .text.smtc_secure_element_get_deveui:00000018 $d
-     /tmp/ccW7IBLs.s:530    .text.smtc_secure_element_set_joineui:00000000 $t
-     /tmp/ccW7IBLs.s:536    .text.smtc_secure_element_set_joineui:00000000 smtc_secure_element_set_joineui
-     /tmp/ccW7IBLs.s:554    .text.smtc_secure_element_set_joineui:00000018 $d
-     /tmp/ccW7IBLs.s:557    .text.smtc_secure_element_get_joineui:00000000 $t
-     /tmp/ccW7IBLs.s:563    .text.smtc_secure_element_get_joineui:00000000 smtc_secure_element_get_joineui
-     /tmp/ccW7IBLs.s:581    .text.smtc_secure_element_get_joineui:00000018 $d
-     /tmp/ccW7IBLs.s:584    .text.smtc_secure_element_set_pin:00000000 $t
-     /tmp/ccW7IBLs.s:590    .text.smtc_secure_element_set_pin:00000000 smtc_secure_element_set_pin
-     /tmp/ccW7IBLs.s:608    .text.smtc_secure_element_set_pin:00000018 $d
-     /tmp/ccW7IBLs.s:611    .text.smtc_secure_element_get_pin:00000000 $t
-     /tmp/ccW7IBLs.s:617    .text.smtc_secure_element_get_pin:00000000 smtc_secure_element_get_pin
-     /tmp/ccW7IBLs.s:635    .text.smtc_secure_element_get_pin:00000018 $d
-     /tmp/ccW7IBLs.s:638    .text.soft_ce_crc:00000000 $t
-     /tmp/ccW7IBLs.s:644    .text.soft_ce_crc:00000000 soft_ce_crc
-     /tmp/ccW7IBLs.s:679    .text.soft_ce_crc:00000034 $d
-     /tmp/ccW7IBLs.s:686    .text.smtc_secure_element_restore_context:00000000 $t
-     /tmp/ccW7IBLs.s:692    .text.smtc_secure_element_restore_context:00000000 smtc_secure_element_restore_context
-     /tmp/ccW7IBLs.s:748    .text.smtc_secure_element_restore_context:0000006c $d
-     /tmp/ccW7IBLs.s:755    .text.smtc_secure_element_store_context:00000000 $t
-     /tmp/ccW7IBLs.s:761    .text.smtc_secure_element_store_context:00000000 smtc_secure_element_store_context
-     /tmp/ccW7IBLs.s:796    .text.smtc_secure_element_store_context:00000044 $d
-     /tmp/ccW7IBLs.s:799    .bss.soft_se_data:00000000 $d
+     /tmp/cclnlznN.s:14     .text.compute_cmac:00000000 $t
+     /tmp/cclnlznN.s:19     .text.compute_cmac:00000000 compute_cmac
+     /tmp/cclnlznN.s:83     .text.compute_cmac:00000074 $d
+     /tmp/cclnlznN.s:802    .bss.soft_se_data:00000000 soft_se_data
+     /tmp/cclnlznN.s:92     .text.smtc_secure_element_init:00000000 $t
+     /tmp/cclnlznN.s:98     .text.smtc_secure_element_init:00000000 smtc_secure_element_init
+     /tmp/cclnlznN.s:124    .text.smtc_secure_element_init:00000030 $d
+     /tmp/cclnlznN.s:130    .text.smtc_secure_element_compute_aes_cmac:00000000 $t
+     /tmp/cclnlznN.s:136    .text.smtc_secure_element_compute_aes_cmac:00000000 smtc_secure_element_compute_aes_cmac
+     /tmp/cclnlznN.s:153    .text.smtc_secure_element_verify_aes_cmac:00000000 $t
+     /tmp/cclnlznN.s:159    .text.smtc_secure_element_verify_aes_cmac:00000000 smtc_secure_element_verify_aes_cmac
+     /tmp/cclnlznN.s:189    .text.smtc_secure_element_aes_encrypt:00000000 $t
+     /tmp/cclnlznN.s:195    .text.smtc_secure_element_aes_encrypt:00000000 smtc_secure_element_aes_encrypt
+     /tmp/cclnlznN.s:262    .text.smtc_secure_element_aes_encrypt:00000074 $d
+     /tmp/cclnlznN.s:265    .text.smtc_secure_element_set_key.part.0:00000000 $t
+     /tmp/cclnlznN.s:270    .text.smtc_secure_element_set_key.part.0:00000000 smtc_secure_element_set_key.part.0
+     /tmp/cclnlznN.s:330    .text.smtc_secure_element_set_key.part.0:0000006c $d
+     /tmp/cclnlznN.s:334    .text.smtc_secure_element_set_key:00000000 $t
+     /tmp/cclnlznN.s:340    .text.smtc_secure_element_set_key:00000000 smtc_secure_element_set_key
+     /tmp/cclnlznN.s:355    .text.smtc_secure_element_derive_and_store_key:00000000 $t
+     /tmp/cclnlznN.s:361    .text.smtc_secure_element_derive_and_store_key:00000000 smtc_secure_element_derive_and_store_key
+     /tmp/cclnlznN.s:397    .text.smtc_secure_element_process_join_accept:00000000 $t
+     /tmp/cclnlznN.s:403    .text.smtc_secure_element_process_join_accept:00000000 smtc_secure_element_process_join_accept
+     /tmp/cclnlznN.s:476    .text.smtc_secure_element_set_deveui:00000000 $t
+     /tmp/cclnlznN.s:482    .text.smtc_secure_element_set_deveui:00000000 smtc_secure_element_set_deveui
+     /tmp/cclnlznN.s:500    .text.smtc_secure_element_set_deveui:00000018 $d
+     /tmp/cclnlznN.s:503    .text.smtc_secure_element_get_deveui:00000000 $t
+     /tmp/cclnlznN.s:509    .text.smtc_secure_element_get_deveui:00000000 smtc_secure_element_get_deveui
+     /tmp/cclnlznN.s:527    .text.smtc_secure_element_get_deveui:00000018 $d
+     /tmp/cclnlznN.s:530    .text.smtc_secure_element_set_joineui:00000000 $t
+     /tmp/cclnlznN.s:536    .text.smtc_secure_element_set_joineui:00000000 smtc_secure_element_set_joineui
+     /tmp/cclnlznN.s:554    .text.smtc_secure_element_set_joineui:00000018 $d
+     /tmp/cclnlznN.s:557    .text.smtc_secure_element_get_joineui:00000000 $t
+     /tmp/cclnlznN.s:563    .text.smtc_secure_element_get_joineui:00000000 smtc_secure_element_get_joineui
+     /tmp/cclnlznN.s:581    .text.smtc_secure_element_get_joineui:00000018 $d
+     /tmp/cclnlznN.s:584    .text.smtc_secure_element_set_pin:00000000 $t
+     /tmp/cclnlznN.s:590    .text.smtc_secure_element_set_pin:00000000 smtc_secure_element_set_pin
+     /tmp/cclnlznN.s:608    .text.smtc_secure_element_set_pin:00000018 $d
+     /tmp/cclnlznN.s:611    .text.smtc_secure_element_get_pin:00000000 $t
+     /tmp/cclnlznN.s:617    .text.smtc_secure_element_get_pin:00000000 smtc_secure_element_get_pin
+     /tmp/cclnlznN.s:635    .text.smtc_secure_element_get_pin:00000018 $d
+     /tmp/cclnlznN.s:638    .text.soft_ce_crc:00000000 $t
+     /tmp/cclnlznN.s:644    .text.soft_ce_crc:00000000 soft_ce_crc
+     /tmp/cclnlznN.s:679    .text.soft_ce_crc:00000034 $d
+     /tmp/cclnlznN.s:686    .text.smtc_secure_element_restore_context:00000000 $t
+     /tmp/cclnlznN.s:692    .text.smtc_secure_element_restore_context:00000000 smtc_secure_element_restore_context
+     /tmp/cclnlznN.s:748    .text.smtc_secure_element_restore_context:0000006c $d
+     /tmp/cclnlznN.s:755    .text.smtc_secure_element_store_context:00000000 $t
+     /tmp/cclnlznN.s:761    .text.smtc_secure_element_store_context:00000000 smtc_secure_element_store_context
+     /tmp/cclnlznN.s:796    .text.smtc_secure_element_store_context:00000044 $d
+     /tmp/cclnlznN.s:799    .bss.soft_se_data:00000000 $d
 
 UNDEFINED SYMBOLS
 AES_CMAC_Init
 AES_CMAC_SetKey
-ARM GAS  /tmp/ccW7IBLs.s 			page 19
+ARM GAS  /tmp/cclnlznN.s 			page 19
 
 
 AES_CMAC_Update

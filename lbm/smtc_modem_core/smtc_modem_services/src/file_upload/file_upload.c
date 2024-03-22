@@ -132,7 +132,7 @@ file_upload_return_code_t file_upload_init( file_upload_t* file_upload, uint32_t
 {
     if( file_len > FILE_UPLOAD_MAX_SIZE )
     {
-        LOG_ERROR( "FileUpload is too large (%d > %d )\n", file_len, FILE_UPLOAD_MAX_SIZE );
+        LOG_ERROR( "FileUpload is too large (%d > %d )\n\r", file_len, FILE_UPLOAD_MAX_SIZE );
         return FILE_UPLOAD_ERROR;
     }
     uint16_t sz_tmp = file_len + FILE_UPLOAD_HEADER_SIZE;

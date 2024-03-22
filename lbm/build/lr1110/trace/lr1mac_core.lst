@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccy27LkF.s 			page 1
+ARM GAS  /tmp/ccIDgzHI.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
   56 004c FFF7FEFF 		bl	memset
   57 0050 2200     		movs	r2, r4
   58 0052 0220     		movs	r0, #2
-ARM GAS  /tmp/ccy27LkF.s 			page 2
+ARM GAS  /tmp/ccIDgzHI.s 			page 2
 
 
   59 0054 08A9     		add	r1, sp, #32
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  105 0028 394B     		ldr	r3, .L16+20
  106 002a 2000     		movs	r0, r4
  107 002c E15C     		ldrb	r1, [r4, r3]
-ARM GAS  /tmp/ccy27LkF.s 			page 3
+ARM GAS  /tmp/ccIDgzHI.s 			page 3
 
 
  108 002e 394B     		ldr	r3, .L16+24
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  162 0096 E06B     		ldr	r0, [r4, #60]
  163 0098 FFF7FEFF 		bl	smtc_duty_cycle_update
  164 009c 2000     		movs	r0, r4
-ARM GAS  /tmp/ccy27LkF.s 			page 4
+ARM GAS  /tmp/ccIDgzHI.s 			page 4
 
 
  165 009e FFF7FEFF 		bl	smtc_real_get_next_channel
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  219 010c 00000000 		.word	.LC1
  220 0110 93040000 		.word	1171
  221 0114 92040000 		.word	1170
-ARM GAS  /tmp/ccy27LkF.s 			page 5
+ARM GAS  /tmp/ccIDgzHI.s 			page 5
 
 
  222 0118 44050000 		.word	1348
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  247 0130 73202564 		.ascii	"s %d dBm, fcnt_up %d, toa = %d\012\000"
  247      2064426D 
  247      2C206663 
-ARM GAS  /tmp/ccy27LkF.s 			page 6
+ARM GAS  /tmp/ccIDgzHI.s 			page 6
 
 
  247      6E745F75 
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  264      64207061 
  264      636B6574 
  265              	.LC43:
-ARM GAS  /tmp/ccy27LkF.s 			page 7
+ARM GAS  /tmp/ccIDgzHI.s 			page 7
 
 
  266 02b9 52656365 		.ascii	"Receive a Valid downlink RX2 for Hook Id = %d\000"
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  309 0036 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
  310 003a CE4B     		ldr	r3, .L48+16
  311 003c CC4A     		ldr	r2, .L48+12
-ARM GAS  /tmp/ccy27LkF.s 			page 8
+ARM GAS  /tmp/ccIDgzHI.s 			page 8
 
 
  312 003e 0100     		movs	r1, r0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  366 00ae B848     		ldr	r0, .L48+44
  367 00b0 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  368 00b4 2800     		movs	r0, r5
-ARM GAS  /tmp/ccy27LkF.s 			page 9
+ARM GAS  /tmp/ccIDgzHI.s 			page 9
 
 
  369 00b6 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  423 0126 FB58     		ldr	r3, [r7, r3]
  424 0128 9200     		lsls	r2, r2, #2
  425 012a 0793     		str	r3, [sp, #28]
-ARM GAS  /tmp/ccy27LkF.s 			page 10
+ARM GAS  /tmp/ccIDgzHI.s 			page 10
 
 
  426 012c 9623     		movs	r3, #150
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  480 019e 0799     		ldr	r1, [sp, #28]
  481 01a0 FFF7FEFF 		bl	smtc_lbt_listen_channel
  482 01a4 94E7     		b	.L30
-ARM GAS  /tmp/ccy27LkF.s 			page 11
+ARM GAS  /tmp/ccIDgzHI.s 			page 11
 
 
  483              	.L33:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  537 0214 0993     		str	r3, [sp, #36]
  538 0216 674B     		ldr	r3, .L48+80
  539 0218 6442     		rsbs	r4, r4, #0
-ARM GAS  /tmp/ccy27LkF.s 			page 12
+ARM GAS  /tmp/ccIDgzHI.s 			page 12
 
 
  540 021a D358     		ldr	r3, [r2, r3]
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  594 028e 354B     		ldr	r3, .L48
  595 0290 FA58     		ldr	r2, [r7, r3]
  596 0292 2378     		ldrb	r3, [r4]
-ARM GAS  /tmp/ccy27LkF.s 			page 13
+ARM GAS  /tmp/ccIDgzHI.s 			page 13
 
 
  597 0294 FD33     		adds	r3, r3, #253
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  651 0302 FA54     		strb	r2, [r7, r3]
  652 0304 FFF7FEFF 		bl	lr1_stack_mac_rx_frame_decode
  653 0308 314B     		ldr	r3, .L48+108
-ARM GAS  /tmp/ccy27LkF.s 			page 14
+ARM GAS  /tmp/ccIDgzHI.s 			page 14
 
 
  654 030a F854     		strb	r0, [r7, r3]
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  708 0390 4F000000 		.word	.LC15
  709 0394 1D000000 		.word	.LC5
  710 0398 8A000000 		.word	.LC17
-ARM GAS  /tmp/ccy27LkF.s 			page 15
+ARM GAS  /tmp/ccIDgzHI.s 			page 15
 
 
  711 039c B8000000 		.word	.LC20
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  765 0426 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  766 042a 2178     		ldrb	r1, [r4]
  767 042c 2648     		ldr	r0, .L50+32
-ARM GAS  /tmp/ccy27LkF.s 			page 16
+ARM GAS  /tmp/ccIDgzHI.s 			page 16
 
 
  768              	.L45:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  822 04a6 13E6     		b	.L30
  823              	.L51:
  824              		.align	2
-ARM GAS  /tmp/ccy27LkF.s 			page 17
+ARM GAS  /tmp/ccIDgzHI.s 			page 17
 
 
  825              	.L50:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  872 0018 09D1     		bne	.L55
  873 001a 2848     		ldr	r0, .L61+8
  874              	.L60:
-ARM GAS  /tmp/ccy27LkF.s 			page 18
+ARM GAS  /tmp/ccIDgzHI.s 			page 18
 
 
  875 001c FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  929 0090 1870     		strb	r0, [r3]
  930 0092 2000     		movs	r0, r4
  931 0094 FFF7FEFF 		bl	smtc_real_get_rx2_join_dr
-ARM GAS  /tmp/ccy27LkF.s 			page 19
+ARM GAS  /tmp/ccIDgzHI.s 			page 19
 
 
  932 0098 2300     		movs	r3, r4
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  990 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
  991 0002 124E     		ldr	r6, .L72
  992 0004 0400     		movs	r4, r0
-ARM GAS  /tmp/ccy27LkF.s 			page 20
+ARM GAS  /tmp/ccIDgzHI.s 			page 20
 
 
  993 0006 875D     		ldrb	r7, [r0, r6]
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1050              		.section	.text.lr1mac_core_devaddr_get,"ax",%progbits
  1051              		.align	1
  1052              		.global	lr1mac_core_devaddr_get
-ARM GAS  /tmp/ccy27LkF.s 			page 21
+ARM GAS  /tmp/ccIDgzHI.s 			page 21
 
 
  1053              		.syntax unified
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1114 0006 266A     		ldr	r6, [r4, #32]
  1115 0008 C558     		ldr	r5, [r0, r3]
  1116 000a 836B     		ldr	r3, [r0, #56]
-ARM GAS  /tmp/ccy27LkF.s 			page 22
+ARM GAS  /tmp/ccIDgzHI.s 			page 22
 
 
  1117 000c 8EB0     		sub	sp, sp, #56
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1173 0004 10B5     		push	{r4, lr}
  1174 0006 C250     		str	r2, [r0, r3]
  1175 0008 4A68     		ldr	r2, [r1, #4]
-ARM GAS  /tmp/ccy27LkF.s 			page 23
+ARM GAS  /tmp/ccIDgzHI.s 			page 23
 
 
  1176 000a 0433     		adds	r3, r3, #4
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1236              		@ args = 0, pretend = 0, frame = 0
  1237              		@ frame_needed = 0, uses_anonymous_args = 0
  1238              		@ link register save eliminated.
-ARM GAS  /tmp/ccy27LkF.s 			page 24
+ARM GAS  /tmp/ccIDgzHI.s 			page 24
 
 
  1239 0000 9623     		movs	r3, #150
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1296              		.align	1
  1297              		.global	lr1mac_core_get_activation_mode
  1298              		.syntax unified
-ARM GAS  /tmp/ccy27LkF.s 			page 25
+ARM GAS  /tmp/ccIDgzHI.s 			page 25
 
 
  1299              		.code	16
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1360              		@ sp needed
  1361 0004 7047     		bx	lr
  1363              		.section	.text.lr1mac_core_devnonce_get,"ax",%progbits
-ARM GAS  /tmp/ccy27LkF.s 			page 26
+ARM GAS  /tmp/ccIDgzHI.s 			page 26
 
 
  1364              		.align	1
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1424              		.code	16
  1425              		.thumb_func
  1427              	lr1mac_core_context_load:
-ARM GAS  /tmp/ccy27LkF.s 			page 27
+ARM GAS  /tmp/ccIDgzHI.s 			page 27
 
 
  1428              		@ args = 0, pretend = 0, frame = 0
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1473      41524E3A 
  1473      20466169 
  1473      6C20746F 
-ARM GAS  /tmp/ccy27LkF.s 			page 28
+ARM GAS  /tmp/ccIDgzHI.s 			page 28
 
 
  1474              	.LC63:
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1503 0008 20CB     		ldmia	r3!, {r5}
  1504 000a 1700     		movs	r7, r2
  1505 000c 1B78     		ldrb	r3, [r3]
-ARM GAS  /tmp/ccy27LkF.s 			page 29
+ARM GAS  /tmp/ccIDgzHI.s 			page 29
 
 
  1506 000e 784A     		ldr	r2, .L136
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1560              	.L117:
  1561 007e 6248     		ldr	r0, .L136+24
  1562 0080 FFF7FEFF 		bl	smtc_modem_hal_print_trace
-ARM GAS  /tmp/ccy27LkF.s 			page 30
+ARM GAS  /tmp/ccIDgzHI.s 			page 30
 
 
  1563 0084 6148     		ldr	r0, .L136+28
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1617 00f8 494A     		ldr	r2, .L136+48
  1618 00fa E75D     		ldrb	r7, [r4, r7]
  1619 00fc 4549     		ldr	r1, .L136+36
-ARM GAS  /tmp/ccy27LkF.s 			page 31
+ARM GAS  /tmp/ccIDgzHI.s 			page 31
 
 
  1620 00fe 9B00     		lsls	r3, r3, #2
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1674 0178 0120     		movs	r0, #1
  1675 017a 08A9     		add	r1, sp, #32
  1676 017c FFF7FEFF 		bl	smtc_modem_hal_context_restore
-ARM GAS  /tmp/ccy27LkF.s 			page 32
+ARM GAS  /tmp/ccIDgzHI.s 			page 32
 
 
  1677 0180 2C21     		movs	r1, #44
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1731              	.L136:
  1732 01f0 54050000 		.word	1364
  1733 01f4 12050000 		.word	1298
-ARM GAS  /tmp/ccy27LkF.s 			page 33
+ARM GAS  /tmp/ccIDgzHI.s 			page 33
 
 
  1734 01f8 11030000 		.word	785
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1792 0000 406E     		ldr	r0, [r0, #100]
  1793              		@ sp needed
  1794 0002 7047     		bx	lr
-ARM GAS  /tmp/ccy27LkF.s 			page 34
+ARM GAS  /tmp/ccIDgzHI.s 			page 34
 
 
  1796              		.section	.text.lr1mac_core_next_join_time_second_get,"ax",%progbits
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1853 0034 30BD     		pop	{r4, r5, pc}
  1854              	.L146:
  1855 0036 6946     		mov	r1, sp
-ARM GAS  /tmp/ccy27LkF.s 			page 35
+ARM GAS  /tmp/ccIDgzHI.s 			page 35
 
 
  1856 0038 1023     		movs	r3, #16
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1896 000e 0192     		str	r2, [sp, #4]
  1897 0010 0293     		str	r3, [sp, #8]
  1898 0012 1300     		movs	r3, r2
-ARM GAS  /tmp/ccy27LkF.s 			page 36
+ARM GAS  /tmp/ccIDgzHI.s 			page 36
 
 
  1899 0014 5A1E     		subs	r2, r3, #1
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  1953 0078 E06B     		ldr	r0, [r4, #60]
  1954 007a FFF7FEFF 		bl	smtc_duty_cycle_update
  1955 007e 2000     		movs	r0, r4
-ARM GAS  /tmp/ccy27LkF.s 			page 37
+ARM GAS  /tmp/ccIDgzHI.s 			page 37
 
 
  1956 0080 FFF7FEFF 		bl	smtc_real_get_next_channel
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2010 00f4 064A     		ldr	r2, .L172+20
  2011 00f6 A354     		strb	r3, [r4, r2]
  2012 00f8 A5E7     		b	.L159
-ARM GAS  /tmp/ccy27LkF.s 			page 38
+ARM GAS  /tmp/ccIDgzHI.s 			page 38
 
 
  2013              	.L173:
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2069 0042 06D0     		beq	.L175
  2070 0044 2900     		movs	r1, r5
  2071 0046 EC31     		adds	r1, r1, #236
-ARM GAS  /tmp/ccy27LkF.s 			page 39
+ARM GAS  /tmp/ccIDgzHI.s 			page 39
 
 
  2072 0048 2200     		movs	r2, r4
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2126 00aa 0122     		movs	r2, #1
  2127 00ac 0720     		movs	r0, #7
  2128 00ae EA54     		strb	r2, [r5, r3]
-ARM GAS  /tmp/ccy27LkF.s 			page 40
+ARM GAS  /tmp/ccIDgzHI.s 			page 40
 
 
  2129 00b0 07A9     		add	r1, sp, #28
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2185 0028 2370     		strb	r3, [r4]
  2186              	.L199:
  2187 002a 04B0     		add	sp, sp, #16
-ARM GAS  /tmp/ccy27LkF.s 			page 41
+ARM GAS  /tmp/ccIDgzHI.s 			page 41
 
 
  2188              		@ sp needed
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2250              		@ frame_needed = 0, uses_anonymous_args = 0
  2251 0000 70B5     		push	{r4, r5, r6, lr}
  2252 0002 0500     		movs	r5, r0
-ARM GAS  /tmp/ccy27LkF.s 			page 42
+ARM GAS  /tmp/ccIDgzHI.s 			page 42
 
 
  2253 0004 0800     		movs	r0, r1
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2311 0002 C05A     		ldrh	r0, [r0, r3]
  2312 0004 7047     		bx	lr
  2313              	.L211:
-ARM GAS  /tmp/ccy27LkF.s 			page 43
+ARM GAS  /tmp/ccIDgzHI.s 			page 43
 
 
  2314 0006 C046     		.align	2
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2375              		.code	16
  2376              		.thumb_func
  2378              	lr1mac_core_get_current_no_rx_packet_cnt:
-ARM GAS  /tmp/ccy27LkF.s 			page 44
+ARM GAS  /tmp/ccIDgzHI.s 			page 44
 
 
  2379              		@ args = 0, pretend = 0, frame = 0
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2438              		.section	.text.lr1mac_core_certification_get,"ax",%progbits
  2439              		.align	1
  2440              		.global	lr1mac_core_certification_get
-ARM GAS  /tmp/ccy27LkF.s 			page 45
+ARM GAS  /tmp/ccIDgzHI.s 			page 45
 
 
  2441              		.syntax unified
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2500 0018 6158     		ldr	r1, [r4, r1]
  2501 001a 5218     		adds	r2, r2, r1
  2502 001c 9B1A     		subs	r3, r3, r2
-ARM GAS  /tmp/ccy27LkF.s 			page 46
+ARM GAS  /tmp/ccIDgzHI.s 			page 46
 
 
  2503 001e D80F     		lsrs	r0, r3, #31
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2560              		.global	lr1mac_core_get_timestamp_last_device_time_ans_s
  2561              		.syntax unified
  2562              		.code	16
-ARM GAS  /tmp/ccy27LkF.s 			page 47
+ARM GAS  /tmp/ccIDgzHI.s 			page 47
 
 
  2563              		.thumb_func
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2621              		.global	lr1mac_core_set_device_time_callback
  2622              		.syntax unified
  2623              		.code	16
-ARM GAS  /tmp/ccy27LkF.s 			page 48
+ARM GAS  /tmp/ccIDgzHI.s 			page 48
 
 
  2624              		.thumb_func
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2683              		@ args = 0, pretend = 0, frame = 0
  2684              		@ frame_needed = 0, uses_anonymous_args = 0
  2685              		@ link register save eliminated.
-ARM GAS  /tmp/ccy27LkF.s 			page 49
+ARM GAS  /tmp/ccIDgzHI.s 			page 49
 
 
  2686 0000 A823     		movs	r3, #168
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2744 0008 51050000 		.word	1361
  2746              		.section	.text.lr1mac_core_get_class_b_status,"ax",%progbits
  2747              		.align	1
-ARM GAS  /tmp/ccy27LkF.s 			page 50
+ARM GAS  /tmp/ccIDgzHI.s 			page 50
 
 
  2748              		.global	lr1mac_core_get_class_b_status
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2806              		.syntax unified
  2807              		.code	16
  2808              		.thumb_func
-ARM GAS  /tmp/ccy27LkF.s 			page 51
+ARM GAS  /tmp/ccIDgzHI.s 			page 51
 
 
  2810              	lr1_mac_core_get_device_time_req_status:
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2868              	.L289:
  2869 0008 53050000 		.word	1363
  2871              		.section	.text.lr1mac_core_set_status_push_network_downlink_to_user,"ax",%progbits
-ARM GAS  /tmp/ccy27LkF.s 			page 52
+ARM GAS  /tmp/ccIDgzHI.s 			page 52
 
 
  2872              		.align	1
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2930              		.section	.text.lr1mac_core_get_adr_ack_limit_delay,"ax",%progbits
  2931              		.align	1
  2932              		.global	lr1mac_core_get_adr_ack_limit_delay
-ARM GAS  /tmp/ccy27LkF.s 			page 53
+ARM GAS  /tmp/ccIDgzHI.s 			page 53
 
 
  2933              		.syntax unified
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  2990 0030 D9040000 		.word	1241
  2991 0034 BC040000 		.word	1212
  2993              		.section	.text.lr1mac_core_join_status_clear,"ax",%progbits
-ARM GAS  /tmp/ccy27LkF.s 			page 54
+ARM GAS  /tmp/ccIDgzHI.s 			page 54
 
 
  2994              		.align	1
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  3046 001c 42572033 		.ascii	"BW 39063\000"
  3046      39303633 
  3046      00
-ARM GAS  /tmp/ccy27LkF.s 			page 55
+ARM GAS  /tmp/ccIDgzHI.s 			page 55
 
 
  3047              	.LC92:
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  3084 0086 42573031 		.ascii	"BW010\000"
  3084      3000
  3085              	.LC103:
-ARM GAS  /tmp/ccy27LkF.s 			page 56
+ARM GAS  /tmp/ccIDgzHI.s 			page 56
 
 
  3086 008c 42573031 		.ascii	"BW015\000"
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  3130 00d5 45553836 		.ascii	"EU868\000"
  3130      3800
  3131              		.section	.rodata.smtc_real_region_list_str,"a"
-ARM GAS  /tmp/ccy27LkF.s 			page 57
+ARM GAS  /tmp/ccIDgzHI.s 			page 57
 
 
  3132              		.align	2
@@ -3366,207 +3366,207 @@ ARM GAS  /tmp/ccy27LkF.s 			page 1
  3136 0000 00000000 		.space	4
  3137 0004 D5000000 		.word	.LC115
  3138              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccy27LkF.s 			page 58
+ARM GAS  /tmp/ccIDgzHI.s 			page 58
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lr1mac_core.c
-     /tmp/ccy27LkF.s:14     .text.save_devnonce_rst:00000000 $t
-     /tmp/ccy27LkF.s:19     .text.save_devnonce_rst:00000000 save_devnonce_rst
-     /tmp/ccy27LkF.s:67     .text.save_devnonce_rst:00000060 $d
-     /tmp/ccy27LkF.s:79     .text.lr1mac_mac_update:00000000 $t
-     /tmp/ccy27LkF.s:84     .text.lr1mac_mac_update:00000000 lr1mac_mac_update
-     /tmp/ccy27LkF.s:215    .text.lr1mac_mac_update:000000fc $d
-     /tmp/ccy27LkF.s:275    .text.lr1mac_core_process:00000000 $t
-     /tmp/ccy27LkF.s:281    .text.lr1mac_core_process:00000000 lr1mac_core_process
-     /tmp/ccy27LkF.s:334    .text.lr1mac_core_process:00000068 $d
-     /tmp/ccy27LkF.s:339    .text.lr1mac_core_process:00000072 $t
-     /tmp/ccy27LkF.s:697    .text.lr1mac_core_process:00000364 $d
-     /tmp/ccy27LkF.s:3024   .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccy27LkF.s:3113   .rodata.smtc_name_bw:00000000 smtc_name_bw
-     /tmp/ccy27LkF.s:3039   .rodata.smtc_name_lr_fhss_cr:00000000 smtc_name_lr_fhss_cr
-     /tmp/ccy27LkF.s:3069   .rodata.smtc_name_lr_fhss_bw:00000000 smtc_name_lr_fhss_bw
-     /tmp/ccy27LkF.s:728    .text.lr1mac_core_process:000003dc $t
-     /tmp/ccy27LkF.s:826    .text.lr1mac_core_process:000004a8 $d
-     /tmp/ccy27LkF.s:851    .text.lr1mac_core_join:00000000 $t
-     /tmp/ccy27LkF.s:857    .text.lr1mac_core_join:00000000 lr1mac_core_join
-     /tmp/ccy27LkF.s:949    .text.lr1mac_core_join:000000b4 $d
-     /tmp/ccy27LkF.s:961    .text.lr1_mac_joined_status_get:00000000 $t
-     /tmp/ccy27LkF.s:967    .text.lr1_mac_joined_status_get:00000000 lr1_mac_joined_status_get
-     /tmp/ccy27LkF.s:978    .text.lr1_mac_joined_status_get:00000008 $d
-     /tmp/ccy27LkF.s:981    .text.lr1mac_core_dr_strategy_set:00000000 $t
-     /tmp/ccy27LkF.s:987    .text.lr1mac_core_dr_strategy_set:00000000 lr1mac_core_dr_strategy_set
-     /tmp/ccy27LkF.s:1028   .text.lr1mac_core_dr_strategy_set:0000004c $d
-     /tmp/ccy27LkF.s:1031   .text.lr1mac_core_dr_strategy_get:00000000 $t
-     /tmp/ccy27LkF.s:1037   .text.lr1mac_core_dr_strategy_get:00000000 lr1mac_core_dr_strategy_get
-     /tmp/ccy27LkF.s:1048   .text.lr1mac_core_dr_strategy_get:00000008 $d
-     /tmp/ccy27LkF.s:1051   .text.lr1mac_core_devaddr_get:00000000 $t
-     /tmp/ccy27LkF.s:1057   .text.lr1mac_core_devaddr_get:00000000 lr1mac_core_devaddr_get
-     /tmp/ccy27LkF.s:1066   .text.lr1mac_core_next_power_get:00000000 $t
-     /tmp/ccy27LkF.s:1072   .text.lr1mac_core_next_power_get:00000000 lr1mac_core_next_power_get
-     /tmp/ccy27LkF.s:1082   .text.lr1mac_core_state_get:00000000 $t
-     /tmp/ccy27LkF.s:1088   .text.lr1mac_core_state_get:00000000 lr1mac_core_state_get
-     /tmp/ccy27LkF.s:1099   .text.lr1mac_core_state_get:00000008 $d
-     /tmp/ccy27LkF.s:1102   .text.lr1mac_core_context_save:00000000 $t
-     /tmp/ccy27LkF.s:1108   .text.lr1mac_core_context_save:00000000 lr1mac_core_context_save
-     /tmp/ccy27LkF.s:1158   .text.lr1mac_core_context_save:0000005c $d
-     /tmp/ccy27LkF.s:1162   .text.lr1mac_core_dr_custom_set:00000000 $t
-     /tmp/ccy27LkF.s:1168   .text.lr1mac_core_dr_custom_set:00000000 lr1mac_core_dr_custom_set
-     /tmp/ccy27LkF.s:1184   .text.lr1mac_core_dr_custom_set:00000014 $d
-     /tmp/ccy27LkF.s:1187   .text.lr1mac_core_next_max_payload_length_get:00000000 $t
-     /tmp/ccy27LkF.s:1193   .text.lr1mac_core_next_max_payload_length_get:00000000 lr1mac_core_next_max_payload_length_get
-     /tmp/ccy27LkF.s:1213   .text.lr1mac_core_next_dr_get:00000000 $t
-     /tmp/ccy27LkF.s:1219   .text.lr1mac_core_next_dr_get:00000000 lr1mac_core_next_dr_get
-     /tmp/ccy27LkF.s:1229   .text.lr1mac_core_next_frequency_get:00000000 $t
-     /tmp/ccy27LkF.s:1235   .text.lr1mac_core_next_frequency_get:00000000 lr1mac_core_next_frequency_get
-     /tmp/ccy27LkF.s:1246   .text.lr1mac_core_factory_reset:00000000 $t
-     /tmp/ccy27LkF.s:1252   .text.lr1mac_core_factory_reset:00000000 lr1mac_core_factory_reset
-     /tmp/ccy27LkF.s:1292   .text.lr1mac_core_factory_reset:0000004c $d
-     /tmp/ccy27LkF.s:1296   .text.lr1mac_core_get_activation_mode:00000000 $t
-     /tmp/ccy27LkF.s:1302   .text.lr1mac_core_get_activation_mode:00000000 lr1mac_core_get_activation_mode
-     /tmp/ccy27LkF.s:1312   .text.lr1mac_core_set_activation_mode:00000000 $t
-     /tmp/ccy27LkF.s:1318   .text.lr1mac_core_set_activation_mode:00000000 lr1mac_core_set_activation_mode
-ARM GAS  /tmp/ccy27LkF.s 			page 59
+     /tmp/ccIDgzHI.s:14     .text.save_devnonce_rst:00000000 $t
+     /tmp/ccIDgzHI.s:19     .text.save_devnonce_rst:00000000 save_devnonce_rst
+     /tmp/ccIDgzHI.s:67     .text.save_devnonce_rst:00000060 $d
+     /tmp/ccIDgzHI.s:79     .text.lr1mac_mac_update:00000000 $t
+     /tmp/ccIDgzHI.s:84     .text.lr1mac_mac_update:00000000 lr1mac_mac_update
+     /tmp/ccIDgzHI.s:215    .text.lr1mac_mac_update:000000fc $d
+     /tmp/ccIDgzHI.s:275    .text.lr1mac_core_process:00000000 $t
+     /tmp/ccIDgzHI.s:281    .text.lr1mac_core_process:00000000 lr1mac_core_process
+     /tmp/ccIDgzHI.s:334    .text.lr1mac_core_process:00000068 $d
+     /tmp/ccIDgzHI.s:339    .text.lr1mac_core_process:00000072 $t
+     /tmp/ccIDgzHI.s:697    .text.lr1mac_core_process:00000364 $d
+     /tmp/ccIDgzHI.s:3024   .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccIDgzHI.s:3113   .rodata.smtc_name_bw:00000000 smtc_name_bw
+     /tmp/ccIDgzHI.s:3039   .rodata.smtc_name_lr_fhss_cr:00000000 smtc_name_lr_fhss_cr
+     /tmp/ccIDgzHI.s:3069   .rodata.smtc_name_lr_fhss_bw:00000000 smtc_name_lr_fhss_bw
+     /tmp/ccIDgzHI.s:728    .text.lr1mac_core_process:000003dc $t
+     /tmp/ccIDgzHI.s:826    .text.lr1mac_core_process:000004a8 $d
+     /tmp/ccIDgzHI.s:851    .text.lr1mac_core_join:00000000 $t
+     /tmp/ccIDgzHI.s:857    .text.lr1mac_core_join:00000000 lr1mac_core_join
+     /tmp/ccIDgzHI.s:949    .text.lr1mac_core_join:000000b4 $d
+     /tmp/ccIDgzHI.s:961    .text.lr1_mac_joined_status_get:00000000 $t
+     /tmp/ccIDgzHI.s:967    .text.lr1_mac_joined_status_get:00000000 lr1_mac_joined_status_get
+     /tmp/ccIDgzHI.s:978    .text.lr1_mac_joined_status_get:00000008 $d
+     /tmp/ccIDgzHI.s:981    .text.lr1mac_core_dr_strategy_set:00000000 $t
+     /tmp/ccIDgzHI.s:987    .text.lr1mac_core_dr_strategy_set:00000000 lr1mac_core_dr_strategy_set
+     /tmp/ccIDgzHI.s:1028   .text.lr1mac_core_dr_strategy_set:0000004c $d
+     /tmp/ccIDgzHI.s:1031   .text.lr1mac_core_dr_strategy_get:00000000 $t
+     /tmp/ccIDgzHI.s:1037   .text.lr1mac_core_dr_strategy_get:00000000 lr1mac_core_dr_strategy_get
+     /tmp/ccIDgzHI.s:1048   .text.lr1mac_core_dr_strategy_get:00000008 $d
+     /tmp/ccIDgzHI.s:1051   .text.lr1mac_core_devaddr_get:00000000 $t
+     /tmp/ccIDgzHI.s:1057   .text.lr1mac_core_devaddr_get:00000000 lr1mac_core_devaddr_get
+     /tmp/ccIDgzHI.s:1066   .text.lr1mac_core_next_power_get:00000000 $t
+     /tmp/ccIDgzHI.s:1072   .text.lr1mac_core_next_power_get:00000000 lr1mac_core_next_power_get
+     /tmp/ccIDgzHI.s:1082   .text.lr1mac_core_state_get:00000000 $t
+     /tmp/ccIDgzHI.s:1088   .text.lr1mac_core_state_get:00000000 lr1mac_core_state_get
+     /tmp/ccIDgzHI.s:1099   .text.lr1mac_core_state_get:00000008 $d
+     /tmp/ccIDgzHI.s:1102   .text.lr1mac_core_context_save:00000000 $t
+     /tmp/ccIDgzHI.s:1108   .text.lr1mac_core_context_save:00000000 lr1mac_core_context_save
+     /tmp/ccIDgzHI.s:1158   .text.lr1mac_core_context_save:0000005c $d
+     /tmp/ccIDgzHI.s:1162   .text.lr1mac_core_dr_custom_set:00000000 $t
+     /tmp/ccIDgzHI.s:1168   .text.lr1mac_core_dr_custom_set:00000000 lr1mac_core_dr_custom_set
+     /tmp/ccIDgzHI.s:1184   .text.lr1mac_core_dr_custom_set:00000014 $d
+     /tmp/ccIDgzHI.s:1187   .text.lr1mac_core_next_max_payload_length_get:00000000 $t
+     /tmp/ccIDgzHI.s:1193   .text.lr1mac_core_next_max_payload_length_get:00000000 lr1mac_core_next_max_payload_length_get
+     /tmp/ccIDgzHI.s:1213   .text.lr1mac_core_next_dr_get:00000000 $t
+     /tmp/ccIDgzHI.s:1219   .text.lr1mac_core_next_dr_get:00000000 lr1mac_core_next_dr_get
+     /tmp/ccIDgzHI.s:1229   .text.lr1mac_core_next_frequency_get:00000000 $t
+     /tmp/ccIDgzHI.s:1235   .text.lr1mac_core_next_frequency_get:00000000 lr1mac_core_next_frequency_get
+     /tmp/ccIDgzHI.s:1246   .text.lr1mac_core_factory_reset:00000000 $t
+     /tmp/ccIDgzHI.s:1252   .text.lr1mac_core_factory_reset:00000000 lr1mac_core_factory_reset
+     /tmp/ccIDgzHI.s:1292   .text.lr1mac_core_factory_reset:0000004c $d
+     /tmp/ccIDgzHI.s:1296   .text.lr1mac_core_get_activation_mode:00000000 $t
+     /tmp/ccIDgzHI.s:1302   .text.lr1mac_core_get_activation_mode:00000000 lr1mac_core_get_activation_mode
+     /tmp/ccIDgzHI.s:1312   .text.lr1mac_core_set_activation_mode:00000000 $t
+     /tmp/ccIDgzHI.s:1318   .text.lr1mac_core_set_activation_mode:00000000 lr1mac_core_set_activation_mode
+ARM GAS  /tmp/ccIDgzHI.s 			page 59
 
 
-     /tmp/ccy27LkF.s:1328   .text.lr1mac_core_rp_get:00000000 $t
-     /tmp/ccy27LkF.s:1334   .text.lr1mac_core_rp_get:00000000 lr1mac_core_rp_get
-     /tmp/ccy27LkF.s:1345   .text.lr1mac_core_rp_get:00000008 $d
-     /tmp/ccy27LkF.s:1348   .text.lr1mac_core_nb_reset_get:00000000 $t
-     /tmp/ccy27LkF.s:1354   .text.lr1mac_core_nb_reset_get:00000000 lr1mac_core_nb_reset_get
-     /tmp/ccy27LkF.s:1364   .text.lr1mac_core_devnonce_get:00000000 $t
-     /tmp/ccy27LkF.s:1370   .text.lr1mac_core_devnonce_get:00000000 lr1mac_core_devnonce_get
-     /tmp/ccy27LkF.s:1381   .text.lr1mac_core_last_snr_get:00000000 $t
-     /tmp/ccy27LkF.s:1387   .text.lr1mac_core_last_snr_get:00000000 lr1mac_core_last_snr_get
-     /tmp/ccy27LkF.s:1398   .text.lr1mac_core_last_snr_get:00000008 $d
-     /tmp/ccy27LkF.s:1401   .text.lr1mac_core_last_rssi_get:00000000 $t
-     /tmp/ccy27LkF.s:1407   .text.lr1mac_core_last_rssi_get:00000000 lr1mac_core_last_rssi_get
-     /tmp/ccy27LkF.s:1418   .text.lr1mac_core_last_rssi_get:00000008 $d
-     /tmp/ccy27LkF.s:1421   .text.lr1mac_core_context_load:00000000 $t
-     /tmp/ccy27LkF.s:1427   .text.lr1mac_core_context_load:00000000 lr1mac_core_context_load
-     /tmp/ccy27LkF.s:1464   .text.lr1mac_core_context_load:0000003c $d
-     /tmp/ccy27LkF.s:1490   .text.lr1mac_core_init:00000000 $t
-     /tmp/ccy27LkF.s:1496   .text.lr1mac_core_init:00000000 lr1mac_core_init
-     /tmp/ccy27LkF.s:1732   .text.lr1mac_core_init:000001f0 $d
-     /tmp/ccy27LkF.s:3135   .rodata.smtc_real_region_list_str:00000000 smtc_real_region_list_str
-     /tmp/ccy27LkF.s:1762   .text.lr1mac_core_rx_window_get:00000000 $t
-     /tmp/ccy27LkF.s:1768   .text.lr1mac_core_rx_window_get:00000000 lr1mac_core_rx_window_get
-     /tmp/ccy27LkF.s:1779   .text.lr1mac_core_rx_window_get:00000008 $d
-     /tmp/ccy27LkF.s:1782   .text.lr1mac_core_fcnt_up_get:00000000 $t
-     /tmp/ccy27LkF.s:1788   .text.lr1mac_core_fcnt_up_get:00000000 lr1mac_core_fcnt_up_get
-     /tmp/ccy27LkF.s:1797   .text.lr1mac_core_next_join_time_second_get:00000000 $t
-     /tmp/ccy27LkF.s:1803   .text.lr1mac_core_next_join_time_second_get:00000000 lr1mac_core_next_join_time_second_get
-     /tmp/ccy27LkF.s:1814   .text.lr1mac_core_next_join_time_second_get:00000008 $d
-     /tmp/ccy27LkF.s:1817   .text.lr1mac_core_next_free_duty_cycle_ms_get:00000000 $t
-     /tmp/ccy27LkF.s:1823   .text.lr1mac_core_next_free_duty_cycle_ms_get:00000000 lr1mac_core_next_free_duty_cycle_ms_get
-     /tmp/ccy27LkF.s:1880   .text.lr1mac_core_payload_send:00000000 $t
-     /tmp/ccy27LkF.s:1886   .text.lr1mac_core_payload_send:00000000 lr1mac_core_payload_send
-     /tmp/ccy27LkF.s:2016   .text.lr1mac_core_payload_send:000000fc $d
-     /tmp/ccy27LkF.s:2029   .text.lr1mac_core_send_stack_cid_req:00000000 $t
-     /tmp/ccy27LkF.s:2035   .text.lr1mac_core_send_stack_cid_req:00000000 lr1mac_core_send_stack_cid_req
-     /tmp/ccy27LkF.s:2151   .text.lr1mac_core_send_stack_cid_req:000000d4 $d
-     /tmp/ccy27LkF.s:2157   .text.lr1mac_core_payload_send_at_time:00000000 $t
-     /tmp/ccy27LkF.s:2163   .text.lr1mac_core_payload_send_at_time:00000000 lr1mac_core_payload_send_at_time
-     /tmp/ccy27LkF.s:2192   .text.lr1mac_core_rx_ack_bit_get:00000000 $t
-     /tmp/ccy27LkF.s:2198   .text.lr1mac_core_rx_ack_bit_get:00000000 lr1mac_core_rx_ack_bit_get
-     /tmp/ccy27LkF.s:2209   .text.lr1mac_core_rx_fpending_bit_get:00000000 $t
-     /tmp/ccy27LkF.s:2215   .text.lr1mac_core_rx_fpending_bit_get:00000000 lr1mac_core_rx_fpending_bit_get
-     /tmp/ccy27LkF.s:2226   .text.lr1mac_core_get_region:00000000 $t
-     /tmp/ccy27LkF.s:2232   .text.lr1mac_core_get_region:00000000 lr1mac_core_get_region
-     /tmp/ccy27LkF.s:2242   .text.lr1mac_core_set_region:00000000 $t
-     /tmp/ccy27LkF.s:2248   .text.lr1mac_core_set_region:00000000 lr1mac_core_set_region
-     /tmp/ccy27LkF.s:2279   .text.lr1mac_core_set_no_rx_packet_threshold:00000000 $t
-     /tmp/ccy27LkF.s:2285   .text.lr1mac_core_set_no_rx_packet_threshold:00000000 lr1mac_core_set_no_rx_packet_threshold
-     /tmp/ccy27LkF.s:2296   .text.lr1mac_core_set_no_rx_packet_threshold:00000008 $d
-     /tmp/ccy27LkF.s:2299   .text.lr1mac_core_get_no_rx_packet_threshold:00000000 $t
-     /tmp/ccy27LkF.s:2305   .text.lr1mac_core_get_no_rx_packet_threshold:00000000 lr1mac_core_get_no_rx_packet_threshold
-     /tmp/ccy27LkF.s:2316   .text.lr1mac_core_get_no_rx_packet_threshold:00000008 $d
-     /tmp/ccy27LkF.s:2319   .text.lr1mac_core_get_current_adr_ack_cnt:00000000 $t
-     /tmp/ccy27LkF.s:2325   .text.lr1mac_core_get_current_adr_ack_cnt:00000000 lr1mac_core_get_current_adr_ack_cnt
-     /tmp/ccy27LkF.s:2337   .text.lr1mac_core_get_current_no_rx_packet_in_mobile_mode:00000000 $t
-     /tmp/ccy27LkF.s:2343   .text.lr1mac_core_get_current_no_rx_packet_in_mobile_mode:00000000 lr1mac_core_get_current_no_rx_packet_in_mobile_mode
-     /tmp/ccy27LkF.s:2354   .text.lr1mac_core_reset_no_rx_packet_in_mobile_mode_cnt:00000000 $t
-ARM GAS  /tmp/ccy27LkF.s 			page 60
+     /tmp/ccIDgzHI.s:1328   .text.lr1mac_core_rp_get:00000000 $t
+     /tmp/ccIDgzHI.s:1334   .text.lr1mac_core_rp_get:00000000 lr1mac_core_rp_get
+     /tmp/ccIDgzHI.s:1345   .text.lr1mac_core_rp_get:00000008 $d
+     /tmp/ccIDgzHI.s:1348   .text.lr1mac_core_nb_reset_get:00000000 $t
+     /tmp/ccIDgzHI.s:1354   .text.lr1mac_core_nb_reset_get:00000000 lr1mac_core_nb_reset_get
+     /tmp/ccIDgzHI.s:1364   .text.lr1mac_core_devnonce_get:00000000 $t
+     /tmp/ccIDgzHI.s:1370   .text.lr1mac_core_devnonce_get:00000000 lr1mac_core_devnonce_get
+     /tmp/ccIDgzHI.s:1381   .text.lr1mac_core_last_snr_get:00000000 $t
+     /tmp/ccIDgzHI.s:1387   .text.lr1mac_core_last_snr_get:00000000 lr1mac_core_last_snr_get
+     /tmp/ccIDgzHI.s:1398   .text.lr1mac_core_last_snr_get:00000008 $d
+     /tmp/ccIDgzHI.s:1401   .text.lr1mac_core_last_rssi_get:00000000 $t
+     /tmp/ccIDgzHI.s:1407   .text.lr1mac_core_last_rssi_get:00000000 lr1mac_core_last_rssi_get
+     /tmp/ccIDgzHI.s:1418   .text.lr1mac_core_last_rssi_get:00000008 $d
+     /tmp/ccIDgzHI.s:1421   .text.lr1mac_core_context_load:00000000 $t
+     /tmp/ccIDgzHI.s:1427   .text.lr1mac_core_context_load:00000000 lr1mac_core_context_load
+     /tmp/ccIDgzHI.s:1464   .text.lr1mac_core_context_load:0000003c $d
+     /tmp/ccIDgzHI.s:1490   .text.lr1mac_core_init:00000000 $t
+     /tmp/ccIDgzHI.s:1496   .text.lr1mac_core_init:00000000 lr1mac_core_init
+     /tmp/ccIDgzHI.s:1732   .text.lr1mac_core_init:000001f0 $d
+     /tmp/ccIDgzHI.s:3135   .rodata.smtc_real_region_list_str:00000000 smtc_real_region_list_str
+     /tmp/ccIDgzHI.s:1762   .text.lr1mac_core_rx_window_get:00000000 $t
+     /tmp/ccIDgzHI.s:1768   .text.lr1mac_core_rx_window_get:00000000 lr1mac_core_rx_window_get
+     /tmp/ccIDgzHI.s:1779   .text.lr1mac_core_rx_window_get:00000008 $d
+     /tmp/ccIDgzHI.s:1782   .text.lr1mac_core_fcnt_up_get:00000000 $t
+     /tmp/ccIDgzHI.s:1788   .text.lr1mac_core_fcnt_up_get:00000000 lr1mac_core_fcnt_up_get
+     /tmp/ccIDgzHI.s:1797   .text.lr1mac_core_next_join_time_second_get:00000000 $t
+     /tmp/ccIDgzHI.s:1803   .text.lr1mac_core_next_join_time_second_get:00000000 lr1mac_core_next_join_time_second_get
+     /tmp/ccIDgzHI.s:1814   .text.lr1mac_core_next_join_time_second_get:00000008 $d
+     /tmp/ccIDgzHI.s:1817   .text.lr1mac_core_next_free_duty_cycle_ms_get:00000000 $t
+     /tmp/ccIDgzHI.s:1823   .text.lr1mac_core_next_free_duty_cycle_ms_get:00000000 lr1mac_core_next_free_duty_cycle_ms_get
+     /tmp/ccIDgzHI.s:1880   .text.lr1mac_core_payload_send:00000000 $t
+     /tmp/ccIDgzHI.s:1886   .text.lr1mac_core_payload_send:00000000 lr1mac_core_payload_send
+     /tmp/ccIDgzHI.s:2016   .text.lr1mac_core_payload_send:000000fc $d
+     /tmp/ccIDgzHI.s:2029   .text.lr1mac_core_send_stack_cid_req:00000000 $t
+     /tmp/ccIDgzHI.s:2035   .text.lr1mac_core_send_stack_cid_req:00000000 lr1mac_core_send_stack_cid_req
+     /tmp/ccIDgzHI.s:2151   .text.lr1mac_core_send_stack_cid_req:000000d4 $d
+     /tmp/ccIDgzHI.s:2157   .text.lr1mac_core_payload_send_at_time:00000000 $t
+     /tmp/ccIDgzHI.s:2163   .text.lr1mac_core_payload_send_at_time:00000000 lr1mac_core_payload_send_at_time
+     /tmp/ccIDgzHI.s:2192   .text.lr1mac_core_rx_ack_bit_get:00000000 $t
+     /tmp/ccIDgzHI.s:2198   .text.lr1mac_core_rx_ack_bit_get:00000000 lr1mac_core_rx_ack_bit_get
+     /tmp/ccIDgzHI.s:2209   .text.lr1mac_core_rx_fpending_bit_get:00000000 $t
+     /tmp/ccIDgzHI.s:2215   .text.lr1mac_core_rx_fpending_bit_get:00000000 lr1mac_core_rx_fpending_bit_get
+     /tmp/ccIDgzHI.s:2226   .text.lr1mac_core_get_region:00000000 $t
+     /tmp/ccIDgzHI.s:2232   .text.lr1mac_core_get_region:00000000 lr1mac_core_get_region
+     /tmp/ccIDgzHI.s:2242   .text.lr1mac_core_set_region:00000000 $t
+     /tmp/ccIDgzHI.s:2248   .text.lr1mac_core_set_region:00000000 lr1mac_core_set_region
+     /tmp/ccIDgzHI.s:2279   .text.lr1mac_core_set_no_rx_packet_threshold:00000000 $t
+     /tmp/ccIDgzHI.s:2285   .text.lr1mac_core_set_no_rx_packet_threshold:00000000 lr1mac_core_set_no_rx_packet_threshold
+     /tmp/ccIDgzHI.s:2296   .text.lr1mac_core_set_no_rx_packet_threshold:00000008 $d
+     /tmp/ccIDgzHI.s:2299   .text.lr1mac_core_get_no_rx_packet_threshold:00000000 $t
+     /tmp/ccIDgzHI.s:2305   .text.lr1mac_core_get_no_rx_packet_threshold:00000000 lr1mac_core_get_no_rx_packet_threshold
+     /tmp/ccIDgzHI.s:2316   .text.lr1mac_core_get_no_rx_packet_threshold:00000008 $d
+     /tmp/ccIDgzHI.s:2319   .text.lr1mac_core_get_current_adr_ack_cnt:00000000 $t
+     /tmp/ccIDgzHI.s:2325   .text.lr1mac_core_get_current_adr_ack_cnt:00000000 lr1mac_core_get_current_adr_ack_cnt
+     /tmp/ccIDgzHI.s:2337   .text.lr1mac_core_get_current_no_rx_packet_in_mobile_mode:00000000 $t
+     /tmp/ccIDgzHI.s:2343   .text.lr1mac_core_get_current_no_rx_packet_in_mobile_mode:00000000 lr1mac_core_get_current_no_rx_packet_in_mobile_mode
+     /tmp/ccIDgzHI.s:2354   .text.lr1mac_core_reset_no_rx_packet_in_mobile_mode_cnt:00000000 $t
+ARM GAS  /tmp/ccIDgzHI.s 			page 60
 
 
-     /tmp/ccy27LkF.s:2360   .text.lr1mac_core_reset_no_rx_packet_in_mobile_mode_cnt:00000000 lr1mac_core_reset_no_rx_packet_in_mobile_mode_cnt
-     /tmp/ccy27LkF.s:2372   .text.lr1mac_core_get_current_no_rx_packet_cnt:00000000 $t
-     /tmp/ccy27LkF.s:2378   .text.lr1mac_core_get_current_no_rx_packet_cnt:00000000 lr1mac_core_get_current_no_rx_packet_cnt
-     /tmp/ccy27LkF.s:2389   .text.lr1mac_core_get_current_no_rx_packet_cnt:00000008 $d
-     /tmp/ccy27LkF.s:2392   .text.lr1mac_core_available_link_adr_get:00000000 $t
-     /tmp/ccy27LkF.s:2398   .text.lr1mac_core_available_link_adr_get:00000000 lr1mac_core_available_link_adr_get
-     /tmp/ccy27LkF.s:2415   .text.lr1mac_core_available_link_adr_get:00000010 $d
-     /tmp/ccy27LkF.s:2418   .text.lr1mac_core_certification_set:00000000 $t
-     /tmp/ccy27LkF.s:2424   .text.lr1mac_core_certification_set:00000000 lr1mac_core_certification_set
-     /tmp/ccy27LkF.s:2436   .text.lr1mac_core_certification_set:0000000c $d
-     /tmp/ccy27LkF.s:2439   .text.lr1mac_core_certification_get:00000000 $t
-     /tmp/ccy27LkF.s:2445   .text.lr1mac_core_certification_get:00000000 lr1mac_core_certification_get
-     /tmp/ccy27LkF.s:2456   .text.lr1mac_core_certification_get:00000008 $d
-     /tmp/ccy27LkF.s:2459   .text.lr1mac_core_get_lorawan_version:00000000 $t
-     /tmp/ccy27LkF.s:2465   .text.lr1mac_core_get_lorawan_version:00000000 lr1mac_core_get_lorawan_version
-     /tmp/ccy27LkF.s:2477   .text.lr1mac_core_get_lorawan_version:00000008 $d
-     /tmp/ccy27LkF.s:2480   .text.lr1mac_core_is_time_valid:00000000 $t
-     /tmp/ccy27LkF.s:2486   .text.lr1mac_core_is_time_valid:00000000 lr1mac_core_is_time_valid
-     /tmp/ccy27LkF.s:2510   .text.lr1mac_core_is_time_valid:00000024 $d
-     /tmp/ccy27LkF.s:2515   .text.lr1mac_core_convert_rtc_to_gps_epoch_time:00000000 $t
-     /tmp/ccy27LkF.s:2521   .text.lr1mac_core_convert_rtc_to_gps_epoch_time:00000000 lr1mac_core_convert_rtc_to_gps_epoch_time
-     /tmp/ccy27LkF.s:2555   .text.lr1mac_core_convert_rtc_to_gps_epoch_time:0000003c $d
-     /tmp/ccy27LkF.s:2559   .text.lr1mac_core_get_timestamp_last_device_time_ans_s:00000000 $t
-     /tmp/ccy27LkF.s:2565   .text.lr1mac_core_get_timestamp_last_device_time_ans_s:00000000 lr1mac_core_get_timestamp_last_device_time_ans_s
-     /tmp/ccy27LkF.s:2576   .text.lr1mac_core_get_timestamp_last_device_time_ans_s:00000008 $d
-     /tmp/ccy27LkF.s:2579   .text.lr1mac_core_get_time_left_connection_lost:00000000 $t
-     /tmp/ccy27LkF.s:2585   .text.lr1mac_core_get_time_left_connection_lost:00000000 lr1mac_core_get_time_left_connection_lost
-     /tmp/ccy27LkF.s:2617   .text.lr1mac_core_get_time_left_connection_lost:00000030 $d
-     /tmp/ccy27LkF.s:2620   .text.lr1mac_core_set_device_time_callback:00000000 $t
-     /tmp/ccy27LkF.s:2626   .text.lr1mac_core_set_device_time_callback:00000000 lr1mac_core_set_device_time_callback
-     /tmp/ccy27LkF.s:2643   .text.lr1mac_core_set_device_time_callback:00000010 $d
-     /tmp/ccy27LkF.s:2646   .text.lr1_mac_core_set_device_time_invalid_delay_s:00000000 $t
-     /tmp/ccy27LkF.s:2652   .text.lr1_mac_core_set_device_time_invalid_delay_s:00000000 lr1_mac_core_set_device_time_invalid_delay_s
-     /tmp/ccy27LkF.s:2673   .text.lr1_mac_core_set_device_time_invalid_delay_s:00000018 $d
-     /tmp/ccy27LkF.s:2676   .text.lr1_mac_core_get_device_time_invalid_delay_s:00000000 $t
-     /tmp/ccy27LkF.s:2682   .text.lr1_mac_core_get_device_time_invalid_delay_s:00000000 lr1_mac_core_get_device_time_invalid_delay_s
-     /tmp/ccy27LkF.s:2693   .text.lr1mac_core_set_ping_slot_periodicity:00000000 $t
-     /tmp/ccy27LkF.s:2699   .text.lr1mac_core_set_ping_slot_periodicity:00000000 lr1mac_core_set_ping_slot_periodicity
-     /tmp/ccy27LkF.s:2723   .text.lr1mac_core_set_ping_slot_periodicity:0000001c $d
-     /tmp/ccy27LkF.s:2727   .text.lr1mac_core_get_ping_slot_periodicity:00000000 $t
-     /tmp/ccy27LkF.s:2733   .text.lr1mac_core_get_ping_slot_periodicity:00000000 lr1mac_core_get_ping_slot_periodicity
-     /tmp/ccy27LkF.s:2744   .text.lr1mac_core_get_ping_slot_periodicity:00000008 $d
-     /tmp/ccy27LkF.s:2747   .text.lr1mac_core_get_class_b_status:00000000 $t
-     /tmp/ccy27LkF.s:2753   .text.lr1mac_core_get_class_b_status:00000000 lr1mac_core_get_class_b_status
-     /tmp/ccy27LkF.s:2766   .text.lr1_mac_core_get_link_check_ans:00000000 $t
-     /tmp/ccy27LkF.s:2772   .text.lr1_mac_core_get_link_check_ans:00000000 lr1_mac_core_get_link_check_ans
-     /tmp/ccy27LkF.s:2800   .text.lr1_mac_core_get_link_check_ans:00000024 $d
-     /tmp/ccy27LkF.s:2804   .text.lr1_mac_core_get_device_time_req_status:00000000 $t
-     /tmp/ccy27LkF.s:2810   .text.lr1_mac_core_get_device_time_req_status:00000000 lr1_mac_core_get_device_time_req_status
-     /tmp/ccy27LkF.s:2825   .text.lr1_mac_core_get_device_time_req_status:00000010 $d
-     /tmp/ccy27LkF.s:2828   .text.lr1_mac_core_get_ping_slot_info_req_status:00000000 $t
-     /tmp/ccy27LkF.s:2834   .text.lr1_mac_core_get_ping_slot_info_req_status:00000000 lr1_mac_core_get_ping_slot_info_req_status
-     /tmp/ccy27LkF.s:2849   .text.lr1_mac_core_get_ping_slot_info_req_status:00000010 $d
-     /tmp/ccy27LkF.s:2852   .text.lr1mac_core_get_status_push_network_downlink_to_user:00000000 $t
-     /tmp/ccy27LkF.s:2858   .text.lr1mac_core_get_status_push_network_downlink_to_user:00000000 lr1mac_core_get_status_push_network_downlink_to_user
-     /tmp/ccy27LkF.s:2869   .text.lr1mac_core_get_status_push_network_downlink_to_user:00000008 $d
-     /tmp/ccy27LkF.s:2872   .text.lr1mac_core_set_status_push_network_downlink_to_user:00000000 $t
-ARM GAS  /tmp/ccy27LkF.s 			page 61
+     /tmp/ccIDgzHI.s:2360   .text.lr1mac_core_reset_no_rx_packet_in_mobile_mode_cnt:00000000 lr1mac_core_reset_no_rx_packet_in_mobile_mode_cnt
+     /tmp/ccIDgzHI.s:2372   .text.lr1mac_core_get_current_no_rx_packet_cnt:00000000 $t
+     /tmp/ccIDgzHI.s:2378   .text.lr1mac_core_get_current_no_rx_packet_cnt:00000000 lr1mac_core_get_current_no_rx_packet_cnt
+     /tmp/ccIDgzHI.s:2389   .text.lr1mac_core_get_current_no_rx_packet_cnt:00000008 $d
+     /tmp/ccIDgzHI.s:2392   .text.lr1mac_core_available_link_adr_get:00000000 $t
+     /tmp/ccIDgzHI.s:2398   .text.lr1mac_core_available_link_adr_get:00000000 lr1mac_core_available_link_adr_get
+     /tmp/ccIDgzHI.s:2415   .text.lr1mac_core_available_link_adr_get:00000010 $d
+     /tmp/ccIDgzHI.s:2418   .text.lr1mac_core_certification_set:00000000 $t
+     /tmp/ccIDgzHI.s:2424   .text.lr1mac_core_certification_set:00000000 lr1mac_core_certification_set
+     /tmp/ccIDgzHI.s:2436   .text.lr1mac_core_certification_set:0000000c $d
+     /tmp/ccIDgzHI.s:2439   .text.lr1mac_core_certification_get:00000000 $t
+     /tmp/ccIDgzHI.s:2445   .text.lr1mac_core_certification_get:00000000 lr1mac_core_certification_get
+     /tmp/ccIDgzHI.s:2456   .text.lr1mac_core_certification_get:00000008 $d
+     /tmp/ccIDgzHI.s:2459   .text.lr1mac_core_get_lorawan_version:00000000 $t
+     /tmp/ccIDgzHI.s:2465   .text.lr1mac_core_get_lorawan_version:00000000 lr1mac_core_get_lorawan_version
+     /tmp/ccIDgzHI.s:2477   .text.lr1mac_core_get_lorawan_version:00000008 $d
+     /tmp/ccIDgzHI.s:2480   .text.lr1mac_core_is_time_valid:00000000 $t
+     /tmp/ccIDgzHI.s:2486   .text.lr1mac_core_is_time_valid:00000000 lr1mac_core_is_time_valid
+     /tmp/ccIDgzHI.s:2510   .text.lr1mac_core_is_time_valid:00000024 $d
+     /tmp/ccIDgzHI.s:2515   .text.lr1mac_core_convert_rtc_to_gps_epoch_time:00000000 $t
+     /tmp/ccIDgzHI.s:2521   .text.lr1mac_core_convert_rtc_to_gps_epoch_time:00000000 lr1mac_core_convert_rtc_to_gps_epoch_time
+     /tmp/ccIDgzHI.s:2555   .text.lr1mac_core_convert_rtc_to_gps_epoch_time:0000003c $d
+     /tmp/ccIDgzHI.s:2559   .text.lr1mac_core_get_timestamp_last_device_time_ans_s:00000000 $t
+     /tmp/ccIDgzHI.s:2565   .text.lr1mac_core_get_timestamp_last_device_time_ans_s:00000000 lr1mac_core_get_timestamp_last_device_time_ans_s
+     /tmp/ccIDgzHI.s:2576   .text.lr1mac_core_get_timestamp_last_device_time_ans_s:00000008 $d
+     /tmp/ccIDgzHI.s:2579   .text.lr1mac_core_get_time_left_connection_lost:00000000 $t
+     /tmp/ccIDgzHI.s:2585   .text.lr1mac_core_get_time_left_connection_lost:00000000 lr1mac_core_get_time_left_connection_lost
+     /tmp/ccIDgzHI.s:2617   .text.lr1mac_core_get_time_left_connection_lost:00000030 $d
+     /tmp/ccIDgzHI.s:2620   .text.lr1mac_core_set_device_time_callback:00000000 $t
+     /tmp/ccIDgzHI.s:2626   .text.lr1mac_core_set_device_time_callback:00000000 lr1mac_core_set_device_time_callback
+     /tmp/ccIDgzHI.s:2643   .text.lr1mac_core_set_device_time_callback:00000010 $d
+     /tmp/ccIDgzHI.s:2646   .text.lr1_mac_core_set_device_time_invalid_delay_s:00000000 $t
+     /tmp/ccIDgzHI.s:2652   .text.lr1_mac_core_set_device_time_invalid_delay_s:00000000 lr1_mac_core_set_device_time_invalid_delay_s
+     /tmp/ccIDgzHI.s:2673   .text.lr1_mac_core_set_device_time_invalid_delay_s:00000018 $d
+     /tmp/ccIDgzHI.s:2676   .text.lr1_mac_core_get_device_time_invalid_delay_s:00000000 $t
+     /tmp/ccIDgzHI.s:2682   .text.lr1_mac_core_get_device_time_invalid_delay_s:00000000 lr1_mac_core_get_device_time_invalid_delay_s
+     /tmp/ccIDgzHI.s:2693   .text.lr1mac_core_set_ping_slot_periodicity:00000000 $t
+     /tmp/ccIDgzHI.s:2699   .text.lr1mac_core_set_ping_slot_periodicity:00000000 lr1mac_core_set_ping_slot_periodicity
+     /tmp/ccIDgzHI.s:2723   .text.lr1mac_core_set_ping_slot_periodicity:0000001c $d
+     /tmp/ccIDgzHI.s:2727   .text.lr1mac_core_get_ping_slot_periodicity:00000000 $t
+     /tmp/ccIDgzHI.s:2733   .text.lr1mac_core_get_ping_slot_periodicity:00000000 lr1mac_core_get_ping_slot_periodicity
+     /tmp/ccIDgzHI.s:2744   .text.lr1mac_core_get_ping_slot_periodicity:00000008 $d
+     /tmp/ccIDgzHI.s:2747   .text.lr1mac_core_get_class_b_status:00000000 $t
+     /tmp/ccIDgzHI.s:2753   .text.lr1mac_core_get_class_b_status:00000000 lr1mac_core_get_class_b_status
+     /tmp/ccIDgzHI.s:2766   .text.lr1_mac_core_get_link_check_ans:00000000 $t
+     /tmp/ccIDgzHI.s:2772   .text.lr1_mac_core_get_link_check_ans:00000000 lr1_mac_core_get_link_check_ans
+     /tmp/ccIDgzHI.s:2800   .text.lr1_mac_core_get_link_check_ans:00000024 $d
+     /tmp/ccIDgzHI.s:2804   .text.lr1_mac_core_get_device_time_req_status:00000000 $t
+     /tmp/ccIDgzHI.s:2810   .text.lr1_mac_core_get_device_time_req_status:00000000 lr1_mac_core_get_device_time_req_status
+     /tmp/ccIDgzHI.s:2825   .text.lr1_mac_core_get_device_time_req_status:00000010 $d
+     /tmp/ccIDgzHI.s:2828   .text.lr1_mac_core_get_ping_slot_info_req_status:00000000 $t
+     /tmp/ccIDgzHI.s:2834   .text.lr1_mac_core_get_ping_slot_info_req_status:00000000 lr1_mac_core_get_ping_slot_info_req_status
+     /tmp/ccIDgzHI.s:2849   .text.lr1_mac_core_get_ping_slot_info_req_status:00000010 $d
+     /tmp/ccIDgzHI.s:2852   .text.lr1mac_core_get_status_push_network_downlink_to_user:00000000 $t
+     /tmp/ccIDgzHI.s:2858   .text.lr1mac_core_get_status_push_network_downlink_to_user:00000000 lr1mac_core_get_status_push_network_downlink_to_user
+     /tmp/ccIDgzHI.s:2869   .text.lr1mac_core_get_status_push_network_downlink_to_user:00000008 $d
+     /tmp/ccIDgzHI.s:2872   .text.lr1mac_core_set_status_push_network_downlink_to_user:00000000 $t
+ARM GAS  /tmp/ccIDgzHI.s 			page 61
 
 
-     /tmp/ccy27LkF.s:2878   .text.lr1mac_core_set_status_push_network_downlink_to_user:00000000 lr1mac_core_set_status_push_network_downlink_to_user
-     /tmp/ccy27LkF.s:2889   .text.lr1mac_core_set_status_push_network_downlink_to_user:00000008 $d
-     /tmp/ccy27LkF.s:2892   .text.lr1mac_core_set_adr_ack_limit_delay:00000000 $t
-     /tmp/ccy27LkF.s:2898   .text.lr1mac_core_set_adr_ack_limit_delay:00000000 lr1mac_core_set_adr_ack_limit_delay
-     /tmp/ccy27LkF.s:2927   .text.lr1mac_core_set_adr_ack_limit_delay:00000028 $d
-     /tmp/ccy27LkF.s:2931   .text.lr1mac_core_get_adr_ack_limit_delay:00000000 $t
-     /tmp/ccy27LkF.s:2937   .text.lr1mac_core_get_adr_ack_limit_delay:00000000 lr1mac_core_get_adr_ack_limit_delay
-     /tmp/ccy27LkF.s:2952   .text.lr1mac_core_get_adr_ack_limit_delay:00000010 $d
-     /tmp/ccy27LkF.s:2956   .text.lr1mac_core_abort:00000000 $t
-     /tmp/ccy27LkF.s:2962   .text.lr1mac_core_abort:00000000 lr1mac_core_abort
-     /tmp/ccy27LkF.s:2989   .text.lr1mac_core_abort:0000002c $d
-     /tmp/ccy27LkF.s:2994   .text.lr1mac_core_join_status_clear:00000000 $t
-     /tmp/ccy27LkF.s:3000   .text.lr1mac_core_join_status_clear:00000000 lr1mac_core_join_status_clear
-     /tmp/ccy27LkF.s:3019   .text.lr1mac_core_join_status_clear:0000001c $d
-     /tmp/ccy27LkF.s:3036   .rodata.smtc_name_lr_fhss_cr:00000000 $d
-     /tmp/ccy27LkF.s:3066   .rodata.smtc_name_lr_fhss_bw:00000000 $d
-     /tmp/ccy27LkF.s:3110   .rodata.smtc_name_bw:00000000 $d
-     /tmp/ccy27LkF.s:3132   .rodata.smtc_real_region_list_str:00000000 $d
+     /tmp/ccIDgzHI.s:2878   .text.lr1mac_core_set_status_push_network_downlink_to_user:00000000 lr1mac_core_set_status_push_network_downlink_to_user
+     /tmp/ccIDgzHI.s:2889   .text.lr1mac_core_set_status_push_network_downlink_to_user:00000008 $d
+     /tmp/ccIDgzHI.s:2892   .text.lr1mac_core_set_adr_ack_limit_delay:00000000 $t
+     /tmp/ccIDgzHI.s:2898   .text.lr1mac_core_set_adr_ack_limit_delay:00000000 lr1mac_core_set_adr_ack_limit_delay
+     /tmp/ccIDgzHI.s:2927   .text.lr1mac_core_set_adr_ack_limit_delay:00000028 $d
+     /tmp/ccIDgzHI.s:2931   .text.lr1mac_core_get_adr_ack_limit_delay:00000000 $t
+     /tmp/ccIDgzHI.s:2937   .text.lr1mac_core_get_adr_ack_limit_delay:00000000 lr1mac_core_get_adr_ack_limit_delay
+     /tmp/ccIDgzHI.s:2952   .text.lr1mac_core_get_adr_ack_limit_delay:00000010 $d
+     /tmp/ccIDgzHI.s:2956   .text.lr1mac_core_abort:00000000 $t
+     /tmp/ccIDgzHI.s:2962   .text.lr1mac_core_abort:00000000 lr1mac_core_abort
+     /tmp/ccIDgzHI.s:2989   .text.lr1mac_core_abort:0000002c $d
+     /tmp/ccIDgzHI.s:2994   .text.lr1mac_core_join_status_clear:00000000 $t
+     /tmp/ccIDgzHI.s:3000   .text.lr1mac_core_join_status_clear:00000000 lr1mac_core_join_status_clear
+     /tmp/ccIDgzHI.s:3019   .text.lr1mac_core_join_status_clear:0000001c $d
+     /tmp/ccIDgzHI.s:3036   .rodata.smtc_name_lr_fhss_cr:00000000 $d
+     /tmp/ccIDgzHI.s:3066   .rodata.smtc_name_lr_fhss_bw:00000000 $d
+     /tmp/ccIDgzHI.s:3110   .rodata.smtc_name_bw:00000000 $d
+     /tmp/ccIDgzHI.s:3132   .rodata.smtc_real_region_list_str:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
@@ -3606,7 +3606,7 @@ smtc_real_get_join_next_channel
 lr1_stack_mac_join_request_build
 smtc_real_get_rx1_join_delay
 smtc_real_get_rx2_join_dr
-ARM GAS  /tmp/ccy27LkF.s 			page 62
+ARM GAS  /tmp/ccIDgzHI.s 			page 62
 
 
 smtc_real_get_min_tx_channel_dr

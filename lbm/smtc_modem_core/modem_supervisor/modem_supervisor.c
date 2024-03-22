@@ -314,7 +314,7 @@ eTask_valid_t modem_supervisor_remove_task( task_id_t id )
         task_manager.modem_task[id].priority = TASK_FINISH;
         return TASK_VALID;
     }
-    SMTC_MODEM_HAL_TRACE_ERROR( "modem_supervisor_remove_task id = %d unknown\n", id );
+    SMTC_MODEM_HAL_TRACE_ERROR( "modem_supervisor_remove_task id = %d unknown\n\r", id );
     return TASK_NOT_VALID;
 }
 
@@ -336,7 +336,7 @@ eTask_valid_t modem_supervisor_add_task( smodem_task* task )
 
         return TASK_VALID;
     }
-    SMTC_MODEM_HAL_TRACE_ERROR( "modem_supervisor_add_task id = %d unknown\n", task->id );
+    SMTC_MODEM_HAL_TRACE_ERROR( "modem_supervisor_add_task id = %d unknown\n\r", task->id );
     return TASK_NOT_VALID;
 }
 
@@ -346,10 +346,10 @@ void modem_supervisor_launch_task( task_id_t id )
     switch( id )
     {
     case JOIN_TASK:
-        // SMTC_MODEM_HAL_TRACE_INFO( "JOIN_TASK\n" );
+        // SMTC_MODEM_HAL_TRACE_INFO( "JOIN_TASK\n\r" );
         if( get_join_state( ) == MODEM_JOINED )
         {
-            SMTC_MODEM_HAL_TRACE_ERROR( "DEVICE ALREADY JOINED or TRY TO JOIN \n" );
+            SMTC_MODEM_HAL_TRACE_ERROR( "DEVICE ALREADY JOINED or TRY TO JOIN \n\r" );
             task_manager.next_task_id = IDLE_TASK;
         }
         else if( get_join_state( ) == MODEM_JOIN_ONGOING )
@@ -371,14 +371,14 @@ void modem_supervisor_launch_task( task_id_t id )
         {
             send_task_update_needed = true;
             SMTC_MODEM_HAL_TRACE_PRINTF(
-                " User Tx LORa %s %d \n",
+                " User Tx LORa %s %d \n\r",
                 ( task_manager.modem_task[id].fPort_present == true ) ? "on FPort" : "No FPort",
                 task_manager.modem_task[id].fPort );
         }
         else
         {
             send_task_update_needed = false;
-            SMTC_MODEM_HAL_TRACE_WARNING( "The payload can't be send! internal code: %x\n", send_status );
+            SMTC_MODEM_HAL_TRACE_WARNING( "The payload can't be send! internal code: %x\n\r", send_status );
         }
         break;
     }
@@ -403,7 +403,7 @@ void modem_supervisor_launch_task( task_id_t id )
             if( ( is_first_dm_after_join == true ) && ( is_pending_dm_status_payload_periodic == true ) )
             {
                 info_bitfield_periodictmp = modem_get_dm_info_bitfield_periodic( );
-                SMTC_MODEM_HAL_TRACE_PRINTF( " info bit field = %x\n", info_bitfield_periodictmp );
+                SMTC_MODEM_HAL_TRACE_PRINTF( " info bit field = %x\n\r", info_bitfield_periodictmp );
                 info_bitfield_periodic =
                     info_bitfield_periodictmp +
                     ( ( ( info_bitfield_periodictmp & ( 1 << DM_INFO_RSTCOUNT ) ) == 0 ) ? ( 1 << DM_INFO_RSTCOUNT )
@@ -414,7 +414,7 @@ void modem_supervisor_launch_task( task_id_t id )
                                                                                          : 0 );
 
                 modem_set_dm_info_bitfield_periodic( info_bitfield_periodic );
-                SMTC_MODEM_HAL_TRACE_PRINTF( " info bit field = %x\n", info_bitfield_periodic );
+                SMTC_MODEM_HAL_TRACE_PRINTF( " info bit field = %x\n\r", info_bitfield_periodic );
                 is_pending_dm_status_payload_periodic =
                     dm_status_payload( payload, &payload_length, max_payload, DM_INFO_PERIODIC );
 
@@ -430,11 +430,11 @@ void modem_supervisor_launch_task( task_id_t id )
                     }
                     modem_set_dm_info_bitfield_periodic( info_bitfield_periodictmp );
                     SMTC_MODEM_HAL_TRACE_ARRAY( "payload DM ", payload, payload_length );
-                    SMTC_MODEM_HAL_TRACE_PRINTF( " on Port %d\n", get_modem_dm_port( ) );
+                    SMTC_MODEM_HAL_TRACE_PRINTF( " on Port %d\n\r", get_modem_dm_port( ) );
                 }
                 else
                 {
-                    SMTC_MODEM_HAL_TRACE_WARNING( "Periodic DM can't be send! internal code: %x\n", send_status );
+                    SMTC_MODEM_HAL_TRACE_WARNING( "Periodic DM can't be send! internal code: %x\n\r", send_status );
                 }
             }
             else
@@ -451,11 +451,11 @@ void modem_supervisor_launch_task( task_id_t id )
                     if( send_status == OKLORAWAN )
                     {
                         SMTC_MODEM_HAL_TRACE_ARRAY( "DM ", payload, payload_length );
-                        SMTC_MODEM_HAL_TRACE_PRINTF( " on Port %d\n", get_modem_dm_port( ) );
+                        SMTC_MODEM_HAL_TRACE_PRINTF( " on Port %d\n\r", get_modem_dm_port( ) );
                     }
                     else
                     {
-                        SMTC_MODEM_HAL_TRACE_WARNING( "Periodic DM can't be send! internal code: %x\n", send_status );
+                        SMTC_MODEM_HAL_TRACE_WARNING( "Periodic DM can't be send! internal code: %x\n\r", send_status );
                     }
                 }
             }
@@ -474,11 +474,11 @@ void modem_supervisor_launch_task( task_id_t id )
             if( send_status == OKLORAWAN )
             {
                 SMTC_MODEM_HAL_TRACE_ARRAY( "DM Req ", payload, payload_length );
-                SMTC_MODEM_HAL_TRACE_PRINTF( " on Port %d\n", get_modem_dm_port( ) );
+                SMTC_MODEM_HAL_TRACE_PRINTF( " on Port %d\n\r", get_modem_dm_port( ) );
             }
             else
             {
-                SMTC_MODEM_HAL_TRACE_WARNING( "Requested DM can't be send! internal code: %x\n", send_status );
+                SMTC_MODEM_HAL_TRACE_WARNING( "Requested DM can't be send! internal code: %x\n\r", send_status );
             }
         }
         break;
@@ -510,13 +510,13 @@ void modem_supervisor_launch_task( task_id_t id )
         uint8_t file_upload_chunk_payload[242] = { 0 };
         if( get_join_state( ) != MODEM_JOINED )
         {
-            SMTC_MODEM_HAL_TRACE_ERROR( "DEVICE NOT JOIN \n" );
+            SMTC_MODEM_HAL_TRACE_ERROR( "DEVICE NOT JOIN \n\r" );
             break;
         }
         else if( modem_get_upload_state( ) != MODEM_UPLOAD_ON_GOING )
 
         {
-            SMTC_MODEM_HAL_TRACE_ERROR( "FileUpload not init \n" );
+            SMTC_MODEM_HAL_TRACE_ERROR( "FileUpload not init \n\r" );
             break;
         }
         uint32_t max_payload_size = lorawan_api_next_max_payload_length_get( );
@@ -549,16 +549,16 @@ void modem_supervisor_launch_task( task_id_t id )
         stream_return_code_t stream_rc;
         uint8_t              tx_buff_offset = 0;
 
-        // SMTC_MODEM_HAL_TRACE_MSG( "Supervisor launch STREAM_TASK\n" );
+        // SMTC_MODEM_HAL_TRACE_MSG( "Supervisor launch STREAM_TASK\n\r" );
 
         if( get_join_state( ) != MODEM_JOINED )
         {
-            SMTC_MODEM_HAL_TRACE_ERROR( "DEVICE NOT JOINED \n" );
+            SMTC_MODEM_HAL_TRACE_ERROR( "DEVICE NOT JOINED \n\r" );
             break;
         }
         else if( modem_get_stream_state( ) != MODEM_STREAM_INIT )
         {
-            SMTC_MODEM_HAL_TRACE_ERROR( "Streaming not initialized \n" );
+            SMTC_MODEM_HAL_TRACE_ERROR( "Streaming not initialized \n\r" );
             break;
         }
 
@@ -584,7 +584,7 @@ void modem_supervisor_launch_task( task_id_t id )
         {
             // Insufficient data or streaming done
             set_modem_status_streaming( false );
-            SMTC_MODEM_HAL_TRACE_WARNING( "Stream get fragment FAILED\n" );
+            SMTC_MODEM_HAL_TRACE_WARNING( "Stream get fragment FAILED\n\r" );
         }
         break;
     }
@@ -662,11 +662,11 @@ void modem_supervisor_launch_task( task_id_t id )
         lorawan_api_send_stack_cid_req( LINK_CHECK_REQ );
         break;
     case DEVICE_TIME_REQ_TASK:
-        SMTC_MODEM_HAL_TRACE_WARNING( "DEVICE TIME REQUEST\n" );
+        SMTC_MODEM_HAL_TRACE_WARNING( "DEVICE TIME REQUEST\n\r" );
         lorawan_api_send_stack_cid_req( DEVICE_TIME_REQ );
         break;
     case PING_SLOT_INFO_REQ_TASK:
-        SMTC_MODEM_HAL_TRACE_WARNING( "PING SLOT REQUEST\n" );
+        SMTC_MODEM_HAL_TRACE_WARNING( "PING SLOT REQUEST\n\r" );
         lorawan_api_send_stack_cid_req( PING_SLOT_INFO_REQ );
         break;
 #if defined( LR1110_MODEM_E ) && defined( ADD_SMTC_PATCH_UPDATE )
@@ -821,7 +821,7 @@ void modem_supervisor_update_task( task_id_t id )
             else
             {
                 // Nothing left to be sent => abort upload and generate event
-                SMTC_MODEM_HAL_TRACE_WARNING( "File upload ended without server confirmation \n" );
+                SMTC_MODEM_HAL_TRACE_WARNING( "File upload ended without server confirmation \n\r" );
                 increment_asynchronous_msgnumber( SMTC_MODEM_EVENT_UPLOADDONE, 0x00 );
                 set_modem_status_file_upload( false );
                 modem_set_upload_state( MODEM_UPLOAD_FINISHED );
@@ -833,14 +833,14 @@ void modem_supervisor_update_task( task_id_t id )
 
 #if defined( ADD_SMTC_STREAM )
     case STREAM_TASK: {
-        // SMTC_MODEM_HAL_TRACE_MSG( "Supervisor update STREAM_TASK\n" );
+        // SMTC_MODEM_HAL_TRACE_MSG( "Supervisor update STREAM_TASK\n\r" );
         if( stream_data_pending( ROSE ) )
         {
             modem_supervisor_add_task_stream( );
         }
         else
         {
-            SMTC_MODEM_HAL_TRACE_WARNING( "Streaming DONE\n" );
+            SMTC_MODEM_HAL_TRACE_WARNING( "Streaming DONE\n\r" );
             set_modem_status_streaming( false );
             increment_asynchronous_msgnumber( SMTC_MODEM_EVENT_STREAMDONE, 0 );
         }
@@ -1077,7 +1077,7 @@ uint32_t modem_supervisor_engine( void )
     int32_t  dtc_ms     = lorawan_api_next_free_duty_cycle_ms_get( );
     if( dtc_ms > 0 )
     {
-        SMTC_MODEM_HAL_TRACE_WARNING( "Duty Cycle, remaining time: %dms\n", dtc_ms );
+        SMTC_MODEM_HAL_TRACE_WARNING( "Duty Cycle, remaining time: %dms\n\r", dtc_ms );
         sleep_time = ( uint32_t ) dtc_ms;
     }
     // Don't call the supervisor if modem is suspend
@@ -1103,7 +1103,7 @@ uint32_t modem_supervisor_engine( void )
     }
 
     sleep_time = MIN( sleep_time, ( uint32_t ) user_alarm_in_seconds * 1000 );
-    // SMTC_MODEM_HAL_TRACE_INFO( "Next task in %d\n", sleep_time );
+    // SMTC_MODEM_HAL_TRACE_INFO( "Next task in %d\n\r", sleep_time );
     return ( sleep_time );
 }
 
@@ -1245,7 +1245,7 @@ uint8_t modem_supervisor_update_downlink_frame( uint8_t* data, uint8_t data_leng
         int8_t frag_status = frag_parser( dwnframe.data, dwnframe.length );
         if( frag_status & FRAG_CMD_ERROR )
         {
-            SMTC_MODEM_HAL_TRACE_ERROR( "ERROR: Failed to parse frag message\n" );
+            SMTC_MODEM_HAL_TRACE_ERROR( "ERROR: Failed to parse frag message\n\r" );
         }
         else if( frag_status != 0x00 )
         {
@@ -1289,7 +1289,7 @@ static void certification_event_handler( void )
         // Read modem event
         smtc_modem_get_event( &current_event, &event_pending_count );
 
-        SMTC_MODEM_HAL_TRACE_WARNING( "Event 0x%x\n", current_event.event_type );
+        SMTC_MODEM_HAL_TRACE_WARNING( "Event 0x%x\n\r", current_event.event_type );
         switch( current_event.event_type )
         {
         case SMTC_MODEM_EVENT_RESET:
@@ -1323,7 +1323,7 @@ static void certification_event_handler( void )
             break;
 
         case SMTC_MODEM_EVENT_JOINED: {
-            SMTC_MODEM_HAL_TRACE_INFO( "Modem is joined, program an alarm\n" );
+            SMTC_MODEM_HAL_TRACE_INFO( "Modem is joined, program an alarm\n\r" );
             smtc_modem_alarm_start_timer( smtc_modem_hal_get_random_nb_in_range( 3, 5 ) );
 
             // Disable the duty cycle when LoRaWAN certification mode is enabled
@@ -1369,7 +1369,7 @@ static void certification_event_handler( void )
             if( current_event.event_data.downdata.window != SMTC_MODEM_EVENT_DOWNDATA_WINDOW_RXBEACON )
             {
                 rx_port = current_event.event_data.downdata.fport;
-                SMTC_MODEM_HAL_TRACE_PRINTF( "on port %u\n", rx_port );
+                SMTC_MODEM_HAL_TRACE_PRINTF( "on port %u\n\r", rx_port );
                 if( ( rx_port == 224 ) || ( lorawan_api_certification_is_enabled( ) == true ) )
                 {
                     new_certification_cmd = 1;
@@ -1394,7 +1394,7 @@ static void certification_event_handler( void )
 #endif  // ADD_SMTC_STREAM
 
         case SMTC_MODEM_EVENT_JOINFAIL:
-            SMTC_MODEM_HAL_TRACE_WARNING( "Join failed \n" );
+            SMTC_MODEM_HAL_TRACE_WARNING( "Join failed \n\r" );
             break;
 
         case SMTC_MODEM_EVENT_TIMEOUT_ADR_CHANGED:
@@ -1414,12 +1414,12 @@ static void certification_event_handler( void )
                     ( lorawan_api_is_time_valid( ) == true ) )
 #endif  // ADD_SMTC_ALC_SYNC
                 {
-                    SMTC_MODEM_HAL_TRACE_PRINTF( "Certif enable classB\n" );
+                    SMTC_MODEM_HAL_TRACE_PRINTF( "Certif enable classB\n\r" );
                     lorawan_api_class_b_enabled( true );
                 }
                 else
                 {
-                    SMTC_MODEM_HAL_TRACE_PRINTF( "Certif classB could not be enabled\n" );
+                    SMTC_MODEM_HAL_TRACE_PRINTF( "Certif classB could not be enabled\n\r" );
 #if defined( ADD_SMTC_ALC_SYNC )
                     if( clock_sync_is_time_valid( clock_sync_context ) == false )
 #else   // ADD_SMTC_ALC_SYNC
@@ -1436,7 +1436,7 @@ static void certification_event_handler( void )
             }
             break;
         default:
-            SMTC_MODEM_HAL_TRACE_ERROR( "Unknown event %u\n", current_event.event_type );
+            SMTC_MODEM_HAL_TRACE_ERROR( "Unknown event %u\n\r", current_event.event_type );
             break;
         }
     } while( event_pending_count > 0 );
@@ -1448,7 +1448,7 @@ static void certification_event_handler( void )
         lorawan_certification_parser_ret_t status_certif =
             lorawan_api_certification( rx_payload, rx_payload_size, user_payload, &user_payload_length, &user_port );
 
-        SMTC_MODEM_HAL_TRACE_PRINTF( "status_certif 0x%x\n", status_certif );
+        SMTC_MODEM_HAL_TRACE_PRINTF( "status_certif 0x%x\n\r", status_certif );
         switch( status_certif )
         {
         case LORAWAN_CERTIFICATION_RET_CERTIF_UL:

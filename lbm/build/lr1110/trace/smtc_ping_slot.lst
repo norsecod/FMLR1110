@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccgX6oVD.s 			page 1
+ARM GAS  /tmp/cc9f9OAE.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
   56 002c 0122     		movs	r2, #1
   57 002e 0B3B     		subs	r3, r3, #11
   58 0030 DBB2     		uxtb	r3, r3
-ARM GAS  /tmp/ccgX6oVD.s 			page 2
+ARM GAS  /tmp/cc9f9OAE.s 			page 2
 
 
   59              	.L10:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  115 002c 1D62     		str	r5, [r3, #32]
  116 002e 9625     		movs	r5, #150
  117 0030 6D00     		lsls	r5, r5, #1
-ARM GAS  /tmp/ccgX6oVD.s 			page 3
+ARM GAS  /tmp/cc9f9OAE.s 			page 3
 
 
  118 0032 6C43     		muls	r4, r5
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  174 0044 1C25     		movs	r5, #28
  175 0046 BB23     		movs	r3, #187
  176 0048 7543     		muls	r5, r6
-ARM GAS  /tmp/ccgX6oVD.s 			page 4
+ARM GAS  /tmp/cc9f9OAE.s 			page 4
 
 
  177 004a DB00     		lsls	r3, r3, #3
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  233 000c 6043     		muls	r0, r4
  234 000e 0123     		movs	r3, #1
  235 0010 8900     		lsls	r1, r1, #2
-ARM GAS  /tmp/ccgX6oVD.s 			page 5
+ARM GAS  /tmp/cc9f9OAE.s 			page 5
 
 
  236 0012 8842     		cmp	r0, r1
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  292 0050 2833     		adds	r3, r3, #40
  293 0052 9218     		adds	r2, r2, r2
  294 0054 E254     		strb	r2, [r4, r3]
-ARM GAS  /tmp/ccgX6oVD.s 			page 6
+ARM GAS  /tmp/cc9f9OAE.s 			page 6
 
 
  295 0056 123B     		subs	r3, r3, #18
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  340              	.LC10:
  341 0052 20253032 		.ascii	" %02X\000"
  341      5800
-ARM GAS  /tmp/ccgX6oVD.s 			page 7
+ARM GAS  /tmp/cc9f9OAE.s 			page 7
 
 
  342              	.LC12:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  361      79706520 
  362              	.LC29:
  363 0192 52784220 		.ascii	"RxB app Payload\000"
-ARM GAS  /tmp/ccgX6oVD.s 			page 8
+ARM GAS  /tmp/cc9f9OAE.s 			page 8
 
 
  363      61707020 
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  400 0026 217B     		ldrb	r1, [r4, #12]
  401 0028 0A29     		cmp	r1, #10
  402 002a 00D9     		bls	.LCB364
-ARM GAS  /tmp/ccgX6oVD.s 			page 9
+ARM GAS  /tmp/cc9f9OAE.s 			page 9
 
 
  403 002c 85E2     		b	.L48	@long jump
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  457              	.L54:
  458 0096 2200     		movs	r2, r4
  459 0098 2B78     		ldrb	r3, [r5]
-ARM GAS  /tmp/ccgX6oVD.s 			page 10
+ARM GAS  /tmp/cc9f9OAE.s 			page 10
 
 
  460 009a 4132     		adds	r2, r2, #65
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  514 0102 002E     		cmp	r6, #0
  515 0104 02D0     		beq	.L55
  516 0106 A048     		ldr	r0, .L121+12
-ARM GAS  /tmp/ccgX6oVD.s 			page 11
+ARM GAS  /tmp/cc9f9OAE.s 			page 11
 
 
  517 0108 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  571 0176 3278     		ldrb	r2, [r6]
  572 0178 042A     		cmp	r2, #4
  573 017a BAD0     		beq	.L61
-ARM GAS  /tmp/ccgX6oVD.s 			page 12
+ARM GAS  /tmp/cc9f9OAE.s 			page 12
 
 
  574              	.L64:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  628 01ec A023     		movs	r3, #160
  629 01ee 5B00     		lsls	r3, r3, #1
  630 01f0 E35C     		ldrb	r3, [r4, r3]
-ARM GAS  /tmp/ccgX6oVD.s 			page 13
+ARM GAS  /tmp/cc9f9OAE.s 			page 13
 
 
  631 01f2 0C98     		ldr	r0, [sp, #48]
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  685 0260 5C32     		adds	r2, r2, #92
  686 0262 9200     		lsls	r2, r2, #2
  687 0264 1259     		ldr	r2, [r2, r4]
-ARM GAS  /tmp/ccgX6oVD.s 			page 14
+ARM GAS  /tmp/cc9f9OAE.s 			page 14
 
 
  688 0266 0321     		movs	r1, #3
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  742 02ca 1D7D     		ldrb	r5, [r3, #20]
  743 02cc 2379     		ldrb	r3, [r4, #4]
  744 02ce 2768     		ldr	r7, [r4]
-ARM GAS  /tmp/ccgX6oVD.s 			page 15
+ARM GAS  /tmp/cc9f9OAE.s 			page 15
 
 
  745 02d0 5B18     		adds	r3, r3, r1
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  799 0346 0EA8     		add	r0, sp, #56
  800 0348 A033     		adds	r3, r3, #160
  801 034a 1B68     		ldr	r3, [r3]
-ARM GAS  /tmp/ccgX6oVD.s 			page 16
+ARM GAS  /tmp/cc9f9OAE.s 			page 16
 
 
  802              	.L119:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  856 03c0 A25C     		ldrb	r2, [r4, r2]
  857 03c2 002A     		cmp	r2, #0
  858 03c4 63D1     		bne	.L75
-ARM GAS  /tmp/ccgX6oVD.s 			page 17
+ARM GAS  /tmp/cc9f9OAE.s 			page 17
 
 
  859 03c6 2200     		movs	r2, r4
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  913 0432 2018     		adds	r0, r4, r0
  914 0434 FFF7FEFF 		bl	smtc_modem_crypto_payload_decrypt
  915 0438 0028     		cmp	r0, #0
-ARM GAS  /tmp/ccgX6oVD.s 			page 18
+ARM GAS  /tmp/cc9f9OAE.s 			page 18
 
 
  916 043a 16D0     		beq	.L78
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  970 04ae FCE6     		b	.L84
  971              	.L87:
  972 04b0 0128     		cmp	r0, #1
-ARM GAS  /tmp/ccgX6oVD.s 			page 19
+ARM GAS  /tmp/cc9f9OAE.s 			page 19
 
 
  973 04b2 23D1     		bne	.L89
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1027              	.L53:
  1028 052e 1048     		ldr	r0, .L123+44
  1029              	.L120:
-ARM GAS  /tmp/ccgX6oVD.s 			page 20
+ARM GAS  /tmp/cc9f9OAE.s 			page 20
 
 
  1030 0530 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1078 0008 0193     		str	r3, [sp, #4]
  1079 000a 0600     		movs	r6, r0
  1080 000c 0CAB     		add	r3, sp, #48
-ARM GAS  /tmp/ccgX6oVD.s 			page 21
+ARM GAS  /tmp/cc9f9OAE.s 			page 21
 
 
  1081 000e 0C00     		movs	r4, r1
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1136              		.thumb_func
  1138              	smtc_ping_slot_init_after_beacon:
  1139              		@ args = 8, pretend = 0, frame = 8
-ARM GAS  /tmp/ccgX6oVD.s 			page 22
+ARM GAS  /tmp/cc9f9OAE.s 			page 22
 
 
  1140              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1194 0066 3100     		movs	r1, r6
  1195 0068 0B9A     		ldr	r2, [sp, #44]
  1196 006a FFF7FEFF 		bl	smtc_ping_slot_compute_first_slot
-ARM GAS  /tmp/ccgX6oVD.s 			page 23
+ARM GAS  /tmp/cc9f9OAE.s 			page 23
 
 
  1197 006e 6062     		str	r0, [r4, #36]
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1253 002c 2933     		adds	r3, r3, #41
  1254 002e 1B78     		ldrb	r3, [r3]
  1255 0030 002B     		cmp	r3, #0
-ARM GAS  /tmp/ccgX6oVD.s 			page 24
+ARM GAS  /tmp/cc9f9OAE.s 			page 24
 
 
  1256 0032 06D1     		bne	.L144
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1312              	.L152:
  1313              		@ sp needed
  1314 001e 7047     		bx	lr
-ARM GAS  /tmp/ccgX6oVD.s 			page 25
+ARM GAS  /tmp/cc9f9OAE.s 			page 25
 
 
  1316              		.section	.text.smtc_ping_slot_multicast_b_stop_all_sessions,"ax",%progbits
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1373              		@ sp needed
  1374 0020 70BD     		pop	{r4, r5, r6, pc}
  1376              		.section	.rodata.smtc_ping_slot_start.str1.1,"aMS",%progbits,1
-ARM GAS  /tmp/ccgX6oVD.s 			page 26
+ARM GAS  /tmp/cc9f9OAE.s 			page 26
 
 
  1377              	.LC50:
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1395      6A206465 
  1395      76616464 
  1396 017d 642C2050 		.ascii	"d, PingNb:%d\012\000"
-ARM GAS  /tmp/ccgX6oVD.s 			page 27
+ARM GAS  /tmp/cc9f9OAE.s 			page 27
 
 
  1396      696E674E 
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1449 005e D35C     		ldrb	r3, [r2, r3]
  1450 0060 032B     		cmp	r3, #3
  1451 0062 04D0     		beq	.L166
-ARM GAS  /tmp/ccgX6oVD.s 			page 28
+ARM GAS  /tmp/cc9f9OAE.s 			page 28
 
 
  1452 0064 2000     		movs	r0, r4
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1506 00d8 0132     		adds	r2, r2, #1
  1507 00da 1A70     		strb	r2, [r3]
  1508              	.L169:
-ARM GAS  /tmp/ccgX6oVD.s 			page 29
+ARM GAS  /tmp/cc9f9OAE.s 			page 29
 
 
  1509 00dc A023     		movs	r3, #160
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1563 013c 052B     		cmp	r3, #5
  1564 013e D9D1     		bne	.L172
  1565 0140 EAE7     		b	.L171
-ARM GAS  /tmp/ccgX6oVD.s 			page 30
+ARM GAS  /tmp/cc9f9OAE.s 			page 30
 
 
  1566              	.L181:
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1620 01a6 1A00     		movs	r2, r3
  1621 01a8 2832     		adds	r2, r2, #40
  1622 01aa 1078     		ldrb	r0, [r2]
-ARM GAS  /tmp/ccgX6oVD.s 			page 31
+ARM GAS  /tmp/cc9f9OAE.s 			page 31
 
 
  1623 01ac A022     		movs	r2, #160
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1677 0216 635C     		ldrb	r3, [r4, r1]
  1678 0218 5C33     		adds	r3, r3, #92
  1679 021a 9B00     		lsls	r3, r3, #2
-ARM GAS  /tmp/ccgX6oVD.s 			page 32
+ARM GAS  /tmp/cc9f9OAE.s 			page 32
 
 
  1680 021c 1B59     		ldr	r3, [r3, r4]
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1734 0292 2068     		ldr	r0, [r4]
  1735 0294 FFF7FEFF 		bl	smtc_real_get_ping_slot_frequency
  1736 0298 0590     		str	r0, [sp, #20]
-ARM GAS  /tmp/ccgX6oVD.s 			page 33
+ARM GAS  /tmp/cc9f9OAE.s 			page 33
 
 
  1737              	.L188:
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1791 030c A023     		movs	r3, #160
  1792 030e 6874     		strb	r0, [r5, #17]
  1793 0310 5B00     		lsls	r3, r3, #1
-ARM GAS  /tmp/ccgX6oVD.s 			page 34
+ARM GAS  /tmp/cc9f9OAE.s 			page 34
 
 
  1794 0312 E35C     		ldrb	r3, [r4, r3]
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1848 0380 FFF7FEFF 		bl	smtc_modem_hal_get_board_delay_ms
  1849 0384 7F00     		lsls	r7, r7, #1
  1850 0386 E35D     		ldrb	r3, [r4, r7]
-ARM GAS  /tmp/ccgX6oVD.s 			page 35
+ARM GAS  /tmp/cc9f9OAE.s 			page 35
 
 
  1851 0388 3618     		adds	r6, r6, r0
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1905 03f6 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  1906 03fa 3D48     		ldr	r0, .L225+16
  1907 03fc FFF7FEFF 		bl	smtc_modem_hal_print_trace
-ARM GAS  /tmp/ccgX6oVD.s 			page 36
+ARM GAS  /tmp/cc9f9OAE.s 			page 36
 
 
  1908              	.L195:
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  1962 046e 2DAB     		add	r3, sp, #180
  1963 0470 43CD     		ldmia	r5!, {r0, r1, r6}
  1964 0472 43C3     		stmia	r3!, {r0, r1, r6}
-ARM GAS  /tmp/ccgX6oVD.s 			page 37
+ARM GAS  /tmp/cc9f9OAE.s 			page 37
 
 
  1965 0474 43CD     		ldmia	r5!, {r0, r1, r6}
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  2019 04ec 20010000 		.word	.LC62
  2020 04f0 8D000000 		.word	.LC14
  2021 04f4 FF010000 		.word	511
-ARM GAS  /tmp/ccgX6oVD.s 			page 38
+ARM GAS  /tmp/cc9f9OAE.s 			page 38
 
 
  2022 04f8 0F1D2110 		.word	270605583
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  2078 0046 2918     		adds	r1, r5, r0
  2079 0048 2000     		movs	r0, r4
  2080 004a FFF7FEFF 		bl	smtc_ping_slot_compute_next_ping_offset_time
-ARM GAS  /tmp/ccgX6oVD.s 			page 39
+ARM GAS  /tmp/cc9f9OAE.s 			page 39
 
 
  2081 004e E5E7     		b	.L229
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  2136              	__func__.2:
  2137 0000 736D7463 		.ascii	"smtc_ping_slot_mac_rx_frame_decode\000"
  2137      5F70696E 
-ARM GAS  /tmp/ccgX6oVD.s 			page 40
+ARM GAS  /tmp/cc9f9OAE.s 			page 40
 
 
  2137      675F736C 
@@ -2359,67 +2359,67 @@ ARM GAS  /tmp/ccgX6oVD.s 			page 1
  2147      6F745F73 
  2147      74617274 
  2148              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccgX6oVD.s 			page 41
+ARM GAS  /tmp/cc9f9OAE.s 			page 41
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_ping_slot.c
-     /tmp/ccgX6oVD.s:14     .text.ral_compute_lora_ldro:00000000 $t
-     /tmp/ccgX6oVD.s:19     .text.ral_compute_lora_ldro:00000000 ral_compute_lora_ldro
-     /tmp/ccgX6oVD.s:29     .text.ral_compute_lora_ldro:0000000e $d
-     /tmp/ccgX6oVD.s:81     .text.smtc_ping_slot_compute_next_ping_offset_time:00000000 $t
-     /tmp/ccgX6oVD.s:86     .text.smtc_ping_slot_compute_next_ping_offset_time:00000000 smtc_ping_slot_compute_next_ping_offset_time
-     /tmp/ccgX6oVD.s:133    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:00000000 $t
-     /tmp/ccgX6oVD.s:138    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:00000000 ping_slot_mac_rx_lora_launch_callback_for_rp
-     /tmp/ccgX6oVD.s:212    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:0000008c $d
-     /tmp/ccgX6oVD.s:2141   .rodata.__func__.3:00000000 __func__.3
-     /tmp/ccgX6oVD.s:220    .text.smtc_ping_slot_get_duration_timeout_ms.isra.0:00000000 $t
-     /tmp/ccgX6oVD.s:225    .text.smtc_ping_slot_get_duration_timeout_ms.isra.0:00000000 smtc_ping_slot_get_duration_timeout_ms.isra.0
-     /tmp/ccgX6oVD.s:246    .text.smtc_ping_slot_init:00000000 $t
-     /tmp/ccgX6oVD.s:252    .text.smtc_ping_slot_init:00000000 smtc_ping_slot_init
-     /tmp/ccgX6oVD.s:327    .text.smtc_ping_slot_init:0000008c $d
-     /tmp/ccgX6oVD.s:2038   .text.smtc_ping_slot_rp_callback:00000000 smtc_ping_slot_rp_callback
-     /tmp/ccgX6oVD.s:374    .text.smtc_ping_slot_mac_rp_callback:00000000 $t
-     /tmp/ccgX6oVD.s:380    .text.smtc_ping_slot_mac_rp_callback:00000000 smtc_ping_slot_mac_rp_callback
-     /tmp/ccgX6oVD.s:408    .text.smtc_ping_slot_mac_rp_callback:00000034 $d
-     /tmp/ccgX6oVD.s:419    .text.smtc_ping_slot_mac_rp_callback:0000004a $t
-     /tmp/ccgX6oVD.s:831    .text.smtc_ping_slot_mac_rp_callback:0000037c $d
-     /tmp/ccgX6oVD.s:844    .text.smtc_ping_slot_mac_rp_callback:000003ac $t
-     /tmp/ccgX6oVD.s:1043   .text.smtc_ping_slot_mac_rp_callback:00000544 $d
-     /tmp/ccgX6oVD.s:2136   .rodata.__func__.2:00000000 __func__.2
-     /tmp/ccgX6oVD.s:2131   .rodata.__func__.1:00000000 __func__.1
-     /tmp/ccgX6oVD.s:1065   .text.smtc_ping_slot_compute_first_slot:00000000 $t
-     /tmp/ccgX6oVD.s:1071   .text.smtc_ping_slot_compute_first_slot:00000000 smtc_ping_slot_compute_first_slot
-     /tmp/ccgX6oVD.s:1126   .text.smtc_ping_slot_compute_first_slot:00000074 $d
-     /tmp/ccgX6oVD.s:2126   .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccgX6oVD.s:1132   .text.smtc_ping_slot_init_after_beacon:00000000 $t
-     /tmp/ccgX6oVD.s:1138   .text.smtc_ping_slot_init_after_beacon:00000000 smtc_ping_slot_init_after_beacon
-     /tmp/ccgX6oVD.s:1219   .text.smtc_ping_slot_init_after_beacon:00000090 $d
-     /tmp/ccgX6oVD.s:1222   .text.smtc_ping_slot_multicast_b_start_session:00000000 $t
-     /tmp/ccgX6oVD.s:1228   .text.smtc_ping_slot_multicast_b_start_session:00000000 smtc_ping_slot_multicast_b_start_session
-     /tmp/ccgX6oVD.s:1287   .text.smtc_ping_slot_multicast_b_stop_session:00000000 $t
-     /tmp/ccgX6oVD.s:1293   .text.smtc_ping_slot_multicast_b_stop_session:00000000 smtc_ping_slot_multicast_b_stop_session
-     /tmp/ccgX6oVD.s:1317   .text.smtc_ping_slot_multicast_b_stop_all_sessions:00000000 $t
-     /tmp/ccgX6oVD.s:1323   .text.smtc_ping_slot_multicast_b_stop_all_sessions:00000000 smtc_ping_slot_multicast_b_stop_all_sessions
-     /tmp/ccgX6oVD.s:1349   .text.smtc_ping_slot_stop:00000000 $t
-     /tmp/ccgX6oVD.s:1355   .text.smtc_ping_slot_stop:00000000 smtc_ping_slot_stop
-     /tmp/ccgX6oVD.s:1398   .text.smtc_ping_slot_start:00000000 $t
-     /tmp/ccgX6oVD.s:1404   .text.smtc_ping_slot_start:00000000 smtc_ping_slot_start
-     /tmp/ccgX6oVD.s:1703   .text.smtc_ping_slot_start:00000240 $d
-     /tmp/ccgX6oVD.s:2146   .rodata.__func__.4:00000000 __func__.4
-     /tmp/ccgX6oVD.s:1714   .text.smtc_ping_slot_start:00000268 $t
-     /tmp/ccgX6oVD.s:2016   .text.smtc_ping_slot_start:000004e0 $d
-     /tmp/ccgX6oVD.s:2032   .text.smtc_ping_slot_rp_callback:00000000 $t
-     /tmp/ccgX6oVD.s:2084   .text.smtc_ping_slot_multicast_b_get_session_status:00000000 $t
-     /tmp/ccgX6oVD.s:2090   .text.smtc_ping_slot_multicast_b_get_session_status:00000000 smtc_ping_slot_multicast_b_get_session_status
-     /tmp/ccgX6oVD.s:42     .text.ral_compute_lora_ldro:0000001b $d
-     /tmp/ccgX6oVD.s:42     .text.ral_compute_lora_ldro:0000001c $t
+     /tmp/cc9f9OAE.s:14     .text.ral_compute_lora_ldro:00000000 $t
+     /tmp/cc9f9OAE.s:19     .text.ral_compute_lora_ldro:00000000 ral_compute_lora_ldro
+     /tmp/cc9f9OAE.s:29     .text.ral_compute_lora_ldro:0000000e $d
+     /tmp/cc9f9OAE.s:81     .text.smtc_ping_slot_compute_next_ping_offset_time:00000000 $t
+     /tmp/cc9f9OAE.s:86     .text.smtc_ping_slot_compute_next_ping_offset_time:00000000 smtc_ping_slot_compute_next_ping_offset_time
+     /tmp/cc9f9OAE.s:133    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:00000000 $t
+     /tmp/cc9f9OAE.s:138    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:00000000 ping_slot_mac_rx_lora_launch_callback_for_rp
+     /tmp/cc9f9OAE.s:212    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:0000008c $d
+     /tmp/cc9f9OAE.s:2141   .rodata.__func__.3:00000000 __func__.3
+     /tmp/cc9f9OAE.s:220    .text.smtc_ping_slot_get_duration_timeout_ms.isra.0:00000000 $t
+     /tmp/cc9f9OAE.s:225    .text.smtc_ping_slot_get_duration_timeout_ms.isra.0:00000000 smtc_ping_slot_get_duration_timeout_ms.isra.0
+     /tmp/cc9f9OAE.s:246    .text.smtc_ping_slot_init:00000000 $t
+     /tmp/cc9f9OAE.s:252    .text.smtc_ping_slot_init:00000000 smtc_ping_slot_init
+     /tmp/cc9f9OAE.s:327    .text.smtc_ping_slot_init:0000008c $d
+     /tmp/cc9f9OAE.s:2038   .text.smtc_ping_slot_rp_callback:00000000 smtc_ping_slot_rp_callback
+     /tmp/cc9f9OAE.s:374    .text.smtc_ping_slot_mac_rp_callback:00000000 $t
+     /tmp/cc9f9OAE.s:380    .text.smtc_ping_slot_mac_rp_callback:00000000 smtc_ping_slot_mac_rp_callback
+     /tmp/cc9f9OAE.s:408    .text.smtc_ping_slot_mac_rp_callback:00000034 $d
+     /tmp/cc9f9OAE.s:419    .text.smtc_ping_slot_mac_rp_callback:0000004a $t
+     /tmp/cc9f9OAE.s:831    .text.smtc_ping_slot_mac_rp_callback:0000037c $d
+     /tmp/cc9f9OAE.s:844    .text.smtc_ping_slot_mac_rp_callback:000003ac $t
+     /tmp/cc9f9OAE.s:1043   .text.smtc_ping_slot_mac_rp_callback:00000544 $d
+     /tmp/cc9f9OAE.s:2136   .rodata.__func__.2:00000000 __func__.2
+     /tmp/cc9f9OAE.s:2131   .rodata.__func__.1:00000000 __func__.1
+     /tmp/cc9f9OAE.s:1065   .text.smtc_ping_slot_compute_first_slot:00000000 $t
+     /tmp/cc9f9OAE.s:1071   .text.smtc_ping_slot_compute_first_slot:00000000 smtc_ping_slot_compute_first_slot
+     /tmp/cc9f9OAE.s:1126   .text.smtc_ping_slot_compute_first_slot:00000074 $d
+     /tmp/cc9f9OAE.s:2126   .rodata.__func__.0:00000000 __func__.0
+     /tmp/cc9f9OAE.s:1132   .text.smtc_ping_slot_init_after_beacon:00000000 $t
+     /tmp/cc9f9OAE.s:1138   .text.smtc_ping_slot_init_after_beacon:00000000 smtc_ping_slot_init_after_beacon
+     /tmp/cc9f9OAE.s:1219   .text.smtc_ping_slot_init_after_beacon:00000090 $d
+     /tmp/cc9f9OAE.s:1222   .text.smtc_ping_slot_multicast_b_start_session:00000000 $t
+     /tmp/cc9f9OAE.s:1228   .text.smtc_ping_slot_multicast_b_start_session:00000000 smtc_ping_slot_multicast_b_start_session
+     /tmp/cc9f9OAE.s:1287   .text.smtc_ping_slot_multicast_b_stop_session:00000000 $t
+     /tmp/cc9f9OAE.s:1293   .text.smtc_ping_slot_multicast_b_stop_session:00000000 smtc_ping_slot_multicast_b_stop_session
+     /tmp/cc9f9OAE.s:1317   .text.smtc_ping_slot_multicast_b_stop_all_sessions:00000000 $t
+     /tmp/cc9f9OAE.s:1323   .text.smtc_ping_slot_multicast_b_stop_all_sessions:00000000 smtc_ping_slot_multicast_b_stop_all_sessions
+     /tmp/cc9f9OAE.s:1349   .text.smtc_ping_slot_stop:00000000 $t
+     /tmp/cc9f9OAE.s:1355   .text.smtc_ping_slot_stop:00000000 smtc_ping_slot_stop
+     /tmp/cc9f9OAE.s:1398   .text.smtc_ping_slot_start:00000000 $t
+     /tmp/cc9f9OAE.s:1404   .text.smtc_ping_slot_start:00000000 smtc_ping_slot_start
+     /tmp/cc9f9OAE.s:1703   .text.smtc_ping_slot_start:00000240 $d
+     /tmp/cc9f9OAE.s:2146   .rodata.__func__.4:00000000 __func__.4
+     /tmp/cc9f9OAE.s:1714   .text.smtc_ping_slot_start:00000268 $t
+     /tmp/cc9f9OAE.s:2016   .text.smtc_ping_slot_start:000004e0 $d
+     /tmp/cc9f9OAE.s:2032   .text.smtc_ping_slot_rp_callback:00000000 $t
+     /tmp/cc9f9OAE.s:2084   .text.smtc_ping_slot_multicast_b_get_session_status:00000000 $t
+     /tmp/cc9f9OAE.s:2090   .text.smtc_ping_slot_multicast_b_get_session_status:00000000 smtc_ping_slot_multicast_b_get_session_status
+     /tmp/cc9f9OAE.s:42     .text.ral_compute_lora_ldro:0000001b $d
+     /tmp/cc9f9OAE.s:42     .text.ral_compute_lora_ldro:0000001c $t
 
 UNDEFINED SYMBOLS
 __gnu_thumb1_case_uqi
 smtc_modem_hal_start_radio_tcxo
 smtc_modem_hal_assert_fail
-ARM GAS  /tmp/ccgX6oVD.s 			page 42
+ARM GAS  /tmp/cc9f9OAE.s 			page 42
 
 
 smtc_modem_hal_get_time_in_100us

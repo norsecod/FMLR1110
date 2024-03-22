@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cceHLBAr.s 			page 1
+ARM GAS  /tmp/ccRABeCt.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cceHLBAr.s 			page 1
   58 0004 0500     		movs	r5, r0
   59 0006 6E44     		add	r6, r6, sp
   60 0008 0020     		movs	r0, #0
-ARM GAS  /tmp/cceHLBAr.s 			page 2
+ARM GAS  /tmp/ccRABeCt.s 			page 2
 
 
   61 000a 3170     		strb	r1, [r6]
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cceHLBAr.s 			page 1
  117 0028 3378     		ldrb	r3, [r6]
  118 002a 442B     		cmp	r3, #68
  119 002c FAD1     		bne	.L10
-ARM GAS  /tmp/cceHLBAr.s 			page 3
+ARM GAS  /tmp/ccRABeCt.s 			page 3
 
 
  120 002e 4021     		movs	r1, #64
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cceHLBAr.s 			page 1
  175              		.code	16
  176              		.thumb_func
  178              	lis2dw_read:
-ARM GAS  /tmp/cceHLBAr.s 			page 4
+ARM GAS  /tmp/ccRABeCt.s 			page 4
 
 
  179              		@ args = 0, pretend = 0, frame = 16
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cceHLBAr.s 			page 1
  233              	.L34:
  234 006a 6F       		.byte	(.L40-.L34)/2
  235 006b 86       		.byte	(.L38-.L34)/2
-ARM GAS  /tmp/cceHLBAr.s 			page 5
+ARM GAS  /tmp/ccRABeCt.s 			page 5
 
 
  236 006c 02       		.byte	(.L35-.L34)/2
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cceHLBAr.s 			page 1
  290 00e9 19       		.byte	(.L41-.L39)/2
  291 00ea 30       		.byte	(.L40-.L39)/2
  292 00eb 47       		.byte	(.L38-.L39)/2
-ARM GAS  /tmp/cceHLBAr.s 			page 6
+ARM GAS  /tmp/ccRABeCt.s 			page 6
 
 
  293              		.p2align 1
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cceHLBAr.s 			page 1
  347 0178 FFF7FEFF 		bl	__aeabi_i2f
  348 017c 1349     		ldr	r1, .L44+40
  349 017e FFF7FEFF 		bl	__aeabi_fmul
-ARM GAS  /tmp/cceHLBAr.s 			page 7
+ARM GAS  /tmp/ccRABeCt.s 			page 7
 
 
  350 0182 FFF7FEFF 		bl	__aeabi_f2iz
@@ -401,35 +401,35 @@ ARM GAS  /tmp/cceHLBAr.s 			page 1
  396              	i2c:
  397 0000 00000000 		.space	4
  398              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cceHLBAr.s 			page 8
+ARM GAS  /tmp/ccRABeCt.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lis2dw.c
-     /tmp/cceHLBAr.s:14     .text.lis2dw_read_byte:00000000 $t
-     /tmp/cceHLBAr.s:19     .text.lis2dw_read_byte:00000000 lis2dw_read_byte
-     /tmp/cceHLBAr.s:44     .text.lis2dw_read_byte:00000028 $d
-     /tmp/cceHLBAr.s:390    .bss.address:00000000 address
-     /tmp/cceHLBAr.s:396    .bss.i2c:00000000 i2c
-     /tmp/cceHLBAr.s:48     .text.lis2dw_write_byte:00000000 $t
-     /tmp/cceHLBAr.s:53     .text.lis2dw_write_byte:00000000 lis2dw_write_byte
-     /tmp/cceHLBAr.s:81     .text.lis2dw_write_byte:00000030 $d
-     /tmp/cceHLBAr.s:85     .text.lis2dw_init:00000000 $t
-     /tmp/cceHLBAr.s:91     .text.lis2dw_init:00000000 lis2dw_init
-     /tmp/cceHLBAr.s:162    .text.lis2dw_init:00000088 $d
-     /tmp/cceHLBAr.s:385    .bss.lp_mod:00000000 lp_mod
-     /tmp/cceHLBAr.s:380    .bss.dr:00000000 dr
-     /tmp/cceHLBAr.s:172    .text.lis2dw_read:00000000 $t
-     /tmp/cceHLBAr.s:178    .text.lis2dw_read:00000000 lis2dw_read
-     /tmp/cceHLBAr.s:234    .text.lis2dw_read:0000006a $d
-     /tmp/cceHLBAr.s:238    .text.lis2dw_read:0000006e $t
-     /tmp/cceHLBAr.s:289    .text.lis2dw_read:000000e8 $d
-     /tmp/cceHLBAr.s:293    .text.lis2dw_read:000000ec $t
-     /tmp/cceHLBAr.s:365    .text.lis2dw_read:000001a4 $d
-     /tmp/cceHLBAr.s:381    .bss.dr:00000000 $d
-     /tmp/cceHLBAr.s:386    .bss.lp_mod:00000000 $d
-     /tmp/cceHLBAr.s:391    .bss.address:00000000 $d
-     /tmp/cceHLBAr.s:393    .bss.i2c:00000000 $d
+     /tmp/ccRABeCt.s:14     .text.lis2dw_read_byte:00000000 $t
+     /tmp/ccRABeCt.s:19     .text.lis2dw_read_byte:00000000 lis2dw_read_byte
+     /tmp/ccRABeCt.s:44     .text.lis2dw_read_byte:00000028 $d
+     /tmp/ccRABeCt.s:390    .bss.address:00000000 address
+     /tmp/ccRABeCt.s:396    .bss.i2c:00000000 i2c
+     /tmp/ccRABeCt.s:48     .text.lis2dw_write_byte:00000000 $t
+     /tmp/ccRABeCt.s:53     .text.lis2dw_write_byte:00000000 lis2dw_write_byte
+     /tmp/ccRABeCt.s:81     .text.lis2dw_write_byte:00000030 $d
+     /tmp/ccRABeCt.s:85     .text.lis2dw_init:00000000 $t
+     /tmp/ccRABeCt.s:91     .text.lis2dw_init:00000000 lis2dw_init
+     /tmp/ccRABeCt.s:162    .text.lis2dw_init:00000088 $d
+     /tmp/ccRABeCt.s:385    .bss.lp_mod:00000000 lp_mod
+     /tmp/ccRABeCt.s:380    .bss.dr:00000000 dr
+     /tmp/ccRABeCt.s:172    .text.lis2dw_read:00000000 $t
+     /tmp/ccRABeCt.s:178    .text.lis2dw_read:00000000 lis2dw_read
+     /tmp/ccRABeCt.s:234    .text.lis2dw_read:0000006a $d
+     /tmp/ccRABeCt.s:238    .text.lis2dw_read:0000006e $t
+     /tmp/ccRABeCt.s:289    .text.lis2dw_read:000000e8 $d
+     /tmp/ccRABeCt.s:293    .text.lis2dw_read:000000ec $t
+     /tmp/ccRABeCt.s:365    .text.lis2dw_read:000001a4 $d
+     /tmp/ccRABeCt.s:381    .bss.dr:00000000 $d
+     /tmp/ccRABeCt.s:386    .bss.lp_mod:00000000 $d
+     /tmp/ccRABeCt.s:391    .bss.address:00000000 $d
+     /tmp/ccRABeCt.s:393    .bss.i2c:00000000 $d
 
 UNDEFINED SYMBOLS
 hal_i2c_set_addr_size

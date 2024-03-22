@@ -168,7 +168,7 @@ void ral_lr11xx_bsp_get_xosc_cfg( const void* context, bool* tcxo_is_radio_contr
 
 void ral_lr11xx_bsp_get_crc_state( const void* context, bool* crc_is_activated ) {
 #if defined( USE_LR11XX_CRC_OVER_SPI )
-    SMTC_HAL_TRACE_INFO( "LR11XX CRC over spi is activated\n" );
+    SMTC_HAL_TRACE_INFO( "LR11XX CRC over spi is activated\n\r" );
     *crc_is_activated = true;
 #else
     *crc_is_activated = false;
