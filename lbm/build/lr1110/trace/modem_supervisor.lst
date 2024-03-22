@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccI8rJG2.s 			page 1
+ARM GAS  /tmp/ccNuiwIJ.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -15,75 +15,76 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
   12              		.text
   13              		.section	.rodata.certification_event_handler.str1.1,"aMS",%progbits,1
   14              	.LC0:
-  15 0000 1B5B303B 		.ascii	"\033[0;33mWARN: Event 0x%x\012\000"
+  15 0000 1B5B303B 		.ascii	"\033[0;33mWARN: Event 0x%x\012\015\000"
   15      33336D57 
   15      41524E3A 
   15      20457665 
   15      6E742030 
   16              	.LC2:
-  17 0019 1B5B306D 		.ascii	"\033[0m\000"
+  17 001a 1B5B306D 		.ascii	"\033[0m\000"
   17      00
   18              	.LC4:
-  19 001e 1B5B303B 		.ascii	"\033[0;32mINFO: Modem is joined, program an alarm\012"
+  19 001f 1B5B303B 		.ascii	"\033[0;32mINFO: Modem is joined, program an alarm\012"
   19      33326D49 
   19      4E464F3A 
   19      204D6F64 
   19      656D2069 
-  20 004d 00       		.ascii	"\000"
+  20 004e 0D00     		.ascii	"\015\000"
   21              	.LC7:
-  22 004e 444F574E 		.ascii	"DOWNDATA\000"
+  22 0050 444F574E 		.ascii	"DOWNDATA\000"
   22      44415441 
   22      00
   23              	.LC9:
-  24 0057 2573202D 		.ascii	"%s - (%lu bytes):\012\000"
+  24 0059 2573202D 		.ascii	"%s - (%lu bytes):\012\015\000"
   24      2028256C 
   24      75206279 
   24      74657329 
-  24      3A0A00
+  24      3A0A0D00 
   25              	.LC11:
-  26 006a 0A00     		.ascii	"\012\000"
+  26 006d 0A0D00   		.ascii	"\012\015\000"
   27              	.LC13:
-  28 006c 20253032 		.ascii	" %02X\000"
+  28 0070 20253032 		.ascii	" %02X\000"
   28      5800
   29              	.LC15:
-  30 0072 6F6E2070 		.ascii	"on port %u\012\000"
+  30 0076 6F6E2070 		.ascii	"on port %u\012\015\000"
   30      6F727420 
-  30      25750A00 
+  30      25750A0D 
+  30      00
   31              	.LC17:
-  32 007e 1B5B303B 		.ascii	"\033[0;33mWARN: Join failed \012\000"
+  32 0083 1B5B303B 		.ascii	"\033[0;33mWARN: Join failed \012\015\000"
   32      33336D57 
   32      41524E3A 
   32      204A6F69 
   32      6E206661 
   33              	.LC20:
-  34 0099 43657274 		.ascii	"Certif enable classB\012\000"
+  34 009f 43657274 		.ascii	"Certif enable classB\012\015\000"
+ARM GAS  /tmp/ccNuiwIJ.s 			page 2
+
+
   34      69662065 
-ARM GAS  /tmp/ccI8rJG2.s 			page 2
-
-
   34      6E61626C 
   34      6520636C 
   34      61737342 
   35              	.LC22:
-  36 00af 43657274 		.ascii	"Certif classB could not be enabled\012\000"
+  36 00b6 43657274 		.ascii	"Certif classB could not be enabled\012\015\000"
   36      69662063 
   36      6C617373 
   36      4220636F 
   36      756C6420 
   37              	.LC24:
-  38 00d3 1B5B303B 		.ascii	"\033[0;31mERROR: Unknown event %u\012\000"
+  38 00db 1B5B303B 		.ascii	"\033[0;31mERROR: Unknown event %u\012\015\000"
   38      33316D45 
   38      52524F52 
   38      3A20556E 
   38      6B6E6F77 
   39              	.LC28:
-  40 00f3 73746174 		.ascii	"status_certif 0x%x\012\000"
+  40 00fc 73746174 		.ascii	"status_certif 0x%x\012\015\000"
   40      75735F63 
   40      65727469 
   40      66203078 
-  40      25780A00 
+  40      25780A0D 
   41              	.LC31:
-  42 0107 42454143 		.ascii	"BEACON to testing tool\000"
+  42 0111 42454143 		.ascii	"BEACON to testing tool\000"
   42      4F4E2074 
   42      6F207465 
   42      7374696E 
@@ -117,10 +118,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
   70 0028 BE4E     		ldr	r6, .L78+8
   71 002a 3000     		movs	r0, r6
   72 002c FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ARM GAS  /tmp/ccNuiwIJ.s 			page 3
+
+
   73 0030 6978     		ldrb	r1, [r5, #1]
-ARM GAS  /tmp/ccI8rJG2.s 			page 3
-
-
   74 0032 1329     		cmp	r1, #19
   75 0034 00D9     		bls	.LCB31
   76 0036 E2E0     		b	.L2	@long jump
@@ -177,10 +178,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  127 0086 0095     		str	r5, [sp]
  128 0088 0AA8     		add	r0, sp, #40
  129 008a FFF7FEFF 		bl	lorawan_api_certification
+ARM GAS  /tmp/ccNuiwIJ.s 			page 4
+
+
  130 008e 0790     		str	r0, [sp, #28]
-ARM GAS  /tmp/ccI8rJG2.s 			page 4
-
-
  131 0090 0799     		ldr	r1, [sp, #28]
  132 0092 A848     		ldr	r0, .L78+24
  133 0094 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -237,10 +238,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  184 0108 012B     		cmp	r3, #1
  185 010a 06D0     		beq	.L16
  186 010c 022B     		cmp	r3, #2
+ARM GAS  /tmp/ccNuiwIJ.s 			page 5
+
+
  187 010e 2CD0     		beq	.L77
-ARM GAS  /tmp/ccI8rJG2.s 			page 5
-
-
  188 0110 002B     		cmp	r3, #0
  189 0112 A7D1     		bne	.L12
  190 0114 854A     		ldr	r2, .L78+16
@@ -297,10 +298,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  241 0178 0F23     		movs	r3, #15
  242 017a 1E42     		tst	r6, r3
  243 017c 04D1     		bne	.L20
+ARM GAS  /tmp/ccNuiwIJ.s 			page 6
+
+
  244 017e 002E     		cmp	r6, #0
-ARM GAS  /tmp/ccI8rJG2.s 			page 6
-
-
  245 0180 02D0     		beq	.L20
  246 0182 7148     		ldr	r0, .L78+44
  247 0184 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -357,10 +358,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  298              	.LCB255:
  299 01f6 0220     		movs	r0, #2
  300 01f8 FFF7FEFF 		bl	modem_supervisor_add_task_ping_slot_info_req
+ARM GAS  /tmp/ccNuiwIJ.s 			page 7
+
+
  301 01fc 32E7     		b	.L12
-ARM GAS  /tmp/ccI8rJG2.s 			page 7
-
-
  302              	.L2:
  303 01fe 594B     		ldr	r3, .L78+72
  304 0200 1800     		movs	r0, r3
@@ -417,10 +418,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  355 026c 9B18     		adds	r3, r3, r2
  356 026e 5B79     		ldrb	r3, [r3, #5]
  357 0270 2D4F     		ldr	r7, .L78+12
+ARM GAS  /tmp/ccNuiwIJ.s 			page 8
+
+
  358 0272 0293     		str	r3, [sp, #8]
-ARM GAS  /tmp/ccI8rJG2.s 			page 8
-
-
  359 0274 0523     		movs	r3, #5
  360 0276 F356     		ldrsb	r3, [r6, r3]
  361 0278 3A00     		movs	r2, r7
@@ -477,10 +478,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  412 02e4 0128     		cmp	r0, #1
  413 02e6 12D1     		bne	.L33
  414 02e8 0020     		movs	r0, #0
+ARM GAS  /tmp/ccNuiwIJ.s 			page 9
+
+
  415 02ea FFF7FEFF 		bl	lorawan_api_class_c_enabled
-ARM GAS  /tmp/ccI8rJG2.s 			page 9
-
-
  416 02ee 1A4B     		ldr	r3, .L78+60
  417 02f0 1868     		ldr	r0, [r3]
  418 02f2 FFF7FEFF 		bl	clock_sync_is_time_valid
@@ -506,26 +507,26 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  438              	.L78:
  439 031c CCFDFFFF 		.word	-564
  440 0320 00000000 		.word	.LC0
- 441 0324 19000000 		.word	.LC2
+ 441 0324 1A000000 		.word	.LC2
  442 0328 00000000 		.word	user_payload
  443 032c 00000000 		.word	user_payload_length
  444 0330 00000000 		.word	user_port
- 445 0334 F3000000 		.word	.LC28
- 446 0338 1E000000 		.word	.LC4
+ 445 0334 FC000000 		.word	.LC28
+ 446 0338 1F000000 		.word	.LC4
  447 033c 12020000 		.word	530
- 448 0340 4E000000 		.word	.LC7
- 449 0344 57000000 		.word	.LC9
- 450 0348 6A000000 		.word	.LC11
- 451 034c 72000000 		.word	.LC15
- 452 0350 6C000000 		.word	.LC13
- 453 0354 7E000000 		.word	.LC17
+ 448 0340 50000000 		.word	.LC7
+ 449 0344 59000000 		.word	.LC9
+ 450 0348 6D000000 		.word	.LC11
+ 451 034c 76000000 		.word	.LC15
+ 452 0350 70000000 		.word	.LC13
+ 453 0354 83000000 		.word	.LC17
  454 0358 00000000 		.word	clock_sync_context
- 455 035c 99000000 		.word	.LC20
- 456 0360 AF000000 		.word	.LC22
- 457 0364 D3000000 		.word	.LC24
+ 455 035c 9F000000 		.word	.LC20
+ 456 0360 B6000000 		.word	.LC22
+ 457 0364 DB000000 		.word	.LC24
  458 0368 00000000 		.word	certification_data_is_pending
  459 036c 17020000 		.word	535
- 460 0370 07010000 		.word	.LC31
+ 460 0370 11010000 		.word	.LC31
  461              	.L26:
  462 0374 2200     		movs	r2, r4
  463 0376 2100     		movs	r1, r4
@@ -537,10 +538,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  469              	.L49:
  470 0384 0027     		movs	r7, #0
  471 0386 56E7     		b	.L30
+ARM GAS  /tmp/ccNuiwIJ.s 			page 10
+
+
  472              	.L41:
-ARM GAS  /tmp/ccI8rJG2.s 			page 10
-
-
  473 0388 3442     		tst	r4, r6
  474 038a 04D1     		bne	.L40
  475 038c 002C     		cmp	r4, #0
@@ -580,8 +581,8 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  509              	.L81:
  510 03ca C046     		.align	2
  511              	.L80:
- 512 03cc 6A000000 		.word	.LC11
- 513 03d0 6C000000 		.word	.LC13
+ 512 03cc 6D000000 		.word	.LC11
+ 513 03d0 70000000 		.word	.LC13
  514 03d4 00000000 		.word	certification_data_is_pending
  515 03d8 00000000 		.word	user_port
  516 03dc 00000000 		.word	user_payload
@@ -597,10 +598,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  528              		@ frame_needed = 0, uses_anonymous_args = 0
  529              		@ link register save eliminated.
  530 0000 074B     		ldr	r3, .L85
+ARM GAS  /tmp/ccNuiwIJ.s 			page 11
+
+
  531 0002 0022     		movs	r2, #0
-ARM GAS  /tmp/ccI8rJG2.s 			page 11
-
-
  532 0004 1900     		movs	r1, r3
  533 0006 0420     		movs	r0, #4
  534              	.L83:
@@ -657,10 +658,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  587 0032 264B     		ldr	r3, .L90+32
  588 0034 C900     		lsls	r1, r1, #3
  589 0036 5218     		adds	r2, r2, r1
+ARM GAS  /tmp/ccNuiwIJ.s 			page 12
+
+
  590 0038 1A60     		str	r2, [r3]
-ARM GAS  /tmp/ccI8rJG2.s 			page 12
-
-
  591 003a 0A22     		movs	r2, #10
  592 003c 244B     		ldr	r3, .L90+36
  593 003e 2100     		movs	r1, r4
@@ -717,10 +718,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  644 00cc 00000000 		.word	file_upload_context
  645 00d0 00000000 		.word	user_payload_length
  646 00d4 00000000 		.word	user_payload
+ARM GAS  /tmp/ccNuiwIJ.s 			page 13
+
+
  647 00d8 00000000 		.word	user_port
-ARM GAS  /tmp/ccI8rJG2.s 			page 13
-
-
  648 00dc 00000000 		.word	certification_data_is_pending
  649 00e0 00000000 		.word	class_b_bit
  651              		.section	.text.modem_supervisor_get_task_priority,"ax",%progbits
@@ -756,9 +757,10 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  681      52524F52 
  681      3A206D6F 
  681      64656D5F 
- 682 0030 25642075 		.ascii	"%d unknown\012\000"
+ 682 0030 25642075 		.ascii	"%d unknown\012\015\000"
  682      6E6B6E6F 
- 682      776E0A00 
+ 682      776E0A0D 
+ 682      00
  683              		.section	.text.modem_supervisor_remove_task,"ax",%progbits
  684              		.align	1
  685              		.global	modem_supervisor_remove_task
@@ -776,11 +778,11 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  698 000a 4243     		muls	r2, r0
  699 000c 064B     		ldr	r3, .L100
  700 000e 0020     		movs	r0, #0
+ARM GAS  /tmp/ccNuiwIJ.s 			page 14
+
+
  701 0010 9B18     		adds	r3, r3, r2
  702 0012 0422     		movs	r2, #4
-ARM GAS  /tmp/ccI8rJG2.s 			page 14
-
-
  703 0014 1A72     		strb	r2, [r3, #8]
  704              	.L99:
  705              		@ sp needed
@@ -797,7 +799,7 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  716              	.L100:
  717 0028 00000000 		.word	task_manager
  718 002c 00000000 		.word	.LC50
- 719 0030 19000000 		.word	.LC2
+ 719 0030 1A000000 		.word	.LC2
  721              		.section	.rodata.modem_supervisor_add_task.str1.1,"aMS",%progbits,1
  722              	.LC54:
  723 0000 1B5B303B 		.ascii	"\033[0;31mERROR: modem_supervisor_add_task id = %d "
@@ -805,9 +807,9 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  723      52524F52 
  723      3A206D6F 
  723      64656D5F 
- 724 0030 756E6B6E 		.ascii	"unknown\012\000"
+ 724 0030 756E6B6E 		.ascii	"unknown\012\015\000"
  724      6F776E0A 
- 724      00
+ 724      0D00
  725              		.section	.text.modem_supervisor_add_task,"ax",%progbits
  726              		.align	1
  727              		.global	modem_supervisor_add_task
@@ -836,11 +838,11 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  751 0020 9472     		strb	r4, [r2, #10]
  752 0022 C468     		ldr	r4, [r0, #12]
  753 0024 D460     		str	r4, [r2, #12]
+ARM GAS  /tmp/ccNuiwIJ.s 			page 15
+
+
  754 0026 028A     		ldrh	r2, [r0, #16]
  755 0028 0020     		movs	r0, #0
-ARM GAS  /tmp/ccI8rJG2.s 			page 15
-
-
  756 002a 5A52     		strh	r2, [r3, r1]
  757              	.L104:
  758              		@ sp needed
@@ -857,7 +859,7 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  769              	.L105:
  770 0040 00000000 		.word	task_manager
  771 0044 00000000 		.word	.LC54
- 772 0048 19000000 		.word	.LC2
+ 772 0048 1A000000 		.word	.LC2
  774              		.section	.rodata.modem_supervisor_launch_task.str1.1,"aMS",%progbits,1
  775              	.LC57:
  776 0000 6F6E2046 		.ascii	"on FPort\000"
@@ -873,1936 +875,1938 @@ ARM GAS  /tmp/ccI8rJG2.s 			page 1
  780      52524F52 
  780      3A204445 
  780      56494345 
- 781 0042 494E200A 		.ascii	"IN \012\000"
- 781      00
+ 781 0042 494E200A 		.ascii	"IN \012\015\000"
+ 781      0D00
  782              	.LC66:
- 783 0047 20557365 		.ascii	" User Tx LORa %s %d \012\000"
+ 783 0048 20557365 		.ascii	" User Tx LORa %s %d \012\015\000"
  783      72205478 
  783      204C4F52 
  783      61202573 
  783      20256420 
  784              	.LC68:
- 785 005d 1B5B303B 		.ascii	"\033[0;33mWARN: The payload can't be send! internal"
+ 785 005f 1B5B303B 		.ascii	"\033[0;33mWARN: The payload can't be send! internal"
  785      33336D57 
  785      41524E3A 
  785      20546865 
  785      20706179 
- 786 008d 20636F64 		.ascii	" code: %x\012\000"
+ 786 008f 20636F64 		.ascii	" code: %x\012\015\000"
  786      653A2025 
- 786      780A00
+ 786      780A0D00 
  787              	.LC72:
- 788 0098 20696E66 		.ascii	" info bit field = %x\012\000"
+ 788 009b 20696E66 		.ascii	" info bit field = %x\012\015\000"
  788      6F206269 
  788      74206669 
  788      656C6420 
  788      3D202578 
+ARM GAS  /tmp/ccNuiwIJ.s 			page 16
+
+
  789              	.LC74:
- 790 00ae 7061796C 		.ascii	"payload DM \000"
-ARM GAS  /tmp/ccI8rJG2.s 			page 16
-
-
+ 790 00b2 7061796C 		.ascii	"payload DM \000"
  790      6F616420 
  790      444D2000 
  791              	.LC79:
- 792 00ba 206F6E20 		.ascii	" on Port %d\012\000"
+ 792 00be 206F6E20 		.ascii	" on Port %d\012\015\000"
  792      506F7274 
  792      2025640A 
- 792      00
+ 792      0D00
  793              	.LC81:
- 794 00c7 1B5B303B 		.ascii	"\033[0;33mWARN: Periodic DM can't be send! internal"
+ 794 00cc 1B5B303B 		.ascii	"\033[0;33mWARN: Periodic DM can't be send! internal"
  794      33336D57 
  794      41524E3A 
  794      20506572 
  794      696F6469 
- 795 00f7 20636F64 		.ascii	" code: %x\012\000"
+ 795 00fc 20636F64 		.ascii	" code: %x\012\015\000"
  795      653A2025 
- 795      780A00
+ 795      780A0D00 
  796              	.LC83:
- 797 0102 444D2000 		.ascii	"DM \000"
+ 797 0108 444D2000 		.ascii	"DM \000"
  798              	.LC86:
- 799 0106 444D2052 		.ascii	"DM Req \000"
+ 799 010c 444D2052 		.ascii	"DM Req \000"
  799      65712000 
  800              	.LC88:
- 801 010e 1B5B303B 		.ascii	"\033[0;33mWARN: Requested DM can't be send! interna"
+ 801 0114 1B5B303B 		.ascii	"\033[0;33mWARN: Requested DM can't be send! interna"
  801      33336D57 
  801      41524E3A 
  801      20526571 
  801      75657374 
- 802 013e 6C20636F 		.ascii	"l code: %x\012\000"
+ 802 0144 6C20636F 		.ascii	"l code: %x\012\015\000"
  802      64653A20 
- 802      25780A00 
+ 802      25780A0D 
+ 802      00
  803              	.LC90:
- 804 014a 444D2052 		.ascii	"DM Req CRASH LOG \000"
+ 804 0151 444D2052 		.ascii	"DM Req CRASH LOG \000"
  804      65712043 
  804      52415348 
  804      204C4F47 
  804      2000
  805              	.LC92:
- 806 015c 1B5B303B 		.ascii	"\033[0;31mERROR: DEVICE NOT JOIN \012\000"
+ 806 0163 1B5B303B 		.ascii	"\033[0;31mERROR: DEVICE NOT JOIN \012\015\000"
  806      33316D45 
  806      52524F52 
  806      3A204445 
  806      56494345 
  807              	.LC94:
- 808 017c 1B5B303B 		.ascii	"\033[0;31mERROR: FileUpload not init \012\000"
+ 808 0184 1B5B303B 		.ascii	"\033[0;31mERROR: FileUpload not init \012\015\000"
  808      33316D45 
  808      52524F52 
  808      3A204669 
  808      6C655570 
  809              	.LC97:
- 810 01a0 1B5B303B 		.ascii	"\033[0;31mERROR: DEVICE NOT JOINED \012\000"
+ 810 01a9 1B5B303B 		.ascii	"\033[0;31mERROR: DEVICE NOT JOINED \012\015\000"
  810      33316D45 
  810      52524F52 
  810      3A204445 
  810      56494345 
+ARM GAS  /tmp/ccNuiwIJ.s 			page 17
+
+
  811              	.LC99:
- 812 01c2 1B5B303B 		.ascii	"\033[0;31mERROR: Streaming not initialized \012\000"
+ 812 01cc 1B5B303B 		.ascii	"\033[0;31mERROR: Streaming not initialized \012\015"
  812      33316D45 
-ARM GAS  /tmp/ccI8rJG2.s 			page 17
-
-
  812      52524F52 
  812      3A205374 
  812      7265616D 
- 813              	.LC102:
- 814 01ec 1B5B303B 		.ascii	"\033[0;33mWARN: Stream get fragment FAILED\012\000"
- 814      33336D57 
- 814      41524E3A 
- 814      20537472 
- 814      65616D20 
- 815              	.LC106:
- 816 0215 1B5B303B 		.ascii	"\033[0;33mWARN: DEVICE TIME REQUEST\012\000"
- 816      33336D57 
- 816      41524E3A 
- 816      20444556 
- 816      49434520 
- 817              	.LC108:
- 818 0237 1B5B303B 		.ascii	"\033[0;33mWARN: PING SLOT REQUEST\012\000"
- 818      33336D57 
- 818      41524E3A 
- 818      2050494E 
- 818      4720534C 
- 819              		.section	.text.modem_supervisor_launch_task,"ax",%progbits
- 820              		.align	1
- 821              		.global	modem_supervisor_launch_task
- 822              		.syntax unified
- 823              		.code	16
- 824              		.thumb_func
- 826              	modem_supervisor_launch_task:
- 827              		@ args = 0, pretend = 0, frame = 272
- 828              		@ frame_needed = 0, uses_anonymous_args = 0
- 829 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 830 0002 C9B0     		sub	sp, sp, #292
- 831 0004 0590     		str	r0, [sp, #20]
- 832 0006 1328     		cmp	r0, #19
- 833 0008 24D8     		bhi	.L108
- 834 000a FFF7FEFF 		bl	__gnu_thumb1_case_uhi
- 835              	.L110:
- 836 000e 3200     		.2byte	(.L109-.L110)/2
- 837 0010 1400     		.2byte	(.L124-.L110)/2
- 838 0012 6E00     		.2byte	(.L123-.L110)/2
- 839 0014 3701     		.2byte	(.L122-.L110)/2
- 840 0016 E501     		.2byte	(.L121-.L110)/2
- 841 0018 2300     		.2byte	(.L108-.L110)/2
- 842 001a 6102     		.2byte	(.L120-.L110)/2
- 843 001c 6D02     		.2byte	(.L119-.L110)/2
- 844 001e 1A02     		.2byte	(.L118-.L110)/2
- 845 0020 8002     		.2byte	(.L117-.L110)/2
- 846 0022 8F02     		.2byte	(.L116-.L110)/2
- 847 0024 2300     		.2byte	(.L108-.L110)/2
- 848 0026 FA02     		.2byte	(.L115-.L110)/2
- 849 0028 2300     		.2byte	(.L108-.L110)/2
- 850 002a A101     		.2byte	(.L114-.L110)/2
- 851 002c E602     		.2byte	(.L113-.L110)/2
- 852 002e EA02     		.2byte	(.L112-.L110)/2
- 853 0030 F202     		.2byte	(.L111-.L110)/2
- 854 0032 3200     		.2byte	(.L109-.L110)/2
- 855 0034 3200     		.2byte	(.L109-.L110)/2
-ARM GAS  /tmp/ccI8rJG2.s 			page 18
+ 813 01f6 00       		.ascii	"\000"
+ 814              	.LC102:
+ 815 01f7 1B5B303B 		.ascii	"\033[0;33mWARN: Stream get fragment FAILED\012\015\000"
+ 815      33336D57 
+ 815      41524E3A 
+ 815      20537472 
+ 815      65616D20 
+ 816              	.LC106:
+ 817 0221 1B5B303B 		.ascii	"\033[0;33mWARN: DEVICE TIME REQUEST\012\015\000"
+ 817      33336D57 
+ 817      41524E3A 
+ 817      20444556 
+ 817      49434520 
+ 818              	.LC108:
+ 819 0244 1B5B303B 		.ascii	"\033[0;33mWARN: PING SLOT REQUEST\012\015\000"
+ 819      33336D57 
+ 819      41524E3A 
+ 819      2050494E 
+ 819      4720534C 
+ 820              		.section	.text.modem_supervisor_launch_task,"ax",%progbits
+ 821              		.align	1
+ 822              		.global	modem_supervisor_launch_task
+ 823              		.syntax unified
+ 824              		.code	16
+ 825              		.thumb_func
+ 827              	modem_supervisor_launch_task:
+ 828              		@ args = 0, pretend = 0, frame = 272
+ 829              		@ frame_needed = 0, uses_anonymous_args = 0
+ 830 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 831 0002 C9B0     		sub	sp, sp, #292
+ 832 0004 0590     		str	r0, [sp, #20]
+ 833 0006 1328     		cmp	r0, #19
+ 834 0008 24D8     		bhi	.L108
+ 835 000a FFF7FEFF 		bl	__gnu_thumb1_case_uhi
+ 836              	.L110:
+ 837 000e 3200     		.2byte	(.L109-.L110)/2
+ 838 0010 1400     		.2byte	(.L124-.L110)/2
+ 839 0012 6E00     		.2byte	(.L123-.L110)/2
+ 840 0014 3701     		.2byte	(.L122-.L110)/2
+ 841 0016 E501     		.2byte	(.L121-.L110)/2
+ 842 0018 2300     		.2byte	(.L108-.L110)/2
+ 843 001a 6102     		.2byte	(.L120-.L110)/2
+ 844 001c 6D02     		.2byte	(.L119-.L110)/2
+ 845 001e 1A02     		.2byte	(.L118-.L110)/2
+ 846 0020 8002     		.2byte	(.L117-.L110)/2
+ 847 0022 8F02     		.2byte	(.L116-.L110)/2
+ 848 0024 2300     		.2byte	(.L108-.L110)/2
+ 849 0026 FA02     		.2byte	(.L115-.L110)/2
+ 850 0028 2300     		.2byte	(.L108-.L110)/2
+ 851 002a A101     		.2byte	(.L114-.L110)/2
+ 852 002c E602     		.2byte	(.L113-.L110)/2
+ARM GAS  /tmp/ccNuiwIJ.s 			page 18
 
 
- 856              		.p2align 1
- 857              	.L124:
- 858 0036 FFF7FEFF 		bl	get_join_state
- 859 003a 0228     		cmp	r0, #2
- 860 003c 0FD1     		bne	.L125
- 861 003e AF48     		ldr	r0, .L216
- 862 0040 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 863 0044 AE48     		ldr	r0, .L216+4
- 864 0046 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 865 004a 9222     		movs	r2, #146
- 866 004c 0521     		movs	r1, #5
- 867 004e AD4B     		ldr	r3, .L216+8
- 868 0050 FF32     		adds	r2, r2, #255
- 869 0052 9954     		strb	r1, [r3, r2]
- 870              	.L108:
- 871 0054 0598     		ldr	r0, [sp, #20]
- 872 0056 FFF7FEFF 		bl	modem_supervisor_remove_task
- 873 005a 49B0     		add	sp, sp, #292
- 874              		@ sp needed
- 875 005c F0BD     		pop	{r4, r5, r6, r7, pc}
- 876              	.L125:
- 877 005e FFF7FEFF 		bl	get_join_state
- 878 0062 0128     		cmp	r0, #1
- 879 0064 F6D1     		bne	.L108
- 880 0066 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
- 881 006a C830     		adds	r0, r0, #200
- 882 006c FFF7FEFF 		bl	lorawan_api_join
- 883 0070 F0E7     		b	.L108
- 884              	.L109:
- 885 0072 1423     		movs	r3, #20
- 886 0074 059A     		ldr	r2, [sp, #20]
- 887 0076 A34C     		ldr	r4, .L216+8
- 888 0078 5343     		muls	r3, r2
- 889 007a E318     		adds	r3, r4, r3
- 890 007c 9A7A     		ldrb	r2, [r3, #10]
- 891 007e 5E7A     		ldrb	r6, [r3, #9]
- 892 0080 1F7C     		ldrb	r7, [r3, #16]
- 893 0082 0692     		str	r2, [sp, #24]
- 894 0084 DA68     		ldr	r2, [r3, #12]
- 895 0086 5B7C     		ldrb	r3, [r3, #17]
- 896 0088 0225     		movs	r5, #2
- 897 008a 0792     		str	r2, [sp, #28]
- 898 008c 012B     		cmp	r3, #1
- 899 008e 00D1     		bne	.L127
- 900 0090 6D19     		adds	r5, r5, r5
- 901              	.L127:
- 902 0092 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
- 903 0096 C830     		adds	r0, r0, #200
- 904 0098 3B00     		movs	r3, r7
- 905 009a 0699     		ldr	r1, [sp, #24]
- 906 009c 0190     		str	r0, [sp, #4]
- 907 009e 079A     		ldr	r2, [sp, #28]
- 908 00a0 3000     		movs	r0, r6
- 909 00a2 0095     		str	r5, [sp]
- 910 00a4 FFF7FEFF 		bl	lorawan_api_payload_send
- 911 00a8 974B     		ldr	r3, .L216+12
- 912 00aa 011E     		subs	r1, r0, #0
-ARM GAS  /tmp/ccI8rJG2.s 			page 19
+ 853 002e EA02     		.2byte	(.L112-.L110)/2
+ 854 0030 F202     		.2byte	(.L111-.L110)/2
+ 855 0032 3200     		.2byte	(.L109-.L110)/2
+ 856 0034 3200     		.2byte	(.L109-.L110)/2
+ 857              		.p2align 1
+ 858              	.L124:
+ 859 0036 FFF7FEFF 		bl	get_join_state
+ 860 003a 0228     		cmp	r0, #2
+ 861 003c 0FD1     		bne	.L125
+ 862 003e AF48     		ldr	r0, .L216
+ 863 0040 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 864 0044 AE48     		ldr	r0, .L216+4
+ 865 0046 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 866 004a 9222     		movs	r2, #146
+ 867 004c 0521     		movs	r1, #5
+ 868 004e AD4B     		ldr	r3, .L216+8
+ 869 0050 FF32     		adds	r2, r2, #255
+ 870 0052 9954     		strb	r1, [r3, r2]
+ 871              	.L108:
+ 872 0054 0598     		ldr	r0, [sp, #20]
+ 873 0056 FFF7FEFF 		bl	modem_supervisor_remove_task
+ 874 005a 49B0     		add	sp, sp, #292
+ 875              		@ sp needed
+ 876 005c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 877              	.L125:
+ 878 005e FFF7FEFF 		bl	get_join_state
+ 879 0062 0128     		cmp	r0, #1
+ 880 0064 F6D1     		bne	.L108
+ 881 0066 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 882 006a C830     		adds	r0, r0, #200
+ 883 006c FFF7FEFF 		bl	lorawan_api_join
+ 884 0070 F0E7     		b	.L108
+ 885              	.L109:
+ 886 0072 1423     		movs	r3, #20
+ 887 0074 059A     		ldr	r2, [sp, #20]
+ 888 0076 A34C     		ldr	r4, .L216+8
+ 889 0078 5343     		muls	r3, r2
+ 890 007a E318     		adds	r3, r4, r3
+ 891 007c 9A7A     		ldrb	r2, [r3, #10]
+ 892 007e 5E7A     		ldrb	r6, [r3, #9]
+ 893 0080 1F7C     		ldrb	r7, [r3, #16]
+ 894 0082 0692     		str	r2, [sp, #24]
+ 895 0084 DA68     		ldr	r2, [r3, #12]
+ 896 0086 5B7C     		ldrb	r3, [r3, #17]
+ 897 0088 0225     		movs	r5, #2
+ 898 008a 0792     		str	r2, [sp, #28]
+ 899 008c 012B     		cmp	r3, #1
+ 900 008e 00D1     		bne	.L127
+ 901 0090 6D19     		adds	r5, r5, r5
+ 902              	.L127:
+ 903 0092 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 904 0096 C830     		adds	r0, r0, #200
+ 905 0098 3B00     		movs	r3, r7
+ 906 009a 0699     		ldr	r1, [sp, #24]
+ 907 009c 0190     		str	r0, [sp, #4]
+ 908 009e 079A     		ldr	r2, [sp, #28]
+ 909 00a0 3000     		movs	r0, r6
+ARM GAS  /tmp/ccNuiwIJ.s 			page 19
 
 
- 913 00ac 14D1     		bne	.L128
- 914 00ae 0122     		movs	r2, #1
- 915 00b0 1A70     		strb	r2, [r3]
- 916 00b2 1423     		movs	r3, #20
- 917 00b4 059A     		ldr	r2, [sp, #20]
- 918 00b6 9549     		ldr	r1, .L216+16
- 919 00b8 5A43     		muls	r2, r3
- 920 00ba A218     		adds	r2, r4, r2
- 921 00bc 927A     		ldrb	r2, [r2, #10]
- 922 00be 002A     		cmp	r2, #0
- 923 00c0 00D0     		beq	.L129
- 924 00c2 9349     		ldr	r1, .L216+20
- 925              	.L129:
- 926 00c4 059A     		ldr	r2, [sp, #20]
- 927 00c6 9348     		ldr	r0, .L216+24
- 928 00c8 5343     		muls	r3, r2
- 929 00ca E418     		adds	r4, r4, r3
- 930 00cc 627A     		ldrb	r2, [r4, #9]
- 931 00ce FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 932              	.L130:
- 933 00d2 FFF7FEFF 		bl	decrement_dm_retrieve_pending_dl
- 934 00d6 BDE7     		b	.L108
- 935              	.L128:
- 936 00d8 0022     		movs	r2, #0
- 937 00da 8F48     		ldr	r0, .L216+28
- 938 00dc 1A70     		strb	r2, [r3]
- 939              	.L214:
- 940 00de FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 941              	.L211:
- 942 00e2 8748     		ldr	r0, .L216+4
- 943 00e4 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 944 00e8 B4E7     		b	.L108
- 945              	.L123:
- 946 00ea FFF7FEFF 		bl	get_join_state
- 947 00ee 0890     		str	r0, [sp, #32]
- 948 00f0 0228     		cmp	r0, #2
- 949 00f2 AFD1     		bne	.L108
- 950 00f4 FFF7FEFF 		bl	lorawan_api_modem_certification_is_enabled
- 951 00f8 0128     		cmp	r0, #1
- 952 00fa ABD0     		beq	.L108
- 953 00fc FFF7FEFF 		bl	get_modem_dm_interval_second
- 954 0100 0028     		cmp	r0, #0
- 955 0102 A7D0     		beq	.L108
- 956 0104 FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
- 957 0108 C3B2     		uxtb	r3, r0
- 958 010a 0793     		str	r3, [sp, #28]
- 959 010c 834B     		ldr	r3, .L216+32
- 960 010e 0993     		str	r3, [sp, #36]
- 961 0110 1B78     		ldrb	r3, [r3]
- 962 0112 002B     		cmp	r3, #0
- 963 0114 71D0     		beq	.L133
- 964 0116 824B     		ldr	r3, .L216+36
- 965 0118 0693     		str	r3, [sp, #24]
- 966 011a 1B78     		ldrb	r3, [r3]
- 967 011c 002B     		cmp	r3, #0
- 968 011e 6CD0     		beq	.L133
- 969 0120 FFF7FEFF 		bl	modem_get_dm_info_bitfield_periodic
-ARM GAS  /tmp/ccI8rJG2.s 			page 20
+ 910 00a2 0095     		str	r5, [sp]
+ 911 00a4 FFF7FEFF 		bl	lorawan_api_payload_send
+ 912 00a8 974B     		ldr	r3, .L216+12
+ 913 00aa 011E     		subs	r1, r0, #0
+ 914 00ac 14D1     		bne	.L128
+ 915 00ae 0122     		movs	r2, #1
+ 916 00b0 1A70     		strb	r2, [r3]
+ 917 00b2 1423     		movs	r3, #20
+ 918 00b4 059A     		ldr	r2, [sp, #20]
+ 919 00b6 9549     		ldr	r1, .L216+16
+ 920 00b8 5A43     		muls	r2, r3
+ 921 00ba A218     		adds	r2, r4, r2
+ 922 00bc 927A     		ldrb	r2, [r2, #10]
+ 923 00be 002A     		cmp	r2, #0
+ 924 00c0 00D0     		beq	.L129
+ 925 00c2 9349     		ldr	r1, .L216+20
+ 926              	.L129:
+ 927 00c4 059A     		ldr	r2, [sp, #20]
+ 928 00c6 9348     		ldr	r0, .L216+24
+ 929 00c8 5343     		muls	r3, r2
+ 930 00ca E418     		adds	r4, r4, r3
+ 931 00cc 627A     		ldrb	r2, [r4, #9]
+ 932 00ce FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 933              	.L130:
+ 934 00d2 FFF7FEFF 		bl	decrement_dm_retrieve_pending_dl
+ 935 00d6 BDE7     		b	.L108
+ 936              	.L128:
+ 937 00d8 0022     		movs	r2, #0
+ 938 00da 8F48     		ldr	r0, .L216+28
+ 939 00dc 1A70     		strb	r2, [r3]
+ 940              	.L214:
+ 941 00de FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 942              	.L211:
+ 943 00e2 8748     		ldr	r0, .L216+4
+ 944 00e4 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 945 00e8 B4E7     		b	.L108
+ 946              	.L123:
+ 947 00ea FFF7FEFF 		bl	get_join_state
+ 948 00ee 0890     		str	r0, [sp, #32]
+ 949 00f0 0228     		cmp	r0, #2
+ 950 00f2 AFD1     		bne	.L108
+ 951 00f4 FFF7FEFF 		bl	lorawan_api_modem_certification_is_enabled
+ 952 00f8 0128     		cmp	r0, #1
+ 953 00fa ABD0     		beq	.L108
+ 954 00fc FFF7FEFF 		bl	get_modem_dm_interval_second
+ 955 0100 0028     		cmp	r0, #0
+ 956 0102 A7D0     		beq	.L108
+ 957 0104 FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
+ 958 0108 C3B2     		uxtb	r3, r0
+ 959 010a 0793     		str	r3, [sp, #28]
+ 960 010c 834B     		ldr	r3, .L216+32
+ 961 010e 0993     		str	r3, [sp, #36]
+ 962 0110 1B78     		ldrb	r3, [r3]
+ 963 0112 002B     		cmp	r3, #0
+ 964 0114 71D0     		beq	.L133
+ 965 0116 824B     		ldr	r3, .L216+36
+ 966 0118 0693     		str	r3, [sp, #24]
+ARM GAS  /tmp/ccNuiwIJ.s 			page 20
 
 
- 970 0124 0127     		movs	r7, #1
- 971 0126 7F4E     		ldr	r6, .L216+40
- 972 0128 0400     		movs	r4, r0
- 973 012a 0100     		movs	r1, r0
- 974 012c 3D00     		movs	r5, r7
- 975 012e 3000     		movs	r0, r6
- 976 0130 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 977 0134 3A00     		movs	r2, r7
- 978 0136 A30C     		lsrs	r3, r4, #18
- 979 0138 9D43     		bics	r5, r3
- 980 013a E30B     		lsrs	r3, r4, #15
- 981 013c 9A43     		bics	r2, r3
- 982 013e D303     		lsls	r3, r2, #15
- 983 0140 3A00     		movs	r2, r7
- 984 0142 AD04     		lsls	r5, r5, #18
- 985 0144 ED18     		adds	r5, r5, r3
- 986 0146 E309     		lsrs	r3, r4, #7
- 987 0148 9A43     		bics	r2, r3
- 988 014a D301     		lsls	r3, r2, #7
- 989 014c 2D19     		adds	r5, r5, r4
- 990 014e ED18     		adds	r5, r5, r3
- 991 0150 2800     		movs	r0, r5
- 992 0152 FFF7FEFF 		bl	modem_set_dm_info_bitfield_periodic
- 993 0156 2900     		movs	r1, r5
- 994 0158 1325     		movs	r5, #19
- 995 015a 3000     		movs	r0, r6
- 996 015c FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 997 0160 06AB     		add	r3, sp, #24
- 998 0162 ED18     		adds	r5, r5, r3
- 999 0164 2900     		movs	r1, r5
- 1000 0166 079A     		ldr	r2, [sp, #28]
- 1001 0168 0023     		movs	r3, #0
- 1002 016a 0BA8     		add	r0, sp, #44
- 1003 016c FFF7FEFF 		bl	dm_status_payload
- 1004 0170 069B     		ldr	r3, [sp, #24]
- 1005 0172 1870     		strb	r0, [r3]
- 1006 0174 FFF7FEFF 		bl	get_modem_dm_port
- 1007 0178 2B78     		ldrb	r3, [r5]
- 1008 017a 0600     		movs	r6, r0
- 1009 017c 0793     		str	r3, [sp, #28]
- 1010 017e FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
- 1011 0182 089B     		ldr	r3, [sp, #32]
- 1012 0184 C830     		adds	r0, r0, #200
- 1013 0186 3900     		movs	r1, r7
- 1014 0188 0190     		str	r0, [sp, #4]
- 1015 018a 0093     		str	r3, [sp]
- 1016 018c 3000     		movs	r0, r6
- 1017 018e 079B     		ldr	r3, [sp, #28]
- 1018 0190 0BAA     		add	r2, sp, #44
- 1019 0192 FFF7FEFF 		bl	lorawan_api_payload_send
- 1020 0196 011E     		subs	r1, r0, #0
- 1021 0198 2DD1     		bne	.L134
- 1022 019a 069B     		ldr	r3, [sp, #24]
- 1023 019c 1B78     		ldrb	r3, [r3]
- 1024 019e 002B     		cmp	r3, #0
- 1025 01a0 01D1     		bne	.L135
- 1026 01a2 099A     		ldr	r2, [sp, #36]
-ARM GAS  /tmp/ccI8rJG2.s 			page 21
+ 967 011a 1B78     		ldrb	r3, [r3]
+ 968 011c 002B     		cmp	r3, #0
+ 969 011e 6CD0     		beq	.L133
+ 970 0120 FFF7FEFF 		bl	modem_get_dm_info_bitfield_periodic
+ 971 0124 0127     		movs	r7, #1
+ 972 0126 7F4E     		ldr	r6, .L216+40
+ 973 0128 0400     		movs	r4, r0
+ 974 012a 0100     		movs	r1, r0
+ 975 012c 3D00     		movs	r5, r7
+ 976 012e 3000     		movs	r0, r6
+ 977 0130 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 978 0134 3A00     		movs	r2, r7
+ 979 0136 A30C     		lsrs	r3, r4, #18
+ 980 0138 9D43     		bics	r5, r3
+ 981 013a E30B     		lsrs	r3, r4, #15
+ 982 013c 9A43     		bics	r2, r3
+ 983 013e D303     		lsls	r3, r2, #15
+ 984 0140 3A00     		movs	r2, r7
+ 985 0142 AD04     		lsls	r5, r5, #18
+ 986 0144 ED18     		adds	r5, r5, r3
+ 987 0146 E309     		lsrs	r3, r4, #7
+ 988 0148 9A43     		bics	r2, r3
+ 989 014a D301     		lsls	r3, r2, #7
+ 990 014c 2D19     		adds	r5, r5, r4
+ 991 014e ED18     		adds	r5, r5, r3
+ 992 0150 2800     		movs	r0, r5
+ 993 0152 FFF7FEFF 		bl	modem_set_dm_info_bitfield_periodic
+ 994 0156 2900     		movs	r1, r5
+ 995 0158 1325     		movs	r5, #19
+ 996 015a 3000     		movs	r0, r6
+ 997 015c FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 998 0160 06AB     		add	r3, sp, #24
+ 999 0162 ED18     		adds	r5, r5, r3
+ 1000 0164 2900     		movs	r1, r5
+ 1001 0166 079A     		ldr	r2, [sp, #28]
+ 1002 0168 0023     		movs	r3, #0
+ 1003 016a 0BA8     		add	r0, sp, #44
+ 1004 016c FFF7FEFF 		bl	dm_status_payload
+ 1005 0170 069B     		ldr	r3, [sp, #24]
+ 1006 0172 1870     		strb	r0, [r3]
+ 1007 0174 FFF7FEFF 		bl	get_modem_dm_port
+ 1008 0178 2B78     		ldrb	r3, [r5]
+ 1009 017a 0600     		movs	r6, r0
+ 1010 017c 0793     		str	r3, [sp, #28]
+ 1011 017e FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 1012 0182 089B     		ldr	r3, [sp, #32]
+ 1013 0184 C830     		adds	r0, r0, #200
+ 1014 0186 3900     		movs	r1, r7
+ 1015 0188 0190     		str	r0, [sp, #4]
+ 1016 018a 0093     		str	r3, [sp]
+ 1017 018c 3000     		movs	r0, r6
+ 1018 018e 079B     		ldr	r3, [sp, #28]
+ 1019 0190 0BAA     		add	r2, sp, #44
+ 1020 0192 FFF7FEFF 		bl	lorawan_api_payload_send
+ 1021 0196 011E     		subs	r1, r0, #0
+ 1022 0198 2DD1     		bne	.L134
+ 1023 019a 069B     		ldr	r3, [sp, #24]
+ARM GAS  /tmp/ccNuiwIJ.s 			page 21
 
 
- 1027 01a4 1370     		strb	r3, [r2]
- 1028              	.L135:
- 1029 01a6 2000     		movs	r0, r4
- 1030 01a8 FFF7FEFF 		bl	modem_set_dm_info_bitfield_periodic
- 1031 01ac 2A78     		ldrb	r2, [r5]
- 1032 01ae 5E49     		ldr	r1, .L216+44
- 1033 01b0 5E48     		ldr	r0, .L216+48
- 1034 01b2 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1035 01b6 0024     		movs	r4, #0
- 1036 01b8 0F26     		movs	r6, #15
- 1037              	.L136:
- 1038 01ba 2B78     		ldrb	r3, [r5]
- 1039 01bc A342     		cmp	r3, r4
- 1040 01be 0AD8     		bhi	.L138
- 1041              	.L210:
- 1042 01c0 5B48     		ldr	r0, .L216+52
- 1043 01c2 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1044 01c6 FFF7FEFF 		bl	get_modem_dm_port
- 1045 01ca 5A4B     		ldr	r3, .L216+56
- 1046 01cc 0100     		movs	r1, r0
- 1047 01ce 1800     		movs	r0, r3
- 1048 01d0 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1049 01d4 7DE7     		b	.L130
- 1050              	.L138:
- 1051 01d6 3442     		tst	r4, r6
- 1052 01d8 04D1     		bne	.L137
- 1053 01da 002C     		cmp	r4, #0
- 1054 01dc 02D0     		beq	.L137
- 1055 01de 5448     		ldr	r0, .L216+52
- 1056 01e0 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1057              	.L137:
- 1058 01e4 1422     		movs	r2, #20
- 1059 01e6 06AB     		add	r3, sp, #24
- 1060 01e8 9B18     		adds	r3, r3, r2
- 1061 01ea 195D     		ldrb	r1, [r3, r4]
- 1062 01ec 5248     		ldr	r0, .L216+60
- 1063 01ee FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1064 01f2 0134     		adds	r4, r4, #1
- 1065 01f4 E1E7     		b	.L136
- 1066              	.L134:
- 1067 01f6 5148     		ldr	r0, .L216+64
- 1068 01f8 71E7     		b	.L214
- 1069              	.L133:
- 1070 01fa FFF7FEFF 		bl	get_modem_dm_interval_second
- 1071 01fe 0028     		cmp	r0, #0
- 1072 0200 00D1     		bne	.LCB1048
- 1073 0202 27E7     		b	.L108	@long jump
- 1074              	.LCB1048:
- 1075 0204 FFF7FEFF 		bl	modem_get_dm_info_bitfield_periodic
- 1076 0208 0028     		cmp	r0, #0
- 1077 020a 00D1     		bne	.LCB1052
- 1078 020c 22E7     		b	.L108	@long jump
- 1079              	.LCB1052:
- 1080 020e 1325     		movs	r5, #19
- 1081 0210 06AB     		add	r3, sp, #24
- 1082 0212 ED18     		adds	r5, r5, r3
- 1083 0214 0BAE     		add	r6, sp, #44
-ARM GAS  /tmp/ccI8rJG2.s 			page 22
+ 1024 019c 1B78     		ldrb	r3, [r3]
+ 1025 019e 002B     		cmp	r3, #0
+ 1026 01a0 01D1     		bne	.L135
+ 1027 01a2 099A     		ldr	r2, [sp, #36]
+ 1028 01a4 1370     		strb	r3, [r2]
+ 1029              	.L135:
+ 1030 01a6 2000     		movs	r0, r4
+ 1031 01a8 FFF7FEFF 		bl	modem_set_dm_info_bitfield_periodic
+ 1032 01ac 2A78     		ldrb	r2, [r5]
+ 1033 01ae 5E49     		ldr	r1, .L216+44
+ 1034 01b0 5E48     		ldr	r0, .L216+48
+ 1035 01b2 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1036 01b6 0024     		movs	r4, #0
+ 1037 01b8 0F26     		movs	r6, #15
+ 1038              	.L136:
+ 1039 01ba 2B78     		ldrb	r3, [r5]
+ 1040 01bc A342     		cmp	r3, r4
+ 1041 01be 0AD8     		bhi	.L138
+ 1042              	.L210:
+ 1043 01c0 5B48     		ldr	r0, .L216+52
+ 1044 01c2 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1045 01c6 FFF7FEFF 		bl	get_modem_dm_port
+ 1046 01ca 5A4B     		ldr	r3, .L216+56
+ 1047 01cc 0100     		movs	r1, r0
+ 1048 01ce 1800     		movs	r0, r3
+ 1049 01d0 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1050 01d4 7DE7     		b	.L130
+ 1051              	.L138:
+ 1052 01d6 3442     		tst	r4, r6
+ 1053 01d8 04D1     		bne	.L137
+ 1054 01da 002C     		cmp	r4, #0
+ 1055 01dc 02D0     		beq	.L137
+ 1056 01de 5448     		ldr	r0, .L216+52
+ 1057 01e0 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1058              	.L137:
+ 1059 01e4 1422     		movs	r2, #20
+ 1060 01e6 06AB     		add	r3, sp, #24
+ 1061 01e8 9B18     		adds	r3, r3, r2
+ 1062 01ea 195D     		ldrb	r1, [r3, r4]
+ 1063 01ec 5248     		ldr	r0, .L216+60
+ 1064 01ee FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1065 01f2 0134     		adds	r4, r4, #1
+ 1066 01f4 E1E7     		b	.L136
+ 1067              	.L134:
+ 1068 01f6 5148     		ldr	r0, .L216+64
+ 1069 01f8 71E7     		b	.L214
+ 1070              	.L133:
+ 1071 01fa FFF7FEFF 		bl	get_modem_dm_interval_second
+ 1072 01fe 0028     		cmp	r0, #0
+ 1073 0200 00D1     		bne	.LCB1048
+ 1074 0202 27E7     		b	.L108	@long jump
+ 1075              	.LCB1048:
+ 1076 0204 FFF7FEFF 		bl	modem_get_dm_info_bitfield_periodic
+ 1077 0208 0028     		cmp	r0, #0
+ 1078 020a 00D1     		bne	.LCB1052
+ 1079 020c 22E7     		b	.L108	@long jump
+ 1080              	.LCB1052:
+ARM GAS  /tmp/ccNuiwIJ.s 			page 22
 
 
- 1084 0216 2900     		movs	r1, r5
- 1085 0218 079A     		ldr	r2, [sp, #28]
- 1086 021a 0023     		movs	r3, #0
- 1087 021c 3000     		movs	r0, r6
- 1088 021e FFF7FEFF 		bl	dm_status_payload
- 1089 0222 3F4B     		ldr	r3, .L216+36
- 1090 0224 1870     		strb	r0, [r3]
- 1091 0226 FFF7FEFF 		bl	get_modem_dm_port
- 1092 022a 2F78     		ldrb	r7, [r5]
- 1093 022c 0400     		movs	r4, r0
- 1094 022e FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
- 1095 0232 0223     		movs	r3, #2
- 1096 0234 C830     		adds	r0, r0, #200
- 1097 0236 0190     		str	r0, [sp, #4]
- 1098 0238 0093     		str	r3, [sp]
- 1099 023a 2000     		movs	r0, r4
- 1100 023c 3B00     		movs	r3, r7
- 1101 023e 3200     		movs	r2, r6
- 1102 0240 0121     		movs	r1, #1
- 1103 0242 FFF7FEFF 		bl	lorawan_api_payload_send
- 1104 0246 041E     		subs	r4, r0, #0
- 1105 0248 15D1     		bne	.L141
- 1106 024a 2A78     		ldrb	r2, [r5]
- 1107 024c 3C49     		ldr	r1, .L216+68
- 1108 024e 3748     		ldr	r0, .L216+48
- 1109 0250 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1110 0254 0F27     		movs	r7, #15
- 1111              	.L142:
- 1112 0256 2B78     		ldrb	r3, [r5]
- 1113 0258 A342     		cmp	r3, r4
- 1114 025a B1D9     		bls	.L210
- 1115 025c 3C42     		tst	r4, r7
- 1116 025e 04D1     		bne	.L143
- 1117 0260 002C     		cmp	r4, #0
- 1118 0262 02D0     		beq	.L143
- 1119 0264 3248     		ldr	r0, .L216+52
- 1120 0266 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1121              	.L143:
- 1122 026a 315D     		ldrb	r1, [r6, r4]
- 1123 026c 3248     		ldr	r0, .L216+60
- 1124 026e FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1125 0272 0134     		adds	r4, r4, #1
- 1126 0274 EFE7     		b	.L142
- 1127              	.L141:
- 1128 0276 2100     		movs	r1, r4
- 1129 0278 3048     		ldr	r0, .L216+64
- 1130 027a 30E7     		b	.L214
- 1131              	.L122:
- 1132 027c FFF7FEFF 		bl	get_join_state
- 1133 0280 0500     		movs	r5, r0
- 1134 0282 0228     		cmp	r0, #2
- 1135 0284 00D0     		beq	.LCB1118
- 1136 0286 E5E6     		b	.L108	@long jump
- 1137              	.LCB1118:
- 1138 0288 1324     		movs	r4, #19
- 1139 028a FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
- 1140 028e 06AB     		add	r3, sp, #24
-ARM GAS  /tmp/ccI8rJG2.s 			page 23
+ 1081 020e 1325     		movs	r5, #19
+ 1082 0210 06AB     		add	r3, sp, #24
+ 1083 0212 ED18     		adds	r5, r5, r3
+ 1084 0214 0BAE     		add	r6, sp, #44
+ 1085 0216 2900     		movs	r1, r5
+ 1086 0218 079A     		ldr	r2, [sp, #28]
+ 1087 021a 0023     		movs	r3, #0
+ 1088 021c 3000     		movs	r0, r6
+ 1089 021e FFF7FEFF 		bl	dm_status_payload
+ 1090 0222 3F4B     		ldr	r3, .L216+36
+ 1091 0224 1870     		strb	r0, [r3]
+ 1092 0226 FFF7FEFF 		bl	get_modem_dm_port
+ 1093 022a 2F78     		ldrb	r7, [r5]
+ 1094 022c 0400     		movs	r4, r0
+ 1095 022e FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 1096 0232 0223     		movs	r3, #2
+ 1097 0234 C830     		adds	r0, r0, #200
+ 1098 0236 0190     		str	r0, [sp, #4]
+ 1099 0238 0093     		str	r3, [sp]
+ 1100 023a 2000     		movs	r0, r4
+ 1101 023c 3B00     		movs	r3, r7
+ 1102 023e 3200     		movs	r2, r6
+ 1103 0240 0121     		movs	r1, #1
+ 1104 0242 FFF7FEFF 		bl	lorawan_api_payload_send
+ 1105 0246 041E     		subs	r4, r0, #0
+ 1106 0248 15D1     		bne	.L141
+ 1107 024a 2A78     		ldrb	r2, [r5]
+ 1108 024c 3C49     		ldr	r1, .L216+68
+ 1109 024e 3748     		ldr	r0, .L216+48
+ 1110 0250 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1111 0254 0F27     		movs	r7, #15
+ 1112              	.L142:
+ 1113 0256 2B78     		ldrb	r3, [r5]
+ 1114 0258 A342     		cmp	r3, r4
+ 1115 025a B1D9     		bls	.L210
+ 1116 025c 3C42     		tst	r4, r7
+ 1117 025e 04D1     		bne	.L143
+ 1118 0260 002C     		cmp	r4, #0
+ 1119 0262 02D0     		beq	.L143
+ 1120 0264 3248     		ldr	r0, .L216+52
+ 1121 0266 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1122              	.L143:
+ 1123 026a 315D     		ldrb	r1, [r6, r4]
+ 1124 026c 3248     		ldr	r0, .L216+60
+ 1125 026e FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1126 0272 0134     		adds	r4, r4, #1
+ 1127 0274 EFE7     		b	.L142
+ 1128              	.L141:
+ 1129 0276 2100     		movs	r1, r4
+ 1130 0278 3048     		ldr	r0, .L216+64
+ 1131 027a 30E7     		b	.L214
+ 1132              	.L122:
+ 1133 027c FFF7FEFF 		bl	get_join_state
+ 1134 0280 0500     		movs	r5, r0
+ 1135 0282 0228     		cmp	r0, #2
+ 1136 0284 00D0     		beq	.LCB1118
+ 1137 0286 E5E6     		b	.L108	@long jump
+ARM GAS  /tmp/ccNuiwIJ.s 			page 23
 
 
- 1141 0290 E418     		adds	r4, r4, r3
- 1142 0292 0BAE     		add	r6, sp, #44
- 1143 0294 C2B2     		uxtb	r2, r0
- 1144 0296 2100     		movs	r1, r4
- 1145 0298 0123     		movs	r3, #1
- 1146 029a 3000     		movs	r0, r6
- 1147 029c FFF7FEFF 		bl	dm_status_payload
- 1148 02a0 284B     		ldr	r3, .L216+72
- 1149 02a2 1870     		strb	r0, [r3]
- 1150 02a4 FFF7FEFF 		bl	get_modem_dm_port
- 1151 02a8 2378     		ldrb	r3, [r4]
- 1152 02aa 0700     		movs	r7, r0
- 1153 02ac 0693     		str	r3, [sp, #24]
- 1154 02ae FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
- 1155 02b2 C830     		adds	r0, r0, #200
- 1156 02b4 0190     		str	r0, [sp, #4]
- 1157 02b6 0095     		str	r5, [sp]
- 1158 02b8 3200     		movs	r2, r6
- 1159 02ba 0121     		movs	r1, #1
- 1160 02bc 3800     		movs	r0, r7
- 1161 02be 069B     		ldr	r3, [sp, #24]
- 1162 02c0 FFF7FEFF 		bl	lorawan_api_payload_send
- 1163 02c4 051E     		subs	r5, r0, #0
- 1164 02c6 16D1     		bne	.L145
- 1165 02c8 2278     		ldrb	r2, [r4]
- 1166 02ca 1F49     		ldr	r1, .L216+76
- 1167 02cc 1748     		ldr	r0, .L216+48
- 1168 02ce FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1169 02d2 0F27     		movs	r7, #15
- 1170              	.L146:
- 1171 02d4 2378     		ldrb	r3, [r4]
- 1172 02d6 AB42     		cmp	r3, r5
- 1173 02d8 00D8     		bhi	.LCB1159
- 1174 02da 71E7     		b	.L210	@long jump
- 1175              	.LCB1159:
- 1176 02dc 3D42     		tst	r5, r7
- 1177 02de 04D1     		bne	.L147
- 1178 02e0 002D     		cmp	r5, #0
- 1179 02e2 02D0     		beq	.L147
- 1180 02e4 1248     		ldr	r0, .L216+52
- 1181 02e6 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1182              	.L147:
- 1183 02ea 715D     		ldrb	r1, [r6, r5]
- 1184 02ec 1248     		ldr	r0, .L216+60
- 1185 02ee FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1186 02f2 0135     		adds	r5, r5, #1
- 1187 02f4 EEE7     		b	.L146
- 1188              	.L145:
- 1189 02f6 2900     		movs	r1, r5
- 1190 02f8 1448     		ldr	r0, .L216+80
- 1191 02fa F0E6     		b	.L214
- 1192              	.L217:
- 1193              		.align	2
- 1194              	.L216:
- 1195 02fc 12000000 		.word	.LC61
- 1196 0300 19000000 		.word	.LC2
- 1197 0304 00000000 		.word	task_manager
-ARM GAS  /tmp/ccI8rJG2.s 			page 24
+ 1138              	.LCB1118:
+ 1139 0288 1324     		movs	r4, #19
+ 1140 028a FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
+ 1141 028e 06AB     		add	r3, sp, #24
+ 1142 0290 E418     		adds	r4, r4, r3
+ 1143 0292 0BAE     		add	r6, sp, #44
+ 1144 0294 C2B2     		uxtb	r2, r0
+ 1145 0296 2100     		movs	r1, r4
+ 1146 0298 0123     		movs	r3, #1
+ 1147 029a 3000     		movs	r0, r6
+ 1148 029c FFF7FEFF 		bl	dm_status_payload
+ 1149 02a0 284B     		ldr	r3, .L216+72
+ 1150 02a2 1870     		strb	r0, [r3]
+ 1151 02a4 FFF7FEFF 		bl	get_modem_dm_port
+ 1152 02a8 2378     		ldrb	r3, [r4]
+ 1153 02aa 0700     		movs	r7, r0
+ 1154 02ac 0693     		str	r3, [sp, #24]
+ 1155 02ae FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 1156 02b2 C830     		adds	r0, r0, #200
+ 1157 02b4 0190     		str	r0, [sp, #4]
+ 1158 02b6 0095     		str	r5, [sp]
+ 1159 02b8 3200     		movs	r2, r6
+ 1160 02ba 0121     		movs	r1, #1
+ 1161 02bc 3800     		movs	r0, r7
+ 1162 02be 069B     		ldr	r3, [sp, #24]
+ 1163 02c0 FFF7FEFF 		bl	lorawan_api_payload_send
+ 1164 02c4 051E     		subs	r5, r0, #0
+ 1165 02c6 16D1     		bne	.L145
+ 1166 02c8 2278     		ldrb	r2, [r4]
+ 1167 02ca 1F49     		ldr	r1, .L216+76
+ 1168 02cc 1748     		ldr	r0, .L216+48
+ 1169 02ce FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1170 02d2 0F27     		movs	r7, #15
+ 1171              	.L146:
+ 1172 02d4 2378     		ldrb	r3, [r4]
+ 1173 02d6 AB42     		cmp	r3, r5
+ 1174 02d8 00D8     		bhi	.LCB1159
+ 1175 02da 71E7     		b	.L210	@long jump
+ 1176              	.LCB1159:
+ 1177 02dc 3D42     		tst	r5, r7
+ 1178 02de 04D1     		bne	.L147
+ 1179 02e0 002D     		cmp	r5, #0
+ 1180 02e2 02D0     		beq	.L147
+ 1181 02e4 1248     		ldr	r0, .L216+52
+ 1182 02e6 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1183              	.L147:
+ 1184 02ea 715D     		ldrb	r1, [r6, r5]
+ 1185 02ec 1248     		ldr	r0, .L216+60
+ 1186 02ee FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1187 02f2 0135     		adds	r5, r5, #1
+ 1188 02f4 EEE7     		b	.L146
+ 1189              	.L145:
+ 1190 02f6 2900     		movs	r1, r5
+ 1191 02f8 1448     		ldr	r0, .L216+80
+ 1192 02fa F0E6     		b	.L214
+ 1193              	.L217:
+ 1194              		.align	2
+ARM GAS  /tmp/ccNuiwIJ.s 			page 24
 
 
- 1198 0308 00000000 		.word	send_task_update_needed
- 1199 030c 09000000 		.word	.LC59
- 1200 0310 00000000 		.word	.LC57
- 1201 0314 47000000 		.word	.LC66
- 1202 0318 5D000000 		.word	.LC68
- 1203 031c 00000000 		.word	is_first_dm_after_join
- 1204 0320 00000000 		.word	is_pending_dm_status_payload_periodic
- 1205 0324 98000000 		.word	.LC72
- 1206 0328 AE000000 		.word	.LC74
- 1207 032c 57000000 		.word	.LC9
- 1208 0330 6A000000 		.word	.LC11
- 1209 0334 BA000000 		.word	.LC79
- 1210 0338 6C000000 		.word	.LC13
- 1211 033c C7000000 		.word	.LC81
- 1212 0340 02010000 		.word	.LC83
- 1213 0344 00000000 		.word	is_pending_dm_status_payload_now
- 1214 0348 06010000 		.word	.LC86
- 1215 034c 0E010000 		.word	.LC88
- 1216              	.L114:
- 1217 0350 FFF7FEFF 		bl	get_join_state
- 1218 0354 0228     		cmp	r0, #2
- 1219 0356 00D0     		beq	.LCB1212
- 1220 0358 7CE6     		b	.L108	@long jump
- 1221              	.LCB1212:
- 1222 035a 0D23     		movs	r3, #13
- 1223 035c 06AA     		add	r2, sp, #24
- 1224 035e 1330     		adds	r0, r0, #19
- 1225 0360 1375     		strb	r3, [r2, #20]
- 1226 0362 8018     		adds	r0, r0, r2
- 1227 0364 FFF7FEFF 		bl	smtc_modem_hal_restore_crashlog
- 1228 0368 2122     		movs	r2, #33
- 1229 036a AF49     		ldr	r1, .L218
- 1230 036c AF48     		ldr	r0, .L218+4
- 1231 036e FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1232 0372 0024     		movs	r4, #0
- 1233 0374 0F25     		movs	r5, #15
- 1234              	.L150:
- 1235 0376 2C42     		tst	r4, r5
- 1236 0378 04D1     		bne	.L149
- 1237 037a 002C     		cmp	r4, #0
- 1238 037c 02D0     		beq	.L149
- 1239 037e AC48     		ldr	r0, .L218+8
- 1240 0380 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1241              	.L149:
- 1242 0384 1422     		movs	r2, #20
- 1243 0386 06AB     		add	r3, sp, #24
- 1244 0388 9B18     		adds	r3, r3, r2
- 1245 038a 195D     		ldrb	r1, [r3, r4]
- 1246 038c A948     		ldr	r0, .L218+12
- 1247 038e 0134     		adds	r4, r4, #1
- 1248 0390 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1249 0394 212C     		cmp	r4, #33
- 1250 0396 EED1     		bne	.L150
- 1251 0398 A548     		ldr	r0, .L218+8
- 1252 039a FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1253 039e FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
- 1254 03a2 0500     		movs	r5, r0
-ARM GAS  /tmp/ccI8rJG2.s 			page 25
+ 1195              	.L216:
+ 1196 02fc 12000000 		.word	.LC61
+ 1197 0300 1A000000 		.word	.LC2
+ 1198 0304 00000000 		.word	task_manager
+ 1199 0308 00000000 		.word	send_task_update_needed
+ 1200 030c 09000000 		.word	.LC59
+ 1201 0310 00000000 		.word	.LC57
+ 1202 0314 48000000 		.word	.LC66
+ 1203 0318 5F000000 		.word	.LC68
+ 1204 031c 00000000 		.word	is_first_dm_after_join
+ 1205 0320 00000000 		.word	is_pending_dm_status_payload_periodic
+ 1206 0324 9B000000 		.word	.LC72
+ 1207 0328 B2000000 		.word	.LC74
+ 1208 032c 59000000 		.word	.LC9
+ 1209 0330 6D000000 		.word	.LC11
+ 1210 0334 BE000000 		.word	.LC79
+ 1211 0338 70000000 		.word	.LC13
+ 1212 033c CC000000 		.word	.LC81
+ 1213 0340 08010000 		.word	.LC83
+ 1214 0344 00000000 		.word	is_pending_dm_status_payload_now
+ 1215 0348 0C010000 		.word	.LC86
+ 1216 034c 14010000 		.word	.LC88
+ 1217              	.L114:
+ 1218 0350 FFF7FEFF 		bl	get_join_state
+ 1219 0354 0228     		cmp	r0, #2
+ 1220 0356 00D0     		beq	.LCB1212
+ 1221 0358 7CE6     		b	.L108	@long jump
+ 1222              	.LCB1212:
+ 1223 035a 0D23     		movs	r3, #13
+ 1224 035c 06AA     		add	r2, sp, #24
+ 1225 035e 1330     		adds	r0, r0, #19
+ 1226 0360 1375     		strb	r3, [r2, #20]
+ 1227 0362 8018     		adds	r0, r0, r2
+ 1228 0364 FFF7FEFF 		bl	smtc_modem_hal_restore_crashlog
+ 1229 0368 2122     		movs	r2, #33
+ 1230 036a AF49     		ldr	r1, .L218
+ 1231 036c AF48     		ldr	r0, .L218+4
+ 1232 036e FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1233 0372 0024     		movs	r4, #0
+ 1234 0374 0F25     		movs	r5, #15
+ 1235              	.L150:
+ 1236 0376 2C42     		tst	r4, r5
+ 1237 0378 04D1     		bne	.L149
+ 1238 037a 002C     		cmp	r4, #0
+ 1239 037c 02D0     		beq	.L149
+ 1240 037e AC48     		ldr	r0, .L218+8
+ 1241 0380 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1242              	.L149:
+ 1243 0384 1422     		movs	r2, #20
+ 1244 0386 06AB     		add	r3, sp, #24
+ 1245 0388 9B18     		adds	r3, r3, r2
+ 1246 038a 195D     		ldrb	r1, [r3, r4]
+ 1247 038c A948     		ldr	r0, .L218+12
+ 1248 038e 0134     		adds	r4, r4, #1
+ 1249 0390 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1250 0394 212C     		cmp	r4, #33
+ 1251 0396 EED1     		bne	.L150
+ARM GAS  /tmp/ccNuiwIJ.s 			page 25
 
 
- 1255 03a4 FFF7FEFF 		bl	get_modem_dm_port
- 1256 03a8 0600     		movs	r6, r0
- 1257 03aa FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
- 1258 03ae 2B1C     		adds	r3, r5, #0
- 1259 03b0 EDB2     		uxtb	r5, r5
- 1260 03b2 212D     		cmp	r5, #33
- 1261 03b4 00D9     		bls	.L151
- 1262 03b6 231C     		adds	r3, r4, #0
- 1263              	.L151:
- 1264 03b8 0222     		movs	r2, #2
- 1265 03ba C830     		adds	r0, r0, #200
- 1266 03bc 0190     		str	r0, [sp, #4]
- 1267 03be 0092     		str	r2, [sp]
- 1268 03c0 0121     		movs	r1, #1
- 1269 03c2 3000     		movs	r0, r6
- 1270 03c4 DBB2     		uxtb	r3, r3
- 1271 03c6 0BAA     		add	r2, sp, #44
- 1272 03c8 FFF7FEFF 		bl	lorawan_api_payload_send
- 1273 03cc 0028     		cmp	r0, #0
- 1274 03ce 00D0     		beq	.LCB1270
- 1275 03d0 40E6     		b	.L108	@long jump
- 1276              	.LCB1270:
- 1277 03d2 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
- 1278 03d6 7CE6     		b	.L130
- 1279              	.L121:
- 1280 03d8 F222     		movs	r2, #242
- 1281 03da 0021     		movs	r1, #0
- 1282 03dc 0BA8     		add	r0, sp, #44
- 1283 03de FFF7FEFF 		bl	memset
- 1284 03e2 FFF7FEFF 		bl	get_join_state
- 1285 03e6 0228     		cmp	r0, #2
- 1286 03e8 03D0     		beq	.L153
- 1287 03ea 9348     		ldr	r0, .L218+16
- 1288              	.L213:
- 1289 03ec FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1290 03f0 77E6     		b	.L211
- 1291              	.L153:
- 1292 03f2 FFF7FEFF 		bl	modem_get_upload_state
- 1293 03f6 0228     		cmp	r0, #2
- 1294 03f8 01D0     		beq	.L154
- 1295 03fa 9048     		ldr	r0, .L218+20
- 1296 03fc F6E7     		b	.L213
- 1297              	.L154:
- 1298 03fe FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
- 1299 0402 8F4B     		ldr	r3, .L218+24
- 1300 0404 0400     		movs	r4, r0
- 1301 0406 1D68     		ldr	r5, [r3]
- 1302 0408 FFF7FEFF 		bl	lorawan_api_fcnt_up_get
- 1303 040c 2200     		movs	r2, r4
- 1304 040e 0300     		movs	r3, r0
- 1305 0410 642C     		cmp	r4, #100
- 1306 0412 00D9     		bls	.L155
- 1307 0414 6422     		movs	r2, #100
- 1308              	.L155:
- 1309 0416 2800     		movs	r0, r5
- 1310 0418 0BA9     		add	r1, sp, #44
- 1311 041a FFF7FEFF 		bl	file_upload_get_fragment
-ARM GAS  /tmp/ccI8rJG2.s 			page 26
+ 1252 0398 A548     		ldr	r0, .L218+8
+ 1253 039a FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1254 039e FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
+ 1255 03a2 0500     		movs	r5, r0
+ 1256 03a4 FFF7FEFF 		bl	get_modem_dm_port
+ 1257 03a8 0600     		movs	r6, r0
+ 1258 03aa FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 1259 03ae 2B1C     		adds	r3, r5, #0
+ 1260 03b0 EDB2     		uxtb	r5, r5
+ 1261 03b2 212D     		cmp	r5, #33
+ 1262 03b4 00D9     		bls	.L151
+ 1263 03b6 231C     		adds	r3, r4, #0
+ 1264              	.L151:
+ 1265 03b8 0222     		movs	r2, #2
+ 1266 03ba C830     		adds	r0, r0, #200
+ 1267 03bc 0190     		str	r0, [sp, #4]
+ 1268 03be 0092     		str	r2, [sp]
+ 1269 03c0 0121     		movs	r1, #1
+ 1270 03c2 3000     		movs	r0, r6
+ 1271 03c4 DBB2     		uxtb	r3, r3
+ 1272 03c6 0BAA     		add	r2, sp, #44
+ 1273 03c8 FFF7FEFF 		bl	lorawan_api_payload_send
+ 1274 03cc 0028     		cmp	r0, #0
+ 1275 03ce 00D0     		beq	.LCB1270
+ 1276 03d0 40E6     		b	.L108	@long jump
+ 1277              	.LCB1270:
+ 1278 03d2 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
+ 1279 03d6 7CE6     		b	.L130
+ 1280              	.L121:
+ 1281 03d8 F222     		movs	r2, #242
+ 1282 03da 0021     		movs	r1, #0
+ 1283 03dc 0BA8     		add	r0, sp, #44
+ 1284 03de FFF7FEFF 		bl	memset
+ 1285 03e2 FFF7FEFF 		bl	get_join_state
+ 1286 03e6 0228     		cmp	r0, #2
+ 1287 03e8 03D0     		beq	.L153
+ 1288 03ea 9348     		ldr	r0, .L218+16
+ 1289              	.L213:
+ 1290 03ec FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1291 03f0 77E6     		b	.L211
+ 1292              	.L153:
+ 1293 03f2 FFF7FEFF 		bl	modem_get_upload_state
+ 1294 03f6 0228     		cmp	r0, #2
+ 1295 03f8 01D0     		beq	.L154
+ 1296 03fa 9048     		ldr	r0, .L218+20
+ 1297 03fc F6E7     		b	.L213
+ 1298              	.L154:
+ 1299 03fe FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
+ 1300 0402 8F4B     		ldr	r3, .L218+24
+ 1301 0404 0400     		movs	r4, r0
+ 1302 0406 1D68     		ldr	r5, [r3]
+ 1303 0408 FFF7FEFF 		bl	lorawan_api_fcnt_up_get
+ 1304 040c 2200     		movs	r2, r4
+ 1305 040e 0300     		movs	r3, r0
+ 1306 0410 642C     		cmp	r4, #100
+ 1307 0412 00D9     		bls	.L155
+ 1308 0414 6422     		movs	r2, #100
+ARM GAS  /tmp/ccNuiwIJ.s 			page 26
 
 
- 1312 041e 041E     		subs	r4, r0, #0
- 1313 0420 6ADD     		ble	.L215
- 1314 0422 FFF7FEFF 		bl	get_modem_dm_port
- 1315 0426 0500     		movs	r5, r0
- 1316 0428 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
- 1317 042c 0222     		movs	r2, #2
- 1318 042e C830     		adds	r0, r0, #200
- 1319 0430 0190     		str	r0, [sp, #4]
- 1320 0432 0121     		movs	r1, #1
- 1321 0434 2800     		movs	r0, r5
- 1322 0436 0092     		str	r2, [sp]
- 1323 0438 E3B2     		uxtb	r3, r4
- 1324 043a 0BAA     		add	r2, sp, #44
- 1325              	.L209:
- 1326 043c FFF7FEFF 		bl	lorawan_api_payload_send
- 1327 0440 C7E0     		b	.L158
- 1328              	.L118:
- 1329 0442 0BAD     		add	r5, sp, #44
- 1330 0444 F222     		movs	r2, #242
- 1331 0446 0021     		movs	r1, #0
- 1332 0448 2800     		movs	r0, r5
- 1333 044a FFF7FEFF 		bl	memset
- 1334 044e FFF7FEFF 		bl	get_join_state
- 1335 0452 0228     		cmp	r0, #2
- 1336 0454 01D0     		beq	.L159
- 1337 0456 7B48     		ldr	r0, .L218+28
- 1338 0458 C8E7     		b	.L213
- 1339              	.L159:
- 1340 045a FFF7FEFF 		bl	modem_get_stream_state
- 1341 045e 0400     		movs	r4, r0
- 1342 0460 7948     		ldr	r0, .L218+32
- 1343 0462 012C     		cmp	r4, #1
- 1344 0464 C2D1     		bne	.L213
- 1345 0466 FFF7FEFF 		bl	get_modem_dm_port
- 1346 046a 0600     		movs	r6, r0
- 1347 046c FFF7FEFF 		bl	modem_get_stream_port
- 1348 0470 8642     		cmp	r6, r0
- 1349 0472 26D1     		bne	.L169
- 1350 0474 1423     		movs	r3, #20
- 1351 0476 2B70     		strb	r3, [r5]
- 1352              	.L161:
- 1353 0478 FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
- 1354 047c 06AB     		add	r3, sp, #24
- 1355 047e 001B     		subs	r0, r0, r4
- 1356 0480 D874     		strb	r0, [r3, #19]
- 1357 0482 FFF7FEFF 		bl	lorawan_api_fcnt_up_get
- 1358 0486 1323     		movs	r3, #19
- 1359 0488 704E     		ldr	r6, .L218+36
- 1360 048a 0200     		movs	r2, r0
- 1361 048c 06A8     		add	r0, sp, #24
- 1362 048e 1B18     		adds	r3, r3, r0
- 1363 0490 2919     		adds	r1, r5, r4
- 1364 0492 3068     		ldr	r0, [r6]
- 1365 0494 FFF7FEFF 		bl	stream_get_fragment
- 1366 0498 0028     		cmp	r0, #0
- 1367 049a 14D1     		bne	.L162
- 1368 049c 06AB     		add	r3, sp, #24
-ARM GAS  /tmp/ccI8rJG2.s 			page 27
+ 1309              	.L155:
+ 1310 0416 2800     		movs	r0, r5
+ 1311 0418 0BA9     		add	r1, sp, #44
+ 1312 041a FFF7FEFF 		bl	file_upload_get_fragment
+ 1313 041e 041E     		subs	r4, r0, #0
+ 1314 0420 6ADD     		ble	.L215
+ 1315 0422 FFF7FEFF 		bl	get_modem_dm_port
+ 1316 0426 0500     		movs	r5, r0
+ 1317 0428 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 1318 042c 0222     		movs	r2, #2
+ 1319 042e C830     		adds	r0, r0, #200
+ 1320 0430 0190     		str	r0, [sp, #4]
+ 1321 0432 0121     		movs	r1, #1
+ 1322 0434 2800     		movs	r0, r5
+ 1323 0436 0092     		str	r2, [sp]
+ 1324 0438 E3B2     		uxtb	r3, r4
+ 1325 043a 0BAA     		add	r2, sp, #44
+ 1326              	.L209:
+ 1327 043c FFF7FEFF 		bl	lorawan_api_payload_send
+ 1328 0440 C7E0     		b	.L158
+ 1329              	.L118:
+ 1330 0442 0BAD     		add	r5, sp, #44
+ 1331 0444 F222     		movs	r2, #242
+ 1332 0446 0021     		movs	r1, #0
+ 1333 0448 2800     		movs	r0, r5
+ 1334 044a FFF7FEFF 		bl	memset
+ 1335 044e FFF7FEFF 		bl	get_join_state
+ 1336 0452 0228     		cmp	r0, #2
+ 1337 0454 01D0     		beq	.L159
+ 1338 0456 7B48     		ldr	r0, .L218+28
+ 1339 0458 C8E7     		b	.L213
+ 1340              	.L159:
+ 1341 045a FFF7FEFF 		bl	modem_get_stream_state
+ 1342 045e 0400     		movs	r4, r0
+ 1343 0460 7948     		ldr	r0, .L218+32
+ 1344 0462 012C     		cmp	r4, #1
+ 1345 0464 C2D1     		bne	.L213
+ 1346 0466 FFF7FEFF 		bl	get_modem_dm_port
+ 1347 046a 0600     		movs	r6, r0
+ 1348 046c FFF7FEFF 		bl	modem_get_stream_port
+ 1349 0470 8642     		cmp	r6, r0
+ 1350 0472 26D1     		bne	.L169
+ 1351 0474 1423     		movs	r3, #20
+ 1352 0476 2B70     		strb	r3, [r5]
+ 1353              	.L161:
+ 1354 0478 FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
+ 1355 047c 06AB     		add	r3, sp, #24
+ 1356 047e 001B     		subs	r0, r0, r4
+ 1357 0480 D874     		strb	r0, [r3, #19]
+ 1358 0482 FFF7FEFF 		bl	lorawan_api_fcnt_up_get
+ 1359 0486 1323     		movs	r3, #19
+ 1360 0488 704E     		ldr	r6, .L218+36
+ 1361 048a 0200     		movs	r2, r0
+ 1362 048c 06A8     		add	r0, sp, #24
+ 1363 048e 1B18     		adds	r3, r3, r0
+ 1364 0490 2919     		adds	r1, r5, r4
+ 1365 0492 3068     		ldr	r0, [r6]
+ARM GAS  /tmp/ccNuiwIJ.s 			page 27
 
 
- 1369 049e DB7C     		ldrb	r3, [r3, #19]
- 1370 04a0 002B     		cmp	r3, #0
- 1371 04a2 10D0     		beq	.L162
- 1372 04a4 6A4A     		ldr	r2, .L218+40
- 1373 04a6 1C19     		adds	r4, r3, r4
- 1374 04a8 1678     		ldrb	r6, [r2]
- 1375 04aa FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
- 1376 04ae 0223     		movs	r3, #2
- 1377 04b0 C830     		adds	r0, r0, #200
- 1378 04b2 E4B2     		uxtb	r4, r4
- 1379 04b4 0190     		str	r0, [sp, #4]
- 1380 04b6 0093     		str	r3, [sp]
- 1381 04b8 2A00     		movs	r2, r5
- 1382 04ba 2300     		movs	r3, r4
- 1383 04bc 0121     		movs	r1, #1
- 1384 04be 3000     		movs	r0, r6
- 1385 04c0 BCE7     		b	.L209
- 1386              	.L169:
- 1387 04c2 0024     		movs	r4, #0
- 1388 04c4 D8E7     		b	.L161
- 1389              	.L162:
- 1390 04c6 0020     		movs	r0, #0
- 1391 04c8 FFF7FEFF 		bl	set_modem_status_streaming
- 1392 04cc 6148     		ldr	r0, .L218+44
- 1393 04ce 8DE7     		b	.L213
- 1394              	.L120:
- 1395 04d0 FFF7FEFF 		bl	get_modem_muted
- 1396 04d4 0128     		cmp	r0, #1
- 1397 04d6 00D0     		beq	.LCB1424
- 1398 04d8 BCE5     		b	.L108	@long jump
- 1399              	.LCB1424:
- 1400 04da FFF7FEFF 		bl	dm_get_number_of_days_mute
- 1401 04de 0138     		subs	r0, r0, #1
- 1402 04e0 C0B2     		uxtb	r0, r0
- 1403 04e2 FFF7FEFF 		bl	dm_set_number_of_days_mute
- 1404 04e6 B5E5     		b	.L108
- 1405              	.L119:
- 1406 04e8 0BAC     		add	r4, sp, #44
- 1407 04ea 2000     		movs	r0, r4
- 1408 04ec FFF7FEFF 		bl	get_dm_retrieve_pending_dl
- 1409 04f0 2378     		ldrb	r3, [r4]
- 1410 04f2 002B     		cmp	r3, #0
- 1411 04f4 00D1     		bne	.LCB1439
- 1412 04f6 ADE5     		b	.L108	@long jump
- 1413              	.LCB1439:
- 1414              	.L215:
- 1415 04f8 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
- 1416 04fc 0223     		movs	r3, #2
- 1417 04fe 0093     		str	r3, [sp]
- 1418 0500 0023     		movs	r3, #0
- 1419 0502 C830     		adds	r0, r0, #200
- 1420 0504 0190     		str	r0, [sp, #4]
- 1421 0506 1A00     		movs	r2, r3
- 1422 0508 1900     		movs	r1, r3
- 1423 050a 1800     		movs	r0, r3
- 1424 050c 96E7     		b	.L209
- 1425              	.L117:
-ARM GAS  /tmp/ccI8rJG2.s 			page 28
+ 1366 0494 FFF7FEFF 		bl	stream_get_fragment
+ 1367 0498 0028     		cmp	r0, #0
+ 1368 049a 14D1     		bne	.L162
+ 1369 049c 06AB     		add	r3, sp, #24
+ 1370 049e DB7C     		ldrb	r3, [r3, #19]
+ 1371 04a0 002B     		cmp	r3, #0
+ 1372 04a2 10D0     		beq	.L162
+ 1373 04a4 6A4A     		ldr	r2, .L218+40
+ 1374 04a6 1C19     		adds	r4, r3, r4
+ 1375 04a8 1678     		ldrb	r6, [r2]
+ 1376 04aa FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 1377 04ae 0223     		movs	r3, #2
+ 1378 04b0 C830     		adds	r0, r0, #200
+ 1379 04b2 E4B2     		uxtb	r4, r4
+ 1380 04b4 0190     		str	r0, [sp, #4]
+ 1381 04b6 0093     		str	r3, [sp]
+ 1382 04b8 2A00     		movs	r2, r5
+ 1383 04ba 2300     		movs	r3, r4
+ 1384 04bc 0121     		movs	r1, #1
+ 1385 04be 3000     		movs	r0, r6
+ 1386 04c0 BCE7     		b	.L209
+ 1387              	.L169:
+ 1388 04c2 0024     		movs	r4, #0
+ 1389 04c4 D8E7     		b	.L161
+ 1390              	.L162:
+ 1391 04c6 0020     		movs	r0, #0
+ 1392 04c8 FFF7FEFF 		bl	set_modem_status_streaming
+ 1393 04cc 6148     		ldr	r0, .L218+44
+ 1394 04ce 8DE7     		b	.L213
+ 1395              	.L120:
+ 1396 04d0 FFF7FEFF 		bl	get_modem_muted
+ 1397 04d4 0128     		cmp	r0, #1
+ 1398 04d6 00D0     		beq	.LCB1424
+ 1399 04d8 BCE5     		b	.L108	@long jump
+ 1400              	.LCB1424:
+ 1401 04da FFF7FEFF 		bl	dm_get_number_of_days_mute
+ 1402 04de 0138     		subs	r0, r0, #1
+ 1403 04e0 C0B2     		uxtb	r0, r0
+ 1404 04e2 FFF7FEFF 		bl	dm_set_number_of_days_mute
+ 1405 04e6 B5E5     		b	.L108
+ 1406              	.L119:
+ 1407 04e8 0BAC     		add	r4, sp, #44
+ 1408 04ea 2000     		movs	r0, r4
+ 1409 04ec FFF7FEFF 		bl	get_dm_retrieve_pending_dl
+ 1410 04f0 2378     		ldrb	r3, [r4]
+ 1411 04f2 002B     		cmp	r3, #0
+ 1412 04f4 00D1     		bne	.LCB1439
+ 1413 04f6 ADE5     		b	.L108	@long jump
+ 1414              	.LCB1439:
+ 1415              	.L215:
+ 1416 04f8 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 1417 04fc 0223     		movs	r3, #2
+ 1418 04fe 0093     		str	r3, [sp]
+ 1419 0500 0023     		movs	r3, #0
+ 1420 0502 C830     		adds	r0, r0, #200
+ 1421 0504 0190     		str	r0, [sp, #4]
+ 1422 0506 1A00     		movs	r2, r3
+ARM GAS  /tmp/ccNuiwIJ.s 			page 28
 
 
- 1426 050e FFF7FEFF 		bl	lorawan_api_modem_certification_is_enabled
- 1427 0512 0128     		cmp	r0, #1
- 1428 0514 00D1     		bne	.LCB1458
- 1429 0516 9DE5     		b	.L108	@long jump
- 1430              	.LCB1458:
- 1431 0518 FFF7FEFF 		bl	get_join_state
- 1432 051c 0228     		cmp	r0, #2
- 1433 051e 00D0     		beq	.LCB1462
- 1434 0520 98E5     		b	.L108	@long jump
- 1435              	.LCB1462:
- 1436 0522 4D4B     		ldr	r3, .L218+48
- 1437 0524 1868     		ldr	r0, [r3]
- 1438 0526 FFF7FEFF 		bl	clock_sync_request
- 1439 052a 93E5     		b	.L108
- 1440              	.L116:
- 1441 052c FFF7FEFF 		bl	lorawan_api_modem_certification_is_enabled
- 1442 0530 0128     		cmp	r0, #1
- 1443 0532 00D1     		bne	.LCB1473
- 1444 0534 8EE5     		b	.L108	@long jump
- 1445              	.LCB1473:
- 1446 0536 FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
- 1447 053a C3B2     		uxtb	r3, r0
- 1448 053c 0793     		str	r3, [sp, #28]
- 1449 053e 1323     		movs	r3, #19
- 1450 0540 0024     		movs	r4, #0
- 1451 0542 06AA     		add	r2, sp, #24
- 1452 0544 9B18     		adds	r3, r3, r2
- 1453 0546 1C70     		strb	r4, [r3]
- 1454 0548 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
- 1455 054c 871C     		adds	r7, r0, #2
- 1456 054e FFF7FEFF 		bl	get_modem_dm_port
- 1457 0552 414B     		ldr	r3, .L218+48
- 1458 0554 0500     		movs	r5, r0
- 1459 0556 1868     		ldr	r0, [r3]
- 1460 0558 FFF7FEFF 		bl	clock_sync_get_alcsync_port
- 1461 055c 8542     		cmp	r5, r0
- 1462 055e 03D1     		bne	.L165
- 1463 0560 1722     		movs	r2, #23
- 1464 0562 0BAB     		add	r3, sp, #44
- 1465 0564 1A70     		strb	r2, [r3]
- 1466 0566 0134     		adds	r4, r4, #1
- 1467              	.L165:
- 1468 0568 3C4E     		ldr	r6, .L218+52
- 1469 056a 3368     		ldr	r3, [r6]
- 1470 056c 0693     		str	r3, [sp, #24]
- 1471 056e FFF7FEFF 		bl	smtc_modem_hal_get_time_compensation_in_s
- 1472 0572 0500     		movs	r5, r0
- 1473 0574 3068     		ldr	r0, [r6]
- 1474 0576 FFF7FEFF 		bl	alc_sync_get_time_correction_second
- 1475 057a 2D18     		adds	r5, r5, r0
- 1476 057c E919     		adds	r1, r5, r7
- 1477 057e 1325     		movs	r5, #19
- 1478 0580 06AB     		add	r3, sp, #24
- 1479 0582 ED18     		adds	r5, r5, r3
- 1480 0584 0BAB     		add	r3, sp, #44
- 1481 0586 1B19     		adds	r3, r3, r4
- 1482 0588 0193     		str	r3, [sp, #4]
-ARM GAS  /tmp/ccI8rJG2.s 			page 29
+ 1423 0508 1900     		movs	r1, r3
+ 1424 050a 1800     		movs	r0, r3
+ 1425 050c 96E7     		b	.L209
+ 1426              	.L117:
+ 1427 050e FFF7FEFF 		bl	lorawan_api_modem_certification_is_enabled
+ 1428 0512 0128     		cmp	r0, #1
+ 1429 0514 00D1     		bne	.LCB1458
+ 1430 0516 9DE5     		b	.L108	@long jump
+ 1431              	.LCB1458:
+ 1432 0518 FFF7FEFF 		bl	get_join_state
+ 1433 051c 0228     		cmp	r0, #2
+ 1434 051e 00D0     		beq	.LCB1462
+ 1435 0520 98E5     		b	.L108	@long jump
+ 1436              	.LCB1462:
+ 1437 0522 4D4B     		ldr	r3, .L218+48
+ 1438 0524 1868     		ldr	r0, [r3]
+ 1439 0526 FFF7FEFF 		bl	clock_sync_request
+ 1440 052a 93E5     		b	.L108
+ 1441              	.L116:
+ 1442 052c FFF7FEFF 		bl	lorawan_api_modem_certification_is_enabled
+ 1443 0530 0128     		cmp	r0, #1
+ 1444 0532 00D1     		bne	.LCB1473
+ 1445 0534 8EE5     		b	.L108	@long jump
+ 1446              	.LCB1473:
+ 1447 0536 FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
+ 1448 053a C3B2     		uxtb	r3, r0
+ 1449 053c 0793     		str	r3, [sp, #28]
+ 1450 053e 1323     		movs	r3, #19
+ 1451 0540 0024     		movs	r4, #0
+ 1452 0542 06AA     		add	r2, sp, #24
+ 1453 0544 9B18     		adds	r3, r3, r2
+ 1454 0546 1C70     		strb	r4, [r3]
+ 1455 0548 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
+ 1456 054c 871C     		adds	r7, r0, #2
+ 1457 054e FFF7FEFF 		bl	get_modem_dm_port
+ 1458 0552 414B     		ldr	r3, .L218+48
+ 1459 0554 0500     		movs	r5, r0
+ 1460 0556 1868     		ldr	r0, [r3]
+ 1461 0558 FFF7FEFF 		bl	clock_sync_get_alcsync_port
+ 1462 055c 8542     		cmp	r5, r0
+ 1463 055e 03D1     		bne	.L165
+ 1464 0560 1722     		movs	r2, #23
+ 1465 0562 0BAB     		add	r3, sp, #44
+ 1466 0564 1A70     		strb	r2, [r3]
+ 1467 0566 0134     		adds	r4, r4, #1
+ 1468              	.L165:
+ 1469 0568 3C4E     		ldr	r6, .L218+52
+ 1470 056a 3368     		ldr	r3, [r6]
+ 1471 056c 0693     		str	r3, [sp, #24]
+ 1472 056e FFF7FEFF 		bl	smtc_modem_hal_get_time_compensation_in_s
+ 1473 0572 0500     		movs	r5, r0
+ 1474 0574 3068     		ldr	r0, [r6]
+ 1475 0576 FFF7FEFF 		bl	alc_sync_get_time_correction_second
+ 1476 057a 2D18     		adds	r5, r5, r0
+ 1477 057c E919     		adds	r1, r5, r7
+ 1478 057e 1325     		movs	r5, #19
+ 1479 0580 06AB     		add	r3, sp, #24
+ARM GAS  /tmp/ccNuiwIJ.s 			page 29
 
 
- 1483 058a 079B     		ldr	r3, [sp, #28]
- 1484 058c 0698     		ldr	r0, [sp, #24]
- 1485 058e 1B1B     		subs	r3, r3, r4
- 1486 0590 DBB2     		uxtb	r3, r3
- 1487 0592 0093     		str	r3, [sp]
- 1488 0594 0123     		movs	r3, #1
- 1489 0596 0295     		str	r5, [sp, #8]
- 1490 0598 1A00     		movs	r2, r3
- 1491 059a FFF7FEFF 		bl	alc_sync_create_uplink_payload
- 1492 059e 2B78     		ldrb	r3, [r5]
- 1493 05a0 E418     		adds	r4, r4, r3
- 1494 05a2 E4B2     		uxtb	r4, r4
- 1495 05a4 2C70     		strb	r4, [r5]
- 1496 05a6 002C     		cmp	r4, #0
- 1497 05a8 00D1     		bne	.LCB1531
- 1498 05aa 53E5     		b	.L108	@long jump
- 1499              	.LCB1531:
- 1500 05ac 2A4B     		ldr	r3, .L218+48
- 1501 05ae 1868     		ldr	r0, [r3]
- 1502 05b0 FFF7FEFF 		bl	clock_sync_get_alcsync_port
- 1503 05b4 FA22     		movs	r2, #250
- 1504 05b6 9200     		lsls	r2, r2, #2
- 1505 05b8 7A43     		muls	r2, r7
- 1506 05ba 2B78     		ldrb	r3, [r5]
- 1507 05bc 0192     		str	r2, [sp, #4]
- 1508 05be 0222     		movs	r2, #2
- 1509 05c0 0121     		movs	r1, #1
- 1510 05c2 0092     		str	r2, [sp]
- 1511 05c4 0BAA     		add	r2, sp, #44
- 1512 05c6 FFF7FEFF 		bl	lorawan_api_payload_send_at_time
- 1513 05ca 0022     		movs	r2, #0
- 1514 05cc 3368     		ldr	r3, [r6]
- 1515 05ce 2933     		adds	r3, r3, #41
- 1516 05d0 1A70     		strb	r2, [r3]
- 1517              	.L158:
- 1518 05d2 0028     		cmp	r0, #0
- 1519 05d4 00D1     		bne	.LCB1552
- 1520 05d6 7CE5     		b	.L130	@long jump
- 1521              	.LCB1552:
- 1522 05d8 3CE5     		b	.L108
- 1523              	.L113:
- 1524 05da 0220     		movs	r0, #2
- 1525              	.L212:
- 1526 05dc FFF7FEFF 		bl	lorawan_api_send_stack_cid_req
- 1527 05e0 38E5     		b	.L108
- 1528              	.L112:
- 1529 05e2 1F48     		ldr	r0, .L218+56
- 1530 05e4 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1531 05e8 1E48     		ldr	r0, .L218+60
- 1532 05ea FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1533 05ee 0D20     		movs	r0, #13
- 1534 05f0 F4E7     		b	.L212
- 1535              	.L111:
- 1536 05f2 1D48     		ldr	r0, .L218+64
- 1537 05f4 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1538 05f8 1A48     		ldr	r0, .L218+60
- 1539 05fa FFF7FEFF 		bl	smtc_modem_hal_print_trace
-ARM GAS  /tmp/ccI8rJG2.s 			page 30
+ 1480 0582 ED18     		adds	r5, r5, r3
+ 1481 0584 0BAB     		add	r3, sp, #44
+ 1482 0586 1B19     		adds	r3, r3, r4
+ 1483 0588 0193     		str	r3, [sp, #4]
+ 1484 058a 079B     		ldr	r3, [sp, #28]
+ 1485 058c 0698     		ldr	r0, [sp, #24]
+ 1486 058e 1B1B     		subs	r3, r3, r4
+ 1487 0590 DBB2     		uxtb	r3, r3
+ 1488 0592 0093     		str	r3, [sp]
+ 1489 0594 0123     		movs	r3, #1
+ 1490 0596 0295     		str	r5, [sp, #8]
+ 1491 0598 1A00     		movs	r2, r3
+ 1492 059a FFF7FEFF 		bl	alc_sync_create_uplink_payload
+ 1493 059e 2B78     		ldrb	r3, [r5]
+ 1494 05a0 E418     		adds	r4, r4, r3
+ 1495 05a2 E4B2     		uxtb	r4, r4
+ 1496 05a4 2C70     		strb	r4, [r5]
+ 1497 05a6 002C     		cmp	r4, #0
+ 1498 05a8 00D1     		bne	.LCB1531
+ 1499 05aa 53E5     		b	.L108	@long jump
+ 1500              	.LCB1531:
+ 1501 05ac 2A4B     		ldr	r3, .L218+48
+ 1502 05ae 1868     		ldr	r0, [r3]
+ 1503 05b0 FFF7FEFF 		bl	clock_sync_get_alcsync_port
+ 1504 05b4 FA22     		movs	r2, #250
+ 1505 05b6 9200     		lsls	r2, r2, #2
+ 1506 05b8 7A43     		muls	r2, r7
+ 1507 05ba 2B78     		ldrb	r3, [r5]
+ 1508 05bc 0192     		str	r2, [sp, #4]
+ 1509 05be 0222     		movs	r2, #2
+ 1510 05c0 0121     		movs	r1, #1
+ 1511 05c2 0092     		str	r2, [sp]
+ 1512 05c4 0BAA     		add	r2, sp, #44
+ 1513 05c6 FFF7FEFF 		bl	lorawan_api_payload_send_at_time
+ 1514 05ca 0022     		movs	r2, #0
+ 1515 05cc 3368     		ldr	r3, [r6]
+ 1516 05ce 2933     		adds	r3, r3, #41
+ 1517 05d0 1A70     		strb	r2, [r3]
+ 1518              	.L158:
+ 1519 05d2 0028     		cmp	r0, #0
+ 1520 05d4 00D1     		bne	.LCB1552
+ 1521 05d6 7CE5     		b	.L130	@long jump
+ 1522              	.LCB1552:
+ 1523 05d8 3CE5     		b	.L108
+ 1524              	.L113:
+ 1525 05da 0220     		movs	r0, #2
+ 1526              	.L212:
+ 1527 05dc FFF7FEFF 		bl	lorawan_api_send_stack_cid_req
+ 1528 05e0 38E5     		b	.L108
+ 1529              	.L112:
+ 1530 05e2 1F48     		ldr	r0, .L218+56
+ 1531 05e4 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1532 05e8 1E48     		ldr	r0, .L218+60
+ 1533 05ea FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1534 05ee 0D20     		movs	r0, #13
+ 1535 05f0 F4E7     		b	.L212
+ 1536              	.L111:
+ARM GAS  /tmp/ccNuiwIJ.s 			page 30
 
 
- 1540 05fe 1020     		movs	r0, #16
- 1541 0600 ECE7     		b	.L212
- 1542              	.L115:
- 1543 0602 FFF7FEFF 		bl	get_modem_dm_port
- 1544 0606 194B     		ldr	r3, .L218+68
- 1545 0608 0400     		movs	r4, r0
- 1546 060a 1D68     		ldr	r5, [r3]
- 1547 060c 184B     		ldr	r3, .L218+72
- 1548 060e 9F78     		ldrb	r7, [r3, #2]
- 1549 0610 5E78     		ldrb	r6, [r3, #1]
- 1550 0612 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
- 1551 0616 C830     		adds	r0, r0, #200
- 1552 0618 0190     		str	r0, [sp, #4]
- 1553 061a 3300     		movs	r3, r6
- 1554 061c 2A00     		movs	r2, r5
- 1555 061e 0121     		movs	r1, #1
- 1556 0620 2000     		movs	r0, r4
- 1557 0622 0097     		str	r7, [sp]
- 1558 0624 0AE7     		b	.L209
- 1559              	.L219:
- 1560 0626 C046     		.align	2
- 1561              	.L218:
- 1562 0628 4A010000 		.word	.LC90
- 1563 062c 57000000 		.word	.LC9
- 1564 0630 6A000000 		.word	.LC11
- 1565 0634 6C000000 		.word	.LC13
- 1566 0638 5C010000 		.word	.LC92
- 1567 063c 7C010000 		.word	.LC94
- 1568 0640 00000000 		.word	file_upload_context
- 1569 0644 A0010000 		.word	.LC97
- 1570 0648 C2010000 		.word	.LC99
- 1571 064c 00000000 		.word	ROSE
- 1572 0650 A9000000 		.word	task_manager+169
- 1573 0654 EC010000 		.word	.LC102
- 1574 0658 00000000 		.word	clock_sync_context
- 1575 065c 00000000 		.word	alc_sync_context
- 1576 0660 15020000 		.word	.LC106
- 1577 0664 19000000 		.word	.LC2
- 1578 0668 37020000 		.word	.LC108
- 1579 066c FC000000 		.word	task_manager+252
- 1580 0670 FF000000 		.word	task_manager+255
- 1582              		.section	.rodata.modem_supervisor_update_task.str1.1,"aMS",%progbits,1
- 1583              	.LC120:
- 1584 0000 1B5B303B 		.ascii	"\033[0;33mWARN: File upload ended without server co"
- 1584      33336D57 
- 1584      41524E3A 
- 1584      2046696C 
- 1584      65207570 
- 1585 0030 6E666972 		.ascii	"nfirmation \012\000"
- 1585      6D617469 
- 1585      6F6E200A 
- 1585      00
- 1586              	.LC124:
- 1587 003d 1B5B303B 		.ascii	"\033[0;33mWARN: Streaming DONE\012\000"
- 1587      33336D57 
- 1587      41524E3A 
- 1587      20537472 
-ARM GAS  /tmp/ccI8rJG2.s 			page 31
+ 1537 05f2 1D48     		ldr	r0, .L218+64
+ 1538 05f4 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1539 05f8 1A48     		ldr	r0, .L218+60
+ 1540 05fa FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1541 05fe 1020     		movs	r0, #16
+ 1542 0600 ECE7     		b	.L212
+ 1543              	.L115:
+ 1544 0602 FFF7FEFF 		bl	get_modem_dm_port
+ 1545 0606 194B     		ldr	r3, .L218+68
+ 1546 0608 0400     		movs	r4, r0
+ 1547 060a 1D68     		ldr	r5, [r3]
+ 1548 060c 184B     		ldr	r3, .L218+72
+ 1549 060e 9F78     		ldrb	r7, [r3, #2]
+ 1550 0610 5E78     		ldrb	r6, [r3, #1]
+ 1551 0612 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 1552 0616 C830     		adds	r0, r0, #200
+ 1553 0618 0190     		str	r0, [sp, #4]
+ 1554 061a 3300     		movs	r3, r6
+ 1555 061c 2A00     		movs	r2, r5
+ 1556 061e 0121     		movs	r1, #1
+ 1557 0620 2000     		movs	r0, r4
+ 1558 0622 0097     		str	r7, [sp]
+ 1559 0624 0AE7     		b	.L209
+ 1560              	.L219:
+ 1561 0626 C046     		.align	2
+ 1562              	.L218:
+ 1563 0628 51010000 		.word	.LC90
+ 1564 062c 59000000 		.word	.LC9
+ 1565 0630 6D000000 		.word	.LC11
+ 1566 0634 70000000 		.word	.LC13
+ 1567 0638 63010000 		.word	.LC92
+ 1568 063c 84010000 		.word	.LC94
+ 1569 0640 00000000 		.word	file_upload_context
+ 1570 0644 A9010000 		.word	.LC97
+ 1571 0648 CC010000 		.word	.LC99
+ 1572 064c 00000000 		.word	ROSE
+ 1573 0650 A9000000 		.word	task_manager+169
+ 1574 0654 F7010000 		.word	.LC102
+ 1575 0658 00000000 		.word	clock_sync_context
+ 1576 065c 00000000 		.word	alc_sync_context
+ 1577 0660 21020000 		.word	.LC106
+ 1578 0664 1A000000 		.word	.LC2
+ 1579 0668 44020000 		.word	.LC108
+ 1580 066c FC000000 		.word	task_manager+252
+ 1581 0670 FF000000 		.word	task_manager+255
+ 1583              		.section	.rodata.modem_supervisor_update_task.str1.1,"aMS",%progbits,1
+ 1584              	.LC120:
+ 1585 0000 1B5B303B 		.ascii	"\033[0;33mWARN: File upload ended without server co"
+ 1585      33336D57 
+ 1585      41524E3A 
+ 1585      2046696C 
+ 1585      65207570 
+ 1586 0030 6E666972 		.ascii	"nfirmation \012\015\000"
+ 1586      6D617469 
+ 1586      6F6E200A 
+ 1586      0D00
+ 1587              	.LC124:
+ARM GAS  /tmp/ccNuiwIJ.s 			page 31
 
 
- 1587      65616D69 
- 1588              		.section	.text.modem_supervisor_update_task,"ax",%progbits
- 1589              		.align	1
- 1590              		.global	modem_supervisor_update_task
- 1591              		.syntax unified
- 1592              		.code	16
- 1593              		.thumb_func
- 1595              	modem_supervisor_update_task:
- 1596              		@ args = 0, pretend = 0, frame = 8
- 1597              		@ frame_needed = 0, uses_anonymous_args = 0
- 1598 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
- 1599 0002 1328     		cmp	r0, #19
- 1600 0004 7CD8     		bhi	.L220
- 1601 0006 FFF7FEFF 		bl	__gnu_thumb1_case_uhi
- 1602              	.L223:
- 1603 000a 8600     		.2byte	(.L237-.L223)/2
- 1604 000c 1400     		.2byte	(.L236-.L223)/2
- 1605 000e 6D00     		.2byte	(.L235-.L223)/2
- 1606 0010 7F00     		.2byte	(.L234-.L223)/2
- 1607 0012 A200     		.2byte	(.L233-.L223)/2
- 1608 0014 7B00     		.2byte	(.L220-.L223)/2
- 1609 0016 DA00     		.2byte	(.L232-.L223)/2
- 1610 0018 E100     		.2byte	(.L231-.L223)/2
- 1611 001a C300     		.2byte	(.L230-.L223)/2
- 1612 001c EE00     		.2byte	(.L229-.L223)/2
- 1613 001e 1001     		.2byte	(.L228-.L223)/2
- 1614 0020 7B00     		.2byte	(.L220-.L223)/2
- 1615 0022 7B00     		.2byte	(.L220-.L223)/2
- 1616 0024 7B00     		.2byte	(.L220-.L223)/2
- 1617 0026 7B00     		.2byte	(.L220-.L223)/2
- 1618 0028 1E01     		.2byte	(.L227-.L223)/2
- 1619 002a 2801     		.2byte	(.L226-.L223)/2
- 1620 002c 3301     		.2byte	(.L225-.L223)/2
- 1621 002e 9B00     		.2byte	(.L224-.L223)/2
- 1622 0030 A000     		.2byte	(.L222-.L223)/2
- 1623              		.p2align 1
- 1624              	.L236:
- 1625 0032 FFF7FEFF 		bl	get_join_state
- 1626 0036 0400     		movs	r4, r0
- 1627 0038 0128     		cmp	r0, #1
- 1628 003a 3BD1     		bne	.L238
- 1629 003c FFF7FEFF 		bl	lorawan_api_isjoined
- 1630 0040 0228     		cmp	r0, #2
- 1631 0042 37D1     		bne	.L238
- 1632 0044 0020     		movs	r0, #0
- 1633 0046 FFF7FEFF 		bl	set_modem_status_joining
- 1634 004a 2000     		movs	r0, r4
- 1635 004c FFF7FEFF 		bl	set_modem_status_modem_joined
- 1636 0050 8C4B     		ldr	r3, .L287
- 1637 0052 0020     		movs	r0, #0
- 1638 0054 1C70     		strb	r4, [r3]
- 1639 0056 8C4B     		ldr	r3, .L287+4
- 1640 0058 1C70     		strb	r4, [r3]
- 1641 005a FFF7FEFF 		bl	modem_supervisor_add_task_dm_status
- 1642 005e FFF7FEFF 		bl	modem_context_reset_dm_tag_number
- 1643 0062 8A4C     		ldr	r4, .L287+8
- 1644 0064 2068     		ldr	r0, [r4]
-ARM GAS  /tmp/ccI8rJG2.s 			page 32
+ 1588 003e 1B5B303B 		.ascii	"\033[0;33mWARN: Streaming DONE\012\015\000"
+ 1588      33336D57 
+ 1588      41524E3A 
+ 1588      20537472 
+ 1588      65616D69 
+ 1589              		.section	.text.modem_supervisor_update_task,"ax",%progbits
+ 1590              		.align	1
+ 1591              		.global	modem_supervisor_update_task
+ 1592              		.syntax unified
+ 1593              		.code	16
+ 1594              		.thumb_func
+ 1596              	modem_supervisor_update_task:
+ 1597              		@ args = 0, pretend = 0, frame = 8
+ 1598              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1599 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 1600 0002 1328     		cmp	r0, #19
+ 1601 0004 7CD8     		bhi	.L220
+ 1602 0006 FFF7FEFF 		bl	__gnu_thumb1_case_uhi
+ 1603              	.L223:
+ 1604 000a 8600     		.2byte	(.L237-.L223)/2
+ 1605 000c 1400     		.2byte	(.L236-.L223)/2
+ 1606 000e 6D00     		.2byte	(.L235-.L223)/2
+ 1607 0010 7F00     		.2byte	(.L234-.L223)/2
+ 1608 0012 A200     		.2byte	(.L233-.L223)/2
+ 1609 0014 7B00     		.2byte	(.L220-.L223)/2
+ 1610 0016 DA00     		.2byte	(.L232-.L223)/2
+ 1611 0018 E100     		.2byte	(.L231-.L223)/2
+ 1612 001a C300     		.2byte	(.L230-.L223)/2
+ 1613 001c EE00     		.2byte	(.L229-.L223)/2
+ 1614 001e 1001     		.2byte	(.L228-.L223)/2
+ 1615 0020 7B00     		.2byte	(.L220-.L223)/2
+ 1616 0022 7B00     		.2byte	(.L220-.L223)/2
+ 1617 0024 7B00     		.2byte	(.L220-.L223)/2
+ 1618 0026 7B00     		.2byte	(.L220-.L223)/2
+ 1619 0028 1E01     		.2byte	(.L227-.L223)/2
+ 1620 002a 2801     		.2byte	(.L226-.L223)/2
+ 1621 002c 3301     		.2byte	(.L225-.L223)/2
+ 1622 002e 9B00     		.2byte	(.L224-.L223)/2
+ 1623 0030 A000     		.2byte	(.L222-.L223)/2
+ 1624              		.p2align 1
+ 1625              	.L236:
+ 1626 0032 FFF7FEFF 		bl	get_join_state
+ 1627 0036 0400     		movs	r4, r0
+ 1628 0038 0128     		cmp	r0, #1
+ 1629 003a 3BD1     		bne	.L238
+ 1630 003c FFF7FEFF 		bl	lorawan_api_isjoined
+ 1631 0040 0228     		cmp	r0, #2
+ 1632 0042 37D1     		bne	.L238
+ 1633 0044 0020     		movs	r0, #0
+ 1634 0046 FFF7FEFF 		bl	set_modem_status_joining
+ 1635 004a 2000     		movs	r0, r4
+ 1636 004c FFF7FEFF 		bl	set_modem_status_modem_joined
+ 1637 0050 8C4B     		ldr	r3, .L287
+ 1638 0052 0020     		movs	r0, #0
+ 1639 0054 1C70     		strb	r4, [r3]
+ 1640 0056 8C4B     		ldr	r3, .L287+4
+ 1641 0058 1C70     		strb	r4, [r3]
+ARM GAS  /tmp/ccNuiwIJ.s 			page 32
 
 
- 1645 0066 FFF7FEFF 		bl	clock_sync_is_enabled
- 1646 006a 0028     		cmp	r0, #0
- 1647 006c 09D0     		beq	.L239
- 1648 006e 0521     		movs	r1, #5
- 1649 0070 0020     		movs	r0, #0
- 1650 0072 FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
- 1651 0076 0A30     		adds	r0, r0, #10
- 1652 0078 FFF7FEFF 		bl	modem_supervisor_add_task_clock_sync_time_req
- 1653 007c 2068     		ldr	r0, [r4]
- 1654 007e FFF7FEFF 		bl	clock_sync_reset_nb_time_req
- 1655              	.L239:
- 1656 0082 FFF7FEFF 		bl	smtc_modem_hal_get_crashlog_status
- 1657 0086 0028     		cmp	r0, #0
- 1658 0088 06D0     		beq	.L240
- 1659 008a 0A21     		movs	r1, #10
- 1660 008c 0520     		movs	r0, #5
- 1661 008e FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
- 1662 0092 1E30     		adds	r0, r0, #30
- 1663 0094 FFF7FEFF 		bl	modem_supervisor_add_task_crash_log
- 1664              	.L240:
- 1665 0098 0021     		movs	r1, #0
- 1666 009a 0220     		movs	r0, #2
- 1667 009c FFF7FEFF 		bl	increment_asynchronous_msgnumber
- 1668 00a0 FFF7FEFF 		bl	lorawan_api_class_c_start
- 1669              	.L241:
- 1670 00a4 FFF7FEFF 		bl	modem_get_duty_cycle_disabled_by_host
- 1671 00a8 0128     		cmp	r0, #1
- 1672 00aa 29D1     		bne	.L220
- 1673              	.L243:
- 1674 00ac 0220     		movs	r0, #2
- 1675              	.L283:
- 1676 00ae FFF7FEFF 		bl	lorawan_api_duty_cycle_enable_set
- 1677 00b2 25E0     		b	.L220
- 1678              	.L238:
- 1679 00b4 FFF7FEFF 		bl	get_join_state
- 1680 00b8 0128     		cmp	r0, #1
- 1681 00ba 09D1     		bne	.L242
- 1682 00bc 0020     		movs	r0, #0
- 1683 00be FFF7FEFF 		bl	set_modem_status_joining
- 1684 00c2 0021     		movs	r1, #0
- 1685 00c4 0A20     		movs	r0, #10
- 1686 00c6 FFF7FEFF 		bl	increment_asynchronous_msgnumber
- 1687 00ca FFF7FEFF 		bl	modem_supervisor_add_task_join
- 1688 00ce E9E7     		b	.L241
- 1689              	.L242:
- 1690 00d0 FFF7FEFF 		bl	lorawan_api_isjoined
- 1691 00d4 0228     		cmp	r0, #2
- 1692 00d6 E5D1     		bne	.L241
- 1693 00d8 0020     		movs	r0, #0
- 1694 00da FFF7FEFF 		bl	set_modem_status_joining
- 1695 00de FFF7FEFF 		bl	lorawan_api_join_status_clear
- 1696 00e2 DFE7     		b	.L241
- 1697              	.L235:
- 1698 00e4 FFF7FEFF 		bl	get_modem_dm_interval_second
- 1699 00e8 0028     		cmp	r0, #0
- 1700 00ea 09D0     		beq	.L220
- 1701 00ec 654B     		ldr	r3, .L287
-ARM GAS  /tmp/ccI8rJG2.s 			page 33
+ 1642 005a FFF7FEFF 		bl	modem_supervisor_add_task_dm_status
+ 1643 005e FFF7FEFF 		bl	modem_context_reset_dm_tag_number
+ 1644 0062 8A4C     		ldr	r4, .L287+8
+ 1645 0064 2068     		ldr	r0, [r4]
+ 1646 0066 FFF7FEFF 		bl	clock_sync_is_enabled
+ 1647 006a 0028     		cmp	r0, #0
+ 1648 006c 09D0     		beq	.L239
+ 1649 006e 0521     		movs	r1, #5
+ 1650 0070 0020     		movs	r0, #0
+ 1651 0072 FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
+ 1652 0076 0A30     		adds	r0, r0, #10
+ 1653 0078 FFF7FEFF 		bl	modem_supervisor_add_task_clock_sync_time_req
+ 1654 007c 2068     		ldr	r0, [r4]
+ 1655 007e FFF7FEFF 		bl	clock_sync_reset_nb_time_req
+ 1656              	.L239:
+ 1657 0082 FFF7FEFF 		bl	smtc_modem_hal_get_crashlog_status
+ 1658 0086 0028     		cmp	r0, #0
+ 1659 0088 06D0     		beq	.L240
+ 1660 008a 0A21     		movs	r1, #10
+ 1661 008c 0520     		movs	r0, #5
+ 1662 008e FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
+ 1663 0092 1E30     		adds	r0, r0, #30
+ 1664 0094 FFF7FEFF 		bl	modem_supervisor_add_task_crash_log
+ 1665              	.L240:
+ 1666 0098 0021     		movs	r1, #0
+ 1667 009a 0220     		movs	r0, #2
+ 1668 009c FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 1669 00a0 FFF7FEFF 		bl	lorawan_api_class_c_start
+ 1670              	.L241:
+ 1671 00a4 FFF7FEFF 		bl	modem_get_duty_cycle_disabled_by_host
+ 1672 00a8 0128     		cmp	r0, #1
+ 1673 00aa 29D1     		bne	.L220
+ 1674              	.L243:
+ 1675 00ac 0220     		movs	r0, #2
+ 1676              	.L283:
+ 1677 00ae FFF7FEFF 		bl	lorawan_api_duty_cycle_enable_set
+ 1678 00b2 25E0     		b	.L220
+ 1679              	.L238:
+ 1680 00b4 FFF7FEFF 		bl	get_join_state
+ 1681 00b8 0128     		cmp	r0, #1
+ 1682 00ba 09D1     		bne	.L242
+ 1683 00bc 0020     		movs	r0, #0
+ 1684 00be FFF7FEFF 		bl	set_modem_status_joining
+ 1685 00c2 0021     		movs	r1, #0
+ 1686 00c4 0A20     		movs	r0, #10
+ 1687 00c6 FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 1688 00ca FFF7FEFF 		bl	modem_supervisor_add_task_join
+ 1689 00ce E9E7     		b	.L241
+ 1690              	.L242:
+ 1691 00d0 FFF7FEFF 		bl	lorawan_api_isjoined
+ 1692 00d4 0228     		cmp	r0, #2
+ 1693 00d6 E5D1     		bne	.L241
+ 1694 00d8 0020     		movs	r0, #0
+ 1695 00da FFF7FEFF 		bl	set_modem_status_joining
+ 1696 00de FFF7FEFF 		bl	lorawan_api_join_status_clear
+ 1697 00e2 DFE7     		b	.L241
+ 1698              	.L235:
+ARM GAS  /tmp/ccNuiwIJ.s 			page 33
 
 
- 1702 00ee 1B78     		ldrb	r3, [r3]
- 1703 00f0 002B     		cmp	r3, #0
- 1704 00f2 06D0     		beq	.L245
- 1705 00f4 0F21     		movs	r1, #15
- 1706 00f6 0A20     		movs	r0, #10
- 1707 00f8 FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
- 1708              	.L284:
- 1709 00fc FFF7FEFF 		bl	modem_supervisor_add_task_dm_status
- 1710              	.L220:
- 1711              		@ sp needed
- 1712 0100 37BD     		pop	{r0, r1, r2, r4, r5, pc}
- 1713              	.L245:
- 1714 0102 FFF7FEFF 		bl	get_modem_dm_interval_second
- 1715 0106 F9E7     		b	.L284
- 1716              	.L234:
- 1717 0108 614B     		ldr	r3, .L287+12
- 1718 010a 1B78     		ldrb	r3, [r3]
- 1719 010c 002B     		cmp	r3, #0
- 1720 010e F7D0     		beq	.L220
- 1721 0110 FFF7FEFF 		bl	modem_supervisor_add_task_dm_status_now
- 1722 0114 F4E7     		b	.L220
- 1723              	.L237:
- 1724 0116 5F4B     		ldr	r3, .L287+16
- 1725 0118 1978     		ldrb	r1, [r3]
- 1726 011a 0029     		cmp	r1, #0
- 1727 011c 0ED0     		beq	.L246
- 1728 011e FFF7FEFF 		bl	lorawan_api_rx_ack_bit_get
- 1729 0122 0121     		movs	r1, #1
- 1730 0124 0128     		cmp	r0, #1
- 1731 0126 09D1     		bne	.L246
- 1732 0128 0221     		movs	r1, #2
- 1733 012a 4018     		adds	r0, r0, r1
- 1734              	.L281:
- 1735 012c FFF7FEFF 		bl	increment_asynchronous_msgnumber
- 1736 0130 FFF7FEFF 		bl	modem_get_duty_cycle_disabled_by_host
- 1737 0134 0128     		cmp	r0, #1
- 1738 0136 B9D0     		beq	.L243
- 1739 0138 0120     		movs	r0, #1
- 1740 013a B8E7     		b	.L283
- 1741              	.L246:
- 1742 013c 0320     		movs	r0, #3
- 1743 013e F5E7     		b	.L281
- 1744              	.L224:
- 1745 0140 0120     		movs	r0, #1
- 1746              	.L285:
- 1747 0142 FFF7FEFF 		bl	modem_get_extended_callback
- 1748 0146 8047     		blx	r0
- 1749 0148 DAE7     		b	.L220
- 1750              	.L222:
- 1751 014a 0220     		movs	r0, #2
- 1752 014c F9E7     		b	.L285
- 1753              	.L233:
- 1754 014e FFF7FEFF 		bl	modem_get_upload_state
- 1755 0152 0228     		cmp	r0, #2
- 1756 0154 D4D1     		bne	.L220
- 1757 0156 504D     		ldr	r5, .L287+20
- 1758 0158 2868     		ldr	r0, [r5]
-ARM GAS  /tmp/ccI8rJG2.s 			page 34
+ 1699 00e4 FFF7FEFF 		bl	get_modem_dm_interval_second
+ 1700 00e8 0028     		cmp	r0, #0
+ 1701 00ea 09D0     		beq	.L220
+ 1702 00ec 654B     		ldr	r3, .L287
+ 1703 00ee 1B78     		ldrb	r3, [r3]
+ 1704 00f0 002B     		cmp	r3, #0
+ 1705 00f2 06D0     		beq	.L245
+ 1706 00f4 0F21     		movs	r1, #15
+ 1707 00f6 0A20     		movs	r0, #10
+ 1708 00f8 FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
+ 1709              	.L284:
+ 1710 00fc FFF7FEFF 		bl	modem_supervisor_add_task_dm_status
+ 1711              	.L220:
+ 1712              		@ sp needed
+ 1713 0100 37BD     		pop	{r0, r1, r2, r4, r5, pc}
+ 1714              	.L245:
+ 1715 0102 FFF7FEFF 		bl	get_modem_dm_interval_second
+ 1716 0106 F9E7     		b	.L284
+ 1717              	.L234:
+ 1718 0108 614B     		ldr	r3, .L287+12
+ 1719 010a 1B78     		ldrb	r3, [r3]
+ 1720 010c 002B     		cmp	r3, #0
+ 1721 010e F7D0     		beq	.L220
+ 1722 0110 FFF7FEFF 		bl	modem_supervisor_add_task_dm_status_now
+ 1723 0114 F4E7     		b	.L220
+ 1724              	.L237:
+ 1725 0116 5F4B     		ldr	r3, .L287+16
+ 1726 0118 1978     		ldrb	r1, [r3]
+ 1727 011a 0029     		cmp	r1, #0
+ 1728 011c 0ED0     		beq	.L246
+ 1729 011e FFF7FEFF 		bl	lorawan_api_rx_ack_bit_get
+ 1730 0122 0121     		movs	r1, #1
+ 1731 0124 0128     		cmp	r0, #1
+ 1732 0126 09D1     		bne	.L246
+ 1733 0128 0221     		movs	r1, #2
+ 1734 012a 4018     		adds	r0, r0, r1
+ 1735              	.L281:
+ 1736 012c FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 1737 0130 FFF7FEFF 		bl	modem_get_duty_cycle_disabled_by_host
+ 1738 0134 0128     		cmp	r0, #1
+ 1739 0136 B9D0     		beq	.L243
+ 1740 0138 0120     		movs	r0, #1
+ 1741 013a B8E7     		b	.L283
+ 1742              	.L246:
+ 1743 013c 0320     		movs	r0, #3
+ 1744 013e F5E7     		b	.L281
+ 1745              	.L224:
+ 1746 0140 0120     		movs	r0, #1
+ 1747              	.L285:
+ 1748 0142 FFF7FEFF 		bl	modem_get_extended_callback
+ 1749 0146 8047     		blx	r0
+ 1750 0148 DAE7     		b	.L220
+ 1751              	.L222:
+ 1752 014a 0220     		movs	r0, #2
+ 1753 014c F9E7     		b	.L285
+ 1754              	.L233:
+ 1755 014e FFF7FEFF 		bl	modem_get_upload_state
+ARM GAS  /tmp/ccNuiwIJ.s 			page 34
 
 
- 1759 015a FFF7FEFF 		bl	file_upload_is_data_remaining
- 1760 015e 041E     		subs	r4, r0, #0
- 1761 0160 05D0     		beq	.L249
- 1762 0162 2868     		ldr	r0, [r5]
- 1763 0164 FFF7FEFF 		bl	file_upload_get_average_delay_in_s
- 1764 0168 FFF7FEFF 		bl	modem_supervisor_add_task_file_upload
- 1765 016c C8E7     		b	.L220
- 1766              	.L249:
- 1767 016e 4B48     		ldr	r0, .L287+24
- 1768 0170 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1769 0174 4A48     		ldr	r0, .L287+28
- 1770 0176 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1771 017a 2100     		movs	r1, r4
- 1772 017c 0520     		movs	r0, #5
- 1773 017e FFF7FEFF 		bl	increment_asynchronous_msgnumber
- 1774 0182 2000     		movs	r0, r4
- 1775 0184 FFF7FEFF 		bl	set_modem_status_file_upload
- 1776 0188 0320     		movs	r0, #3
- 1777 018a FFF7FEFF 		bl	modem_set_upload_state
- 1778 018e B7E7     		b	.L220
- 1779              	.L230:
- 1780 0190 444B     		ldr	r3, .L287+32
- 1781 0192 1868     		ldr	r0, [r3]
- 1782 0194 FFF7FEFF 		bl	stream_data_pending
- 1783 0198 041E     		subs	r4, r0, #0
- 1784 019a 02D0     		beq	.L250
- 1785 019c FFF7FEFF 		bl	modem_supervisor_add_task_stream
- 1786 01a0 AEE7     		b	.L220
- 1787              	.L250:
- 1788 01a2 4148     		ldr	r0, .L287+36
- 1789 01a4 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1790 01a8 3D48     		ldr	r0, .L287+28
- 1791 01aa FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1792 01ae 2000     		movs	r0, r4
- 1793 01b0 FFF7FEFF 		bl	set_modem_status_streaming
- 1794 01b4 2100     		movs	r1, r4
- 1795 01b6 0820     		movs	r0, #8
- 1796              	.L282:
- 1797 01b8 FFF7FEFF 		bl	increment_asynchronous_msgnumber
- 1798 01bc A0E7     		b	.L220
- 1799              	.L232:
- 1800 01be FFF7FEFF 		bl	get_modem_muted
- 1801 01c2 0128     		cmp	r0, #1
- 1802 01c4 9CD1     		bne	.L220
- 1803 01c6 FFF7FEFF 		bl	modem_supervisor_add_task_modem_mute
- 1804 01ca 99E7     		b	.L220
- 1805              	.L231:
- 1806 01cc 01A8     		add	r0, sp, #4
- 1807 01ce FFF7FEFF 		bl	get_dm_retrieve_pending_dl
- 1808 01d2 6B46     		mov	r3, sp
- 1809 01d4 1B79     		ldrb	r3, [r3, #4]
- 1810 01d6 002B     		cmp	r3, #0
- 1811 01d8 00D1     		bne	.LCB1885
- 1812 01da 91E7     		b	.L220	@long jump
- 1813              	.LCB1885:
- 1814 01dc 6B46     		mov	r3, sp
- 1815 01de 5879     		ldrb	r0, [r3, #5]
-ARM GAS  /tmp/ccI8rJG2.s 			page 35
+ 1756 0152 0228     		cmp	r0, #2
+ 1757 0154 D4D1     		bne	.L220
+ 1758 0156 504D     		ldr	r5, .L287+20
+ 1759 0158 2868     		ldr	r0, [r5]
+ 1760 015a FFF7FEFF 		bl	file_upload_is_data_remaining
+ 1761 015e 041E     		subs	r4, r0, #0
+ 1762 0160 05D0     		beq	.L249
+ 1763 0162 2868     		ldr	r0, [r5]
+ 1764 0164 FFF7FEFF 		bl	file_upload_get_average_delay_in_s
+ 1765 0168 FFF7FEFF 		bl	modem_supervisor_add_task_file_upload
+ 1766 016c C8E7     		b	.L220
+ 1767              	.L249:
+ 1768 016e 4B48     		ldr	r0, .L287+24
+ 1769 0170 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1770 0174 4A48     		ldr	r0, .L287+28
+ 1771 0176 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1772 017a 2100     		movs	r1, r4
+ 1773 017c 0520     		movs	r0, #5
+ 1774 017e FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 1775 0182 2000     		movs	r0, r4
+ 1776 0184 FFF7FEFF 		bl	set_modem_status_file_upload
+ 1777 0188 0320     		movs	r0, #3
+ 1778 018a FFF7FEFF 		bl	modem_set_upload_state
+ 1779 018e B7E7     		b	.L220
+ 1780              	.L230:
+ 1781 0190 444B     		ldr	r3, .L287+32
+ 1782 0192 1868     		ldr	r0, [r3]
+ 1783 0194 FFF7FEFF 		bl	stream_data_pending
+ 1784 0198 041E     		subs	r4, r0, #0
+ 1785 019a 02D0     		beq	.L250
+ 1786 019c FFF7FEFF 		bl	modem_supervisor_add_task_stream
+ 1787 01a0 AEE7     		b	.L220
+ 1788              	.L250:
+ 1789 01a2 4148     		ldr	r0, .L287+36
+ 1790 01a4 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1791 01a8 3D48     		ldr	r0, .L287+28
+ 1792 01aa FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1793 01ae 2000     		movs	r0, r4
+ 1794 01b0 FFF7FEFF 		bl	set_modem_status_streaming
+ 1795 01b4 2100     		movs	r1, r4
+ 1796 01b6 0820     		movs	r0, #8
+ 1797              	.L282:
+ 1798 01b8 FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 1799 01bc A0E7     		b	.L220
+ 1800              	.L232:
+ 1801 01be FFF7FEFF 		bl	get_modem_muted
+ 1802 01c2 0128     		cmp	r0, #1
+ 1803 01c4 9CD1     		bne	.L220
+ 1804 01c6 FFF7FEFF 		bl	modem_supervisor_add_task_modem_mute
+ 1805 01ca 99E7     		b	.L220
+ 1806              	.L231:
+ 1807 01cc 01A8     		add	r0, sp, #4
+ 1808 01ce FFF7FEFF 		bl	get_dm_retrieve_pending_dl
+ 1809 01d2 6B46     		mov	r3, sp
+ 1810 01d4 1B79     		ldrb	r3, [r3, #4]
+ 1811 01d6 002B     		cmp	r3, #0
+ 1812 01d8 00D1     		bne	.LCB1885
+ARM GAS  /tmp/ccNuiwIJ.s 			page 35
 
 
- 1816              	.L286:
- 1817 01e0 FFF7FEFF 		bl	modem_supervisor_add_task_retrieve_dl
- 1818 01e4 8CE7     		b	.L220
- 1819              	.L229:
- 1820 01e6 294C     		ldr	r4, .L287+8
- 1821 01e8 0021     		movs	r1, #0
- 1822 01ea 2068     		ldr	r0, [r4]
- 1823 01ec FFF7FEFF 		bl	clock_sync_callback
- 1824 01f0 2068     		ldr	r0, [r4]
- 1825 01f2 057C     		ldrb	r5, [r0, #16]
- 1826 01f4 012D     		cmp	r5, #1
- 1827 01f6 00D0     		beq	.LCB1902
- 1828 01f8 82E7     		b	.L220	@long jump
- 1829              	.LCB1902:
- 1830 01fa FFF7FEFF 		bl	clock_sync_is_time_valid
- 1831 01fe 0028     		cmp	r0, #0
- 1832 0200 00D0     		beq	.LCB1906
- 1833 0202 7DE7     		b	.L220	@long jump
- 1834              	.LCB1906:
- 1835 0204 01AC     		add	r4, sp, #4
- 1836 0206 2000     		movs	r0, r4
- 1837 0208 FFF7FEFF 		bl	get_dm_retrieve_pending_dl
- 1838 020c 2378     		ldrb	r3, [r4]
- 1839 020e 002B     		cmp	r3, #0
- 1840 0210 00D0     		beq	.LCB1912
- 1841 0212 75E7     		b	.L220	@long jump
- 1842              	.LCB1912:
- 1843 0214 0821     		movs	r1, #8
- 1844 0216 0320     		movs	r0, #3
- 1845 0218 FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
- 1846 021c C1B2     		uxtb	r1, r0
- 1847 021e 6170     		strb	r1, [r4, #1]
- 1848 0220 2800     		movs	r0, r5
- 1849 0222 FFF7FEFF 		bl	set_dm_retrieve_pending_dl
- 1850 0226 6078     		ldrb	r0, [r4, #1]
- 1851 0228 DAE7     		b	.L286
- 1852              	.L228:
- 1853 022a 204B     		ldr	r3, .L287+40
- 1854 022c 1868     		ldr	r0, [r3]
- 1855 022e FFF7FEFF 		bl	alc_sync_get_nb_transmission
- 1856 0232 0028     		cmp	r0, #0
- 1857 0234 00D1     		bne	.LCB1931
- 1858 0236 63E7     		b	.L220	@long jump
- 1859              	.LCB1931:
- 1860 0238 9621     		movs	r1, #150
- 1861 023a 8020     		movs	r0, #128
- 1862 023c FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
- 1863 0240 FFF7FEFF 		bl	modem_supervisor_add_task_alc_sync_ans
- 1864 0244 5CE7     		b	.L220
- 1865              	.L227:
- 1866 0246 6B46     		mov	r3, sp
- 1867 0248 01A9     		add	r1, sp, #4
- 1868 024a D81C     		adds	r0, r3, #3
- 1869 024c FFF7FEFF 		bl	lorawan_api_get_link_check_ans
- 1870 0250 4342     		rsbs	r3, r0, #0
- 1871 0252 5841     		adcs	r0, r0, r3
- 1872 0254 C1B2     		uxtb	r1, r0
-ARM GAS  /tmp/ccI8rJG2.s 			page 36
+ 1813 01da 91E7     		b	.L220	@long jump
+ 1814              	.LCB1885:
+ 1815 01dc 6B46     		mov	r3, sp
+ 1816 01de 5879     		ldrb	r0, [r3, #5]
+ 1817              	.L286:
+ 1818 01e0 FFF7FEFF 		bl	modem_supervisor_add_task_retrieve_dl
+ 1819 01e4 8CE7     		b	.L220
+ 1820              	.L229:
+ 1821 01e6 294C     		ldr	r4, .L287+8
+ 1822 01e8 0021     		movs	r1, #0
+ 1823 01ea 2068     		ldr	r0, [r4]
+ 1824 01ec FFF7FEFF 		bl	clock_sync_callback
+ 1825 01f0 2068     		ldr	r0, [r4]
+ 1826 01f2 057C     		ldrb	r5, [r0, #16]
+ 1827 01f4 012D     		cmp	r5, #1
+ 1828 01f6 00D0     		beq	.LCB1902
+ 1829 01f8 82E7     		b	.L220	@long jump
+ 1830              	.LCB1902:
+ 1831 01fa FFF7FEFF 		bl	clock_sync_is_time_valid
+ 1832 01fe 0028     		cmp	r0, #0
+ 1833 0200 00D0     		beq	.LCB1906
+ 1834 0202 7DE7     		b	.L220	@long jump
+ 1835              	.LCB1906:
+ 1836 0204 01AC     		add	r4, sp, #4
+ 1837 0206 2000     		movs	r0, r4
+ 1838 0208 FFF7FEFF 		bl	get_dm_retrieve_pending_dl
+ 1839 020c 2378     		ldrb	r3, [r4]
+ 1840 020e 002B     		cmp	r3, #0
+ 1841 0210 00D0     		beq	.LCB1912
+ 1842 0212 75E7     		b	.L220	@long jump
+ 1843              	.LCB1912:
+ 1844 0214 0821     		movs	r1, #8
+ 1845 0216 0320     		movs	r0, #3
+ 1846 0218 FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
+ 1847 021c C1B2     		uxtb	r1, r0
+ 1848 021e 6170     		strb	r1, [r4, #1]
+ 1849 0220 2800     		movs	r0, r5
+ 1850 0222 FFF7FEFF 		bl	set_dm_retrieve_pending_dl
+ 1851 0226 6078     		ldrb	r0, [r4, #1]
+ 1852 0228 DAE7     		b	.L286
+ 1853              	.L228:
+ 1854 022a 204B     		ldr	r3, .L287+40
+ 1855 022c 1868     		ldr	r0, [r3]
+ 1856 022e FFF7FEFF 		bl	alc_sync_get_nb_transmission
+ 1857 0232 0028     		cmp	r0, #0
+ 1858 0234 00D1     		bne	.LCB1931
+ 1859 0236 63E7     		b	.L220	@long jump
+ 1860              	.LCB1931:
+ 1861 0238 9621     		movs	r1, #150
+ 1862 023a 8020     		movs	r0, #128
+ 1863 023c FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
+ 1864 0240 FFF7FEFF 		bl	modem_supervisor_add_task_alc_sync_ans
+ 1865 0244 5CE7     		b	.L220
+ 1866              	.L227:
+ 1867 0246 6B46     		mov	r3, sp
+ 1868 0248 01A9     		add	r1, sp, #4
+ 1869 024a D81C     		adds	r0, r3, #3
+ARM GAS  /tmp/ccNuiwIJ.s 			page 36
 
 
- 1873 0256 1020     		movs	r0, #16
- 1874 0258 AEE7     		b	.L282
- 1875              	.L226:
- 1876 025a FFF7FEFF 		bl	lorawan_api_get_device_time_req_status
- 1877 025e 0121     		movs	r1, #1
- 1878 0260 0028     		cmp	r0, #0
- 1879 0262 03D0     		beq	.L253
- 1880 0264 FFF7FEFF 		bl	lorawan_api_is_time_valid
- 1881 0268 4100     		lsls	r1, r0, #1
- 1882 026a C9B2     		uxtb	r1, r1
- 1883              	.L253:
- 1884 026c 0D20     		movs	r0, #13
- 1885 026e A3E7     		b	.L282
- 1886              	.L225:
- 1887 0270 FFF7FEFF 		bl	lorawan_api_get_ping_slot_info_req_status
- 1888 0274 0028     		cmp	r0, #0
- 1889 0276 02D1     		bne	.L254
- 1890 0278 0121     		movs	r1, #1
- 1891 027a 1330     		adds	r0, r0, #19
- 1892 027c 9CE7     		b	.L282
- 1893              	.L254:
- 1894 027e 0021     		movs	r1, #0
- 1895 0280 1320     		movs	r0, #19
- 1896 0282 99E7     		b	.L282
- 1897              	.L288:
- 1898              		.align	2
- 1899              	.L287:
- 1900 0284 00000000 		.word	is_first_dm_after_join
- 1901 0288 00000000 		.word	is_pending_dm_status_payload_periodic
- 1902 028c 00000000 		.word	clock_sync_context
- 1903 0290 00000000 		.word	is_pending_dm_status_payload_now
- 1904 0294 00000000 		.word	send_task_update_needed
- 1905 0298 00000000 		.word	file_upload_context
- 1906 029c 00000000 		.word	.LC120
- 1907 02a0 19000000 		.word	.LC2
- 1908 02a4 00000000 		.word	ROSE
- 1909 02a8 3D000000 		.word	.LC124
- 1910 02ac 00000000 		.word	alc_sync_context
- 1912              		.section	.text.modem_supervisor_scheduler,"ax",%progbits
- 1913              		.align	1
- 1914              		.global	modem_supervisor_scheduler
- 1915              		.syntax unified
- 1916              		.code	16
- 1917              		.thumb_func
- 1919              	modem_supervisor_scheduler:
- 1920              		@ args = 0, pretend = 0, frame = 24
- 1921              		@ frame_needed = 0, uses_anonymous_args = 0
- 1922 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 1923 0002 87B0     		sub	sp, sp, #28
- 1924 0004 FFF7FEFF 		bl	lorawan_api_state_get
- 1925 0008 0190     		str	r0, [sp, #4]
- 1926 000a 0028     		cmp	r0, #0
- 1927 000c 57D1     		bne	.L302
- 1928 000e 9227     		movs	r7, #146
- 1929 0010 2C4C     		ldr	r4, .L314
- 1930 0012 FF37     		adds	r7, r7, #255
- 1931 0014 E05D     		ldrb	r0, [r4, r7]
-ARM GAS  /tmp/ccI8rJG2.s 			page 37
+ 1870 024c FFF7FEFF 		bl	lorawan_api_get_link_check_ans
+ 1871 0250 4342     		rsbs	r3, r0, #0
+ 1872 0252 5841     		adcs	r0, r0, r3
+ 1873 0254 C1B2     		uxtb	r1, r0
+ 1874 0256 1020     		movs	r0, #16
+ 1875 0258 AEE7     		b	.L282
+ 1876              	.L226:
+ 1877 025a FFF7FEFF 		bl	lorawan_api_get_device_time_req_status
+ 1878 025e 0121     		movs	r1, #1
+ 1879 0260 0028     		cmp	r0, #0
+ 1880 0262 03D0     		beq	.L253
+ 1881 0264 FFF7FEFF 		bl	lorawan_api_is_time_valid
+ 1882 0268 4100     		lsls	r1, r0, #1
+ 1883 026a C9B2     		uxtb	r1, r1
+ 1884              	.L253:
+ 1885 026c 0D20     		movs	r0, #13
+ 1886 026e A3E7     		b	.L282
+ 1887              	.L225:
+ 1888 0270 FFF7FEFF 		bl	lorawan_api_get_ping_slot_info_req_status
+ 1889 0274 0028     		cmp	r0, #0
+ 1890 0276 02D1     		bne	.L254
+ 1891 0278 0121     		movs	r1, #1
+ 1892 027a 1330     		adds	r0, r0, #19
+ 1893 027c 9CE7     		b	.L282
+ 1894              	.L254:
+ 1895 027e 0021     		movs	r1, #0
+ 1896 0280 1320     		movs	r0, #19
+ 1897 0282 99E7     		b	.L282
+ 1898              	.L288:
+ 1899              		.align	2
+ 1900              	.L287:
+ 1901 0284 00000000 		.word	is_first_dm_after_join
+ 1902 0288 00000000 		.word	is_pending_dm_status_payload_periodic
+ 1903 028c 00000000 		.word	clock_sync_context
+ 1904 0290 00000000 		.word	is_pending_dm_status_payload_now
+ 1905 0294 00000000 		.word	send_task_update_needed
+ 1906 0298 00000000 		.word	file_upload_context
+ 1907 029c 00000000 		.word	.LC120
+ 1908 02a0 1A000000 		.word	.LC2
+ 1909 02a4 00000000 		.word	ROSE
+ 1910 02a8 3E000000 		.word	.LC124
+ 1911 02ac 00000000 		.word	alc_sync_context
+ 1913              		.section	.text.modem_supervisor_scheduler,"ax",%progbits
+ 1914              		.align	1
+ 1915              		.global	modem_supervisor_scheduler
+ 1916              		.syntax unified
+ 1917              		.code	16
+ 1918              		.thumb_func
+ 1920              	modem_supervisor_scheduler:
+ 1921              		@ args = 0, pretend = 0, frame = 24
+ 1922              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1923 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1924 0002 87B0     		sub	sp, sp, #28
+ 1925 0004 FFF7FEFF 		bl	lorawan_api_state_get
+ 1926 0008 0190     		str	r0, [sp, #4]
+ 1927 000a 0028     		cmp	r0, #0
+ 1928 000c 57D1     		bne	.L302
+ARM GAS  /tmp/ccNuiwIJ.s 			page 37
 
 
- 1932 0016 0528     		cmp	r0, #5
- 1933 0018 03D0     		beq	.L291
- 1934 001a FFF7FEFF 		bl	modem_supervisor_update_task
- 1935 001e 0523     		movs	r3, #5
- 1936 0020 E355     		strb	r3, [r4, r7]
- 1937              	.L291:
- 1938 0022 0023     		movs	r3, #0
- 1939 0024 2600     		movs	r6, r4
- 1940 0026 0293     		str	r3, [sp, #8]
- 1941 0028 274D     		ldr	r5, .L314+4
- 1942 002a 0433     		adds	r3, r3, #4
- 1943 002c 0394     		str	r4, [sp, #12]
- 1944 002e 0493     		str	r3, [sp, #16]
- 1945              	.L295:
- 1946 0030 337A     		ldrb	r3, [r6, #8]
- 1947 0032 042B     		cmp	r3, #4
- 1948 0034 0FD0     		beq	.L294
- 1949 0036 7368     		ldr	r3, [r6, #4]
- 1950 0038 0593     		str	r3, [sp, #20]
- 1951 003a FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
- 1952 003e 059B     		ldr	r3, [sp, #20]
- 1953 0040 1A1A     		subs	r2, r3, r0
- 1954 0042 002A     		cmp	r2, #0
- 1955 0044 07DC     		bgt	.L294
- 1956 0046 337A     		ldrb	r3, [r6, #8]
- 1957 0048 0499     		ldr	r1, [sp, #16]
- 1958 004a 8B42     		cmp	r3, r1
- 1959 004c 03D2     		bcs	.L294
- 1960 004e 1500     		movs	r5, r2
- 1961 0050 0299     		ldr	r1, [sp, #8]
- 1962 0052 0493     		str	r3, [sp, #16]
- 1963 0054 E155     		strb	r1, [r4, r7]
- 1964              	.L294:
- 1965 0056 029B     		ldr	r3, [sp, #8]
- 1966 0058 1436     		adds	r6, r6, #20
- 1967 005a 0133     		adds	r3, r3, #1
- 1968 005c DBB2     		uxtb	r3, r3
- 1969 005e 0293     		str	r3, [sp, #8]
- 1970 0060 142B     		cmp	r3, #20
- 1971 0062 E5D1     		bne	.L295
- 1972 0064 049B     		ldr	r3, [sp, #16]
- 1973 0066 042B     		cmp	r3, #4
- 1974 0068 17D1     		bne	.L296
- 1975              	.L300:
- 1976 006a 039B     		ldr	r3, [sp, #12]
- 1977 006c 1B7A     		ldrb	r3, [r3, #8]
- 1978 006e 042B     		cmp	r3, #4
- 1979 0070 09D0     		beq	.L299
- 1980 0072 039B     		ldr	r3, [sp, #12]
- 1981 0074 5E68     		ldr	r6, [r3, #4]
- 1982 0076 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
- 1983 007a 361A     		subs	r6, r6, r0
- 1984 007c AE42     		cmp	r6, r5
- 1985 007e 02DA     		bge	.L299
- 1986 0080 3500     		movs	r5, r6
- 1987 0082 019B     		ldr	r3, [sp, #4]
- 1988 0084 E355     		strb	r3, [r4, r7]
-ARM GAS  /tmp/ccI8rJG2.s 			page 38
+ 1929 000e 9227     		movs	r7, #146
+ 1930 0010 2C4C     		ldr	r4, .L314
+ 1931 0012 FF37     		adds	r7, r7, #255
+ 1932 0014 E05D     		ldrb	r0, [r4, r7]
+ 1933 0016 0528     		cmp	r0, #5
+ 1934 0018 03D0     		beq	.L291
+ 1935 001a FFF7FEFF 		bl	modem_supervisor_update_task
+ 1936 001e 0523     		movs	r3, #5
+ 1937 0020 E355     		strb	r3, [r4, r7]
+ 1938              	.L291:
+ 1939 0022 0023     		movs	r3, #0
+ 1940 0024 2600     		movs	r6, r4
+ 1941 0026 0293     		str	r3, [sp, #8]
+ 1942 0028 274D     		ldr	r5, .L314+4
+ 1943 002a 0433     		adds	r3, r3, #4
+ 1944 002c 0394     		str	r4, [sp, #12]
+ 1945 002e 0493     		str	r3, [sp, #16]
+ 1946              	.L295:
+ 1947 0030 337A     		ldrb	r3, [r6, #8]
+ 1948 0032 042B     		cmp	r3, #4
+ 1949 0034 0FD0     		beq	.L294
+ 1950 0036 7368     		ldr	r3, [r6, #4]
+ 1951 0038 0593     		str	r3, [sp, #20]
+ 1952 003a FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
+ 1953 003e 059B     		ldr	r3, [sp, #20]
+ 1954 0040 1A1A     		subs	r2, r3, r0
+ 1955 0042 002A     		cmp	r2, #0
+ 1956 0044 07DC     		bgt	.L294
+ 1957 0046 337A     		ldrb	r3, [r6, #8]
+ 1958 0048 0499     		ldr	r1, [sp, #16]
+ 1959 004a 8B42     		cmp	r3, r1
+ 1960 004c 03D2     		bcs	.L294
+ 1961 004e 1500     		movs	r5, r2
+ 1962 0050 0299     		ldr	r1, [sp, #8]
+ 1963 0052 0493     		str	r3, [sp, #16]
+ 1964 0054 E155     		strb	r1, [r4, r7]
+ 1965              	.L294:
+ 1966 0056 029B     		ldr	r3, [sp, #8]
+ 1967 0058 1436     		adds	r6, r6, #20
+ 1968 005a 0133     		adds	r3, r3, #1
+ 1969 005c DBB2     		uxtb	r3, r3
+ 1970 005e 0293     		str	r3, [sp, #8]
+ 1971 0060 142B     		cmp	r3, #20
+ 1972 0062 E5D1     		bne	.L295
+ 1973 0064 049B     		ldr	r3, [sp, #16]
+ 1974 0066 042B     		cmp	r3, #4
+ 1975 0068 17D1     		bne	.L296
+ 1976              	.L300:
+ 1977 006a 039B     		ldr	r3, [sp, #12]
+ 1978 006c 1B7A     		ldrb	r3, [r3, #8]
+ 1979 006e 042B     		cmp	r3, #4
+ 1980 0070 09D0     		beq	.L299
+ 1981 0072 039B     		ldr	r3, [sp, #12]
+ 1982 0074 5E68     		ldr	r6, [r3, #4]
+ 1983 0076 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
+ 1984 007a 361A     		subs	r6, r6, r0
+ 1985 007c AE42     		cmp	r6, r5
+ARM GAS  /tmp/ccNuiwIJ.s 			page 38
 
 
- 1989              	.L299:
- 1990 0086 019B     		ldr	r3, [sp, #4]
- 1991 0088 0133     		adds	r3, r3, #1
- 1992 008a DBB2     		uxtb	r3, r3
- 1993 008c 0193     		str	r3, [sp, #4]
- 1994 008e 039B     		ldr	r3, [sp, #12]
- 1995 0090 1433     		adds	r3, r3, #20
- 1996 0092 0393     		str	r3, [sp, #12]
- 1997 0094 019B     		ldr	r3, [sp, #4]
- 1998 0096 142B     		cmp	r3, #20
- 1999 0098 E7D1     		bne	.L300
- 2000              	.L296:
- 2001 009a 002D     		cmp	r5, #0
- 2002 009c 0ADD     		ble	.L301
- 2003 009e FA20     		movs	r0, #250
- 2004 00a0 CA23     		movs	r3, #202
- 2005 00a2 8000     		lsls	r0, r0, #2
- 2006 00a4 5B00     		lsls	r3, r3, #1
- 2007 00a6 6843     		muls	r0, r5
- 2008 00a8 E550     		str	r5, [r4, r3]
- 2009 00aa 903B     		subs	r3, r3, #144
- 2010 00ac FF3B     		subs	r3, r3, #255
- 2011 00ae E355     		strb	r3, [r4, r7]
- 2012              	.L289:
- 2013 00b0 07B0     		add	sp, sp, #28
- 2014              		@ sp needed
- 2015 00b2 F0BD     		pop	{r4, r5, r6, r7, pc}
- 2016              	.L301:
- 2017 00b4 E05D     		ldrb	r0, [r4, r7]
- 2018 00b6 FFF7FEFF 		bl	modem_supervisor_launch_task
- 2019 00ba 0020     		movs	r0, #0
- 2020 00bc F8E7     		b	.L289
- 2021              	.L302:
- 2022 00be C820     		movs	r0, #200
- 2023 00c0 4000     		lsls	r0, r0, #1
- 2024 00c2 F5E7     		b	.L289
- 2025              	.L315:
- 2026              		.align	2
- 2027              	.L314:
- 2028 00c4 00000000 		.word	task_manager
- 2029 00c8 FFFF1F00 		.word	2097151
- 2031              		.section	.rodata.modem_supervisor_engine.str1.1,"aMS",%progbits,1
- 2032              	.LC131:
- 2033 0000 1B5B303B 		.ascii	"\033[0;33mWARN: Duty Cycle, remaining time: %dms\012"
- 2033      33336D57 
- 2033      41524E3A 
- 2033      20447574 
- 2033      79204379 
- 2034 002e 00       		.ascii	"\000"
- 2035              		.section	.text.modem_supervisor_engine,"ax",%progbits
- 2036              		.align	1
- 2037              		.global	modem_supervisor_engine
- 2038              		.syntax unified
- 2039              		.code	16
- 2040              		.thumb_func
- 2042              	modem_supervisor_engine:
- 2043              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  /tmp/ccI8rJG2.s 			page 39
+ 1986 007e 02DA     		bge	.L299
+ 1987 0080 3500     		movs	r5, r6
+ 1988 0082 019B     		ldr	r3, [sp, #4]
+ 1989 0084 E355     		strb	r3, [r4, r7]
+ 1990              	.L299:
+ 1991 0086 019B     		ldr	r3, [sp, #4]
+ 1992 0088 0133     		adds	r3, r3, #1
+ 1993 008a DBB2     		uxtb	r3, r3
+ 1994 008c 0193     		str	r3, [sp, #4]
+ 1995 008e 039B     		ldr	r3, [sp, #12]
+ 1996 0090 1433     		adds	r3, r3, #20
+ 1997 0092 0393     		str	r3, [sp, #12]
+ 1998 0094 019B     		ldr	r3, [sp, #4]
+ 1999 0096 142B     		cmp	r3, #20
+ 2000 0098 E7D1     		bne	.L300
+ 2001              	.L296:
+ 2002 009a 002D     		cmp	r5, #0
+ 2003 009c 0ADD     		ble	.L301
+ 2004 009e FA20     		movs	r0, #250
+ 2005 00a0 CA23     		movs	r3, #202
+ 2006 00a2 8000     		lsls	r0, r0, #2
+ 2007 00a4 5B00     		lsls	r3, r3, #1
+ 2008 00a6 6843     		muls	r0, r5
+ 2009 00a8 E550     		str	r5, [r4, r3]
+ 2010 00aa 903B     		subs	r3, r3, #144
+ 2011 00ac FF3B     		subs	r3, r3, #255
+ 2012 00ae E355     		strb	r3, [r4, r7]
+ 2013              	.L289:
+ 2014 00b0 07B0     		add	sp, sp, #28
+ 2015              		@ sp needed
+ 2016 00b2 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 2017              	.L301:
+ 2018 00b4 E05D     		ldrb	r0, [r4, r7]
+ 2019 00b6 FFF7FEFF 		bl	modem_supervisor_launch_task
+ 2020 00ba 0020     		movs	r0, #0
+ 2021 00bc F8E7     		b	.L289
+ 2022              	.L302:
+ 2023 00be C820     		movs	r0, #200
+ 2024 00c0 4000     		lsls	r0, r0, #1
+ 2025 00c2 F5E7     		b	.L289
+ 2026              	.L315:
+ 2027              		.align	2
+ 2028              	.L314:
+ 2029 00c4 00000000 		.word	task_manager
+ 2030 00c8 FFFF1F00 		.word	2097151
+ 2032              		.section	.rodata.modem_supervisor_engine.str1.1,"aMS",%progbits,1
+ 2033              	.LC131:
+ 2034 0000 1B5B303B 		.ascii	"\033[0;33mWARN: Duty Cycle, remaining time: %dms\012"
+ 2034      33336D57 
+ 2034      41524E3A 
+ 2034      20447574 
+ 2034      79204379 
+ 2035 002e 0D00     		.ascii	"\015\000"
+ 2036              		.section	.text.modem_supervisor_engine,"ax",%progbits
+ 2037              		.align	1
+ 2038              		.global	modem_supervisor_engine
+ 2039              		.syntax unified
+ARM GAS  /tmp/ccNuiwIJ.s 			page 39
 
 
- 2044              		@ frame_needed = 0, uses_anonymous_args = 0
- 2045 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
- 2046 0002 FFF7FEFF 		bl	get_modem_reset_requested
- 2047 0006 0028     		cmp	r0, #0
- 2048 0008 03D0     		beq	.L317
- 2049 000a FFF7FEFF 		bl	smtc_modem_hal_disable_modem_irq
- 2050 000e FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
- 2051              	.L317:
- 2052 0012 FFF7FEFF 		bl	modem_get_user_alarm
- 2053 0016 041E     		subs	r4, r0, #0
- 2054 0018 10D0     		beq	.L319
- 2055 001a FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
- 2056 001e 241A     		subs	r4, r4, r0
- 2057 0020 002C     		cmp	r4, #0
- 2058 0022 0CDC     		bgt	.L320
- 2059 0024 0021     		movs	r1, #0
- 2060 0026 0120     		movs	r0, #1
- 2061 0028 FFF7FEFF 		bl	increment_asynchronous_msgnumber
- 2062 002c 0020     		movs	r0, #0
- 2063 002e FFF7FEFF 		bl	modem_set_user_alarm
- 2064 0032 514B     		ldr	r3, .L381
- 2065 0034 1B68     		ldr	r3, [r3]
- 2066 0036 002B     		cmp	r3, #0
- 2067 0038 00D0     		beq	.L319
- 2068 003a 9847     		blx	r3
- 2069              	.L319:
- 2070 003c 4F4C     		ldr	r4, .L381+4
- 2071              	.L320:
- 2072 003e FFF7FEFF 		bl	lorawan_api_state_get
- 2073 0042 0028     		cmp	r0, #0
- 2074 0044 08D0     		beq	.L322
- 2075 0046 0538     		subs	r0, r0, #5
- 2076 0048 C0B2     		uxtb	r0, r0
- 2077 004a 0128     		cmp	r0, #1
- 2078 004c 04D9     		bls	.L322
- 2079 004e FFF7FEFF 		bl	lorawan_api_process
- 2080 0052 C820     		movs	r0, #200
- 2081 0054 4000     		lsls	r0, r0, #1
- 2082              	.L316:
- 2083              		@ sp needed
- 2084 0056 76BD     		pop	{r1, r2, r4, r5, r6, pc}
- 2085              	.L322:
- 2086 0058 FFF7FEFF 		bl	get_modem_adr_profile
- 2087 005c 0500     		movs	r5, r0
- 2088 005e FFF7FEFF 		bl	modem_get_adr_mobile_timeout_config
- 2089 0062 0600     		movs	r6, r0
- 2090 0064 FFF7FEFF 		bl	lorawan_api_get_current_no_rx_packet_in_mobile_mode_cnt
- 2091 0068 8642     		cmp	r6, r0
- 2092 006a 69D2     		bcs	.L324
- 2093 006c 002D     		cmp	r5, #0
- 2094 006e 08D1     		bne	.L325
- 2095              	.L329:
- 2096 0070 FFF7FEFF 		bl	modem_available_new_link_adr_request
- 2097 0074 0028     		cmp	r0, #0
- 2098 0076 11D0     		beq	.L331
- 2099 0078 0021     		movs	r1, #0
- 2100 007a 0F20     		movs	r0, #15
-ARM GAS  /tmp/ccI8rJG2.s 			page 40
+ 2040              		.code	16
+ 2041              		.thumb_func
+ 2043              	modem_supervisor_engine:
+ 2044              		@ args = 0, pretend = 0, frame = 8
+ 2045              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2046 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
+ 2047 0002 FFF7FEFF 		bl	get_modem_reset_requested
+ 2048 0006 0028     		cmp	r0, #0
+ 2049 0008 03D0     		beq	.L317
+ 2050 000a FFF7FEFF 		bl	smtc_modem_hal_disable_modem_irq
+ 2051 000e FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
+ 2052              	.L317:
+ 2053 0012 FFF7FEFF 		bl	modem_get_user_alarm
+ 2054 0016 041E     		subs	r4, r0, #0
+ 2055 0018 10D0     		beq	.L319
+ 2056 001a FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
+ 2057 001e 241A     		subs	r4, r4, r0
+ 2058 0020 002C     		cmp	r4, #0
+ 2059 0022 0CDC     		bgt	.L320
+ 2060 0024 0021     		movs	r1, #0
+ 2061 0026 0120     		movs	r0, #1
+ 2062 0028 FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 2063 002c 0020     		movs	r0, #0
+ 2064 002e FFF7FEFF 		bl	modem_set_user_alarm
+ 2065 0032 514B     		ldr	r3, .L381
+ 2066 0034 1B68     		ldr	r3, [r3]
+ 2067 0036 002B     		cmp	r3, #0
+ 2068 0038 00D0     		beq	.L319
+ 2069 003a 9847     		blx	r3
+ 2070              	.L319:
+ 2071 003c 4F4C     		ldr	r4, .L381+4
+ 2072              	.L320:
+ 2073 003e FFF7FEFF 		bl	lorawan_api_state_get
+ 2074 0042 0028     		cmp	r0, #0
+ 2075 0044 08D0     		beq	.L322
+ 2076 0046 0538     		subs	r0, r0, #5
+ 2077 0048 C0B2     		uxtb	r0, r0
+ 2078 004a 0128     		cmp	r0, #1
+ 2079 004c 04D9     		bls	.L322
+ 2080 004e FFF7FEFF 		bl	lorawan_api_process
+ 2081 0052 C820     		movs	r0, #200
+ 2082 0054 4000     		lsls	r0, r0, #1
+ 2083              	.L316:
+ 2084              		@ sp needed
+ 2085 0056 76BD     		pop	{r1, r2, r4, r5, r6, pc}
+ 2086              	.L322:
+ 2087 0058 FFF7FEFF 		bl	get_modem_adr_profile
+ 2088 005c 0500     		movs	r5, r0
+ 2089 005e FFF7FEFF 		bl	modem_get_adr_mobile_timeout_config
+ 2090 0062 0600     		movs	r6, r0
+ 2091 0064 FFF7FEFF 		bl	lorawan_api_get_current_no_rx_packet_in_mobile_mode_cnt
+ 2092 0068 8642     		cmp	r6, r0
+ 2093 006a 69D2     		bcs	.L324
+ 2094 006c 002D     		cmp	r5, #0
+ 2095 006e 08D1     		bne	.L325
+ 2096              	.L329:
+ 2097 0070 FFF7FEFF 		bl	modem_available_new_link_adr_request
+ARM GAS  /tmp/ccNuiwIJ.s 			page 40
 
 
- 2101 007c FFF7FEFF 		bl	increment_asynchronous_msgnumber
- 2102 0080 0CE0     		b	.L331
- 2103              	.L325:
- 2104 0082 002E     		cmp	r6, #0
- 2105 0084 5ED0     		beq	.L328
- 2106              	.L330:
- 2107 0086 0022     		movs	r2, #0
- 2108 0088 1100     		movs	r1, r2
- 2109 008a 1000     		movs	r0, r2
- 2110 008c FFF7FEFF 		bl	set_modem_adr_profile
- 2111 0090 0021     		movs	r1, #0
- 2112 0092 0E20     		movs	r0, #14
- 2113 0094 FFF7FEFF 		bl	increment_asynchronous_msgnumber
- 2114 0098 002D     		cmp	r5, #0
- 2115 009a E9D0     		beq	.L329
- 2116              	.L331:
- 2117 009c FFF7FEFF 		bl	lorawan_api_get_class_b_status
- 2118 00a0 374D     		ldr	r5, .L381+8
- 2119 00a2 2B78     		ldrb	r3, [r5]
- 2120 00a4 8342     		cmp	r3, r0
- 2121 00a6 13D0     		beq	.L332
- 2122 00a8 2870     		strb	r0, [r5]
- 2123 00aa 01A8     		add	r0, sp, #4
- 2124 00ac FFF7FEFF 		bl	get_dm_retrieve_pending_dl
- 2125 00b0 6B46     		mov	r3, sp
- 2126 00b2 1B79     		ldrb	r3, [r3, #4]
- 2127 00b4 002B     		cmp	r3, #0
- 2128 00b6 04D1     		bne	.L333
- 2129 00b8 6B46     		mov	r3, sp
- 2130 00ba 0120     		movs	r0, #1
- 2131 00bc 5979     		ldrb	r1, [r3, #5]
- 2132 00be FFF7FEFF 		bl	set_dm_retrieve_pending_dl
- 2133              	.L333:
- 2134 00c2 0120     		movs	r0, #1
- 2135 00c4 FFF7FEFF 		bl	modem_supervisor_add_task_retrieve_dl
- 2136 00c8 1420     		movs	r0, #20
- 2137 00ca 2978     		ldrb	r1, [r5]
- 2138 00cc FFF7FEFF 		bl	increment_asynchronous_msgnumber
- 2139              	.L332:
- 2140 00d0 9225     		movs	r5, #146
- 2141 00d2 2C4E     		ldr	r6, .L381+12
- 2142 00d4 FF35     		adds	r5, r5, #255
- 2143 00d6 705D     		ldrb	r0, [r6, r5]
- 2144 00d8 0528     		cmp	r0, #5
- 2145 00da 03D0     		beq	.L339
- 2146 00dc FFF7FEFF 		bl	modem_supervisor_update_task
- 2147 00e0 0523     		movs	r3, #5
- 2148 00e2 7355     		strb	r3, [r6, r5]
- 2149              	.L339:
- 2150 00e4 FFF7FEFF 		bl	get_asynchronous_msgnumber
- 2151 00e8 0028     		cmp	r0, #0
- 2152 00ea 05D0     		beq	.L336
- 2153 00ec FFF7FEFF 		bl	lorawan_api_modem_certification_is_enabled
- 2154 00f0 0128     		cmp	r0, #1
- 2155 00f2 2CD1     		bne	.L337
- 2156 00f4 FFF7FEFF 		bl	certification_event_handler
- 2157              	.L336:
-ARM GAS  /tmp/ccI8rJG2.s 			page 41
+ 2098 0074 0028     		cmp	r0, #0
+ 2099 0076 11D0     		beq	.L331
+ 2100 0078 0021     		movs	r1, #0
+ 2101 007a 0F20     		movs	r0, #15
+ 2102 007c FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 2103 0080 0CE0     		b	.L331
+ 2104              	.L325:
+ 2105 0082 002E     		cmp	r6, #0
+ 2106 0084 5ED0     		beq	.L328
+ 2107              	.L330:
+ 2108 0086 0022     		movs	r2, #0
+ 2109 0088 1100     		movs	r1, r2
+ 2110 008a 1000     		movs	r0, r2
+ 2111 008c FFF7FEFF 		bl	set_modem_adr_profile
+ 2112 0090 0021     		movs	r1, #0
+ 2113 0092 0E20     		movs	r0, #14
+ 2114 0094 FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 2115 0098 002D     		cmp	r5, #0
+ 2116 009a E9D0     		beq	.L329
+ 2117              	.L331:
+ 2118 009c FFF7FEFF 		bl	lorawan_api_get_class_b_status
+ 2119 00a0 374D     		ldr	r5, .L381+8
+ 2120 00a2 2B78     		ldrb	r3, [r5]
+ 2121 00a4 8342     		cmp	r3, r0
+ 2122 00a6 13D0     		beq	.L332
+ 2123 00a8 2870     		strb	r0, [r5]
+ 2124 00aa 01A8     		add	r0, sp, #4
+ 2125 00ac FFF7FEFF 		bl	get_dm_retrieve_pending_dl
+ 2126 00b0 6B46     		mov	r3, sp
+ 2127 00b2 1B79     		ldrb	r3, [r3, #4]
+ 2128 00b4 002B     		cmp	r3, #0
+ 2129 00b6 04D1     		bne	.L333
+ 2130 00b8 6B46     		mov	r3, sp
+ 2131 00ba 0120     		movs	r0, #1
+ 2132 00bc 5979     		ldrb	r1, [r3, #5]
+ 2133 00be FFF7FEFF 		bl	set_dm_retrieve_pending_dl
+ 2134              	.L333:
+ 2135 00c2 0120     		movs	r0, #1
+ 2136 00c4 FFF7FEFF 		bl	modem_supervisor_add_task_retrieve_dl
+ 2137 00c8 1420     		movs	r0, #20
+ 2138 00ca 2978     		ldrb	r1, [r5]
+ 2139 00cc FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 2140              	.L332:
+ 2141 00d0 9225     		movs	r5, #146
+ 2142 00d2 2C4E     		ldr	r6, .L381+12
+ 2143 00d4 FF35     		adds	r5, r5, #255
+ 2144 00d6 705D     		ldrb	r0, [r6, r5]
+ 2145 00d8 0528     		cmp	r0, #5
+ 2146 00da 03D0     		beq	.L339
+ 2147 00dc FFF7FEFF 		bl	modem_supervisor_update_task
+ 2148 00e0 0523     		movs	r3, #5
+ 2149 00e2 7355     		strb	r3, [r6, r5]
+ 2150              	.L339:
+ 2151 00e4 FFF7FEFF 		bl	get_asynchronous_msgnumber
+ 2152 00e8 0028     		cmp	r0, #0
+ 2153 00ea 05D0     		beq	.L336
+ 2154 00ec FFF7FEFF 		bl	lorawan_api_modem_certification_is_enabled
+ARM GAS  /tmp/ccNuiwIJ.s 			page 41
 
 
- 2158 00f8 FFF7FEFF 		bl	get_asynchronous_msgnumber
- 2159 00fc 0500     		movs	r5, r0
- 2160 00fe FFF7FEFF 		bl	get_asynchronous_msgnumber
- 2161 0102 A842     		cmp	r0, r5
- 2162 0104 EED8     		bhi	.L339
- 2163 0106 FFF7FEFF 		bl	lorawan_api_next_free_duty_cycle_ms_get
- 2164 010a 051E     		subs	r5, r0, #0
- 2165 010c 25DD     		ble	.L340
- 2166 010e 1E48     		ldr	r0, .L381+16
- 2167 0110 2900     		movs	r1, r5
- 2168 0112 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 2169 0116 1D48     		ldr	r0, .L381+20
- 2170 0118 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 2171              	.L341:
- 2172 011c FFF7FEFF 		bl	modem_get_user_alarm
- 2173 0120 061E     		subs	r6, r0, #0
- 2174 0122 05D0     		beq	.L344
- 2175 0124 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
- 2176 0128 341A     		subs	r4, r6, r0
- 2177 012a E343     		mvns	r3, r4
- 2178 012c DB17     		asrs	r3, r3, #31
- 2179 012e 1C40     		ands	r4, r3
- 2180              	.L344:
- 2181 0130 FA20     		movs	r0, #250
- 2182 0132 8000     		lsls	r0, r0, #2
- 2183 0134 6043     		muls	r0, r4
- 2184 0136 A842     		cmp	r0, r5
- 2185 0138 00D8     		bhi	.LCB2308
- 2186 013a 8CE7     		b	.L316	@long jump
- 2187              	.LCB2308:
- 2188 013c 2800     		movs	r0, r5
- 2189 013e 8AE7     		b	.L316
- 2190              	.L324:
- 2191 0140 002D     		cmp	r5, #0
- 2192 0142 95D0     		beq	.L329
- 2193              	.L328:
- 2194 0144 FFF7FEFF 		bl	lorawan_api_dr_strategy_get
- 2195 0148 0028     		cmp	r0, #0
- 2196 014a 9CD0     		beq	.L330
- 2197 014c A6E7     		b	.L331
- 2198              	.L337:
- 2199 014e 0A4B     		ldr	r3, .L381
- 2200 0150 1B68     		ldr	r3, [r3]
- 2201 0152 002B     		cmp	r3, #0
- 2202 0154 D0D0     		beq	.L336
- 2203 0156 9847     		blx	r3
- 2204 0158 CEE7     		b	.L336
- 2205              	.L340:
- 2206 015a FFF7FEFF 		bl	get_modem_suspend
- 2207 015e 0028     		cmp	r0, #0
- 2208 0160 01D0     		beq	.L342
- 2209              	.L343:
- 2210 0162 0B4D     		ldr	r5, .L381+24
- 2211 0164 DAE7     		b	.L341
- 2212              	.L342:
- 2213 0166 FFF7FEFF 		bl	get_modem_muted
- 2214 016a FF28     		cmp	r0, #255
-ARM GAS  /tmp/ccI8rJG2.s 			page 42
+ 2155 00f0 0128     		cmp	r0, #1
+ 2156 00f2 2CD1     		bne	.L337
+ 2157 00f4 FFF7FEFF 		bl	certification_event_handler
+ 2158              	.L336:
+ 2159 00f8 FFF7FEFF 		bl	get_asynchronous_msgnumber
+ 2160 00fc 0500     		movs	r5, r0
+ 2161 00fe FFF7FEFF 		bl	get_asynchronous_msgnumber
+ 2162 0102 A842     		cmp	r0, r5
+ 2163 0104 EED8     		bhi	.L339
+ 2164 0106 FFF7FEFF 		bl	lorawan_api_next_free_duty_cycle_ms_get
+ 2165 010a 051E     		subs	r5, r0, #0
+ 2166 010c 25DD     		ble	.L340
+ 2167 010e 1E48     		ldr	r0, .L381+16
+ 2168 0110 2900     		movs	r1, r5
+ 2169 0112 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 2170 0116 1D48     		ldr	r0, .L381+20
+ 2171 0118 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 2172              	.L341:
+ 2173 011c FFF7FEFF 		bl	modem_get_user_alarm
+ 2174 0120 061E     		subs	r6, r0, #0
+ 2175 0122 05D0     		beq	.L344
+ 2176 0124 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
+ 2177 0128 341A     		subs	r4, r6, r0
+ 2178 012a E343     		mvns	r3, r4
+ 2179 012c DB17     		asrs	r3, r3, #31
+ 2180 012e 1C40     		ands	r4, r3
+ 2181              	.L344:
+ 2182 0130 FA20     		movs	r0, #250
+ 2183 0132 8000     		lsls	r0, r0, #2
+ 2184 0134 6043     		muls	r0, r4
+ 2185 0136 A842     		cmp	r0, r5
+ 2186 0138 00D8     		bhi	.LCB2308
+ 2187 013a 8CE7     		b	.L316	@long jump
+ 2188              	.LCB2308:
+ 2189 013c 2800     		movs	r0, r5
+ 2190 013e 8AE7     		b	.L316
+ 2191              	.L324:
+ 2192 0140 002D     		cmp	r5, #0
+ 2193 0142 95D0     		beq	.L329
+ 2194              	.L328:
+ 2195 0144 FFF7FEFF 		bl	lorawan_api_dr_strategy_get
+ 2196 0148 0028     		cmp	r0, #0
+ 2197 014a 9CD0     		beq	.L330
+ 2198 014c A6E7     		b	.L331
+ 2199              	.L337:
+ 2200 014e 0A4B     		ldr	r3, .L381
+ 2201 0150 1B68     		ldr	r3, [r3]
+ 2202 0152 002B     		cmp	r3, #0
+ 2203 0154 D0D0     		beq	.L336
+ 2204 0156 9847     		blx	r3
+ 2205 0158 CEE7     		b	.L336
+ 2206              	.L340:
+ 2207 015a FFF7FEFF 		bl	get_modem_suspend
+ 2208 015e 0028     		cmp	r0, #0
+ 2209 0160 01D0     		beq	.L342
+ 2210              	.L343:
+ 2211 0162 0B4D     		ldr	r5, .L381+24
+ARM GAS  /tmp/ccNuiwIJ.s 			page 42
 
 
- 2215 016c F9D0     		beq	.L343
- 2216 016e FFF7FEFF 		bl	modem_supervisor_scheduler
- 2217 0172 0500     		movs	r5, r0
- 2218 0174 D2E7     		b	.L341
- 2219              	.L382:
- 2220 0176 C046     		.align	2
- 2221              	.L381:
- 2222 0178 00000000 		.word	app_callback
- 2223 017c FFFFFF7F 		.word	2147483647
- 2224 0180 00000000 		.word	class_b_bit
- 2225 0184 00000000 		.word	task_manager
- 2226 0188 00000000 		.word	.LC131
- 2227 018c 19000000 		.word	.LC2
- 2228 0190 FEFFFF7F 		.word	2147483646
- 2230              		.section	.text.modem_supervisor_update_downlink_frame,"ax",%progbits
- 2231              		.align	1
- 2232              		.global	modem_supervisor_update_downlink_frame
- 2233              		.syntax unified
- 2234              		.code	16
- 2235              		.thumb_func
- 2237              	modem_supervisor_update_downlink_frame:
- 2238              		@ args = 0, pretend = 0, frame = 264
- 2239              		@ frame_needed = 0, uses_anonymous_args = 0
- 2240 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 2241 0002 0400     		movs	r4, r0
- 2242 0004 0E00     		movs	r6, r1
- 2243 0006 1500     		movs	r5, r2
- 2244 0008 C3B0     		sub	sp, sp, #268
- 2245 000a 002B     		cmp	r3, #0
- 2246 000c 0ED0     		beq	.L384
- 2247 000e 6846     		mov	r0, sp
- 2248 0010 FFF7FEFF 		bl	get_dm_retrieve_pending_dl
- 2249 0014 6B46     		mov	r3, sp
- 2250 0016 1B78     		ldrb	r3, [r3]
- 2251 0018 002B     		cmp	r3, #0
- 2252 001a 04D1     		bne	.L385
- 2253 001c 6B46     		mov	r3, sp
- 2254 001e 0120     		movs	r0, #1
- 2255 0020 5978     		ldrb	r1, [r3, #1]
- 2256 0022 FFF7FEFF 		bl	set_dm_retrieve_pending_dl
- 2257              	.L385:
- 2258 0026 0120     		movs	r0, #1
- 2259 0028 FFF7FEFF 		bl	modem_supervisor_add_task_retrieve_dl
- 2260              	.L384:
- 2261 002c 2A00     		movs	r2, r5
- 2262 002e 3100     		movs	r1, r6
- 2263 0030 2000     		movs	r0, r4
- 2264 0032 FFF7FEFF 		bl	set_modem_downlink_frame
- 2265 0036 6846     		mov	r0, sp
- 2266 0038 FFF7FEFF 		bl	get_modem_downlink_frame
- 2267 003c 6B7A     		ldrb	r3, [r5, #9]
- 2268 003e 0D2B     		cmp	r3, #13
- 2269 0040 02D1     		bne	.L386
- 2270              	.L389:
- 2271 0042 0120     		movs	r0, #1
- 2272              	.L387:
- 2273 0044 43B0     		add	sp, sp, #268
-ARM GAS  /tmp/ccI8rJG2.s 			page 43
+ 2212 0164 DAE7     		b	.L341
+ 2213              	.L342:
+ 2214 0166 FFF7FEFF 		bl	get_modem_muted
+ 2215 016a FF28     		cmp	r0, #255
+ 2216 016c F9D0     		beq	.L343
+ 2217 016e FFF7FEFF 		bl	modem_supervisor_scheduler
+ 2218 0172 0500     		movs	r5, r0
+ 2219 0174 D2E7     		b	.L341
+ 2220              	.L382:
+ 2221 0176 C046     		.align	2
+ 2222              	.L381:
+ 2223 0178 00000000 		.word	app_callback
+ 2224 017c FFFFFF7F 		.word	2147483647
+ 2225 0180 00000000 		.word	class_b_bit
+ 2226 0184 00000000 		.word	task_manager
+ 2227 0188 00000000 		.word	.LC131
+ 2228 018c 1A000000 		.word	.LC2
+ 2229 0190 FEFFFF7F 		.word	2147483646
+ 2231              		.section	.text.modem_supervisor_update_downlink_frame,"ax",%progbits
+ 2232              		.align	1
+ 2233              		.global	modem_supervisor_update_downlink_frame
+ 2234              		.syntax unified
+ 2235              		.code	16
+ 2236              		.thumb_func
+ 2238              	modem_supervisor_update_downlink_frame:
+ 2239              		@ args = 0, pretend = 0, frame = 264
+ 2240              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2241 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 2242 0002 0400     		movs	r4, r0
+ 2243 0004 0E00     		movs	r6, r1
+ 2244 0006 1500     		movs	r5, r2
+ 2245 0008 C3B0     		sub	sp, sp, #268
+ 2246 000a 002B     		cmp	r3, #0
+ 2247 000c 0ED0     		beq	.L384
+ 2248 000e 6846     		mov	r0, sp
+ 2249 0010 FFF7FEFF 		bl	get_dm_retrieve_pending_dl
+ 2250 0014 6B46     		mov	r3, sp
+ 2251 0016 1B78     		ldrb	r3, [r3]
+ 2252 0018 002B     		cmp	r3, #0
+ 2253 001a 04D1     		bne	.L385
+ 2254 001c 6B46     		mov	r3, sp
+ 2255 001e 0120     		movs	r0, #1
+ 2256 0020 5978     		ldrb	r1, [r3, #1]
+ 2257 0022 FFF7FEFF 		bl	set_dm_retrieve_pending_dl
+ 2258              	.L385:
+ 2259 0026 0120     		movs	r0, #1
+ 2260 0028 FFF7FEFF 		bl	modem_supervisor_add_task_retrieve_dl
+ 2261              	.L384:
+ 2262 002c 2A00     		movs	r2, r5
+ 2263 002e 3100     		movs	r1, r6
+ 2264 0030 2000     		movs	r0, r4
+ 2265 0032 FFF7FEFF 		bl	set_modem_downlink_frame
+ 2266 0036 6846     		mov	r0, sp
+ 2267 0038 FFF7FEFF 		bl	get_modem_downlink_frame
+ 2268 003c 6B7A     		ldrb	r3, [r5, #9]
+ 2269 003e 0D2B     		cmp	r3, #13
+ 2270 0040 02D1     		bne	.L386
+ARM GAS  /tmp/ccNuiwIJ.s 			page 43
 
 
- 2274              		@ sp needed
- 2275 0046 F0BD     		pop	{r4, r5, r6, r7, pc}
- 2276              	.L386:
- 2277 0048 6B46     		mov	r3, sp
- 2278 004a 1C78     		ldrb	r4, [r3]
- 2279 004c FFF7FEFF 		bl	get_modem_dm_port
- 2280 0050 8442     		cmp	r4, r0
- 2281 0052 08D1     		bne	.L388
- 2282 0054 F323     		movs	r3, #243
- 2283 0056 6B44     		add	r3, r3, sp
- 2284 0058 1978     		ldrb	r1, [r3]
- 2285 005a 6B46     		mov	r3, sp
- 2286 005c 581C     		adds	r0, r3, #1
- 2287 005e FFF7FEFF 		bl	dm_downlink
- 2288              	.L391:
- 2289 0062 0020     		movs	r0, #0
- 2290 0064 EEE7     		b	.L387
- 2291              	.L388:
- 2292 0066 6B46     		mov	r3, sp
- 2293 0068 394C     		ldr	r4, .L428
- 2294 006a 1E78     		ldrb	r6, [r3]
- 2295 006c 2068     		ldr	r0, [r4]
- 2296 006e FFF7FEFF 		bl	clock_sync_get_alcsync_port
- 2297 0072 8642     		cmp	r6, r0
- 2298 0074 E5D1     		bne	.L389
- 2299 0076 6B7A     		ldrb	r3, [r5, #9]
- 2300 0078 5A1E     		subs	r2, r3, #1
- 2301 007a 022A     		cmp	r2, #2
- 2302 007c 01D9     		bls	.L390
- 2303 007e 082B     		cmp	r3, #8
- 2304 0080 EFD1     		bne	.L391
- 2305              	.L390:
- 2306 0082 F323     		movs	r3, #243
- 2307 0084 6B44     		add	r3, r3, sp
- 2308 0086 1A78     		ldrb	r2, [r3]
- 2309 0088 6B46     		mov	r3, sp
- 2310 008a 324D     		ldr	r5, .L428+4
- 2311 008c 591C     		adds	r1, r3, #1
- 2312 008e 2868     		ldr	r0, [r5]
- 2313 0090 FFF7FEFF 		bl	alc_sync_parser
- 2314 0094 0600     		movs	r6, r0
- 2315 0096 8307     		lsls	r3, r0, #30
- 2316 0098 28D5     		bpl	.L393
- 2317 009a 0121     		movs	r1, #1
- 2318 009c 2B68     		ldr	r3, [r5]
- 2319 009e 0D20     		movs	r0, #13
- 2320 00a0 2933     		adds	r3, r3, #41
- 2321 00a2 1970     		strb	r1, [r3]
- 2322 00a4 FFF7FEFF 		bl	increment_asynchronous_msgnumber
- 2323 00a8 FFF7FEFF 		bl	modem_supervisor_remove_task_clock_sync
- 2324 00ac 2068     		ldr	r0, [r4]
- 2325 00ae FFF7FEFF 		bl	clock_sync_is_enabled
- 2326 00b2 0028     		cmp	r0, #0
- 2327 00b4 1AD0     		beq	.L393
- 2328 00b6 2068     		ldr	r0, [r4]
- 2329 00b8 FFF7FEFF 		bl	clock_sync_get_interval_second
- 2330 00bc 0500     		movs	r5, r0
-ARM GAS  /tmp/ccI8rJG2.s 			page 44
+ 2271              	.L389:
+ 2272 0042 0120     		movs	r0, #1
+ 2273              	.L387:
+ 2274 0044 43B0     		add	sp, sp, #268
+ 2275              		@ sp needed
+ 2276 0046 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 2277              	.L386:
+ 2278 0048 6B46     		mov	r3, sp
+ 2279 004a 1C78     		ldrb	r4, [r3]
+ 2280 004c FFF7FEFF 		bl	get_modem_dm_port
+ 2281 0050 8442     		cmp	r4, r0
+ 2282 0052 08D1     		bne	.L388
+ 2283 0054 F323     		movs	r3, #243
+ 2284 0056 6B44     		add	r3, r3, sp
+ 2285 0058 1978     		ldrb	r1, [r3]
+ 2286 005a 6B46     		mov	r3, sp
+ 2287 005c 581C     		adds	r0, r3, #1
+ 2288 005e FFF7FEFF 		bl	dm_downlink
+ 2289              	.L391:
+ 2290 0062 0020     		movs	r0, #0
+ 2291 0064 EEE7     		b	.L387
+ 2292              	.L388:
+ 2293 0066 6B46     		mov	r3, sp
+ 2294 0068 394C     		ldr	r4, .L428
+ 2295 006a 1E78     		ldrb	r6, [r3]
+ 2296 006c 2068     		ldr	r0, [r4]
+ 2297 006e FFF7FEFF 		bl	clock_sync_get_alcsync_port
+ 2298 0072 8642     		cmp	r6, r0
+ 2299 0074 E5D1     		bne	.L389
+ 2300 0076 6B7A     		ldrb	r3, [r5, #9]
+ 2301 0078 5A1E     		subs	r2, r3, #1
+ 2302 007a 022A     		cmp	r2, #2
+ 2303 007c 01D9     		bls	.L390
+ 2304 007e 082B     		cmp	r3, #8
+ 2305 0080 EFD1     		bne	.L391
+ 2306              	.L390:
+ 2307 0082 F323     		movs	r3, #243
+ 2308 0084 6B44     		add	r3, r3, sp
+ 2309 0086 1A78     		ldrb	r2, [r3]
+ 2310 0088 6B46     		mov	r3, sp
+ 2311 008a 324D     		ldr	r5, .L428+4
+ 2312 008c 591C     		adds	r1, r3, #1
+ 2313 008e 2868     		ldr	r0, [r5]
+ 2314 0090 FFF7FEFF 		bl	alc_sync_parser
+ 2315 0094 0600     		movs	r6, r0
+ 2316 0096 8307     		lsls	r3, r0, #30
+ 2317 0098 28D5     		bpl	.L393
+ 2318 009a 0121     		movs	r1, #1
+ 2319 009c 2B68     		ldr	r3, [r5]
+ 2320 009e 0D20     		movs	r0, #13
+ 2321 00a0 2933     		adds	r3, r3, #41
+ 2322 00a2 1970     		strb	r1, [r3]
+ 2323 00a4 FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 2324 00a8 FFF7FEFF 		bl	modem_supervisor_remove_task_clock_sync
+ 2325 00ac 2068     		ldr	r0, [r4]
+ 2326 00ae FFF7FEFF 		bl	clock_sync_is_enabled
+ 2327 00b2 0028     		cmp	r0, #0
+ARM GAS  /tmp/ccNuiwIJ.s 			page 44
 
 
- 2331 00be 2068     		ldr	r0, [r4]
- 2332 00c0 FFF7FEFF 		bl	clock_sync_get_time_left_connection_lost
- 2333 00c4 8542     		cmp	r5, r0
- 2334 00c6 3BD2     		bcs	.L395
- 2335 00c8 2068     		ldr	r0, [r4]
- 2336 00ca FFF7FEFF 		bl	clock_sync_get_interval_second
- 2337              	.L426:
- 2338 00ce 1E27     		movs	r7, #30
- 2339 00d0 0500     		movs	r5, r0
- 2340 00d2 7F42     		rsbs	r7, r7, #0
- 2341              	.L398:
- 2342 00d4 1E21     		movs	r1, #30
- 2343 00d6 3800     		movs	r0, r7
- 2344 00d8 FFF7FEFF 		bl	smtc_modem_hal_get_signed_random_nb_in_range
- 2345 00dc 0028     		cmp	r0, #0
- 2346 00de 02DA     		bge	.L397
- 2347 00e0 4342     		rsbs	r3, r0, #0
- 2348 00e2 AB42     		cmp	r3, r5
- 2349 00e4 F6D8     		bhi	.L398
- 2350              	.L397:
- 2351 00e6 4019     		adds	r0, r0, r5
- 2352 00e8 FFF7FEFF 		bl	modem_supervisor_add_task_clock_sync_time_req
- 2353              	.L393:
- 2354 00ec 0223     		movs	r3, #2
- 2355 00ee 3200     		movs	r2, r6
- 2356 00f0 9A43     		bics	r2, r3
- 2357 00f2 B6D0     		beq	.L391
- 2358 00f4 7607     		lsls	r6, r6, #29
- 2359 00f6 1FD5     		bpl	.L401
- 2360 00f8 2068     		ldr	r0, [r4]
- 2361 00fa FFF7FEFF 		bl	clock_sync_is_enabled
- 2362 00fe 0028     		cmp	r0, #0
- 2363 0100 1AD0     		beq	.L401
- 2364 0102 2068     		ldr	r0, [r4]
- 2365 0104 FFF7FEFF 		bl	clock_sync_get_interval_second
- 2366 0108 0500     		movs	r5, r0
- 2367 010a 2068     		ldr	r0, [r4]
- 2368 010c FFF7FEFF 		bl	clock_sync_get_time_left_connection_lost
- 2369 0110 8542     		cmp	r5, r0
- 2370 0112 19D2     		bcs	.L403
- 2371 0114 2068     		ldr	r0, [r4]
- 2372 0116 FFF7FEFF 		bl	clock_sync_get_interval_second
- 2373              	.L427:
- 2374 011a 1E25     		movs	r5, #30
- 2375 011c 0400     		movs	r4, r0
- 2376 011e 6D42     		rsbs	r5, r5, #0
- 2377              	.L406:
- 2378 0120 1E21     		movs	r1, #30
- 2379 0122 2800     		movs	r0, r5
- 2380 0124 FFF7FEFF 		bl	smtc_modem_hal_get_signed_random_nb_in_range
- 2381 0128 0028     		cmp	r0, #0
- 2382 012a 02DA     		bge	.L405
- 2383 012c 4342     		rsbs	r3, r0, #0
- 2384 012e A342     		cmp	r3, r4
- 2385 0130 F6D8     		bhi	.L406
- 2386              	.L405:
- 2387 0132 0019     		adds	r0, r0, r4
-ARM GAS  /tmp/ccI8rJG2.s 			page 45
+ 2328 00b4 1AD0     		beq	.L393
+ 2329 00b6 2068     		ldr	r0, [r4]
+ 2330 00b8 FFF7FEFF 		bl	clock_sync_get_interval_second
+ 2331 00bc 0500     		movs	r5, r0
+ 2332 00be 2068     		ldr	r0, [r4]
+ 2333 00c0 FFF7FEFF 		bl	clock_sync_get_time_left_connection_lost
+ 2334 00c4 8542     		cmp	r5, r0
+ 2335 00c6 3BD2     		bcs	.L395
+ 2336 00c8 2068     		ldr	r0, [r4]
+ 2337 00ca FFF7FEFF 		bl	clock_sync_get_interval_second
+ 2338              	.L426:
+ 2339 00ce 1E27     		movs	r7, #30
+ 2340 00d0 0500     		movs	r5, r0
+ 2341 00d2 7F42     		rsbs	r7, r7, #0
+ 2342              	.L398:
+ 2343 00d4 1E21     		movs	r1, #30
+ 2344 00d6 3800     		movs	r0, r7
+ 2345 00d8 FFF7FEFF 		bl	smtc_modem_hal_get_signed_random_nb_in_range
+ 2346 00dc 0028     		cmp	r0, #0
+ 2347 00de 02DA     		bge	.L397
+ 2348 00e0 4342     		rsbs	r3, r0, #0
+ 2349 00e2 AB42     		cmp	r3, r5
+ 2350 00e4 F6D8     		bhi	.L398
+ 2351              	.L397:
+ 2352 00e6 4019     		adds	r0, r0, r5
+ 2353 00e8 FFF7FEFF 		bl	modem_supervisor_add_task_clock_sync_time_req
+ 2354              	.L393:
+ 2355 00ec 0223     		movs	r3, #2
+ 2356 00ee 3200     		movs	r2, r6
+ 2357 00f0 9A43     		bics	r2, r3
+ 2358 00f2 B6D0     		beq	.L391
+ 2359 00f4 7607     		lsls	r6, r6, #29
+ 2360 00f6 1FD5     		bpl	.L401
+ 2361 00f8 2068     		ldr	r0, [r4]
+ 2362 00fa FFF7FEFF 		bl	clock_sync_is_enabled
+ 2363 00fe 0028     		cmp	r0, #0
+ 2364 0100 1AD0     		beq	.L401
+ 2365 0102 2068     		ldr	r0, [r4]
+ 2366 0104 FFF7FEFF 		bl	clock_sync_get_interval_second
+ 2367 0108 0500     		movs	r5, r0
+ 2368 010a 2068     		ldr	r0, [r4]
+ 2369 010c FFF7FEFF 		bl	clock_sync_get_time_left_connection_lost
+ 2370 0110 8542     		cmp	r5, r0
+ 2371 0112 19D2     		bcs	.L403
+ 2372 0114 2068     		ldr	r0, [r4]
+ 2373 0116 FFF7FEFF 		bl	clock_sync_get_interval_second
+ 2374              	.L427:
+ 2375 011a 1E25     		movs	r5, #30
+ 2376 011c 0400     		movs	r4, r0
+ 2377 011e 6D42     		rsbs	r5, r5, #0
+ 2378              	.L406:
+ 2379 0120 1E21     		movs	r1, #30
+ 2380 0122 2800     		movs	r0, r5
+ 2381 0124 FFF7FEFF 		bl	smtc_modem_hal_get_signed_random_nb_in_range
+ 2382 0128 0028     		cmp	r0, #0
+ 2383 012a 02DA     		bge	.L405
+ 2384 012c 4342     		rsbs	r3, r0, #0
+ARM GAS  /tmp/ccNuiwIJ.s 			page 45
 
 
- 2388 0134 FFF7FEFF 		bl	modem_supervisor_add_task_clock_sync_time_req
- 2389              	.L401:
- 2390 0138 0120     		movs	r0, #1
- 2391 013a FFF7FEFF 		bl	modem_supervisor_add_task_alc_sync_ans
- 2392 013e 90E7     		b	.L391
- 2393              	.L395:
- 2394 0140 2068     		ldr	r0, [r4]
- 2395 0142 FFF7FEFF 		bl	clock_sync_get_time_left_connection_lost
- 2396 0146 C2E7     		b	.L426
- 2397              	.L403:
- 2398 0148 2068     		ldr	r0, [r4]
- 2399 014a FFF7FEFF 		bl	clock_sync_get_time_left_connection_lost
- 2400 014e E4E7     		b	.L427
- 2401              	.L429:
- 2402              		.align	2
- 2403              	.L428:
- 2404 0150 00000000 		.word	clock_sync_context
- 2405 0154 00000000 		.word	alc_sync_context
- 2407              		.section	.bss.class_b_bit,"aw",%nobits
- 2410              	class_b_bit:
- 2411 0000 00       		.space	1
- 2412              		.section	.bss.certification_data_is_pending,"aw",%nobits
- 2415              	certification_data_is_pending:
- 2416 0000 00       		.space	1
- 2417              		.section	.data.user_port,"aw"
- 2420              	user_port:
- 2421 0000 01       		.byte	1
- 2422              		.section	.bss.user_payload,"aw",%nobits
- 2423              		.align	2
- 2426              	user_payload:
- 2427 0000 00000000 		.space	242
- 2427      00000000 
- 2427      00000000 
- 2427      00000000 
- 2427      00000000 
- 2428              		.section	.data.user_payload_length,"aw"
- 2431              	user_payload_length:
- 2432 0000 0A       		.byte	10
- 2433              		.section	.bss.file_upload_context,"aw",%nobits
- 2434              		.align	2
- 2437              	file_upload_context:
- 2438 0000 00000000 		.space	4
- 2439              		.section	.bss.ROSE,"aw",%nobits
- 2440              		.align	2
- 2443              	ROSE:
- 2444 0000 00000000 		.space	4
- 2445              		.section	.bss.clock_sync_context,"aw",%nobits
- 2446              		.align	2
- 2449              	clock_sync_context:
- 2450 0000 00000000 		.space	4
- 2451              		.section	.bss.alc_sync_context,"aw",%nobits
- 2452              		.align	2
- 2455              	alc_sync_context:
- 2456 0000 00000000 		.space	4
- 2457              		.section	.bss.app_callback,"aw",%nobits
- 2458              		.align	2
- 2461              	app_callback:
-ARM GAS  /tmp/ccI8rJG2.s 			page 46
+ 2385 012e A342     		cmp	r3, r4
+ 2386 0130 F6D8     		bhi	.L406
+ 2387              	.L405:
+ 2388 0132 0019     		adds	r0, r0, r4
+ 2389 0134 FFF7FEFF 		bl	modem_supervisor_add_task_clock_sync_time_req
+ 2390              	.L401:
+ 2391 0138 0120     		movs	r0, #1
+ 2392 013a FFF7FEFF 		bl	modem_supervisor_add_task_alc_sync_ans
+ 2393 013e 90E7     		b	.L391
+ 2394              	.L395:
+ 2395 0140 2068     		ldr	r0, [r4]
+ 2396 0142 FFF7FEFF 		bl	clock_sync_get_time_left_connection_lost
+ 2397 0146 C2E7     		b	.L426
+ 2398              	.L403:
+ 2399 0148 2068     		ldr	r0, [r4]
+ 2400 014a FFF7FEFF 		bl	clock_sync_get_time_left_connection_lost
+ 2401 014e E4E7     		b	.L427
+ 2402              	.L429:
+ 2403              		.align	2
+ 2404              	.L428:
+ 2405 0150 00000000 		.word	clock_sync_context
+ 2406 0154 00000000 		.word	alc_sync_context
+ 2408              		.section	.bss.class_b_bit,"aw",%nobits
+ 2411              	class_b_bit:
+ 2412 0000 00       		.space	1
+ 2413              		.section	.bss.certification_data_is_pending,"aw",%nobits
+ 2416              	certification_data_is_pending:
+ 2417 0000 00       		.space	1
+ 2418              		.section	.data.user_port,"aw"
+ 2421              	user_port:
+ 2422 0000 01       		.byte	1
+ 2423              		.section	.bss.user_payload,"aw",%nobits
+ 2424              		.align	2
+ 2427              	user_payload:
+ 2428 0000 00000000 		.space	242
+ 2428      00000000 
+ 2428      00000000 
+ 2428      00000000 
+ 2428      00000000 
+ 2429              		.section	.data.user_payload_length,"aw"
+ 2432              	user_payload_length:
+ 2433 0000 0A       		.byte	10
+ 2434              		.section	.bss.file_upload_context,"aw",%nobits
+ 2435              		.align	2
+ 2438              	file_upload_context:
+ 2439 0000 00000000 		.space	4
+ 2440              		.section	.bss.ROSE,"aw",%nobits
+ 2441              		.align	2
+ 2444              	ROSE:
+ 2445 0000 00000000 		.space	4
+ 2446              		.section	.bss.clock_sync_context,"aw",%nobits
+ 2447              		.align	2
+ 2450              	clock_sync_context:
+ 2451 0000 00000000 		.space	4
+ 2452              		.section	.bss.alc_sync_context,"aw",%nobits
+ 2453              		.align	2
+ 2456              	alc_sync_context:
+ARM GAS  /tmp/ccNuiwIJ.s 			page 46
 
 
- 2462 0000 00000000 		.space	4
- 2463              		.section	.bss.send_task_update_needed,"aw",%nobits
- 2466              	send_task_update_needed:
- 2467 0000 00       		.space	1
- 2468              		.section	.data.is_first_dm_after_join,"aw"
- 2471              	is_first_dm_after_join:
- 2472 0000 01       		.byte	1
- 2473              		.section	.bss.is_pending_dm_status_payload_now,"aw",%nobits
- 2476              	is_pending_dm_status_payload_now:
- 2477 0000 00       		.space	1
- 2478              		.section	.bss.is_pending_dm_status_payload_periodic,"aw",%nobits
- 2481              	is_pending_dm_status_payload_periodic:
- 2482 0000 00       		.space	1
- 2483              		.section	.bss.task_manager,"aw",%nobits
- 2484              		.align	2
- 2487              	task_manager:
- 2488 0000 00000000 		.space	408
- 2488      00000000 
- 2488      00000000 
- 2488      00000000 
- 2488      00000000 
- 2489              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccI8rJG2.s 			page 47
+ 2457 0000 00000000 		.space	4
+ 2458              		.section	.bss.app_callback,"aw",%nobits
+ 2459              		.align	2
+ 2462              	app_callback:
+ 2463 0000 00000000 		.space	4
+ 2464              		.section	.bss.send_task_update_needed,"aw",%nobits
+ 2467              	send_task_update_needed:
+ 2468 0000 00       		.space	1
+ 2469              		.section	.data.is_first_dm_after_join,"aw"
+ 2472              	is_first_dm_after_join:
+ 2473 0000 01       		.byte	1
+ 2474              		.section	.bss.is_pending_dm_status_payload_now,"aw",%nobits
+ 2477              	is_pending_dm_status_payload_now:
+ 2478 0000 00       		.space	1
+ 2479              		.section	.bss.is_pending_dm_status_payload_periodic,"aw",%nobits
+ 2482              	is_pending_dm_status_payload_periodic:
+ 2483 0000 00       		.space	1
+ 2484              		.section	.bss.task_manager,"aw",%nobits
+ 2485              		.align	2
+ 2488              	task_manager:
+ 2489 0000 00000000 		.space	408
+ 2489      00000000 
+ 2489      00000000 
+ 2489      00000000 
+ 2489      00000000 
+ 2490              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccNuiwIJ.s 			page 47
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 modem_supervisor.c
-     /tmp/ccI8rJG2.s:44     .text.certification_event_handler:00000000 $t
-     /tmp/ccI8rJG2.s:49     .text.certification_event_handler:00000000 certification_event_handler
-     /tmp/ccI8rJG2.s:81     .text.certification_event_handler:0000003e $d
-     /tmp/ccI8rJG2.s:101    .text.certification_event_handler:00000052 $t
-     /tmp/ccI8rJG2.s:142    .text.certification_event_handler:000000a6 $d
-     /tmp/ccI8rJG2.s:148    .text.certification_event_handler:000000b2 $t
-     /tmp/ccI8rJG2.s:439    .text.certification_event_handler:0000031c $d
-     /tmp/ccI8rJG2.s:2426   .bss.user_payload:00000000 user_payload
-     /tmp/ccI8rJG2.s:2431   .data.user_payload_length:00000000 user_payload_length
-     /tmp/ccI8rJG2.s:2420   .data.user_port:00000000 user_port
-     /tmp/ccI8rJG2.s:2449   .bss.clock_sync_context:00000000 clock_sync_context
-     /tmp/ccI8rJG2.s:2415   .bss.certification_data_is_pending:00000000 certification_data_is_pending
-     /tmp/ccI8rJG2.s:462    .text.certification_event_handler:00000374 $t
-     /tmp/ccI8rJG2.s:512    .text.certification_event_handler:000003cc $d
-     /tmp/ccI8rJG2.s:520    .text.modem_supervisor_init_task:00000000 $t
-     /tmp/ccI8rJG2.s:526    .text.modem_supervisor_init_task:00000000 modem_supervisor_init_task
-     /tmp/ccI8rJG2.s:550    .text.modem_supervisor_init_task:00000020 $d
-     /tmp/ccI8rJG2.s:2487   .bss.task_manager:00000000 task_manager
-     /tmp/ccI8rJG2.s:553    .text.modem_supervisor_init:00000000 $t
-     /tmp/ccI8rJG2.s:559    .text.modem_supervisor_init:00000000 modem_supervisor_init
-     /tmp/ccI8rJG2.s:636    .text.modem_supervisor_init:000000ac $d
-     /tmp/ccI8rJG2.s:2481   .bss.is_pending_dm_status_payload_periodic:00000000 is_pending_dm_status_payload_periodic
-     /tmp/ccI8rJG2.s:2476   .bss.is_pending_dm_status_payload_now:00000000 is_pending_dm_status_payload_now
-     /tmp/ccI8rJG2.s:2471   .data.is_first_dm_after_join:00000000 is_first_dm_after_join
-     /tmp/ccI8rJG2.s:2466   .bss.send_task_update_needed:00000000 send_task_update_needed
-     /tmp/ccI8rJG2.s:2461   .bss.app_callback:00000000 app_callback
-     /tmp/ccI8rJG2.s:2455   .bss.alc_sync_context:00000000 alc_sync_context
-     /tmp/ccI8rJG2.s:2443   .bss.ROSE:00000000 ROSE
-     /tmp/ccI8rJG2.s:2437   .bss.file_upload_context:00000000 file_upload_context
-     /tmp/ccI8rJG2.s:2410   .bss.class_b_bit:00000000 class_b_bit
-     /tmp/ccI8rJG2.s:652    .text.modem_supervisor_get_task_priority:00000000 $t
-     /tmp/ccI8rJG2.s:658    .text.modem_supervisor_get_task_priority:00000000 modem_supervisor_get_task_priority
-     /tmp/ccI8rJG2.s:677    .text.modem_supervisor_get_task_priority:00000014 $d
-     /tmp/ccI8rJG2.s:684    .text.modem_supervisor_remove_task:00000000 $t
-     /tmp/ccI8rJG2.s:690    .text.modem_supervisor_remove_task:00000000 modem_supervisor_remove_task
-     /tmp/ccI8rJG2.s:717    .text.modem_supervisor_remove_task:00000028 $d
-     /tmp/ccI8rJG2.s:726    .text.modem_supervisor_add_task:00000000 $t
-     /tmp/ccI8rJG2.s:732    .text.modem_supervisor_add_task:00000000 modem_supervisor_add_task
-     /tmp/ccI8rJG2.s:770    .text.modem_supervisor_add_task:00000040 $d
-     /tmp/ccI8rJG2.s:820    .text.modem_supervisor_launch_task:00000000 $t
-     /tmp/ccI8rJG2.s:826    .text.modem_supervisor_launch_task:00000000 modem_supervisor_launch_task
-     /tmp/ccI8rJG2.s:836    .text.modem_supervisor_launch_task:0000000e $d
-     /tmp/ccI8rJG2.s:856    .text.modem_supervisor_launch_task:00000036 $t
-     /tmp/ccI8rJG2.s:1195   .text.modem_supervisor_launch_task:000002fc $d
-     /tmp/ccI8rJG2.s:1217   .text.modem_supervisor_launch_task:00000350 $t
-     /tmp/ccI8rJG2.s:1562   .text.modem_supervisor_launch_task:00000628 $d
-     /tmp/ccI8rJG2.s:1589   .text.modem_supervisor_update_task:00000000 $t
-     /tmp/ccI8rJG2.s:1595   .text.modem_supervisor_update_task:00000000 modem_supervisor_update_task
-     /tmp/ccI8rJG2.s:1603   .text.modem_supervisor_update_task:0000000a $d
-     /tmp/ccI8rJG2.s:1623   .text.modem_supervisor_update_task:00000032 $t
-     /tmp/ccI8rJG2.s:1900   .text.modem_supervisor_update_task:00000284 $d
-     /tmp/ccI8rJG2.s:1913   .text.modem_supervisor_scheduler:00000000 $t
-     /tmp/ccI8rJG2.s:1919   .text.modem_supervisor_scheduler:00000000 modem_supervisor_scheduler
-     /tmp/ccI8rJG2.s:2028   .text.modem_supervisor_scheduler:000000c4 $d
-     /tmp/ccI8rJG2.s:2036   .text.modem_supervisor_engine:00000000 $t
-ARM GAS  /tmp/ccI8rJG2.s 			page 48
+     /tmp/ccNuiwIJ.s:44     .text.certification_event_handler:00000000 $t
+     /tmp/ccNuiwIJ.s:49     .text.certification_event_handler:00000000 certification_event_handler
+     /tmp/ccNuiwIJ.s:81     .text.certification_event_handler:0000003e $d
+     /tmp/ccNuiwIJ.s:101    .text.certification_event_handler:00000052 $t
+     /tmp/ccNuiwIJ.s:142    .text.certification_event_handler:000000a6 $d
+     /tmp/ccNuiwIJ.s:148    .text.certification_event_handler:000000b2 $t
+     /tmp/ccNuiwIJ.s:439    .text.certification_event_handler:0000031c $d
+     /tmp/ccNuiwIJ.s:2427   .bss.user_payload:00000000 user_payload
+     /tmp/ccNuiwIJ.s:2432   .data.user_payload_length:00000000 user_payload_length
+     /tmp/ccNuiwIJ.s:2421   .data.user_port:00000000 user_port
+     /tmp/ccNuiwIJ.s:2450   .bss.clock_sync_context:00000000 clock_sync_context
+     /tmp/ccNuiwIJ.s:2416   .bss.certification_data_is_pending:00000000 certification_data_is_pending
+     /tmp/ccNuiwIJ.s:462    .text.certification_event_handler:00000374 $t
+     /tmp/ccNuiwIJ.s:512    .text.certification_event_handler:000003cc $d
+     /tmp/ccNuiwIJ.s:520    .text.modem_supervisor_init_task:00000000 $t
+     /tmp/ccNuiwIJ.s:526    .text.modem_supervisor_init_task:00000000 modem_supervisor_init_task
+     /tmp/ccNuiwIJ.s:550    .text.modem_supervisor_init_task:00000020 $d
+     /tmp/ccNuiwIJ.s:2488   .bss.task_manager:00000000 task_manager
+     /tmp/ccNuiwIJ.s:553    .text.modem_supervisor_init:00000000 $t
+     /tmp/ccNuiwIJ.s:559    .text.modem_supervisor_init:00000000 modem_supervisor_init
+     /tmp/ccNuiwIJ.s:636    .text.modem_supervisor_init:000000ac $d
+     /tmp/ccNuiwIJ.s:2482   .bss.is_pending_dm_status_payload_periodic:00000000 is_pending_dm_status_payload_periodic
+     /tmp/ccNuiwIJ.s:2477   .bss.is_pending_dm_status_payload_now:00000000 is_pending_dm_status_payload_now
+     /tmp/ccNuiwIJ.s:2472   .data.is_first_dm_after_join:00000000 is_first_dm_after_join
+     /tmp/ccNuiwIJ.s:2467   .bss.send_task_update_needed:00000000 send_task_update_needed
+     /tmp/ccNuiwIJ.s:2462   .bss.app_callback:00000000 app_callback
+     /tmp/ccNuiwIJ.s:2456   .bss.alc_sync_context:00000000 alc_sync_context
+     /tmp/ccNuiwIJ.s:2444   .bss.ROSE:00000000 ROSE
+     /tmp/ccNuiwIJ.s:2438   .bss.file_upload_context:00000000 file_upload_context
+     /tmp/ccNuiwIJ.s:2411   .bss.class_b_bit:00000000 class_b_bit
+     /tmp/ccNuiwIJ.s:652    .text.modem_supervisor_get_task_priority:00000000 $t
+     /tmp/ccNuiwIJ.s:658    .text.modem_supervisor_get_task_priority:00000000 modem_supervisor_get_task_priority
+     /tmp/ccNuiwIJ.s:677    .text.modem_supervisor_get_task_priority:00000014 $d
+     /tmp/ccNuiwIJ.s:684    .text.modem_supervisor_remove_task:00000000 $t
+     /tmp/ccNuiwIJ.s:690    .text.modem_supervisor_remove_task:00000000 modem_supervisor_remove_task
+     /tmp/ccNuiwIJ.s:717    .text.modem_supervisor_remove_task:00000028 $d
+     /tmp/ccNuiwIJ.s:726    .text.modem_supervisor_add_task:00000000 $t
+     /tmp/ccNuiwIJ.s:732    .text.modem_supervisor_add_task:00000000 modem_supervisor_add_task
+     /tmp/ccNuiwIJ.s:770    .text.modem_supervisor_add_task:00000040 $d
+     /tmp/ccNuiwIJ.s:821    .text.modem_supervisor_launch_task:00000000 $t
+     /tmp/ccNuiwIJ.s:827    .text.modem_supervisor_launch_task:00000000 modem_supervisor_launch_task
+     /tmp/ccNuiwIJ.s:837    .text.modem_supervisor_launch_task:0000000e $d
+     /tmp/ccNuiwIJ.s:857    .text.modem_supervisor_launch_task:00000036 $t
+     /tmp/ccNuiwIJ.s:1196   .text.modem_supervisor_launch_task:000002fc $d
+     /tmp/ccNuiwIJ.s:1218   .text.modem_supervisor_launch_task:00000350 $t
+     /tmp/ccNuiwIJ.s:1563   .text.modem_supervisor_launch_task:00000628 $d
+     /tmp/ccNuiwIJ.s:1590   .text.modem_supervisor_update_task:00000000 $t
+     /tmp/ccNuiwIJ.s:1596   .text.modem_supervisor_update_task:00000000 modem_supervisor_update_task
+     /tmp/ccNuiwIJ.s:1604   .text.modem_supervisor_update_task:0000000a $d
+     /tmp/ccNuiwIJ.s:1624   .text.modem_supervisor_update_task:00000032 $t
+     /tmp/ccNuiwIJ.s:1901   .text.modem_supervisor_update_task:00000284 $d
+     /tmp/ccNuiwIJ.s:1914   .text.modem_supervisor_scheduler:00000000 $t
+     /tmp/ccNuiwIJ.s:1920   .text.modem_supervisor_scheduler:00000000 modem_supervisor_scheduler
+     /tmp/ccNuiwIJ.s:2029   .text.modem_supervisor_scheduler:000000c4 $d
+     /tmp/ccNuiwIJ.s:2037   .text.modem_supervisor_engine:00000000 $t
+ARM GAS  /tmp/ccNuiwIJ.s 			page 48
 
 
-     /tmp/ccI8rJG2.s:2042   .text.modem_supervisor_engine:00000000 modem_supervisor_engine
-     /tmp/ccI8rJG2.s:2222   .text.modem_supervisor_engine:00000178 $d
-     /tmp/ccI8rJG2.s:2231   .text.modem_supervisor_update_downlink_frame:00000000 $t
-     /tmp/ccI8rJG2.s:2237   .text.modem_supervisor_update_downlink_frame:00000000 modem_supervisor_update_downlink_frame
-     /tmp/ccI8rJG2.s:2404   .text.modem_supervisor_update_downlink_frame:00000150 $d
-     /tmp/ccI8rJG2.s:2411   .bss.class_b_bit:00000000 $d
-     /tmp/ccI8rJG2.s:2416   .bss.certification_data_is_pending:00000000 $d
-     /tmp/ccI8rJG2.s:2423   .bss.user_payload:00000000 $d
-     /tmp/ccI8rJG2.s:2434   .bss.file_upload_context:00000000 $d
-     /tmp/ccI8rJG2.s:2440   .bss.ROSE:00000000 $d
-     /tmp/ccI8rJG2.s:2446   .bss.clock_sync_context:00000000 $d
-     /tmp/ccI8rJG2.s:2452   .bss.alc_sync_context:00000000 $d
-     /tmp/ccI8rJG2.s:2458   .bss.app_callback:00000000 $d
-     /tmp/ccI8rJG2.s:2467   .bss.send_task_update_needed:00000000 $d
-     /tmp/ccI8rJG2.s:2477   .bss.is_pending_dm_status_payload_now:00000000 $d
-     /tmp/ccI8rJG2.s:2482   .bss.is_pending_dm_status_payload_periodic:00000000 $d
-     /tmp/ccI8rJG2.s:2484   .bss.task_manager:00000000 $d
+     /tmp/ccNuiwIJ.s:2043   .text.modem_supervisor_engine:00000000 modem_supervisor_engine
+     /tmp/ccNuiwIJ.s:2223   .text.modem_supervisor_engine:00000178 $d
+     /tmp/ccNuiwIJ.s:2232   .text.modem_supervisor_update_downlink_frame:00000000 $t
+     /tmp/ccNuiwIJ.s:2238   .text.modem_supervisor_update_downlink_frame:00000000 modem_supervisor_update_downlink_frame
+     /tmp/ccNuiwIJ.s:2405   .text.modem_supervisor_update_downlink_frame:00000150 $d
+     /tmp/ccNuiwIJ.s:2412   .bss.class_b_bit:00000000 $d
+     /tmp/ccNuiwIJ.s:2417   .bss.certification_data_is_pending:00000000 $d
+     /tmp/ccNuiwIJ.s:2424   .bss.user_payload:00000000 $d
+     /tmp/ccNuiwIJ.s:2435   .bss.file_upload_context:00000000 $d
+     /tmp/ccNuiwIJ.s:2441   .bss.ROSE:00000000 $d
+     /tmp/ccNuiwIJ.s:2447   .bss.clock_sync_context:00000000 $d
+     /tmp/ccNuiwIJ.s:2453   .bss.alc_sync_context:00000000 $d
+     /tmp/ccNuiwIJ.s:2459   .bss.app_callback:00000000 $d
+     /tmp/ccNuiwIJ.s:2468   .bss.send_task_update_needed:00000000 $d
+     /tmp/ccNuiwIJ.s:2478   .bss.is_pending_dm_status_payload_now:00000000 $d
+     /tmp/ccNuiwIJ.s:2483   .bss.is_pending_dm_status_payload_periodic:00000000 $d
+     /tmp/ccNuiwIJ.s:2485   .bss.task_manager:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
@@ -2843,7 +2847,7 @@ smtc_modem_request_uplink
 lorawan_api_class_c_enabled
 lorawan_api_init
 lorawan_api_dr_strategy_set
-ARM GAS  /tmp/ccI8rJG2.s 			page 49
+ARM GAS  /tmp/ccNuiwIJ.s 			page 49
 
 
 lorawan_api_join_status_clear
@@ -2903,7 +2907,7 @@ lorawan_api_class_c_start
 modem_get_duty_cycle_disabled_by_host
 lorawan_api_duty_cycle_enable_set
 modem_supervisor_add_task_join
-ARM GAS  /tmp/ccI8rJG2.s 			page 50
+ARM GAS  /tmp/ccNuiwIJ.s 			page 50
 
 
 modem_supervisor_add_task_dm_status_now

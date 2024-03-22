@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccjygZKK.s 			page 1
+ARM GAS  /tmp/cc6RF4dc.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -15,157 +15,147 @@ ARM GAS  /tmp/ccjygZKK.s 			page 1
   12              		.text
   13              		.section	.rodata.smtc_modem_services_aes_encrypt.str1.1,"aMS",%progbits,1
   14              	.LC1:
-  15 0000 1B5B303B 		.ascii	"\033[0;31mERROR: crash log :%s\012\000"
-  15      33316D45 
-  15      52524F52 
-  15      3A206372 
-  15      61736820 
+  15 0000 63726173 		.ascii	"crash log :%s\012\015\000"
+  15      68206C6F 
+  15      67203A25 
+  15      730A0D00 
   16              	.LC3:
-  17 001d 1B5B306D 		.ascii	"\033[0m\000"
-  17      00
-  18              	.LC5:
-  19 0022 1B5B303B 		.ascii	"\033[0;31mERROR: -> Encryption of lfu failed\012\000"
-  19      33316D45 
-  19      52524F52 
-  19      3A202D3E 
-  19      20456E63 
-  20              		.section	.text.smtc_modem_services_aes_encrypt,"ax",%progbits
-  21              		.align	1
-  22              		.global	smtc_modem_services_aes_encrypt
-  23              		.syntax unified
-  24              		.code	16
-  25              		.thumb_func
-  27              	smtc_modem_services_aes_encrypt:
-  28              		@ args = 0, pretend = 0, frame = 0
-  29              		@ frame_needed = 0, uses_anonymous_args = 0
-  30 0000 10B5     		push	{r4, lr}
-  31 0002 FFF7FEFF 		bl	smtc_modem_crypto_service_encrypt
-  32 0006 0028     		cmp	r0, #0
-  33 0008 16D0     		beq	.L1
-  34 000a 0C4C     		ldr	r4, .L6
-  35 000c 2000     		movs	r0, r4
-  36 000e FFF7FEFF 		bl	smtc_modem_hal_store_crashlog
-  37 0012 0120     		movs	r0, #1
-  38 0014 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
-  39 0018 2100     		movs	r1, r4
-  40 001a 0948     		ldr	r0, .L6+4
-  41 001c FFF7FEFF 		bl	smtc_modem_hal_print_trace
-  42 0020 084C     		ldr	r4, .L6+8
-  43 0022 2000     		movs	r0, r4
-  44 0024 FFF7FEFF 		bl	smtc_modem_hal_print_trace
-  45 0028 0748     		ldr	r0, .L6+12
-  46 002a FFF7FEFF 		bl	smtc_modem_hal_print_trace
-  47 002e 2000     		movs	r0, r4
-  48 0030 FFF7FEFF 		bl	smtc_modem_hal_print_trace
-  49 0034 FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
-ARM GAS  /tmp/ccjygZKK.s 			page 2
+  17 0010 2D3E2045 		.ascii	"-> Encryption of lfu failed\012\015\000"
+  17      6E637279 
+  17      7074696F 
+  17      6E206F66 
+  17      206C6675 
+  18              		.section	.text.smtc_modem_services_aes_encrypt,"ax",%progbits
+  19              		.align	1
+  20              		.global	smtc_modem_services_aes_encrypt
+  21              		.syntax unified
+  22              		.code	16
+  23              		.thumb_func
+  25              	smtc_modem_services_aes_encrypt:
+  26              		@ args = 0, pretend = 0, frame = 0
+  27              		@ frame_needed = 0, uses_anonymous_args = 0
+  28 0000 10B5     		push	{r4, lr}
+  29 0002 FFF7FEFF 		bl	smtc_modem_crypto_service_encrypt
+  30 0006 0028     		cmp	r0, #0
+  31 0008 0FD0     		beq	.L1
+  32 000a 084C     		ldr	r4, .L6
+  33 000c 2000     		movs	r0, r4
+  34 000e FFF7FEFF 		bl	smtc_modem_hal_store_crashlog
+  35 0012 0120     		movs	r0, #1
+  36 0014 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
+  37 0018 2100     		movs	r1, r4
+  38 001a 0548     		ldr	r0, .L6+4
+  39 001c FFF7FEFF 		bl	SMTC_MODEM_HAL_TRACE_ERROR
+  40 0020 0448     		ldr	r0, .L6+8
+  41 0022 FFF7FEFF 		bl	SMTC_MODEM_HAL_TRACE_ERROR
+  42 0026 FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
+  43              	.L1:
+  44              		@ sp needed
+  45 002a 10BD     		pop	{r4, pc}
+  46              	.L7:
+  47              		.align	2
+  48              	.L6:
+  49 002c 00000000 		.word	__func__.0
+  50 0030 00000000 		.word	.LC1
+  51 0034 10000000 		.word	.LC3
+ARM GAS  /tmp/cc6RF4dc.s 			page 2
 
 
-  50              	.L1:
-  51              		@ sp needed
-  52 0038 10BD     		pop	{r4, pc}
-  53              	.L7:
-  54 003a C046     		.align	2
-  55              	.L6:
-  56 003c 00000000 		.word	__func__.0
-  57 0040 00000000 		.word	.LC1
-  58 0044 1D000000 		.word	.LC3
-  59 0048 22000000 		.word	.LC5
-  61              		.section	.text.smtc_modem_services_get_time_s,"ax",%progbits
-  62              		.align	1
-  63              		.global	smtc_modem_services_get_time_s
-  64              		.syntax unified
-  65              		.code	16
-  66              		.thumb_func
-  68              	smtc_modem_services_get_time_s:
-  69              		@ args = 0, pretend = 0, frame = 0
-  70              		@ frame_needed = 0, uses_anonymous_args = 0
-  71 0000 10B5     		push	{r4, lr}
-  72 0002 FFF7FEFF 		bl	smtc_modem_hal_get_compensated_time_in_s
-  73              		@ sp needed
-  74 0006 10BD     		pop	{r4, pc}
-  76              		.section	.text.smtc_modem_services_lr11xx_gnss_get_context_status,"ax",%progbits
-  77              		.align	1
-  78              		.global	smtc_modem_services_lr11xx_gnss_get_context_status
-  79              		.syntax unified
-  80              		.code	16
-  81              		.thumb_func
-  83              	smtc_modem_services_lr11xx_gnss_get_context_status:
-  84              		@ args = 0, pretend = 0, frame = 0
-  85              		@ frame_needed = 0, uses_anonymous_args = 0
-  86 0000 70B5     		push	{r4, r5, r6, lr}
-  87 0002 0D00     		movs	r5, r1
-  88              		@ sp needed
-  89 0004 0400     		movs	r4, r0
-  90 0006 0E20     		movs	r0, #14
-  91 0008 FFF7FEFF 		bl	modem_context_suspend_radio_access
-  92 000c 2900     		movs	r1, r5
-  93 000e 2000     		movs	r0, r4
-  94 0010 FFF7FEFF 		bl	lr11xx_gnss_get_context_status
-  95 0014 0400     		movs	r4, r0
-  96 0016 631E     		subs	r3, r4, #1
-  97 0018 9C41     		sbcs	r4, r4, r3
-  98 001a FFF7FEFF 		bl	modem_context_resume_radio_access
-  99 001e E0B2     		uxtb	r0, r4
- 100 0020 70BD     		pop	{r4, r5, r6, pc}
- 102              		.section	.text.smtc_modem_services_lr11xx_gnss_push_dmc_msg,"ax",%progbits
- 103              		.align	1
- 104              		.global	smtc_modem_services_lr11xx_gnss_push_dmc_msg
- 105              		.syntax unified
- 106              		.code	16
- 107              		.thumb_func
- 109              	smtc_modem_services_lr11xx_gnss_push_dmc_msg:
- 110              		@ args = 0, pretend = 0, frame = 0
- 111              		@ frame_needed = 0, uses_anonymous_args = 0
- 112 0000 70B5     		push	{r4, r5, r6, lr}
-ARM GAS  /tmp/ccjygZKK.s 			page 3
+  53              		.section	.text.smtc_modem_services_get_time_s,"ax",%progbits
+  54              		.align	1
+  55              		.global	smtc_modem_services_get_time_s
+  56              		.syntax unified
+  57              		.code	16
+  58              		.thumb_func
+  60              	smtc_modem_services_get_time_s:
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  63 0000 10B5     		push	{r4, lr}
+  64 0002 FFF7FEFF 		bl	smtc_modem_hal_get_compensated_time_in_s
+  65              		@ sp needed
+  66 0006 10BD     		pop	{r4, pc}
+  68              		.section	.text.smtc_modem_services_lr11xx_gnss_get_context_status,"ax",%progbits
+  69              		.align	1
+  70              		.global	smtc_modem_services_lr11xx_gnss_get_context_status
+  71              		.syntax unified
+  72              		.code	16
+  73              		.thumb_func
+  75              	smtc_modem_services_lr11xx_gnss_get_context_status:
+  76              		@ args = 0, pretend = 0, frame = 0
+  77              		@ frame_needed = 0, uses_anonymous_args = 0
+  78 0000 70B5     		push	{r4, r5, r6, lr}
+  79 0002 0D00     		movs	r5, r1
+  80              		@ sp needed
+  81 0004 0400     		movs	r4, r0
+  82 0006 0E20     		movs	r0, #14
+  83 0008 FFF7FEFF 		bl	modem_context_suspend_radio_access
+  84 000c 2900     		movs	r1, r5
+  85 000e 2000     		movs	r0, r4
+  86 0010 FFF7FEFF 		bl	lr11xx_gnss_get_context_status
+  87 0014 0400     		movs	r4, r0
+  88 0016 631E     		subs	r3, r4, #1
+  89 0018 9C41     		sbcs	r4, r4, r3
+  90 001a FFF7FEFF 		bl	modem_context_resume_radio_access
+  91 001e E0B2     		uxtb	r0, r4
+  92 0020 70BD     		pop	{r4, r5, r6, pc}
+  94              		.section	.text.smtc_modem_services_lr11xx_gnss_push_dmc_msg,"ax",%progbits
+  95              		.align	1
+  96              		.global	smtc_modem_services_lr11xx_gnss_push_dmc_msg
+  97              		.syntax unified
+  98              		.code	16
+  99              		.thumb_func
+ 101              	smtc_modem_services_lr11xx_gnss_push_dmc_msg:
+ 102              		@ args = 0, pretend = 0, frame = 0
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104 0000 70B5     		push	{r4, r5, r6, lr}
+ 105 0002 0D00     		movs	r5, r1
+ 106              		@ sp needed
+ 107 0004 1600     		movs	r6, r2
+ 108 0006 0400     		movs	r4, r0
+ 109 0008 0E20     		movs	r0, #14
+ 110 000a FFF7FEFF 		bl	modem_context_suspend_radio_access
+ 111 000e 3200     		movs	r2, r6
+ 112 0010 2900     		movs	r1, r5
+ 113 0012 2000     		movs	r0, r4
+ 114 0014 FFF7FEFF 		bl	lr11xx_gnss_push_dmc_msg
+ARM GAS  /tmp/cc6RF4dc.s 			page 3
 
 
- 113 0002 0D00     		movs	r5, r1
- 114              		@ sp needed
- 115 0004 1600     		movs	r6, r2
- 116 0006 0400     		movs	r4, r0
- 117 0008 0E20     		movs	r0, #14
- 118 000a FFF7FEFF 		bl	modem_context_suspend_radio_access
- 119 000e 3200     		movs	r2, r6
- 120 0010 2900     		movs	r1, r5
- 121 0012 2000     		movs	r0, r4
- 122 0014 FFF7FEFF 		bl	lr11xx_gnss_push_dmc_msg
- 123 0018 0400     		movs	r4, r0
- 124 001a 631E     		subs	r3, r4, #1
- 125 001c 9C41     		sbcs	r4, r4, r3
- 126 001e FFF7FEFF 		bl	modem_context_resume_radio_access
- 127 0022 E0B2     		uxtb	r0, r4
- 128 0024 70BD     		pop	{r4, r5, r6, pc}
- 130              		.section	.rodata.__func__.0,"a"
- 133              	__func__.0:
- 134 0000 736D7463 		.ascii	"smtc_modem_services_aes_encrypt\000"
- 134      5F6D6F64 
- 134      656D5F73 
- 134      65727669 
- 134      6365735F 
- 135              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccjygZKK.s 			page 4
+ 115 0018 0400     		movs	r4, r0
+ 116 001a 631E     		subs	r3, r4, #1
+ 117 001c 9C41     		sbcs	r4, r4, r3
+ 118 001e FFF7FEFF 		bl	modem_context_resume_radio_access
+ 119 0022 E0B2     		uxtb	r0, r4
+ 120 0024 70BD     		pop	{r4, r5, r6, pc}
+ 122              		.section	.rodata.__func__.0,"a"
+ 125              	__func__.0:
+ 126 0000 736D7463 		.ascii	"smtc_modem_services_aes_encrypt\000"
+ 126      5F6D6F64 
+ 126      656D5F73 
+ 126      65727669 
+ 126      6365735F 
+ 127              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/cc6RF4dc.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_modem_services_hal.c
-     /tmp/ccjygZKK.s:21     .text.smtc_modem_services_aes_encrypt:00000000 $t
-     /tmp/ccjygZKK.s:27     .text.smtc_modem_services_aes_encrypt:00000000 smtc_modem_services_aes_encrypt
-     /tmp/ccjygZKK.s:56     .text.smtc_modem_services_aes_encrypt:0000003c $d
-     /tmp/ccjygZKK.s:133    .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccjygZKK.s:62     .text.smtc_modem_services_get_time_s:00000000 $t
-     /tmp/ccjygZKK.s:68     .text.smtc_modem_services_get_time_s:00000000 smtc_modem_services_get_time_s
-     /tmp/ccjygZKK.s:77     .text.smtc_modem_services_lr11xx_gnss_get_context_status:00000000 $t
-     /tmp/ccjygZKK.s:83     .text.smtc_modem_services_lr11xx_gnss_get_context_status:00000000 smtc_modem_services_lr11xx_gnss_get_context_status
-     /tmp/ccjygZKK.s:103    .text.smtc_modem_services_lr11xx_gnss_push_dmc_msg:00000000 $t
-     /tmp/ccjygZKK.s:109    .text.smtc_modem_services_lr11xx_gnss_push_dmc_msg:00000000 smtc_modem_services_lr11xx_gnss_push_dmc_msg
+     /tmp/cc6RF4dc.s:19     .text.smtc_modem_services_aes_encrypt:00000000 $t
+     /tmp/cc6RF4dc.s:25     .text.smtc_modem_services_aes_encrypt:00000000 smtc_modem_services_aes_encrypt
+     /tmp/cc6RF4dc.s:49     .text.smtc_modem_services_aes_encrypt:0000002c $d
+     /tmp/cc6RF4dc.s:125    .rodata.__func__.0:00000000 __func__.0
+     /tmp/cc6RF4dc.s:54     .text.smtc_modem_services_get_time_s:00000000 $t
+     /tmp/cc6RF4dc.s:60     .text.smtc_modem_services_get_time_s:00000000 smtc_modem_services_get_time_s
+     /tmp/cc6RF4dc.s:69     .text.smtc_modem_services_lr11xx_gnss_get_context_status:00000000 $t
+     /tmp/cc6RF4dc.s:75     .text.smtc_modem_services_lr11xx_gnss_get_context_status:00000000 smtc_modem_services_lr11xx_gnss_get_context_status
+     /tmp/cc6RF4dc.s:95     .text.smtc_modem_services_lr11xx_gnss_push_dmc_msg:00000000 $t
+     /tmp/cc6RF4dc.s:101    .text.smtc_modem_services_lr11xx_gnss_push_dmc_msg:00000000 smtc_modem_services_lr11xx_gnss_push_dmc_msg
 
 UNDEFINED SYMBOLS
 smtc_modem_crypto_service_encrypt
 smtc_modem_hal_store_crashlog
 smtc_modem_hal_set_crashlog_status
-smtc_modem_hal_print_trace
+SMTC_MODEM_HAL_TRACE_ERROR
 smtc_modem_hal_reset_mcu
 smtc_modem_hal_get_compensated_time_in_s
 modem_context_suspend_radio_access

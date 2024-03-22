@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccSBmW5y.s 			page 1
+ARM GAS  /tmp/cclJhDlI.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccSBmW5y.s 			page 1
   57              		.section	.text.smtc_multicast_set_group_address,"ax",%progbits
   58              		.align	1
   59              		.global	smtc_multicast_set_group_address
-ARM GAS  /tmp/ccSBmW5y.s 			page 2
+ARM GAS  /tmp/cclJhDlI.s 			page 2
 
 
   60              		.syntax unified
@@ -118,17 +118,17 @@ ARM GAS  /tmp/ccSBmW5y.s 			page 1
  118 0000 1B5B303B 		.ascii	"\033[0;31mERROR: Error setting multicast ntw_skey f"
  118      33316D45 
  118      52524F52 
-ARM GAS  /tmp/ccSBmW5y.s 			page 3
+ARM GAS  /tmp/cclJhDlI.s 			page 3
 
 
  118      3A204572 
  118      726F7220 
- 119 0030 6F722067 		.ascii	"or group:%d\012\000"
+ 119 0030 6F722067 		.ascii	"or group:%d\012\015\000"
  119      726F7570 
  119      3A25640A 
- 119      00
+ 119      0D00
  120              	.LC4:
- 121 003d 1B5B306D 		.ascii	"\033[0m\000"
+ 121 003e 1B5B306D 		.ascii	"\033[0m\000"
  121      00
  122              		.section	.text.smtc_multicast_set_group_keys,"ax",%progbits
  123              		.align	1
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccSBmW5y.s 			page 1
  168              	.L16:
  169 0048 3100     		movs	r1, r6
  170 004a 385D     		ldrb	r0, [r7, r4]
-ARM GAS  /tmp/ccSBmW5y.s 			page 4
+ARM GAS  /tmp/cclJhDlI.s 			page 4
 
 
  171 004c FFF7FEFF 		bl	smtc_modem_crypto_set_key
@@ -190,7 +190,7 @@ ARM GAS  /tmp/ccSBmW5y.s 			page 1
  177              	.L25:
  178 0058 00000000 		.word	smtc_mc_skey_tab
  179 005c 00000000 		.word	.LC2
- 180 0060 3D000000 		.word	.LC4
+ 180 0060 3E000000 		.word	.LC4
  182              		.section	.text.smtc_multicast_get_running_status,"ax",%progbits
  183              		.align	1
  184              		.global	smtc_multicast_get_running_status
@@ -224,24 +224,24 @@ ARM GAS  /tmp/ccSBmW5y.s 			page 1
  216 0006 8A       		.byte	-118
  217 0007 8B       		.byte	-117
  218              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccSBmW5y.s 			page 5
+ARM GAS  /tmp/cclJhDlI.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_multicast.c
-     /tmp/ccSBmW5y.s:14     .text.smtc_multicast_init:00000000 $t
-     /tmp/ccSBmW5y.s:20     .text.smtc_multicast_init:00000000 smtc_multicast_init
-     /tmp/ccSBmW5y.s:55     .text.smtc_multicast_init:00000038 $d
-     /tmp/ccSBmW5y.s:209    .rodata.smtc_mc_skey_tab:00000000 smtc_mc_skey_tab
-     /tmp/ccSBmW5y.s:58     .text.smtc_multicast_set_group_address:00000000 $t
-     /tmp/ccSBmW5y.s:64     .text.smtc_multicast_set_group_address:00000000 smtc_multicast_set_group_address
-     /tmp/ccSBmW5y.s:92     .text.smtc_multicast_get_group_address:00000000 $t
-     /tmp/ccSBmW5y.s:98     .text.smtc_multicast_get_group_address:00000000 smtc_multicast_get_group_address
-     /tmp/ccSBmW5y.s:123    .text.smtc_multicast_set_group_keys:00000000 $t
-     /tmp/ccSBmW5y.s:129    .text.smtc_multicast_set_group_keys:00000000 smtc_multicast_set_group_keys
-     /tmp/ccSBmW5y.s:178    .text.smtc_multicast_set_group_keys:00000058 $d
-     /tmp/ccSBmW5y.s:183    .text.smtc_multicast_get_running_status:00000000 $t
-     /tmp/ccSBmW5y.s:189    .text.smtc_multicast_get_running_status:00000000 smtc_multicast_get_running_status
+     /tmp/cclJhDlI.s:14     .text.smtc_multicast_init:00000000 $t
+     /tmp/cclJhDlI.s:20     .text.smtc_multicast_init:00000000 smtc_multicast_init
+     /tmp/cclJhDlI.s:55     .text.smtc_multicast_init:00000038 $d
+     /tmp/cclJhDlI.s:209    .rodata.smtc_mc_skey_tab:00000000 smtc_mc_skey_tab
+     /tmp/cclJhDlI.s:58     .text.smtc_multicast_set_group_address:00000000 $t
+     /tmp/cclJhDlI.s:64     .text.smtc_multicast_set_group_address:00000000 smtc_multicast_set_group_address
+     /tmp/cclJhDlI.s:92     .text.smtc_multicast_get_group_address:00000000 $t
+     /tmp/cclJhDlI.s:98     .text.smtc_multicast_get_group_address:00000000 smtc_multicast_get_group_address
+     /tmp/cclJhDlI.s:123    .text.smtc_multicast_set_group_keys:00000000 $t
+     /tmp/cclJhDlI.s:129    .text.smtc_multicast_set_group_keys:00000000 smtc_multicast_set_group_keys
+     /tmp/cclJhDlI.s:178    .text.smtc_multicast_set_group_keys:00000058 $d
+     /tmp/cclJhDlI.s:183    .text.smtc_multicast_get_running_status:00000000 $t
+     /tmp/cclJhDlI.s:189    .text.smtc_multicast_get_running_status:00000000 smtc_multicast_get_running_status
 
 UNDEFINED SYMBOLS
 memset

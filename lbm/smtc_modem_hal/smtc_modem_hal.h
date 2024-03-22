@@ -59,7 +59,7 @@ extern "C" {
     {                                                              \
         smtc_modem_hal_store_crashlog( ( uint8_t* ) __func__ );    \
         smtc_modem_hal_set_crashlog_status( true );                \
-        SMTC_MODEM_HAL_TRACE_ERROR( "crash log :%s\n", __func__ ); \
+        SMTC_MODEM_HAL_TRACE_ERROR( "crash log :%s\n\r", __func__ ); \
         SMTC_MODEM_HAL_TRACE_ERROR( "-> "__VA_ARGS__ );            \
         smtc_modem_hal_reset_mcu( );                               \
     } while( 0 );
@@ -72,7 +72,7 @@ extern "C" {
     {                                                              \
         smtc_modem_hal_store_crashlog( ( uint8_t* ) __func__ );    \
         smtc_modem_hal_set_crashlog_status( true );                \
-        SMTC_MODEM_HAL_TRACE_ERROR( "crash log :%s\n", __func__ ); \
+        SMTC_MODEM_HAL_TRACE_ERROR( "crash log :%s\n\r", __func__ ); \
         SMTC_MODEM_HAL_TRACE_ERROR( "-> "__VA_ARGS__ );            \
         smtc_modem_hal_reset_mcu( );                               \
     } while( 0 );

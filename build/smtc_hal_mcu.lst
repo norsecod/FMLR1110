@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc5loqhT.s 			page 1
+ARM GAS  /tmp/cc4bPjYD.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
   56 0032 9A42     		cmp	r2, r3
   57 0034 F7D3     		bcc	.L3
   58 0036 C046     		nop
-ARM GAS  /tmp/cc5loqhT.s 			page 2
+ARM GAS  /tmp/cc4bPjYD.s 			page 2
 
 
   59 0038 C046     		nop
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  119              		@ args = 0, pretend = 0, frame = 0
  120              		@ frame_needed = 0, uses_anonymous_args = 0
  121              		@ link register save eliminated.
-ARM GAS  /tmp/cc5loqhT.s 			page 3
+ARM GAS  /tmp/cc4bPjYD.s 			page 3
 
 
  122 0000 0368     		ldr	r3, [r0]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  182              		@ frame_needed = 0, uses_anonymous_args = 0
  183              		@ link register save eliminated.
  184              		.syntax divided
-ARM GAS  /tmp/cc5loqhT.s 			page 4
+ARM GAS  /tmp/cc4bPjYD.s 			page 4
 
 
  185              	@ 209 "bsp_l0/mcu_drivers/cmsis/Core/Include/cmsis_gcc.h" 1
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  241 0024 FFF7FEFF 		bl	memset
  242 0028 FFF7FEFF 		bl	HAL_PWR_EnableBkUpAccess
  243 002c 236D     		ldr	r3, [r4, #80]
-ARM GAS  /tmp/cc5loqhT.s 			page 5
+ARM GAS  /tmp/cc4bPjYD.s 			page 5
 
 
  244 002e 494A     		ldr	r2, .L18+4
@@ -274,12 +274,12 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  274 006a 3C49     		ldr	r1, .L18+12
  275 006c 2500     		movs	r5, r4
  276 006e 2000     		movs	r0, r4
- 277 0070 1535     		adds	r5, r5, #21
+ 277 0070 1635     		adds	r5, r5, #22
  278 0072 FFF7FEFF 		bl	hal_trace_print_var
  279 0076 2800     		movs	r0, r5
  280 0078 FFF7FEFF 		bl	hal_trace_print_var
  281 007c 2000     		movs	r0, r4
- 282 007e 1630     		adds	r0, r0, #22
+ 282 007e 1730     		adds	r0, r0, #23
  283 0080 FFF7FEFF 		bl	hal_trace_print_var
  284 0084 2800     		movs	r0, r5
  285 0086 FFF7FEFF 		bl	hal_trace_print_var
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  298 00a2 0397     		str	r7, [sp, #12]
  299 00a4 FFF7FEFF 		bl	HAL_RCC_ClockConfig
  300 00a8 0028     		cmp	r0, #0
-ARM GAS  /tmp/cc5loqhT.s 			page 6
+ARM GAS  /tmp/cc4bPjYD.s 			page 6
 
 
  301 00aa DDD1     		bne	.L17
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  355 012a FFF7FEFF 		bl	hal_i2c_init
  356 012e 1422     		movs	r2, #20
  357 0130 1323     		movs	r3, #19
-ARM GAS  /tmp/cc5loqhT.s 			page 7
+ARM GAS  /tmp/cc4bPjYD.s 			page 7
 
 
  358 0132 1521     		movs	r1, #21
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  414 0028 4E49     		ldr	r1, .L36+8
  415 002a 0093     		str	r3, [sp]
  416 002c 8C42     		cmp	r4, r1
-ARM GAS  /tmp/cc5loqhT.s 			page 8
+ARM GAS  /tmp/cc4bPjYD.s 			page 8
 
 
  417 002e 56DD     		ble	.L25
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  471 009e 0B43     		orrs	r3, r1
  472 00a0 09A8     		add	r0, sp, #36
  473 00a2 9363     		str	r3, [r2, #56]
-ARM GAS  /tmp/cc5loqhT.s 			page 9
+ARM GAS  /tmp/cc4bPjYD.s 			page 9
 
 
  474 00a4 FFF7FEFF 		bl	HAL_RCC_GetOscConfig
@@ -494,12 +494,12 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  484 00ba 2F49     		ldr	r1, .L36+28
  485 00bc 2500     		movs	r5, r4
  486 00be 2000     		movs	r0, r4
- 487 00c0 1535     		adds	r5, r5, #21
+ 487 00c0 1635     		adds	r5, r5, #22
  488 00c2 FFF7FEFF 		bl	hal_trace_print_var
  489 00c6 2800     		movs	r0, r5
  490 00c8 FFF7FEFF 		bl	hal_trace_print_var
  491 00cc 2000     		movs	r0, r4
- 492 00ce 1630     		adds	r0, r0, #22
+ 492 00ce 1730     		adds	r0, r0, #23
  493 00d0 FFF7FEFF 		bl	hal_trace_print_var
  494 00d4 2800     		movs	r0, r5
  495 00d6 FFF7FEFF 		bl	hal_trace_print_var
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  528 0124 1F21     		movs	r1, #31
  529 0126 3000     		movs	r0, r6
  530 0128 FFF7FEFF 		bl	hal_spi_init
-ARM GAS  /tmp/cc5loqhT.s 			page 10
+ARM GAS  /tmp/cc4bPjYD.s 			page 10
 
 
  531 012c 029B     		ldr	r3, [sp, #8]
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  587 0006 024B     		ldr	r3, .L39+4
  588 0008 1A70     		strb	r2, [r3]
  589 000a 7047     		bx	lr
-ARM GAS  /tmp/cc5loqhT.s 			page 11
+ARM GAS  /tmp/cc4bPjYD.s 			page 11
 
 
  590              	.L40:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  649              		.code	16
  650              		.thumb_func
  652              	SysTick_Handler:
-ARM GAS  /tmp/cc5loqhT.s 			page 12
+ARM GAS  /tmp/cc4bPjYD.s 			page 12
 
 
  653              		@ args = 0, pretend = 0, frame = 0
@@ -712,20 +712,20 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  707 0002 0C4C     		ldr	r4, .L52
  708 0004 0C48     		ldr	r0, .L52+4
  709 0006 2500     		movs	r5, r4
- 710 0008 1535     		adds	r5, r5, #21
+ 710 0008 1635     		adds	r5, r5, #22
  711 000a FFF7FEFF 		bl	hal_trace_print_var
  712 000e 2800     		movs	r0, r5
  713 0010 FFF7FEFF 		bl	hal_trace_print_var
  714 0014 2000     		movs	r0, r4
- 715 0016 3030     		adds	r0, r0, #48
-ARM GAS  /tmp/cc5loqhT.s 			page 13
+ 715 0016 3130     		adds	r0, r0, #49
+ARM GAS  /tmp/cc4bPjYD.s 			page 13
 
 
  716 0018 FFF7FEFF 		bl	hal_trace_print_var
  717 001c 2800     		movs	r0, r5
  718 001e FFF7FEFF 		bl	hal_trace_print_var
  719 0022 2000     		movs	r0, r4
- 720 0024 4A30     		adds	r0, r0, #74
+ 720 0024 4C30     		adds	r0, r0, #76
  721 0026 FFF7FEFF 		bl	hal_trace_print_var
  722 002a 2800     		movs	r0, r5
  723 002c FFF7FEFF 		bl	hal_trace_print_var
@@ -735,7 +735,7 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  727 0032 C046     		.align	2
  728              	.L52:
  729 0034 00000000 		.word	.LANCHOR0
- 730 0038 21000000 		.word	.LANCHOR0+33
+ 730 0038 22000000 		.word	.LANCHOR0+34
  732              		.section	.rodata.__func__.0,"a"
  735              	__func__.0:
  736 0000 6C706D5F 		.ascii	"lpm_mcu_reinit\000"
@@ -769,97 +769,97 @@ ARM GAS  /tmp/cc5loqhT.s 			page 1
  763              		.section	.rodata
  764              		.set	.LANCHOR0,. + 0
  765              	.LC2:
- 766 0000 4552524F 		.ascii	"ERROR: mcu_panic:%s\012\000"
+ 766 0000 4552524F 		.ascii	"ERROR: mcu_panic:%s\012\015\000"
  766      523A206D 
  766      63755F70 
  766      616E6963 
  766      3A25730A 
  767              	.LC4:
- 768 0015 00       		.ascii	"\000"
+ 768 0016 00       		.ascii	"\000"
  769              	.LC5:
- 770 0016 4552524F 		.ascii	"ERROR: -> \000"
-ARM GAS  /tmp/cc5loqhT.s 			page 14
+ 770 0017 4552524F 		.ascii	"ERROR: -> \000"
+ARM GAS  /tmp/cc4bPjYD.s 			page 14
 
 
  770      523A202D 
  770      3E2000
  771              	.LC24:
- 772 0021 4552524F 		.ascii	"ERROR: \033[0;31m\000"
+ 772 0022 4552524F 		.ascii	"ERROR: \033[0;31m\000"
  772      523A201B 
  772      5B303B33 
  772      316D00
  773              	.LC26:
- 774 0030 4552524F 		.ascii	"ERROR: HARDFAULT_Handler\012\000"
+ 774 0031 4552524F 		.ascii	"ERROR: HARDFAULT_Handler\012\015\000"
  774      523A2048 
  774      41524446 
  774      41554C54 
  774      5F48616E 
  775              	.LC27:
- 776 004a 4552524F 		.ascii	"ERROR: \033[0m\000"
+ 776 004c 4552524F 		.ascii	"ERROR: \033[0m\000"
  776      523A201B 
  776      5B306D00 
  777              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc5loqhT.s 			page 15
+ARM GAS  /tmp/cc4bPjYD.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_hal_mcu.c
-     /tmp/cc5loqhT.s:15     .text.hal_mcu_wait_us:00000000 $t
-     /tmp/cc5loqhT.s:22     .text.hal_mcu_wait_us:00000000 hal_mcu_wait_us
-     /tmp/cc5loqhT.s:65     .text.wut_cb:00000000 $t
-     /tmp/cc5loqhT.s:70     .text.wut_cb:00000000 wut_cb
-     /tmp/cc5loqhT.s:82     .text.wut_cb:00000008 $d
-     /tmp/cc5loqhT.s:745    .bss.wut_flag:00000000 wut_flag
-     /tmp/cc5loqhT.s:85     .text.hal_mcu_critical_section_begin:00000000 $t
-     /tmp/cc5loqhT.s:91     .text.hal_mcu_critical_section_begin:00000000 hal_mcu_critical_section_begin
-     /tmp/cc5loqhT.s:112    .text.hal_mcu_critical_section_end:00000000 $t
-     /tmp/cc5loqhT.s:118    .text.hal_mcu_critical_section_end:00000000 hal_mcu_critical_section_end
-     /tmp/cc5loqhT.s:133    .text.hal_mcu_disable_irq:00000000 $t
-     /tmp/cc5loqhT.s:139    .text.hal_mcu_disable_irq:00000000 hal_mcu_disable_irq
-     /tmp/cc5loqhT.s:153    .text.hal_mcu_enable_irq:00000000 $t
-     /tmp/cc5loqhT.s:159    .text.hal_mcu_enable_irq:00000000 hal_mcu_enable_irq
-     /tmp/cc5loqhT.s:173    .text.hal_mcu_reset:00000000 $t
-     /tmp/cc5loqhT.s:179    .text.hal_mcu_reset:00000000 hal_mcu_reset
-     /tmp/cc5loqhT.s:213    .text.hal_mcu_reset:00000014 $d
-     /tmp/cc5loqhT.s:217    .text.hal_mcu_init:00000000 $t
-     /tmp/cc5loqhT.s:223    .text.hal_mcu_init:00000000 hal_mcu_init
-     /tmp/cc5loqhT.s:373    .text.hal_mcu_init:00000150 $d
-     /tmp/cc5loqhT.s:740    .rodata.__func__.1:00000000 __func__.1
-     /tmp/cc5loqhT.s:751    .bss.wut:00000000 wut
-     /tmp/cc5loqhT.s:382    .text.hal_mcu_set_sleep_for_ms:00000000 $t
-     /tmp/cc5loqhT.s:388    .text.hal_mcu_set_sleep_for_ms:00000000 hal_mcu_set_sleep_for_ms
-     /tmp/cc5loqhT.s:563    .text.hal_mcu_set_sleep_for_ms:0000015c $d
-     /tmp/cc5loqhT.s:756    .bss.lp_current_mode:00000000 lp_current_mode
-     /tmp/cc5loqhT.s:735    .rodata.__func__.0:00000000 __func__.0
-     /tmp/cc5loqhT.s:573    .text.hal_mcu_disable_low_power_wait:00000000 $t
-     /tmp/cc5loqhT.s:579    .text.hal_mcu_disable_low_power_wait:00000000 hal_mcu_disable_low_power_wait
-     /tmp/cc5loqhT.s:593    .text.hal_mcu_disable_low_power_wait:0000000c $d
-     /tmp/cc5loqhT.s:761    .bss.exit_wait:00000000 exit_wait
-     /tmp/cc5loqhT.s:597    .text.hal_mcu_enable_low_power_wait:00000000 $t
-     /tmp/cc5loqhT.s:603    .text.hal_mcu_enable_low_power_wait:00000000 hal_mcu_enable_low_power_wait
-     /tmp/cc5loqhT.s:617    .text.hal_mcu_enable_low_power_wait:0000000c $d
-     /tmp/cc5loqhT.s:621    .text.hal_mcu_disable_once_low_power_wait:00000000 $t
-     /tmp/cc5loqhT.s:627    .text.hal_mcu_disable_once_low_power_wait:00000000 hal_mcu_disable_once_low_power_wait
-     /tmp/cc5loqhT.s:642    .text.hal_mcu_disable_once_low_power_wait:00000010 $d
-     /tmp/cc5loqhT.s:646    .text.SysTick_Handler:00000000 $t
-     /tmp/cc5loqhT.s:652    .text.SysTick_Handler:00000000 SysTick_Handler
-     /tmp/cc5loqhT.s:662    .text.HAL_MspInit:00000000 $t
-     /tmp/cc5loqhT.s:668    .text.HAL_MspInit:00000000 HAL_MspInit
-     /tmp/cc5loqhT.s:681    .text.hal_mcu_delay_ms:00000000 $t
-     /tmp/cc5loqhT.s:687    .text.hal_mcu_delay_ms:00000000 hal_mcu_delay_ms
-     /tmp/cc5loqhT.s:696    .text.HardFault_Handler:00000000 $t
-     /tmp/cc5loqhT.s:702    .text.HardFault_Handler:00000000 HardFault_Handler
-     /tmp/cc5loqhT.s:729    .text.HardFault_Handler:00000034 $d
-     /tmp/cc5loqhT.s:746    .bss.wut_flag:00000000 $d
-     /tmp/cc5loqhT.s:748    .bss.wut:00000000 $d
-     /tmp/cc5loqhT.s:757    .bss.lp_current_mode:00000000 $d
-     /tmp/cc5loqhT.s:762    .bss.exit_wait:00000000 $d
+     /tmp/cc4bPjYD.s:15     .text.hal_mcu_wait_us:00000000 $t
+     /tmp/cc4bPjYD.s:22     .text.hal_mcu_wait_us:00000000 hal_mcu_wait_us
+     /tmp/cc4bPjYD.s:65     .text.wut_cb:00000000 $t
+     /tmp/cc4bPjYD.s:70     .text.wut_cb:00000000 wut_cb
+     /tmp/cc4bPjYD.s:82     .text.wut_cb:00000008 $d
+     /tmp/cc4bPjYD.s:745    .bss.wut_flag:00000000 wut_flag
+     /tmp/cc4bPjYD.s:85     .text.hal_mcu_critical_section_begin:00000000 $t
+     /tmp/cc4bPjYD.s:91     .text.hal_mcu_critical_section_begin:00000000 hal_mcu_critical_section_begin
+     /tmp/cc4bPjYD.s:112    .text.hal_mcu_critical_section_end:00000000 $t
+     /tmp/cc4bPjYD.s:118    .text.hal_mcu_critical_section_end:00000000 hal_mcu_critical_section_end
+     /tmp/cc4bPjYD.s:133    .text.hal_mcu_disable_irq:00000000 $t
+     /tmp/cc4bPjYD.s:139    .text.hal_mcu_disable_irq:00000000 hal_mcu_disable_irq
+     /tmp/cc4bPjYD.s:153    .text.hal_mcu_enable_irq:00000000 $t
+     /tmp/cc4bPjYD.s:159    .text.hal_mcu_enable_irq:00000000 hal_mcu_enable_irq
+     /tmp/cc4bPjYD.s:173    .text.hal_mcu_reset:00000000 $t
+     /tmp/cc4bPjYD.s:179    .text.hal_mcu_reset:00000000 hal_mcu_reset
+     /tmp/cc4bPjYD.s:213    .text.hal_mcu_reset:00000014 $d
+     /tmp/cc4bPjYD.s:217    .text.hal_mcu_init:00000000 $t
+     /tmp/cc4bPjYD.s:223    .text.hal_mcu_init:00000000 hal_mcu_init
+     /tmp/cc4bPjYD.s:373    .text.hal_mcu_init:00000150 $d
+     /tmp/cc4bPjYD.s:740    .rodata.__func__.1:00000000 __func__.1
+     /tmp/cc4bPjYD.s:751    .bss.wut:00000000 wut
+     /tmp/cc4bPjYD.s:382    .text.hal_mcu_set_sleep_for_ms:00000000 $t
+     /tmp/cc4bPjYD.s:388    .text.hal_mcu_set_sleep_for_ms:00000000 hal_mcu_set_sleep_for_ms
+     /tmp/cc4bPjYD.s:563    .text.hal_mcu_set_sleep_for_ms:0000015c $d
+     /tmp/cc4bPjYD.s:756    .bss.lp_current_mode:00000000 lp_current_mode
+     /tmp/cc4bPjYD.s:735    .rodata.__func__.0:00000000 __func__.0
+     /tmp/cc4bPjYD.s:573    .text.hal_mcu_disable_low_power_wait:00000000 $t
+     /tmp/cc4bPjYD.s:579    .text.hal_mcu_disable_low_power_wait:00000000 hal_mcu_disable_low_power_wait
+     /tmp/cc4bPjYD.s:593    .text.hal_mcu_disable_low_power_wait:0000000c $d
+     /tmp/cc4bPjYD.s:761    .bss.exit_wait:00000000 exit_wait
+     /tmp/cc4bPjYD.s:597    .text.hal_mcu_enable_low_power_wait:00000000 $t
+     /tmp/cc4bPjYD.s:603    .text.hal_mcu_enable_low_power_wait:00000000 hal_mcu_enable_low_power_wait
+     /tmp/cc4bPjYD.s:617    .text.hal_mcu_enable_low_power_wait:0000000c $d
+     /tmp/cc4bPjYD.s:621    .text.hal_mcu_disable_once_low_power_wait:00000000 $t
+     /tmp/cc4bPjYD.s:627    .text.hal_mcu_disable_once_low_power_wait:00000000 hal_mcu_disable_once_low_power_wait
+     /tmp/cc4bPjYD.s:642    .text.hal_mcu_disable_once_low_power_wait:00000010 $d
+     /tmp/cc4bPjYD.s:646    .text.SysTick_Handler:00000000 $t
+     /tmp/cc4bPjYD.s:652    .text.SysTick_Handler:00000000 SysTick_Handler
+     /tmp/cc4bPjYD.s:662    .text.HAL_MspInit:00000000 $t
+     /tmp/cc4bPjYD.s:668    .text.HAL_MspInit:00000000 HAL_MspInit
+     /tmp/cc4bPjYD.s:681    .text.hal_mcu_delay_ms:00000000 $t
+     /tmp/cc4bPjYD.s:687    .text.hal_mcu_delay_ms:00000000 hal_mcu_delay_ms
+     /tmp/cc4bPjYD.s:696    .text.HardFault_Handler:00000000 $t
+     /tmp/cc4bPjYD.s:702    .text.HardFault_Handler:00000000 HardFault_Handler
+     /tmp/cc4bPjYD.s:729    .text.HardFault_Handler:00000034 $d
+     /tmp/cc4bPjYD.s:746    .bss.wut_flag:00000000 $d
+     /tmp/cc4bPjYD.s:748    .bss.wut:00000000 $d
+     /tmp/cc4bPjYD.s:757    .bss.lp_current_mode:00000000 $d
+     /tmp/cc4bPjYD.s:762    .bss.exit_wait:00000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_idiv
 HAL_Init
 memset
-ARM GAS  /tmp/cc5loqhT.s 			page 16
+ARM GAS  /tmp/cc4bPjYD.s 			page 16
 
 
 HAL_PWR_EnableBkUpAccess

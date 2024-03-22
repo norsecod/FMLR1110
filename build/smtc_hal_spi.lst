@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccWRDzY5.s 			page 1
+ARM GAS  /tmp/ccw9i17x.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -15,15 +15,15 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
   12              		.text
   13              		.section	.rodata.hal_spi_init.str1.1,"aMS",%progbits,1
   14              	.LC3:
-  15 0000 4552524F 		.ascii	"ERROR: mcu_panic:%s\012\000"
+  15 0000 4552524F 		.ascii	"ERROR: mcu_panic:%s\012\015\000"
   15      523A206D 
   15      63755F70 
   15      616E6963 
   15      3A25730A 
   16              	.LC5:
-  17 0015 00       		.ascii	"\000"
+  17 0016 00       		.ascii	"\000"
   18              	.LC7:
-  19 0016 4552524F 		.ascii	"ERROR: -> \000"
+  19 0017 4552524F 		.ascii	"ERROR: -> \000"
   19      523A202D 
   19      3E2000
   20              		.section	.text.hal_spi_init,"ax",%progbits
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
   50 0028 0023     		movs	r3, #0
   51 002a 0022     		movs	r2, #0
   52 002c E060     		str	r0, [r4, #12]
-ARM GAS  /tmp/ccWRDzY5.s 			page 2
+ARM GAS  /tmp/ccw9i17x.s 			page 2
 
 
   53 002e 2061     		str	r0, [r4, #16]
@@ -115,10 +115,10 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
  104 0098 28000000 		.word	spi_periph+40
  105 009c 00000000 		.word	__func__.2
  106 00a0 00000000 		.word	.LC3
- 107 00a4 15000000 		.word	.LC5
- 108 00a8 16000000 		.word	.LC7
+ 107 00a4 16000000 		.word	.LC5
+ 108 00a8 17000000 		.word	.LC7
  110              		.section	.text.hal_spi_de_init,"ax",%progbits
-ARM GAS  /tmp/ccWRDzY5.s 			page 3
+ARM GAS  /tmp/ccw9i17x.s 			page 3
 
 
  111              		.align	1
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
  168              	.L19:
  169              		.align	2
  170              	.L18:
-ARM GAS  /tmp/ccWRDzY5.s 			page 4
+ARM GAS  /tmp/ccw9i17x.s 			page 4
 
 
  171 002c 00000000 		.word	spi_periph
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
  227 005a 01A9     		add	r1, sp, #4
  228 005c FFF7FEFF 		bl	HAL_GPIO_Init
  229 0060 8023     		movs	r3, #128
-ARM GAS  /tmp/ccWRDzY5.s 			page 5
+ARM GAS  /tmp/ccw9i17x.s 			page 5
 
 
  230 0062 3D4A     		ldr	r2, .L30+4
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
  284 00c6 0591     		str	r1, [sp, #20]
  285 00c8 01A9     		add	r1, sp, #4
  286 00ca FFF7FEFF 		bl	HAL_GPIO_Init
-ARM GAS  /tmp/ccWRDzY5.s 			page 6
+ARM GAS  /tmp/ccw9i17x.s 			page 6
 
 
  287 00ce 0121     		movs	r1, #1
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
  341 013a 0A4C     		ldr	r4, .L30+16
  342 013c 2000     		movs	r0, r4
  343 013e FFF7FEFF 		bl	hal_trace_print_var
-ARM GAS  /tmp/ccWRDzY5.s 			page 7
+ARM GAS  /tmp/ccw9i17x.s 			page 7
 
 
  344 0142 0948     		ldr	r0, .L30+20
@@ -374,8 +374,8 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
  354 0158 00100240 		.word	1073876992
  355 015c 00000000 		.word	__func__.1
  356 0160 00000000 		.word	.LC3
- 357 0164 15000000 		.word	.LC5
- 358 0168 16000000 		.word	.LC7
+ 357 0164 16000000 		.word	.LC5
+ 358 0168 17000000 		.word	.LC7
  360              		.section	.text.HAL_SPI_MspDeInit,"ax",%progbits
  361              		.align	1
  362              		.global	HAL_SPI_MspDeInit
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
  400 003e 0F27     		movs	r7, #15
  401 0040 3200     		movs	r2, r6
  402 0042 5D33     		adds	r3, r3, #93
-ARM GAS  /tmp/ccWRDzY5.s 			page 8
+ARM GAS  /tmp/ccw9i17x.s 			page 8
 
 
  403 0044 1B78     		ldrb	r3, [r3]
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
  457 00ae 0323     		movs	r3, #3
  458 00b0 0126     		movs	r6, #1
  459 00b2 0293     		str	r3, [sp, #8]
-ARM GAS  /tmp/ccWRDzY5.s 			page 9
+ARM GAS  /tmp/ccw9i17x.s 			page 9
 
 
  460 00b4 2300     		movs	r3, r4
@@ -528,8 +528,8 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
  504 011c BC000000 		.word	spi_periph+188
  505 0120 00000000 		.word	__func__.0
  506 0124 00000000 		.word	.LC3
- 507 0128 15000000 		.word	.LC5
- 508 012c 16000000 		.word	.LC7
+ 507 0128 16000000 		.word	.LC5
+ 508 012c 17000000 		.word	.LC7
  510              		.section	.rodata.__func__.0,"a"
  513              	__func__.0:
  514 0000 48414C5F 		.ascii	"HAL_SPI_MspDeInit\000"
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
  514      65496E69 
  514      7400
  515              		.section	.rodata.__func__.1,"a"
-ARM GAS  /tmp/ccWRDzY5.s 			page 10
+ARM GAS  /tmp/ccw9i17x.s 			page 10
 
 
  518              	__func__.1:
@@ -578,31 +578,31 @@ ARM GAS  /tmp/ccWRDzY5.s 			page 1
  542 00be FF       		.byte	-1
  543 00bf 00       		.space	1
  544              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccWRDzY5.s 			page 11
+ARM GAS  /tmp/ccw9i17x.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_hal_spi.c
-     /tmp/ccWRDzY5.s:21     .text.hal_spi_init:00000000 $t
-     /tmp/ccWRDzY5.s:27     .text.hal_spi_init:00000000 hal_spi_init
-     /tmp/ccWRDzY5.s:103    .text.hal_spi_init:00000094 $d
-     /tmp/ccWRDzY5.s:529    .data.spi_periph:00000000 spi_periph
-     /tmp/ccWRDzY5.s:523    .rodata.__func__.2:00000000 __func__.2
-     /tmp/ccWRDzY5.s:111    .text.hal_spi_de_init:00000000 $t
-     /tmp/ccWRDzY5.s:117    .text.hal_spi_de_init:00000000 hal_spi_de_init
-     /tmp/ccWRDzY5.s:131    .text.hal_spi_de_init:00000010 $d
-     /tmp/ccWRDzY5.s:134    .text.hal_spi_in_out:00000000 $t
-     /tmp/ccWRDzY5.s:140    .text.hal_spi_in_out:00000000 hal_spi_in_out
-     /tmp/ccWRDzY5.s:171    .text.hal_spi_in_out:0000002c $d
-     /tmp/ccWRDzY5.s:174    .text.HAL_SPI_MspInit:00000000 $t
-     /tmp/ccWRDzY5.s:180    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-     /tmp/ccWRDzY5.s:353    .text.HAL_SPI_MspInit:00000154 $d
-     /tmp/ccWRDzY5.s:518    .rodata.__func__.1:00000000 __func__.1
-     /tmp/ccWRDzY5.s:361    .text.HAL_SPI_MspDeInit:00000000 $t
-     /tmp/ccWRDzY5.s:367    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-     /tmp/ccWRDzY5.s:499    .text.HAL_SPI_MspDeInit:00000108 $d
-     /tmp/ccWRDzY5.s:513    .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccWRDzY5.s:526    .data.spi_periph:00000000 $d
+     /tmp/ccw9i17x.s:21     .text.hal_spi_init:00000000 $t
+     /tmp/ccw9i17x.s:27     .text.hal_spi_init:00000000 hal_spi_init
+     /tmp/ccw9i17x.s:103    .text.hal_spi_init:00000094 $d
+     /tmp/ccw9i17x.s:529    .data.spi_periph:00000000 spi_periph
+     /tmp/ccw9i17x.s:523    .rodata.__func__.2:00000000 __func__.2
+     /tmp/ccw9i17x.s:111    .text.hal_spi_de_init:00000000 $t
+     /tmp/ccw9i17x.s:117    .text.hal_spi_de_init:00000000 hal_spi_de_init
+     /tmp/ccw9i17x.s:131    .text.hal_spi_de_init:00000010 $d
+     /tmp/ccw9i17x.s:134    .text.hal_spi_in_out:00000000 $t
+     /tmp/ccw9i17x.s:140    .text.hal_spi_in_out:00000000 hal_spi_in_out
+     /tmp/ccw9i17x.s:171    .text.hal_spi_in_out:0000002c $d
+     /tmp/ccw9i17x.s:174    .text.HAL_SPI_MspInit:00000000 $t
+     /tmp/ccw9i17x.s:180    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+     /tmp/ccw9i17x.s:353    .text.HAL_SPI_MspInit:00000154 $d
+     /tmp/ccw9i17x.s:518    .rodata.__func__.1:00000000 __func__.1
+     /tmp/ccw9i17x.s:361    .text.HAL_SPI_MspDeInit:00000000 $t
+     /tmp/ccw9i17x.s:367    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+     /tmp/ccw9i17x.s:499    .text.HAL_SPI_MspDeInit:00000108 $d
+     /tmp/ccw9i17x.s:513    .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccw9i17x.s:526    .data.spi_periph:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_SPI_Init

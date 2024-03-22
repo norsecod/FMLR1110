@@ -1,11 +1,10 @@
 build/lr1110/trace/smtc_modem_services_hal.o: \
  smtc_modem_core/modem_services/smtc_modem_services_hal.c \
  smtc_modem_core/smtc_modem_services/smtc_modem_services_hal.h \
- smtc_modem_core/modem_services/smtc_modem_services_config.h \
- smtc_modem_core/modem_config/smtc_modem_hal_dbg_trace.h \
- smtc_modem_hal/smtc_modem_hal.h \
+ smtc_modem_core/smtc_modem_services/smtc_modem_services_config.h \
  smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.h \
  smtc_modem_core/smtc_modem_crypto/smtc_secure_element/smtc_secure_element.h \
+ smtc_modem_hal/smtc_modem_hal.h \
  smtc_modem_core/device_management/modem_context.h \
  smtc_modem_api/smtc_modem_api.h \
  smtc_modem_core/device_management/device_management_defs.h \
@@ -28,11 +27,10 @@ build/lr1110/trace/smtc_modem_services_hal.o: \
  smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_system_types.h \
  smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_types.h
 smtc_modem_core/smtc_modem_services/smtc_modem_services_hal.h:
-smtc_modem_core/modem_services/smtc_modem_services_config.h:
-smtc_modem_core/modem_config/smtc_modem_hal_dbg_trace.h:
-smtc_modem_hal/smtc_modem_hal.h:
+smtc_modem_core/smtc_modem_services/smtc_modem_services_config.h:
 smtc_modem_core/smtc_modem_crypto/smtc_modem_crypto.h:
 smtc_modem_core/smtc_modem_crypto/smtc_secure_element/smtc_secure_element.h:
+smtc_modem_hal/smtc_modem_hal.h:
 smtc_modem_core/device_management/modem_context.h:
 smtc_modem_api/smtc_modem_api.h:
 smtc_modem_core/device_management/device_management_defs.h:

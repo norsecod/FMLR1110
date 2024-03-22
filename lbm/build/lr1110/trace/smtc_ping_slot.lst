@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccI75xPw.s 			page 1
+ARM GAS  /tmp/ccj6lSJi.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
   56 002c 0122     		movs	r2, #1
   57 002e 0B3B     		subs	r3, r3, #11
   58 0030 DBB2     		uxtb	r3, r3
-ARM GAS  /tmp/ccI75xPw.s 			page 2
+ARM GAS  /tmp/ccj6lSJi.s 			page 2
 
 
   59              	.L10:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  115 002c 1D62     		str	r5, [r3, #32]
  116 002e 9625     		movs	r5, #150
  117 0030 6D00     		lsls	r5, r5, #1
-ARM GAS  /tmp/ccI75xPw.s 			page 3
+ARM GAS  /tmp/ccj6lSJi.s 			page 3
 
 
  118 0032 6C43     		muls	r4, r5
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  174 0044 1C25     		movs	r5, #28
  175 0046 BB23     		movs	r3, #187
  176 0048 7543     		muls	r5, r6
-ARM GAS  /tmp/ccI75xPw.s 			page 4
+ARM GAS  /tmp/ccj6lSJi.s 			page 4
 
 
  177 004a DB00     		lsls	r3, r3, #3
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  233 000c 6043     		muls	r0, r4
  234 000e 0123     		movs	r3, #1
  235 0010 8900     		lsls	r1, r1, #2
-ARM GAS  /tmp/ccI75xPw.s 			page 5
+ARM GAS  /tmp/ccj6lSJi.s 			page 5
 
 
  236 0012 8842     		cmp	r0, r1
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  292 0050 2833     		adds	r3, r3, #40
  293 0052 9218     		adds	r2, r2, r2
  294 0054 E254     		strb	r2, [r4, r3]
-ARM GAS  /tmp/ccI75xPw.s 			page 6
+ARM GAS  /tmp/ccj6lSJi.s 			page 6
 
 
  295 0056 123B     		subs	r3, r3, #18
@@ -342,109 +342,110 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  332      73697A65 
  332      20726563 
  332      65697665 
- 333 0030 00       		.ascii	"\000"
+ 333 0030 0D00     		.ascii	"\015\000"
  334              	.LC4:
- 335 0031 52784220 		.ascii	"RxB Payload\000"
+ 335 0032 52784220 		.ascii	"RxB Payload\000"
  335      5061796C 
  335      6F616400 
  336              	.LC6:
- 337 003d 2573202D 		.ascii	"%s - (%lu bytes):\012\000"
+ 337 003e 2573202D 		.ascii	"%s - (%lu bytes):\012\015\000"
  337      2028256C 
  337      75206279 
  337      74657329 
- 337      3A0A00
+ 337      3A0A0D00 
  338              	.LC8:
- 339 0050 0A00     		.ascii	"\012\000"
+ 339 0052 0A0D00   		.ascii	"\012\015\000"
  340              	.LC10:
- 341 0052 20253032 		.ascii	" %02X\000"
+ 341 0055 20253032 		.ascii	" %02X\000"
  341      5800
-ARM GAS  /tmp/ccI75xPw.s 			page 7
+ARM GAS  /tmp/ccj6lSJi.s 			page 7
 
 
  342              	.LC12:
- 343 0058 1B5B303B 		.ascii	"\033[0;32mINFO:  BAD DevAddr = %x for RX Frame and "
+ 343 005b 1B5B303B 		.ascii	"\033[0;32mINFO:  BAD DevAddr = %x for RX Frame and "
  343      33326D49 
  343      4E464F3A 
  343      20204241 
  343      44204465 
- 344 0088 25780A0A 		.ascii	"%x\012\012\000"
- 344      00
+ 344 008b 25780A0D 		.ascii	"%x\012\015\012\015\000"
+ 344      0A0D00
  345              	.LC14:
- 346 008d 1B5B306D 		.ascii	"\033[0m\000"
+ 346 0092 1B5B306D 		.ascii	"\033[0m\000"
  346      00
  347              	.LC16:
- 348 0092 1B5B303B 		.ascii	"\033[0;33mWARN:  fcnt_tmp = %d\012 \000"
+ 348 0097 1B5B303B 		.ascii	"\033[0;33mWARN:  fcnt_tmp = %d\012\015 \000"
  348      33336D57 
  348      41524E3A 
  348      20206663 
  348      6E745F74 
  349              	.LC18:
- 350 00b0 1B5B303B 		.ascii	"\033[0;33mWARN:  Receive an not valid packet RxB on"
+ 350 00b6 1B5B303B 		.ascii	"\033[0;33mWARN:  Receive an not valid packet RxB on"
  350      33336D57 
  350      41524E3A 
  350      20205265 
  350      63656976 
- 351 00e0 20706F72 		.ascii	" port zero\012\000"
+ 351 00e6 20706F72 		.ascii	" port zero\012\015\000"
  351      74207A65 
- 351      726F0A00 
+ 351      726F0A0D 
+ 351      00
  352              	.LC21:
- 353 00ec 1B5B303B 		.ascii	"\033[0;31mERROR: crash log :%s\012\000"
+ 353 00f3 1B5B303B 		.ascii	"\033[0;31mERROR: crash log :%s\012\015\000"
  353      33316D45 
  353      52524F52 
  353      3A206372 
  353      61736820 
  354              	.LC23:
- 355 0109 1B5B303B 		.ascii	"\033[0;31mERROR: -> Crypto error during payload dec"
+ 355 0111 1B5B303B 		.ascii	"\033[0;31mERROR: -> Crypto error during payload dec"
  355      33316D45 
  355      52524F52 
  355      3A202D3E 
  355      20437279 
- 356 0139 72797074 		.ascii	"ryption\012\000"
+ 356 0141 72797074 		.ascii	"ryption\012\015\000"
  356      696F6E0A 
- 356      00
+ 356      0D00
  357              	.LC25:
- 358 0142 1B5B303B 		.ascii	"\033[0;33mWARN:  Receive an not valid packet RxB FO"
+ 358 014b 1B5B303B 		.ascii	"\033[0;33mWARN:  Receive an not valid packet RxB FO"
  358      33336D57 
  358      41524E3A 
  358      20205265 
  358      63656976 
- 359 0172 7074730A 		.ascii	"pts\012\000"
- 359      00
+ 359 017b 7074730A 		.ascii	"pts\012\015\000"
+ 359      0D00
  360              	.LC27:
- 361 0177 20527842 		.ascii	" RxB rx_packet_type = %d \012\000"
+ 361 0181 20527842 		.ascii	" RxB rx_packet_type = %d \012\015\000"
  361      2072785F 
  361      7061636B 
  361      65745F74 
  361      79706520 
  362              	.LC29:
- 363 0192 52784220 		.ascii	"RxB app Payload\000"
-ARM GAS  /tmp/ccI75xPw.s 			page 8
+ARM GAS  /tmp/ccj6lSJi.s 			page 8
 
 
+ 363 019d 52784220 		.ascii	"RxB app Payload\000"
  363      61707020 
  363      5061796C 
  363      6F616400 
  364              	.LC32:
- 365 01a2 1B5B303B 		.ascii	"\033[0;31mERROR: -> TX MODULATION NOT SUPPORTED\012"
+ 365 01ad 1B5B303B 		.ascii	"\033[0;31mERROR: -> TX MODULATION NOT SUPPORTED\012"
  365      33316D45 
  365      52524F52 
  365      3A202D3E 
  365      20545820 
- 366 01cf 00       		.ascii	"\000"
+ 366 01da 0D00     		.ascii	"\015\000"
  367              	.LC34:
- 368 01d0 6C72316D 		.ascii	"lr1mac RxB CRC ERROR\012\000"
+ 368 01dc 6C72316D 		.ascii	"lr1mac RxB CRC ERROR\012\015\000"
  368      61632052 
  368      78422043 
  368      52432045 
  368      52524F52 
  369              	.LC36:
- 370 01e6 6C72316D 		.ascii	"lr1mac RxB aborted by the radioplanner \012\000"
+ 370 01f3 6C72316D 		.ascii	"lr1mac RxB aborted by the radioplanner \012\015\000"
  370      61632052 
  370      78422061 
  370      626F7274 
  370      65642062 
  371              	.LC38:
- 372 020f 6C72316D 		.ascii	"lr1mac RxB receive It RADIO error %u\012\000"
+ 372 021d 6C72316D 		.ascii	"lr1mac RxB receive It RADIO error %u\012\015\000"
  372      61632052 
  372      78422072 
  372      65636569 
@@ -477,10 +478,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  399 0022 FFF7FEFF 		bl	rp_get_status
  400 0026 217B     		ldrb	r1, [r4, #12]
  401 0028 0A29     		cmp	r1, #10
+ARM GAS  /tmp/ccj6lSJi.s 			page 9
+
+
  402 002a 00D9     		bls	.LCB364
-ARM GAS  /tmp/ccI75xPw.s 			page 9
-
-
  403 002c 85E2     		b	.L48	@long jump
  404              	.LCB364:
  405 002e 0800     		movs	r0, r1
@@ -537,10 +538,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  456 0094 0F27     		movs	r7, #15
  457              	.L54:
  458 0096 2200     		movs	r2, r4
+ARM GAS  /tmp/ccj6lSJi.s 			page 10
+
+
  459 0098 2B78     		ldrb	r3, [r5]
-ARM GAS  /tmp/ccI75xPw.s 			page 10
-
-
  460 009a 4132     		adds	r2, r2, #65
  461 009c 0692     		str	r2, [sp, #24]
  462 009e B342     		cmp	r3, r6
@@ -597,10 +598,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  513 0100 04D1     		bne	.L55
  514 0102 002E     		cmp	r6, #0
  515 0104 02D0     		beq	.L55
+ARM GAS  /tmp/ccj6lSJi.s 			page 11
+
+
  516 0106 A048     		ldr	r0, .L121+12
-ARM GAS  /tmp/ccI75xPw.s 			page 11
-
-
  517 0108 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  518              	.L55:
  519 010c 069B     		ldr	r3, [sp, #24]
@@ -657,10 +658,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  570 0174 BDD0     		beq	.L61
  571 0176 3278     		ldrb	r2, [r6]
  572 0178 042A     		cmp	r2, #4
+ARM GAS  /tmp/ccj6lSJi.s 			page 12
+
+
  573 017a BAD0     		beq	.L61
-ARM GAS  /tmp/ccI75xPw.s 			page 12
-
-
  574              	.L64:
  575 017c 2200     		movs	r2, r4
  576 017e 2168     		ldr	r1, [r4]
@@ -717,10 +718,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  627 01e8 FFF7FEFF 		bl	memcpy1
  628 01ec A023     		movs	r3, #160
  629 01ee 5B00     		lsls	r3, r3, #1
+ARM GAS  /tmp/ccj6lSJi.s 			page 13
+
+
  630 01f0 E35C     		ldrb	r3, [r4, r3]
-ARM GAS  /tmp/ccI75xPw.s 			page 13
-
-
  631 01f2 0C98     		ldr	r0, [sp, #48]
  632 01f4 5C33     		adds	r3, r3, #92
  633 01f6 9B00     		lsls	r3, r3, #2
@@ -777,10 +778,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  684 025e 1A00     		movs	r2, r3
  685 0260 5C32     		adds	r2, r2, #92
  686 0262 9200     		lsls	r2, r2, #2
+ARM GAS  /tmp/ccj6lSJi.s 			page 14
+
+
  687 0264 1259     		ldr	r2, [r2, r4]
-ARM GAS  /tmp/ccI75xPw.s 			page 14
-
-
  688 0266 0321     		movs	r1, #3
  689 0268 2832     		adds	r2, r2, #40
  690 026a 0028     		cmp	r0, #0
@@ -837,10 +838,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  741 02c8 A268     		ldr	r2, [r4, #8]
  742 02ca 1D7D     		ldrb	r5, [r3, #20]
  743 02cc 2379     		ldrb	r3, [r4, #4]
+ARM GAS  /tmp/ccj6lSJi.s 			page 15
+
+
  744 02ce 2768     		ldr	r7, [r4]
-ARM GAS  /tmp/ccI75xPw.s 			page 15
-
-
  745 02d0 5B18     		adds	r3, r3, r1
  746 02d2 5B00     		lsls	r3, r3, #1
  747 02d4 D35C     		ldrb	r3, [r2, r3]
@@ -897,10 +898,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  798 0344 D358     		ldr	r3, [r2, r3]
  799 0346 0EA8     		add	r0, sp, #56
  800 0348 A033     		adds	r3, r3, #160
+ARM GAS  /tmp/ccj6lSJi.s 			page 16
+
+
  801 034a 1B68     		ldr	r3, [r3]
-ARM GAS  /tmp/ccI75xPw.s 			page 16
-
-
  802              	.L119:
  803 034c 9847     		blx	r3
  804              	.L88:
@@ -931,16 +932,16 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  829              		.align	2
  830              	.L121:
  831 037c 00000000 		.word	.LC2
- 832 0380 31000000 		.word	.LC4
- 833 0384 3D000000 		.word	.LC6
- 834 0388 50000000 		.word	.LC8
+ 832 0380 32000000 		.word	.LC4
+ 833 0384 3E000000 		.word	.LC6
+ 834 0388 52000000 		.word	.LC8
  835 038c CE040000 		.word	1230
- 836 0390 58000000 		.word	.LC12
- 837 0394 8D000000 		.word	.LC14
- 838 0398 52000000 		.word	.LC10
- 839 039c 92000000 		.word	.LC16
- 840 03a0 77010000 		.word	.LC27
- 841 03a4 92010000 		.word	.LC29
+ 836 0390 5B000000 		.word	.LC12
+ 837 0394 92000000 		.word	.LC14
+ 838 0398 55000000 		.word	.LC10
+ 839 039c 97000000 		.word	.LC16
+ 840 03a0 81010000 		.word	.LC27
+ 841 03a4 9D010000 		.word	.LC29
  842 03a8 BC040000 		.word	1212
  843              	.L69:
  844 03ac 0221     		movs	r1, #2
@@ -957,10 +958,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  855 03be 0132     		adds	r2, r2, #1
  856 03c0 A25C     		ldrb	r2, [r4, r2]
  857 03c2 002A     		cmp	r2, #0
+ARM GAS  /tmp/ccj6lSJi.s 			page 17
+
+
  858 03c4 63D1     		bne	.L75
-ARM GAS  /tmp/ccI75xPw.s 			page 17
-
-
  859 03c6 2200     		movs	r2, r4
  860 03c8 2978     		ldrb	r1, [r5]
  861 03ca 3432     		adds	r2, r2, #52
@@ -1017,10 +1018,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  912 0430 5B68     		ldr	r3, [r3, #4]
  913 0432 2018     		adds	r0, r4, r0
  914 0434 FFF7FEFF 		bl	smtc_modem_crypto_payload_decrypt
+ARM GAS  /tmp/ccj6lSJi.s 			page 18
+
+
  915 0438 0028     		cmp	r0, #0
-ARM GAS  /tmp/ccI75xPw.s 			page 18
-
-
  916 043a 16D0     		beq	.L78
  917 043c 424B     		ldr	r3, .L123+4
  918 043e 1800     		movs	r0, r3
@@ -1077,10 +1078,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  969 04ac 0136     		adds	r6, r6, #1
  970 04ae FCE6     		b	.L84
  971              	.L87:
+ARM GAS  /tmp/ccj6lSJi.s 			page 19
+
+
  972 04b0 0128     		cmp	r0, #1
-ARM GAS  /tmp/ccI75xPw.s 			page 19
-
-
  973 04b2 23D1     		bne	.L89
  974 04b4 2900     		movs	r1, r5
  975 04b6 3800     		movs	r0, r7
@@ -1137,10 +1138,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  1026 052c 0FE7     		b	.L88
  1027              	.L53:
  1028 052e 1048     		ldr	r0, .L123+44
+ARM GAS  /tmp/ccj6lSJi.s 			page 20
+
+
  1029              	.L120:
-ARM GAS  /tmp/ccI75xPw.s 			page 20
-
-
  1030 0530 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  1031 0534 E1E5     		b	.L47
  1032              	.L49:
@@ -1154,20 +1155,20 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  1040              	.L124:
  1041              		.align	2
  1042              	.L123:
- 1043 0544 B0000000 		.word	.LC18
+ 1043 0544 B6000000 		.word	.LC18
  1044 0548 00000000 		.word	__func__.2
- 1045 054c EC000000 		.word	.LC21
- 1046 0550 09010000 		.word	.LC23
- 1047 0554 42010000 		.word	.LC25
- 1048 0558 50000000 		.word	.LC8
- 1049 055c 52000000 		.word	.LC10
+ 1045 054c F3000000 		.word	.LC21
+ 1046 0550 11010000 		.word	.LC23
+ 1047 0554 4B010000 		.word	.LC25
+ 1048 0558 52000000 		.word	.LC8
+ 1049 055c 55000000 		.word	.LC10
  1050 0560 BC040000 		.word	1212
  1051 0564 00000000 		.word	__func__.1
- 1052 0568 8D000000 		.word	.LC14
- 1053 056c A2010000 		.word	.LC32
- 1054 0570 D0010000 		.word	.LC34
- 1055 0574 E6010000 		.word	.LC36
- 1056 0578 0F020000 		.word	.LC38
+ 1052 0568 92000000 		.word	.LC14
+ 1053 056c AD010000 		.word	.LC32
+ 1054 0570 DC010000 		.word	.LC34
+ 1055 0574 F3010000 		.word	.LC36
+ 1056 0578 1D020000 		.word	.LC38
  1058              		.section	.rodata.smtc_ping_slot_compute_first_slot.str1.1,"aMS",%progbits,1
  1059              	.LC43:
  1060 0000 1B5B303B 		.ascii	"\033[0;31mERROR: -> Crypto error while getting clas"
@@ -1197,10 +1198,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  1077 0006 1022     		movs	r2, #16
  1078 0008 0193     		str	r3, [sp, #4]
  1079 000a 0600     		movs	r6, r0
+ARM GAS  /tmp/ccj6lSJi.s 			page 21
+
+
  1080 000c 0CAB     		add	r3, sp, #48
-ARM GAS  /tmp/ccI75xPw.s 			page 21
-
-
  1081 000e 0C00     		movs	r4, r1
  1082 0010 02A8     		add	r0, sp, #8
  1083 0012 0021     		movs	r1, #0
@@ -1247,8 +1248,8 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  1124 0072 C046     		.align	2
  1125              	.L130:
  1126 0074 00000000 		.word	__func__.0
- 1127 0078 EC000000 		.word	.LC21
- 1128 007c 8D000000 		.word	.LC14
+ 1127 0078 F3000000 		.word	.LC21
+ 1128 007c 92000000 		.word	.LC14
  1129 0080 00000000 		.word	.LC43
  1131              		.section	.text.smtc_ping_slot_init_after_beacon,"ax",%progbits
  1132              		.align	1
@@ -1257,10 +1258,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  1135              		.code	16
  1136              		.thumb_func
  1138              	smtc_ping_slot_init_after_beacon:
+ARM GAS  /tmp/ccj6lSJi.s 			page 22
+
+
  1139              		@ args = 8, pretend = 0, frame = 8
-ARM GAS  /tmp/ccI75xPw.s 			page 22
-
-
  1140              		@ frame_needed = 0, uses_anonymous_args = 0
  1141 0000 F0B5     		push	{r4, r5, r6, r7, lr}
  1142 0002 1E00     		movs	r6, r3
@@ -1317,10 +1318,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  1193 0064 6368     		ldr	r3, [r4, #4]
  1194 0066 3100     		movs	r1, r6
  1195 0068 0B9A     		ldr	r2, [sp, #44]
+ARM GAS  /tmp/ccj6lSJi.s 			page 23
+
+
  1196 006a FFF7FEFF 		bl	smtc_ping_slot_compute_first_slot
-ARM GAS  /tmp/ccI75xPw.s 			page 23
-
-
  1197 006e 6062     		str	r0, [r4, #36]
  1198 0070 2C68     		ldr	r4, [r5]
  1199 0072 0A21     		movs	r1, #10
@@ -1377,10 +1378,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  1252 002a 0AD1     		bne	.L144
  1253 002c 2933     		adds	r3, r3, #41
  1254 002e 1B78     		ldrb	r3, [r3]
+ARM GAS  /tmp/ccj6lSJi.s 			page 24
+
+
  1255 0030 002B     		cmp	r3, #0
-ARM GAS  /tmp/ccI75xPw.s 			page 24
-
-
  1256 0032 06D1     		bne	.L144
  1257 0034 3900     		movs	r1, r7
  1258 0036 2868     		ldr	r0, [r5]
@@ -1437,10 +1438,10 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  1311 001c 1A75     		strb	r2, [r3, #20]
  1312              	.L152:
  1313              		@ sp needed
+ARM GAS  /tmp/ccj6lSJi.s 			page 25
+
+
  1314 001e 7047     		bx	lr
-ARM GAS  /tmp/ccI75xPw.s 			page 25
-
-
  1316              		.section	.text.smtc_ping_slot_multicast_b_stop_all_sessions,"ax",%progbits
  1317              		.align	1
  1318              		.global	smtc_ping_slot_multicast_b_stop_all_sessions
@@ -1497,929 +1498,934 @@ ARM GAS  /tmp/ccI75xPw.s 			page 1
  1372              	.L157:
  1373              		@ sp needed
  1374 0020 70BD     		pop	{r4, r5, r6, pc}
+ARM GAS  /tmp/ccj6lSJi.s 			page 26
+
+
  1376              		.section	.rodata.smtc_ping_slot_start.str1.1,"aMS",%progbits,1
-ARM GAS  /tmp/ccI75xPw.s 			page 26
-
-
  1377              	.LC50:
  1378 0000 1B5B303B 		.ascii	"\033[0;31mERROR: -> ping_slot_obj bad initializatio"
  1378      33316D45 
  1378      52524F52 
  1378      3A202D3E 
  1378      2070696E 
- 1379 0030 6E200A00 		.ascii	"n \012\000"
+ 1379 0030 6E200A0D 		.ascii	"n \012\015\000"
+ 1379      00
  1380              	.LC52:
- 1381 0034 1B5B303B 		.ascii	"\033[0;33mWARN: Ping Slot not started, time sync is"
+ 1381 0035 1B5B303B 		.ascii	"\033[0;33mWARN: Ping Slot not started, time sync is"
  1381      33336D57 
  1381      41524E3A 
  1381      2050696E 
  1381      6720536C 
- 1382 0064 206E6F74 		.ascii	" not valid\012\000"
+ 1382 0065 206E6F74 		.ascii	" not valid\012\015\000"
  1382      2076616C 
- 1382      69640A00 
+ 1382      69640A0D 
+ 1382      00
  1383              	.LC54:
- 1384 0070 1B5B303B 		.ascii	"\033[0;33mWARN: Ping Slot not started, PinSlotInfoR"
+ 1384 0072 1B5B303B 		.ascii	"\033[0;33mWARN: Ping Slot not started, PinSlotInfoR"
  1384      33336D57 
  1384      41524E3A 
  1384      2050696E 
  1384      6720536C 
- 1385 00a0 65712069 		.ascii	"eq is needed\012\000"
+ 1385 00a2 65712069 		.ascii	"eq is needed\012\015\000"
  1385      73206E65 
  1385      65646564 
- 1385      0A00
+ 1385      0A0D00
  1386              	.LC56:
- 1387 00ae 1B5B303B 		.ascii	"\033[0;33mWARN: Ping Slot unicast not started\012\000"
+ 1387 00b1 1B5B303B 		.ascii	"\033[0;33mWARN: Ping Slot unicast not started\012\015"
  1387      33336D57 
  1387      41524E3A 
  1387      2050696E 
  1387      6720536C 
- 1388              	.LC58:
- 1389 00da 50696E67 		.ascii	"Ping Slot no more session\012\000"
- 1389      20536C6F 
- 1389      74206E6F 
- 1389      206D6F72 
- 1389      65207365 
- 1390              	.LC60:
- 1391 00f5 1B5B303B 		.ascii	"\033[0;31mERROR: -> MODULATION NOT SUPPORTED\012\000"
- 1391      33316D45 
- 1391      52524F52 
- 1391      3A202D3E 
- 1391      204D4F44 
- 1392              	.LC62:
- 1393 0120 1B5B303B 		.ascii	"\033[0;31mERROR: ping_slot_obj START ERROR \012\000"
- 1393      33316D45 
- 1393      52524F52 
- 1393      3A207069 
- 1393      6E675F73 
- 1394              	.LC64:
- 1395 014a 70696E67 		.ascii	"ping_slot_obj devaddr:%x START at %d, freq:%u, dr:%"
- 1395      5F736C6F 
- 1395      745F6F62 
- 1395      6A206465 
- 1395      76616464 
- 1396 017d 642C2050 		.ascii	"d, PingNb:%d\012\000"
-ARM GAS  /tmp/ccI75xPw.s 			page 27
+ 1388 00dd 00       		.ascii	"\000"
+ 1389              	.LC58:
+ 1390 00de 50696E67 		.ascii	"Ping Slot no more session\012\015\000"
+ 1390      20536C6F 
+ 1390      74206E6F 
+ 1390      206D6F72 
+ 1390      65207365 
+ 1391              	.LC60:
+ 1392 00fa 1B5B303B 		.ascii	"\033[0;31mERROR: -> MODULATION NOT SUPPORTED\012\015"
+ 1392      33316D45 
+ 1392      52524F52 
+ 1392      3A202D3E 
+ 1392      204D4F44 
+ 1393 0125 00       		.ascii	"\000"
+ 1394              	.LC62:
+ 1395 0126 1B5B303B 		.ascii	"\033[0;31mERROR: ping_slot_obj START ERROR \012\015"
+ 1395      33316D45 
+ 1395      52524F52 
+ 1395      3A207069 
+ 1395      6E675F73 
+ 1396 0150 00       		.ascii	"\000"
+ 1397              	.LC64:
+ARM GAS  /tmp/ccj6lSJi.s 			page 27
 
 
- 1396      696E674E 
- 1396      623A2564 
- 1396      0A00
- 1397              		.section	.text.smtc_ping_slot_start,"ax",%progbits
- 1398              		.align	1
- 1399              		.global	smtc_ping_slot_start
- 1400              		.syntax unified
- 1401              		.code	16
- 1402              		.thumb_func
- 1404              	smtc_ping_slot_start:
- 1405              		@ args = 0, pretend = 0, frame = 248
- 1406              		@ frame_needed = 0, uses_anonymous_args = 0
- 1407 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 1408 0002 0369     		ldr	r3, [r0, #16]
- 1409 0004 0400     		movs	r4, r0
- 1410 0006 C3B0     		sub	sp, sp, #268
- 1411 0008 002B     		cmp	r3, #0
- 1412 000a 16D1     		bne	.L163
- 1413 000c 8C4D     		ldr	r5, .L223
- 1414 000e 2800     		movs	r0, r5
- 1415 0010 FFF7FEFF 		bl	smtc_modem_hal_store_crashlog
- 1416 0014 0120     		movs	r0, #1
- 1417 0016 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
- 1418 001a 2900     		movs	r1, r5
- 1419 001c 8948     		ldr	r0, .L223+4
- 1420 001e FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1421 0022 894D     		ldr	r5, .L223+8
- 1422 0024 2800     		movs	r0, r5
- 1423 0026 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1424 002a 8848     		ldr	r0, .L223+12
- 1425 002c FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1426 0030 2800     		movs	r0, r5
- 1427 0032 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1428 0036 FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
- 1429              	.L163:
- 1430 003a 2068     		ldr	r0, [r4]
- 1431 003c FFF7FEFF 		bl	lr1mac_core_is_time_valid
- 1432 0040 0028     		cmp	r0, #0
- 1433 0042 0AD1     		bne	.L164
- 1434 0044 2000     		movs	r0, r4
- 1435 0046 FFF7FEFF 		bl	smtc_ping_slot_stop
- 1436 004a 8148     		ldr	r0, .L223+16
- 1437              	.L222:
- 1438 004c FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1439 0050 7D48     		ldr	r0, .L223+8
- 1440              	.L221:
- 1441 0052 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1442              	.L162:
- 1443 0056 43B0     		add	sp, sp, #268
- 1444              		@ sp needed
- 1445 0058 F0BD     		pop	{r4, r5, r6, r7, pc}
- 1446              	.L164:
- 1447 005a 2268     		ldr	r2, [r4]
- 1448 005c 7D4B     		ldr	r3, .L223+20
- 1449 005e D35C     		ldrb	r3, [r2, r3]
- 1450 0060 032B     		cmp	r3, #3
- 1451 0062 04D0     		beq	.L166
-ARM GAS  /tmp/ccI75xPw.s 			page 28
+ 1398 0151 70696E67 		.ascii	"ping_slot_obj devaddr:%x START at %d, freq:%u, dr:%"
+ 1398      5F736C6F 
+ 1398      745F6F62 
+ 1398      6A206465 
+ 1398      76616464 
+ 1399 0184 642C2050 		.ascii	"d, PingNb:%d\012\015\000"
+ 1399      696E674E 
+ 1399      623A2564 
+ 1399      0A0D00
+ 1400              		.section	.text.smtc_ping_slot_start,"ax",%progbits
+ 1401              		.align	1
+ 1402              		.global	smtc_ping_slot_start
+ 1403              		.syntax unified
+ 1404              		.code	16
+ 1405              		.thumb_func
+ 1407              	smtc_ping_slot_start:
+ 1408              		@ args = 0, pretend = 0, frame = 248
+ 1409              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1410 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1411 0002 0369     		ldr	r3, [r0, #16]
+ 1412 0004 0400     		movs	r4, r0
+ 1413 0006 C3B0     		sub	sp, sp, #268
+ 1414 0008 002B     		cmp	r3, #0
+ 1415 000a 16D1     		bne	.L163
+ 1416 000c 8C4D     		ldr	r5, .L223
+ 1417 000e 2800     		movs	r0, r5
+ 1418 0010 FFF7FEFF 		bl	smtc_modem_hal_store_crashlog
+ 1419 0014 0120     		movs	r0, #1
+ 1420 0016 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
+ 1421 001a 2900     		movs	r1, r5
+ 1422 001c 8948     		ldr	r0, .L223+4
+ 1423 001e FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1424 0022 894D     		ldr	r5, .L223+8
+ 1425 0024 2800     		movs	r0, r5
+ 1426 0026 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1427 002a 8848     		ldr	r0, .L223+12
+ 1428 002c FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1429 0030 2800     		movs	r0, r5
+ 1430 0032 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1431 0036 FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
+ 1432              	.L163:
+ 1433 003a 2068     		ldr	r0, [r4]
+ 1434 003c FFF7FEFF 		bl	lr1mac_core_is_time_valid
+ 1435 0040 0028     		cmp	r0, #0
+ 1436 0042 0AD1     		bne	.L164
+ 1437 0044 2000     		movs	r0, r4
+ 1438 0046 FFF7FEFF 		bl	smtc_ping_slot_stop
+ 1439 004a 8148     		ldr	r0, .L223+16
+ 1440              	.L222:
+ 1441 004c FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1442 0050 7D48     		ldr	r0, .L223+8
+ 1443              	.L221:
+ 1444 0052 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1445              	.L162:
+ 1446 0056 43B0     		add	sp, sp, #268
+ 1447              		@ sp needed
+ 1448 0058 F0BD     		pop	{r4, r5, r6, r7, pc}
+ARM GAS  /tmp/ccj6lSJi.s 			page 28
 
 
- 1452 0064 2000     		movs	r0, r4
- 1453 0066 FFF7FEFF 		bl	smtc_ping_slot_stop
- 1454 006a 7B48     		ldr	r0, .L223+24
- 1455 006c EEE7     		b	.L222
- 1456              	.L166:
- 1457 006e 8422     		movs	r2, #132
- 1458 0070 0021     		movs	r1, #0
- 1459 0072 21A8     		add	r0, sp, #132
- 1460 0074 FFF7FEFF 		bl	memset
- 1461 0078 1C22     		movs	r2, #28
- 1462 007a 0021     		movs	r1, #0
- 1463 007c 0FA8     		add	r0, sp, #60
- 1464 007e FFF7FEFF 		bl	memset
- 1465              	.L193:
- 1466 0082 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
- 1467 0086 2500     		movs	r5, r4
- 1468 0088 0100     		movs	r1, r0
- 1469 008a 0590     		str	r0, [sp, #20]
- 1470 008c FC35     		adds	r5, r5, #252
- 1471 008e 2000     		movs	r0, r4
- 1472 0090 FFF7FEFF 		bl	smtc_ping_slot_compute_next_ping_offset_time
- 1473 0094 696F     		ldr	r1, [r5, #116]
- 1474 0096 0B78     		ldrb	r3, [r1]
- 1475 0098 002B     		cmp	r3, #0
- 1476 009a 4AD0     		beq	.L167
- 1477 009c 2068     		ldr	r0, [r4]
- 1478 009e 0AAA     		add	r2, sp, #40
- 1479 00a0 C36E     		ldr	r3, [r0, #108]
- 1480 00a2 4B60     		str	r3, [r1, #4]
- 1481 00a4 0BAB     		add	r3, sp, #44
- 1482 00a6 096A     		ldr	r1, [r1, #32]
- 1483 00a8 FFF7FEFF 		bl	lr1mac_core_convert_rtc_to_gps_epoch_time
- 1484 00ac 2068     		ldr	r0, [r4]
- 1485 00ae 6B4B     		ldr	r3, .L223+28
- 1486 00b0 C358     		ldr	r3, [r0, r3]
- 1487 00b2 002B     		cmp	r3, #0
- 1488 00b4 05D1     		bne	.L168
- 1489 00b6 6B6F     		ldr	r3, [r5, #116]
- 1490 00b8 0A99     		ldr	r1, [sp, #40]
- 1491 00ba 5A68     		ldr	r2, [r3, #4]
- 1492 00bc FFF7FEFF 		bl	smtc_real_get_ping_slot_frequency
- 1493 00c0 0300     		movs	r3, r0
- 1494              	.L168:
- 1495 00c2 AA21     		movs	r1, #170
- 1496 00c4 6A6F     		ldr	r2, [r5, #116]
- 1497 00c6 C900     		lsls	r1, r1, #3
- 1498 00c8 1361     		str	r3, [r2, #16]
- 1499 00ca 2368     		ldr	r3, [r4]
- 1500 00cc 595C     		ldrb	r1, [r3, r1]
- 1501 00ce 7733     		adds	r3, r3, #119
- 1502 00d0 1175     		strb	r1, [r2, #20]
- 1503 00d2 1A78     		ldrb	r2, [r3]
- 1504 00d4 002A     		cmp	r2, #0
- 1505 00d6 01D1     		bne	.L169
- 1506 00d8 0132     		adds	r2, r2, #1
- 1507 00da 1A70     		strb	r2, [r3]
- 1508              	.L169:
-ARM GAS  /tmp/ccI75xPw.s 			page 29
+ 1449              	.L164:
+ 1450 005a 2268     		ldr	r2, [r4]
+ 1451 005c 7D4B     		ldr	r3, .L223+20
+ 1452 005e D35C     		ldrb	r3, [r2, r3]
+ 1453 0060 032B     		cmp	r3, #3
+ 1454 0062 04D0     		beq	.L166
+ 1455 0064 2000     		movs	r0, r4
+ 1456 0066 FFF7FEFF 		bl	smtc_ping_slot_stop
+ 1457 006a 7B48     		ldr	r0, .L223+24
+ 1458 006c EEE7     		b	.L222
+ 1459              	.L166:
+ 1460 006e 8422     		movs	r2, #132
+ 1461 0070 0021     		movs	r1, #0
+ 1462 0072 21A8     		add	r0, sp, #132
+ 1463 0074 FFF7FEFF 		bl	memset
+ 1464 0078 1C22     		movs	r2, #28
+ 1465 007a 0021     		movs	r1, #0
+ 1466 007c 0FA8     		add	r0, sp, #60
+ 1467 007e FFF7FEFF 		bl	memset
+ 1468              	.L193:
+ 1469 0082 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 1470 0086 2500     		movs	r5, r4
+ 1471 0088 0100     		movs	r1, r0
+ 1472 008a 0590     		str	r0, [sp, #20]
+ 1473 008c FC35     		adds	r5, r5, #252
+ 1474 008e 2000     		movs	r0, r4
+ 1475 0090 FFF7FEFF 		bl	smtc_ping_slot_compute_next_ping_offset_time
+ 1476 0094 696F     		ldr	r1, [r5, #116]
+ 1477 0096 0B78     		ldrb	r3, [r1]
+ 1478 0098 002B     		cmp	r3, #0
+ 1479 009a 4AD0     		beq	.L167
+ 1480 009c 2068     		ldr	r0, [r4]
+ 1481 009e 0AAA     		add	r2, sp, #40
+ 1482 00a0 C36E     		ldr	r3, [r0, #108]
+ 1483 00a2 4B60     		str	r3, [r1, #4]
+ 1484 00a4 0BAB     		add	r3, sp, #44
+ 1485 00a6 096A     		ldr	r1, [r1, #32]
+ 1486 00a8 FFF7FEFF 		bl	lr1mac_core_convert_rtc_to_gps_epoch_time
+ 1487 00ac 2068     		ldr	r0, [r4]
+ 1488 00ae 6B4B     		ldr	r3, .L223+28
+ 1489 00b0 C358     		ldr	r3, [r0, r3]
+ 1490 00b2 002B     		cmp	r3, #0
+ 1491 00b4 05D1     		bne	.L168
+ 1492 00b6 6B6F     		ldr	r3, [r5, #116]
+ 1493 00b8 0A99     		ldr	r1, [sp, #40]
+ 1494 00ba 5A68     		ldr	r2, [r3, #4]
+ 1495 00bc FFF7FEFF 		bl	smtc_real_get_ping_slot_frequency
+ 1496 00c0 0300     		movs	r3, r0
+ 1497              	.L168:
+ 1498 00c2 AA21     		movs	r1, #170
+ 1499 00c4 6A6F     		ldr	r2, [r5, #116]
+ 1500 00c6 C900     		lsls	r1, r1, #3
+ 1501 00c8 1361     		str	r3, [r2, #16]
+ 1502 00ca 2368     		ldr	r3, [r4]
+ 1503 00cc 595C     		ldrb	r1, [r3, r1]
+ 1504 00ce 7733     		adds	r3, r3, #119
+ 1505 00d0 1175     		strb	r1, [r2, #20]
+ARM GAS  /tmp/ccj6lSJi.s 			page 29
 
 
- 1509 00dc A023     		movs	r3, #160
- 1510 00de 0522     		movs	r2, #5
- 1511 00e0 2000     		movs	r0, r4
- 1512 00e2 5B00     		lsls	r3, r3, #1
- 1513 00e4 C625     		movs	r5, #198
- 1514 00e6 C226     		movs	r6, #194
- 1515 00e8 E254     		strb	r2, [r4, r3]
- 1516 00ea 0023     		movs	r3, #0
- 1517 00ec 7130     		adds	r0, r0, #113
- 1518 00ee FF30     		adds	r0, r0, #255
- 1519 00f0 6D00     		lsls	r5, r5, #1
- 1520 00f2 7600     		lsls	r6, r6, #1
- 1521              	.L172:
- 1522 00f4 0268     		ldr	r2, [r0]
- 1523 00f6 1178     		ldrb	r1, [r2]
- 1524 00f8 0029     		cmp	r1, #0
- 1525 00fa 1CD0     		beq	.L170
- 1526 00fc 116A     		ldr	r1, [r2, #32]
- 1527 00fe A759     		ldr	r7, [r4, r6]
- 1528 0100 6259     		ldr	r2, [r4, r5]
- 1529 0102 D21B     		subs	r2, r2, r7
- 1530 0104 5218     		adds	r2, r2, r1
- 1531 0106 002A     		cmp	r2, #0
- 1532 0108 15DC     		bgt	.L170
- 1533 010a 059A     		ldr	r2, [sp, #20]
- 1534 010c 891A     		subs	r1, r1, r2
- 1535 010e 0029     		cmp	r1, #0
- 1536 0110 11DD     		ble	.L170
- 1537 0112 A022     		movs	r2, #160
- 1538 0114 5200     		lsls	r2, r2, #1
- 1539 0116 A354     		strb	r3, [r4, r2]
- 1540              	.L171:
- 1541 0118 A023     		movs	r3, #160
- 1542 011a 5B00     		lsls	r3, r3, #1
- 1543 011c E55C     		ldrb	r5, [r4, r3]
- 1544 011e 052D     		cmp	r5, #5
- 1545 0120 17D1     		bne	.L173
- 1546              	.L187:
- 1547 0122 A025     		movs	r5, #160
- 1548 0124 6D00     		lsls	r5, r5, #1
- 1549 0126 635D     		ldrb	r3, [r4, r5]
- 1550 0128 052B     		cmp	r3, #5
- 1551 012a 00D0     		beq	.LCB1585
- 1552 012c 9CE0     		b	.L214	@long jump
- 1553              	.LCB1585:
- 1554 012e 4C48     		ldr	r0, .L223+32
- 1555 0130 8FE7     		b	.L221
- 1556              	.L167:
- 1557 0132 4C48     		ldr	r0, .L223+36
- 1558 0134 8AE7     		b	.L222
- 1559              	.L170:
- 1560 0136 0133     		adds	r3, r3, #1
- 1561 0138 DBB2     		uxtb	r3, r3
- 1562 013a 0430     		adds	r0, r0, #4
- 1563 013c 052B     		cmp	r3, #5
- 1564 013e D9D1     		bne	.L172
- 1565 0140 EAE7     		b	.L171
-ARM GAS  /tmp/ccI75xPw.s 			page 30
+ 1506 00d2 1A78     		ldrb	r2, [r3]
+ 1507 00d4 002A     		cmp	r2, #0
+ 1508 00d6 01D1     		bne	.L169
+ 1509 00d8 0132     		adds	r2, r2, #1
+ 1510 00da 1A70     		strb	r2, [r3]
+ 1511              	.L169:
+ 1512 00dc A023     		movs	r3, #160
+ 1513 00de 0522     		movs	r2, #5
+ 1514 00e0 2000     		movs	r0, r4
+ 1515 00e2 5B00     		lsls	r3, r3, #1
+ 1516 00e4 C625     		movs	r5, #198
+ 1517 00e6 C226     		movs	r6, #194
+ 1518 00e8 E254     		strb	r2, [r4, r3]
+ 1519 00ea 0023     		movs	r3, #0
+ 1520 00ec 7130     		adds	r0, r0, #113
+ 1521 00ee FF30     		adds	r0, r0, #255
+ 1522 00f0 6D00     		lsls	r5, r5, #1
+ 1523 00f2 7600     		lsls	r6, r6, #1
+ 1524              	.L172:
+ 1525 00f4 0268     		ldr	r2, [r0]
+ 1526 00f6 1178     		ldrb	r1, [r2]
+ 1527 00f8 0029     		cmp	r1, #0
+ 1528 00fa 1CD0     		beq	.L170
+ 1529 00fc 116A     		ldr	r1, [r2, #32]
+ 1530 00fe A759     		ldr	r7, [r4, r6]
+ 1531 0100 6259     		ldr	r2, [r4, r5]
+ 1532 0102 D21B     		subs	r2, r2, r7
+ 1533 0104 5218     		adds	r2, r2, r1
+ 1534 0106 002A     		cmp	r2, #0
+ 1535 0108 15DC     		bgt	.L170
+ 1536 010a 059A     		ldr	r2, [sp, #20]
+ 1537 010c 891A     		subs	r1, r1, r2
+ 1538 010e 0029     		cmp	r1, #0
+ 1539 0110 11DD     		ble	.L170
+ 1540 0112 A022     		movs	r2, #160
+ 1541 0114 5200     		lsls	r2, r2, #1
+ 1542 0116 A354     		strb	r3, [r4, r2]
+ 1543              	.L171:
+ 1544 0118 A023     		movs	r3, #160
+ 1545 011a 5B00     		lsls	r3, r3, #1
+ 1546 011c E55C     		ldrb	r5, [r4, r3]
+ 1547 011e 052D     		cmp	r5, #5
+ 1548 0120 17D1     		bne	.L173
+ 1549              	.L187:
+ 1550 0122 A025     		movs	r5, #160
+ 1551 0124 6D00     		lsls	r5, r5, #1
+ 1552 0126 635D     		ldrb	r3, [r4, r5]
+ 1553 0128 052B     		cmp	r3, #5
+ 1554 012a 00D0     		beq	.LCB1585
+ 1555 012c 9CE0     		b	.L214	@long jump
+ 1556              	.LCB1585:
+ 1557 012e 4C48     		ldr	r0, .L223+32
+ 1558 0130 8FE7     		b	.L221
+ 1559              	.L167:
+ 1560 0132 4C48     		ldr	r0, .L223+36
+ 1561 0134 8AE7     		b	.L222
+ 1562              	.L170:
+ARM GAS  /tmp/ccj6lSJi.s 			page 30
 
 
- 1566              	.L181:
- 1567 0142 8642     		cmp	r6, r0
- 1568 0144 03D1     		bne	.L177
- 1569 0146 4968     		ldr	r1, [r1, #4]
- 1570 0148 5B68     		ldr	r3, [r3, #4]
- 1571 014a 9942     		cmp	r1, r3
- 1572 014c 32D3     		bcc	.L219
- 1573              	.L177:
- 1574 014e 0135     		adds	r5, r5, #1
- 1575 0150 EDB2     		uxtb	r5, r5
- 1576              	.L173:
- 1577 0152 A023     		movs	r3, #160
- 1578 0154 5B00     		lsls	r3, r3, #1
- 1579 0156 E25C     		ldrb	r2, [r4, r3]
- 1580 0158 042D     		cmp	r5, #4
- 1581 015a E2D8     		bhi	.L187
- 1582 015c 9542     		cmp	r5, r2
- 1583 015e F6D0     		beq	.L177
- 1584 0160 AB00     		lsls	r3, r5, #2
- 1585 0162 E318     		adds	r3, r4, r3
- 1586 0164 1F00     		movs	r7, r3
- 1587 0166 FC37     		adds	r7, r7, #252
- 1588 0168 0793     		str	r3, [sp, #28]
- 1589 016a 7B6F     		ldr	r3, [r7, #116]
- 1590 016c 1978     		ldrb	r1, [r3]
- 1591 016e 0029     		cmp	r1, #0
- 1592 0170 EDD0     		beq	.L177
- 1593 0172 1E6A     		ldr	r6, [r3, #32]
- 1594 0174 0599     		ldr	r1, [sp, #20]
- 1595 0176 711A     		subs	r1, r6, r1
- 1596 0178 02D5     		bpl	.L179
- 1597 017a 997F     		ldrb	r1, [r3, #30]
- 1598 017c 0029     		cmp	r1, #0
- 1599 017e E6D0     		beq	.L177
- 1600              	.L179:
- 1601 0180 C621     		movs	r1, #198
- 1602 0182 C220     		movs	r0, #194
- 1603 0184 4900     		lsls	r1, r1, #1
- 1604 0186 4000     		lsls	r0, r0, #1
- 1605 0188 6158     		ldr	r1, [r4, r1]
- 1606 018a 2058     		ldr	r0, [r4, r0]
- 1607 018c 091A     		subs	r1, r1, r0
- 1608 018e F142     		cmn	r1, r6
- 1609 0190 DDD5     		bpl	.L177
- 1610 0192 5C32     		adds	r2, r2, #92
- 1611 0194 9200     		lsls	r2, r2, #2
- 1612 0196 1159     		ldr	r1, [r2, r4]
- 1613 0198 0A6A     		ldr	r2, [r1, #32]
- 1614 019a 0692     		str	r2, [sp, #24]
- 1615 019c 9642     		cmp	r6, r2
- 1616 019e 0BD1     		bne	.L180
- 1617 01a0 0A00     		movs	r2, r1
- 1618 01a2 2832     		adds	r2, r2, #40
- 1619 01a4 1678     		ldrb	r6, [r2]
- 1620 01a6 1A00     		movs	r2, r3
- 1621 01a8 2832     		adds	r2, r2, #40
- 1622 01aa 1078     		ldrb	r0, [r2]
-ARM GAS  /tmp/ccI75xPw.s 			page 31
+ 1563 0136 0133     		adds	r3, r3, #1
+ 1564 0138 DBB2     		uxtb	r3, r3
+ 1565 013a 0430     		adds	r0, r0, #4
+ 1566 013c 052B     		cmp	r3, #5
+ 1567 013e D9D1     		bne	.L172
+ 1568 0140 EAE7     		b	.L171
+ 1569              	.L181:
+ 1570 0142 8642     		cmp	r6, r0
+ 1571 0144 03D1     		bne	.L177
+ 1572 0146 4968     		ldr	r1, [r1, #4]
+ 1573 0148 5B68     		ldr	r3, [r3, #4]
+ 1574 014a 9942     		cmp	r1, r3
+ 1575 014c 32D3     		bcc	.L219
+ 1576              	.L177:
+ 1577 014e 0135     		adds	r5, r5, #1
+ 1578 0150 EDB2     		uxtb	r5, r5
+ 1579              	.L173:
+ 1580 0152 A023     		movs	r3, #160
+ 1581 0154 5B00     		lsls	r3, r3, #1
+ 1582 0156 E25C     		ldrb	r2, [r4, r3]
+ 1583 0158 042D     		cmp	r5, #4
+ 1584 015a E2D8     		bhi	.L187
+ 1585 015c 9542     		cmp	r5, r2
+ 1586 015e F6D0     		beq	.L177
+ 1587 0160 AB00     		lsls	r3, r5, #2
+ 1588 0162 E318     		adds	r3, r4, r3
+ 1589 0164 1F00     		movs	r7, r3
+ 1590 0166 FC37     		adds	r7, r7, #252
+ 1591 0168 0793     		str	r3, [sp, #28]
+ 1592 016a 7B6F     		ldr	r3, [r7, #116]
+ 1593 016c 1978     		ldrb	r1, [r3]
+ 1594 016e 0029     		cmp	r1, #0
+ 1595 0170 EDD0     		beq	.L177
+ 1596 0172 1E6A     		ldr	r6, [r3, #32]
+ 1597 0174 0599     		ldr	r1, [sp, #20]
+ 1598 0176 711A     		subs	r1, r6, r1
+ 1599 0178 02D5     		bpl	.L179
+ 1600 017a 997F     		ldrb	r1, [r3, #30]
+ 1601 017c 0029     		cmp	r1, #0
+ 1602 017e E6D0     		beq	.L177
+ 1603              	.L179:
+ 1604 0180 C621     		movs	r1, #198
+ 1605 0182 C220     		movs	r0, #194
+ 1606 0184 4900     		lsls	r1, r1, #1
+ 1607 0186 4000     		lsls	r0, r0, #1
+ 1608 0188 6158     		ldr	r1, [r4, r1]
+ 1609 018a 2058     		ldr	r0, [r4, r0]
+ 1610 018c 091A     		subs	r1, r1, r0
+ 1611 018e F142     		cmn	r1, r6
+ 1612 0190 DDD5     		bpl	.L177
+ 1613 0192 5C32     		adds	r2, r2, #92
+ 1614 0194 9200     		lsls	r2, r2, #2
+ 1615 0196 1159     		ldr	r1, [r2, r4]
+ 1616 0198 0A6A     		ldr	r2, [r1, #32]
+ 1617 019a 0692     		str	r2, [sp, #24]
+ 1618 019c 9642     		cmp	r6, r2
+ 1619 019e 0BD1     		bne	.L180
+ARM GAS  /tmp/ccj6lSJi.s 			page 31
 
 
- 1623 01ac A022     		movs	r2, #160
- 1624 01ae 5200     		lsls	r2, r2, #1
- 1625 01b0 8642     		cmp	r6, r0
- 1626 01b2 C6D2     		bcs	.L181
- 1627              	.L219:
- 1628 01b4 A554     		strb	r5, [r4, r2]
- 1629 01b6 CAE7     		b	.L177
- 1630              	.L180:
- 1631 01b8 069A     		ldr	r2, [sp, #24]
- 1632 01ba 2068     		ldr	r0, [r4]
- 1633 01bc B21A     		subs	r2, r6, r2
- 1634 01be 1CD5     		bpl	.L182
- 1635 01c0 1A7D     		ldrb	r2, [r3, #20]
- 1636 01c2 D98A     		ldrh	r1, [r3, #22]
- 1637 01c4 FFF7FEFF 		bl	smtc_ping_slot_get_duration_timeout_ms.isra.0
- 1638 01c8 A022     		movs	r2, #160
- 1639 01ca 5200     		lsls	r2, r2, #1
- 1640 01cc A35C     		ldrb	r3, [r4, r2]
- 1641 01ce 5C33     		adds	r3, r3, #92
- 1642 01d0 9B00     		lsls	r3, r3, #2
- 1643 01d2 1B59     		ldr	r3, [r3, r4]
- 1644 01d4 196A     		ldr	r1, [r3, #32]
- 1645 01d6 761A     		subs	r6, r6, r1
- 1646 01d8 C642     		cmn	r6, r0
- 1647 01da EBD4     		bmi	.L219
- 1648 01dc 1900     		movs	r1, r3
- 1649 01de 2831     		adds	r1, r1, #40
- 1650 01e0 0E78     		ldrb	r6, [r1]
- 1651 01e2 796F     		ldr	r1, [r7, #116]
- 1652 01e4 0800     		movs	r0, r1
- 1653 01e6 2830     		adds	r0, r0, #40
- 1654 01e8 0078     		ldrb	r0, [r0]
- 1655 01ea 8642     		cmp	r6, r0
- 1656 01ec E2D3     		bcc	.L219
- 1657 01ee AED1     		bne	.L177
- 1658 01f0 5868     		ldr	r0, [r3, #4]
- 1659 01f2 4B68     		ldr	r3, [r1, #4]
- 1660 01f4 9842     		cmp	r0, r3
- 1661 01f6 AAD2     		bcs	.L177
- 1662 01f8 DCE7     		b	.L219
- 1663              	.L182:
- 1664 01fa 0A7D     		ldrb	r2, [r1, #20]
- 1665 01fc C98A     		ldrh	r1, [r1, #22]
- 1666 01fe FFF7FEFF 		bl	smtc_ping_slot_get_duration_timeout_ms.isra.0
- 1667 0202 079B     		ldr	r3, [sp, #28]
- 1668 0204 0699     		ldr	r1, [sp, #24]
- 1669 0206 FC33     		adds	r3, r3, #252
- 1670 0208 5A6F     		ldr	r2, [r3, #116]
- 1671 020a 136A     		ldr	r3, [r2, #32]
- 1672 020c CF1A     		subs	r7, r1, r3
- 1673 020e C742     		cmn	r7, r0
- 1674 0210 9DD4     		bmi	.L177
- 1675 0212 A021     		movs	r1, #160
- 1676 0214 4900     		lsls	r1, r1, #1
- 1677 0216 635C     		ldrb	r3, [r4, r1]
- 1678 0218 5C33     		adds	r3, r3, #92
- 1679 021a 9B00     		lsls	r3, r3, #2
-ARM GAS  /tmp/ccI75xPw.s 			page 32
+ 1620 01a0 0A00     		movs	r2, r1
+ 1621 01a2 2832     		adds	r2, r2, #40
+ 1622 01a4 1678     		ldrb	r6, [r2]
+ 1623 01a6 1A00     		movs	r2, r3
+ 1624 01a8 2832     		adds	r2, r2, #40
+ 1625 01aa 1078     		ldrb	r0, [r2]
+ 1626 01ac A022     		movs	r2, #160
+ 1627 01ae 5200     		lsls	r2, r2, #1
+ 1628 01b0 8642     		cmp	r6, r0
+ 1629 01b2 C6D2     		bcs	.L181
+ 1630              	.L219:
+ 1631 01b4 A554     		strb	r5, [r4, r2]
+ 1632 01b6 CAE7     		b	.L177
+ 1633              	.L180:
+ 1634 01b8 069A     		ldr	r2, [sp, #24]
+ 1635 01ba 2068     		ldr	r0, [r4]
+ 1636 01bc B21A     		subs	r2, r6, r2
+ 1637 01be 1CD5     		bpl	.L182
+ 1638 01c0 1A7D     		ldrb	r2, [r3, #20]
+ 1639 01c2 D98A     		ldrh	r1, [r3, #22]
+ 1640 01c4 FFF7FEFF 		bl	smtc_ping_slot_get_duration_timeout_ms.isra.0
+ 1641 01c8 A022     		movs	r2, #160
+ 1642 01ca 5200     		lsls	r2, r2, #1
+ 1643 01cc A35C     		ldrb	r3, [r4, r2]
+ 1644 01ce 5C33     		adds	r3, r3, #92
+ 1645 01d0 9B00     		lsls	r3, r3, #2
+ 1646 01d2 1B59     		ldr	r3, [r3, r4]
+ 1647 01d4 196A     		ldr	r1, [r3, #32]
+ 1648 01d6 761A     		subs	r6, r6, r1
+ 1649 01d8 C642     		cmn	r6, r0
+ 1650 01da EBD4     		bmi	.L219
+ 1651 01dc 1900     		movs	r1, r3
+ 1652 01de 2831     		adds	r1, r1, #40
+ 1653 01e0 0E78     		ldrb	r6, [r1]
+ 1654 01e2 796F     		ldr	r1, [r7, #116]
+ 1655 01e4 0800     		movs	r0, r1
+ 1656 01e6 2830     		adds	r0, r0, #40
+ 1657 01e8 0078     		ldrb	r0, [r0]
+ 1658 01ea 8642     		cmp	r6, r0
+ 1659 01ec E2D3     		bcc	.L219
+ 1660 01ee AED1     		bne	.L177
+ 1661 01f0 5868     		ldr	r0, [r3, #4]
+ 1662 01f2 4B68     		ldr	r3, [r1, #4]
+ 1663 01f4 9842     		cmp	r0, r3
+ 1664 01f6 AAD2     		bcs	.L177
+ 1665 01f8 DCE7     		b	.L219
+ 1666              	.L182:
+ 1667 01fa 0A7D     		ldrb	r2, [r1, #20]
+ 1668 01fc C98A     		ldrh	r1, [r1, #22]
+ 1669 01fe FFF7FEFF 		bl	smtc_ping_slot_get_duration_timeout_ms.isra.0
+ 1670 0202 079B     		ldr	r3, [sp, #28]
+ 1671 0204 0699     		ldr	r1, [sp, #24]
+ 1672 0206 FC33     		adds	r3, r3, #252
+ 1673 0208 5A6F     		ldr	r2, [r3, #116]
+ 1674 020a 136A     		ldr	r3, [r2, #32]
+ 1675 020c CF1A     		subs	r7, r1, r3
+ 1676 020e C742     		cmn	r7, r0
+ARM GAS  /tmp/ccj6lSJi.s 			page 32
 
 
- 1680 021c 1B59     		ldr	r3, [r3, r4]
- 1681 021e 1800     		movs	r0, r3
- 1682 0220 2830     		adds	r0, r0, #40
- 1683 0222 0678     		ldrb	r6, [r0]
- 1684 0224 1000     		movs	r0, r2
- 1685 0226 2830     		adds	r0, r0, #40
- 1686 0228 0078     		ldrb	r0, [r0]
- 1687 022a 8642     		cmp	r6, r0
- 1688 022c 01D2     		bcs	.L185
- 1689              	.L217:
- 1690 022e 6554     		strb	r5, [r4, r1]
- 1691 0230 8DE7     		b	.L177
- 1692              	.L185:
- 1693 0232 8642     		cmp	r6, r0
- 1694 0234 8BD1     		bne	.L177
- 1695 0236 5868     		ldr	r0, [r3, #4]
- 1696 0238 5368     		ldr	r3, [r2, #4]
- 1697 023a 9842     		cmp	r0, r3
- 1698 023c 87D2     		bcs	.L177
- 1699 023e F6E7     		b	.L217
- 1700              	.L224:
- 1701              		.align	2
- 1702              	.L223:
- 1703 0240 00000000 		.word	__func__.4
- 1704 0244 EC000000 		.word	.LC21
- 1705 0248 8D000000 		.word	.LC14
- 1706 024c 00000000 		.word	.LC50
- 1707 0250 34000000 		.word	.LC52
- 1708 0254 46050000 		.word	1350
- 1709 0258 70000000 		.word	.LC54
- 1710 025c 4C050000 		.word	1356
- 1711 0260 DA000000 		.word	.LC58
- 1712 0264 AE000000 		.word	.LC56
- 1713              	.L214:
- 1714 0268 0122     		movs	r2, #1
- 1715 026a 5C33     		adds	r3, r3, #92
- 1716 026c 9B00     		lsls	r3, r3, #2
- 1717 026e 1959     		ldr	r1, [r3, r4]
- 1718 0270 6273     		strb	r2, [r4, #13]
- 1719 0272 0BAB     		add	r3, sp, #44
- 1720 0274 0AAA     		add	r2, sp, #40
- 1721 0276 096A     		ldr	r1, [r1, #32]
- 1722 0278 2068     		ldr	r0, [r4]
- 1723 027a FFF7FEFF 		bl	lr1mac_core_convert_rtc_to_gps_epoch_time
- 1724 027e 635D     		ldrb	r3, [r4, r5]
- 1725 0280 5C33     		adds	r3, r3, #92
- 1726 0282 9B00     		lsls	r3, r3, #2
- 1727 0284 1B59     		ldr	r3, [r3, r4]
- 1728 0286 1A69     		ldr	r2, [r3, #16]
- 1729 0288 0592     		str	r2, [sp, #20]
- 1730 028a 002A     		cmp	r2, #0
- 1731 028c 05D1     		bne	.L188
- 1732 028e 5A68     		ldr	r2, [r3, #4]
- 1733 0290 0A99     		ldr	r1, [sp, #40]
- 1734 0292 2068     		ldr	r0, [r4]
- 1735 0294 FFF7FEFF 		bl	smtc_real_get_ping_slot_frequency
- 1736 0298 0590     		str	r0, [sp, #20]
-ARM GAS  /tmp/ccI75xPw.s 			page 33
+ 1677 0210 9DD4     		bmi	.L177
+ 1678 0212 A021     		movs	r1, #160
+ 1679 0214 4900     		lsls	r1, r1, #1
+ 1680 0216 635C     		ldrb	r3, [r4, r1]
+ 1681 0218 5C33     		adds	r3, r3, #92
+ 1682 021a 9B00     		lsls	r3, r3, #2
+ 1683 021c 1B59     		ldr	r3, [r3, r4]
+ 1684 021e 1800     		movs	r0, r3
+ 1685 0220 2830     		adds	r0, r0, #40
+ 1686 0222 0678     		ldrb	r6, [r0]
+ 1687 0224 1000     		movs	r0, r2
+ 1688 0226 2830     		adds	r0, r0, #40
+ 1689 0228 0078     		ldrb	r0, [r0]
+ 1690 022a 8642     		cmp	r6, r0
+ 1691 022c 01D2     		bcs	.L185
+ 1692              	.L217:
+ 1693 022e 6554     		strb	r5, [r4, r1]
+ 1694 0230 8DE7     		b	.L177
+ 1695              	.L185:
+ 1696 0232 8642     		cmp	r6, r0
+ 1697 0234 8BD1     		bne	.L177
+ 1698 0236 5868     		ldr	r0, [r3, #4]
+ 1699 0238 5368     		ldr	r3, [r2, #4]
+ 1700 023a 9842     		cmp	r0, r3
+ 1701 023c 87D2     		bcs	.L177
+ 1702 023e F6E7     		b	.L217
+ 1703              	.L224:
+ 1704              		.align	2
+ 1705              	.L223:
+ 1706 0240 00000000 		.word	__func__.4
+ 1707 0244 F3000000 		.word	.LC21
+ 1708 0248 92000000 		.word	.LC14
+ 1709 024c 00000000 		.word	.LC50
+ 1710 0250 35000000 		.word	.LC52
+ 1711 0254 46050000 		.word	1350
+ 1712 0258 72000000 		.word	.LC54
+ 1713 025c 4C050000 		.word	1356
+ 1714 0260 DE000000 		.word	.LC58
+ 1715 0264 B1000000 		.word	.LC56
+ 1716              	.L214:
+ 1717 0268 0122     		movs	r2, #1
+ 1718 026a 5C33     		adds	r3, r3, #92
+ 1719 026c 9B00     		lsls	r3, r3, #2
+ 1720 026e 1959     		ldr	r1, [r3, r4]
+ 1721 0270 6273     		strb	r2, [r4, #13]
+ 1722 0272 0BAB     		add	r3, sp, #44
+ 1723 0274 0AAA     		add	r2, sp, #40
+ 1724 0276 096A     		ldr	r1, [r1, #32]
+ 1725 0278 2068     		ldr	r0, [r4]
+ 1726 027a FFF7FEFF 		bl	lr1mac_core_convert_rtc_to_gps_epoch_time
+ 1727 027e 635D     		ldrb	r3, [r4, r5]
+ 1728 0280 5C33     		adds	r3, r3, #92
+ 1729 0282 9B00     		lsls	r3, r3, #2
+ 1730 0284 1B59     		ldr	r3, [r3, r4]
+ 1731 0286 1A69     		ldr	r2, [r3, #16]
+ 1732 0288 0592     		str	r2, [sp, #20]
+ 1733 028a 002A     		cmp	r2, #0
+ARM GAS  /tmp/ccj6lSJi.s 			page 33
 
 
- 1737              	.L188:
- 1738 029a A025     		movs	r5, #160
- 1739 029c 6D00     		lsls	r5, r5, #1
- 1740 029e 635D     		ldrb	r3, [r4, r5]
- 1741 02a0 2068     		ldr	r0, [r4]
- 1742 02a2 5C33     		adds	r3, r3, #92
- 1743 02a4 9B00     		lsls	r3, r3, #2
- 1744 02a6 1B59     		ldr	r3, [r3, r4]
- 1745 02a8 0026     		movs	r6, #0
- 1746 02aa 1B7D     		ldrb	r3, [r3, #20]
- 1747 02ac 1900     		movs	r1, r3
- 1748 02ae 0693     		str	r3, [sp, #24]
- 1749 02b0 FFF7FEFF 		bl	smtc_real_get_modulation_type_from_datarate
- 1750 02b4 635D     		ldrb	r3, [r4, r5]
- 1751 02b6 0700     		movs	r7, r0
- 1752 02b8 D420     		movs	r0, #212
- 1753 02ba 5C33     		adds	r3, r3, #92
- 1754 02bc 9B00     		lsls	r3, r3, #2
- 1755 02be 1959     		ldr	r1, [r3, r4]
- 1756 02c0 4000     		lsls	r0, r0, #1
- 1757 02c2 0B00     		movs	r3, r1
- 1758 02c4 0A6A     		ldr	r2, [r1, #32]
- 1759 02c6 2058     		ldr	r0, [r4, r0]
- 1760 02c8 097D     		ldrb	r1, [r1, #20]
- 1761 02ca 121A     		subs	r2, r2, r0
- 1762 02cc 0DA8     		add	r0, sp, #52
- 1763 02ce 0190     		str	r0, [sp, #4]
- 1764 02d0 0CA8     		add	r0, sp, #48
- 1765 02d2 0296     		str	r6, [sp, #8]
- 1766 02d4 0090     		str	r0, [sp]
- 1767 02d6 2068     		ldr	r0, [r4]
- 1768 02d8 1633     		adds	r3, r3, #22
- 1769 02da FFF7FEFF 		bl	smtc_real_get_rx_window_parameters
- 1770 02de B742     		cmp	r7, r6
- 1771 02e0 00D0     		beq	.LCB1831
- 1772 02e2 91E0     		b	.L189	@long jump
- 1773              	.LCB1831:
- 1774 02e4 04AB     		add	r3, sp, #16
- 1775 02e6 1636     		adds	r6, r6, #22
- 1776 02e8 F618     		adds	r6, r6, r3
- 1777 02ea 1723     		movs	r3, #23
- 1778 02ec 04AA     		add	r2, sp, #16
- 1779 02ee 9B18     		adds	r3, r3, r2
- 1780 02f0 16AD     		add	r5, sp, #88
- 1781 02f2 3200     		movs	r2, r6
- 1782 02f4 0699     		ldr	r1, [sp, #24]
- 1783 02f6 2068     		ldr	r0, [r4]
- 1784 02f8 FFF7FEFF 		bl	smtc_real_lora_dr_to_sf_bw
- 1785 02fc 1422     		movs	r2, #20
- 1786 02fe 3900     		movs	r1, r7
- 1787 0300 2800     		movs	r0, r5
- 1788 0302 FFF7FEFF 		bl	memset
- 1789 0306 2068     		ldr	r0, [r4]
- 1790 0308 FFF7FEFF 		bl	smtc_real_get_sync_word
- 1791 030c A023     		movs	r3, #160
- 1792 030e 6874     		strb	r0, [r5, #17]
- 1793 0310 5B00     		lsls	r3, r3, #1
-ARM GAS  /tmp/ccI75xPw.s 			page 34
+ 1734 028c 05D1     		bne	.L188
+ 1735 028e 5A68     		ldr	r2, [r3, #4]
+ 1736 0290 0A99     		ldr	r1, [sp, #40]
+ 1737 0292 2068     		ldr	r0, [r4]
+ 1738 0294 FFF7FEFF 		bl	smtc_real_get_ping_slot_frequency
+ 1739 0298 0590     		str	r0, [sp, #20]
+ 1740              	.L188:
+ 1741 029a A025     		movs	r5, #160
+ 1742 029c 6D00     		lsls	r5, r5, #1
+ 1743 029e 635D     		ldrb	r3, [r4, r5]
+ 1744 02a0 2068     		ldr	r0, [r4]
+ 1745 02a2 5C33     		adds	r3, r3, #92
+ 1746 02a4 9B00     		lsls	r3, r3, #2
+ 1747 02a6 1B59     		ldr	r3, [r3, r4]
+ 1748 02a8 0026     		movs	r6, #0
+ 1749 02aa 1B7D     		ldrb	r3, [r3, #20]
+ 1750 02ac 1900     		movs	r1, r3
+ 1751 02ae 0693     		str	r3, [sp, #24]
+ 1752 02b0 FFF7FEFF 		bl	smtc_real_get_modulation_type_from_datarate
+ 1753 02b4 635D     		ldrb	r3, [r4, r5]
+ 1754 02b6 0700     		movs	r7, r0
+ 1755 02b8 D420     		movs	r0, #212
+ 1756 02ba 5C33     		adds	r3, r3, #92
+ 1757 02bc 9B00     		lsls	r3, r3, #2
+ 1758 02be 1959     		ldr	r1, [r3, r4]
+ 1759 02c0 4000     		lsls	r0, r0, #1
+ 1760 02c2 0B00     		movs	r3, r1
+ 1761 02c4 0A6A     		ldr	r2, [r1, #32]
+ 1762 02c6 2058     		ldr	r0, [r4, r0]
+ 1763 02c8 097D     		ldrb	r1, [r1, #20]
+ 1764 02ca 121A     		subs	r2, r2, r0
+ 1765 02cc 0DA8     		add	r0, sp, #52
+ 1766 02ce 0190     		str	r0, [sp, #4]
+ 1767 02d0 0CA8     		add	r0, sp, #48
+ 1768 02d2 0296     		str	r6, [sp, #8]
+ 1769 02d4 0090     		str	r0, [sp]
+ 1770 02d6 2068     		ldr	r0, [r4]
+ 1771 02d8 1633     		adds	r3, r3, #22
+ 1772 02da FFF7FEFF 		bl	smtc_real_get_rx_window_parameters
+ 1773 02de B742     		cmp	r7, r6
+ 1774 02e0 00D0     		beq	.LCB1831
+ 1775 02e2 91E0     		b	.L189	@long jump
+ 1776              	.LCB1831:
+ 1777 02e4 04AB     		add	r3, sp, #16
+ 1778 02e6 1636     		adds	r6, r6, #22
+ 1779 02e8 F618     		adds	r6, r6, r3
+ 1780 02ea 1723     		movs	r3, #23
+ 1781 02ec 04AA     		add	r2, sp, #16
+ 1782 02ee 9B18     		adds	r3, r3, r2
+ 1783 02f0 16AD     		add	r5, sp, #88
+ 1784 02f2 3200     		movs	r2, r6
+ 1785 02f4 0699     		ldr	r1, [sp, #24]
+ 1786 02f6 2068     		ldr	r0, [r4]
+ 1787 02f8 FFF7FEFF 		bl	smtc_real_lora_dr_to_sf_bw
+ 1788 02fc 1422     		movs	r2, #20
+ 1789 02fe 3900     		movs	r1, r7
+ 1790 0300 2800     		movs	r0, r5
+ARM GAS  /tmp/ccj6lSJi.s 			page 34
 
 
- 1794 0312 E35C     		ldrb	r3, [r4, r3]
- 1795 0314 2068     		ldr	r0, [r4]
- 1796 0316 5C33     		adds	r3, r3, #92
- 1797 0318 9B00     		lsls	r3, r3, #2
- 1798 031a 1B59     		ldr	r3, [r3, r4]
- 1799 031c DB8A     		ldrh	r3, [r3, #22]
- 1800 031e AB74     		strb	r3, [r5, #18]
- 1801 0320 059B     		ldr	r3, [sp, #20]
- 1802 0322 1993     		str	r3, [sp, #100]
- 1803 0324 6E4B     		ldr	r3, .L225
- 1804 0326 1793     		str	r3, [sp, #92]
- 1805 0328 8023     		movs	r3, #128
- 1806 032a 5B00     		lsls	r3, r3, #1
- 1807 032c 2B81     		strh	r3, [r5, #8]
- 1808 032e FFF7FEFF 		bl	smtc_real_get_coding_rate
- 1809 0332 04AB     		add	r3, sp, #16
- 1810 0334 3678     		ldrb	r6, [r6]
- 1811 0336 DF7D     		ldrb	r7, [r3, #23]
- 1812 0338 0790     		str	r0, [sp, #28]
- 1813 033a 3900     		movs	r1, r7
- 1814 033c 3000     		movs	r0, r6
- 1815 033e FFF7FEFF 		bl	ral_compute_lora_ldro
- 1816 0342 079B     		ldr	r3, [sp, #28]
- 1817 0344 3F02     		lsls	r7, r7, #8
- 1818 0346 1B04     		lsls	r3, r3, #16
- 1819 0348 3E43     		orrs	r6, r7
- 1820 034a 1E43     		orrs	r6, r3
- 1821 034c 0123     		movs	r3, #1
- 1822 034e 3602     		lsls	r6, r6, #8
- 1823 0350 0006     		lsls	r0, r0, #24
- 1824 0352 360A     		lsrs	r6, r6, #8
- 1825 0354 0643     		orrs	r6, r0
- 1826 0356 21AA     		add	r2, sp, #132
- 1827 0358 1370     		strb	r3, [r2]
- 1828 035a 1696     		str	r6, [sp, #88]
- 1829 035c 2DAB     		add	r3, sp, #180
- 1830 035e 43CD     		ldmia	r5!, {r0, r1, r6}
- 1831 0360 43C3     		stmia	r3!, {r0, r1, r6}
- 1832 0362 03CD     		ldmia	r5!, {r0, r1}
- 1833 0364 03C3     		stmia	r3!, {r0, r1}
- 1834 0366 0D9B     		ldr	r3, [sp, #52]
- 1835              	.L220:
- 1836 0368 3893     		str	r3, [sp, #224]
- 1837              	.L190:
- 1838 036a 2379     		ldrb	r3, [r4, #4]
- 1839 036c 0FAD     		add	r5, sp, #60
- 1840 036e 2B70     		strb	r3, [r5]
- 1841 0370 0023     		movs	r3, #0
- 1842 0372 AB72     		strb	r3, [r5, #10]
- 1843 0374 0133     		adds	r3, r3, #1
- 1844 0376 6B72     		strb	r3, [r5, #9]
- 1845 0378 FFF7FEFF 		bl	smtc_modem_hal_get_radio_tcxo_startup_delay_ms
- 1846 037c A027     		movs	r7, #160
- 1847 037e 0600     		movs	r6, r0
- 1848 0380 FFF7FEFF 		bl	smtc_modem_hal_get_board_delay_ms
- 1849 0384 7F00     		lsls	r7, r7, #1
- 1850 0386 E35D     		ldrb	r3, [r4, r7]
-ARM GAS  /tmp/ccI75xPw.s 			page 35
+ 1791 0302 FFF7FEFF 		bl	memset
+ 1792 0306 2068     		ldr	r0, [r4]
+ 1793 0308 FFF7FEFF 		bl	smtc_real_get_sync_word
+ 1794 030c A023     		movs	r3, #160
+ 1795 030e 6874     		strb	r0, [r5, #17]
+ 1796 0310 5B00     		lsls	r3, r3, #1
+ 1797 0312 E35C     		ldrb	r3, [r4, r3]
+ 1798 0314 2068     		ldr	r0, [r4]
+ 1799 0316 5C33     		adds	r3, r3, #92
+ 1800 0318 9B00     		lsls	r3, r3, #2
+ 1801 031a 1B59     		ldr	r3, [r3, r4]
+ 1802 031c DB8A     		ldrh	r3, [r3, #22]
+ 1803 031e AB74     		strb	r3, [r5, #18]
+ 1804 0320 059B     		ldr	r3, [sp, #20]
+ 1805 0322 1993     		str	r3, [sp, #100]
+ 1806 0324 6E4B     		ldr	r3, .L225
+ 1807 0326 1793     		str	r3, [sp, #92]
+ 1808 0328 8023     		movs	r3, #128
+ 1809 032a 5B00     		lsls	r3, r3, #1
+ 1810 032c 2B81     		strh	r3, [r5, #8]
+ 1811 032e FFF7FEFF 		bl	smtc_real_get_coding_rate
+ 1812 0332 04AB     		add	r3, sp, #16
+ 1813 0334 3678     		ldrb	r6, [r6]
+ 1814 0336 DF7D     		ldrb	r7, [r3, #23]
+ 1815 0338 0790     		str	r0, [sp, #28]
+ 1816 033a 3900     		movs	r1, r7
+ 1817 033c 3000     		movs	r0, r6
+ 1818 033e FFF7FEFF 		bl	ral_compute_lora_ldro
+ 1819 0342 079B     		ldr	r3, [sp, #28]
+ 1820 0344 3F02     		lsls	r7, r7, #8
+ 1821 0346 1B04     		lsls	r3, r3, #16
+ 1822 0348 3E43     		orrs	r6, r7
+ 1823 034a 1E43     		orrs	r6, r3
+ 1824 034c 0123     		movs	r3, #1
+ 1825 034e 3602     		lsls	r6, r6, #8
+ 1826 0350 0006     		lsls	r0, r0, #24
+ 1827 0352 360A     		lsrs	r6, r6, #8
+ 1828 0354 0643     		orrs	r6, r0
+ 1829 0356 21AA     		add	r2, sp, #132
+ 1830 0358 1370     		strb	r3, [r2]
+ 1831 035a 1696     		str	r6, [sp, #88]
+ 1832 035c 2DAB     		add	r3, sp, #180
+ 1833 035e 43CD     		ldmia	r5!, {r0, r1, r6}
+ 1834 0360 43C3     		stmia	r3!, {r0, r1, r6}
+ 1835 0362 03CD     		ldmia	r5!, {r0, r1}
+ 1836 0364 03C3     		stmia	r3!, {r0, r1}
+ 1837 0366 0D9B     		ldr	r3, [sp, #52]
+ 1838              	.L220:
+ 1839 0368 3893     		str	r3, [sp, #224]
+ 1840              	.L190:
+ 1841 036a 2379     		ldrb	r3, [r4, #4]
+ 1842 036c 0FAD     		add	r5, sp, #60
+ 1843 036e 2B70     		strb	r3, [r5]
+ 1844 0370 0023     		movs	r3, #0
+ 1845 0372 AB72     		strb	r3, [r5, #10]
+ 1846 0374 0133     		adds	r3, r3, #1
+ 1847 0376 6B72     		strb	r3, [r5, #9]
+ARM GAS  /tmp/ccj6lSJi.s 			page 35
 
 
- 1851 0388 3618     		adds	r6, r6, r0
- 1852 038a 5C33     		adds	r3, r3, #92
- 1853 038c 9B00     		lsls	r3, r3, #2
- 1854 038e 1959     		ldr	r1, [r3, r4]
- 1855 0390 0EA8     		add	r0, sp, #56
- 1856 0392 CB8A     		ldrh	r3, [r1, #22]
- 1857 0394 097D     		ldrb	r1, [r1, #20]
- 1858 0396 0090     		str	r0, [sp]
- 1859 0398 2068     		ldr	r0, [r4]
- 1860 039a 72B2     		sxtb	r2, r6
- 1861 039c FFF7FEFF 		bl	smtc_real_get_rx_start_time_offset_ms
- 1862 03a0 0A21     		movs	r1, #10
- 1863 03a2 E35D     		ldrb	r3, [r4, r7]
- 1864 03a4 0E98     		ldr	r0, [sp, #56]
- 1865 03a6 5C33     		adds	r3, r3, #92
- 1866 03a8 9B00     		lsls	r3, r3, #2
- 1867 03aa 1B59     		ldr	r3, [r3, r4]
- 1868 03ac 4143     		muls	r1, r0
- 1869 03ae 1A6A     		ldr	r2, [r3, #32]
- 1870 03b0 1218     		adds	r2, r2, r0
- 1871 03b2 EA60     		str	r2, [r5, #12]
- 1872 03b4 5A6A     		ldr	r2, [r3, #36]
- 1873 03b6 2068     		ldr	r0, [r4]
- 1874 03b8 5218     		adds	r2, r2, r1
- 1875 03ba 2A61     		str	r2, [r5, #16]
- 1876 03bc 1A7D     		ldrb	r2, [r3, #20]
- 1877 03be D98A     		ldrh	r1, [r3, #22]
- 1878 03c0 FFF7FEFF 		bl	smtc_ping_slot_get_duration_timeout_ms.isra.0
- 1879 03c4 0122     		movs	r2, #1
- 1880 03c6 21AB     		add	r3, sp, #132
- 1881 03c8 A861     		str	r0, [r5, #24]
- 1882 03ca 1878     		ldrb	r0, [r3]
- 1883 03cc 4549     		ldr	r1, .L225+4
- 1884 03ce 9042     		cmp	r0, r2
- 1885 03d0 01D1     		bne	.L192
- 1886 03d2 0022     		movs	r2, #0
- 1887 03d4 4449     		ldr	r1, .L225+8
- 1888              	.L192:
- 1889 03d6 6A70     		strb	r2, [r5, #1]
- 1890 03d8 2200     		movs	r2, r4
- 1891 03da 6960     		str	r1, [r5, #4]
- 1892 03dc 0093     		str	r3, [sp]
- 1893 03de 2900     		movs	r1, r5
- 1894 03e0 FF23     		movs	r3, #255
- 1895 03e2 A068     		ldr	r0, [r4, #8]
- 1896 03e4 4132     		adds	r2, r2, #65
- 1897 03e6 FFF7FEFF 		bl	rp_task_enqueue
- 1898 03ea 0328     		cmp	r0, #3
- 1899 03ec 00D1     		bne	.LCB1968
- 1900 03ee 48E6     		b	.L193	@long jump
- 1901              	.LCB1968:
- 1902 03f0 0028     		cmp	r0, #0
- 1903 03f2 5FD0     		beq	.L194
- 1904 03f4 3D48     		ldr	r0, .L225+12
- 1905 03f6 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1906 03fa 3D48     		ldr	r0, .L225+16
- 1907 03fc FFF7FEFF 		bl	smtc_modem_hal_print_trace
-ARM GAS  /tmp/ccI75xPw.s 			page 36
+ 1848 0378 FFF7FEFF 		bl	smtc_modem_hal_get_radio_tcxo_startup_delay_ms
+ 1849 037c A027     		movs	r7, #160
+ 1850 037e 0600     		movs	r6, r0
+ 1851 0380 FFF7FEFF 		bl	smtc_modem_hal_get_board_delay_ms
+ 1852 0384 7F00     		lsls	r7, r7, #1
+ 1853 0386 E35D     		ldrb	r3, [r4, r7]
+ 1854 0388 3618     		adds	r6, r6, r0
+ 1855 038a 5C33     		adds	r3, r3, #92
+ 1856 038c 9B00     		lsls	r3, r3, #2
+ 1857 038e 1959     		ldr	r1, [r3, r4]
+ 1858 0390 0EA8     		add	r0, sp, #56
+ 1859 0392 CB8A     		ldrh	r3, [r1, #22]
+ 1860 0394 097D     		ldrb	r1, [r1, #20]
+ 1861 0396 0090     		str	r0, [sp]
+ 1862 0398 2068     		ldr	r0, [r4]
+ 1863 039a 72B2     		sxtb	r2, r6
+ 1864 039c FFF7FEFF 		bl	smtc_real_get_rx_start_time_offset_ms
+ 1865 03a0 0A21     		movs	r1, #10
+ 1866 03a2 E35D     		ldrb	r3, [r4, r7]
+ 1867 03a4 0E98     		ldr	r0, [sp, #56]
+ 1868 03a6 5C33     		adds	r3, r3, #92
+ 1869 03a8 9B00     		lsls	r3, r3, #2
+ 1870 03aa 1B59     		ldr	r3, [r3, r4]
+ 1871 03ac 4143     		muls	r1, r0
+ 1872 03ae 1A6A     		ldr	r2, [r3, #32]
+ 1873 03b0 1218     		adds	r2, r2, r0
+ 1874 03b2 EA60     		str	r2, [r5, #12]
+ 1875 03b4 5A6A     		ldr	r2, [r3, #36]
+ 1876 03b6 2068     		ldr	r0, [r4]
+ 1877 03b8 5218     		adds	r2, r2, r1
+ 1878 03ba 2A61     		str	r2, [r5, #16]
+ 1879 03bc 1A7D     		ldrb	r2, [r3, #20]
+ 1880 03be D98A     		ldrh	r1, [r3, #22]
+ 1881 03c0 FFF7FEFF 		bl	smtc_ping_slot_get_duration_timeout_ms.isra.0
+ 1882 03c4 0122     		movs	r2, #1
+ 1883 03c6 21AB     		add	r3, sp, #132
+ 1884 03c8 A861     		str	r0, [r5, #24]
+ 1885 03ca 1878     		ldrb	r0, [r3]
+ 1886 03cc 4549     		ldr	r1, .L225+4
+ 1887 03ce 9042     		cmp	r0, r2
+ 1888 03d0 01D1     		bne	.L192
+ 1889 03d2 0022     		movs	r2, #0
+ 1890 03d4 4449     		ldr	r1, .L225+8
+ 1891              	.L192:
+ 1892 03d6 6A70     		strb	r2, [r5, #1]
+ 1893 03d8 2200     		movs	r2, r4
+ 1894 03da 6960     		str	r1, [r5, #4]
+ 1895 03dc 0093     		str	r3, [sp]
+ 1896 03de 2900     		movs	r1, r5
+ 1897 03e0 FF23     		movs	r3, #255
+ 1898 03e2 A068     		ldr	r0, [r4, #8]
+ 1899 03e4 4132     		adds	r2, r2, #65
+ 1900 03e6 FFF7FEFF 		bl	rp_task_enqueue
+ 1901 03ea 0328     		cmp	r0, #3
+ 1902 03ec 00D1     		bne	.LCB1968
+ 1903 03ee 48E6     		b	.L193	@long jump
+ 1904              	.LCB1968:
+ARM GAS  /tmp/ccj6lSJi.s 			page 36
 
 
- 1908              	.L195:
- 1909 0400 0023     		movs	r3, #0
- 1910 0402 3534     		adds	r4, r4, #53
- 1911 0404 2370     		strb	r3, [r4]
- 1912 0406 26E6     		b	.L162
- 1913              	.L189:
- 1914 0408 012F     		cmp	r7, #1
- 1915 040a 3BD1     		bne	.L191
- 1916 040c 1723     		movs	r3, #23
- 1917 040e 04AA     		add	r2, sp, #16
- 1918 0410 9B18     		adds	r3, r3, r2
- 1919 0412 16AD     		add	r5, sp, #88
- 1920 0414 1A00     		movs	r2, r3
- 1921 0416 0699     		ldr	r1, [sp, #24]
- 1922 0418 2068     		ldr	r0, [r4]
- 1923 041a FFF7FEFF 		bl	smtc_real_fsk_dr_to_bitrate
- 1924 041e 3100     		movs	r1, r6
- 1925 0420 2C22     		movs	r2, #44
- 1926 0422 2800     		movs	r0, r5
- 1927 0424 FFF7FEFF 		bl	memset
- 1928 0428 2068     		ldr	r0, [r4]
- 1929 042a FFF7FEFF 		bl	smtc_real_get_gfsk_sync_word
- 1930 042e 7223     		movs	r3, #114
- 1931 0430 04AA     		add	r2, sp, #16
- 1932 0432 9B18     		adds	r3, r3, r2
- 1933 0434 1D90     		str	r0, [sp, #116]
- 1934 0436 1F70     		strb	r7, [r3]
- 1935 0438 2E4B     		ldr	r3, .L225+20
- 1936 043a D27D     		ldrb	r2, [r2, #23]
- 1937 043c 2B85     		strh	r3, [r5, #40]
- 1938 043e 2E4B     		ldr	r3, .L225+24
- 1939 0440 1F93     		str	r3, [sp, #124]
- 1940 0442 059B     		ldr	r3, [sp, #20]
- 1941 0444 1E93     		str	r3, [sp, #120]
- 1942 0446 2823     		movs	r3, #40
- 1943 0448 2B82     		strh	r3, [r5, #16]
- 1944 044a 103B     		subs	r3, r3, #16
- 1945 044c EB74     		strb	r3, [r5, #19]
- 1946 044e 2B4B     		ldr	r3, .L225+28
- 1947 0450 6F75     		strb	r7, [r5, #21]
- 1948 0452 EB82     		strh	r3, [r5, #22]
- 1949 0454 2A4B     		ldr	r3, .L225+32
- 1950 0456 2F76     		strb	r7, [r5, #24]
- 1951 0458 1793     		str	r3, [sp, #92]
- 1952 045a 2A4B     		ldr	r3, .L225+36
- 1953 045c 1893     		str	r3, [sp, #96]
- 1954 045e 0423     		movs	r3, #4
- 1955 0460 2B73     		strb	r3, [r5, #12]
- 1956 0462 FA23     		movs	r3, #250
- 1957 0464 9B00     		lsls	r3, r3, #2
- 1958 0466 5343     		muls	r3, r2
- 1959 0468 21AA     		add	r2, sp, #132
- 1960 046a 1693     		str	r3, [sp, #88]
- 1961 046c 1670     		strb	r6, [r2]
- 1962 046e 2DAB     		add	r3, sp, #180
- 1963 0470 43CD     		ldmia	r5!, {r0, r1, r6}
- 1964 0472 43C3     		stmia	r3!, {r0, r1, r6}
-ARM GAS  /tmp/ccI75xPw.s 			page 37
+ 1905 03f0 0028     		cmp	r0, #0
+ 1906 03f2 5FD0     		beq	.L194
+ 1907 03f4 3D48     		ldr	r0, .L225+12
+ 1908 03f6 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1909 03fa 3D48     		ldr	r0, .L225+16
+ 1910 03fc FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1911              	.L195:
+ 1912 0400 0023     		movs	r3, #0
+ 1913 0402 3534     		adds	r4, r4, #53
+ 1914 0404 2370     		strb	r3, [r4]
+ 1915 0406 26E6     		b	.L162
+ 1916              	.L189:
+ 1917 0408 012F     		cmp	r7, #1
+ 1918 040a 3BD1     		bne	.L191
+ 1919 040c 1723     		movs	r3, #23
+ 1920 040e 04AA     		add	r2, sp, #16
+ 1921 0410 9B18     		adds	r3, r3, r2
+ 1922 0412 16AD     		add	r5, sp, #88
+ 1923 0414 1A00     		movs	r2, r3
+ 1924 0416 0699     		ldr	r1, [sp, #24]
+ 1925 0418 2068     		ldr	r0, [r4]
+ 1926 041a FFF7FEFF 		bl	smtc_real_fsk_dr_to_bitrate
+ 1927 041e 3100     		movs	r1, r6
+ 1928 0420 2C22     		movs	r2, #44
+ 1929 0422 2800     		movs	r0, r5
+ 1930 0424 FFF7FEFF 		bl	memset
+ 1931 0428 2068     		ldr	r0, [r4]
+ 1932 042a FFF7FEFF 		bl	smtc_real_get_gfsk_sync_word
+ 1933 042e 7223     		movs	r3, #114
+ 1934 0430 04AA     		add	r2, sp, #16
+ 1935 0432 9B18     		adds	r3, r3, r2
+ 1936 0434 1D90     		str	r0, [sp, #116]
+ 1937 0436 1F70     		strb	r7, [r3]
+ 1938 0438 2E4B     		ldr	r3, .L225+20
+ 1939 043a D27D     		ldrb	r2, [r2, #23]
+ 1940 043c 2B85     		strh	r3, [r5, #40]
+ 1941 043e 2E4B     		ldr	r3, .L225+24
+ 1942 0440 1F93     		str	r3, [sp, #124]
+ 1943 0442 059B     		ldr	r3, [sp, #20]
+ 1944 0444 1E93     		str	r3, [sp, #120]
+ 1945 0446 2823     		movs	r3, #40
+ 1946 0448 2B82     		strh	r3, [r5, #16]
+ 1947 044a 103B     		subs	r3, r3, #16
+ 1948 044c EB74     		strb	r3, [r5, #19]
+ 1949 044e 2B4B     		ldr	r3, .L225+28
+ 1950 0450 6F75     		strb	r7, [r5, #21]
+ 1951 0452 EB82     		strh	r3, [r5, #22]
+ 1952 0454 2A4B     		ldr	r3, .L225+32
+ 1953 0456 2F76     		strb	r7, [r5, #24]
+ 1954 0458 1793     		str	r3, [sp, #92]
+ 1955 045a 2A4B     		ldr	r3, .L225+36
+ 1956 045c 1893     		str	r3, [sp, #96]
+ 1957 045e 0423     		movs	r3, #4
+ 1958 0460 2B73     		strb	r3, [r5, #12]
+ 1959 0462 FA23     		movs	r3, #250
+ 1960 0464 9B00     		lsls	r3, r3, #2
+ 1961 0466 5343     		muls	r3, r2
+ARM GAS  /tmp/ccj6lSJi.s 			page 37
 
 
- 1965 0474 43CD     		ldmia	r5!, {r0, r1, r6}
- 1966 0476 43C3     		stmia	r3!, {r0, r1, r6}
- 1967 0478 43CD     		ldmia	r5!, {r0, r1, r6}
- 1968 047a 43C3     		stmia	r3!, {r0, r1, r6}
- 1969 047c 03CD     		ldmia	r5!, {r0, r1}
- 1970 047e 03C3     		stmia	r3!, {r0, r1}
- 1971 0480 0C9B     		ldr	r3, [sp, #48]
- 1972 0482 71E7     		b	.L220
- 1973              	.L191:
- 1974 0484 204D     		ldr	r5, .L225+40
- 1975 0486 2800     		movs	r0, r5
- 1976 0488 FFF7FEFF 		bl	smtc_modem_hal_store_crashlog
- 1977 048c 0120     		movs	r0, #1
- 1978 048e FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
- 1979 0492 2900     		movs	r1, r5
- 1980 0494 1D48     		ldr	r0, .L225+44
- 1981 0496 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1982 049a 154D     		ldr	r5, .L225+16
- 1983 049c 2800     		movs	r0, r5
- 1984 049e FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1985 04a2 1B48     		ldr	r0, .L225+48
- 1986 04a4 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1987 04a8 2800     		movs	r0, r5
- 1988 04aa FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 1989 04ae FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
- 1990 04b2 5AE7     		b	.L190
- 1991              	.L194:
- 1992 04b4 A023     		movs	r3, #160
- 1993 04b6 5B00     		lsls	r3, r3, #1
- 1994 04b8 E35C     		ldrb	r3, [r4, r3]
- 1995 04ba 1648     		ldr	r0, .L225+52
- 1996 04bc 5C33     		adds	r3, r3, #92
- 1997 04be 9B00     		lsls	r3, r3, #2
- 1998 04c0 1959     		ldr	r1, [r3, r4]
- 1999 04c2 8B7F     		ldrb	r3, [r1, #30]
- 2000 04c4 0193     		str	r3, [sp, #4]
- 2001 04c6 069B     		ldr	r3, [sp, #24]
- 2002 04c8 0093     		str	r3, [sp]
- 2003 04ca 0A6A     		ldr	r2, [r1, #32]
- 2004 04cc 059B     		ldr	r3, [sp, #20]
- 2005 04ce 4968     		ldr	r1, [r1, #4]
- 2006 04d0 FFF7FEFF 		bl	smtc_modem_hal_print_trace
- 2007 04d4 236A     		ldr	r3, [r4, #32]
- 2008 04d6 002B     		cmp	r3, #0
- 2009 04d8 92D0     		beq	.L195
- 2010 04da 606A     		ldr	r0, [r4, #36]
- 2011 04dc 9847     		blx	r3
- 2012 04de 8FE7     		b	.L195
- 2013              	.L226:
- 2014              		.align	2
- 2015              	.L225:
- 2016 04e0 FF0000FF 		.word	-16776961
- 2017 04e4 00000000 		.word	lr1_stack_mac_rx_gfsk_launch_callback_for_rp
- 2018 04e8 00000000 		.word	ping_slot_mac_rx_lora_launch_callback_for_rp
- 2019 04ec 20010000 		.word	.LC62
- 2020 04f0 8D000000 		.word	.LC14
- 2021 04f4 FF010000 		.word	511
-ARM GAS  /tmp/ccI75xPw.s 			page 38
+ 1962 0468 21AA     		add	r2, sp, #132
+ 1963 046a 1693     		str	r3, [sp, #88]
+ 1964 046c 1670     		strb	r6, [r2]
+ 1965 046e 2DAB     		add	r3, sp, #180
+ 1966 0470 43CD     		ldmia	r5!, {r0, r1, r6}
+ 1967 0472 43C3     		stmia	r3!, {r0, r1, r6}
+ 1968 0474 43CD     		ldmia	r5!, {r0, r1, r6}
+ 1969 0476 43C3     		stmia	r3!, {r0, r1, r6}
+ 1970 0478 43CD     		ldmia	r5!, {r0, r1, r6}
+ 1971 047a 43C3     		stmia	r3!, {r0, r1, r6}
+ 1972 047c 03CD     		ldmia	r5!, {r0, r1}
+ 1973 047e 03C3     		stmia	r3!, {r0, r1}
+ 1974 0480 0C9B     		ldr	r3, [sp, #48]
+ 1975 0482 71E7     		b	.L220
+ 1976              	.L191:
+ 1977 0484 204D     		ldr	r5, .L225+40
+ 1978 0486 2800     		movs	r0, r5
+ 1979 0488 FFF7FEFF 		bl	smtc_modem_hal_store_crashlog
+ 1980 048c 0120     		movs	r0, #1
+ 1981 048e FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
+ 1982 0492 2900     		movs	r1, r5
+ 1983 0494 1D48     		ldr	r0, .L225+44
+ 1984 0496 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1985 049a 154D     		ldr	r5, .L225+16
+ 1986 049c 2800     		movs	r0, r5
+ 1987 049e FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1988 04a2 1B48     		ldr	r0, .L225+48
+ 1989 04a4 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1990 04a8 2800     		movs	r0, r5
+ 1991 04aa FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 1992 04ae FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
+ 1993 04b2 5AE7     		b	.L190
+ 1994              	.L194:
+ 1995 04b4 A023     		movs	r3, #160
+ 1996 04b6 5B00     		lsls	r3, r3, #1
+ 1997 04b8 E35C     		ldrb	r3, [r4, r3]
+ 1998 04ba 1648     		ldr	r0, .L225+52
+ 1999 04bc 5C33     		adds	r3, r3, #92
+ 2000 04be 9B00     		lsls	r3, r3, #2
+ 2001 04c0 1959     		ldr	r1, [r3, r4]
+ 2002 04c2 8B7F     		ldrb	r3, [r1, #30]
+ 2003 04c4 0193     		str	r3, [sp, #4]
+ 2004 04c6 069B     		ldr	r3, [sp, #24]
+ 2005 04c8 0093     		str	r3, [sp]
+ 2006 04ca 0A6A     		ldr	r2, [r1, #32]
+ 2007 04cc 059B     		ldr	r3, [sp, #20]
+ 2008 04ce 4968     		ldr	r1, [r1, #4]
+ 2009 04d0 FFF7FEFF 		bl	smtc_modem_hal_print_trace
+ 2010 04d4 236A     		ldr	r3, [r4, #32]
+ 2011 04d6 002B     		cmp	r3, #0
+ 2012 04d8 92D0     		beq	.L195
+ 2013 04da 606A     		ldr	r0, [r4, #36]
+ 2014 04dc 9847     		blx	r3
+ 2015 04de 8FE7     		b	.L195
+ 2016              	.L226:
+ 2017              		.align	2
+ 2018              	.L225:
+ARM GAS  /tmp/ccj6lSJi.s 			page 38
 
 
- 2022 04f8 0F1D2110 		.word	270605583
- 2023 04fc FF040000 		.word	1279
- 2024 0500 A8610000 		.word	25000
- 2025 0504 A0860100 		.word	100000
- 2026 0508 00000000 		.word	__func__.4
- 2027 050c EC000000 		.word	.LC21
- 2028 0510 F5000000 		.word	.LC60
- 2029 0514 4A010000 		.word	.LC64
- 2031              		.section	.text.smtc_ping_slot_rp_callback,"ax",%progbits
- 2032              		.align	1
- 2033              		.global	smtc_ping_slot_rp_callback
- 2034              		.syntax unified
- 2035              		.code	16
- 2036              		.thumb_func
- 2038              	smtc_ping_slot_rp_callback:
- 2039              		@ args = 0, pretend = 0, frame = 0
- 2040              		@ frame_needed = 0, uses_anonymous_args = 0
- 2041 0000 70B5     		push	{r4, r5, r6, lr}
- 2042 0002 8368     		ldr	r3, [r0, #8]
- 2043 0004 0279     		ldrb	r2, [r0, #4]
- 2044 0006 0400     		movs	r4, r0
- 2045 0008 9B18     		adds	r3, r3, r2
- 2046 000a EF22     		movs	r2, #239
- 2047 000c D200     		lsls	r2, r2, #3
- 2048 000e 9B18     		adds	r3, r3, r2
- 2049 0010 1B78     		ldrb	r3, [r3]
- 2050 0012 042B     		cmp	r3, #4
- 2051 0014 09D1     		bne	.L228
- 2052 0016 0369     		ldr	r3, [r0, #16]
- 2053 0018 4069     		ldr	r0, [r0, #20]
- 2054 001a 9847     		blx	r3
- 2055              	.L229:
- 2056 001c 637B     		ldrb	r3, [r4, #13]
- 2057 001e 002B     		cmp	r3, #0
- 2058 0020 02D0     		beq	.L227
- 2059 0022 2000     		movs	r0, r4
- 2060 0024 FFF7FEFF 		bl	smtc_ping_slot_start
- 2061              	.L227:
- 2062              		@ sp needed
- 2063 0028 70BD     		pop	{r4, r5, r6, pc}
- 2064              	.L228:
- 2065 002a 0A2B     		cmp	r3, #10
- 2066 002c F6D1     		bne	.L229
- 2067 002e 3733     		adds	r3, r3, #55
- 2068 0030 FF33     		adds	r3, r3, #255
- 2069 0032 C35C     		ldrb	r3, [r0, r3]
- 2070 0034 5C33     		adds	r3, r3, #92
- 2071 0036 9B00     		lsls	r3, r3, #2
- 2072 0038 1B58     		ldr	r3, [r3, r0]
- 2073 003a 0068     		ldr	r0, [r0]
- 2074 003c D98A     		ldrh	r1, [r3, #22]
- 2075 003e 1A7D     		ldrb	r2, [r3, #20]
- 2076 0040 1D6A     		ldr	r5, [r3, #32]
- 2077 0042 FFF7FEFF 		bl	smtc_ping_slot_get_duration_timeout_ms.isra.0
- 2078 0046 2918     		adds	r1, r5, r0
- 2079 0048 2000     		movs	r0, r4
- 2080 004a FFF7FEFF 		bl	smtc_ping_slot_compute_next_ping_offset_time
-ARM GAS  /tmp/ccI75xPw.s 			page 39
+ 2019 04e0 FF0000FF 		.word	-16776961
+ 2020 04e4 00000000 		.word	lr1_stack_mac_rx_gfsk_launch_callback_for_rp
+ 2021 04e8 00000000 		.word	ping_slot_mac_rx_lora_launch_callback_for_rp
+ 2022 04ec 26010000 		.word	.LC62
+ 2023 04f0 92000000 		.word	.LC14
+ 2024 04f4 FF010000 		.word	511
+ 2025 04f8 0F1D2110 		.word	270605583
+ 2026 04fc FF040000 		.word	1279
+ 2027 0500 A8610000 		.word	25000
+ 2028 0504 A0860100 		.word	100000
+ 2029 0508 00000000 		.word	__func__.4
+ 2030 050c F3000000 		.word	.LC21
+ 2031 0510 FA000000 		.word	.LC60
+ 2032 0514 51010000 		.word	.LC64
+ 2034              		.section	.text.smtc_ping_slot_rp_callback,"ax",%progbits
+ 2035              		.align	1
+ 2036              		.global	smtc_ping_slot_rp_callback
+ 2037              		.syntax unified
+ 2038              		.code	16
+ 2039              		.thumb_func
+ 2041              	smtc_ping_slot_rp_callback:
+ 2042              		@ args = 0, pretend = 0, frame = 0
+ 2043              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2044 0000 70B5     		push	{r4, r5, r6, lr}
+ 2045 0002 8368     		ldr	r3, [r0, #8]
+ 2046 0004 0279     		ldrb	r2, [r0, #4]
+ 2047 0006 0400     		movs	r4, r0
+ 2048 0008 9B18     		adds	r3, r3, r2
+ 2049 000a EF22     		movs	r2, #239
+ 2050 000c D200     		lsls	r2, r2, #3
+ 2051 000e 9B18     		adds	r3, r3, r2
+ 2052 0010 1B78     		ldrb	r3, [r3]
+ 2053 0012 042B     		cmp	r3, #4
+ 2054 0014 09D1     		bne	.L228
+ 2055 0016 0369     		ldr	r3, [r0, #16]
+ 2056 0018 4069     		ldr	r0, [r0, #20]
+ 2057 001a 9847     		blx	r3
+ 2058              	.L229:
+ 2059 001c 637B     		ldrb	r3, [r4, #13]
+ 2060 001e 002B     		cmp	r3, #0
+ 2061 0020 02D0     		beq	.L227
+ 2062 0022 2000     		movs	r0, r4
+ 2063 0024 FFF7FEFF 		bl	smtc_ping_slot_start
+ 2064              	.L227:
+ 2065              		@ sp needed
+ 2066 0028 70BD     		pop	{r4, r5, r6, pc}
+ 2067              	.L228:
+ 2068 002a 0A2B     		cmp	r3, #10
+ 2069 002c F6D1     		bne	.L229
+ 2070 002e 3733     		adds	r3, r3, #55
+ 2071 0030 FF33     		adds	r3, r3, #255
+ 2072 0032 C35C     		ldrb	r3, [r0, r3]
+ 2073 0034 5C33     		adds	r3, r3, #92
+ 2074 0036 9B00     		lsls	r3, r3, #2
+ 2075 0038 1B58     		ldr	r3, [r3, r0]
+ 2076 003a 0068     		ldr	r0, [r0]
+ 2077 003c D98A     		ldrh	r1, [r3, #22]
+ARM GAS  /tmp/ccj6lSJi.s 			page 39
 
 
- 2081 004e E5E7     		b	.L229
- 2083              		.section	.text.smtc_ping_slot_multicast_b_get_session_status,"ax",%progbits
- 2084              		.align	1
- 2085              		.global	smtc_ping_slot_multicast_b_get_session_status
- 2086              		.syntax unified
- 2087              		.code	16
- 2088              		.thumb_func
- 2090              	smtc_ping_slot_multicast_b_get_session_status:
- 2091              		@ args = 12, pretend = 0, frame = 0
- 2092              		@ frame_needed = 0, uses_anonymous_args = 0
- 2093 0000 10B5     		push	{r4, lr}
- 2094 0002 0400     		movs	r4, r0
- 2095 0004 0120     		movs	r0, #1
- 2096 0006 0329     		cmp	r1, #3
- 2097 0008 14D8     		bhi	.L235
- 2098 000a 8900     		lsls	r1, r1, #2
- 2099 000c 6018     		adds	r0, r4, r1
- 2100 000e FC30     		adds	r0, r0, #252
- 2101 0010 816F     		ldr	r1, [r0, #120]
- 2102 0012 0C78     		ldrb	r4, [r1]
- 2103 0014 1470     		strb	r4, [r2]
- 2104 0016 0A00     		movs	r2, r1
- 2105 0018 2932     		adds	r2, r2, #41
- 2106 001a 1278     		ldrb	r2, [r2]
- 2107 001c 1A70     		strb	r2, [r3]
- 2108 001e 0A69     		ldr	r2, [r1, #16]
- 2109 0020 029B     		ldr	r3, [sp, #8]
- 2110 0022 1A60     		str	r2, [r3]
- 2111 0024 0B7D     		ldrb	r3, [r1, #20]
- 2112 0026 039A     		ldr	r2, [sp, #12]
- 2113 0028 1370     		strb	r3, [r2]
- 2114 002a 836F     		ldr	r3, [r0, #120]
- 2115 002c 0020     		movs	r0, #0
- 2116 002e 1B7E     		ldrb	r3, [r3, #24]
- 2117 0030 049A     		ldr	r2, [sp, #16]
- 2118 0032 1370     		strb	r3, [r2]
- 2119              	.L235:
- 2120              		@ sp needed
- 2121 0034 10BD     		pop	{r4, pc}
- 2123              		.section	.rodata.__func__.0,"a"
- 2126              	__func__.0:
- 2127 0000 736D7463 		.ascii	"smtc_ping_slot_compute_first_slot\000"
- 2127      5F70696E 
- 2127      675F736C 
- 2127      6F745F63 
- 2127      6F6D7075 
- 2128              		.section	.rodata.__func__.1,"a"
- 2131              	__func__.1:
- 2132 0000 736D7463 		.ascii	"smtc_ping_slot_compute_downlink_toa\000"
- 2132      5F70696E 
- 2132      675F736C 
- 2132      6F745F63 
- 2132      6F6D7075 
- 2133              		.section	.rodata.__func__.2,"a"
- 2136              	__func__.2:
- 2137 0000 736D7463 		.ascii	"smtc_ping_slot_mac_rx_frame_decode\000"
- 2137      5F70696E 
-ARM GAS  /tmp/ccI75xPw.s 			page 40
+ 2078 003e 1A7D     		ldrb	r2, [r3, #20]
+ 2079 0040 1D6A     		ldr	r5, [r3, #32]
+ 2080 0042 FFF7FEFF 		bl	smtc_ping_slot_get_duration_timeout_ms.isra.0
+ 2081 0046 2918     		adds	r1, r5, r0
+ 2082 0048 2000     		movs	r0, r4
+ 2083 004a FFF7FEFF 		bl	smtc_ping_slot_compute_next_ping_offset_time
+ 2084 004e E5E7     		b	.L229
+ 2086              		.section	.text.smtc_ping_slot_multicast_b_get_session_status,"ax",%progbits
+ 2087              		.align	1
+ 2088              		.global	smtc_ping_slot_multicast_b_get_session_status
+ 2089              		.syntax unified
+ 2090              		.code	16
+ 2091              		.thumb_func
+ 2093              	smtc_ping_slot_multicast_b_get_session_status:
+ 2094              		@ args = 12, pretend = 0, frame = 0
+ 2095              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2096 0000 10B5     		push	{r4, lr}
+ 2097 0002 0400     		movs	r4, r0
+ 2098 0004 0120     		movs	r0, #1
+ 2099 0006 0329     		cmp	r1, #3
+ 2100 0008 14D8     		bhi	.L235
+ 2101 000a 8900     		lsls	r1, r1, #2
+ 2102 000c 6018     		adds	r0, r4, r1
+ 2103 000e FC30     		adds	r0, r0, #252
+ 2104 0010 816F     		ldr	r1, [r0, #120]
+ 2105 0012 0C78     		ldrb	r4, [r1]
+ 2106 0014 1470     		strb	r4, [r2]
+ 2107 0016 0A00     		movs	r2, r1
+ 2108 0018 2932     		adds	r2, r2, #41
+ 2109 001a 1278     		ldrb	r2, [r2]
+ 2110 001c 1A70     		strb	r2, [r3]
+ 2111 001e 0A69     		ldr	r2, [r1, #16]
+ 2112 0020 029B     		ldr	r3, [sp, #8]
+ 2113 0022 1A60     		str	r2, [r3]
+ 2114 0024 0B7D     		ldrb	r3, [r1, #20]
+ 2115 0026 039A     		ldr	r2, [sp, #12]
+ 2116 0028 1370     		strb	r3, [r2]
+ 2117 002a 836F     		ldr	r3, [r0, #120]
+ 2118 002c 0020     		movs	r0, #0
+ 2119 002e 1B7E     		ldrb	r3, [r3, #24]
+ 2120 0030 049A     		ldr	r2, [sp, #16]
+ 2121 0032 1370     		strb	r3, [r2]
+ 2122              	.L235:
+ 2123              		@ sp needed
+ 2124 0034 10BD     		pop	{r4, pc}
+ 2126              		.section	.rodata.__func__.0,"a"
+ 2129              	__func__.0:
+ 2130 0000 736D7463 		.ascii	"smtc_ping_slot_compute_first_slot\000"
+ 2130      5F70696E 
+ 2130      675F736C 
+ 2130      6F745F63 
+ 2130      6F6D7075 
+ 2131              		.section	.rodata.__func__.1,"a"
+ 2134              	__func__.1:
+ 2135 0000 736D7463 		.ascii	"smtc_ping_slot_compute_downlink_toa\000"
+ 2135      5F70696E 
+ 2135      675F736C 
+ARM GAS  /tmp/ccj6lSJi.s 			page 40
 
 
- 2137      675F736C 
- 2137      6F745F6D 
- 2137      61635F72 
- 2138              		.section	.rodata.__func__.3,"a"
- 2141              	__func__.3:
- 2142 0000 70696E67 		.ascii	"ping_slot_mac_rx_lora_launch_callback_for_rp\000"
- 2142      5F736C6F 
- 2142      745F6D61 
- 2142      635F7278 
- 2142      5F6C6F72 
- 2143              		.section	.rodata.__func__.4,"a"
- 2146              	__func__.4:
- 2147 0000 736D7463 		.ascii	"smtc_ping_slot_start\000"
- 2147      5F70696E 
- 2147      675F736C 
- 2147      6F745F73 
- 2147      74617274 
- 2148              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccI75xPw.s 			page 41
+ 2135      6F745F63 
+ 2135      6F6D7075 
+ 2136              		.section	.rodata.__func__.2,"a"
+ 2139              	__func__.2:
+ 2140 0000 736D7463 		.ascii	"smtc_ping_slot_mac_rx_frame_decode\000"
+ 2140      5F70696E 
+ 2140      675F736C 
+ 2140      6F745F6D 
+ 2140      61635F72 
+ 2141              		.section	.rodata.__func__.3,"a"
+ 2144              	__func__.3:
+ 2145 0000 70696E67 		.ascii	"ping_slot_mac_rx_lora_launch_callback_for_rp\000"
+ 2145      5F736C6F 
+ 2145      745F6D61 
+ 2145      635F7278 
+ 2145      5F6C6F72 
+ 2146              		.section	.rodata.__func__.4,"a"
+ 2149              	__func__.4:
+ 2150 0000 736D7463 		.ascii	"smtc_ping_slot_start\000"
+ 2150      5F70696E 
+ 2150      675F736C 
+ 2150      6F745F73 
+ 2150      74617274 
+ 2151              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccj6lSJi.s 			page 41
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_ping_slot.c
-     /tmp/ccI75xPw.s:14     .text.ral_compute_lora_ldro:00000000 $t
-     /tmp/ccI75xPw.s:19     .text.ral_compute_lora_ldro:00000000 ral_compute_lora_ldro
-     /tmp/ccI75xPw.s:29     .text.ral_compute_lora_ldro:0000000e $d
-     /tmp/ccI75xPw.s:81     .text.smtc_ping_slot_compute_next_ping_offset_time:00000000 $t
-     /tmp/ccI75xPw.s:86     .text.smtc_ping_slot_compute_next_ping_offset_time:00000000 smtc_ping_slot_compute_next_ping_offset_time
-     /tmp/ccI75xPw.s:133    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:00000000 $t
-     /tmp/ccI75xPw.s:138    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:00000000 ping_slot_mac_rx_lora_launch_callback_for_rp
-     /tmp/ccI75xPw.s:212    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:0000008c $d
-     /tmp/ccI75xPw.s:2141   .rodata.__func__.3:00000000 __func__.3
-     /tmp/ccI75xPw.s:220    .text.smtc_ping_slot_get_duration_timeout_ms.isra.0:00000000 $t
-     /tmp/ccI75xPw.s:225    .text.smtc_ping_slot_get_duration_timeout_ms.isra.0:00000000 smtc_ping_slot_get_duration_timeout_ms.isra.0
-     /tmp/ccI75xPw.s:246    .text.smtc_ping_slot_init:00000000 $t
-     /tmp/ccI75xPw.s:252    .text.smtc_ping_slot_init:00000000 smtc_ping_slot_init
-     /tmp/ccI75xPw.s:327    .text.smtc_ping_slot_init:0000008c $d
-     /tmp/ccI75xPw.s:2038   .text.smtc_ping_slot_rp_callback:00000000 smtc_ping_slot_rp_callback
-     /tmp/ccI75xPw.s:374    .text.smtc_ping_slot_mac_rp_callback:00000000 $t
-     /tmp/ccI75xPw.s:380    .text.smtc_ping_slot_mac_rp_callback:00000000 smtc_ping_slot_mac_rp_callback
-     /tmp/ccI75xPw.s:408    .text.smtc_ping_slot_mac_rp_callback:00000034 $d
-     /tmp/ccI75xPw.s:419    .text.smtc_ping_slot_mac_rp_callback:0000004a $t
-     /tmp/ccI75xPw.s:831    .text.smtc_ping_slot_mac_rp_callback:0000037c $d
-     /tmp/ccI75xPw.s:844    .text.smtc_ping_slot_mac_rp_callback:000003ac $t
-     /tmp/ccI75xPw.s:1043   .text.smtc_ping_slot_mac_rp_callback:00000544 $d
-     /tmp/ccI75xPw.s:2136   .rodata.__func__.2:00000000 __func__.2
-     /tmp/ccI75xPw.s:2131   .rodata.__func__.1:00000000 __func__.1
-     /tmp/ccI75xPw.s:1065   .text.smtc_ping_slot_compute_first_slot:00000000 $t
-     /tmp/ccI75xPw.s:1071   .text.smtc_ping_slot_compute_first_slot:00000000 smtc_ping_slot_compute_first_slot
-     /tmp/ccI75xPw.s:1126   .text.smtc_ping_slot_compute_first_slot:00000074 $d
-     /tmp/ccI75xPw.s:2126   .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccI75xPw.s:1132   .text.smtc_ping_slot_init_after_beacon:00000000 $t
-     /tmp/ccI75xPw.s:1138   .text.smtc_ping_slot_init_after_beacon:00000000 smtc_ping_slot_init_after_beacon
-     /tmp/ccI75xPw.s:1219   .text.smtc_ping_slot_init_after_beacon:00000090 $d
-     /tmp/ccI75xPw.s:1222   .text.smtc_ping_slot_multicast_b_start_session:00000000 $t
-     /tmp/ccI75xPw.s:1228   .text.smtc_ping_slot_multicast_b_start_session:00000000 smtc_ping_slot_multicast_b_start_session
-     /tmp/ccI75xPw.s:1287   .text.smtc_ping_slot_multicast_b_stop_session:00000000 $t
-     /tmp/ccI75xPw.s:1293   .text.smtc_ping_slot_multicast_b_stop_session:00000000 smtc_ping_slot_multicast_b_stop_session
-     /tmp/ccI75xPw.s:1317   .text.smtc_ping_slot_multicast_b_stop_all_sessions:00000000 $t
-     /tmp/ccI75xPw.s:1323   .text.smtc_ping_slot_multicast_b_stop_all_sessions:00000000 smtc_ping_slot_multicast_b_stop_all_sessions
-     /tmp/ccI75xPw.s:1349   .text.smtc_ping_slot_stop:00000000 $t
-     /tmp/ccI75xPw.s:1355   .text.smtc_ping_slot_stop:00000000 smtc_ping_slot_stop
-     /tmp/ccI75xPw.s:1398   .text.smtc_ping_slot_start:00000000 $t
-     /tmp/ccI75xPw.s:1404   .text.smtc_ping_slot_start:00000000 smtc_ping_slot_start
-     /tmp/ccI75xPw.s:1703   .text.smtc_ping_slot_start:00000240 $d
-     /tmp/ccI75xPw.s:2146   .rodata.__func__.4:00000000 __func__.4
-     /tmp/ccI75xPw.s:1714   .text.smtc_ping_slot_start:00000268 $t
-     /tmp/ccI75xPw.s:2016   .text.smtc_ping_slot_start:000004e0 $d
-     /tmp/ccI75xPw.s:2032   .text.smtc_ping_slot_rp_callback:00000000 $t
-     /tmp/ccI75xPw.s:2084   .text.smtc_ping_slot_multicast_b_get_session_status:00000000 $t
-     /tmp/ccI75xPw.s:2090   .text.smtc_ping_slot_multicast_b_get_session_status:00000000 smtc_ping_slot_multicast_b_get_session_status
-     /tmp/ccI75xPw.s:42     .text.ral_compute_lora_ldro:0000001b $d
-     /tmp/ccI75xPw.s:42     .text.ral_compute_lora_ldro:0000001c $t
+     /tmp/ccj6lSJi.s:14     .text.ral_compute_lora_ldro:00000000 $t
+     /tmp/ccj6lSJi.s:19     .text.ral_compute_lora_ldro:00000000 ral_compute_lora_ldro
+     /tmp/ccj6lSJi.s:29     .text.ral_compute_lora_ldro:0000000e $d
+     /tmp/ccj6lSJi.s:81     .text.smtc_ping_slot_compute_next_ping_offset_time:00000000 $t
+     /tmp/ccj6lSJi.s:86     .text.smtc_ping_slot_compute_next_ping_offset_time:00000000 smtc_ping_slot_compute_next_ping_offset_time
+     /tmp/ccj6lSJi.s:133    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:00000000 $t
+     /tmp/ccj6lSJi.s:138    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:00000000 ping_slot_mac_rx_lora_launch_callback_for_rp
+     /tmp/ccj6lSJi.s:212    .text.ping_slot_mac_rx_lora_launch_callback_for_rp:0000008c $d
+     /tmp/ccj6lSJi.s:2144   .rodata.__func__.3:00000000 __func__.3
+     /tmp/ccj6lSJi.s:220    .text.smtc_ping_slot_get_duration_timeout_ms.isra.0:00000000 $t
+     /tmp/ccj6lSJi.s:225    .text.smtc_ping_slot_get_duration_timeout_ms.isra.0:00000000 smtc_ping_slot_get_duration_timeout_ms.isra.0
+     /tmp/ccj6lSJi.s:246    .text.smtc_ping_slot_init:00000000 $t
+     /tmp/ccj6lSJi.s:252    .text.smtc_ping_slot_init:00000000 smtc_ping_slot_init
+     /tmp/ccj6lSJi.s:327    .text.smtc_ping_slot_init:0000008c $d
+     /tmp/ccj6lSJi.s:2041   .text.smtc_ping_slot_rp_callback:00000000 smtc_ping_slot_rp_callback
+     /tmp/ccj6lSJi.s:374    .text.smtc_ping_slot_mac_rp_callback:00000000 $t
+     /tmp/ccj6lSJi.s:380    .text.smtc_ping_slot_mac_rp_callback:00000000 smtc_ping_slot_mac_rp_callback
+     /tmp/ccj6lSJi.s:408    .text.smtc_ping_slot_mac_rp_callback:00000034 $d
+     /tmp/ccj6lSJi.s:419    .text.smtc_ping_slot_mac_rp_callback:0000004a $t
+     /tmp/ccj6lSJi.s:831    .text.smtc_ping_slot_mac_rp_callback:0000037c $d
+     /tmp/ccj6lSJi.s:844    .text.smtc_ping_slot_mac_rp_callback:000003ac $t
+     /tmp/ccj6lSJi.s:1043   .text.smtc_ping_slot_mac_rp_callback:00000544 $d
+     /tmp/ccj6lSJi.s:2139   .rodata.__func__.2:00000000 __func__.2
+     /tmp/ccj6lSJi.s:2134   .rodata.__func__.1:00000000 __func__.1
+     /tmp/ccj6lSJi.s:1065   .text.smtc_ping_slot_compute_first_slot:00000000 $t
+     /tmp/ccj6lSJi.s:1071   .text.smtc_ping_slot_compute_first_slot:00000000 smtc_ping_slot_compute_first_slot
+     /tmp/ccj6lSJi.s:1126   .text.smtc_ping_slot_compute_first_slot:00000074 $d
+     /tmp/ccj6lSJi.s:2129   .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccj6lSJi.s:1132   .text.smtc_ping_slot_init_after_beacon:00000000 $t
+     /tmp/ccj6lSJi.s:1138   .text.smtc_ping_slot_init_after_beacon:00000000 smtc_ping_slot_init_after_beacon
+     /tmp/ccj6lSJi.s:1219   .text.smtc_ping_slot_init_after_beacon:00000090 $d
+     /tmp/ccj6lSJi.s:1222   .text.smtc_ping_slot_multicast_b_start_session:00000000 $t
+     /tmp/ccj6lSJi.s:1228   .text.smtc_ping_slot_multicast_b_start_session:00000000 smtc_ping_slot_multicast_b_start_session
+     /tmp/ccj6lSJi.s:1287   .text.smtc_ping_slot_multicast_b_stop_session:00000000 $t
+     /tmp/ccj6lSJi.s:1293   .text.smtc_ping_slot_multicast_b_stop_session:00000000 smtc_ping_slot_multicast_b_stop_session
+     /tmp/ccj6lSJi.s:1317   .text.smtc_ping_slot_multicast_b_stop_all_sessions:00000000 $t
+     /tmp/ccj6lSJi.s:1323   .text.smtc_ping_slot_multicast_b_stop_all_sessions:00000000 smtc_ping_slot_multicast_b_stop_all_sessions
+     /tmp/ccj6lSJi.s:1349   .text.smtc_ping_slot_stop:00000000 $t
+     /tmp/ccj6lSJi.s:1355   .text.smtc_ping_slot_stop:00000000 smtc_ping_slot_stop
+     /tmp/ccj6lSJi.s:1401   .text.smtc_ping_slot_start:00000000 $t
+     /tmp/ccj6lSJi.s:1407   .text.smtc_ping_slot_start:00000000 smtc_ping_slot_start
+     /tmp/ccj6lSJi.s:1706   .text.smtc_ping_slot_start:00000240 $d
+     /tmp/ccj6lSJi.s:2149   .rodata.__func__.4:00000000 __func__.4
+     /tmp/ccj6lSJi.s:1717   .text.smtc_ping_slot_start:00000268 $t
+     /tmp/ccj6lSJi.s:2019   .text.smtc_ping_slot_start:000004e0 $d
+     /tmp/ccj6lSJi.s:2035   .text.smtc_ping_slot_rp_callback:00000000 $t
+     /tmp/ccj6lSJi.s:2087   .text.smtc_ping_slot_multicast_b_get_session_status:00000000 $t
+     /tmp/ccj6lSJi.s:2093   .text.smtc_ping_slot_multicast_b_get_session_status:00000000 smtc_ping_slot_multicast_b_get_session_status
+     /tmp/ccj6lSJi.s:42     .text.ral_compute_lora_ldro:0000001b $d
+     /tmp/ccj6lSJi.s:42     .text.ral_compute_lora_ldro:0000001c $t
 
 UNDEFINED SYMBOLS
 __gnu_thumb1_case_uqi
 smtc_modem_hal_start_radio_tcxo
 smtc_modem_hal_assert_fail
-ARM GAS  /tmp/ccI75xPw.s 			page 42
+ARM GAS  /tmp/ccj6lSJi.s 			page 42
 
 
 smtc_modem_hal_get_time_in_100us
