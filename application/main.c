@@ -154,10 +154,10 @@ int main( void )
     TimerSetContext( &periodic_timer, NULL );
     TimerStart(&periodic_timer);
 
-    TimerInit( &periodic_timer1, &periodic_timer_cb1 );
+    /*TimerInit( &periodic_timer1, &periodic_timer_cb1 );
     TimerSetValue( &periodic_timer1, PERIODIC_TIMER_PERIOD_1 );
     TimerSetContext( &periodic_timer1, NULL );
-    TimerStart(&periodic_timer1);
+    TimerStart(&periodic_timer1);*/
 
 
     lr11xx_status_t ret;
@@ -176,6 +176,8 @@ int main( void )
         uint32_t sleep_time_ms = smtc_modem_run_engine( );
         ADCmeas = GETvoltage(&hadc);
         Voltage = ADCmeas*VDR;
+        SMTC_HAL_TRACE_PRINTF(" ADC: %.2fV Voltage: %.2fV \n\r", ADCmeas, Voltage);
+        
     if( periodic_message_flag ) 
     {
            
@@ -189,12 +191,12 @@ int main( void )
         periodic_message_flag = false;
         cntup ++;
     
-       if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD ) 
+       /*if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD ) 
         {
             txdone_counter = 0;
             SMTC_HAL_TRACE_INFO( "Send link check\n\r" );
             smtc_modem_lorawan_request_link_check( STACK_ID );
-        }
+        }*/
 
 
     }
@@ -203,7 +205,7 @@ int main( void )
         sleep_time_ms = smtc_modem_run_engine( );
         hal_mcu_set_sleep_for_ms( sleep_time_ms );
 
-          if( periodic_message_flag1 )
+          if( cntup ==3 )
         {   
            
             sendData(temp,Voltage, Door, water);
@@ -286,9 +288,7 @@ float GETtemperature(const uint32_t id) {
 
 float GETvoltage(ADC_HandleTypeDef *hadc)
 {	float batt = 0;
-        // Initialize ADC
-    HAL_ADC_Init(&hadc);
-    hal_mcu_delay_ms(20);
+
     hal_gpio_set_value(PA_3, 1); //activates mosfet
     hal_mcu_delay_ms(20);
 
@@ -311,8 +311,7 @@ float GETvoltage(ADC_HandleTypeDef *hadc)
     HAL_ADC_Stop(hadc);
     hal_mcu_delay_ms(20);
     hal_gpio_set_value(PA_3, 0); //turns of mosfet
-    hal_mcu_delay_ms(20);
-    HAL_ADC_DeInit(&hadc);
+
     return batt;
 }
 
