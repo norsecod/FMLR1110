@@ -20,8 +20,11 @@
         "smtc_hal_rtc.h": "c",
         "smtc_hal_dbg_trace.h": "c",
         "smtc_hal_gpio.h": "c",
-        "smtc_hal_gpio_pin_names.h": "c"
+        "smtc_hal_gpio_pin_names.h": "c",
+        "smtc_hal_trace.h": "c",
+        "smtc_hal_uart.h": "c",
+        "smtc_hal_i2c.h": "c"
     },
-    "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.errorSquiggles": "enabled",
  
 }

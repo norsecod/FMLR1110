@@ -32,8 +32,8 @@
 #define DEFAULT_UL_PORT         7
 #define DEFAULT_DL_PORT         100
 
-#define PERIODIC_TIMER_PERIOD 20000
-#define PERIODIC_TIMER_PERIOD_1 60000
+#define PERIODIC_TIMER_PERIOD 3600000
+#define Alarm_Timer 3600000*2
 
 #define LINK_CHECK_RATIO_THRESHOLD 50
 #define LINK_CHECK_ATTEMPTS_THRESHOLD 10
@@ -62,7 +62,9 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
  */ 
     ADC_HandleTypeDef hadc;
     static bool          periodic_message_flag;
-    static bool          periodic_message_flag1;
+    static bool water_timerActive;
+    static bool hastydata1 = 0;
+
     float temp = 0.0f;
     float Voltage = 0;
     float VDR = 16/3.3;
@@ -84,31 +86,24 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
  * --- PRIVATE FUNCTIONS DECLARATION -------------------------------------------
  */
 
-    static void MX_ADC_Init(void);
     static bool is_joined( void );
     static void get_event( void );
     static void gps_snap( void );
-   /* static void sensor_read( void );
-    void printCayenneLPPBuffer(const cayenne_lpp_t *lpp);
-    void sendLoRaWANPacket(const uint8_t* payload, uint8_t payloadSize);
-    void sendData(float temperature, float analogValue, bool digitalValue1, bool digitalValue2);
-    float GETtemperature(const uint32_t id);
-    float GETvoltage(ADC_HandleTypeDef *hadc);
-*/
+
+
     static TimerEvent_t periodic_timer;
     static void periodic_timer_cb( void* context ) {
     SMTC_HAL_TRACE_PRINTF( "periodic_timer_cb\n\r" );
     periodic_message_flag = true;
     TimerStart( &periodic_timer );
+    
 }
-
-    static TimerEvent_t periodic_timer1;
-    static void periodic_timer_cb1( void* context ) {
-    SMTC_HAL_TRACE_PRINTF( "send cayenne\n\r" );
-    periodic_message_flag1 = true;
-    TimerStart( &periodic_timer1 );
-}
-
+    static TimerEvent_t water_timer;
+    static void water_timer_cb( void* context ) {
+    hastydata1 = 0; // Allow wateralarm to be sent again
+    water_timerActive = false; // Indicate that the timer is not active anymore
+    TimerStart( &water_timer );
+    }
   
 /*
  * -----------------------------------------------------------------------------
@@ -150,16 +145,17 @@ int main( void )
 
 
 
-    //periodic timer example
+    //periodic timer 
     TimerInit( &periodic_timer, &periodic_timer_cb );
     TimerSetValue( &periodic_timer, PERIODIC_TIMER_PERIOD );
     TimerSetContext( &periodic_timer, NULL );
     TimerStart(&periodic_timer);
 
-    /*TimerInit( &periodic_timer1, &periodic_timer_cb1 );
-    TimerSetValue( &periodic_timer1, PERIODIC_TIMER_PERIOD_1 );
-    TimerSetContext( &periodic_timer1, NULL );
-    TimerStart(&periodic_timer1);*/
+    TimerInit( &water_timer, &water_timer_cb );
+    TimerSetValue( &water_timer, Alarm_Timer );
+    TimerSetContext( &water_timer, NULL );
+
+
 
 
     lr11xx_status_t ret;
@@ -211,14 +207,17 @@ int main( void )
           if( cntup ==3 )
         {   HAL_Delay(3000);
             sensor_read();
-            sendData(temp,Voltage, Door, water);
+            sendData(temp,Voltage);
             SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s cnutp: %d\n\r",
                       temp, ADCmeas,
                       Voltage,
                       Door == 1 ? "open" : "closed",
                       water == 1 ? "high" : "low",
                       cntup);
+
                      cntup = 0;
+                     hastydata1 = 0;
+
             HAL_Delay(3000);
                       
         }
@@ -238,22 +237,35 @@ int main( void )
     }
 
         // Read the state of GPIO pin PB1 on interrupt
-     switch (hal_gpio_get_value(PB_1))
-	  	  {
-	      	  case GPIO_PIN_SET:
-	             water = 1;
-	              break;
+switch (hal_gpio_get_value(PB_1)) {
+    case GPIO_PIN_SET:
+        if (water == 0 && !water_timerActive) { // Detects transition from 0 to 1
+            water = 1;
+            wateralarm(water); // Send alarm: water detected
+            hastydata1 = 1; // Prevent immediate re-sending
+            TimerStart(&water_timer); // Start cooldown timer
+            water_timerActive = true; // Prevent further updates until timer expires
+        }
+        break;
 
-	          case GPIO_PIN_RESET:
-	              water = 0;
-	              break;
-	      }
+    case GPIO_PIN_RESET:
+        if (water == 1 && !water_timerActive) { // Detects transition from 1 to 0
+            water = 0;
+            wateralarm(water); // Send alarm: water no longer detected
+            // Consider if you need to reset hastydata1 here based on your logic
+            // hastydata1 = 1;
+            TimerStart(&water_timer); // Start cooldown timer
+            water_timerActive = true; // Prevent further updates until timer expires
+        }
+        break;
+}
 
 	      // Read the state of GPIO pin PB2 on interrupt
 	  switch (hal_gpio_get_value(PB_2))
 	      {
 	          case GPIO_PIN_SET:
 	             Door = 1;
+                 //dooralarm(Door);
 	              break;
 
 	          case GPIO_PIN_RESET:
@@ -275,95 +287,8 @@ hal_mcu_delay_ms(1000);
  * --- PRIVATE FUNCTIONS DEFINITION --------------------------------------------
  */
 
-/*
-float GETtemperature(const uint32_t id) {
-    uint8_t device_address = 0x90; // 8-bit address for TC74A0
-    uint8_t temperature_raw;
-    float temperature;
-
-    if (hal_i2c_read(id, device_address, 0x00, &temperature_raw) != SUCCESS) {
-        // Error handling: Failed to receive temperature data
-        return -128.0f; // Return an error value (out of measurement range) in case of error
-    }
-
-    // Convert raw temperature to float directly
-    // The TC74A0 outputs temperature as an 8-bit signed integer.
-    temperature = (float)((int8_t)temperature_raw);
-
-    return temperature;
-}
-
-float GETvoltage(ADC_HandleTypeDef *hadc)
-{	float batt = 0;
-
-    hal_gpio_set_value(PA_3, 1); //activates mosfet
-    MX_ADC_Init();
-    hal_mcu_delay_ms(20);
-
-    // Start ADC conversion
-    if (HAL_ADC_Start(hadc) != HAL_OK) {
-        // Handle error if ADC start fails
-        // You can add error handling code here, such as logging or recovery actions
-        return 128.0f; // Return 0 voltage in case of error
-    }
-    hal_mcu_delay_ms(20);
-    // Wait for conversion to complete
-    if (HAL_ADC_PollForConversion(hadc, HAL_MAX_DELAY) == HAL_OK)
-    {
-        uint32_t adc_value = HAL_ADC_GetValue(hadc);
-        // Convert ADC value to voltage using appropriate scaling
-        // For example, if your ADC reference voltage is 3.3V and resolution is 12 bits:
-        batt = (3.3f * adc_value) / 4095.0f;
-    }
-    hal_mcu_delay_ms(20);
-    HAL_ADC_DeInit(hadc);
-    hal_mcu_delay_ms(20);
-    hal_gpio_set_value(PA_3, 0); //turns of mosfet
-
-    return batt;
-}
-*/
-
-static void MX_ADC_Init(void)
-{
-
-  ADC_ChannelConfTypeDef sConfig = {0};
-
-  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
-  */
-  hadc.Instance = ADC1;
-  hadc.Init.OversamplingMode = DISABLE;
-  hadc.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV1;
-  hadc.Init.Resolution = ADC_RESOLUTION_12B;
-  hadc.Init.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
-  hadc.Init.ScanConvMode = ADC_SCAN_DIRECTION_FORWARD;
-  hadc.Init.DataAlign = ADC_DATAALIGN_RIGHT;
-  hadc.Init.ContinuousConvMode = DISABLE;
-  hadc.Init.DiscontinuousConvMode = DISABLE;
-  hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
-  hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
-  hadc.Init.DMAContinuousRequests = DISABLE;
-  hadc.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
-  hadc.Init.Overrun = ADC_OVR_DATA_PRESERVED;
-  hadc.Init.LowPowerAutoWait = DISABLE;
-  hadc.Init.LowPowerFrequencyMode = ENABLE;
-  hadc.Init.LowPowerAutoPowerOff = DISABLE;
-  if (HAL_ADC_Init(&hadc) != HAL_OK)
-  {
-    mcu_panic();
-  }
-
-  /** Configure for the selected ADC regular channel to be converted.
-  */
-  sConfig.Channel = ADC_CHANNEL_0;
-  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
-  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
-  {
-    mcu_panic();
-  }
 
 
-}
 
 static void gps_snap( void ) {
 
@@ -535,52 +460,3 @@ static bool is_joined( void ) {
 }
 
 
-/*
-static void sensor_read( void ) {
-    SMTC_HAL_TRACE_PRINTF( "----- sensor_read -----\n\r" );
-        temp = GETtemperature(1);
-        ADCmeas = GETvoltage(&hadc);
-        Voltage = ADCmeas*VDR;
-
-
-#if defined( LR11XX )
-            
-            //gps_snap();
-#endif
-
-}
-
-
-
-void sendLoRaWANPacket(const uint8_t* payload, uint8_t payloadSize) {
-    uint8_t port = 85; // Example application port
-    bool confirmed = false; // False for unconfirmed messages, true for confirmed
-    // Use the appropriate function to send the data over LoRaWAN
-    smtc_modem_request_uplink(STACK_ID, port, confirmed, payload, payloadSize);
-}
-
-void sendData(float temperature, float analogValue, bool digitalValue1, bool digitalValue2) {
-    cayenne_lpp_t lpp;
-    cayenne_lpp_reset(&lpp);
-
-    cayenne_lpp_add_temperature(&lpp, 1, temperature);         // Channel 1 for thermostat (temperature)
-    cayenne_lpp_add_analog_input(&lpp, 2, analogValue);        // Channel 2 for analog value
-    cayenne_lpp_add_digital_input(&lpp, 3, digitalValue1);     // Channel 3 for digital value 1
-    cayenne_lpp_add_digital_input(&lpp, 4, digitalValue2);     // Channel 4 for digital value 2
-
-    // lpp.buffer contains encoded data, and lpp.cursor indicates the size of the payload.
-    sendLoRaWANPacket(lpp.buffer, lpp.cursor);
-    printCayenneLPPBuffer(&lpp); //used only for debugging
-
-
-}
-
-void printCayenneLPPBuffer(const cayenne_lpp_t *lpp) {
-    SMTC_HAL_TRACE_PRINTF("CayenneLPP Buffer Content (Hex): ");
-    for(uint8_t i = 0; i < lpp->cursor; ++i) {
-        SMTC_HAL_TRACE_PRINTF("%02X ", lpp->buffer[i]);
-    }
-    SMTC_HAL_TRACE_PRINTF("\n\r");
-}
-
-*/

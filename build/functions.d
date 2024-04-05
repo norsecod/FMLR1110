@@ -1,4 +1,4 @@
-build/functions.o: extensions/drivers/cayennelpp/functions.c \
+build/functions.o: extensions/drivers/bachelor/functions.c \
  bsp_l0/common/functions.h bsp_l0/common/cayenne_lpp.h \
  bsp_l0/smtc_hal/smtc_hal_gpio.h \
  bsp_l0/smtc_hal/smtc_hal_gpio_pin_names.h bsp_l0/smtc_hal/smtc_hal_rtc.h \
@@ -62,7 +62,9 @@ build/functions.o: extensions/drivers/cayennelpp/functions.c \
  bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pcd.h \
  bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_usb.h \
  bsp_l0/smtc_hal/smtc_hal_i2c.h \
- bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_adc.h
+ bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_adc.h \
+ bsp_l0/smtc_hal/smtc_hal_dbg_trace.h bsp_l0/smtc_hal/smtc_hal_trace.h \
+ bsp_l0/smtc_hal/smtc_hal_mcu.h bsp_l0/smtc_hal/smtc_hal_dbg_trace.h
 bsp_l0/common/functions.h:
 bsp_l0/common/cayenne_lpp.h:
 bsp_l0/smtc_hal/smtc_hal_gpio.h:
@@ -129,3 +131,7 @@ bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pcd.h:
 bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_usb.h:
 bsp_l0/smtc_hal/smtc_hal_i2c.h:
 bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_adc.h:
+bsp_l0/smtc_hal/smtc_hal_dbg_trace.h:
+bsp_l0/smtc_hal/smtc_hal_trace.h:
+bsp_l0/smtc_hal/smtc_hal_mcu.h:
+bsp_l0/smtc_hal/smtc_hal_dbg_trace.h:

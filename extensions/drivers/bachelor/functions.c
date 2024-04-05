@@ -1,9 +1,13 @@
 #include "functions.h"
 
 
+
 // Global variables (ensure they are declared and initialized appropriately elsewhere)
 extern float VDR, temp, ADCmeas, Voltage;
 extern ADC_HandleTypeDef hadc; // Ensure this type is defined elsewhere
+
+#define STACK_ID 0
+
 
 void sensor_read(void) {
     SMTC_HAL_TRACE_PRINTF("----- sensor_read -----\n\r");
@@ -30,14 +34,33 @@ void sendLoRaWANPacket(const uint8_t *payload, uint8_t payloadSize) {
     smtc_modem_request_uplink(STACK_ID, port, confirmed, payload, payloadSize);
 }
 
-void sendData(float temperature, float analogValue, bool digitalValue1, bool digitalValue2) {
+void sendData(float temperature, float analogValue) {
     cayenne_lpp_t lpp;
     cayenne_lpp_reset(&lpp);
 
     cayenne_lpp_add_temperature(&lpp, 1, temperature);
     cayenne_lpp_add_analog_input(&lpp, 2, analogValue);
-    cayenne_lpp_add_digital_input(&lpp, 3, digitalValue1);
-    cayenne_lpp_add_digital_input(&lpp, 4, digitalValue2);
+
+
+    sendLoRaWANPacket(lpp.buffer, lpp.cursor);
+    printCayenneLPPBuffer(&lpp); // Used only for debugging
+}
+
+void wateralarm(bool digitalValue)
+{ 
+    cayenne_lpp_t lpp;
+    cayenne_lpp_reset(&lpp);
+    cayenne_lpp_add_digital_input(&lpp, 3, digitalValue);
+
+    sendLoRaWANPacket(lpp.buffer, lpp.cursor);
+    printCayenneLPPBuffer(&lpp); // Used only for debugging
+}
+
+void dooralarm(bool digitalValue)
+{
+    cayenne_lpp_t lpp;
+    cayenne_lpp_reset(&lpp);
+    cayenne_lpp_add_digital_input(&lpp, 4, digitalValue);
 
     sendLoRaWANPacket(lpp.buffer, lpp.cursor);
     printCayenneLPPBuffer(&lpp); // Used only for debugging
@@ -77,4 +100,45 @@ float GETvoltage(ADC_HandleTypeDef *hadc) {
     hal_gpio_set_value(PA_3, 0);
 
     return batt;
+}
+
+static void MX_ADC_Init(void)
+{
+
+  ADC_ChannelConfTypeDef sConfig = {0};
+
+  /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+  */
+  hadc.Instance = ADC1;
+  hadc.Init.OversamplingMode = DISABLE;
+  hadc.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV1;
+  hadc.Init.Resolution = ADC_RESOLUTION_12B;
+  hadc.Init.SamplingTime = ADC_SAMPLETIME_1CYCLE_5;
+  hadc.Init.ScanConvMode = ADC_SCAN_DIRECTION_FORWARD;
+  hadc.Init.DataAlign = ADC_DATAALIGN_RIGHT;
+  hadc.Init.ContinuousConvMode = DISABLE;
+  hadc.Init.DiscontinuousConvMode = DISABLE;
+  hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
+  hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
+  hadc.Init.DMAContinuousRequests = DISABLE;
+  hadc.Init.EOCSelection = ADC_EOC_SINGLE_CONV;
+  hadc.Init.Overrun = ADC_OVR_DATA_PRESERVED;
+  hadc.Init.LowPowerAutoWait = DISABLE;
+  hadc.Init.LowPowerFrequencyMode = ENABLE;
+  hadc.Init.LowPowerAutoPowerOff = DISABLE;
+  if (HAL_ADC_Init(&hadc) != HAL_OK)
+  {
+    mcu_panic();
+  }
+
+  /** Configure for the selected ADC regular channel to be converted.
+  */
+  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+  {
+    mcu_panic();
+  }
+
+
 }
