@@ -3,7 +3,14 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc",
+                "/usr/arm-none-eabi/include/c++/13.2.0/debug",
+                "${workspaceFolder}/bsp_l0/common",
+                "${workspaceFolder}/lbm/smtc_modem_api",
+                "${workspaceFolder}/bsp_l0/smtc_hal",
+                "${workspaceFolder}/bsp_l0/smtc_hal",
+                "${workspaceFolder}/bsp_l0/smtc_hal"
             ],
             "defines": [],
             "cStandard": "c17",

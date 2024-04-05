@@ -1,17 +1,6 @@
-build/main.o: application/main.c lbm/smtc_modem_api/smtc_modem_api.h \
- lbm/smtc_modem_api/smtc_modem_utilities.h \
- lbm/smtc_modem_api/smtc_modem_api.h \
- lbm/smtc_modem_core/smtc_ralf/src/ralf.h \
- lbm/smtc_modem_core/smtc_ral/src/ral.h \
- lbm/smtc_modem_core/smtc_ral/src/ral_defs.h \
- lbm/smtc_modem_core/smtc_ral/src/lr_fhss_v1_base_types.h \
- lbm/smtc_modem_core/smtc_ral/src/ral_drv.h \
- lbm/smtc_modem_core/smtc_ralf/src/ralf_defs.h \
- lbm/smtc_modem_core/smtc_ral/src/ral_defs.h \
- lbm/smtc_modem_core/smtc_ralf/src/ralf_drv.h \
- lbm/smtc_modem_hal/smtc_modem_hal.h bsp_l0/smtc_hal/smtc_hal_dbg_trace.h \
- bsp_l0/smtc_hal/smtc_hal_trace.h bsp_l0/smtc_hal/smtc_hal_mcu.h \
- bsp_l0/smtc_hal/smtc_hal_dbg_trace.h bsp_l0/smtc_hal/smtc_hal_gpio.h \
+build/functions.o: extensions/drivers/cayennelpp/functions.c \
+ bsp_l0/common/functions.h bsp_l0/common/cayenne_lpp.h \
+ bsp_l0/smtc_hal/smtc_hal_gpio.h \
  bsp_l0/smtc_hal/smtc_hal_gpio_pin_names.h bsp_l0/smtc_hal/smtc_hal_rtc.h \
  bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal.h \
  bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_conf.h \
@@ -73,33 +62,9 @@ build/main.o: application/main.c lbm/smtc_modem_api/smtc_modem_api.h \
  bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pcd.h \
  bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_usb.h \
  bsp_l0/smtc_hal/smtc_hal_i2c.h \
- bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_adc.h \
- extensions/drivers/common/timer.h \
- lbm/smtc_modem_core/smtc_ralf/src/ralf_lr11xx.h \
- lbm/smtc_modem_core/smtc_ral/src/ral_lr11xx.h \
- lbm/smtc_modem_core/smtc_ralf/src/ralf.h \
- lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_gnss.h \
- lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_gnss_types.h \
- lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_system_types.h \
- lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_types.h \
- bsp_l0/common/cayenne_lpp.h bsp_l0/common/functions.h \
- bsp_l0/common/cayenne_lpp.h bsp_l0/common/settings.h
-lbm/smtc_modem_api/smtc_modem_api.h:
-lbm/smtc_modem_api/smtc_modem_utilities.h:
-lbm/smtc_modem_api/smtc_modem_api.h:
-lbm/smtc_modem_core/smtc_ralf/src/ralf.h:
-lbm/smtc_modem_core/smtc_ral/src/ral.h:
-lbm/smtc_modem_core/smtc_ral/src/ral_defs.h:
-lbm/smtc_modem_core/smtc_ral/src/lr_fhss_v1_base_types.h:
-lbm/smtc_modem_core/smtc_ral/src/ral_drv.h:
-lbm/smtc_modem_core/smtc_ralf/src/ralf_defs.h:
-lbm/smtc_modem_core/smtc_ral/src/ral_defs.h:
-lbm/smtc_modem_core/smtc_ralf/src/ralf_drv.h:
-lbm/smtc_modem_hal/smtc_modem_hal.h:
-bsp_l0/smtc_hal/smtc_hal_dbg_trace.h:
-bsp_l0/smtc_hal/smtc_hal_trace.h:
-bsp_l0/smtc_hal/smtc_hal_mcu.h:
-bsp_l0/smtc_hal/smtc_hal_dbg_trace.h:
+ bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_adc.h
+bsp_l0/common/functions.h:
+bsp_l0/common/cayenne_lpp.h:
 bsp_l0/smtc_hal/smtc_hal_gpio.h:
 bsp_l0/smtc_hal/smtc_hal_gpio_pin_names.h:
 bsp_l0/smtc_hal/smtc_hal_rtc.h:
@@ -164,15 +129,3 @@ bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pcd.h:
 bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_usb.h:
 bsp_l0/smtc_hal/smtc_hal_i2c.h:
 bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_adc.h:
-extensions/drivers/common/timer.h:
-lbm/smtc_modem_core/smtc_ralf/src/ralf_lr11xx.h:
-lbm/smtc_modem_core/smtc_ral/src/ral_lr11xx.h:
-lbm/smtc_modem_core/smtc_ralf/src/ralf.h:
-lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_gnss.h:
-lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_gnss_types.h:
-lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_system_types.h:
-lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_types.h:
-bsp_l0/common/cayenne_lpp.h:
-bsp_l0/common/functions.h:
-bsp_l0/common/cayenne_lpp.h:
-bsp_l0/common/settings.h:

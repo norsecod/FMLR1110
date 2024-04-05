@@ -19,6 +19,9 @@
 #include "lr11xx_gnss.h"
 
 #include "cayenne_lpp.h"
+#include "functions.h"
+
+
 #include "string.h"
 
 #include "settings.h"
@@ -85,13 +88,13 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     static bool is_joined( void );
     static void get_event( void );
     static void gps_snap( void );
-    static void sensor_read( void );
+   /* static void sensor_read( void );
     void printCayenneLPPBuffer(const cayenne_lpp_t *lpp);
     void sendLoRaWANPacket(const uint8_t* payload, uint8_t payloadSize);
     void sendData(float temperature, float analogValue, bool digitalValue1, bool digitalValue2);
     float GETtemperature(const uint32_t id);
     float GETvoltage(ADC_HandleTypeDef *hadc);
-
+*/
     static TimerEvent_t periodic_timer;
     static void periodic_timer_cb( void* context ) {
     SMTC_HAL_TRACE_PRINTF( "periodic_timer_cb\n\r" );
@@ -135,8 +138,7 @@ int main( void )
     //settings_print();
 
     SMTC_HAL_TRACE_INFO( "Modem driver version: %d.%d.%d\n\r", version.major, version.minor, version.patch );
-
-    MX_ADC_Init();
+ 
     hal_gpio_init_out(PC_7,0);
     hal_gpio_init_out(PC_1,1);
     hal_gpio_init_out(PB_0,0);
@@ -164,7 +166,7 @@ int main( void )
     lr11xx_system_version_t lr11xx_version;
     ret = lr11xx_system_get_version( modem_radio.ral.context, &lr11xx_version );
     SMTC_HAL_TRACE_PRINTF("LR11xx Version: HW: %x, type: %x, fw: %x\n\r", lr11xx_version.hw, lr11xx_version.type, lr11xx_version.fw);
-
+    
    
 
     while(true) 
@@ -174,29 +176,30 @@ int main( void )
 
         // Execute modem runtime, this function must be recalled in sleep_time_ms (max value, can be recalled sooner)
         uint32_t sleep_time_ms = smtc_modem_run_engine( );
-        ADCmeas = GETvoltage(&hadc);
-        Voltage = ADCmeas*VDR;
-        SMTC_HAL_TRACE_PRINTF(" ADC: %.2fV Voltage: %.2fV \n\r", ADCmeas, Voltage);
+        
+
+
         
     if( periodic_message_flag ) 
     {
            
         sensor_read();
-        SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s\n\r",
+            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s cnutp: %d\n\r",
                       temp, ADCmeas,
                       Voltage,
                       Door == 1 ? "open" : "closed",
-                      water == 1 ? "high" : "low");
+                      water == 1 ? "high" : "low",
+                      cntup);
         
         periodic_message_flag = false;
         cntup ++;
     
-       /*if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD ) 
+       if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD ) 
         {
             txdone_counter = 0;
             SMTC_HAL_TRACE_INFO( "Send link check\n\r" );
             smtc_modem_lorawan_request_link_check( STACK_ID );
-        }*/
+        }
 
 
     }
@@ -206,15 +209,18 @@ int main( void )
         hal_mcu_set_sleep_for_ms( sleep_time_ms );
 
           if( cntup ==3 )
-        {   
-           
+        {   HAL_Delay(3000);
+            sensor_read();
             sendData(temp,Voltage, Door, water);
-            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s\n\r",
+            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s cnutp: %d\n\r",
                       temp, ADCmeas,
                       Voltage,
                       Door == 1 ? "open" : "closed",
-                      water == 1 ? "high" : "low");
-                      periodic_message_flag1 = false;
+                      water == 1 ? "high" : "low",
+                      cntup);
+                     cntup = 0;
+            HAL_Delay(3000);
+                      
         }
     
     if (hal_gpio_get_value(PC_7) == 1)
@@ -269,6 +275,7 @@ hal_mcu_delay_ms(1000);
  * --- PRIVATE FUNCTIONS DEFINITION --------------------------------------------
  */
 
+/*
 float GETtemperature(const uint32_t id) {
     uint8_t device_address = 0x90; // 8-bit address for TC74A0
     uint8_t temperature_raw;
@@ -290,13 +297,14 @@ float GETvoltage(ADC_HandleTypeDef *hadc)
 {	float batt = 0;
 
     hal_gpio_set_value(PA_3, 1); //activates mosfet
+    MX_ADC_Init();
     hal_mcu_delay_ms(20);
 
     // Start ADC conversion
     if (HAL_ADC_Start(hadc) != HAL_OK) {
         // Handle error if ADC start fails
         // You can add error handling code here, such as logging or recovery actions
-        return 0.0f; // Return 0 voltage in case of error
+        return 128.0f; // Return 0 voltage in case of error
     }
     hal_mcu_delay_ms(20);
     // Wait for conversion to complete
@@ -308,13 +316,13 @@ float GETvoltage(ADC_HandleTypeDef *hadc)
         batt = (3.3f * adc_value) / 4095.0f;
     }
     hal_mcu_delay_ms(20);
-    HAL_ADC_Stop(hadc);
+    HAL_ADC_DeInit(hadc);
     hal_mcu_delay_ms(20);
     hal_gpio_set_value(PA_3, 0); //turns of mosfet
 
     return batt;
 }
-
+*/
 
 static void MX_ADC_Init(void)
 {
@@ -347,7 +355,7 @@ static void MX_ADC_Init(void)
 
   /** Configure for the selected ADC regular channel to be converted.
   */
-  sConfig.Channel = ADC_CHANNEL_5;
+  sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
   {
@@ -527,10 +535,12 @@ static bool is_joined( void ) {
 }
 
 
-
+/*
 static void sensor_read( void ) {
     SMTC_HAL_TRACE_PRINTF( "----- sensor_read -----\n\r" );
         temp = GETtemperature(1);
+        ADCmeas = GETvoltage(&hadc);
+        Voltage = ADCmeas*VDR;
 
 
 #if defined( LR11XX )
@@ -539,6 +549,8 @@ static void sensor_read( void ) {
 #endif
 
 }
+
+
 
 void sendLoRaWANPacket(const uint8_t* payload, uint8_t payloadSize) {
     uint8_t port = 85; // Example application port
@@ -571,4 +583,4 @@ void printCayenneLPPBuffer(const cayenne_lpp_t *lpp) {
     SMTC_HAL_TRACE_PRINTF("\n\r");
 }
 
-
+*/

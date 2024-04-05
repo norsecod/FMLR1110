@@ -6,13 +6,22 @@
         "stm32l0xx_hal_adc.h": "c",
         "lr11xx_gnss.h": "c",
         "string.h": "c",
-        "cayennelpp.h": "c",
         "smtc_modem_hal.h": "c",
         "smtc_modem_utilities.h": "c",
         "smtc_modem_api.h": "c",
         "ral_lr11xx.h": "c",
         "cayenne_lpp.h": "c",
-        "inttypes.h": "c"
+        "functions.h": "c",
+        "inttypes.h": "c",
+        "radio_planner.h": "c",
+        "alc_sync.h": "c",
+        "device_management_defs.h": "c",
+        "stdint.h": "c",
+        "smtc_hal_rtc.h": "c",
+        "smtc_hal_dbg_trace.h": "c",
+        "smtc_hal_gpio.h": "c",
+        "smtc_hal_gpio_pin_names.h": "c"
     },
+    "C_Cpp.errorSquiggles": "disabled",
  
 }
