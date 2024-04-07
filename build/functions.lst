@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccMJihaf.s 			page 1
+ARM GAS  /tmp/cce4lj0A.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccMJihaf.s 			page 1
   51 002a EFE7     		b	.L2
   52              	.L5:
   53              		.align	2
-ARM GAS  /tmp/ccMJihaf.s 			page 2
+ARM GAS  /tmp/cce4lj0A.s 			page 2
 
 
   54              	.L4:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccMJihaf.s 			page 1
  112 0036 30BD     		pop	{r4, r5, pc}
  114              		.section	.text.wateralarm,"ax",%progbits
  115              		.align	1
-ARM GAS  /tmp/ccMJihaf.s 			page 3
+ARM GAS  /tmp/cce4lj0A.s 			page 3
 
 
  116              		.global	wateralarm
@@ -135,7 +135,7 @@ ARM GAS  /tmp/ccMJihaf.s 			page 1
  128 0008 FFF7FEFF 		bl	cayenne_lpp_reset
  129 000c 2200     		movs	r2, r4
  130 000e 01A8     		add	r0, sp, #4
- 131 0010 0321     		movs	r1, #3
+ 131 0010 0421     		movs	r1, #4
  132 0012 FFF7FEFF 		bl	cayenne_lpp_add_digital_input
  133 0016 2E23     		movs	r3, #46
  134 0018 6B44     		add	r3, r3, sp
@@ -163,7 +163,7 @@ ARM GAS  /tmp/ccMJihaf.s 			page 1
  158 0008 FFF7FEFF 		bl	cayenne_lpp_reset
  159 000c 2200     		movs	r2, r4
  160 000e 01A8     		add	r0, sp, #4
- 161 0010 0421     		movs	r1, #4
+ 161 0010 0321     		movs	r1, #3
  162 0012 FFF7FEFF 		bl	cayenne_lpp_add_digital_input
  163 0016 2E23     		movs	r3, #46
  164 0018 6B44     		add	r3, r3, sp
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccMJihaf.s 			page 1
  174              		.global	__aeabi_i2f
  175              		.section	.text.GETtemperature,"ax",%progbits
  176              		.align	1
-ARM GAS  /tmp/ccMJihaf.s 			page 4
+ARM GAS  /tmp/cce4lj0A.s 			page 4
 
 
  177              		.global	GETtemperature
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccMJihaf.s 			page 1
  228 0008 FFF7FEFF 		bl	hal_gpio_set_value
  229 000c 0822     		movs	r2, #8
  230 000e 0021     		movs	r1, #0
-ARM GAS  /tmp/ccMJihaf.s 			page 5
+ARM GAS  /tmp/cce4lj0A.s 			page 5
 
 
  231 0010 6846     		mov	r0, sp
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccMJihaf.s 			page 1
  285 008a 0FD0     		beq	.L15
  286 008c 1F49     		ldr	r1, .L26+8
  287 008e 2048     		ldr	r0, .L26+12
-ARM GAS  /tmp/ccMJihaf.s 			page 6
+ARM GAS  /tmp/cce4lj0A.s 			page 6
 
 
  288 0090 FFF7FEFF 		bl	hal_trace_print_var
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccMJihaf.s 			page 1
  342 0114 16000000 		.word	.LC10
  343 0118 17000000 		.word	.LC12
  344 011c 6840533A 		.word	978534504
-ARM GAS  /tmp/ccMJihaf.s 			page 7
+ARM GAS  /tmp/cce4lj0A.s 			page 7
 
 
  346              		.section	.rodata.sensor_read.str1.1,"aMS",%progbits,1
@@ -411,31 +411,31 @@ ARM GAS  /tmp/ccMJihaf.s 			page 1
  392      44435F49 
  392      6E697400 
  393              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccMJihaf.s 			page 8
+ARM GAS  /tmp/cce4lj0A.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 functions.c
-     /tmp/ccMJihaf.s:21     .text.printCayenneLPPBuffer:00000000 $t
-     /tmp/ccMJihaf.s:27     .text.printCayenneLPPBuffer:00000000 printCayenneLPPBuffer
-     /tmp/ccMJihaf.s:55     .text.printCayenneLPPBuffer:0000002c $d
-     /tmp/ccMJihaf.s:60     .text.sendLoRaWANPacket:00000000 $t
-     /tmp/ccMJihaf.s:66     .text.sendLoRaWANPacket:00000000 sendLoRaWANPacket
-     /tmp/ccMJihaf.s:80     .text.sendData:00000000 $t
-     /tmp/ccMJihaf.s:86     .text.sendData:00000000 sendData
-     /tmp/ccMJihaf.s:115    .text.wateralarm:00000000 $t
-     /tmp/ccMJihaf.s:121    .text.wateralarm:00000000 wateralarm
-     /tmp/ccMJihaf.s:145    .text.dooralarm:00000000 $t
-     /tmp/ccMJihaf.s:151    .text.dooralarm:00000000 dooralarm
-     /tmp/ccMJihaf.s:176    .text.GETtemperature:00000000 $t
-     /tmp/ccMJihaf.s:182    .text.GETtemperature:00000000 GETtemperature
-     /tmp/ccMJihaf.s:215    .text.GETvoltage:00000000 $t
-     /tmp/ccMJihaf.s:221    .text.GETvoltage:00000000 GETvoltage
-     /tmp/ccMJihaf.s:338    .text.GETvoltage:00000104 $d
-     /tmp/ccMJihaf.s:391    .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccMJihaf.s:350    .text.sensor_read:00000000 $t
-     /tmp/ccMJihaf.s:356    .text.sensor_read:00000000 sensor_read
-     /tmp/ccMJihaf.s:381    .text.sensor_read:0000002c $d
+     /tmp/cce4lj0A.s:21     .text.printCayenneLPPBuffer:00000000 $t
+     /tmp/cce4lj0A.s:27     .text.printCayenneLPPBuffer:00000000 printCayenneLPPBuffer
+     /tmp/cce4lj0A.s:55     .text.printCayenneLPPBuffer:0000002c $d
+     /tmp/cce4lj0A.s:60     .text.sendLoRaWANPacket:00000000 $t
+     /tmp/cce4lj0A.s:66     .text.sendLoRaWANPacket:00000000 sendLoRaWANPacket
+     /tmp/cce4lj0A.s:80     .text.sendData:00000000 $t
+     /tmp/cce4lj0A.s:86     .text.sendData:00000000 sendData
+     /tmp/cce4lj0A.s:115    .text.wateralarm:00000000 $t
+     /tmp/cce4lj0A.s:121    .text.wateralarm:00000000 wateralarm
+     /tmp/cce4lj0A.s:145    .text.dooralarm:00000000 $t
+     /tmp/cce4lj0A.s:151    .text.dooralarm:00000000 dooralarm
+     /tmp/cce4lj0A.s:176    .text.GETtemperature:00000000 $t
+     /tmp/cce4lj0A.s:182    .text.GETtemperature:00000000 GETtemperature
+     /tmp/cce4lj0A.s:215    .text.GETvoltage:00000000 $t
+     /tmp/cce4lj0A.s:221    .text.GETvoltage:00000000 GETvoltage
+     /tmp/cce4lj0A.s:338    .text.GETvoltage:00000104 $d
+     /tmp/cce4lj0A.s:391    .rodata.__func__.0:00000000 __func__.0
+     /tmp/cce4lj0A.s:350    .text.sensor_read:00000000 $t
+     /tmp/cce4lj0A.s:356    .text.sensor_read:00000000 sensor_read
+     /tmp/cce4lj0A.s:381    .text.sensor_read:0000002c $d
 
 UNDEFINED SYMBOLS
 hal_trace_print_var

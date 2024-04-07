@@ -32,8 +32,8 @@
 #define DEFAULT_UL_PORT         7
 #define DEFAULT_DL_PORT         100
 
-#define PERIODIC_TIMER_PERIOD 3600000
-#define Alarm_Timer 3600000*2
+#define PERIODIC_TIMER_PERIOD 20000
+#define ALARM_TIMER_PERIOD  60000
 
 #define LINK_CHECK_RATIO_THRESHOLD 50
 #define LINK_CHECK_ATTEMPTS_THRESHOLD 10
@@ -61,9 +61,12 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
  * --- PRIVATE VARIABLES -------------------------------------------------------
  */ 
     ADC_HandleTypeDef hadc;
-    static bool          periodic_message_flag;
-    static bool water_timerActive;
-    static bool hastydata1 = 0;
+    static bool periodic_message_flag;
+    static bool water_alarm_flag;
+    static bool door_alarm_flag;
+    static bool hastydata1 = false;
+    static bool hastydata2 = false;
+    static bool firstflag = true;
 
     float temp = 0.0f;
     float Voltage = 0;
@@ -79,6 +82,7 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     uint32_t txdone_counter = 0;
     uint32_t link_check_attempts = 0;
     static uint32_t tx_pending;
+    static int tx_mine = 0;
 
     
 /*
@@ -95,15 +99,22 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     static void periodic_timer_cb( void* context ) {
     SMTC_HAL_TRACE_PRINTF( "periodic_timer_cb\n\r" );
     periodic_message_flag = true;
-    TimerStart( &periodic_timer );
-    
+    TimerStart( &periodic_timer );    
 }
     static TimerEvent_t water_timer;
     static void water_timer_cb( void* context ) {
-    hastydata1 = 0; // Allow wateralarm to be sent again
-    water_timerActive = false; // Indicate that the timer is not active anymore
-    TimerStart( &water_timer );
-    }
+    SMTC_HAL_TRACE_PRINTF( "water_timer_cb\n\r" );
+    water_alarm_flag = true;
+      
+}
+    static TimerEvent_t door_timer;
+    static void door_timer_cb( void* context ) {
+    SMTC_HAL_TRACE_PRINTF( "door_timer_cb\n\r" );
+    door_alarm_flag = true;
+   
+    
+}
+
   
 /*
  * -----------------------------------------------------------------------------
@@ -152,18 +163,21 @@ int main( void )
     TimerStart(&periodic_timer);
 
     TimerInit( &water_timer, &water_timer_cb );
-    TimerSetValue( &water_timer, Alarm_Timer );
+    TimerSetValue( &water_timer, ALARM_TIMER_PERIOD );
     TimerSetContext( &water_timer, NULL );
 
 
-
+    TimerInit( &door_timer, &door_timer_cb );
+    TimerSetValue( &door_timer, ALARM_TIMER_PERIOD );
+    TimerSetContext( &door_timer, NULL );
+ 
 
     lr11xx_status_t ret;
     lr11xx_system_version_t lr11xx_version;
     ret = lr11xx_system_get_version( modem_radio.ral.context, &lr11xx_version );
     SMTC_HAL_TRACE_PRINTF("LR11xx Version: HW: %x, type: %x, fw: %x\n\r", lr11xx_version.hw, lr11xx_version.type, lr11xx_version.fw);
-    
-   
+    SMTC_HAL_TRACE_PRINTF("------------<first sensor read>------------");
+    sensor_read();
 
     while(true) 
     {
@@ -173,23 +187,24 @@ int main( void )
         // Execute modem runtime, this function must be recalled in sleep_time_ms (max value, can be recalled sooner)
         uint32_t sleep_time_ms = smtc_modem_run_engine( );
         
-
-
+    
         
     if( periodic_message_flag ) 
     {
            
         sensor_read();
-            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s cnutp: %d\n\r",
+        SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
                       temp, ADCmeas,
                       Voltage,
-                      Door == 1 ? "open" : "closed",
+                      Door == 1 ? "high" : "low",
                       water == 1 ? "high" : "low",
-                      cntup);
+                      cntup,
+                      hastydata1,
+                      hastydata2);         
         
-        periodic_message_flag = false;
         cntup ++;
-    
+        periodic_message_flag = false;
+
        if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD ) 
         {
             txdone_counter = 0;
@@ -204,23 +219,34 @@ int main( void )
         sleep_time_ms = smtc_modem_run_engine( );
         hal_mcu_set_sleep_for_ms( sleep_time_ms );
 
-          if( cntup ==3 )
-        {   HAL_Delay(3000);
+    if( cntup ==3 && is_joined() == 1)
+        {   
             sensor_read();
             sendData(temp,Voltage);
-            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s cnutp: %d\n\r",
+            cntup = 0;
+
+            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
                       temp, ADCmeas,
                       Voltage,
-                      Door == 1 ? "open" : "closed",
+                      Door == 1 ? "high" : "low",
                       water == 1 ? "high" : "low",
-                      cntup);
-
-                     cntup = 0;
-                     hastydata1 = 0;
-
-            HAL_Delay(3000);
-                      
+                      cntup,
+                      hastydata1,
+                      hastydata2);    
+            
         }
+
+    if (water_alarm_flag == true)
+    {
+        hastydata1 = 0;
+        water_alarm_flag = false;
+    }        
+    if (door_alarm_flag == true)
+    {
+        hastydata2 = 0;
+        door_alarm_flag = false;
+    }
+    
     
     if (hal_gpio_get_value(PC_7) == 1)
     {
@@ -239,23 +265,24 @@ int main( void )
         // Read the state of GPIO pin PB1 on interrupt
 switch (hal_gpio_get_value(PB_1)) {
     case GPIO_PIN_SET:
-        if (water == 0 && !water_timerActive) { // Detects transition from 0 to 1
+        if (water == 0 && hastydata1 == 0) { // Detects transition from 0 to 1
             water = 1;
             wateralarm(water); // Send alarm: water detected
+            TimerStart(&water_timer);
             hastydata1 = 1; // Prevent immediate re-sending
-            TimerStart(&water_timer); // Start cooldown timer
-            water_timerActive = true; // Prevent further updates until timer expires
+
         }
         break;
 
     case GPIO_PIN_RESET:
-        if (water == 1 && !water_timerActive) { // Detects transition from 1 to 0
+        if (water == 1 && hastydata1 == 0) { // Detects transition from 1 to 0
             water = 0;
-            wateralarm(water); // Send alarm: water no longer detected
-            // Consider if you need to reset hastydata1 here based on your logic
-            // hastydata1 = 1;
-            TimerStart(&water_timer); // Start cooldown timer
-            water_timerActive = true; // Prevent further updates until timer expires
+            wateralarm(water);
+            TimerStart(&water_timer);
+            hastydata1 = 1;
+
+ 
+
         }
         break;
 }
@@ -264,12 +291,24 @@ switch (hal_gpio_get_value(PB_1)) {
 	  switch (hal_gpio_get_value(PB_2))
 	      {
 	          case GPIO_PIN_SET:
-	             Door = 1;
-                 //dooralarm(Door);
+                 if (Door == 0 && hastydata2 == 0) { // Detects transition from 1 to 0
+                    Door = 1;
+                    dooralarm(Door);
+                    TimerStart(&door_timer);
+                    hastydata2 = 1;
+                    
+        }
 	              break;
 
 	          case GPIO_PIN_RESET:
-	              Door = 0;
+                 if (Door == 1 && hastydata2 == 0) { // Detects transition from 1 to 0
+                    Door = 0;
+                    dooralarm(Door);
+                    TimerStart(&door_timer);
+                    hastydata2 = 1;                   
+
+                 
+        }
 	              break;
 	      }
 
@@ -348,6 +387,25 @@ static void get_event( void ) {
             SMTC_HAL_TRACE_INFO( "Send hello_world message \n\r" );
             char data[] = "hello_world";
             smtc_modem_request_uplink( STACK_ID, 102, false, ( uint8_t* )&data, sizeof( data ) );
+            if (firstflag == true)
+            {   SMTC_HAL_TRACE_PRINTF("------------<sending first data>------------\n\r");
+                if (tx_mine == 1);
+                {
+                    sendData(temp, Voltage);
+                }
+                if (tx_mine == 2);
+                {
+                    wateralarm(water);
+                }
+                if (tx_mine == 3);
+                {
+                if (tx_mine == 2);
+                {
+                    wateralarm(water);
+                };
+                }
+                firstflag = false;
+            }
 
             break;
 
@@ -355,6 +413,11 @@ static void get_event( void ) {
             SMTC_HAL_TRACE_INFO( "Event received: TXDONE\n\r" );
             SMTC_HAL_TRACE_INFO( "Transmission done \n\r" );
             tx_pending = 0;
+            if (firstflag == true)
+            {
+                tx_mine ++;
+            }
+
             break;
 
         case SMTC_MODEM_EVENT_DOWNDATA:
