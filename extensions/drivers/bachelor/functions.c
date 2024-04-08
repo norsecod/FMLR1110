@@ -3,10 +3,26 @@
 
 
 // Global variables (ensure they are declared and initialized appropriately elsewhere)
-extern float VDR, temp, ADCmeas, Voltage, Door, water, hastydata1, hastydata2;
+extern float VDR, temp, ADCmeas, Voltage, Door, water, hastydata1, hastydata2, prev_water,prev_door, door;
 extern ADC_HandleTypeDef hadc; // Ensure this type is defined elsewhere
-extern TimerEvent_t door_timer;
-extern TimerEvent_t water_timer;  
+extern TimerEvent_t water_timer, door_timer;
+
+    hal_gpio_irq_t PC10_cb = {
+        .pin      = PC_10,
+        .context  = NULL,     // context pass to the callback - not used in this example
+        .callback = PC10Callback,  // callback called when EXTI is triggered
+    };
+     hal_gpio_irq_t PC11_cb = {
+        .pin      = PC_11,
+        .context  = NULL,     // context pass to the callback - not used in this example
+        .callback = PC11Callback,  // callback called when EXTI is triggered
+    };
+     hal_gpio_irq_t PA15_cb = {
+        .pin      = PA_15,
+        .context  = NULL,     // context pass to the callback - not used in this example
+        .callback = PA15Callback,  // callback called when EXTI is triggered
+    };
+
 
 #define STACK_ID 0
 
@@ -38,12 +54,14 @@ void sendLoRaWANPacket(const uint8_t *payload, uint8_t payloadSize) {
 
 
 
-void sendData(float temperature, float analogValue) {
+void sendData(float temperature, float analogValue, bool digitalValue1, bool digitalValue2) {
     cayenne_lpp_t lpp;
     cayenne_lpp_reset(&lpp);
 
     cayenne_lpp_add_temperature(&lpp, 1, temperature);
     cayenne_lpp_add_analog_input(&lpp, 2, analogValue);
+    cayenne_lpp_add_digital_input(&lpp, 3, digitalValue1);
+    cayenne_lpp_add_digital_input(&lpp, 4, digitalValue2);
 
 
     sendLoRaWANPacket(lpp.buffer, lpp.cursor);
@@ -87,7 +105,7 @@ float GETvoltage(ADC_HandleTypeDef *hadc) {
     float batt = 0.0;
 
     hal_gpio_set_value(PA_3, 1);
-    ADC_Init();
+    MX_ADC_Init();
     hal_mcu_delay_ms(20);
 
     if (HAL_ADC_Start(hadc) != HAL_OK) {
@@ -106,7 +124,7 @@ float GETvoltage(ADC_HandleTypeDef *hadc) {
     return batt;
 }
 
-void ADC_Init(void)
+void MX_ADC_Init(void)
 {
 
   ADC_ChannelConfTypeDef sConfig = {0};
@@ -137,7 +155,7 @@ void ADC_Init(void)
 
   /** Configure for the selected ADC regular channel to be converted.
   */
-  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Channel = ADC_CHANNEL_5;
   sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
   {
@@ -153,26 +171,17 @@ void GPIO_Init(void) {
     hal_gpio_init_out(PC_1,1);
     hal_gpio_init_out(PB_0,0);
     hal_gpio_init_out(PA_3,0);
+    hal_gpio_init_out(PD_2,0);
 
-    // Initialize PB1 and PB2 for Rising Edge Interrupts
-    hal_gpio_init_in(PB_1, GPIO_NOPULL, GPIO_MODE_IT_RISING, NULL);
-    hal_gpio_init_in(PB_2, GPIO_NOPULL, GPIO_MODE_IT_RISING, NULL);
-
-    /* EXTI interrupt init*/
-    HAL_NVIC_SetPriority(EXTI0_1_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(EXTI0_1_IRQn);
-
-    HAL_NVIC_SetPriority(EXTI2_3_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(EXTI2_3_IRQn);
+    hal_gpio_init_in( PC_11, BSP_GPIO_PULL_MODE_DOWN, BSP_GPIO_IRQ_MODE_RISING, &PC11_cb );
+    hal_gpio_init_in( PC_10, BSP_GPIO_PULL_MODE_DOWN, BSP_GPIO_IRQ_MODE_RISING, &PC10_cb );
+    hal_gpio_init_in( PA_15, BSP_GPIO_PULL_MODE_DOWN, BSP_GPIO_IRQ_MODE_RISING, &PA15_cb );
 }
 
-void PB1_Callback(void) {
-    // Handle PB1 interrupt-specific logic here
-}
 
-void PB2_Callback(void) {
-    // Handle PB2 interrupt-specific logic here
-}
+
+
+
 
 
 

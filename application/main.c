@@ -35,6 +35,7 @@
 #define PERIODIC_TIMER_PERIOD 20000
 #define ALARM_TIMER_PERIOD  60000
 
+
 #define LINK_CHECK_RATIO_THRESHOLD 50
 #define LINK_CHECK_ATTEMPTS_THRESHOLD 10
 
@@ -62,8 +63,7 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
  */ 
     ADC_HandleTypeDef hadc;
     static bool periodic_message_flag;
-    static bool water_alarm_flag;
-    static bool door_alarm_flag;
+
     bool hastydata1 = false;
     bool hastydata2 = false;
     static bool firstflag = true;
@@ -72,8 +72,10 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     float Voltage = 0;
     float VDR = 16/3.3;
     float ADCmeas = 0.0f;
-    int Door = 0;
+    int door = 0;
+    int prev_door = -1;
     int water = 0;
+    int prev_water = -1;
     int cntup = 0;
     static uint8_t gnss_count;
     static uint8_t       rx_payload[255]      = { 0 };  // Buffer for rx payload
@@ -82,7 +84,7 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     uint32_t txdone_counter = 0;
     uint32_t link_check_attempts = 0;
     static uint32_t tx_pending;
-    static int tx_mine = 0;
+   
 
     
 /*
@@ -104,14 +106,15 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     TimerEvent_t water_timer;
     static void water_timer_cb( void* context ) {
     SMTC_HAL_TRACE_PRINTF( "water_timer_cb\n\r" );
-    water_alarm_flag = true;
+    hastydata1 = 0;
+    PC10Callback(NULL);
       
 }
     TimerEvent_t door_timer;
     static void door_timer_cb( void* context ) {
     SMTC_HAL_TRACE_PRINTF( "door_timer_cb\n\r" );
-    door_alarm_flag = true;
-   
+    hastydata2 = 0;
+    PC11Callback(NULL);
     
 }
 
@@ -143,11 +146,13 @@ int main( void )
     settings_init();
     //settings_print();
 
+
+
     SMTC_HAL_TRACE_INFO( "Modem driver version: %d.%d.%d\n\r", version.major, version.minor, version.patch );
  
     GPIO_Init();
-
     hal_mcu_enable_irq( );
+    hal_gpio_irq_enable();
 
   
 
@@ -184,14 +189,14 @@ int main( void )
         
     
         
-    if( periodic_message_flag ) 
+    if( periodic_message_flag) 
     {
            
         sensor_read();
-        SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
+        SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
                       temp, ADCmeas,
                       Voltage,
-                      Door == 1 ? "high" : "low",
+                      door == 1 ? "high" : "low",
                       water == 1 ? "high" : "low",
                       cntup,
                       hastydata1,
@@ -217,30 +222,23 @@ int main( void )
     if( cntup ==3 && is_joined() == 1)
         {   
             sensor_read();
-            sendData(temp,Voltage);
+            sendData(temp, Voltage,door,water);
             cntup = 0;
 
-            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV Door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
+            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
                       temp, ADCmeas,
                       Voltage,
-                      Door == 1 ? "high" : "low",
+                      door == 1 ? "high" : "low",
                       water == 1 ? "high" : "low",
                       cntup,
                       hastydata1,
                       hastydata2);    
+            PC10Callback(NULL);
+            PC11Callback(NULL);
+            PA15Callback(NULL);
             
         }
 
-    if (water_alarm_flag == true)
-    {
-        hastydata1 = 0;
-        water_alarm_flag = false;
-    }        
-    if (door_alarm_flag == true)
-    {
-        hastydata2 = 0;
-        door_alarm_flag = false;
-    }
     
     
     if (hal_gpio_get_value(PC_7) == 1)
@@ -279,7 +277,7 @@ hal_mcu_delay_ms(1000);
 static void gps_snap( void ) {
 
     SMTC_HAL_TRACE_PRINTF( "\n-----------------GPS snap----------------\n\r" );
-    hal_gpio_set_value( PB_0, 1 );
+    //hal_gpio_set_value( PB_0, 1 );
     lr11xx_status_t ret;
     uint8_t nb_sat;
     SMTC_HAL_TRACE_PRINTF( "lr11xx_gnss_scan_autonomous...\n\r" );
@@ -293,7 +291,7 @@ static void gps_snap( void ) {
     }
 
     gnss_count = nb_sat;
-    hal_gpio_set_value( PB_0, 0 );
+    //hal_gpio_set_value( PB_0, 0 );
 }
 
 static void get_event( void ) {
@@ -336,22 +334,8 @@ static void get_event( void ) {
             smtc_modem_request_uplink( STACK_ID, 102, false, ( uint8_t* )&data, sizeof( data ) );
             if (firstflag == true)
             {   SMTC_HAL_TRACE_PRINTF("------------<sending first data>------------\n\r");
-                if (tx_mine == 1);
-                {
-                    sendData(temp, Voltage);
-                    HAL_Delay(1000);
-                }
-                if (tx_mine == 2);
-                {
-                    wateralarm(water);
-                    HAL_Delay(1000);
-                }
-                if (tx_mine == 3);
-                {                              
-                    wateralarm(water);
-                    HAL_Delay(1000);
+                sendData(temp, Voltage,door,water);
                 
-                }
                 firstflag = false;
             }
 
@@ -361,10 +345,7 @@ static void get_event( void ) {
             SMTC_HAL_TRACE_INFO( "Event received: TXDONE\n\r" );
             SMTC_HAL_TRACE_INFO( "Transmission done \n\r" );
             tx_pending = 0;
-            if (firstflag == true)
-            {
-                tx_mine ++;
-            }
+          
 
             break;
 
@@ -469,18 +450,82 @@ static bool is_joined( void ) {
         return false;
     }
 }
+void PC10Callback(void* context)
+{
+    // Check if the interrupt came from PC_10
+    if (hal_gpio_get_value(PC_10) == GPIO_PIN_SET) // Rising edge detected
+    {
+if (hastydata1 == 0)
+{
+    water = 1; // Potentially change the state of `water`
 
-void EXTI0_1_IRQHandler(void) {
-    if (__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_1) != RESET) {
-        __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_1);
-        PB1_Callback(); // Call the callback for PB1
+    // Check if the state of `water` has changed since the last check
+    if (water != prev_water)
+    {
+        // If `water` has changed, call the wateralarm function with the new state
+        wateralarm(water); // Handle door opened
+
+        // Update prev_water to the current state of `water`
+        prev_water = water;
+    }
+
+    TimerStart(&water_timer);
+    hastydata1 = 1; // Prevent re-triggering
+}
+    }
+    else // Falling edge detected
+    {
+        if (hastydata1 == 0)
+        {
+            water = 0;
+            
+
+        }
     }
 }
 
-void EXTI2_3_IRQHandler(void) {
-    if (__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_2) != RESET) {
-        __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_2);
-        PB2_Callback(); // Call the callback for PB2
+void PC11Callback(void* context)
+{
+    // Check if the interrupt came from PC_11
+    if (hal_gpio_get_value(PC_11) == GPIO_PIN_SET) // Rising edge detected
+    {
+        if (hastydata2 == 0)
+        {
+            door = 1;
+
+            if (door != prev_door)
+            {
+                // If `door` has changed, call the wateralarm function with the new state
+                dooralarm(door); // Handle door opened
+
+                // Update prev_door to the current state of `door`
+                prev_door = door;
+            }
+        
+            TimerStart(&door_timer);
+            hastydata2 = 1; // Prevent re-triggering
+        }
+    }
+    else if(hal_gpio_get_value(PC_11) == GPIO_PIN_RESET)// Falling edge detected
+    {
+        if (hastydata2 == 0)
+        {
+            door = 0;
+        
+        }
     }
 }
+void PA15Callback(void* context )
+{   if (hal_gpio_get_value(PA_15) == GPIO_PIN_SET)
+    {
+        hal_gpio_set_value( PD_2, 1 );
+    }
+    else if ((hal_gpio_get_value(PA_15) == GPIO_PIN_RESET))
+    {
+        hal_gpio_set_value( PD_2, 0 );
+    }
+}
+
+
+
 
