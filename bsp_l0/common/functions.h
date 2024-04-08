@@ -10,6 +10,7 @@
 #include "stm32l0xx_hal_adc.h"
 #include "smtc_hal_dbg_trace.h"
 #include "smtc_hal_mcu.h"
+#include "timer.h" 
 
 
 
@@ -26,7 +27,10 @@ void sendData(float temperature, float analogValue);
 void wateralarm(bool digitalValue);
 void dooralarm(bool digitalValue);
 float GETtemperature(const uint32_t id);
-float GETvoltage(ADC_HandleTypeDef *hadc); // Ensure ADC_HandleTypeDef is defined elsewhere or included if defined in the HAL headers
+float GETvoltage(ADC_HandleTypeDef *hadc);
+void PB1_Callback(void);
+void PB2_Callback(void);
+
 
 #ifdef __cplusplus
 }

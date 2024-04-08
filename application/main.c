@@ -154,6 +154,9 @@ int main( void )
     
     hal_mcu_enable_irq( );
 
+    hal_gpio_irq_attach(&PB1_Callback);
+    hal_gpio_irq_attach(&PB2_Callback);
+
 
 
     //periodic timer 
@@ -262,55 +265,7 @@ int main( void )
 
     }
 
-        // Read the state of GPIO pin PB1 on interrupt
-switch (hal_gpio_get_value(PB_1)) {
-    case GPIO_PIN_SET:
-        if (water == 0 && hastydata1 == 0) { // Detects transition from 0 to 1
-            water = 1;
-            wateralarm(water); // Send alarm: water detected
-            TimerStart(&water_timer);
-            hastydata1 = 1; // Prevent immediate re-sending
 
-        }
-        break;
-
-    case GPIO_PIN_RESET:
-        if (water == 1 && hastydata1 == 0) { // Detects transition from 1 to 0
-            water = 0;
-            wateralarm(water);
-            TimerStart(&water_timer);
-            hastydata1 = 1;
-
- 
-
-        }
-        break;
-}
-
-	      // Read the state of GPIO pin PB2 on interrupt
-	  switch (hal_gpio_get_value(PB_2))
-	      {
-	          case GPIO_PIN_SET:
-                 if (Door == 0 && hastydata2 == 0) { // Detects transition from 1 to 0
-                    Door = 1;
-                    dooralarm(Door);
-                    TimerStart(&door_timer);
-                    hastydata2 = 1;
-                    
-        }
-	              break;
-
-	          case GPIO_PIN_RESET:
-                 if (Door == 1 && hastydata2 == 0) { // Detects transition from 1 to 0
-                    Door = 0;
-                    dooralarm(Door);
-                    TimerStart(&door_timer);
-                    hastydata2 = 1;                   
-
-                 
-        }
-	              break;
-	      }
 
 hal_mcu_delay_ms(1000);
 

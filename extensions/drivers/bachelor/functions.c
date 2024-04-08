@@ -3,8 +3,10 @@
 
 
 // Global variables (ensure they are declared and initialized appropriately elsewhere)
-extern float VDR, temp, ADCmeas, Voltage, Door, water;
+extern float VDR, temp, ADCmeas, Voltage, Door, water, hastydata1, hastydata2 ;
 extern ADC_HandleTypeDef hadc; // Ensure this type is defined elsewhere
+extern TimerEvent_t door_timer;
+extern TimerEvent_t water_timer;  
 
 #define STACK_ID 0
 
@@ -146,3 +148,42 @@ static void MX_ADC_Init(void)
 
 
 }
+
+void PB1_Callback(void) {
+
+    if (hal_gpio_get_value(PB_1) == GPIO_PIN_SET) { // Rising edge detected
+        if (water == 0 && hastydata1 == 0) {
+            water = 1;
+            wateralarm(water); // Handle water detected
+            TimerStart(&water_timer);
+            hastydata1 = 1; // Prevent re-triggering
+        }
+    } else { // Falling edge detected
+        if (water == 1 && hastydata1 == 0) {
+            water = 0;
+            wateralarm(water); // Handle water not detected
+            TimerStart(&water_timer);
+            hastydata1 = 1; // Allow for future triggers
+        }
+    }
+}
+
+
+void PB2_Callback(void) {
+    if (hal_gpio_get_value(PB_2) == GPIO_PIN_SET) { // Rising edge detected
+        if (Door == 0 && hastydata2 == 0) {
+            Door = 1;
+            dooralarm(Door); // Handle door opened
+            TimerStart(&door_timer);
+            hastydata2 = 1; // Prevent re-triggering
+        }
+    } else { // Falling edge detected
+        if (Door == 1 && hastydata2 == 0) {
+            Door = 0;
+            dooralarm(Door); // Handle door closed
+            TimerStart(&door_timer);
+            hastydata2 = 1; // Allow for future triggers
+        }
+    }
+}
+
