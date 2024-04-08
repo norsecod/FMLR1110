@@ -3,7 +3,7 @@
 
 
 // Global variables (ensure they are declared and initialized appropriately elsewhere)
-extern float VDR, temp, ADCmeas, Voltage, Door, water, hastydata1, hastydata2 ;
+extern float VDR, temp, ADCmeas, Voltage, Door, water, hastydata1, hastydata2;
 extern ADC_HandleTypeDef hadc; // Ensure this type is defined elsewhere
 extern TimerEvent_t door_timer;
 extern TimerEvent_t water_timer;  
@@ -15,9 +15,7 @@ void sensor_read(void) {
     SMTC_HAL_TRACE_PRINTF("----- sensor_read -----\n\r");
     temp = GETtemperature(1);
     ADCmeas = GETvoltage(&hadc);
-    Voltage = ADCmeas * VDR;
-
-   
+    Voltage = ADCmeas * VDR;   
 
 #if defined(LR11XX)
     //gps_snap(); // Uncomment and implement gps_snap if applicable
@@ -89,7 +87,7 @@ float GETvoltage(ADC_HandleTypeDef *hadc) {
     float batt = 0.0;
 
     hal_gpio_set_value(PA_3, 1);
-    MX_ADC_Init();
+    ADC_Init();
     hal_mcu_delay_ms(20);
 
     if (HAL_ADC_Start(hadc) != HAL_OK) {
@@ -108,7 +106,7 @@ float GETvoltage(ADC_HandleTypeDef *hadc) {
     return batt;
 }
 
-static void MX_ADC_Init(void)
+void ADC_Init(void)
 {
 
   ADC_ChannelConfTypeDef sConfig = {0};
@@ -149,41 +147,32 @@ static void MX_ADC_Init(void)
 
 }
 
-void PB1_Callback(void) {
+void GPIO_Init(void) {
 
-    if (hal_gpio_get_value(PB_1) == GPIO_PIN_SET) { // Rising edge detected
-        if (water == 0 && hastydata1 == 0) {
-            water = 1;
-            wateralarm(water); // Handle water detected
-            TimerStart(&water_timer);
-            hastydata1 = 1; // Prevent re-triggering
-        }
-    } else { // Falling edge detected
-        if (water == 1 && hastydata1 == 0) {
-            water = 0;
-            wateralarm(water); // Handle water not detected
-            TimerStart(&water_timer);
-            hastydata1 = 1; // Allow for future triggers
-        }
-    }
+    hal_gpio_init_out(PC_7,0);
+    hal_gpio_init_out(PC_1,1);
+    hal_gpio_init_out(PB_0,0);
+    hal_gpio_init_out(PA_3,0);
+
+    // Initialize PB1 and PB2 for Rising Edge Interrupts
+    hal_gpio_init_in(PB_1, GPIO_NOPULL, GPIO_MODE_IT_RISING, NULL);
+    hal_gpio_init_in(PB_2, GPIO_NOPULL, GPIO_MODE_IT_RISING, NULL);
+
+    /* EXTI interrupt init*/
+    HAL_NVIC_SetPriority(EXTI0_1_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(EXTI0_1_IRQn);
+
+    HAL_NVIC_SetPriority(EXTI2_3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(EXTI2_3_IRQn);
 }
 
+void PB1_Callback(void) {
+    // Handle PB1 interrupt-specific logic here
+}
 
 void PB2_Callback(void) {
-    if (hal_gpio_get_value(PB_2) == GPIO_PIN_SET) { // Rising edge detected
-        if (Door == 0 && hastydata2 == 0) {
-            Door = 1;
-            dooralarm(Door); // Handle door opened
-            TimerStart(&door_timer);
-            hastydata2 = 1; // Prevent re-triggering
-        }
-    } else { // Falling edge detected
-        if (Door == 1 && hastydata2 == 0) {
-            Door = 0;
-            dooralarm(Door); // Handle door closed
-            TimerStart(&door_timer);
-            hastydata2 = 1; // Allow for future triggers
-        }
-    }
+    // Handle PB2 interrupt-specific logic here
 }
+
+
 

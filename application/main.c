@@ -64,8 +64,8 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     static bool periodic_message_flag;
     static bool water_alarm_flag;
     static bool door_alarm_flag;
-    static bool hastydata1 = false;
-    static bool hastydata2 = false;
+    bool hastydata1 = false;
+    bool hastydata2 = false;
     static bool firstflag = true;
 
     float temp = 0.0f;
@@ -101,13 +101,13 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     periodic_message_flag = true;
     TimerStart( &periodic_timer );    
 }
-    static TimerEvent_t water_timer;
+    TimerEvent_t water_timer;
     static void water_timer_cb( void* context ) {
     SMTC_HAL_TRACE_PRINTF( "water_timer_cb\n\r" );
     water_alarm_flag = true;
       
 }
-    static TimerEvent_t door_timer;
+    TimerEvent_t door_timer;
     static void door_timer_cb( void* context ) {
     SMTC_HAL_TRACE_PRINTF( "door_timer_cb\n\r" );
     door_alarm_flag = true;
@@ -145,19 +145,11 @@ int main( void )
 
     SMTC_HAL_TRACE_INFO( "Modem driver version: %d.%d.%d\n\r", version.major, version.minor, version.patch );
  
-    hal_gpio_init_out(PC_7,0);
-    hal_gpio_init_out(PC_1,1);
-    hal_gpio_init_out(PB_0,0);
-    hal_gpio_init_out(PA_3,0);
-    hal_gpio_init_in( PB_1, GPIO_PULLDOWN, GPIO_MODE_IT_RISING, 1);
-    hal_gpio_init_in( PB_2, GPIO_PULLDOWN, GPIO_MODE_IT_RISING, 1);
-    
+    GPIO_Init();
+
     hal_mcu_enable_irq( );
 
-    hal_gpio_irq_attach(&PB1_Callback);
-    hal_gpio_irq_attach(&PB2_Callback);
-
-
+  
 
     //periodic timer 
     TimerInit( &periodic_timer, &periodic_timer_cb );
@@ -347,17 +339,18 @@ static void get_event( void ) {
                 if (tx_mine == 1);
                 {
                     sendData(temp, Voltage);
+                    HAL_Delay(1000);
                 }
                 if (tx_mine == 2);
                 {
                     wateralarm(water);
+                    HAL_Delay(1000);
                 }
                 if (tx_mine == 3);
-                {
-                if (tx_mine == 2);
-                {
+                {                              
                     wateralarm(water);
-                };
+                    HAL_Delay(1000);
+                
                 }
                 firstflag = false;
             }
@@ -477,4 +470,17 @@ static bool is_joined( void ) {
     }
 }
 
+void EXTI0_1_IRQHandler(void) {
+    if (__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_1) != RESET) {
+        __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_1);
+        PB1_Callback(); // Call the callback for PB1
+    }
+}
+
+void EXTI2_3_IRQHandler(void) {
+    if (__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_2) != RESET) {
+        __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_2);
+        PB2_Callback(); // Call the callback for PB2
+    }
+}
 

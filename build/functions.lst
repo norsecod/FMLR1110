@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cce4lj0A.s 			page 1
+ARM GAS  /tmp/ccj4EXio.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cce4lj0A.s 			page 1
   51 002a EFE7     		b	.L2
   52              	.L5:
   53              		.align	2
-ARM GAS  /tmp/cce4lj0A.s 			page 2
+ARM GAS  /tmp/ccj4EXio.s 			page 2
 
 
   54              	.L4:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cce4lj0A.s 			page 1
  112 0036 30BD     		pop	{r4, r5, pc}
  114              		.section	.text.wateralarm,"ax",%progbits
  115              		.align	1
-ARM GAS  /tmp/cce4lj0A.s 			page 3
+ARM GAS  /tmp/ccj4EXio.s 			page 3
 
 
  116              		.global	wateralarm
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cce4lj0A.s 			page 1
  174              		.global	__aeabi_i2f
  175              		.section	.text.GETtemperature,"ax",%progbits
  176              		.align	1
-ARM GAS  /tmp/cce4lj0A.s 			page 4
+ARM GAS  /tmp/ccj4EXio.s 			page 4
 
 
  177              		.global	GETtemperature
@@ -207,7 +207,7 @@ ARM GAS  /tmp/cce4lj0A.s 			page 1
  201 001e C320     		movs	r0, #195
  202 0020 0006     		lsls	r0, r0, #24
  203 0022 FBE7     		b	.L10
- 205              		.section	.rodata.GETvoltage.str1.1,"aMS",%progbits,1
+ 205              		.section	.rodata.ADC_Init.str1.1,"aMS",%progbits,1
  206              	.LC8:
  207 0000 4552524F 		.ascii	"ERROR: mcu_panic:%s\012\015\000"
  207      523A206D 
@@ -220,222 +220,440 @@ ARM GAS  /tmp/cce4lj0A.s 			page 1
  211 0017 4552524F 		.ascii	"ERROR: -> \000"
  211      523A202D 
  211      3E2000
- 212              		.global	__aeabi_ui2f
- 213              		.global	__aeabi_fmul
- 214              		.section	.text.GETvoltage,"ax",%progbits
- 215              		.align	1
- 216              		.global	GETvoltage
- 217              		.syntax unified
- 218              		.code	16
- 219              		.thumb_func
- 221              	GETvoltage:
- 222              		@ args = 0, pretend = 0, frame = 8
- 223              		@ frame_needed = 0, uses_anonymous_args = 0
- 224 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
- 225 0002 0121     		movs	r1, #1
- 226 0004 0500     		movs	r5, r0
- 227 0006 0320     		movs	r0, #3
- 228 0008 FFF7FEFF 		bl	hal_gpio_set_value
- 229 000c 0822     		movs	r2, #8
- 230 000e 0021     		movs	r1, #0
-ARM GAS  /tmp/cce4lj0A.s 			page 5
+ 212              		.section	.text.ADC_Init,"ax",%progbits
+ 213              		.align	1
+ 214              		.global	ADC_Init
+ 215              		.syntax unified
+ 216              		.code	16
+ 217              		.thumb_func
+ 219              	ADC_Init:
+ 220              		@ args = 0, pretend = 0, frame = 8
+ 221              		@ frame_needed = 0, uses_anonymous_args = 0
+ 222 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 223 0002 0822     		movs	r2, #8
+ 224 0004 0021     		movs	r1, #0
+ 225 0006 6846     		mov	r0, sp
+ 226 0008 FFF7FEFF 		bl	memset
+ 227 000c C221     		movs	r1, #194
+ 228 000e 254C     		ldr	r4, .L22
+ 229 0010 254B     		ldr	r3, .L22+4
+ 230 0012 FF31     		adds	r1, r1, #255
+ARM GAS  /tmp/ccj4EXio.s 			page 5
 
 
- 231 0010 6846     		mov	r0, sp
- 232 0012 FFF7FEFF 		bl	memset
- 233 0016 C221     		movs	r1, #194
- 234 0018 3A4C     		ldr	r4, .L26
- 235 001a 3B4B     		ldr	r3, .L26+4
- 236 001c FF31     		adds	r1, r1, #255
- 237 001e C022     		movs	r2, #192
- 238 0020 6162     		str	r1, [r4, #36]
- 239 0022 2100     		movs	r1, r4
- 240 0024 2360     		str	r3, [r4]
- 241 0026 0023     		movs	r3, #0
- 242 0028 1206     		lsls	r2, r2, #24
- 243 002a 2C31     		adds	r1, r1, #44
- 244 002c 6260     		str	r2, [r4, #4]
- 245 002e 0B70     		strb	r3, [r1]
- 246 0030 0122     		movs	r2, #1
- 247 0032 0421     		movs	r1, #4
- 248 0034 2000     		movs	r0, r4
- 249 0036 E363     		str	r3, [r4, #60]
- 250 0038 A360     		str	r3, [r4, #8]
- 251 003a A363     		str	r3, [r4, #56]
- 252 003c 2261     		str	r2, [r4, #16]
- 253 003e E360     		str	r3, [r4, #12]
- 254 0040 2384     		strh	r3, [r4, #32]
- 255 0042 A362     		str	r3, [r4, #40]
- 256 0044 6161     		str	r1, [r4, #20]
- 257 0046 2363     		str	r3, [r4, #48]
- 258 0048 A361     		str	r3, [r4, #24]
- 259 004a 6263     		str	r2, [r4, #52]
- 260 004c E361     		str	r3, [r4, #28]
- 261 004e FFF7FEFF 		bl	HAL_ADC_Init
- 262 0052 0028     		cmp	r0, #0
- 263 0054 0FD0     		beq	.L14
- 264 0056 2D49     		ldr	r1, .L26+8
- 265 0058 2D48     		ldr	r0, .L26+12
- 266 005a FFF7FEFF 		bl	hal_trace_print_var
- 267 005e 2D4E     		ldr	r6, .L26+16
- 268 0060 3000     		movs	r0, r6
- 269 0062 FFF7FEFF 		bl	hal_trace_print_var
- 270 0066 2C48     		ldr	r0, .L26+20
- 271 0068 FFF7FEFF 		bl	hal_trace_print_var
- 272 006c 3000     		movs	r0, r6
- 273 006e FFF7FEFF 		bl	hal_trace_print_var
- 274 0072 FFF7FEFF 		bl	hal_mcu_reset
- 275              	.L14:
- 276 0076 0123     		movs	r3, #1
- 277 0078 0093     		str	r3, [sp]
- 278 007a 8023     		movs	r3, #128
- 279 007c 6946     		mov	r1, sp
- 280 007e 5B01     		lsls	r3, r3, #5
- 281 0080 2000     		movs	r0, r4
- 282 0082 0193     		str	r3, [sp, #4]
- 283 0084 FFF7FEFF 		bl	HAL_ADC_ConfigChannel
- 284 0088 0028     		cmp	r0, #0
- 285 008a 0FD0     		beq	.L15
- 286 008c 1F49     		ldr	r1, .L26+8
- 287 008e 2048     		ldr	r0, .L26+12
-ARM GAS  /tmp/cce4lj0A.s 			page 6
+ 231 0014 C022     		movs	r2, #192
+ 232 0016 6162     		str	r1, [r4, #36]
+ 233 0018 2100     		movs	r1, r4
+ 234 001a 2360     		str	r3, [r4]
+ 235 001c 0023     		movs	r3, #0
+ 236 001e 1206     		lsls	r2, r2, #24
+ 237 0020 2C31     		adds	r1, r1, #44
+ 238 0022 6260     		str	r2, [r4, #4]
+ 239 0024 0B70     		strb	r3, [r1]
+ 240 0026 0122     		movs	r2, #1
+ 241 0028 0421     		movs	r1, #4
+ 242 002a 2000     		movs	r0, r4
+ 243 002c E363     		str	r3, [r4, #60]
+ 244 002e A360     		str	r3, [r4, #8]
+ 245 0030 A363     		str	r3, [r4, #56]
+ 246 0032 2261     		str	r2, [r4, #16]
+ 247 0034 E360     		str	r3, [r4, #12]
+ 248 0036 2384     		strh	r3, [r4, #32]
+ 249 0038 A362     		str	r3, [r4, #40]
+ 250 003a 6161     		str	r1, [r4, #20]
+ 251 003c 2363     		str	r3, [r4, #48]
+ 252 003e A361     		str	r3, [r4, #24]
+ 253 0040 6263     		str	r2, [r4, #52]
+ 254 0042 E361     		str	r3, [r4, #28]
+ 255 0044 FFF7FEFF 		bl	HAL_ADC_Init
+ 256 0048 0028     		cmp	r0, #0
+ 257 004a 0FD0     		beq	.L14
+ 258 004c 1749     		ldr	r1, .L22+8
+ 259 004e 1848     		ldr	r0, .L22+12
+ 260 0050 FFF7FEFF 		bl	hal_trace_print_var
+ 261 0054 174D     		ldr	r5, .L22+16
+ 262 0056 2800     		movs	r0, r5
+ 263 0058 FFF7FEFF 		bl	hal_trace_print_var
+ 264 005c 1648     		ldr	r0, .L22+20
+ 265 005e FFF7FEFF 		bl	hal_trace_print_var
+ 266 0062 2800     		movs	r0, r5
+ 267 0064 FFF7FEFF 		bl	hal_trace_print_var
+ 268 0068 FFF7FEFF 		bl	hal_mcu_reset
+ 269              	.L14:
+ 270 006c 0123     		movs	r3, #1
+ 271 006e 0093     		str	r3, [sp]
+ 272 0070 8023     		movs	r3, #128
+ 273 0072 6946     		mov	r1, sp
+ 274 0074 5B01     		lsls	r3, r3, #5
+ 275 0076 2000     		movs	r0, r4
+ 276 0078 0193     		str	r3, [sp, #4]
+ 277 007a FFF7FEFF 		bl	HAL_ADC_ConfigChannel
+ 278 007e 0028     		cmp	r0, #0
+ 279 0080 0FD0     		beq	.L13
+ 280 0082 0A49     		ldr	r1, .L22+8
+ 281 0084 0A48     		ldr	r0, .L22+12
+ 282 0086 FFF7FEFF 		bl	hal_trace_print_var
+ 283 008a 0A4C     		ldr	r4, .L22+16
+ 284 008c 2000     		movs	r0, r4
+ 285 008e FFF7FEFF 		bl	hal_trace_print_var
+ 286 0092 0948     		ldr	r0, .L22+20
+ 287 0094 FFF7FEFF 		bl	hal_trace_print_var
+ARM GAS  /tmp/ccj4EXio.s 			page 6
 
 
- 288 0090 FFF7FEFF 		bl	hal_trace_print_var
- 289 0094 1F4C     		ldr	r4, .L26+16
- 290 0096 2000     		movs	r0, r4
- 291 0098 FFF7FEFF 		bl	hal_trace_print_var
- 292 009c 1E48     		ldr	r0, .L26+20
- 293 009e FFF7FEFF 		bl	hal_trace_print_var
- 294 00a2 2000     		movs	r0, r4
- 295 00a4 FFF7FEFF 		bl	hal_trace_print_var
- 296 00a8 FFF7FEFF 		bl	hal_mcu_reset
- 297              	.L15:
- 298 00ac 1420     		movs	r0, #20
- 299 00ae FFF7FEFF 		bl	hal_mcu_delay_ms
- 300 00b2 2800     		movs	r0, r5
- 301 00b4 FFF7FEFF 		bl	HAL_ADC_Start
- 302 00b8 0028     		cmp	r0, #0
- 303 00ba 1FD1     		bne	.L18
- 304 00bc 1430     		adds	r0, r0, #20
- 305 00be FFF7FEFF 		bl	hal_mcu_delay_ms
- 306 00c2 0121     		movs	r1, #1
- 307 00c4 2800     		movs	r0, r5
- 308 00c6 4942     		rsbs	r1, r1, #0
- 309 00c8 FFF7FEFF 		bl	HAL_ADC_PollForConversion
- 310 00cc 0024     		movs	r4, #0
- 311 00ce 0028     		cmp	r0, #0
- 312 00d0 08D1     		bne	.L17
- 313 00d2 2800     		movs	r0, r5
- 314 00d4 FFF7FEFF 		bl	HAL_ADC_GetValue
- 315 00d8 FFF7FEFF 		bl	__aeabi_ui2f
- 316 00dc 0F49     		ldr	r1, .L26+24
- 317 00de FFF7FEFF 		bl	__aeabi_fmul
- 318 00e2 041C     		adds	r4, r0, #0
- 319              	.L17:
- 320 00e4 1420     		movs	r0, #20
- 321 00e6 FFF7FEFF 		bl	hal_mcu_delay_ms
- 322 00ea 2800     		movs	r0, r5
- 323 00ec FFF7FEFF 		bl	HAL_ADC_DeInit
- 324 00f0 0021     		movs	r1, #0
- 325 00f2 0320     		movs	r0, #3
- 326 00f4 FFF7FEFF 		bl	hal_gpio_set_value
- 327              	.L13:
- 328              		@ sp needed
- 329 00f8 201C     		adds	r0, r4, #0
- 330 00fa 76BD     		pop	{r1, r2, r4, r5, r6, pc}
- 331              	.L18:
- 332 00fc 8624     		movs	r4, #134
- 333 00fe E405     		lsls	r4, r4, #23
- 334 0100 FAE7     		b	.L13
- 335              	.L27:
- 336 0102 C046     		.align	2
- 337              	.L26:
- 338 0104 00000000 		.word	hadc
- 339 0108 00240140 		.word	1073816576
- 340 010c 00000000 		.word	__func__.0
- 341 0110 00000000 		.word	.LC8
- 342 0114 16000000 		.word	.LC10
- 343 0118 17000000 		.word	.LC12
- 344 011c 6840533A 		.word	978534504
-ARM GAS  /tmp/cce4lj0A.s 			page 7
+ 288 0098 2000     		movs	r0, r4
+ 289 009a FFF7FEFF 		bl	hal_trace_print_var
+ 290 009e FFF7FEFF 		bl	hal_mcu_reset
+ 291              	.L13:
+ 292              		@ sp needed
+ 293 00a2 37BD     		pop	{r0, r1, r2, r4, r5, pc}
+ 294              	.L23:
+ 295              		.align	2
+ 296              	.L22:
+ 297 00a4 00000000 		.word	hadc
+ 298 00a8 00240140 		.word	1073816576
+ 299 00ac 00000000 		.word	__func__.0
+ 300 00b0 00000000 		.word	.LC8
+ 301 00b4 16000000 		.word	.LC10
+ 302 00b8 17000000 		.word	.LC12
+ 304              		.global	__aeabi_ui2f
+ 305              		.global	__aeabi_fmul
+ 306              		.section	.text.GETvoltage,"ax",%progbits
+ 307              		.align	1
+ 308              		.global	GETvoltage
+ 309              		.syntax unified
+ 310              		.code	16
+ 311              		.thumb_func
+ 313              	GETvoltage:
+ 314              		@ args = 0, pretend = 0, frame = 0
+ 315              		@ frame_needed = 0, uses_anonymous_args = 0
+ 316 0000 70B5     		push	{r4, r5, r6, lr}
+ 317 0002 0400     		movs	r4, r0
+ 318 0004 0121     		movs	r1, #1
+ 319 0006 0320     		movs	r0, #3
+ 320 0008 FFF7FEFF 		bl	hal_gpio_set_value
+ 321 000c FFF7FEFF 		bl	ADC_Init
+ 322 0010 1420     		movs	r0, #20
+ 323 0012 FFF7FEFF 		bl	hal_mcu_delay_ms
+ 324 0016 2000     		movs	r0, r4
+ 325 0018 FFF7FEFF 		bl	HAL_ADC_Start
+ 326 001c 0028     		cmp	r0, #0
+ 327 001e 1FD1     		bne	.L27
+ 328 0020 1430     		adds	r0, r0, #20
+ 329 0022 FFF7FEFF 		bl	hal_mcu_delay_ms
+ 330 0026 0121     		movs	r1, #1
+ 331 0028 2000     		movs	r0, r4
+ 332 002a 4942     		rsbs	r1, r1, #0
+ 333 002c FFF7FEFF 		bl	HAL_ADC_PollForConversion
+ 334 0030 0025     		movs	r5, #0
+ 335 0032 0028     		cmp	r0, #0
+ 336 0034 08D1     		bne	.L26
+ 337 0036 2000     		movs	r0, r4
+ 338 0038 FFF7FEFF 		bl	HAL_ADC_GetValue
+ 339 003c FFF7FEFF 		bl	__aeabi_ui2f
+ 340 0040 0949     		ldr	r1, .L29
+ 341 0042 FFF7FEFF 		bl	__aeabi_fmul
+ 342 0046 051C     		adds	r5, r0, #0
+ 343              	.L26:
+ 344 0048 1420     		movs	r0, #20
+ 345 004a FFF7FEFF 		bl	hal_mcu_delay_ms
+ 346 004e 2000     		movs	r0, r4
+ARM GAS  /tmp/ccj4EXio.s 			page 7
 
 
- 346              		.section	.rodata.sensor_read.str1.1,"aMS",%progbits,1
- 347              	.LC15:
- 348 0000 2D2D2D2D 		.ascii	"----- sensor_read -----\012\015\000"
- 348      2D207365 
- 348      6E736F72 
- 348      5F726561 
- 348      64202D2D 
- 349              		.section	.text.sensor_read,"ax",%progbits
- 350              		.align	1
- 351              		.global	sensor_read
- 352              		.syntax unified
- 353              		.code	16
- 354              		.thumb_func
- 356              	sensor_read:
- 357              		@ args = 0, pretend = 0, frame = 0
- 358              		@ frame_needed = 0, uses_anonymous_args = 0
- 359 0000 10B5     		push	{r4, lr}
- 360 0002 0A48     		ldr	r0, .L29
- 361 0004 FFF7FEFF 		bl	hal_trace_print_var
- 362              		@ sp needed
- 363 0008 0120     		movs	r0, #1
- 364 000a FFF7FEFF 		bl	GETtemperature
- 365 000e 084B     		ldr	r3, .L29+4
- 366 0010 1860     		str	r0, [r3]
- 367 0012 0848     		ldr	r0, .L29+8
- 368 0014 FFF7FEFF 		bl	GETvoltage
- 369 0018 074B     		ldr	r3, .L29+12
- 370 001a 011C     		adds	r1, r0, #0
- 371 001c 1860     		str	r0, [r3]
- 372 001e 074B     		ldr	r3, .L29+16
- 373 0020 074C     		ldr	r4, .L29+20
- 374 0022 1868     		ldr	r0, [r3]
- 375 0024 FFF7FEFF 		bl	__aeabi_fmul
- 376 0028 2060     		str	r0, [r4]
- 377 002a 10BD     		pop	{r4, pc}
- 378              	.L30:
- 379              		.align	2
- 380              	.L29:
- 381 002c 00000000 		.word	.LC15
- 382 0030 00000000 		.word	temp
- 383 0034 00000000 		.word	hadc
- 384 0038 00000000 		.word	ADCmeas
- 385 003c 00000000 		.word	VDR
- 386 0040 00000000 		.word	Voltage
- 388              		.section	.rodata.__func__.0,"a"
- 391              	__func__.0:
- 392 0000 4D585F41 		.ascii	"MX_ADC_Init\000"
- 392      44435F49 
- 392      6E697400 
- 393              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cce4lj0A.s 			page 8
+ 347 0050 FFF7FEFF 		bl	HAL_ADC_DeInit
+ 348 0054 0021     		movs	r1, #0
+ 349 0056 0320     		movs	r0, #3
+ 350 0058 FFF7FEFF 		bl	hal_gpio_set_value
+ 351              	.L24:
+ 352              		@ sp needed
+ 353 005c 281C     		adds	r0, r5, #0
+ 354 005e 70BD     		pop	{r4, r5, r6, pc}
+ 355              	.L27:
+ 356 0060 8625     		movs	r5, #134
+ 357 0062 ED05     		lsls	r5, r5, #23
+ 358 0064 FAE7     		b	.L24
+ 359              	.L30:
+ 360 0066 C046     		.align	2
+ 361              	.L29:
+ 362 0068 6840533A 		.word	978534504
+ 364              		.section	.rodata.sensor_read.str1.1,"aMS",%progbits,1
+ 365              	.LC15:
+ 366 0000 2D2D2D2D 		.ascii	"----- sensor_read -----\012\015\000"
+ 366      2D207365 
+ 366      6E736F72 
+ 366      5F726561 
+ 366      64202D2D 
+ 367              		.section	.text.sensor_read,"ax",%progbits
+ 368              		.align	1
+ 369              		.global	sensor_read
+ 370              		.syntax unified
+ 371              		.code	16
+ 372              		.thumb_func
+ 374              	sensor_read:
+ 375              		@ args = 0, pretend = 0, frame = 0
+ 376              		@ frame_needed = 0, uses_anonymous_args = 0
+ 377 0000 10B5     		push	{r4, lr}
+ 378 0002 0A48     		ldr	r0, .L32
+ 379 0004 FFF7FEFF 		bl	hal_trace_print_var
+ 380              		@ sp needed
+ 381 0008 0120     		movs	r0, #1
+ 382 000a FFF7FEFF 		bl	GETtemperature
+ 383 000e 084B     		ldr	r3, .L32+4
+ 384 0010 1860     		str	r0, [r3]
+ 385 0012 0848     		ldr	r0, .L32+8
+ 386 0014 FFF7FEFF 		bl	GETvoltage
+ 387 0018 074B     		ldr	r3, .L32+12
+ 388 001a 011C     		adds	r1, r0, #0
+ 389 001c 1860     		str	r0, [r3]
+ 390 001e 074B     		ldr	r3, .L32+16
+ 391 0020 074C     		ldr	r4, .L32+20
+ 392 0022 1868     		ldr	r0, [r3]
+ 393 0024 FFF7FEFF 		bl	__aeabi_fmul
+ 394 0028 2060     		str	r0, [r4]
+ 395 002a 10BD     		pop	{r4, pc}
+ 396              	.L33:
+ 397              		.align	2
+ 398              	.L32:
+ 399 002c 00000000 		.word	.LC15
+ 400 0030 00000000 		.word	temp
+ 401 0034 00000000 		.word	hadc
+ARM GAS  /tmp/ccj4EXio.s 			page 8
+
+
+ 402 0038 00000000 		.word	ADCmeas
+ 403 003c 00000000 		.word	VDR
+ 404 0040 00000000 		.word	Voltage
+ 406              		.section	.text.GPIO_Init,"ax",%progbits
+ 407              		.align	1
+ 408              		.global	GPIO_Init
+ 409              		.syntax unified
+ 410              		.code	16
+ 411              		.thumb_func
+ 413              	GPIO_Init:
+ 414              		@ args = 0, pretend = 0, frame = 0
+ 415              		@ frame_needed = 0, uses_anonymous_args = 0
+ 416 0000 10B5     		push	{r4, lr}
+ 417 0002 0021     		movs	r1, #0
+ 418              		@ sp needed
+ 419 0004 2720     		movs	r0, #39
+ 420 0006 FFF7FEFF 		bl	hal_gpio_init_out
+ 421 000a 0121     		movs	r1, #1
+ 422 000c 2120     		movs	r0, #33
+ 423 000e FFF7FEFF 		bl	hal_gpio_init_out
+ 424 0012 0021     		movs	r1, #0
+ 425 0014 1020     		movs	r0, #16
+ 426 0016 FFF7FEFF 		bl	hal_gpio_init_out
+ 427 001a 0021     		movs	r1, #0
+ 428 001c 0320     		movs	r0, #3
+ 429 001e FFF7FEFF 		bl	hal_gpio_init_out
+ 430 0022 0022     		movs	r2, #0
+ 431 0024 0123     		movs	r3, #1
+ 432 0026 1100     		movs	r1, r2
+ 433 0028 1120     		movs	r0, #17
+ 434 002a FFF7FEFF 		bl	hal_gpio_init_in
+ 435 002e 0022     		movs	r2, #0
+ 436 0030 0123     		movs	r3, #1
+ 437 0032 1100     		movs	r1, r2
+ 438 0034 1220     		movs	r0, #18
+ 439 0036 FFF7FEFF 		bl	hal_gpio_init_in
+ 440 003a 0022     		movs	r2, #0
+ 441 003c 0520     		movs	r0, #5
+ 442 003e 1100     		movs	r1, r2
+ 443 0040 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 444 0044 0520     		movs	r0, #5
+ 445 0046 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 446 004a 0022     		movs	r2, #0
+ 447 004c 0620     		movs	r0, #6
+ 448 004e 1100     		movs	r1, r2
+ 449 0050 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 450 0054 0620     		movs	r0, #6
+ 451 0056 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 452 005a 10BD     		pop	{r4, pc}
+ 454              		.global	__aeabi_fcmpeq
+ 455              		.section	.text.PB1_Callback,"ax",%progbits
+ 456              		.align	1
+ 457              		.global	PB1_Callback
+ 458              		.syntax unified
+ 459              		.code	16
+ 460              		.thumb_func
+ 462              	PB1_Callback:
+ARM GAS  /tmp/ccj4EXio.s 			page 9
+
+
+ 463              		@ args = 0, pretend = 0, frame = 0
+ 464              		@ frame_needed = 0, uses_anonymous_args = 0
+ 465 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 466 0002 1120     		movs	r0, #17
+ 467 0004 FFF7FEFF 		bl	hal_gpio_get_value
+ 468 0008 1A4C     		ldr	r4, .L46
+ 469 000a 0500     		movs	r5, r0
+ 470 000c 0128     		cmp	r0, #1
+ 471 000e 17D1     		bne	.L36
+ 472 0010 0021     		movs	r1, #0
+ 473 0012 2068     		ldr	r0, [r4]
+ 474 0014 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 475 0018 0028     		cmp	r0, #0
+ 476 001a 10D0     		beq	.L35
+ 477 001c 164E     		ldr	r6, .L46+4
+ 478 001e 0021     		movs	r1, #0
+ 479 0020 3068     		ldr	r0, [r6]
+ 480 0022 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 481 0026 0028     		cmp	r0, #0
+ 482 0028 09D0     		beq	.L35
+ 483 002a FE27     		movs	r7, #254
+ 484 002c 2800     		movs	r0, r5
+ 485 002e BF05     		lsls	r7, r7, #22
+ 486 0030 2760     		str	r7, [r4]
+ 487 0032 FFF7FEFF 		bl	wateralarm
+ 488 0036 1148     		ldr	r0, .L46+8
+ 489 0038 FFF7FEFF 		bl	TimerStart
+ 490 003c 3760     		str	r7, [r6]
+ 491              	.L35:
+ 492              		@ sp needed
+ 493 003e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 494              	.L36:
+ 495 0040 FE26     		movs	r6, #254
+ 496 0042 B605     		lsls	r6, r6, #22
+ 497 0044 2068     		ldr	r0, [r4]
+ 498 0046 311C     		adds	r1, r6, #0
+ 499 0048 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 500 004c 0028     		cmp	r0, #0
+ 501 004e F6D0     		beq	.L35
+ 502 0050 0027     		movs	r7, #0
+ 503 0052 094D     		ldr	r5, .L46+4
+ 504 0054 391C     		adds	r1, r7, #0
+ 505 0056 2868     		ldr	r0, [r5]
+ 506 0058 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 507 005c 0028     		cmp	r0, #0
+ 508 005e EED0     		beq	.L35
+ 509 0060 0020     		movs	r0, #0
+ 510 0062 2760     		str	r7, [r4]
+ 511 0064 FFF7FEFF 		bl	wateralarm
+ 512 0068 0448     		ldr	r0, .L46+8
+ 513 006a FFF7FEFF 		bl	TimerStart
+ 514 006e 2E60     		str	r6, [r5]
+ 515 0070 E5E7     		b	.L35
+ 516              	.L47:
+ 517 0072 C046     		.align	2
+ 518              	.L46:
+ 519 0074 00000000 		.word	water
+ARM GAS  /tmp/ccj4EXio.s 			page 10
+
+
+ 520 0078 00000000 		.word	hastydata1
+ 521 007c 00000000 		.word	water_timer
+ 523              		.section	.text.PB2_Callback,"ax",%progbits
+ 524              		.align	1
+ 525              		.global	PB2_Callback
+ 526              		.syntax unified
+ 527              		.code	16
+ 528              		.thumb_func
+ 530              	PB2_Callback:
+ 531              		@ args = 0, pretend = 0, frame = 0
+ 532              		@ frame_needed = 0, uses_anonymous_args = 0
+ 533 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 534 0002 1220     		movs	r0, #18
+ 535 0004 FFF7FEFF 		bl	hal_gpio_get_value
+ 536 0008 1A4C     		ldr	r4, .L59
+ 537 000a 0500     		movs	r5, r0
+ 538 000c 0128     		cmp	r0, #1
+ 539 000e 17D1     		bne	.L49
+ 540 0010 0021     		movs	r1, #0
+ 541 0012 2068     		ldr	r0, [r4]
+ 542 0014 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 543 0018 0028     		cmp	r0, #0
+ 544 001a 10D0     		beq	.L48
+ 545 001c 164E     		ldr	r6, .L59+4
+ 546 001e 0021     		movs	r1, #0
+ 547 0020 3068     		ldr	r0, [r6]
+ 548 0022 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 549 0026 0028     		cmp	r0, #0
+ 550 0028 09D0     		beq	.L48
+ 551 002a FE27     		movs	r7, #254
+ 552 002c 2800     		movs	r0, r5
+ 553 002e BF05     		lsls	r7, r7, #22
+ 554 0030 2760     		str	r7, [r4]
+ 555 0032 FFF7FEFF 		bl	dooralarm
+ 556 0036 1148     		ldr	r0, .L59+8
+ 557 0038 FFF7FEFF 		bl	TimerStart
+ 558 003c 3760     		str	r7, [r6]
+ 559              	.L48:
+ 560              		@ sp needed
+ 561 003e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 562              	.L49:
+ 563 0040 FE26     		movs	r6, #254
+ 564 0042 B605     		lsls	r6, r6, #22
+ 565 0044 2068     		ldr	r0, [r4]
+ 566 0046 311C     		adds	r1, r6, #0
+ 567 0048 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 568 004c 0028     		cmp	r0, #0
+ 569 004e F6D0     		beq	.L48
+ 570 0050 0027     		movs	r7, #0
+ 571 0052 094D     		ldr	r5, .L59+4
+ 572 0054 391C     		adds	r1, r7, #0
+ 573 0056 2868     		ldr	r0, [r5]
+ 574 0058 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 575 005c 0028     		cmp	r0, #0
+ 576 005e EED0     		beq	.L48
+ 577 0060 0020     		movs	r0, #0
+ 578 0062 2760     		str	r7, [r4]
+ARM GAS  /tmp/ccj4EXio.s 			page 11
+
+
+ 579 0064 FFF7FEFF 		bl	dooralarm
+ 580 0068 0448     		ldr	r0, .L59+8
+ 581 006a FFF7FEFF 		bl	TimerStart
+ 582 006e 2E60     		str	r6, [r5]
+ 583 0070 E5E7     		b	.L48
+ 584              	.L60:
+ 585 0072 C046     		.align	2
+ 586              	.L59:
+ 587 0074 00000000 		.word	Door
+ 588 0078 00000000 		.word	hastydata2
+ 589 007c 00000000 		.word	door_timer
+ 591              		.section	.rodata.__func__.0,"a"
+ 594              	__func__.0:
+ 595 0000 4144435F 		.ascii	"ADC_Init\000"
+ 595      496E6974 
+ 595      00
+ 596              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccj4EXio.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 functions.c
-     /tmp/cce4lj0A.s:21     .text.printCayenneLPPBuffer:00000000 $t
-     /tmp/cce4lj0A.s:27     .text.printCayenneLPPBuffer:00000000 printCayenneLPPBuffer
-     /tmp/cce4lj0A.s:55     .text.printCayenneLPPBuffer:0000002c $d
-     /tmp/cce4lj0A.s:60     .text.sendLoRaWANPacket:00000000 $t
-     /tmp/cce4lj0A.s:66     .text.sendLoRaWANPacket:00000000 sendLoRaWANPacket
-     /tmp/cce4lj0A.s:80     .text.sendData:00000000 $t
-     /tmp/cce4lj0A.s:86     .text.sendData:00000000 sendData
-     /tmp/cce4lj0A.s:115    .text.wateralarm:00000000 $t
-     /tmp/cce4lj0A.s:121    .text.wateralarm:00000000 wateralarm
-     /tmp/cce4lj0A.s:145    .text.dooralarm:00000000 $t
-     /tmp/cce4lj0A.s:151    .text.dooralarm:00000000 dooralarm
-     /tmp/cce4lj0A.s:176    .text.GETtemperature:00000000 $t
-     /tmp/cce4lj0A.s:182    .text.GETtemperature:00000000 GETtemperature
-     /tmp/cce4lj0A.s:215    .text.GETvoltage:00000000 $t
-     /tmp/cce4lj0A.s:221    .text.GETvoltage:00000000 GETvoltage
-     /tmp/cce4lj0A.s:338    .text.GETvoltage:00000104 $d
-     /tmp/cce4lj0A.s:391    .rodata.__func__.0:00000000 __func__.0
-     /tmp/cce4lj0A.s:350    .text.sensor_read:00000000 $t
-     /tmp/cce4lj0A.s:356    .text.sensor_read:00000000 sensor_read
-     /tmp/cce4lj0A.s:381    .text.sensor_read:0000002c $d
+     /tmp/ccj4EXio.s:21     .text.printCayenneLPPBuffer:00000000 $t
+     /tmp/ccj4EXio.s:27     .text.printCayenneLPPBuffer:00000000 printCayenneLPPBuffer
+     /tmp/ccj4EXio.s:55     .text.printCayenneLPPBuffer:0000002c $d
+     /tmp/ccj4EXio.s:60     .text.sendLoRaWANPacket:00000000 $t
+     /tmp/ccj4EXio.s:66     .text.sendLoRaWANPacket:00000000 sendLoRaWANPacket
+     /tmp/ccj4EXio.s:80     .text.sendData:00000000 $t
+     /tmp/ccj4EXio.s:86     .text.sendData:00000000 sendData
+     /tmp/ccj4EXio.s:115    .text.wateralarm:00000000 $t
+     /tmp/ccj4EXio.s:121    .text.wateralarm:00000000 wateralarm
+     /tmp/ccj4EXio.s:145    .text.dooralarm:00000000 $t
+     /tmp/ccj4EXio.s:151    .text.dooralarm:00000000 dooralarm
+     /tmp/ccj4EXio.s:176    .text.GETtemperature:00000000 $t
+     /tmp/ccj4EXio.s:182    .text.GETtemperature:00000000 GETtemperature
+     /tmp/ccj4EXio.s:213    .text.ADC_Init:00000000 $t
+     /tmp/ccj4EXio.s:219    .text.ADC_Init:00000000 ADC_Init
+     /tmp/ccj4EXio.s:297    .text.ADC_Init:000000a4 $d
+     /tmp/ccj4EXio.s:594    .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccj4EXio.s:307    .text.GETvoltage:00000000 $t
+     /tmp/ccj4EXio.s:313    .text.GETvoltage:00000000 GETvoltage
+     /tmp/ccj4EXio.s:362    .text.GETvoltage:00000068 $d
+     /tmp/ccj4EXio.s:368    .text.sensor_read:00000000 $t
+     /tmp/ccj4EXio.s:374    .text.sensor_read:00000000 sensor_read
+     /tmp/ccj4EXio.s:399    .text.sensor_read:0000002c $d
+     /tmp/ccj4EXio.s:407    .text.GPIO_Init:00000000 $t
+     /tmp/ccj4EXio.s:413    .text.GPIO_Init:00000000 GPIO_Init
+     /tmp/ccj4EXio.s:456    .text.PB1_Callback:00000000 $t
+     /tmp/ccj4EXio.s:462    .text.PB1_Callback:00000000 PB1_Callback
+     /tmp/ccj4EXio.s:519    .text.PB1_Callback:00000074 $d
+     /tmp/ccj4EXio.s:524    .text.PB2_Callback:00000000 $t
+     /tmp/ccj4EXio.s:530    .text.PB2_Callback:00000000 PB2_Callback
+     /tmp/ccj4EXio.s:587    .text.PB2_Callback:00000074 $d
 
 UNDEFINED SYMBOLS
 hal_trace_print_var
@@ -446,20 +664,36 @@ cayenne_lpp_add_analog_input
 cayenne_lpp_add_digital_input
 __aeabi_i2f
 hal_i2c_read
-__aeabi_ui2f
-__aeabi_fmul
-hal_gpio_set_value
 memset
 HAL_ADC_Init
 hal_mcu_reset
 HAL_ADC_ConfigChannel
+hadc
+__aeabi_ui2f
+__aeabi_fmul
+hal_gpio_set_value
 hal_mcu_delay_ms
 HAL_ADC_Start
 HAL_ADC_PollForConversion
 HAL_ADC_GetValue
 HAL_ADC_DeInit
-hadc
 temp
+ARM GAS  /tmp/ccj4EXio.s 			page 13
+
+
 ADCmeas
 VDR
 Voltage
+hal_gpio_init_out
+hal_gpio_init_in
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+__aeabi_fcmpeq
+hal_gpio_get_value
+TimerStart
+water
+hastydata1
+water_timer
+Door
+hastydata2
+door_timer
