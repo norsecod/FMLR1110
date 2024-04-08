@@ -1,49 +1,46 @@
-#include <stdint.h>   // C99 types
-#include <stdbool.h>  // bool type
+// Include standard integer types and boolean type for C99 compliance.
+#include <stdint.h>
+#include <stdbool.h>
 
+// Include headers for the LoRaWAN modem and utilities.
 #include "smtc_modem_api.h"
 #include "smtc_modem_utilities.h"
 
+// Include hardware abstraction layer (HAL) headers for various peripherals.
 #include "smtc_modem_hal.h"
 #include "smtc_hal_dbg_trace.h"
-
 #include "smtc_hal_mcu.h"
 #include "smtc_hal_gpio.h"
 #include "smtc_hal_rtc.h"
 #include "smtc_hal_i2c.h"
 
+// Include headers for ADC and timer functionalities.
 #include "stm32l0xx_hal_adc.h"
 #include "timer.h"
 
+// Include headers for GNSS and RALF (Radio Abstraction Layer Framework) functionalities.
 #include "ralf_lr11xx.h"
 #include "lr11xx_gnss.h"
 
+// Include headers for CayenneLPP and string manipulation.
 #include "cayenne_lpp.h"
 #include "string.h"
 
+// Include application-specific settings.
 #include "settings.h"
-/*
- * -----------------------------------------------------------------------------
- * --- PRIVATE CONSTANTS -------------------------------------------------------
- */
-#define DEFAULT_UL_PORT         7
-#define DEFAULT_DL_PORT         100
 
+// Define private constants for ports, timer periods, and thresholds.
+#define DEFAULT_UL_PORT 7
+#define DEFAULT_DL_PORT 100
 #define PERIODIC_TIMER_PERIOD 20000
 #define PERIODIC_TIMER_PERIOD_1 60000
-
 #define LINK_CHECK_RATIO_THRESHOLD 50
 #define LINK_CHECK_ATTEMPTS_THRESHOLD 10
+#define STACK_ID 0  // Stack ID value, assuming single-stack modem operation.
 
-/**
- * Stack id value (multistacks modem is not yet available)
- */
-#define STACK_ID 0
-
-
-const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
-#define RADIO   "LR11XX"
-
+// Define the modem radio type.
+const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE(NULL);
+#define RADIO "LR11XX"
 
 
 
@@ -57,30 +54,33 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
  * -----------------------------------------------------------------------------
  * --- PRIVATE VARIABLES -------------------------------------------------------
  */ 
-    ADC_HandleTypeDef hadc;
-    static bool          periodic_message_flag;
-    static bool          periodic_message_flag1;
-    float temp = 0.0f;
-    float Voltage = 0;
-    float VDR = 16/3.3;
-    float ADCmeas = 0.0f;
-    int Door = 0;
-    int water = 0;
-    int cntup = 0;
-    static uint8_t gnss_count;
-    static uint8_t       rx_payload[255]      = { 0 };  // Buffer for rx payload
-    static uint8_t       rx_payload_size      = 0;      // Size of the payload in the rx_payload buffer
-    extern settings_t    settings;
-    uint32_t txdone_counter = 0;
-    uint32_t link_check_attempts = 0;
-    static uint32_t tx_pending;
+
+
+// Define variables for ADC handling, flags for periodic messages, sensor values, and LoRaWAN counters.
+ADC_HandleTypeDef hadc;
+static bool periodic_message_flag;
+static bool periodic_message_flag1;
+float temp = 0.0f;
+float Voltage = 0;
+float VDR = 16 / 3.3;
+float ADCmeas = 0.0f;
+int Door = 0;
+int water = 0;
+int cntup = 0;
+static uint8_t gnss_count;
+static uint8_t rx_payload[255] = {0};
+static uint8_t rx_payload_size = 0;
+extern settings_t settings;
+uint32_t txdone_counter = 0;
+uint32_t link_check_attempts = 0;
+static uint32_t tx_pending;
 
     
 /*
  * -----------------------------------------------------------------------------
  * --- PRIVATE FUNCTIONS DECLARATION -------------------------------------------
  */
-
+// Functions declared for initializing ADC, check network join status, handle events, read sensors and manage data transmission. 
     static void MX_ADC_Init(void);
     static bool is_joined( void );
     static void get_event( void );
@@ -91,6 +91,9 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     void sendData(float temperature, float analogValue, bool digitalValue1, bool digitalValue2);
     float GETtemperature(const uint32_t id);
     float GETvoltage(ADC_HandleTypeDef *hadc);
+
+
+// Timer callback function for periodic tasks.
 
     static TimerEvent_t periodic_timer;
     static void periodic_timer_cb( void* context ) {
