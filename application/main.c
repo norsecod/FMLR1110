@@ -143,16 +143,16 @@ int main( void )
     smtc_modem_init( &modem_radio, &get_event );
     smtc_modem_version_t version;
     smtc_modem_get_modem_version( &version );
-    settings_init();
+    settings_init();    //inits the DEVeui[16bit], JoinEUI[16bit], nwkey[32bit] and region[4bit]
     //settings_print();
 
 
 
     SMTC_HAL_TRACE_INFO( "Modem driver version: %d.%d.%d\n\r", version.major, version.minor, version.patch );
  
-    GPIO_Init();
-    hal_mcu_enable_irq( );
-    hal_gpio_irq_enable();
+    GPIO_Init();            //initializes GPIO pins
+    hal_mcu_enable_irq( );  //enables IRQ again
+    hal_gpio_irq_enable();  //enables all gpio interrupts
 
   
 
@@ -162,11 +162,12 @@ int main( void )
     TimerSetContext( &periodic_timer, NULL );
     TimerStart(&periodic_timer);
 
+    //timer activated when water alarm
     TimerInit( &water_timer, &water_timer_cb );
     TimerSetValue( &water_timer, ALARM_TIMER_PERIOD );
     TimerSetContext( &water_timer, NULL );
 
-
+    //timer activated when door alarm
     TimerInit( &door_timer, &door_timer_cb );
     TimerSetValue( &door_timer, ALARM_TIMER_PERIOD );
     TimerSetContext( &door_timer, NULL );
@@ -189,10 +190,10 @@ int main( void )
         
     
         
-    if( periodic_message_flag) 
+    if( periodic_message_flag)  //gets activated every 20seconds
     {
            
-        sensor_read();
+        sensor_read();  //reads sensors
         SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
                       temp, ADCmeas,
                       Voltage,
@@ -202,14 +203,14 @@ int main( void )
                       hastydata1,
                       hastydata2);         
         
-        cntup ++;
-        periodic_message_flag = false;
+        cntup ++;  //increment cntup 
+        periodic_message_flag = false;  //sets flag to false
 
-       if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD ) 
+       if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD )  //link check after 50 transmits
         {
-            txdone_counter = 0;
+            txdone_counter = 0;                            //counter set to 0 and star counting to 50 again
             SMTC_HAL_TRACE_INFO( "Send link check\n\r" );
-            smtc_modem_lorawan_request_link_check( STACK_ID );
+            smtc_modem_lorawan_request_link_check( STACK_ID );  //checks the link on stack id 0
         }
 
 
@@ -219,7 +220,7 @@ int main( void )
         sleep_time_ms = smtc_modem_run_engine( );
         hal_mcu_set_sleep_for_ms( sleep_time_ms );
 
-    if( cntup ==3 && is_joined() == 1)
+    if( cntup ==3 && is_joined() == 1)  //reads sensors and sends the data over LoRaWAN after cntup==3 (60seconds) and is_joined
         {   
             sensor_read();
             sendData(temp, Voltage,door,water);
@@ -233,15 +234,15 @@ int main( void )
                       cntup,
                       hastydata1,
                       hastydata2);    
-            PC10Callback(NULL);
-            PC11Callback(NULL);
-            PA15Callback(NULL);
+            PC10Callback(NULL); //checks status on PC10 watersensor
+            PC11Callback(NULL); //checks status on PC11 doormagnet
+            PA15Callback(NULL); //checks status on PA15 accelerometer
             
         }
 
     
     
-    if (hal_gpio_get_value(PC_7) == 1)
+    if (hal_gpio_get_value(PC_7) == 1) //blinky toggle two LEDS to see program is running
     {
         hal_gpio_set_value(PC_1, 1);
         hal_gpio_set_value(PC_7, 0);
@@ -254,12 +255,6 @@ int main( void )
         hal_gpio_set_value(PC_7, 1);
 
     }
-
-
-
-hal_mcu_delay_ms(1000);
-
-
     }
 
 
@@ -277,7 +272,7 @@ hal_mcu_delay_ms(1000);
 static void gps_snap( void ) {
 
     SMTC_HAL_TRACE_PRINTF( "\n-----------------GPS snap----------------\n\r" );
-    //hal_gpio_set_value( PB_0, 1 );
+    //hal_gpio_set_value( PB_0, 1 );    //activates active antenna
     lr11xx_status_t ret;
     uint8_t nb_sat;
     SMTC_HAL_TRACE_PRINTF( "lr11xx_gnss_scan_autonomous...\n\r" );
@@ -290,8 +285,8 @@ static void gps_snap( void ) {
         SMTC_HAL_TRACE_PRINTF( "LR1110 ERROR \n\r" );
     }
 
-    gnss_count = nb_sat;
-    //hal_gpio_set_value( PB_0, 0 );
+    gnss_count = nb_sat;  //number of satalites scanned
+    //hal_gpio_set_value( PB_0, 0 ); //deactivates active antenna
 }
 
 static void get_event( void ) {
@@ -332,6 +327,7 @@ static void get_event( void ) {
             SMTC_HAL_TRACE_INFO( "Send hello_world message \n\r" );
             char data[] = "hello_world";
             smtc_modem_request_uplink( STACK_ID, 102, false, ( uint8_t* )&data, sizeof( data ) );
+            
             if (firstflag == true)
             {   SMTC_HAL_TRACE_PRINTF("------------<sending first data>------------\n\r");
                 sendData(temp, Voltage,door,water);
