@@ -7,10 +7,10 @@
 #include "smtc_hal_gpio.h" // HAL GPIO for hardware control
 #include "smtc_hal_rtc.h"  // HAL RTC for Real-Time Clock (if needed)
 #include "smtc_hal_i2c.h"  // HAL I2C for sensor communication
-#include "stm32l0xx_hal_adc.h"
+
 #include "smtc_hal_dbg_trace.h"
 #include "smtc_hal_mcu.h"
-#include "stm32l0xx_hal_gpio.h"
+
 
 #include "timer.h" 
 

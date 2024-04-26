@@ -83,9 +83,7 @@ build/main.o: application/main.c lbm/smtc_modem_api/smtc_modem_api.h \
  lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_system_types.h \
  lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_types.h \
  bsp_l0/common/cayenne_lpp.h bsp_l0/common/functions.h \
- bsp_l0/common/cayenne_lpp.h \
- bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_gpio.h \
- bsp_l0/common/settings.h
+ bsp_l0/common/cayenne_lpp.h bsp_l0/common/settings.h
 lbm/smtc_modem_api/smtc_modem_api.h:
 lbm/smtc_modem_api/smtc_modem_utilities.h:
 lbm/smtc_modem_api/smtc_modem_api.h:
@@ -177,5 +175,4 @@ lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_types.h:
 bsp_l0/common/cayenne_lpp.h:
 bsp_l0/common/functions.h:
 bsp_l0/common/cayenne_lpp.h:
-bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_gpio.h:
 bsp_l0/common/settings.h:

@@ -2,24 +2,24 @@
 
 
 
-// Global variables (ensure they are declared and initialized appropriately elsewhere)
+// Global variables (declared in /application/main.c  )
 extern float VDR, temp, ADCmeas, Voltage, Door, water, hastydata1, hastydata2, prev_water,prev_door, door;
-extern ADC_HandleTypeDef hadc; // Ensure this type is defined elsewhere
+extern ADC_HandleTypeDef hadc; // 
 extern TimerEvent_t water_timer, door_timer;
 
     hal_gpio_irq_t PC10_cb = {
         .pin      = PC_10,
-        .context  = NULL,     // context pass to the callback - not used in this example
+        .context  = NULL,     // NULL if no context is used
         .callback = PC10Callback,  // callback called when EXTI is triggered
     };
      hal_gpio_irq_t PC11_cb = {
         .pin      = PC_11,
-        .context  = NULL,     // context pass to the callback - not used in this example
+        .context  = NULL,     // NULL if no context is used
         .callback = PC11Callback,  // callback called when EXTI is triggered
     };
      hal_gpio_irq_t PA15_cb = {
         .pin      = PA_15,
-        .context  = NULL,     // context pass to the callback - not used in this example
+        .context  = NULL,     // NULL if no context is used
         .callback = PA15Callback,  // callback called when EXTI is triggered
     };
 
@@ -30,12 +30,10 @@ extern TimerEvent_t water_timer, door_timer;
 void sensor_read(void) {                                    //function that calls functions for sensors
     SMTC_HAL_TRACE_PRINTF("----- sensor_read -----\n\r");   //and calculates the real value of battery
     temp = GETtemperature(1);                               //adc measurment
-    ADCmeas = GETvoltage(&hadc);
-    Voltage = ADCmeas * VDR;   
+    Voltage = GETvoltage(&hadc);
 
-#if defined(LR11XX)
-    //gps_snap(); // Uncomment and implement gps_snap if applicable
-#endif
+    gps_snap(); // Uncomment and implement gps_snap if applicable
+
 }
 
 void printCayenneLPPBuffer(const cayenne_lpp_t *lpp) 
@@ -106,11 +104,11 @@ float GETtemperature(const uint32_t id) {    //function that calls TC74A0, and r
 
 float GETvoltage(ADC_HandleTypeDef *hadc) {         // function that take a ADC measurment
     float batt = 0.0;                               //stores the battery voltage (adc value)
-
+    float Volt = 0;
     hal_gpio_set_value(PA_3, 1);                    //turns on the mosfet for the voltage divider
     MX_ADC_Init();                                  //adc init
 
-
+    hal_mcu_delay_ms(10);
     if (HAL_ADC_Start(hadc) != HAL_OK) {            // This code attempts to start the ADC (Analog to Digital Converter)
         return 128.0f; // Error value               // conversion using the HAL_ADC_Start function.
     }                                               //If the ADC start operation fails (returns a value other than HAL_OK),
@@ -122,10 +120,11 @@ float GETvoltage(ADC_HandleTypeDef *hadc) {         // function that take a ADC 
         batt = (3.3f * adc_value) / 4095.0f;                        // Here, Vref is assumed to be 3.3 volts and Max_ADC_Value is 4095.
     }
 
-    HAL_ADC_DeInit(hadc);                           //adc deinit
+    HAL_ADC_DeInit(hadc);       
+    hal_mcu_delay_ms(10);                    //adc deinit
     hal_gpio_set_value(PA_3, 0);                    //turns off mosfet for the voltage divider
-
-    return batt;
+     Volt = batt * VDR;   
+    return Volt;
 }
 
 void MX_ADC_Init(void)
@@ -181,6 +180,7 @@ void GPIO_Init(void) {                  //init for gpio pns called in main
     hal_gpio_init_in( PC_10, BSP_GPIO_PULL_MODE_DOWN, BSP_GPIO_IRQ_MODE_RISING, &PC10_cb ); //EXTI interrupt watersensor    
     hal_gpio_init_in( PA_15, BSP_GPIO_PULL_MODE_DOWN, BSP_GPIO_IRQ_MODE_RISING, &PA15_cb ); //EXTI interrupt accelerometer
 }
+
 
 
 

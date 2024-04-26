@@ -94,7 +94,7 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
 
     static bool is_joined( void );
     static void get_event( void );
-    static void gps_snap( void );
+    void gps_snap( void );
 
 
     static TimerEvent_t periodic_timer;
@@ -269,7 +269,7 @@ int main( void )
 
 
 
-static void gps_snap( void ) {
+void gps_snap( void ) {
 
     SMTC_HAL_TRACE_PRINTF( "\n-----------------GPS snap----------------\n\r" );
     //hal_gpio_set_value( PB_0, 1 );    //activates active antenna
@@ -327,7 +327,6 @@ static void get_event( void ) {
             SMTC_HAL_TRACE_INFO( "Send hello_world message \n\r" );
             char data[] = "hello_world";
             smtc_modem_request_uplink( STACK_ID, 102, false, ( uint8_t* )&data, sizeof( data ) );
-            
             if (firstflag == true)
             {   SMTC_HAL_TRACE_PRINTF("------------<sending first data>------------\n\r");
                 sendData(temp, Voltage,door,water);

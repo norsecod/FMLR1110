@@ -27,7 +27,8 @@
         "stdbool.h": "c",
         "stm32l0xx_hal.h": "c",
         "stm32l0xx_hal_crc.h": "c",
-        "stm32l0xx_hal_gpio.h": "c"
+        "stm32l0xx_hal_gpio.h": "c",
+        "timer.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
  

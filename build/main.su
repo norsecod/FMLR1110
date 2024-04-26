@@ -1,8 +1,9 @@
 application/main.c:101:17:periodic_timer_cb	8	static
-application/main.c:297:13:get_event	312	static
-application/main.c:453:6:PC10Callback	16	static
+application/main.c:292:13:get_event	312	static
+application/main.c:272:6:gps_snap	32	static
+application/main.c:448:6:PC10Callback	16	static
 application/main.c:107:17:water_timer_cb	8	static
-application/main.c:487:6:PC11Callback	16	static
+application/main.c:482:6:PC11Callback	16	static
 application/main.c:114:17:door_timer_cb	8	static
-application/main.c:518:6:PA15Callback	8	static
+application/main.c:513:6:PA15Callback	8	static
 application/main.c:128:5:main	96	static
