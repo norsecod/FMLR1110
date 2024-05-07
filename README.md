@@ -25,7 +25,7 @@ carrier board is containing, two potentialfree contacts, a temperature sensor, a
 
 
 
-||temperature|TC74-3.3v|
-|accelerometer|adxl343|
+||Temperature|TC74-3.3v|
+|Accelerometer|adxl343|
 |GPS|TESEO-LIV3FL/FMLR1110|
 |voltage divider contains a PMOS and NMOS|
