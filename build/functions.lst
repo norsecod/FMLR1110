@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccTG5c2c.s 			page 1
+ARM GAS  /tmp/ccgfV0Ps.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccTG5c2c.s 			page 1
   51 002a EFE7     		b	.L2
   52              	.L5:
   53              		.align	2
-ARM GAS  /tmp/ccTG5c2c.s 			page 2
+ARM GAS  /tmp/ccgfV0Ps.s 			page 2
 
 
   54              	.L4:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccTG5c2c.s 			page 1
  112 0036 FFF7FEFF 		bl	cayenne_lpp_add_digital_input
  113 003a 2E23     		movs	r3, #46
  114 003c 6B44     		add	r3, r3, sp
-ARM GAS  /tmp/ccTG5c2c.s 			page 3
+ARM GAS  /tmp/ccgfV0Ps.s 			page 3
 
 
  115 003e 1978     		ldrb	r1, [r3]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccTG5c2c.s 			page 1
  173 0016 2E23     		movs	r3, #46
  174 0018 6B44     		add	r3, r3, sp
  175 001a 1978     		ldrb	r1, [r3]
-ARM GAS  /tmp/ccTG5c2c.s 			page 4
+ARM GAS  /tmp/ccgfV0Ps.s 			page 4
 
 
  176 001c 01A8     		add	r0, sp, #4
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccTG5c2c.s 			page 1
  227              		.thumb_func
  229              	MX_ADC_Init:
  230              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  /tmp/ccTG5c2c.s 			page 5
+ARM GAS  /tmp/ccgfV0Ps.s 			page 5
 
 
  231              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccTG5c2c.s 			page 1
  285 0076 5B01     		lsls	r3, r3, #5
  286 0078 0193     		str	r3, [sp, #4]
  287 007a FFF7FEFF 		bl	HAL_ADC_ConfigChannel
-ARM GAS  /tmp/ccTG5c2c.s 			page 6
+ARM GAS  /tmp/ccgfV0Ps.s 			page 6
 
 
  288 007e 0028     		cmp	r0, #0
@@ -344,8 +344,8 @@ ARM GAS  /tmp/ccTG5c2c.s 			page 1
  330 0006 0320     		movs	r0, #3
  331 0008 FFF7FEFF 		bl	hal_gpio_set_value
  332 000c FFF7FEFF 		bl	MX_ADC_Init
- 333 0010 0A20     		movs	r0, #10
- 334 0012 FFF7FEFF 		bl	hal_mcu_delay_ms
+ 333 0010 1E20     		movs	r0, #30
+ 334 0012 FFF7FEFF 		bl	HAL_Delay
  335 0016 2000     		movs	r0, r4
  336 0018 FFF7FEFF 		bl	HAL_ADC_Start
  337 001c 0028     		cmp	r0, #0
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccTG5c2c.s 			page 1
  344 002c 0028     		cmp	r0, #0
  345 002e 08D1     		bne	.L26
  346 0030 2000     		movs	r0, r4
-ARM GAS  /tmp/ccTG5c2c.s 			page 7
+ARM GAS  /tmp/ccgfV0Ps.s 			page 7
 
 
  347 0032 FFF7FEFF 		bl	HAL_ADC_GetValue
@@ -369,8 +369,8 @@ ARM GAS  /tmp/ccTG5c2c.s 			page 1
  352              	.L26:
  353 0042 2000     		movs	r0, r4
  354 0044 FFF7FEFF 		bl	HAL_ADC_DeInit
- 355 0048 0A20     		movs	r0, #10
- 356 004a FFF7FEFF 		bl	hal_mcu_delay_ms
+ 355 0048 1E20     		movs	r0, #30
+ 356 004a FFF7FEFF 		bl	HAL_Delay
  357 004e 0021     		movs	r1, #0
  358 0050 0320     		movs	r0, #3
  359 0052 FFF7FEFF 		bl	hal_gpio_set_value
@@ -403,149 +403,148 @@ ARM GAS  /tmp/ccTG5c2c.s 			page 1
  384              		@ args = 0, pretend = 0, frame = 0
  385              		@ frame_needed = 0, uses_anonymous_args = 0
  386 0000 10B5     		push	{r4, lr}
- 387 0002 0B48     		ldr	r0, .L32
+ 387 0002 0A48     		ldr	r0, .L32
  388 0004 FFF7FEFF 		bl	hal_trace_print_var
  389              		@ sp needed
  390 0008 0120     		movs	r0, #1
  391 000a FFF7FEFF 		bl	GETtemperature
- 392 000e 094B     		ldr	r3, .L32+4
+ 392 000e 084B     		ldr	r3, .L32+4
  393 0010 1860     		str	r0, [r3]
- 394 0012 0948     		ldr	r0, .L32+8
+ 394 0012 0848     		ldr	r0, .L32+8
  395 0014 FFF7FEFF 		bl	GETvoltage
- 396 0018 084B     		ldr	r3, .L32+12
+ 396 0018 074B     		ldr	r3, .L32+12
  397 001a 011C     		adds	r1, r0, #0
  398 001c 1860     		str	r0, [r3]
- 399 001e 084B     		ldr	r3, .L32+16
- 400 0020 084C     		ldr	r4, .L32+20
+ 399 001e 074B     		ldr	r3, .L32+16
+ 400 0020 074C     		ldr	r4, .L32+20
  401 0022 1868     		ldr	r0, [r3]
-ARM GAS  /tmp/ccTG5c2c.s 			page 8
+ARM GAS  /tmp/ccgfV0Ps.s 			page 8
 
 
  402 0024 FFF7FEFF 		bl	__aeabi_fmul
  403 0028 2060     		str	r0, [r4]
- 404 002a FFF7FEFF 		bl	gps_snap
- 405 002e 10BD     		pop	{r4, pc}
- 406              	.L33:
- 407              		.align	2
- 408              	.L32:
- 409 0030 00000000 		.word	.LC15
- 410 0034 00000000 		.word	temp
- 411 0038 00000000 		.word	hadc
- 412 003c 00000000 		.word	ADCmeas
- 413 0040 00000000 		.word	VDR
- 414 0044 00000000 		.word	Voltage
- 416              		.section	.text.GPIO_Init,"ax",%progbits
- 417              		.align	1
- 418              		.global	GPIO_Init
- 419              		.syntax unified
- 420              		.code	16
- 421              		.thumb_func
- 423              	GPIO_Init:
- 424              		@ args = 0, pretend = 0, frame = 0
- 425              		@ frame_needed = 0, uses_anonymous_args = 0
- 426 0000 10B5     		push	{r4, lr}
- 427 0002 0021     		movs	r1, #0
- 428              		@ sp needed
- 429 0004 2720     		movs	r0, #39
- 430 0006 FFF7FEFF 		bl	hal_gpio_init_out
- 431 000a 0121     		movs	r1, #1
- 432 000c 2120     		movs	r0, #33
- 433 000e FFF7FEFF 		bl	hal_gpio_init_out
- 434 0012 0021     		movs	r1, #0
- 435 0014 1020     		movs	r0, #16
- 436 0016 FFF7FEFF 		bl	hal_gpio_init_out
- 437 001a 0122     		movs	r2, #1
- 438 001c 0221     		movs	r1, #2
- 439 001e 2B20     		movs	r0, #43
- 440 0020 074B     		ldr	r3, .L35
- 441 0022 FFF7FEFF 		bl	hal_gpio_init_in
- 442 0026 0122     		movs	r2, #1
- 443 0028 0221     		movs	r1, #2
- 444 002a 2A20     		movs	r0, #42
- 445 002c 054B     		ldr	r3, .L35+4
- 446 002e FFF7FEFF 		bl	hal_gpio_init_in
- 447 0032 0122     		movs	r2, #1
- 448 0034 0221     		movs	r1, #2
- 449 0036 0F20     		movs	r0, #15
- 450 0038 034B     		ldr	r3, .L35+8
- 451 003a FFF7FEFF 		bl	hal_gpio_init_in
- 452 003e 10BD     		pop	{r4, pc}
- 453              	.L36:
- 454              		.align	2
- 455              	.L35:
- 456 0040 00000000 		.word	PC11_cb
- 457 0044 00000000 		.word	PC10_cb
- 458 0048 00000000 		.word	PA15_cb
- 460              		.section	.rodata.__func__.0,"a"
- 463              	__func__.0:
-ARM GAS  /tmp/ccTG5c2c.s 			page 9
+ 404 002a 10BD     		pop	{r4, pc}
+ 405              	.L33:
+ 406              		.align	2
+ 407              	.L32:
+ 408 002c 00000000 		.word	.LC15
+ 409 0030 00000000 		.word	temp
+ 410 0034 00000000 		.word	hadc
+ 411 0038 00000000 		.word	ADCmeas
+ 412 003c 00000000 		.word	VDR
+ 413 0040 00000000 		.word	Voltage
+ 415              		.section	.text.GPIO_Init,"ax",%progbits
+ 416              		.align	1
+ 417              		.global	GPIO_Init
+ 418              		.syntax unified
+ 419              		.code	16
+ 420              		.thumb_func
+ 422              	GPIO_Init:
+ 423              		@ args = 0, pretend = 0, frame = 0
+ 424              		@ frame_needed = 0, uses_anonymous_args = 0
+ 425 0000 10B5     		push	{r4, lr}
+ 426 0002 0021     		movs	r1, #0
+ 427              		@ sp needed
+ 428 0004 2720     		movs	r0, #39
+ 429 0006 FFF7FEFF 		bl	hal_gpio_init_out
+ 430 000a 0121     		movs	r1, #1
+ 431 000c 2120     		movs	r0, #33
+ 432 000e FFF7FEFF 		bl	hal_gpio_init_out
+ 433 0012 0021     		movs	r1, #0
+ 434 0014 1020     		movs	r0, #16
+ 435 0016 FFF7FEFF 		bl	hal_gpio_init_out
+ 436 001a 0122     		movs	r2, #1
+ 437 001c 0221     		movs	r1, #2
+ 438 001e 2B20     		movs	r0, #43
+ 439 0020 074B     		ldr	r3, .L35
+ 440 0022 FFF7FEFF 		bl	hal_gpio_init_in
+ 441 0026 0122     		movs	r2, #1
+ 442 0028 0221     		movs	r1, #2
+ 443 002a 2A20     		movs	r0, #42
+ 444 002c 054B     		ldr	r3, .L35+4
+ 445 002e FFF7FEFF 		bl	hal_gpio_init_in
+ 446 0032 0122     		movs	r2, #1
+ 447 0034 0221     		movs	r1, #2
+ 448 0036 0F20     		movs	r0, #15
+ 449 0038 034B     		ldr	r3, .L35+8
+ 450 003a FFF7FEFF 		bl	hal_gpio_init_in
+ 451 003e 10BD     		pop	{r4, pc}
+ 452              	.L36:
+ 453              		.align	2
+ 454              	.L35:
+ 455 0040 00000000 		.word	PC11_cb
+ 456 0044 00000000 		.word	PC10_cb
+ 457 0048 00000000 		.word	PA15_cb
+ 459              		.section	.rodata.__func__.0,"a"
+ 462              	__func__.0:
+ 463 0000 4D585F41 		.ascii	"MX_ADC_Init\000"
+ARM GAS  /tmp/ccgfV0Ps.s 			page 9
 
 
- 464 0000 4D585F41 		.ascii	"MX_ADC_Init\000"
- 464      44435F49 
- 464      6E697400 
- 465              		.global	PA15_cb
- 466              		.section	.data.PA15_cb,"aw"
- 467              		.align	2
- 470              	PA15_cb:
- 471 0000 0F       		.byte	15
- 472 0001 000000   		.space	3
- 473 0004 00000000 		.word	0
- 474 0008 00000000 		.word	PA15Callback
- 475              		.global	PC11_cb
- 476              		.section	.data.PC11_cb,"aw"
- 477              		.align	2
- 480              	PC11_cb:
- 481 0000 2B       		.byte	43
- 482 0001 000000   		.space	3
- 483 0004 00000000 		.word	0
- 484 0008 00000000 		.word	PC11Callback
- 485              		.global	PC10_cb
- 486              		.section	.data.PC10_cb,"aw"
- 487              		.align	2
- 490              	PC10_cb:
- 491 0000 2A       		.byte	42
- 492 0001 000000   		.space	3
- 493 0004 00000000 		.word	0
- 494 0008 00000000 		.word	PC10Callback
- 495              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccTG5c2c.s 			page 10
+ 463      44435F49 
+ 463      6E697400 
+ 464              		.global	PA15_cb
+ 465              		.section	.data.PA15_cb,"aw"
+ 466              		.align	2
+ 469              	PA15_cb:
+ 470 0000 0F       		.byte	15
+ 471 0001 000000   		.space	3
+ 472 0004 00000000 		.word	0
+ 473 0008 00000000 		.word	PA15Callback
+ 474              		.global	PC11_cb
+ 475              		.section	.data.PC11_cb,"aw"
+ 476              		.align	2
+ 479              	PC11_cb:
+ 480 0000 2B       		.byte	43
+ 481 0001 000000   		.space	3
+ 482 0004 00000000 		.word	0
+ 483 0008 00000000 		.word	PC11Callback
+ 484              		.global	PC10_cb
+ 485              		.section	.data.PC10_cb,"aw"
+ 486              		.align	2
+ 489              	PC10_cb:
+ 490 0000 2A       		.byte	42
+ 491 0001 000000   		.space	3
+ 492 0004 00000000 		.word	0
+ 493 0008 00000000 		.word	PC10Callback
+ 494              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccgfV0Ps.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 functions.c
-     /tmp/ccTG5c2c.s:21     .text.printCayenneLPPBuffer:00000000 $t
-     /tmp/ccTG5c2c.s:27     .text.printCayenneLPPBuffer:00000000 printCayenneLPPBuffer
-     /tmp/ccTG5c2c.s:55     .text.printCayenneLPPBuffer:0000002c $d
-     /tmp/ccTG5c2c.s:60     .text.sendLoRaWANPacket:00000000 $t
-     /tmp/ccTG5c2c.s:66     .text.sendLoRaWANPacket:00000000 sendLoRaWANPacket
-     /tmp/ccTG5c2c.s:80     .text.sendData:00000000 $t
-     /tmp/ccTG5c2c.s:86     .text.sendData:00000000 sendData
-     /tmp/ccTG5c2c.s:125    .text.wateralarm:00000000 $t
-     /tmp/ccTG5c2c.s:131    .text.wateralarm:00000000 wateralarm
-     /tmp/ccTG5c2c.s:155    .text.dooralarm:00000000 $t
-     /tmp/ccTG5c2c.s:161    .text.dooralarm:00000000 dooralarm
-     /tmp/ccTG5c2c.s:186    .text.GETtemperature:00000000 $t
-     /tmp/ccTG5c2c.s:192    .text.GETtemperature:00000000 GETtemperature
-     /tmp/ccTG5c2c.s:223    .text.MX_ADC_Init:00000000 $t
-     /tmp/ccTG5c2c.s:229    .text.MX_ADC_Init:00000000 MX_ADC_Init
-     /tmp/ccTG5c2c.s:307    .text.MX_ADC_Init:000000a4 $d
-     /tmp/ccTG5c2c.s:463    .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccTG5c2c.s:318    .text.GETvoltage:00000000 $t
-     /tmp/ccTG5c2c.s:324    .text.GETvoltage:00000000 GETvoltage
-     /tmp/ccTG5c2c.s:371    .text.GETvoltage:00000060 $d
-     /tmp/ccTG5c2c.s:377    .text.sensor_read:00000000 $t
-     /tmp/ccTG5c2c.s:383    .text.sensor_read:00000000 sensor_read
-     /tmp/ccTG5c2c.s:409    .text.sensor_read:00000030 $d
-     /tmp/ccTG5c2c.s:417    .text.GPIO_Init:00000000 $t
-     /tmp/ccTG5c2c.s:423    .text.GPIO_Init:00000000 GPIO_Init
-     /tmp/ccTG5c2c.s:456    .text.GPIO_Init:00000040 $d
-     /tmp/ccTG5c2c.s:480    .data.PC11_cb:00000000 PC11_cb
-     /tmp/ccTG5c2c.s:490    .data.PC10_cb:00000000 PC10_cb
-     /tmp/ccTG5c2c.s:470    .data.PA15_cb:00000000 PA15_cb
-     /tmp/ccTG5c2c.s:467    .data.PA15_cb:00000000 $d
-     /tmp/ccTG5c2c.s:477    .data.PC11_cb:00000000 $d
-     /tmp/ccTG5c2c.s:487    .data.PC10_cb:00000000 $d
+     /tmp/ccgfV0Ps.s:21     .text.printCayenneLPPBuffer:00000000 $t
+     /tmp/ccgfV0Ps.s:27     .text.printCayenneLPPBuffer:00000000 printCayenneLPPBuffer
+     /tmp/ccgfV0Ps.s:55     .text.printCayenneLPPBuffer:0000002c $d
+     /tmp/ccgfV0Ps.s:60     .text.sendLoRaWANPacket:00000000 $t
+     /tmp/ccgfV0Ps.s:66     .text.sendLoRaWANPacket:00000000 sendLoRaWANPacket
+     /tmp/ccgfV0Ps.s:80     .text.sendData:00000000 $t
+     /tmp/ccgfV0Ps.s:86     .text.sendData:00000000 sendData
+     /tmp/ccgfV0Ps.s:125    .text.wateralarm:00000000 $t
+     /tmp/ccgfV0Ps.s:131    .text.wateralarm:00000000 wateralarm
+     /tmp/ccgfV0Ps.s:155    .text.dooralarm:00000000 $t
+     /tmp/ccgfV0Ps.s:161    .text.dooralarm:00000000 dooralarm
+     /tmp/ccgfV0Ps.s:186    .text.GETtemperature:00000000 $t
+     /tmp/ccgfV0Ps.s:192    .text.GETtemperature:00000000 GETtemperature
+     /tmp/ccgfV0Ps.s:223    .text.MX_ADC_Init:00000000 $t
+     /tmp/ccgfV0Ps.s:229    .text.MX_ADC_Init:00000000 MX_ADC_Init
+     /tmp/ccgfV0Ps.s:307    .text.MX_ADC_Init:000000a4 $d
+     /tmp/ccgfV0Ps.s:462    .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccgfV0Ps.s:318    .text.GETvoltage:00000000 $t
+     /tmp/ccgfV0Ps.s:324    .text.GETvoltage:00000000 GETvoltage
+     /tmp/ccgfV0Ps.s:371    .text.GETvoltage:00000060 $d
+     /tmp/ccgfV0Ps.s:377    .text.sensor_read:00000000 $t
+     /tmp/ccgfV0Ps.s:383    .text.sensor_read:00000000 sensor_read
+     /tmp/ccgfV0Ps.s:408    .text.sensor_read:0000002c $d
+     /tmp/ccgfV0Ps.s:416    .text.GPIO_Init:00000000 $t
+     /tmp/ccgfV0Ps.s:422    .text.GPIO_Init:00000000 GPIO_Init
+     /tmp/ccgfV0Ps.s:455    .text.GPIO_Init:00000040 $d
+     /tmp/ccgfV0Ps.s:479    .data.PC11_cb:00000000 PC11_cb
+     /tmp/ccgfV0Ps.s:489    .data.PC10_cb:00000000 PC10_cb
+     /tmp/ccgfV0Ps.s:469    .data.PA15_cb:00000000 PA15_cb
+     /tmp/ccgfV0Ps.s:466    .data.PA15_cb:00000000 $d
+     /tmp/ccgfV0Ps.s:476    .data.PC11_cb:00000000 $d
+     /tmp/ccgfV0Ps.s:486    .data.PC10_cb:00000000 $d
 
 UNDEFINED SYMBOLS
 hal_trace_print_var
@@ -564,15 +563,14 @@ hadc
 __aeabi_ui2f
 __aeabi_fmul
 hal_gpio_set_value
-hal_mcu_delay_ms
+HAL_Delay
 HAL_ADC_Start
 HAL_ADC_PollForConversion
 HAL_ADC_GetValue
 HAL_ADC_DeInit
-ARM GAS  /tmp/ccTG5c2c.s 			page 11
+ARM GAS  /tmp/ccgfV0Ps.s 			page 11
 
 
-gps_snap
 temp
 ADCmeas
 VDR

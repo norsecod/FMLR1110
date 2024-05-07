@@ -1,3 +1,6 @@
+/*written by Terje Gården
+for a bachelors project "LoRaWAN Båtsensor" at Hiof (Høgskolen i Østfold)*/
+
 #include "functions.h"
 
 
@@ -30,9 +33,10 @@ extern TimerEvent_t water_timer, door_timer;
 void sensor_read(void) {                                    //function that calls functions for sensors
     SMTC_HAL_TRACE_PRINTF("----- sensor_read -----\n\r");   //and calculates the real value of battery
     temp = GETtemperature(1);                               //adc measurment
-    Voltage = GETvoltage(&hadc);
+    ADCmeas = GETvoltage(&hadc);
 
-    gps_snap(); // Uncomment and implement gps_snap if applicable
+    Voltage = ADCmeas * VDR;
+    //gps_snap(); // Uncomment and implement gps_snap if applicable
 
 }
 
@@ -94,7 +98,8 @@ float GETtemperature(const uint32_t id) {    //function that calls TC74A0, and r
     uint8_t temperature_raw;                 
     float temperature;
 
-    if (hal_i2c_read(id, device_address, 0x00, &temperature_raw) != SUCCESS) {  //reads the temperature 
+    if (hal_i2c_read(id, device_address, 0x00, &temperature_raw) != SUCCESS) //reads the temperature 
+    {  
         return -128.0f; // Error value                                          if error occurs returns -128 as temperature
     }
 
@@ -108,7 +113,7 @@ float GETvoltage(ADC_HandleTypeDef *hadc) {         // function that take a ADC 
     hal_gpio_set_value(PA_3, 1);                    //turns on the mosfet for the voltage divider
     MX_ADC_Init();                                  //adc init
 
-    hal_mcu_delay_ms(10);
+    HAL_Delay(30);
     if (HAL_ADC_Start(hadc) != HAL_OK) {            // This code attempts to start the ADC (Analog to Digital Converter)
         return 128.0f; // Error value               // conversion using the HAL_ADC_Start function.
     }                                               //If the ADC start operation fails (returns a value other than HAL_OK),
@@ -121,10 +126,10 @@ float GETvoltage(ADC_HandleTypeDef *hadc) {         // function that take a ADC 
     }
 
     HAL_ADC_DeInit(hadc);       
-    hal_mcu_delay_ms(10);                    //adc deinit
+    HAL_Delay(30);                    //adc deinit
     hal_gpio_set_value(PA_3, 0);                    //turns off mosfet for the voltage divider
-     Volt = batt * VDR;   
-    return Volt;
+        
+    return batt;
 }
 
 void MX_ADC_Init(void)
