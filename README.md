@@ -23,7 +23,9 @@ For configuration change the Makefile in the root folder:
 We have fo our bachelors project ported this library for our FMLR1110  and custom carrier board.
 carrier board is containing, two potentialfree contacts, a temperature sensor, accelerometer, a voltage divider and a buck conerter (12v to 3.3v).
 
-|temperature|TC74-3.3v|
+
+
+||temperature|TC74-3.3v|
 |accelerometer|adxl343|
 |GPS|TESEO-LIV3FL/FMLR1110|
 |voltage divider contains a PMOS and NMOS|
