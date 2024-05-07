@@ -30,3 +30,4 @@ carrier board is containing, two potentialfree contacts, a temperature sensor, a
 | GPS  | TESEO-LIV3FL/FMLR1110  |
 | Voltagedivider  | PMOS, NMOS, 100kΩ, 10kΩ, 2x5,6kΩ  |
 
+test branch is more updated than main branch at this moment
