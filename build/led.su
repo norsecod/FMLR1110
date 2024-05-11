@@ -1,5 +1,0 @@
-extensions/drivers/led/led.c:12:6:led_set	16	static
-extensions/drivers/led/led.c:5:6:led_init	8	static
-extensions/drivers/led/led.c:17:6:led_toggle	8	static
-extensions/drivers/led/led.c:31:13:blink_timer_cb	8	static
-extensions/drivers/led/led.c:21:6:led_blink	16	static

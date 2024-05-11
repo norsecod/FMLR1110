@@ -1,5 +1,0 @@
-bsp_l0/smtc_hal/smtc_hal_spi.c:115:6:hal_spi_init	32	static
-bsp_l0/smtc_hal/smtc_hal_spi.c:144:6:hal_spi_de_init	8	static
-bsp_l0/smtc_hal/smtc_hal_spi.c:153:10:hal_spi_in_out	12	static
-bsp_l0/smtc_hal/smtc_hal_spi.c:197:6:HAL_SPI_MspInit	48	static
-bsp_l0/smtc_hal/smtc_hal_spi.c:239:6:HAL_SPI_MspDeInit	48	static

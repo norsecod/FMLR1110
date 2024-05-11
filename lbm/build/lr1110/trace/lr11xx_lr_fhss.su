@@ -1,4 +1,0 @@
-smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_lr_fhss.c:161:17:lr11xx_lr_fhss_init	24	static
-smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_lr_fhss.c:179:17:lr11xx_lr_fhss_build_frame	56	static
-smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_lr_fhss.c:209:10:lr11xx_lr_fhss_get_time_on_air_in_ms	16	static
-smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_lr_fhss.c:215:14:lr11xx_lr_fhss_get_hop_sequence_count	0	static

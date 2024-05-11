@@ -1,2 +1,0 @@
-bsp_l0/smtc_hal/smtc_hal_trace.c:85:6:hal_trace_print	264	static
-bsp_l0/smtc_hal/smtc_hal_trace.c:78:6:hal_trace_print_var	16	static

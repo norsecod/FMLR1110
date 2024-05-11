@@ -1687,7 +1687,7 @@ void modem_load_context( void )
         modem_appkey_status = ctx.appkey_crc_status;
         modem_appkey_crc    = ctx.appkey_crc;
 
-        SMTC_MODEM_HAL_TRACE_PRINTF( "Modem Load Config :\n\r Port = %d\n\r", modem_dm_port );
+        SMTC_MODEM_HAL_TRACE_PRINTF( "Modem Load Config : Port = %d\n\r", modem_dm_port );
 
 #if defined( ADD_SMTC_FILE_UPLOAD )
         SMTC_MODEM_HAL_TRACE_PRINTF( "Upload_sctr = %d\n\r", modem_dm_upload_sctr );

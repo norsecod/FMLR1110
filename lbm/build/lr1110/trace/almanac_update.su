@@ -1,2 +1,0 @@
-smtc_modem_core/smtc_modem_services/src/almanac_update/almanac_update.c:79:30:almanac_update_create_uplink_payload	32	static
-smtc_modem_core/smtc_modem_services/src/almanac_update/almanac_update.c:94:30:almanac_update_process_downlink_payload	8	static

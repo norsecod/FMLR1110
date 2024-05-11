@@ -1,2 +1,0 @@
-smtc_modem_core/modem_services/modem_utilities.c:37:10:crc	20	static
-smtc_modem_core/modem_services/modem_utilities.c:51:10:compute_crc_fw	0	static

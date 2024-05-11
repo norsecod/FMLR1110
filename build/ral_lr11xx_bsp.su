@@ -1,7 +1,0 @@
-bsp_l0/radio_hal/ral_lr11xx_bsp.c:117:6:ral_lr11xx_bsp_get_rf_switch_cfg	0	static
-bsp_l0/radio_hal/ral_lr11xx_bsp.c:156:6:ral_lr11xx_bsp_get_reg_mode	0	static
-bsp_l0/radio_hal/ral_lr11xx_bsp.c:161:6:ral_lr11xx_bsp_get_xosc_cfg	0	static
-bsp_l0/radio_hal/ral_lr11xx_bsp.c:169:6:ral_lr11xx_bsp_get_crc_state	0	static
-bsp_l0/radio_hal/ral_lr11xx_bsp.c:178:6:ral_lr11xx_bsp_get_rssi_calibration_table	56	static
-bsp_l0/radio_hal/ral_lr11xx_bsp.c:245:6:lr11xx_get_tx_cfg	12	static
-bsp_l0/radio_hal/ral_lr11xx_bsp.c:129:6:ral_lr11xx_bsp_get_tx_cfg	24	static

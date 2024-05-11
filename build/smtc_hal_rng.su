@@ -1,4 +1,0 @@
-bsp_l0/smtc_hal/smtc_hal_rng.c:83:6:hal_rng_init	16	static
-bsp_l0/smtc_hal/smtc_hal_rng.c:89:10:hal_rng_get_random	8	static
-bsp_l0/smtc_hal/smtc_hal_rng.c:93:10:hal_rng_get_random_in_range	16	static
-bsp_l0/smtc_hal/smtc_hal_rng.c:101:9:hal_rng_get_signed_random_in_range	16	static

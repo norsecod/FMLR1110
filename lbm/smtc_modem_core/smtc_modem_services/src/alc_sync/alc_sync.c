@@ -51,10 +51,11 @@
  * -----------------------------------------------------------------------------
  * --- PRIVATE CONSTANTS -------------------------------------------------------
  */
-
+/*
 #if( MODEM_HAL_DBG_TRACE == MODEM_HAL_FEATURE_ON )
 static const char alc_sync_bad_size_str[] = "ALC Sync payload bad size";
-#endif
+#endif*/
+static const char alc_sync_bad_size_str[] = "ALC Sync payload bad size";
 /*
  * -----------------------------------------------------------------------------
  * --- PRIVATE TYPES -----------------------------------------------------------

@@ -1,4 +1,0 @@
-extensions/drivers/lis2dw/lis2dw.c:179:13:lis2dw_read_byte	24	static
-extensions/drivers/lis2dw/lis2dw.c:168:13:lis2dw_write_byte	32	static
-extensions/drivers/lis2dw/lis2dw.c:13:6:lis2dw_init	32	static
-extensions/drivers/lis2dw/lis2dw.c:72:6:lis2dw_read	48	static

@@ -55,7 +55,7 @@ extern "C" {
  * --- PUBLIC MACROS -----------------------------------------------------------
  */
 
-#define DEFAULT_DM_PORT 85
+#define DEFAULT_DM_PORT 199
 #define DEFAULT_FRAG_PORT 201
 #define DEFAULT_DM_REPORTING_INTERVAL 0x81  // 1h
 #define DEFAULT_DM_REPORTING_FIELDS 0x7B    // status, charge, temp, signal, uptime, rxtime
