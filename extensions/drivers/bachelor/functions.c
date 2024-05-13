@@ -10,6 +10,8 @@ extern float VDR, temp, Voltage, Door, water, hastydata1, hastydata2, prev_water
 extern ADC_HandleTypeDef hadc;
 extern TimerEvent_t water_timer, door_timer;
 
+ 
+
     hal_gpio_irq_t PC10_cb = {
         .pin      = PC_10,
         .context  = NULL,     // NULL if no context is used
@@ -34,8 +36,8 @@ void sensor_read(void) {                                    //function that call
     SMTC_HAL_TRACE_PRINTF("----- sensor_read -----\n\r");   //and calculates the real value of battery
     temp = GETtemperature(1);                               //adc measurment
     Voltage = GETvoltage(&hadc);
-
-    //gps_snap(); // Uncomment and implement gps_snap if applicable
+    adxl343_read_xyz(&x, &y, &z);
+    gps_snap(); // Uncomment and implement gps_snap if applicable
 
 }
 
@@ -178,7 +180,7 @@ void GPIO_Init(void) {                  //init for gpio pns called in main
     hal_gpio_init_out(PC_7,0);          //red led blinky
     hal_gpio_init_out(PC_1,1);          //green led blinky blinky will be removed from final code
     hal_gpio_init_out(PB_0,0);          //active antenna on/off
-    hal_gpio_init_out(PA_3,0);
+    hal_gpio_init_out(PA_3,0);          //voltage divider on/off
     //more pins will be added later
    
 
@@ -187,11 +189,46 @@ void GPIO_Init(void) {                  //init for gpio pns called in main
     hal_gpio_init_in( PA_15, BSP_GPIO_PULL_MODE_DOWN, BSP_GPIO_IRQ_MODE_RISING, &PA15_cb ); //EXTI interrupt accelerometer
 }
 
+/*=============================functions for ADCL343========================================*/
+
+/*Variables which hold some variable*/
+uint8_t data_rec[6];
+uint8_t acc_range;
+int16_t x,y,z;
+void adxl345_init(adxl345Parameters param)
+	{
+		acc_range=param;
+		i2c_writeByte(ADXL343_ADDRESS, ADXL3XX_REG_DATA_FORMAT, param);
+		i2c_writeByte(ADXL343_ADDRESS, ADXL3XX_REG_POWER_CTL , RESET);
+		i2c_writeByte(ADXL343_ADDRESS,ADXL3XX_REG_POWER_CTL , ADXL3XX_SET_MEASURE_BYTE);
+	}
+
+
+void adxl345_update()
+	{
 
 
 
+		i2c_ReadMulti(ADXL343_ADDRESS, ADXL3XX_REG_DATAX0, 6, (char*)data_rec);
 
+		x = ((data_rec[1]<<8)|data_rec[0]);
+		y = ((data_rec[3]<<8)|data_rec[2]);
+		z = ((data_rec[5]<<8)|data_rec[4]);
 
+	}
 
+void adxl345_get_values(accleration_values_t * values)
+	{
+	float divider;
+	switch(acc_range)
+	{
+		case accl_2g: divider=0.003906; /*1/256*/	break;
+		case accl_4g: divider=0.0078125;/*1/128*/	break;
+		case accl_8g: divider=0.01563;	/*1/64*/	break;
+		case accl_16g: divider=0.03125;	/*1/32*/	break;
+	}
 
-
+		values->xx=x*divider;
+		values->yy=y*divider;
+		values->zz=z*divider;
+	}

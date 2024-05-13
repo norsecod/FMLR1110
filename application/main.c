@@ -33,7 +33,7 @@
 #define DEFAULT_UL_PORT         7
 #define DEFAULT_DL_PORT         100
 
-#define PERIODIC_TIMER_PERIOD 20000
+#define PERIODIC_TIMER_PERIOD 60000
 #define ALARM_TIMER_PERIOD  60000
 
 
@@ -63,6 +63,7 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
  * --- PRIVATE VARIABLES -------------------------------------------------------
  */ 
     ADC_HandleTypeDef hadc;
+    accleration_values_t accleration_values;
     static bool periodic_message_flag;
 
     bool hastydata1 = false;
@@ -84,7 +85,7 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     uint32_t txdone_counter = 0;
     uint32_t link_check_attempts = 0;
     static uint32_t tx_pending;
-   
+
 
     
 /*
@@ -151,7 +152,7 @@ int main( void )
     SMTC_HAL_TRACE_INFO( "Modem driver version: %d.%d.%d\n\r", version.major, version.minor, version.patch );
  
     GPIO_Init();            //initializes GPIO pins
-    //hal_i2c_init(1, PB_9, PB_6); 
+    adxl345_init(accl_4g);         //initializes the accelerometer
     hal_mcu_enable_irq( );  //enables IRQ again
     hal_gpio_irq_enable();  //enables all gpio interrupts
 
@@ -178,8 +179,8 @@ int main( void )
     lr11xx_system_version_t lr11xx_version;
     ret = lr11xx_system_get_version( modem_radio.ral.context, &lr11xx_version );
     SMTC_HAL_TRACE_PRINTF("LR11xx Version: HW: %x, type: %x, fw: %x\n\r", lr11xx_version.hw, lr11xx_version.type, lr11xx_version.fw);
-    SMTC_HAL_TRACE_PRINTF("------------<first sensor read>------------");
-    sensor_read();
+    //SMTC_HAL_TRACE_PRINTF("------------<first sensor read>------------");
+    //sensor_read();
 
     while(true) 
     {
@@ -188,9 +189,11 @@ int main( void )
 
         // Execute modem runtime, this function must be recalled in sleep_time_ms (max value, can be recalled sooner)
         uint32_t sleep_time_ms = smtc_modem_run_engine( );
-        
+            adxl345_update();
+			adxl345_get_values(&accleration_values);
+            SMTC_HAL_TRACE_PRINTF("x=%0.5f\ty=%0.5f\tz=%0.5f\r\n",accleration_values.xx,accleration_values.yy,accleration_values.zz); //used for debugging
     
-        
+      /*  
     if( periodic_message_flag)  //gets activated every 20seconds
     {
            
@@ -202,7 +205,7 @@ int main( void )
                       water == 1 ? "high" : "low",
                       cntup,
                       hastydata1,
-                      hastydata2);         
+                      hastydata2);       
         
         cntup ++;  //increment cntup 
         periodic_message_flag = false;  //sets flag to false
@@ -215,17 +218,20 @@ int main( void )
         }
 
 
-    }
+    }*/
 
         //sleep_time_ms -= ( hal_rtc_get_time_ms( ) - start );
         sleep_time_ms = smtc_modem_run_engine( );
         hal_mcu_set_sleep_for_ms( sleep_time_ms );
-
-    if( cntup ==3 && is_joined() == 1)  //reads sensors and sends the data over LoRaWAN after cntup==3 (60seconds) and is_joined
+        //cntup ==3 && is_joined() == 1
+    if( periodic_message_flag)  //reads sensors and sends the data over LoRaWAN after cntup==3 (60seconds) and is_joined
         {   
+
+            hal_mcu_delay_ms(20);
             sensor_read();
+            hal_mcu_delay_ms(20);
             sendData(temp, Voltage,door,water);
-            cntup = 0;
+            //cntup = 0;
 
             SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C Voltage: %.2fV door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
                       temp,
@@ -238,7 +244,14 @@ int main( void )
             PC10Callback(NULL); //checks status on PC10 watersensor
             PC11Callback(NULL); //checks status on PC11 doormagnet
             PA15Callback(NULL); //checks status on PA15 accelerometer
-            
+            periodic_message_flag = false;  //sets flag to false
+
+            if( txdone_counter >= LINK_CHECK_RATIO_THRESHOLD )  //link check after 50 transmits
+            {
+                txdone_counter = 0;                            //counter set to 0 and star counting to 50 again
+                SMTC_HAL_TRACE_INFO( "Send link check\n\r" );
+                smtc_modem_lorawan_request_link_check( STACK_ID );  //checks the link on stack id 0
+            }
         }
 
     
@@ -514,11 +527,9 @@ void PC11Callback(void* context)
 void PA15Callback(void* context )
 {   if (hal_gpio_get_value(PA_15) == GPIO_PIN_SET)
     {
-        hal_gpio_set_value( PD_2, 1 );
-    }
-    else if ((hal_gpio_get_value(PA_15) == GPIO_PIN_RESET))
-    {
-        hal_gpio_set_value( PD_2, 0 );
+    
+
+        
     }
 }
 
