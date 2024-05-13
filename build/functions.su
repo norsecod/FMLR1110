@@ -1,0 +1,11 @@
+extensions/drivers/bachelor/functions.c:43:6:printCayenneLPPBuffer	16	static
+extensions/drivers/bachelor/functions.c:52:6:sendLoRaWANPacket	16	static
+extensions/drivers/bachelor/functions.c:61:6:sendData	72	static
+extensions/drivers/bachelor/functions.c:76:6:wateralarm	56	static
+extensions/drivers/bachelor/functions.c:86:6:dooralarm	56	static
+extensions/drivers/bachelor/functions.c:96:7:GETtemperature	32	static
+extensions/drivers/bachelor/functions.c:138:6:MX_ADC_Init	24	static
+extensions/drivers/bachelor/functions.c:113:7:GETvoltage	16	static
+extensions/drivers/bachelor/functions.c:34:6:sensor_read	8	static
+extensions/drivers/bachelor/functions.c:179:6:MX_I2C1_Init	16	static
+extensions/drivers/bachelor/functions.c:211:6:GPIO_Init	8	static

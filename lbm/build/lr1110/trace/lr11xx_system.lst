@@ -1,0 +1,1199 @@
+ARM GAS  /tmp/cceieCwj.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"lr11xx_system.c"
+  12              		.text
+  13              		.section	.text.lr11xx_system_reset,"ax",%progbits
+  14              		.align	1
+  15              		.global	lr11xx_system_reset
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	lr11xx_system_reset:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 10B5     		push	{r4, lr}
+  24 0002 FFF7FEFF 		bl	lr11xx_hal_reset
+  25              		@ sp needed
+  26 0006 10BD     		pop	{r4, pc}
+  28              		.section	.text.lr11xx_system_get_status,"ax",%progbits
+  29              		.align	1
+  30              		.global	lr11xx_system_get_status
+  31              		.syntax unified
+  32              		.code	16
+  33              		.thumb_func
+  35              	lr11xx_system_get_status:
+  36              		@ args = 0, pretend = 0, frame = 8
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38 0000 73B5     		push	{r0, r1, r4, r5, r6, lr}
+  39 0002 0E00     		movs	r6, r1
+  40 0004 1500     		movs	r5, r2
+  41 0006 6946     		mov	r1, sp
+  42 0008 0622     		movs	r2, #6
+  43 000a 1C00     		movs	r4, r3
+  44 000c FFF7FEFF 		bl	lr11xx_hal_direct_read
+  45 0010 0028     		cmp	r0, #0
+  46 0012 1DD1     		bne	.L4
+  47 0014 002E     		cmp	r6, #0
+  48 0016 06D0     		beq	.L5
+  49 0018 6B46     		mov	r3, sp
+  50 001a 0122     		movs	r2, #1
+  51 001c 1B78     		ldrb	r3, [r3]
+  52 001e 1A40     		ands	r2, r3
+  53 0020 5B08     		lsrs	r3, r3, #1
+  54 0022 7270     		strb	r2, [r6, #1]
+  55 0024 3370     		strb	r3, [r6]
+  56              	.L5:
+  57 0026 002D     		cmp	r5, #0
+  58 0028 09D0     		beq	.L6
+  59 002a 6B46     		mov	r3, sp
+  60 002c 0122     		movs	r2, #1
+ARM GAS  /tmp/cceieCwj.s 			page 2
+
+
+  61 002e 5B78     		ldrb	r3, [r3, #1]
+  62 0030 1A40     		ands	r2, r3
+  63 0032 AA70     		strb	r2, [r5, #2]
+  64 0034 1A07     		lsls	r2, r3, #28
+  65 0036 520F     		lsrs	r2, r2, #29
+  66 0038 1B09     		lsrs	r3, r3, #4
+  67 003a 6A70     		strb	r2, [r5, #1]
+  68 003c 2B70     		strb	r3, [r5]
+  69              	.L6:
+  70 003e 002C     		cmp	r4, #0
+  71 0040 06D0     		beq	.L4
+  72 0042 6B46     		mov	r3, sp
+  73 0044 9A88     		ldrh	r2, [r3, #4]
+  74 0046 5988     		ldrh	r1, [r3, #2]
+  75 0048 1204     		lsls	r2, r2, #16
+  76 004a 0A43     		orrs	r2, r1
+  77 004c 12BA     		rev	r2, r2
+  78 004e 2260     		str	r2, [r4]
+  79              	.L4:
+  80              		@ sp needed
+  81 0050 76BD     		pop	{r1, r2, r4, r5, r6, pc}
+  83              		.section	.text.lr11xx_system_clear_reset_status_info,"ax",%progbits
+  84              		.align	1
+  85              		.global	lr11xx_system_clear_reset_status_info
+  86              		.syntax unified
+  87              		.code	16
+  88              		.thumb_func
+  90              	lr11xx_system_clear_reset_status_info:
+  91              		@ args = 0, pretend = 0, frame = 8
+  92              		@ frame_needed = 0, uses_anonymous_args = 0
+  93 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+  94 0002 0123     		movs	r3, #1
+  95 0004 03A9     		add	r1, sp, #12
+  96 0006 0B80     		strh	r3, [r1]
+  97 0008 0023     		movs	r3, #0
+  98 000a 0222     		movs	r2, #2
+  99 000c 0093     		str	r3, [sp]
+ 100 000e FFF7FEFF 		bl	lr11xx_hal_write
+ 101 0012 05B0     		add	sp, sp, #20
+ 102              		@ sp needed
+ 103 0014 00BD     		pop	{pc}
+ 105              		.section	.text.lr11xx_system_get_version,"ax",%progbits
+ 106              		.align	1
+ 107              		.global	lr11xx_system_get_version
+ 108              		.syntax unified
+ 109              		.code	16
+ 110              		.thumb_func
+ 112              	lr11xx_system_get_version:
+ 113              		@ args = 0, pretend = 0, frame = 8
+ 114              		@ frame_needed = 0, uses_anonymous_args = 0
+ 115 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 116 0002 0223     		movs	r3, #2
+ 117 0004 0C00     		movs	r4, r1
+ 118 0006 FF33     		adds	r3, r3, #255
+ 119 0008 02A9     		add	r1, sp, #8
+ 120 000a 0B80     		strh	r3, [r1]
+ 121 000c 0023     		movs	r3, #0
+ARM GAS  /tmp/cceieCwj.s 			page 3
+
+
+ 122 000e 0393     		str	r3, [sp, #12]
+ 123 0010 0433     		adds	r3, r3, #4
+ 124 0012 0093     		str	r3, [sp]
+ 125 0014 0222     		movs	r2, #2
+ 126 0016 03AB     		add	r3, sp, #12
+ 127 0018 FFF7FEFF 		bl	lr11xx_hal_read
+ 128 001c 0028     		cmp	r0, #0
+ 129 001e 06D1     		bne	.L19
+ 130 0020 6B46     		mov	r3, sp
+ 131 0022 9B89     		ldrh	r3, [r3, #12]
+ 132 0024 2380     		strh	r3, [r4]
+ 133 0026 6B46     		mov	r3, sp
+ 134 0028 DB89     		ldrh	r3, [r3, #14]
+ 135 002a 5BBA     		rev16	r3, r3
+ 136 002c 6380     		strh	r3, [r4, #2]
+ 137              	.L19:
+ 138 002e 04B0     		add	sp, sp, #16
+ 139              		@ sp needed
+ 140 0030 10BD     		pop	{r4, pc}
+ 142              		.section	.text.lr11xx_system_get_errors,"ax",%progbits
+ 143              		.align	1
+ 144              		.global	lr11xx_system_get_errors
+ 145              		.syntax unified
+ 146              		.code	16
+ 147              		.thumb_func
+ 149              	lr11xx_system_get_errors:
+ 150              		@ args = 0, pretend = 0, frame = 8
+ 151              		@ frame_needed = 0, uses_anonymous_args = 0
+ 152 0000 30B5     		push	{r4, r5, lr}
+ 153 0002 0A4B     		ldr	r3, .L22
+ 154 0004 85B0     		sub	sp, sp, #20
+ 155 0006 0C00     		movs	r4, r1
+ 156 0008 02A9     		add	r1, sp, #8
+ 157 000a 0B80     		strh	r3, [r1]
+ 158 000c 0222     		movs	r2, #2
+ 159 000e 0023     		movs	r3, #0
+ 160 0010 03AD     		add	r5, sp, #12
+ 161 0012 0393     		str	r3, [sp, #12]
+ 162 0014 0092     		str	r2, [sp]
+ 163 0016 2B00     		movs	r3, r5
+ 164 0018 FFF7FEFF 		bl	lr11xx_hal_read
+ 165 001c 0028     		cmp	r0, #0
+ 166 001e 02D1     		bne	.L21
+ 167 0020 2B88     		ldrh	r3, [r5]
+ 168 0022 5BBA     		rev16	r3, r3
+ 169 0024 2380     		strh	r3, [r4]
+ 170              	.L21:
+ 171 0026 05B0     		add	sp, sp, #20
+ 172              		@ sp needed
+ 173 0028 30BD     		pop	{r4, r5, pc}
+ 174              	.L23:
+ 175 002a C046     		.align	2
+ 176              	.L22:
+ 177 002c 010D0000 		.word	3329
+ 179              		.section	.text.lr11xx_system_clear_errors,"ax",%progbits
+ 180              		.align	1
+ 181              		.global	lr11xx_system_clear_errors
+ARM GAS  /tmp/cceieCwj.s 			page 4
+
+
+ 182              		.syntax unified
+ 183              		.code	16
+ 184              		.thumb_func
+ 186              	lr11xx_system_clear_errors:
+ 187              		@ args = 0, pretend = 0, frame = 8
+ 188              		@ frame_needed = 0, uses_anonymous_args = 0
+ 189 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 190 0002 054B     		ldr	r3, .L25
+ 191 0004 03A9     		add	r1, sp, #12
+ 192 0006 0B80     		strh	r3, [r1]
+ 193 0008 0023     		movs	r3, #0
+ 194 000a 0222     		movs	r2, #2
+ 195 000c 0093     		str	r3, [sp]
+ 196 000e FFF7FEFF 		bl	lr11xx_hal_write
+ 197 0012 05B0     		add	sp, sp, #20
+ 198              		@ sp needed
+ 199 0014 00BD     		pop	{pc}
+ 200              	.L26:
+ 201 0016 C046     		.align	2
+ 202              	.L25:
+ 203 0018 010E0000 		.word	3585
+ 205              		.section	.text.lr11xx_system_calibrate,"ax",%progbits
+ 206              		.align	1
+ 207              		.global	lr11xx_system_calibrate
+ 208              		.syntax unified
+ 209              		.code	16
+ 210              		.thumb_func
+ 212              	lr11xx_system_calibrate:
+ 213              		@ args = 0, pretend = 0, frame = 8
+ 214              		@ frame_needed = 0, uses_anonymous_args = 0
+ 215 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 216 0002 6A46     		mov	r2, sp
+ 217 0004 054B     		ldr	r3, .L28
+ 218 0006 9173     		strb	r1, [r2, #14]
+ 219 0008 9381     		strh	r3, [r2, #12]
+ 220 000a 0023     		movs	r3, #0
+ 221 000c 0322     		movs	r2, #3
+ 222 000e 0093     		str	r3, [sp]
+ 223 0010 03A9     		add	r1, sp, #12
+ 224 0012 FFF7FEFF 		bl	lr11xx_hal_write
+ 225 0016 05B0     		add	sp, sp, #20
+ 226              		@ sp needed
+ 227 0018 00BD     		pop	{pc}
+ 228              	.L29:
+ 229 001a C046     		.align	2
+ 230              	.L28:
+ 231 001c 010F0000 		.word	3841
+ 233              		.section	.text.lr11xx_system_set_reg_mode,"ax",%progbits
+ 234              		.align	1
+ 235              		.global	lr11xx_system_set_reg_mode
+ 236              		.syntax unified
+ 237              		.code	16
+ 238              		.thumb_func
+ 240              	lr11xx_system_set_reg_mode:
+ 241              		@ args = 0, pretend = 0, frame = 8
+ 242              		@ frame_needed = 0, uses_anonymous_args = 0
+ 243 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ARM GAS  /tmp/cceieCwj.s 			page 5
+
+
+ 244 0002 6A46     		mov	r2, sp
+ 245 0004 054B     		ldr	r3, .L31
+ 246 0006 9173     		strb	r1, [r2, #14]
+ 247 0008 9381     		strh	r3, [r2, #12]
+ 248 000a 0023     		movs	r3, #0
+ 249 000c 0322     		movs	r2, #3
+ 250 000e 0093     		str	r3, [sp]
+ 251 0010 03A9     		add	r1, sp, #12
+ 252 0012 FFF7FEFF 		bl	lr11xx_hal_write
+ 253 0016 05B0     		add	sp, sp, #20
+ 254              		@ sp needed
+ 255 0018 00BD     		pop	{pc}
+ 256              	.L32:
+ 257 001a C046     		.align	2
+ 258              	.L31:
+ 259 001c 01100000 		.word	4097
+ 261              		.section	.text.lr11xx_system_calibrate_image,"ax",%progbits
+ 262              		.align	1
+ 263              		.global	lr11xx_system_calibrate_image
+ 264              		.syntax unified
+ 265              		.code	16
+ 266              		.thumb_func
+ 268              	lr11xx_system_calibrate_image:
+ 269              		@ args = 0, pretend = 0, frame = 8
+ 270              		@ frame_needed = 0, uses_anonymous_args = 0
+ 271 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 272 0002 064B     		ldr	r3, .L34
+ 273 0004 03AC     		add	r4, sp, #12
+ 274 0006 2380     		strh	r3, [r4]
+ 275 0008 0023     		movs	r3, #0
+ 276 000a A170     		strb	r1, [r4, #2]
+ 277 000c E270     		strb	r2, [r4, #3]
+ 278 000e 2100     		movs	r1, r4
+ 279 0010 0422     		movs	r2, #4
+ 280 0012 0093     		str	r3, [sp]
+ 281 0014 FFF7FEFF 		bl	lr11xx_hal_write
+ 282 0018 04B0     		add	sp, sp, #16
+ 283              		@ sp needed
+ 284 001a 10BD     		pop	{r4, pc}
+ 285              	.L35:
+ 286              		.align	2
+ 287              	.L34:
+ 288 001c 01110000 		.word	4353
+ 290              		.section	.text.lr11xx_system_calibrate_image_in_mhz,"ax",%progbits
+ 291              		.align	1
+ 292              		.global	lr11xx_system_calibrate_image_in_mhz
+ 293              		.syntax unified
+ 294              		.code	16
+ 295              		.thumb_func
+ 297              	lr11xx_system_calibrate_image_in_mhz:
+ 298              		@ args = 0, pretend = 0, frame = 0
+ 299              		@ frame_needed = 0, uses_anonymous_args = 0
+ 300 0000 10B5     		push	{r4, lr}
+ 301 0002 0332     		adds	r2, r2, #3
+ 302 0004 9210     		asrs	r2, r2, #2
+ 303 0006 8908     		lsrs	r1, r1, #2
+ 304 0008 D2B2     		uxtb	r2, r2
+ARM GAS  /tmp/cceieCwj.s 			page 6
+
+
+ 305 000a C9B2     		uxtb	r1, r1
+ 306 000c FFF7FEFF 		bl	lr11xx_system_calibrate_image
+ 307              		@ sp needed
+ 308 0010 10BD     		pop	{r4, pc}
+ 310              		.section	.text.lr11xx_system_set_dio_as_rf_switch,"ax",%progbits
+ 311              		.align	1
+ 312              		.global	lr11xx_system_set_dio_as_rf_switch
+ 313              		.syntax unified
+ 314              		.code	16
+ 315              		.thumb_func
+ 317              	lr11xx_system_set_dio_as_rf_switch:
+ 318              		@ args = 0, pretend = 0, frame = 16
+ 319              		@ frame_needed = 0, uses_anonymous_args = 0
+ 320 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
+ 321 0002 0B00     		movs	r3, r1
+ 322 0004 0C4A     		ldr	r2, .L38
+ 323 0006 03A9     		add	r1, sp, #12
+ 324 0008 0A80     		strh	r2, [r1]
+ 325 000a 1A78     		ldrb	r2, [r3]
+ 326 000c 8A70     		strb	r2, [r1, #2]
+ 327 000e 5A78     		ldrb	r2, [r3, #1]
+ 328 0010 CA70     		strb	r2, [r1, #3]
+ 329 0012 9A78     		ldrb	r2, [r3, #2]
+ 330 0014 0A71     		strb	r2, [r1, #4]
+ 331 0016 DA78     		ldrb	r2, [r3, #3]
+ 332 0018 4A71     		strb	r2, [r1, #5]
+ 333 001a 1A79     		ldrb	r2, [r3, #4]
+ 334 001c 8A71     		strb	r2, [r1, #6]
+ 335 001e 5A79     		ldrb	r2, [r3, #5]
+ 336 0020 CA71     		strb	r2, [r1, #7]
+ 337 0022 9A79     		ldrb	r2, [r3, #6]
+ 338 0024 0A72     		strb	r2, [r1, #8]
+ 339 0026 DB79     		ldrb	r3, [r3, #7]
+ 340 0028 0A22     		movs	r2, #10
+ 341 002a 4B72     		strb	r3, [r1, #9]
+ 342 002c 0023     		movs	r3, #0
+ 343 002e 0093     		str	r3, [sp]
+ 344 0030 FFF7FEFF 		bl	lr11xx_hal_write
+ 345 0034 07B0     		add	sp, sp, #28
+ 346              		@ sp needed
+ 347 0036 00BD     		pop	{pc}
+ 348              	.L39:
+ 349              		.align	2
+ 350              	.L38:
+ 351 0038 01120000 		.word	4609
+ 353              		.section	.text.lr11xx_system_set_dio_irq_params,"ax",%progbits
+ 354              		.align	1
+ 355              		.global	lr11xx_system_set_dio_irq_params
+ 356              		.syntax unified
+ 357              		.code	16
+ 358              		.thumb_func
+ 360              	lr11xx_system_set_dio_irq_params:
+ 361              		@ args = 0, pretend = 0, frame = 16
+ 362              		@ frame_needed = 0, uses_anonymous_args = 0
+ 363 0000 0B00     		movs	r3, r1
+ 364 0002 10B5     		push	{r4, lr}
+ 365 0004 0B4C     		ldr	r4, .L41
+ARM GAS  /tmp/cceieCwj.s 			page 7
+
+
+ 366 0006 86B0     		sub	sp, sp, #24
+ 367 0008 03A9     		add	r1, sp, #12
+ 368 000a 0C80     		strh	r4, [r1]
+ 369 000c 1C0E     		lsrs	r4, r3, #24
+ 370 000e 8C70     		strb	r4, [r1, #2]
+ 371 0010 1C0C     		lsrs	r4, r3, #16
+ 372 0012 5BBA     		rev16	r3, r3
+ 373 0014 8B80     		strh	r3, [r1, #4]
+ 374 0016 130E     		lsrs	r3, r2, #24
+ 375 0018 8B71     		strb	r3, [r1, #6]
+ 376 001a 130C     		lsrs	r3, r2, #16
+ 377 001c CB71     		strb	r3, [r1, #7]
+ 378 001e 0023     		movs	r3, #0
+ 379 0020 52BA     		rev16	r2, r2
+ 380 0022 0A81     		strh	r2, [r1, #8]
+ 381 0024 CC70     		strb	r4, [r1, #3]
+ 382 0026 0A22     		movs	r2, #10
+ 383 0028 0093     		str	r3, [sp]
+ 384 002a FFF7FEFF 		bl	lr11xx_hal_write
+ 385 002e 06B0     		add	sp, sp, #24
+ 386              		@ sp needed
+ 387 0030 10BD     		pop	{r4, pc}
+ 388              	.L42:
+ 389 0032 C046     		.align	2
+ 390              	.L41:
+ 391 0034 01130000 		.word	4865
+ 393              		.section	.text.lr11xx_system_clear_irq_status,"ax",%progbits
+ 394              		.align	1
+ 395              		.global	lr11xx_system_clear_irq_status
+ 396              		.syntax unified
+ 397              		.code	16
+ 398              		.thumb_func
+ 400              	lr11xx_system_clear_irq_status:
+ 401              		@ args = 0, pretend = 0, frame = 8
+ 402              		@ frame_needed = 0, uses_anonymous_args = 0
+ 403 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 404 0002 0B00     		movs	r3, r1
+ 405 0004 074A     		ldr	r2, .L44
+ 406 0006 02A9     		add	r1, sp, #8
+ 407 0008 0A80     		strh	r2, [r1]
+ 408 000a 1A0E     		lsrs	r2, r3, #24
+ 409 000c 8A70     		strb	r2, [r1, #2]
+ 410 000e 1A0C     		lsrs	r2, r3, #16
+ 411 0010 5BBA     		rev16	r3, r3
+ 412 0012 8B80     		strh	r3, [r1, #4]
+ 413 0014 0023     		movs	r3, #0
+ 414 0016 CA70     		strb	r2, [r1, #3]
+ 415 0018 0622     		movs	r2, #6
+ 416 001a 0093     		str	r3, [sp]
+ 417 001c FFF7FEFF 		bl	lr11xx_hal_write
+ 418 0020 05B0     		add	sp, sp, #20
+ 419              		@ sp needed
+ 420 0022 00BD     		pop	{pc}
+ 421              	.L45:
+ 422              		.align	2
+ 423              	.L44:
+ 424 0024 01140000 		.word	5121
+ARM GAS  /tmp/cceieCwj.s 			page 8
+
+
+ 426              		.section	.text.lr11xx_system_get_and_clear_irq_status,"ax",%progbits
+ 427              		.align	1
+ 428              		.global	lr11xx_system_get_and_clear_irq_status
+ 429              		.syntax unified
+ 430              		.code	16
+ 431              		.thumb_func
+ 433              	lr11xx_system_get_and_clear_irq_status:
+ 434              		@ args = 0, pretend = 0, frame = 8
+ 435              		@ frame_needed = 0, uses_anonymous_args = 0
+ 436 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 437 0002 0D00     		movs	r5, r1
+ 438 0004 0021     		movs	r1, #0
+ 439 0006 01AB     		add	r3, sp, #4
+ 440 0008 0A00     		movs	r2, r1
+ 441 000a 0700     		movs	r7, r0
+ 442 000c 0191     		str	r1, [sp, #4]
+ 443 000e FFF7FEFF 		bl	lr11xx_system_get_status
+ 444 0012 041E     		subs	r4, r0, #0
+ 445 0014 04D1     		bne	.L47
+ 446 0016 019E     		ldr	r6, [sp, #4]
+ 447 0018 002E     		cmp	r6, #0
+ 448 001a 03D1     		bne	.L48
+ 449              	.L51:
+ 450 001c 002D     		cmp	r5, #0
+ 451 001e 09D1     		bne	.L49
+ 452              	.L47:
+ 453              		@ sp needed
+ 454 0020 2000     		movs	r0, r4
+ 455 0022 FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
+ 456              	.L48:
+ 457 0024 3100     		movs	r1, r6
+ 458 0026 3800     		movs	r0, r7
+ 459 0028 FFF7FEFF 		bl	lr11xx_system_clear_irq_status
+ 460 002c 0028     		cmp	r0, #0
+ 461 002e F5D0     		beq	.L51
+ 462 0030 0400     		movs	r4, r0
+ 463 0032 F5E7     		b	.L47
+ 464              	.L49:
+ 465 0034 2E60     		str	r6, [r5]
+ 466 0036 F3E7     		b	.L47
+ 468              		.section	.text.lr11xx_system_cfg_lfclk,"ax",%progbits
+ 469              		.align	1
+ 470              		.global	lr11xx_system_cfg_lfclk
+ 471              		.syntax unified
+ 472              		.code	16
+ 473              		.thumb_func
+ 475              	lr11xx_system_cfg_lfclk:
+ 476              		@ args = 0, pretend = 0, frame = 8
+ 477              		@ frame_needed = 0, uses_anonymous_args = 0
+ 478 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 479 0002 6C46     		mov	r4, sp
+ 480 0004 064B     		ldr	r3, .L56
+ 481 0006 9200     		lsls	r2, r2, #2
+ 482 0008 A381     		strh	r3, [r4, #12]
+ 483 000a 0023     		movs	r3, #0
+ 484 000c 1143     		orrs	r1, r2
+ 485 000e A173     		strb	r1, [r4, #14]
+ARM GAS  /tmp/cceieCwj.s 			page 9
+
+
+ 486 0010 0322     		movs	r2, #3
+ 487 0012 0093     		str	r3, [sp]
+ 488 0014 03A9     		add	r1, sp, #12
+ 489 0016 FFF7FEFF 		bl	lr11xx_hal_write
+ 490 001a 04B0     		add	sp, sp, #16
+ 491              		@ sp needed
+ 492 001c 10BD     		pop	{r4, pc}
+ 493              	.L57:
+ 494 001e C046     		.align	2
+ 495              	.L56:
+ 496 0020 01160000 		.word	5633
+ 498              		.section	.text.lr11xx_system_set_tcxo_mode,"ax",%progbits
+ 499              		.align	1
+ 500              		.global	lr11xx_system_set_tcxo_mode
+ 501              		.syntax unified
+ 502              		.code	16
+ 503              		.thumb_func
+ 505              	lr11xx_system_set_tcxo_mode:
+ 506              		@ args = 0, pretend = 0, frame = 8
+ 507              		@ frame_needed = 0, uses_anonymous_args = 0
+ 508 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 509 0002 084B     		ldr	r3, .L59
+ 510 0004 02AC     		add	r4, sp, #8
+ 511 0006 2380     		strh	r3, [r4]
+ 512 0008 130C     		lsrs	r3, r2, #16
+ 513 000a E370     		strb	r3, [r4, #3]
+ 514 000c 0023     		movs	r3, #0
+ 515 000e 52BA     		rev16	r2, r2
+ 516 0010 A170     		strb	r1, [r4, #2]
+ 517 0012 A280     		strh	r2, [r4, #4]
+ 518 0014 2100     		movs	r1, r4
+ 519 0016 0622     		movs	r2, #6
+ 520 0018 0093     		str	r3, [sp]
+ 521 001a FFF7FEFF 		bl	lr11xx_hal_write
+ 522 001e 04B0     		add	sp, sp, #16
+ 523              		@ sp needed
+ 524 0020 10BD     		pop	{r4, pc}
+ 525              	.L60:
+ 526 0022 C046     		.align	2
+ 527              	.L59:
+ 528 0024 01170000 		.word	5889
+ 530              		.section	.text.lr11xx_system_reboot,"ax",%progbits
+ 531              		.align	1
+ 532              		.global	lr11xx_system_reboot
+ 533              		.syntax unified
+ 534              		.code	16
+ 535              		.thumb_func
+ 537              	lr11xx_system_reboot:
+ 538              		@ args = 0, pretend = 0, frame = 8
+ 539              		@ frame_needed = 0, uses_anonymous_args = 0
+ 540 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 541 0002 6A46     		mov	r2, sp
+ 542 0004 084B     		ldr	r3, .L65
+ 543 0006 9381     		strh	r3, [r2, #12]
+ 544 0008 0023     		movs	r3, #0
+ 545 000a 1A00     		movs	r2, r3
+ 546 000c 9942     		cmp	r1, r3
+ARM GAS  /tmp/cceieCwj.s 			page 10
+
+
+ 547 000e 00D0     		beq	.L62
+ 548 0010 0332     		adds	r2, r2, #3
+ 549              	.L62:
+ 550 0012 6946     		mov	r1, sp
+ 551 0014 8A73     		strb	r2, [r1, #14]
+ 552 0016 0093     		str	r3, [sp]
+ 553 0018 0322     		movs	r2, #3
+ 554 001a 0023     		movs	r3, #0
+ 555 001c 03A9     		add	r1, sp, #12
+ 556 001e FFF7FEFF 		bl	lr11xx_hal_write
+ 557 0022 05B0     		add	sp, sp, #20
+ 558              		@ sp needed
+ 559 0024 00BD     		pop	{pc}
+ 560              	.L66:
+ 561 0026 C046     		.align	2
+ 562              	.L65:
+ 563 0028 01180000 		.word	6145
+ 565              		.section	.text.lr11xx_system_get_vbat,"ax",%progbits
+ 566              		.align	1
+ 567              		.global	lr11xx_system_get_vbat
+ 568              		.syntax unified
+ 569              		.code	16
+ 570              		.thumb_func
+ 572              	lr11xx_system_get_vbat:
+ 573              		@ args = 0, pretend = 0, frame = 8
+ 574              		@ frame_needed = 0, uses_anonymous_args = 0
+ 575 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 576 0002 054A     		ldr	r2, .L68
+ 577 0004 0B00     		movs	r3, r1
+ 578 0006 03A9     		add	r1, sp, #12
+ 579 0008 0A80     		strh	r2, [r1]
+ 580 000a 0122     		movs	r2, #1
+ 581 000c 0092     		str	r2, [sp]
+ 582 000e 9218     		adds	r2, r2, r2
+ 583 0010 FFF7FEFF 		bl	lr11xx_hal_read
+ 584 0014 05B0     		add	sp, sp, #20
+ 585              		@ sp needed
+ 586 0016 00BD     		pop	{pc}
+ 587              	.L69:
+ 588              		.align	2
+ 589              	.L68:
+ 590 0018 01190000 		.word	6401
+ 592              		.section	.text.lr11xx_system_get_temp,"ax",%progbits
+ 593              		.align	1
+ 594              		.global	lr11xx_system_get_temp
+ 595              		.syntax unified
+ 596              		.code	16
+ 597              		.thumb_func
+ 599              	lr11xx_system_get_temp:
+ 600              		@ args = 0, pretend = 0, frame = 8
+ 601              		@ frame_needed = 0, uses_anonymous_args = 0
+ 602 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 603 0002 0A4B     		ldr	r3, .L72
+ 604 0004 0C00     		movs	r4, r1
+ 605 0006 02A9     		add	r1, sp, #8
+ 606 0008 6A46     		mov	r2, sp
+ 607 000a 0B80     		strh	r3, [r1]
+ARM GAS  /tmp/cceieCwj.s 			page 11
+
+
+ 608 000c 0023     		movs	r3, #0
+ 609 000e 9381     		strh	r3, [r2, #12]
+ 610 0010 0222     		movs	r2, #2
+ 611 0012 03AB     		add	r3, sp, #12
+ 612 0014 0092     		str	r2, [sp]
+ 613 0016 FFF7FEFF 		bl	lr11xx_hal_read
+ 614 001a 0028     		cmp	r0, #0
+ 615 001c 03D1     		bne	.L71
+ 616 001e 6B46     		mov	r3, sp
+ 617 0020 9B89     		ldrh	r3, [r3, #12]
+ 618 0022 5BBA     		rev16	r3, r3
+ 619 0024 2380     		strh	r3, [r4]
+ 620              	.L71:
+ 621 0026 04B0     		add	sp, sp, #16
+ 622              		@ sp needed
+ 623 0028 10BD     		pop	{r4, pc}
+ 624              	.L73:
+ 625 002a C046     		.align	2
+ 626              	.L72:
+ 627 002c 011A0000 		.word	6657
+ 629              		.section	.text.lr11xx_system_set_sleep,"ax",%progbits
+ 630              		.align	1
+ 631              		.global	lr11xx_system_set_sleep
+ 632              		.syntax unified
+ 633              		.code	16
+ 634              		.thumb_func
+ 636              	lr11xx_system_set_sleep:
+ 637              		@ args = 0, pretend = 0, frame = 16
+ 638              		@ frame_needed = 0, uses_anonymous_args = 0
+ 639 0000 30B5     		push	{r4, r5, lr}
+ 640 0002 0B04     		lsls	r3, r1, #16
+ 641 0004 1B0E     		lsrs	r3, r3, #24
+ 642 0006 87B0     		sub	sp, sp, #28
+ 643 0008 5B00     		lsls	r3, r3, #1
+ 644 000a 04AC     		add	r4, sp, #16
+ 645 000c 5B18     		adds	r3, r3, r1
+ 646 000e A370     		strb	r3, [r4, #2]
+ 647 0010 130E     		lsrs	r3, r2, #24
+ 648 0012 E370     		strb	r3, [r4, #3]
+ 649 0014 130C     		lsrs	r3, r2, #16
+ 650 0016 2371     		strb	r3, [r4, #4]
+ 651 0018 130A     		lsrs	r3, r2, #8
+ 652 001a 6371     		strb	r3, [r4, #5]
+ 653 001c 0023     		movs	r3, #0
+ 654 001e 054D     		ldr	r5, .L75
+ 655 0020 A271     		strb	r2, [r4, #6]
+ 656 0022 2580     		strh	r5, [r4]
+ 657 0024 0722     		movs	r2, #7
+ 658 0026 2100     		movs	r1, r4
+ 659 0028 0093     		str	r3, [sp]
+ 660 002a FFF7FEFF 		bl	lr11xx_hal_write
+ 661 002e 07B0     		add	sp, sp, #28
+ 662              		@ sp needed
+ 663 0030 30BD     		pop	{r4, r5, pc}
+ 664              	.L76:
+ 665 0032 C046     		.align	2
+ 666              	.L75:
+ARM GAS  /tmp/cceieCwj.s 			page 12
+
+
+ 667 0034 011B0000 		.word	6913
+ 669              		.section	.text.lr11xx_system_set_standby,"ax",%progbits
+ 670              		.align	1
+ 671              		.global	lr11xx_system_set_standby
+ 672              		.syntax unified
+ 673              		.code	16
+ 674              		.thumb_func
+ 676              	lr11xx_system_set_standby:
+ 677              		@ args = 0, pretend = 0, frame = 8
+ 678              		@ frame_needed = 0, uses_anonymous_args = 0
+ 679 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 680 0002 6A46     		mov	r2, sp
+ 681 0004 054B     		ldr	r3, .L78
+ 682 0006 9173     		strb	r1, [r2, #14]
+ 683 0008 9381     		strh	r3, [r2, #12]
+ 684 000a 0023     		movs	r3, #0
+ 685 000c 0322     		movs	r2, #3
+ 686 000e 0093     		str	r3, [sp]
+ 687 0010 03A9     		add	r1, sp, #12
+ 688 0012 FFF7FEFF 		bl	lr11xx_hal_write
+ 689 0016 05B0     		add	sp, sp, #20
+ 690              		@ sp needed
+ 691 0018 00BD     		pop	{pc}
+ 692              	.L79:
+ 693 001a C046     		.align	2
+ 694              	.L78:
+ 695 001c 011C0000 		.word	7169
+ 697              		.section	.text.lr11xx_system_wakeup,"ax",%progbits
+ 698              		.align	1
+ 699              		.global	lr11xx_system_wakeup
+ 700              		.syntax unified
+ 701              		.code	16
+ 702              		.thumb_func
+ 704              	lr11xx_system_wakeup:
+ 705              		@ args = 0, pretend = 0, frame = 0
+ 706              		@ frame_needed = 0, uses_anonymous_args = 0
+ 707 0000 10B5     		push	{r4, lr}
+ 708 0002 FFF7FEFF 		bl	lr11xx_hal_wakeup
+ 709              		@ sp needed
+ 710 0006 10BD     		pop	{r4, pc}
+ 712              		.section	.text.lr11xx_system_set_fs,"ax",%progbits
+ 713              		.align	1
+ 714              		.global	lr11xx_system_set_fs
+ 715              		.syntax unified
+ 716              		.code	16
+ 717              		.thumb_func
+ 719              	lr11xx_system_set_fs:
+ 720              		@ args = 0, pretend = 0, frame = 8
+ 721              		@ frame_needed = 0, uses_anonymous_args = 0
+ 722 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 723 0002 054B     		ldr	r3, .L82
+ 724 0004 03A9     		add	r1, sp, #12
+ 725 0006 0B80     		strh	r3, [r1]
+ 726 0008 0023     		movs	r3, #0
+ 727 000a 0222     		movs	r2, #2
+ 728 000c 0093     		str	r3, [sp]
+ 729 000e FFF7FEFF 		bl	lr11xx_hal_write
+ARM GAS  /tmp/cceieCwj.s 			page 13
+
+
+ 730 0012 05B0     		add	sp, sp, #20
+ 731              		@ sp needed
+ 732 0014 00BD     		pop	{pc}
+ 733              	.L83:
+ 734 0016 C046     		.align	2
+ 735              	.L82:
+ 736 0018 011D0000 		.word	7425
+ 738              		.section	.text.lr11xx_system_erase_infopage,"ax",%progbits
+ 739              		.align	1
+ 740              		.global	lr11xx_system_erase_infopage
+ 741              		.syntax unified
+ 742              		.code	16
+ 743              		.thumb_func
+ 745              	lr11xx_system_erase_infopage:
+ 746              		@ args = 0, pretend = 0, frame = 8
+ 747              		@ frame_needed = 0, uses_anonymous_args = 0
+ 748 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 749 0002 6A46     		mov	r2, sp
+ 750 0004 054B     		ldr	r3, .L85
+ 751 0006 9173     		strb	r1, [r2, #14]
+ 752 0008 9381     		strh	r3, [r2, #12]
+ 753 000a 0023     		movs	r3, #0
+ 754 000c 0322     		movs	r2, #3
+ 755 000e 0093     		str	r3, [sp]
+ 756 0010 03A9     		add	r1, sp, #12
+ 757 0012 FFF7FEFF 		bl	lr11xx_hal_write
+ 758 0016 05B0     		add	sp, sp, #20
+ 759              		@ sp needed
+ 760 0018 00BD     		pop	{pc}
+ 761              	.L86:
+ 762 001a C046     		.align	2
+ 763              	.L85:
+ 764 001c 01210000 		.word	8449
+ 766              		.section	.text.lr11xx_system_write_infopage,"ax",%progbits
+ 767              		.align	1
+ 768              		.global	lr11xx_system_write_infopage
+ 769              		.syntax unified
+ 770              		.code	16
+ 771              		.thumb_func
+ 773              	lr11xx_system_write_infopage:
+ 774              		@ args = 4, pretend = 0, frame = 264
+ 775              		@ frame_needed = 0, uses_anonymous_args = 0
+ 776 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 777 0002 C5B0     		sub	sp, sp, #276
+ 778 0004 4AAC     		add	r4, sp, #296
+ 779 0006 2678     		ldrb	r6, [r4]
+ 780 0008 0F4C     		ldr	r4, .L90
+ 781 000a 02AD     		add	r5, sp, #8
+ 782 000c 2C80     		strh	r4, [r5]
+ 783 000e 1C00     		movs	r4, r3
+ 784 0010 A970     		strb	r1, [r5, #2]
+ 785 0012 110A     		lsrs	r1, r2, #8
+ 786 0014 E970     		strb	r1, [r5, #3]
+ 787 0016 B100     		lsls	r1, r6, #2
+ 788 0018 2A71     		strb	r2, [r5, #4]
+ 789 001a 5F18     		adds	r7, r3, r1
+ 790 001c 04AA     		add	r2, sp, #16
+ARM GAS  /tmp/cceieCwj.s 			page 14
+
+
+ 791              	.L88:
+ 792 001e BC42     		cmp	r4, r7
+ 793 0020 07D1     		bne	.L89
+ 794 0022 0091     		str	r1, [sp]
+ 795 0024 0522     		movs	r2, #5
+ 796 0026 2900     		movs	r1, r5
+ 797 0028 04AB     		add	r3, sp, #16
+ 798 002a FFF7FEFF 		bl	lr11xx_hal_write
+ 799 002e 45B0     		add	sp, sp, #276
+ 800              		@ sp needed
+ 801 0030 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 802              	.L89:
+ 803 0032 40CC     		ldmia	r4!, {r6}
+ 804 0034 330E     		lsrs	r3, r6, #24
+ 805 0036 1370     		strb	r3, [r2]
+ 806 0038 330C     		lsrs	r3, r6, #16
+ 807 003a 5370     		strb	r3, [r2, #1]
+ 808 003c 330A     		lsrs	r3, r6, #8
+ 809 003e 9370     		strb	r3, [r2, #2]
+ 810 0040 D670     		strb	r6, [r2, #3]
+ 811 0042 0432     		adds	r2, r2, #4
+ 812 0044 EBE7     		b	.L88
+ 813              	.L91:
+ 814 0046 C046     		.align	2
+ 815              	.L90:
+ 816 0048 01220000 		.word	8705
+ 818              		.section	.text.lr11xx_system_read_infopage,"ax",%progbits
+ 819              		.align	1
+ 820              		.global	lr11xx_system_read_infopage
+ 821              		.syntax unified
+ 822              		.code	16
+ 823              		.thumb_func
+ 825              	lr11xx_system_read_infopage:
+ 826              		@ args = 4, pretend = 0, frame = 8
+ 827              		@ frame_needed = 0, uses_anonymous_args = 0
+ 828 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
+ 829 0002 1E00     		movs	r6, r3
+ 830 0004 08AB     		add	r3, sp, #32
+ 831 0006 1B78     		ldrb	r3, [r3]
+ 832 0008 114D     		ldr	r5, .L97
+ 833 000a 02AC     		add	r4, sp, #8
+ 834 000c 2580     		strh	r5, [r4]
+ 835 000e A170     		strb	r1, [r4, #2]
+ 836 0010 9D00     		lsls	r5, r3, #2
+ 837 0012 110A     		lsrs	r1, r2, #8
+ 838 0014 E170     		strb	r1, [r4, #3]
+ 839 0016 2271     		strb	r2, [r4, #4]
+ 840 0018 6371     		strb	r3, [r4, #5]
+ 841 001a 0622     		movs	r2, #6
+ 842 001c 0095     		str	r5, [sp]
+ 843 001e 3300     		movs	r3, r6
+ 844 0020 2100     		movs	r1, r4
+ 845 0022 FFF7FEFF 		bl	lr11xx_hal_read
+ 846 0026 7519     		adds	r5, r6, r5
+ 847 0028 0028     		cmp	r0, #0
+ 848 002a 0DD0     		beq	.L94
+ 849              	.L96:
+ARM GAS  /tmp/cceieCwj.s 			page 15
+
+
+ 850 002c 04B0     		add	sp, sp, #16
+ 851              		@ sp needed
+ 852 002e 70BD     		pop	{r4, r5, r6, pc}
+ 853              	.L95:
+ 854 0030 7278     		ldrb	r2, [r6, #1]
+ 855 0032 3178     		ldrb	r1, [r6]
+ 856 0034 1202     		lsls	r2, r2, #8
+ 857 0036 0A43     		orrs	r2, r1
+ 858 0038 B178     		ldrb	r1, [r6, #2]
+ 859 003a 0904     		lsls	r1, r1, #16
+ 860 003c 1143     		orrs	r1, r2
+ 861 003e F278     		ldrb	r2, [r6, #3]
+ 862 0040 1206     		lsls	r2, r2, #24
+ 863 0042 0A43     		orrs	r2, r1
+ 864 0044 12BA     		rev	r2, r2
+ 865 0046 04C6     		stmia	r6!, {r2}
+ 866              	.L94:
+ 867 0048 B542     		cmp	r5, r6
+ 868 004a F1D1     		bne	.L95
+ 869 004c EEE7     		b	.L96
+ 870              	.L98:
+ 871 004e C046     		.align	2
+ 872              	.L97:
+ 873 0050 01230000 		.word	8961
+ 875              		.section	.text.lr11xx_system_read_uid,"ax",%progbits
+ 876              		.align	1
+ 877              		.global	lr11xx_system_read_uid
+ 878              		.syntax unified
+ 879              		.code	16
+ 880              		.thumb_func
+ 882              	lr11xx_system_read_uid:
+ 883              		@ args = 0, pretend = 0, frame = 8
+ 884              		@ frame_needed = 0, uses_anonymous_args = 0
+ 885 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 886 0002 054A     		ldr	r2, .L100
+ 887 0004 0B00     		movs	r3, r1
+ 888 0006 03A9     		add	r1, sp, #12
+ 889 0008 0A80     		strh	r2, [r1]
+ 890 000a 0822     		movs	r2, #8
+ 891 000c 0092     		str	r2, [sp]
+ 892 000e 063A     		subs	r2, r2, #6
+ 893 0010 FFF7FEFF 		bl	lr11xx_hal_read
+ 894 0014 05B0     		add	sp, sp, #20
+ 895              		@ sp needed
+ 896 0016 00BD     		pop	{pc}
+ 897              	.L101:
+ 898              		.align	2
+ 899              	.L100:
+ 900 0018 01250000 		.word	9473
+ 902              		.section	.text.lr11xx_system_read_join_eui,"ax",%progbits
+ 903              		.align	1
+ 904              		.global	lr11xx_system_read_join_eui
+ 905              		.syntax unified
+ 906              		.code	16
+ 907              		.thumb_func
+ 909              	lr11xx_system_read_join_eui:
+ 910              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  /tmp/cceieCwj.s 			page 16
+
+
+ 911              		@ frame_needed = 0, uses_anonymous_args = 0
+ 912 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 913 0002 054A     		ldr	r2, .L103
+ 914 0004 0B00     		movs	r3, r1
+ 915 0006 03A9     		add	r1, sp, #12
+ 916 0008 0A80     		strh	r2, [r1]
+ 917 000a 0822     		movs	r2, #8
+ 918 000c 0092     		str	r2, [sp]
+ 919 000e 063A     		subs	r2, r2, #6
+ 920 0010 FFF7FEFF 		bl	lr11xx_hal_read
+ 921 0014 05B0     		add	sp, sp, #20
+ 922              		@ sp needed
+ 923 0016 00BD     		pop	{pc}
+ 924              	.L104:
+ 925              		.align	2
+ 926              	.L103:
+ 927 0018 01260000 		.word	9729
+ 929              		.section	.text.lr11xx_system_read_pin,"ax",%progbits
+ 930              		.align	1
+ 931              		.global	lr11xx_system_read_pin
+ 932              		.syntax unified
+ 933              		.code	16
+ 934              		.thumb_func
+ 936              	lr11xx_system_read_pin:
+ 937              		@ args = 0, pretend = 0, frame = 8
+ 938              		@ frame_needed = 0, uses_anonymous_args = 0
+ 939 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 940 0002 054A     		ldr	r2, .L106
+ 941 0004 0B00     		movs	r3, r1
+ 942 0006 03A9     		add	r1, sp, #12
+ 943 0008 0A80     		strh	r2, [r1]
+ 944 000a 0422     		movs	r2, #4
+ 945 000c 0092     		str	r2, [sp]
+ 946 000e 023A     		subs	r2, r2, #2
+ 947 0010 FFF7FEFF 		bl	lr11xx_hal_read
+ 948 0014 05B0     		add	sp, sp, #20
+ 949              		@ sp needed
+ 950 0016 00BD     		pop	{pc}
+ 951              	.L107:
+ 952              		.align	2
+ 953              	.L106:
+ 954 0018 01270000 		.word	9985
+ 956              		.section	.text.lr11xx_system_read_pin_custom_eui,"ax",%progbits
+ 957              		.align	1
+ 958              		.global	lr11xx_system_read_pin_custom_eui
+ 959              		.syntax unified
+ 960              		.code	16
+ 961              		.thumb_func
+ 963              	lr11xx_system_read_pin_custom_eui:
+ 964              		@ args = 4, pretend = 0, frame = 24
+ 965              		@ frame_needed = 0, uses_anonymous_args = 0
+ 966 0000 30B5     		push	{r4, r5, lr}
+ 967 0002 0C00     		movs	r4, r1
+ 968 0004 89B0     		sub	sp, sp, #36
+ 969 0006 164D     		ldr	r5, .L109
+ 970 0008 03A9     		add	r1, sp, #12
+ 971 000a 0D80     		strh	r5, [r1]
+ARM GAS  /tmp/cceieCwj.s 			page 17
+
+
+ 972 000c 2578     		ldrb	r5, [r4]
+ 973 000e 8D70     		strb	r5, [r1, #2]
+ 974 0010 6578     		ldrb	r5, [r4, #1]
+ 975 0012 CD70     		strb	r5, [r1, #3]
+ 976 0014 A578     		ldrb	r5, [r4, #2]
+ 977 0016 0D71     		strb	r5, [r1, #4]
+ 978 0018 E578     		ldrb	r5, [r4, #3]
+ 979 001a 4D71     		strb	r5, [r1, #5]
+ 980 001c 2579     		ldrb	r5, [r4, #4]
+ 981 001e 8D71     		strb	r5, [r1, #6]
+ 982 0020 6579     		ldrb	r5, [r4, #5]
+ 983 0022 CD71     		strb	r5, [r1, #7]
+ 984 0024 A579     		ldrb	r5, [r4, #6]
+ 985 0026 E479     		ldrb	r4, [r4, #7]
+ 986 0028 0D72     		strb	r5, [r1, #8]
+ 987 002a 4C72     		strb	r4, [r1, #9]
+ 988 002c 1478     		ldrb	r4, [r2]
+ 989 002e 8C72     		strb	r4, [r1, #10]
+ 990 0030 5478     		ldrb	r4, [r2, #1]
+ 991 0032 CC72     		strb	r4, [r1, #11]
+ 992 0034 9478     		ldrb	r4, [r2, #2]
+ 993 0036 0C73     		strb	r4, [r1, #12]
+ 994 0038 D478     		ldrb	r4, [r2, #3]
+ 995 003a 4C73     		strb	r4, [r1, #13]
+ 996 003c 1479     		ldrb	r4, [r2, #4]
+ 997 003e 8C73     		strb	r4, [r1, #14]
+ 998 0040 5479     		ldrb	r4, [r2, #5]
+ 999 0042 CC73     		strb	r4, [r1, #15]
+ 1000 0044 9479     		ldrb	r4, [r2, #6]
+ 1001 0046 0C74     		strb	r4, [r1, #16]
+ 1002 0048 D279     		ldrb	r2, [r2, #7]
+ 1003 004a 8B74     		strb	r3, [r1, #18]
+ 1004 004c 0423     		movs	r3, #4
+ 1005 004e 4A74     		strb	r2, [r1, #17]
+ 1006 0050 0093     		str	r3, [sp]
+ 1007 0052 1322     		movs	r2, #19
+ 1008 0054 0C9B     		ldr	r3, [sp, #48]
+ 1009 0056 FFF7FEFF 		bl	lr11xx_hal_read
+ 1010 005a 09B0     		add	sp, sp, #36
+ 1011              		@ sp needed
+ 1012 005c 30BD     		pop	{r4, r5, pc}
+ 1013              	.L110:
+ 1014 005e C046     		.align	2
+ 1015              	.L109:
+ 1016 0060 01270000 		.word	9985
+ 1018              		.section	.text.lr11xx_system_get_random_number,"ax",%progbits
+ 1019              		.align	1
+ 1020              		.global	lr11xx_system_get_random_number
+ 1021              		.syntax unified
+ 1022              		.code	16
+ 1023              		.thumb_func
+ 1025              	lr11xx_system_get_random_number:
+ 1026              		@ args = 0, pretend = 0, frame = 8
+ 1027              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1028 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 1029 0002 054A     		ldr	r2, .L112
+ 1030 0004 0B00     		movs	r3, r1
+ARM GAS  /tmp/cceieCwj.s 			page 18
+
+
+ 1031 0006 03A9     		add	r1, sp, #12
+ 1032 0008 0A80     		strh	r2, [r1]
+ 1033 000a 0422     		movs	r2, #4
+ 1034 000c 0092     		str	r2, [sp]
+ 1035 000e 023A     		subs	r2, r2, #2
+ 1036 0010 FFF7FEFF 		bl	lr11xx_hal_read
+ 1037 0014 05B0     		add	sp, sp, #20
+ 1038              		@ sp needed
+ 1039 0016 00BD     		pop	{pc}
+ 1040              	.L113:
+ 1041              		.align	2
+ 1042              	.L112:
+ 1043 0018 01200000 		.word	8193
+ 1045              		.section	.text.lr11xx_system_enable_spi_crc,"ax",%progbits
+ 1046              		.align	1
+ 1047              		.global	lr11xx_system_enable_spi_crc
+ 1048              		.syntax unified
+ 1049              		.code	16
+ 1050              		.thumb_func
+ 1052              	lr11xx_system_enable_spi_crc:
+ 1053              		@ args = 0, pretend = 0, frame = 8
+ 1054              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1055 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 1056 0002 6A46     		mov	r2, sp
+ 1057 0004 054B     		ldr	r3, .L115
+ 1058 0006 9173     		strb	r1, [r2, #14]
+ 1059 0008 9381     		strh	r3, [r2, #12]
+ 1060 000a 0023     		movs	r3, #0
+ 1061 000c 0322     		movs	r2, #3
+ 1062 000e 0093     		str	r3, [sp]
+ 1063 0010 03A9     		add	r1, sp, #12
+ 1064 0012 FFF7FEFF 		bl	lr11xx_hal_write
+ 1065 0016 05B0     		add	sp, sp, #20
+ 1066              		@ sp needed
+ 1067 0018 00BD     		pop	{pc}
+ 1068              	.L116:
+ 1069 001a C046     		.align	2
+ 1070              	.L115:
+ 1071 001c 01280000 		.word	10241
+ 1073              		.section	.text.lr11xx_system_drive_dio_in_sleep_mode,"ax",%progbits
+ 1074              		.align	1
+ 1075              		.global	lr11xx_system_drive_dio_in_sleep_mode
+ 1076              		.syntax unified
+ 1077              		.code	16
+ 1078              		.thumb_func
+ 1080              	lr11xx_system_drive_dio_in_sleep_mode:
+ 1081              		@ args = 0, pretend = 0, frame = 8
+ 1082              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1083 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 1084 0002 6A46     		mov	r2, sp
+ 1085 0004 054B     		ldr	r3, .L118
+ 1086 0006 9173     		strb	r1, [r2, #14]
+ 1087 0008 9381     		strh	r3, [r2, #12]
+ 1088 000a 0023     		movs	r3, #0
+ 1089 000c 0322     		movs	r2, #3
+ 1090 000e 0093     		str	r3, [sp]
+ 1091 0010 03A9     		add	r1, sp, #12
+ARM GAS  /tmp/cceieCwj.s 			page 19
+
+
+ 1092 0012 FFF7FEFF 		bl	lr11xx_hal_write
+ 1093 0016 05B0     		add	sp, sp, #20
+ 1094              		@ sp needed
+ 1095 0018 00BD     		pop	{pc}
+ 1096              	.L119:
+ 1097 001a C046     		.align	2
+ 1098              	.L118:
+ 1099 001c 012A0000 		.word	10753
+ 1101              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/cceieCwj.s 			page 20
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lr11xx_system.c
+     /tmp/cceieCwj.s:14     .text.lr11xx_system_reset:00000000 $t
+     /tmp/cceieCwj.s:20     .text.lr11xx_system_reset:00000000 lr11xx_system_reset
+     /tmp/cceieCwj.s:29     .text.lr11xx_system_get_status:00000000 $t
+     /tmp/cceieCwj.s:35     .text.lr11xx_system_get_status:00000000 lr11xx_system_get_status
+     /tmp/cceieCwj.s:84     .text.lr11xx_system_clear_reset_status_info:00000000 $t
+     /tmp/cceieCwj.s:90     .text.lr11xx_system_clear_reset_status_info:00000000 lr11xx_system_clear_reset_status_info
+     /tmp/cceieCwj.s:106    .text.lr11xx_system_get_version:00000000 $t
+     /tmp/cceieCwj.s:112    .text.lr11xx_system_get_version:00000000 lr11xx_system_get_version
+     /tmp/cceieCwj.s:143    .text.lr11xx_system_get_errors:00000000 $t
+     /tmp/cceieCwj.s:149    .text.lr11xx_system_get_errors:00000000 lr11xx_system_get_errors
+     /tmp/cceieCwj.s:177    .text.lr11xx_system_get_errors:0000002c $d
+     /tmp/cceieCwj.s:180    .text.lr11xx_system_clear_errors:00000000 $t
+     /tmp/cceieCwj.s:186    .text.lr11xx_system_clear_errors:00000000 lr11xx_system_clear_errors
+     /tmp/cceieCwj.s:203    .text.lr11xx_system_clear_errors:00000018 $d
+     /tmp/cceieCwj.s:206    .text.lr11xx_system_calibrate:00000000 $t
+     /tmp/cceieCwj.s:212    .text.lr11xx_system_calibrate:00000000 lr11xx_system_calibrate
+     /tmp/cceieCwj.s:231    .text.lr11xx_system_calibrate:0000001c $d
+     /tmp/cceieCwj.s:234    .text.lr11xx_system_set_reg_mode:00000000 $t
+     /tmp/cceieCwj.s:240    .text.lr11xx_system_set_reg_mode:00000000 lr11xx_system_set_reg_mode
+     /tmp/cceieCwj.s:259    .text.lr11xx_system_set_reg_mode:0000001c $d
+     /tmp/cceieCwj.s:262    .text.lr11xx_system_calibrate_image:00000000 $t
+     /tmp/cceieCwj.s:268    .text.lr11xx_system_calibrate_image:00000000 lr11xx_system_calibrate_image
+     /tmp/cceieCwj.s:288    .text.lr11xx_system_calibrate_image:0000001c $d
+     /tmp/cceieCwj.s:291    .text.lr11xx_system_calibrate_image_in_mhz:00000000 $t
+     /tmp/cceieCwj.s:297    .text.lr11xx_system_calibrate_image_in_mhz:00000000 lr11xx_system_calibrate_image_in_mhz
+     /tmp/cceieCwj.s:311    .text.lr11xx_system_set_dio_as_rf_switch:00000000 $t
+     /tmp/cceieCwj.s:317    .text.lr11xx_system_set_dio_as_rf_switch:00000000 lr11xx_system_set_dio_as_rf_switch
+     /tmp/cceieCwj.s:351    .text.lr11xx_system_set_dio_as_rf_switch:00000038 $d
+     /tmp/cceieCwj.s:354    .text.lr11xx_system_set_dio_irq_params:00000000 $t
+     /tmp/cceieCwj.s:360    .text.lr11xx_system_set_dio_irq_params:00000000 lr11xx_system_set_dio_irq_params
+     /tmp/cceieCwj.s:391    .text.lr11xx_system_set_dio_irq_params:00000034 $d
+     /tmp/cceieCwj.s:394    .text.lr11xx_system_clear_irq_status:00000000 $t
+     /tmp/cceieCwj.s:400    .text.lr11xx_system_clear_irq_status:00000000 lr11xx_system_clear_irq_status
+     /tmp/cceieCwj.s:424    .text.lr11xx_system_clear_irq_status:00000024 $d
+     /tmp/cceieCwj.s:427    .text.lr11xx_system_get_and_clear_irq_status:00000000 $t
+     /tmp/cceieCwj.s:433    .text.lr11xx_system_get_and_clear_irq_status:00000000 lr11xx_system_get_and_clear_irq_status
+     /tmp/cceieCwj.s:469    .text.lr11xx_system_cfg_lfclk:00000000 $t
+     /tmp/cceieCwj.s:475    .text.lr11xx_system_cfg_lfclk:00000000 lr11xx_system_cfg_lfclk
+     /tmp/cceieCwj.s:496    .text.lr11xx_system_cfg_lfclk:00000020 $d
+     /tmp/cceieCwj.s:499    .text.lr11xx_system_set_tcxo_mode:00000000 $t
+     /tmp/cceieCwj.s:505    .text.lr11xx_system_set_tcxo_mode:00000000 lr11xx_system_set_tcxo_mode
+     /tmp/cceieCwj.s:528    .text.lr11xx_system_set_tcxo_mode:00000024 $d
+     /tmp/cceieCwj.s:531    .text.lr11xx_system_reboot:00000000 $t
+     /tmp/cceieCwj.s:537    .text.lr11xx_system_reboot:00000000 lr11xx_system_reboot
+     /tmp/cceieCwj.s:563    .text.lr11xx_system_reboot:00000028 $d
+     /tmp/cceieCwj.s:566    .text.lr11xx_system_get_vbat:00000000 $t
+     /tmp/cceieCwj.s:572    .text.lr11xx_system_get_vbat:00000000 lr11xx_system_get_vbat
+     /tmp/cceieCwj.s:590    .text.lr11xx_system_get_vbat:00000018 $d
+     /tmp/cceieCwj.s:593    .text.lr11xx_system_get_temp:00000000 $t
+     /tmp/cceieCwj.s:599    .text.lr11xx_system_get_temp:00000000 lr11xx_system_get_temp
+     /tmp/cceieCwj.s:627    .text.lr11xx_system_get_temp:0000002c $d
+     /tmp/cceieCwj.s:630    .text.lr11xx_system_set_sleep:00000000 $t
+     /tmp/cceieCwj.s:636    .text.lr11xx_system_set_sleep:00000000 lr11xx_system_set_sleep
+     /tmp/cceieCwj.s:667    .text.lr11xx_system_set_sleep:00000034 $d
+     /tmp/cceieCwj.s:670    .text.lr11xx_system_set_standby:00000000 $t
+ARM GAS  /tmp/cceieCwj.s 			page 21
+
+
+     /tmp/cceieCwj.s:676    .text.lr11xx_system_set_standby:00000000 lr11xx_system_set_standby
+     /tmp/cceieCwj.s:695    .text.lr11xx_system_set_standby:0000001c $d
+     /tmp/cceieCwj.s:698    .text.lr11xx_system_wakeup:00000000 $t
+     /tmp/cceieCwj.s:704    .text.lr11xx_system_wakeup:00000000 lr11xx_system_wakeup
+     /tmp/cceieCwj.s:713    .text.lr11xx_system_set_fs:00000000 $t
+     /tmp/cceieCwj.s:719    .text.lr11xx_system_set_fs:00000000 lr11xx_system_set_fs
+     /tmp/cceieCwj.s:736    .text.lr11xx_system_set_fs:00000018 $d
+     /tmp/cceieCwj.s:739    .text.lr11xx_system_erase_infopage:00000000 $t
+     /tmp/cceieCwj.s:745    .text.lr11xx_system_erase_infopage:00000000 lr11xx_system_erase_infopage
+     /tmp/cceieCwj.s:764    .text.lr11xx_system_erase_infopage:0000001c $d
+     /tmp/cceieCwj.s:767    .text.lr11xx_system_write_infopage:00000000 $t
+     /tmp/cceieCwj.s:773    .text.lr11xx_system_write_infopage:00000000 lr11xx_system_write_infopage
+     /tmp/cceieCwj.s:816    .text.lr11xx_system_write_infopage:00000048 $d
+     /tmp/cceieCwj.s:819    .text.lr11xx_system_read_infopage:00000000 $t
+     /tmp/cceieCwj.s:825    .text.lr11xx_system_read_infopage:00000000 lr11xx_system_read_infopage
+     /tmp/cceieCwj.s:873    .text.lr11xx_system_read_infopage:00000050 $d
+     /tmp/cceieCwj.s:876    .text.lr11xx_system_read_uid:00000000 $t
+     /tmp/cceieCwj.s:882    .text.lr11xx_system_read_uid:00000000 lr11xx_system_read_uid
+     /tmp/cceieCwj.s:900    .text.lr11xx_system_read_uid:00000018 $d
+     /tmp/cceieCwj.s:903    .text.lr11xx_system_read_join_eui:00000000 $t
+     /tmp/cceieCwj.s:909    .text.lr11xx_system_read_join_eui:00000000 lr11xx_system_read_join_eui
+     /tmp/cceieCwj.s:927    .text.lr11xx_system_read_join_eui:00000018 $d
+     /tmp/cceieCwj.s:930    .text.lr11xx_system_read_pin:00000000 $t
+     /tmp/cceieCwj.s:936    .text.lr11xx_system_read_pin:00000000 lr11xx_system_read_pin
+     /tmp/cceieCwj.s:954    .text.lr11xx_system_read_pin:00000018 $d
+     /tmp/cceieCwj.s:957    .text.lr11xx_system_read_pin_custom_eui:00000000 $t
+     /tmp/cceieCwj.s:963    .text.lr11xx_system_read_pin_custom_eui:00000000 lr11xx_system_read_pin_custom_eui
+     /tmp/cceieCwj.s:1016   .text.lr11xx_system_read_pin_custom_eui:00000060 $d
+     /tmp/cceieCwj.s:1019   .text.lr11xx_system_get_random_number:00000000 $t
+     /tmp/cceieCwj.s:1025   .text.lr11xx_system_get_random_number:00000000 lr11xx_system_get_random_number
+     /tmp/cceieCwj.s:1043   .text.lr11xx_system_get_random_number:00000018 $d
+     /tmp/cceieCwj.s:1046   .text.lr11xx_system_enable_spi_crc:00000000 $t
+     /tmp/cceieCwj.s:1052   .text.lr11xx_system_enable_spi_crc:00000000 lr11xx_system_enable_spi_crc
+     /tmp/cceieCwj.s:1071   .text.lr11xx_system_enable_spi_crc:0000001c $d
+     /tmp/cceieCwj.s:1074   .text.lr11xx_system_drive_dio_in_sleep_mode:00000000 $t
+     /tmp/cceieCwj.s:1080   .text.lr11xx_system_drive_dio_in_sleep_mode:00000000 lr11xx_system_drive_dio_in_sleep_mode
+     /tmp/cceieCwj.s:1099   .text.lr11xx_system_drive_dio_in_sleep_mode:0000001c $d
+
+UNDEFINED SYMBOLS
+lr11xx_hal_reset
+lr11xx_hal_direct_read
+lr11xx_hal_write
+lr11xx_hal_read
+lr11xx_hal_wakeup

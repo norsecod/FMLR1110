@@ -1,0 +1,86 @@
+ARM GAS  /tmp/ccu1DxqL.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"modem_utilities.c"
+  12              		.text
+  13              		.section	.text.crc,"ax",%progbits
+  14              		.align	1
+  15              		.global	crc
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	crc:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 0123     		movs	r3, #1
+  24 0002 F0B5     		push	{r4, r5, r6, r7, lr}
+  25 0004 0200     		movs	r2, r0
+  26 0006 0125     		movs	r5, #1
+  27 0008 0A4E     		ldr	r6, .L6
+  28 000a 5B42     		rsbs	r3, r3, #0
+  29 000c 4118     		adds	r1, r0, r1
+  30              	.L2:
+  31 000e 881A     		subs	r0, r1, r2
+  32 0010 0028     		cmp	r0, #0
+  33 0012 01DC     		bgt	.L4
+  34              		@ sp needed
+  35 0014 D843     		mvns	r0, r3
+  36 0016 F0BD     		pop	{r4, r5, r6, r7, pc}
+  37              	.L4:
+  38 0018 0824     		movs	r4, #8
+  39 001a 1078     		ldrb	r0, [r2]
+  40 001c 4340     		eors	r3, r0
+  41              	.L3:
+  42 001e 5F08     		lsrs	r7, r3, #1
+  43 0020 2B40     		ands	r3, r5
+  44 0022 5B42     		rsbs	r3, r3, #0
+  45 0024 3340     		ands	r3, r6
+  46 0026 013C     		subs	r4, r4, #1
+  47 0028 7B40     		eors	r3, r7
+  48 002a 002C     		cmp	r4, #0
+  49 002c F7D1     		bne	.L3
+  50 002e 0132     		adds	r2, r2, #1
+  51 0030 EDE7     		b	.L2
+  52              	.L7:
+  53 0032 C046     		.align	2
+  54              	.L6:
+  55 0034 2083B8ED 		.word	-306674912
+  57              		.section	.text.compute_crc_fw,"ax",%progbits
+  58              		.align	1
+  59              		.global	compute_crc_fw
+ARM GAS  /tmp/ccu1DxqL.s 			page 2
+
+
+  60              		.syntax unified
+  61              		.code	16
+  62              		.thumb_func
+  64              	compute_crc_fw:
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67              		@ link register save eliminated.
+  68 0000 0020     		movs	r0, #0
+  69              		@ sp needed
+  70 0002 7047     		bx	lr
+  72              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccu1DxqL.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 modem_utilities.c
+     /tmp/ccu1DxqL.s:14     .text.crc:00000000 $t
+     /tmp/ccu1DxqL.s:20     .text.crc:00000000 crc
+     /tmp/ccu1DxqL.s:55     .text.crc:00000034 $d
+     /tmp/ccu1DxqL.s:58     .text.compute_crc_fw:00000000 $t
+     /tmp/ccu1DxqL.s:64     .text.compute_crc_fw:00000000 compute_crc_fw
+
+NO UNDEFINED SYMBOLS

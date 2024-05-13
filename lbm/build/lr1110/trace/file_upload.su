@@ -1,0 +1,10 @@
+smtc_modem_core/smtc_modem_services/src/file_upload/file_upload.c:334:13:sha256_do	328	static
+smtc_modem_core/smtc_modem_services/src/file_upload/file_upload.c:391:13:sha256	128	static
+smtc_modem_core/smtc_modem_services/src/file_upload/file_upload.c:326:13:function_xor.constprop	0	static
+smtc_modem_core/smtc_modem_services/src/file_upload/file_upload.c:129:27:file_upload_init	24	static
+smtc_modem_core/smtc_modem_services/src/file_upload/file_upload.c:156:6:file_upload_attach_file_buffer	0	static
+smtc_modem_core/smtc_modem_services/src/file_upload/file_upload.c:161:27:file_upload_prepare_upload	80	static
+smtc_modem_core/smtc_modem_services/src/file_upload/file_upload.c:198:9:file_upload_get_fragment	72	static
+smtc_modem_core/smtc_modem_services/src/file_upload/file_upload.c:235:6:file_upload_is_data_remaining	0	static
+smtc_modem_core/smtc_modem_services/src/file_upload/file_upload.c:241:27:file_upload_process_file_done_frame	8	static
+smtc_modem_core/smtc_modem_services/src/file_upload/file_upload.c:262:10:file_upload_get_average_delay_in_s	0	static

@@ -1,0 +1,16 @@
+extensions/drivers/common/timer.c:175:13:TimerInsertTimer	8	static
+extensions/drivers/common/timer.c:359:13:TimerSetTimeout	16	static
+extensions/drivers/common/timer.c:194:13:TimerInsertNewHeadTimer	8	static
+extensions/drivers/common/timer.c:97:6:TimerInit	0	static
+extensions/drivers/common/timer.c:107:6:TimerSetContext	0	static
+extensions/drivers/common/timer.c:111:6:TimerStart	24	static
+extensions/drivers/common/timer.c:143:6:TimerStartNoReload	24	static
+extensions/drivers/common/timer.c:206:6:TimerIsStarted	0	static
+extensions/drivers/common/timer.c:210:6:TimerIrqHandler	24	static
+extensions/drivers/common/timer.c:254:6:TimerStop	24	static
+extensions/drivers/common/timer.c:322:6:TimerReset	8	static
+extensions/drivers/common/timer.c:327:6:TimerSetValue	16	static
+extensions/drivers/common/timer.c:343:13:TimerGetCurrentTime	8	static
+extensions/drivers/common/timer.c:347:13:TimerGetElapsedTime	16	static
+extensions/drivers/common/timer.c:386:6:TimerBackup	16	static
+extensions/drivers/common/timer.c:398:6:TimerRestore	8	static

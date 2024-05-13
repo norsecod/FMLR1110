@@ -3,6 +3,7 @@
 
 #include "smtc_modem_api.h"
 #include "smtc_modem_utilities.h"
+#include "stm32l0xx_hal.h"
 
 #include "smtc_modem_hal.h"
 #include "smtc_hal_dbg_trace.h"
@@ -71,7 +72,6 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     float temp = 0.0f;
     float Voltage = 0;
     float VDR = 16/3.3;
-    float ADCmeas = 0.0f;
     int door = 0;
     int prev_door = -1;
     int water = 0;
@@ -151,6 +151,7 @@ int main( void )
     SMTC_HAL_TRACE_INFO( "Modem driver version: %d.%d.%d\n\r", version.major, version.minor, version.patch );
  
     GPIO_Init();            //initializes GPIO pins
+    //hal_i2c_init(1, PB_9, PB_6); 
     hal_mcu_enable_irq( );  //enables IRQ again
     hal_gpio_irq_enable();  //enables all gpio interrupts
 
@@ -194,8 +195,8 @@ int main( void )
     {
            
         sensor_read();  //reads sensors
-        SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
-                      temp, ADCmeas,
+        SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C Voltage: %.2fV door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
+                      temp,
                       Voltage,
                       door == 1 ? "high" : "low",
                       water == 1 ? "high" : "low",
@@ -226,8 +227,8 @@ int main( void )
             sendData(temp, Voltage,door,water);
             cntup = 0;
 
-            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C ADC: %.2fV Voltage: %.2fV door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
-                      temp, ADCmeas,
+            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C Voltage: %.2fV door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
+                      temp,
                       Voltage,
                       door == 1 ? "high" : "low",
                       water == 1 ? "high" : "low",

@@ -1,0 +1,7 @@
+smtc_modem_core/modem_services/fifo_ctrl.c:87:6:fifo_ctrl_clear	0	static
+smtc_modem_core/modem_services/fifo_ctrl.c:80:6:fifo_ctrl_init	8	static
+smtc_modem_core/modem_services/fifo_ctrl.c:98:6:fifo_ctrl_print_stat	0	static
+smtc_modem_core/modem_services/fifo_ctrl.c:111:10:fifo_ctrl_get_nb_elt	0	static
+smtc_modem_core/modem_services/fifo_ctrl.c:116:10:fifo_ctrl_get_free_space	0	static
+smtc_modem_core/modem_services/fifo_ctrl.c:121:22:fifo_ctrl_get	48	static
+smtc_modem_core/modem_services/fifo_ctrl.c:133:22:fifo_ctrl_set	64	static

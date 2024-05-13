@@ -1,0 +1,2 @@
+bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_iwdg.c:171:19:HAL_IWDG_Init	16	static
+bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_iwdg.c:258:19:HAL_IWDG_Refresh	0	static

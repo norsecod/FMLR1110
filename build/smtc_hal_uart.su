@@ -1,0 +1,12 @@
+bsp_l0/smtc_hal/smtc_hal_uart.c:86:6:uart1_init	8	static
+bsp_l0/smtc_hal/smtc_hal_uart.c:103:6:uart1_deinit	8	static
+bsp_l0/smtc_hal/smtc_hal_uart.c:107:6:uart2_init	16	static
+bsp_l0/smtc_hal/smtc_hal_uart.c:131:6:uart2_deinit	8	static
+bsp_l0/smtc_hal/smtc_hal_uart.c:163:6:uart2_dma_start_rx	8	static
+bsp_l0/smtc_hal/smtc_hal_uart.c:167:6:uart2_dma_stop_rx	8	static
+bsp_l0/smtc_hal/smtc_hal_uart.c:182:6:uart1_tx	8	static
+bsp_l0/smtc_hal/smtc_hal_uart.c:186:6:uart2_tx	8	static
+bsp_l0/smtc_hal/smtc_hal_uart.c:195:6:HAL_UART_MspInit	48	static
+bsp_l0/smtc_hal/smtc_hal_uart.c:269:6:HAL_UART_MspDeInit	8	static
+bsp_l0/smtc_hal/smtc_hal_uart.c:296:6:DMA1_Channel4_5_6_7_IRQHandler	8	static
+bsp_l0/smtc_hal/smtc_hal_uart.c:305:6:USART2_IRQHandler	8	static

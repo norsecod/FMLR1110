@@ -1,0 +1,2 @@
+smtc_modem_core/device_management/dm_downlink.c:203:9:dm_parse_cmd	32	dynamic
+smtc_modem_core/device_management/dm_downlink.c:173:9:dm_downlink	32	static

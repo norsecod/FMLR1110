@@ -1,0 +1,1515 @@
+ARM GAS  /tmp/ccBnJwDY.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"lr11xx_wifi.c"
+  12              		.text
+  13              		.section	.text.uint16_from_array,"ax",%progbits
+  14              		.align	1
+  15              		.syntax unified
+  16              		.code	16
+  17              		.thumb_func
+  19              	uint16_from_array:
+  20              		@ args = 0, pretend = 0, frame = 0
+  21              		@ frame_needed = 0, uses_anonymous_args = 0
+  22              		@ link register save eliminated.
+  23 0000 435C     		ldrb	r3, [r0, r1]
+  24 0002 4018     		adds	r0, r0, r1
+  25 0004 4078     		ldrb	r0, [r0, #1]
+  26 0006 1B02     		lsls	r3, r3, #8
+  27 0008 C018     		adds	r0, r0, r3
+  28 000a 80B2     		uxth	r0, r0
+  29              		@ sp needed
+  30 000c 7047     		bx	lr
+  32              		.section	.text.uint64_from_array,"ax",%progbits
+  33              		.align	1
+  34              		.syntax unified
+  35              		.code	16
+  36              		.thumb_func
+  38              	uint64_from_array:
+  39              		@ args = 0, pretend = 0, frame = 0
+  40              		@ frame_needed = 0, uses_anonymous_args = 0
+  41 0000 70B5     		push	{r4, r5, r6, lr}
+  42 0002 445C     		ldrb	r4, [r0, r1]
+  43 0004 4518     		adds	r5, r0, r1
+  44 0006 2306     		lsls	r3, r4, #24
+  45 0008 0024     		movs	r4, #0
+  46              		@ sp needed
+  47 000a 2200     		movs	r2, r4
+  48 000c 2100     		movs	r1, r4
+  49 000e E879     		ldrb	r0, [r5, #7]
+  50 0010 6E78     		ldrb	r6, [r5, #1]
+  51 0012 8018     		adds	r0, r0, r2
+  52 0014 5941     		adcs	r1, r1, r3
+  53 0016 3304     		lsls	r3, r6, #16
+  54 0018 8018     		adds	r0, r0, r2
+  55 001a 5941     		adcs	r1, r1, r3
+  56 001c AE78     		ldrb	r6, [r5, #2]
+  57 001e 3302     		lsls	r3, r6, #8
+  58 0020 8018     		adds	r0, r0, r2
+  59 0022 5941     		adcs	r1, r1, r3
+  60 0024 EB78     		ldrb	r3, [r5, #3]
+ARM GAS  /tmp/ccBnJwDY.s 			page 2
+
+
+  61 0026 2E79     		ldrb	r6, [r5, #4]
+  62 0028 8018     		adds	r0, r0, r2
+  63 002a 5941     		adcs	r1, r1, r3
+  64 002c 2300     		movs	r3, r4
+  65 002e 3206     		lsls	r2, r6, #24
+  66 0030 8018     		adds	r0, r0, r2
+  67 0032 5941     		adcs	r1, r1, r3
+  68 0034 6E79     		ldrb	r6, [r5, #5]
+  69 0036 AD79     		ldrb	r5, [r5, #6]
+  70 0038 3204     		lsls	r2, r6, #16
+  71 003a 1218     		adds	r2, r2, r0
+  72 003c 4B41     		adcs	r3, r3, r1
+  73 003e 2100     		movs	r1, r4
+  74 0040 2802     		lsls	r0, r5, #8
+  75 0042 8018     		adds	r0, r0, r2
+  76 0044 5941     		adcs	r1, r1, r3
+  77 0046 70BD     		pop	{r4, r5, r6, pc}
+  79              		.section	.text.lr11xx_wifi_read_mac_address_from_buffer,"ax",%progbits
+  80              		.align	1
+  81              		.syntax unified
+  82              		.code	16
+  83              		.thumb_func
+  85              	lr11xx_wifi_read_mac_address_from_buffer:
+  86              		@ args = 0, pretend = 0, frame = 0
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88              		@ link register save eliminated.
+  89 0000 0023     		movs	r3, #0
+  90 0002 4018     		adds	r0, r0, r1
+  91              	.L4:
+  92 0004 C15C     		ldrb	r1, [r0, r3]
+  93 0006 D154     		strb	r1, [r2, r3]
+  94 0008 0133     		adds	r3, r3, #1
+  95 000a 062B     		cmp	r3, #6
+  96 000c FAD1     		bne	.L4
+  97              		@ sp needed
+  98 000e 7047     		bx	lr
+ 100              		.global	__aeabi_uidiv
+ 101              		.global	__aeabi_idiv
+ 102              		.section	.text.fetch_and_aggregate_all_results,"ax",%progbits
+ 103              		.align	1
+ 104              		.syntax unified
+ 105              		.code	16
+ 106              		.thumb_func
+ 108              	fetch_and_aggregate_all_results:
+ 109              		@ args = 12, pretend = 0, frame = 64
+ 110              		@ frame_needed = 0, uses_anonymous_args = 0
+ 111 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 112 0002 93B0     		sub	sp, sp, #76
+ 113 0004 0C93     		str	r3, [sp, #48]
+ 114 0006 18AB     		add	r3, sp, #96
+ 115 0008 1B78     		ldrb	r3, [r3]
+ 116 000a 0592     		str	r2, [sp, #20]
+ 117 000c 0993     		str	r3, [sp, #36]
+ 118 000e 099A     		ldr	r2, [sp, #36]
+ 119 0010 0123     		movs	r3, #1
+ 120 0012 199F     		ldr	r7, [sp, #100]
+ 121 0014 0F90     		str	r0, [sp, #60]
+ARM GAS  /tmp/ccBnJwDY.s 			page 3
+
+
+ 122 0016 0B91     		str	r1, [sp, #44]
+ 123 0018 012A     		cmp	r2, #1
+ 124 001a 00D1     		bne	.L8
+ 125 001c 0423     		movs	r3, #4
+ 126              	.L8:
+ 127 001e DBB2     		uxtb	r3, r3
+ 128 0020 0D93     		str	r3, [sp, #52]
+ 129 0022 0023     		movs	r3, #0
+ 130 0024 0693     		str	r3, [sp, #24]
+ 131              	.L9:
+ 132 0026 059B     		ldr	r3, [sp, #20]
+ 133 0028 002B     		cmp	r3, #0
+ 134 002a 02D1     		bne	.L22
+ 135 002c 1800     		movs	r0, r3
+ 136              	.L11:
+ 137 002e 13B0     		add	sp, sp, #76
+ 138              		@ sp needed
+ 139 0030 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 140              	.L22:
+ 141 0032 6B46     		mov	r3, sp
+ 142 0034 059A     		ldr	r2, [sp, #20]
+ 143 0036 0C99     		ldr	r1, [sp, #48]
+ 144 0038 1B7D     		ldrb	r3, [r3, #20]
+ 145 003a 8A42     		cmp	r2, r1
+ 146 003c 03D9     		bls	.L10
+ 147 003e 6B46     		mov	r3, sp
+ 148 0040 3022     		movs	r2, #48
+ 149 0042 9B18     		adds	r3, r3, r2
+ 150 0044 1B78     		ldrb	r3, [r3]
+ 151              	.L10:
+ 152 0046 DAB2     		uxtb	r2, r3
+ 153 0048 0999     		ldr	r1, [sp, #36]
+ 154 004a 0392     		str	r2, [sp, #12]
+ 155 004c 954A     		ldr	r2, .L28
+ 156 004e 0F98     		ldr	r0, [sp, #60]
+ 157 0050 525C     		ldrb	r2, [r2, r1]
+ 158 0052 10A9     		add	r1, sp, #64
+ 159 0054 0A92     		str	r2, [sp, #40]
+ 160 0056 944A     		ldr	r2, .L28+4
+ 161 0058 CB70     		strb	r3, [r1, #3]
+ 162 005a 0A80     		strh	r2, [r1]
+ 163 005c 0D9B     		ldr	r3, [sp, #52]
+ 164 005e 0B9A     		ldr	r2, [sp, #44]
+ 165 0060 0B71     		strb	r3, [r1, #4]
+ 166 0062 8A70     		strb	r2, [r1, #2]
+ 167 0064 039B     		ldr	r3, [sp, #12]
+ 168 0066 0A9A     		ldr	r2, [sp, #40]
+ 169 0068 5343     		muls	r3, r2
+ 170 006a 0522     		movs	r2, #5
+ 171 006c 0093     		str	r3, [sp]
+ 172 006e 3B00     		movs	r3, r7
+ 173 0070 FFF7FEFF 		bl	lr11xx_hal_read
+ 174 0074 0028     		cmp	r0, #0
+ 175 0076 DAD1     		bne	.L11
+ 176 0078 099B     		ldr	r3, [sp, #36]
+ 177 007a 012B     		cmp	r3, #1
+ 178 007c 55D0     		beq	.L12
+ARM GAS  /tmp/ccBnJwDY.s 			page 4
+
+
+ 179 007e 022B     		cmp	r3, #2
+ 180 0080 72D0     		beq	.L13
+ 181 0082 069B     		ldr	r3, [sp, #24]
+ 182 0084 3E00     		movs	r6, r7
+ 183 0086 5C01     		lsls	r4, r3, #5
+ 184 0088 1A9B     		ldr	r3, [sp, #104]
+ 185 008a 0425     		movs	r5, #4
+ 186 008c 1C19     		adds	r4, r3, r4
+ 187 008e 1623     		movs	r3, #22
+ 188 0090 039A     		ldr	r2, [sp, #12]
+ 189 0092 5343     		muls	r3, r2
+ 190 0094 DB19     		adds	r3, r3, r7
+ 191 0096 0493     		str	r3, [sp, #16]
+ 192              	.L14:
+ 193 0098 3378     		ldrb	r3, [r6]
+ 194 009a 221D     		adds	r2, r4, #4
+ 195 009c 2370     		strb	r3, [r4]
+ 196 009e 7378     		ldrb	r3, [r6, #1]
+ 197 00a0 2900     		movs	r1, r5
+ 198 00a2 6370     		strb	r3, [r4, #1]
+ 199 00a4 B378     		ldrb	r3, [r6, #2]
+ 200 00a6 3800     		movs	r0, r7
+ 201 00a8 A370     		strb	r3, [r4, #2]
+ 202 00aa F378     		ldrb	r3, [r6, #3]
+ 203 00ac 1636     		adds	r6, r6, #22
+ 204 00ae E370     		strb	r3, [r4, #3]
+ 205 00b0 FFF7FEFF 		bl	lr11xx_wifi_read_mac_address_from_buffer
+ 206 00b4 A91D     		adds	r1, r5, #6
+ 207 00b6 89B2     		uxth	r1, r1
+ 208 00b8 3800     		movs	r0, r7
+ 209 00ba FFF7FEFF 		bl	uint16_from_array
+ 210 00be 2900     		movs	r1, r5
+ 211 00c0 0831     		adds	r1, r1, #8
+ 212 00c2 6081     		strh	r0, [r4, #10]
+ 213 00c4 89B2     		uxth	r1, r1
+ 214 00c6 3800     		movs	r0, r7
+ 215 00c8 FFF7FEFF 		bl	uint64_from_array
+ 216 00cc 2061     		str	r0, [r4, #16]
+ 217 00ce 6161     		str	r1, [r4, #20]
+ 218 00d0 2900     		movs	r1, r5
+ 219 00d2 1031     		adds	r1, r1, #16
+ 220 00d4 3800     		movs	r0, r7
+ 221 00d6 89B2     		uxth	r1, r1
+ 222 00d8 FFF7FEFF 		bl	uint16_from_array
+ 223 00dc 049B     		ldr	r3, [sp, #16]
+ 224 00de 1635     		adds	r5, r5, #22
+ 225 00e0 2083     		strh	r0, [r4, #24]
+ 226 00e2 ADB2     		uxth	r5, r5
+ 227 00e4 2034     		adds	r4, r4, #32
+ 228 00e6 9E42     		cmp	r6, r3
+ 229 00e8 D6D1     		bne	.L14
+ 230              	.L15:
+ 231 00ea FF20     		movs	r0, #255
+ 232 00ec 0A99     		ldr	r1, [sp, #40]
+ 233 00ee 8000     		lsls	r0, r0, #2
+ 234 00f0 FFF7FEFF 		bl	__aeabi_idiv
+ 235 00f4 2028     		cmp	r0, #32
+ARM GAS  /tmp/ccBnJwDY.s 			page 5
+
+
+ 236 00f6 00DD     		ble	.L19
+ 237 00f8 2020     		movs	r0, #32
+ 238              	.L19:
+ 239 00fa 0A9B     		ldr	r3, [sp, #40]
+ 240 00fc 4343     		muls	r3, r0
+ 241 00fe 98B2     		uxth	r0, r3
+ 242 0100 0023     		movs	r3, #0
+ 243 0102 1900     		movs	r1, r3
+ 244              	.L20:
+ 245 0104 9AB2     		uxth	r2, r3
+ 246 0106 9042     		cmp	r0, r2
+ 247 0108 00D9     		bls	.LCB258
+ 248 010a C7E0     		b	.L21	@long jump
+ 249              	.LCB258:
+ 250 010c 039A     		ldr	r2, [sp, #12]
+ 251 010e 0B9B     		ldr	r3, [sp, #44]
+ 252 0110 9446     		mov	ip, r2
+ 253 0112 6344     		add	r3, r3, ip
+ 254 0114 DBB2     		uxtb	r3, r3
+ 255 0116 0B93     		str	r3, [sp, #44]
+ 256 0118 069B     		ldr	r3, [sp, #24]
+ 257 011a 6344     		add	r3, r3, ip
+ 258 011c DBB2     		uxtb	r3, r3
+ 259 011e 0693     		str	r3, [sp, #24]
+ 260 0120 059B     		ldr	r3, [sp, #20]
+ 261 0122 9B1A     		subs	r3, r3, r2
+ 262 0124 DBB2     		uxtb	r3, r3
+ 263 0126 0593     		str	r3, [sp, #20]
+ 264 0128 7DE7     		b	.L9
+ 265              	.L12:
+ 266 012a 0924     		movs	r4, #9
+ 267 012c 0926     		movs	r6, #9
+ 268 012e 069B     		ldr	r3, [sp, #24]
+ 269 0130 3D00     		movs	r5, r7
+ 270 0132 5C43     		muls	r4, r3
+ 271 0134 1A9B     		ldr	r3, [sp, #104]
+ 272 0136 1C19     		adds	r4, r3, r4
+ 273 0138 039B     		ldr	r3, [sp, #12]
+ 274 013a 5E43     		muls	r6, r3
+ 275 013c 0323     		movs	r3, #3
+ 276 013e DB1B     		subs	r3, r3, r7
+ 277 0140 F619     		adds	r6, r6, r7
+ 278 0142 0493     		str	r3, [sp, #16]
+ 279              	.L16:
+ 280 0144 2B78     		ldrb	r3, [r5]
+ 281 0146 E21C     		adds	r2, r4, #3
+ 282 0148 2370     		strb	r3, [r4]
+ 283 014a 6B78     		ldrb	r3, [r5, #1]
+ 284 014c 3800     		movs	r0, r7
+ 285 014e 6370     		strb	r3, [r4, #1]
+ 286 0150 AB78     		ldrb	r3, [r5, #2]
+ 287 0152 A370     		strb	r3, [r4, #2]
+ 288 0154 049B     		ldr	r3, [sp, #16]
+ 289 0156 0934     		adds	r4, r4, #9
+ 290 0158 5919     		adds	r1, r3, r5
+ 291 015a 89B2     		uxth	r1, r1
+ 292 015c 0935     		adds	r5, r5, #9
+ARM GAS  /tmp/ccBnJwDY.s 			page 6
+
+
+ 293 015e FFF7FEFF 		bl	lr11xx_wifi_read_mac_address_from_buffer
+ 294 0162 B542     		cmp	r5, r6
+ 295 0164 EED1     		bne	.L16
+ 296 0166 C0E7     		b	.L15
+ 297              	.L13:
+ 298 0168 5823     		movs	r3, #88
+ 299 016a 069A     		ldr	r2, [sp, #24]
+ 300 016c 3E00     		movs	r6, r7
+ 301 016e 5343     		muls	r3, r2
+ 302 0170 1A9A     		ldr	r2, [sp, #104]
+ 303 0172 0497     		str	r7, [sp, #16]
+ 304 0174 D418     		adds	r4, r2, r3
+ 305 0176 4D33     		adds	r3, r3, #77
+ 306 0178 D318     		adds	r3, r2, r3
+ 307 017a 0793     		str	r3, [sp, #28]
+ 308 017c 4F23     		movs	r3, #79
+ 309 017e 039A     		ldr	r2, [sp, #12]
+ 310 0180 4836     		adds	r6, r6, #72
+ 311 0182 5A43     		muls	r2, r3
+ 312 0184 0890     		str	r0, [sp, #32]
+ 313 0186 0E92     		str	r2, [sp, #56]
+ 314              	.L18:
+ 315 0188 049B     		ldr	r3, [sp, #16]
+ 316 018a 3800     		movs	r0, r7
+ 317 018c 1B78     		ldrb	r3, [r3]
+ 318 018e 2370     		strb	r3, [r4]
+ 319 0190 049B     		ldr	r3, [sp, #16]
+ 320 0192 5B78     		ldrb	r3, [r3, #1]
+ 321 0194 6370     		strb	r3, [r4, #1]
+ 322 0196 049B     		ldr	r3, [sp, #16]
+ 323 0198 9B78     		ldrb	r3, [r3, #2]
+ 324 019a A370     		strb	r3, [r4, #2]
+ 325 019c 049B     		ldr	r3, [sp, #16]
+ 326 019e DB78     		ldrb	r3, [r3, #3]
+ 327 01a0 E370     		strb	r3, [r4, #3]
+ 328 01a2 6B46     		mov	r3, sp
+ 329 01a4 1D8C     		ldrh	r5, [r3, #32]
+ 330 01a6 291D     		adds	r1, r5, #4
+ 331 01a8 89B2     		uxth	r1, r1
+ 332 01aa FFF7FEFF 		bl	uint16_from_array
+ 333 01ae A91D     		adds	r1, r5, #6
+ 334 01b0 A080     		strh	r0, [r4, #4]
+ 335 01b2 89B2     		uxth	r1, r1
+ 336 01b4 3800     		movs	r0, r7
+ 337 01b6 FFF7FEFF 		bl	uint16_from_array
+ 338 01ba 2900     		movs	r1, r5
+ 339 01bc 0831     		adds	r1, r1, #8
+ 340 01be E080     		strh	r0, [r4, #6]
+ 341 01c0 89B2     		uxth	r1, r1
+ 342 01c2 3800     		movs	r0, r7
+ 343 01c4 FFF7FEFF 		bl	uint16_from_array
+ 344 01c8 2900     		movs	r1, r5
+ 345 01ca 2200     		movs	r2, r4
+ 346 01cc 0A31     		adds	r1, r1, #10
+ 347 01ce 2081     		strh	r0, [r4, #8]
+ 348 01d0 89B2     		uxth	r1, r1
+ 349 01d2 3800     		movs	r0, r7
+ARM GAS  /tmp/ccBnJwDY.s 			page 7
+
+
+ 350 01d4 0A32     		adds	r2, r2, #10
+ 351 01d6 FFF7FEFF 		bl	lr11xx_wifi_read_mac_address_from_buffer
+ 352 01da 2900     		movs	r1, r5
+ 353 01dc 2200     		movs	r2, r4
+ 354 01de 1031     		adds	r1, r1, #16
+ 355 01e0 3800     		movs	r0, r7
+ 356 01e2 89B2     		uxth	r1, r1
+ 357 01e4 1032     		adds	r2, r2, #16
+ 358 01e6 FFF7FEFF 		bl	lr11xx_wifi_read_mac_address_from_buffer
+ 359 01ea 2900     		movs	r1, r5
+ 360 01ec 2200     		movs	r2, r4
+ 361 01ee 1631     		adds	r1, r1, #22
+ 362 01f0 1632     		adds	r2, r2, #22
+ 363 01f2 3800     		movs	r0, r7
+ 364 01f4 89B2     		uxth	r1, r1
+ 365 01f6 FFF7FEFF 		bl	lr11xx_wifi_read_mac_address_from_buffer
+ 366 01fa 2900     		movs	r1, r5
+ 367 01fc 1C31     		adds	r1, r1, #28
+ 368 01fe 3800     		movs	r0, r7
+ 369 0200 89B2     		uxth	r1, r1
+ 370 0202 FFF7FEFF 		bl	uint64_from_array
+ 371 0206 2062     		str	r0, [r4, #32]
+ 372 0208 6162     		str	r1, [r4, #36]
+ 373 020a 2900     		movs	r1, r5
+ 374 020c 2431     		adds	r1, r1, #36
+ 375 020e 89B2     		uxth	r1, r1
+ 376 0210 3800     		movs	r0, r7
+ 377 0212 FFF7FEFF 		bl	uint16_from_array
+ 378 0216 2900     		movs	r1, r5
+ 379 0218 2631     		adds	r1, r1, #38
+ 380 021a 2085     		strh	r0, [r4, #40]
+ 381 021c 89B2     		uxth	r1, r1
+ 382 021e 3800     		movs	r0, r7
+ 383 0220 FFF7FEFF 		bl	uint16_from_array
+ 384 0224 2200     		movs	r2, r4
+ 385 0226 6085     		strh	r0, [r4, #42]
+ 386 0228 3000     		movs	r0, r6
+ 387 022a 0023     		movs	r3, #0
+ 388 022c 2038     		subs	r0, r0, #32
+ 389 022e 2C32     		adds	r2, r2, #44
+ 390              	.L17:
+ 391 0230 C15C     		ldrb	r1, [r0, r3]
+ 392 0232 D154     		strb	r1, [r2, r3]
+ 393 0234 0133     		adds	r3, r3, #1
+ 394 0236 202B     		cmp	r3, #32
+ 395 0238 FAD1     		bne	.L17
+ 396 023a 2300     		movs	r3, r4
+ 397 023c 3278     		ldrb	r2, [r6]
+ 398 023e 4C33     		adds	r3, r3, #76
+ 399 0240 1A70     		strb	r2, [r3]
+ 400 0242 7378     		ldrb	r3, [r6, #1]
+ 401 0244 079A     		ldr	r2, [sp, #28]
+ 402 0246 0121     		movs	r1, #1
+ 403 0248 1370     		strb	r3, [r2]
+ 404 024a 2300     		movs	r3, r4
+ 405 024c B278     		ldrb	r2, [r6, #2]
+ 406 024e 4E33     		adds	r3, r3, #78
+ARM GAS  /tmp/ccBnJwDY.s 			page 8
+
+
+ 407 0250 1A70     		strb	r2, [r3]
+ 408 0252 F378     		ldrb	r3, [r6, #3]
+ 409 0254 079A     		ldr	r2, [sp, #28]
+ 410 0256 4D35     		adds	r5, r5, #77
+ 411 0258 9370     		strb	r3, [r2, #2]
+ 412 025a 3379     		ldrb	r3, [r6, #4]
+ 413 025c 3800     		movs	r0, r7
+ 414 025e 0B40     		ands	r3, r1
+ 415 0260 1371     		strb	r3, [r2, #4]
+ 416 0262 3379     		ldrb	r3, [r6, #4]
+ 417 0264 2200     		movs	r2, r4
+ 418 0266 CB40     		lsrs	r3, r3, r1
+ 419 0268 5032     		adds	r2, r2, #80
+ 420 026a 0B40     		ands	r3, r1
+ 421 026c 1370     		strb	r3, [r2]
+ 422 026e A9B2     		uxth	r1, r5
+ 423 0270 FFF7FEFF 		bl	uint16_from_array
+ 424 0274 2300     		movs	r3, r4
+ 425 0276 5233     		adds	r3, r3, #82
+ 426 0278 1880     		strh	r0, [r3]
+ 427 027a 049B     		ldr	r3, [sp, #16]
+ 428 027c 0E9A     		ldr	r2, [sp, #56]
+ 429 027e 4F33     		adds	r3, r3, #79
+ 430 0280 0493     		str	r3, [sp, #16]
+ 431 0282 089B     		ldr	r3, [sp, #32]
+ 432 0284 5834     		adds	r4, r4, #88
+ 433 0286 4F33     		adds	r3, r3, #79
+ 434 0288 0893     		str	r3, [sp, #32]
+ 435 028a 079B     		ldr	r3, [sp, #28]
+ 436 028c 4F36     		adds	r6, r6, #79
+ 437 028e 5833     		adds	r3, r3, #88
+ 438 0290 0793     		str	r3, [sp, #28]
+ 439 0292 089B     		ldr	r3, [sp, #32]
+ 440 0294 9342     		cmp	r3, r2
+ 441 0296 00D0     		beq	.LCB465
+ 442 0298 76E7     		b	.L18	@long jump
+ 443              	.LCB465:
+ 444 029a 26E7     		b	.L15
+ 445              	.L21:
+ 446 029c F954     		strb	r1, [r7, r3]
+ 447 029e 0133     		adds	r3, r3, #1
+ 448 02a0 30E7     		b	.L20
+ 449              	.L29:
+ 450 02a2 C046     		.align	2
+ 451              	.L28:
+ 452 02a4 00000000 		.word	CSWTCH.16
+ 453 02a8 03060000 		.word	1539
+ 455              		.section	.text.lr11xx_wifi_scan,"ax",%progbits
+ 456              		.align	1
+ 457              		.global	lr11xx_wifi_scan
+ 458              		.syntax unified
+ 459              		.code	16
+ 460              		.thumb_func
+ 462              	lr11xx_wifi_scan:
+ 463              		@ args = 16, pretend = 0, frame = 24
+ 464              		@ frame_needed = 0, uses_anonymous_args = 0
+ 465 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ARM GAS  /tmp/ccBnJwDY.s 			page 9
+
+
+ 466 0002 89B0     		sub	sp, sp, #36
+ 467 0004 0393     		str	r3, [sp, #12]
+ 468 0006 0323     		movs	r3, #3
+ 469 0008 0EAC     		add	r4, sp, #56
+ 470 000a 2778     		ldrb	r7, [r4]
+ 471 000c 0FAC     		add	r4, sp, #60
+ 472 000e 2678     		ldrb	r6, [r4]
+ 473 0010 10AC     		add	r4, sp, #64
+ 474 0012 2588     		ldrh	r5, [r4]
+ 475 0014 11AC     		add	r4, sp, #68
+ 476 0016 2478     		ldrb	r4, [r4]
+ 477 0018 6DBA     		rev16	r5, r5
+ 478 001a 0294     		str	r4, [sp, #8]
+ 479 001c 05AC     		add	r4, sp, #20
+ 480 001e 2380     		strh	r3, [r4]
+ 481 0020 039B     		ldr	r3, [sp, #12]
+ 482 0022 A170     		strb	r1, [r4, #2]
+ 483 0024 6371     		strb	r3, [r4, #5]
+ 484 0026 029B     		ldr	r3, [sp, #8]
+ 485 0028 110A     		lsrs	r1, r2, #8
+ 486 002a A372     		strb	r3, [r4, #10]
+ 487 002c 0023     		movs	r3, #0
+ 488 002e E170     		strb	r1, [r4, #3]
+ 489 0030 2271     		strb	r2, [r4, #4]
+ 490 0032 A771     		strb	r7, [r4, #6]
+ 491 0034 E671     		strb	r6, [r4, #7]
+ 492 0036 2581     		strh	r5, [r4, #8]
+ 493 0038 0B22     		movs	r2, #11
+ 494 003a 2100     		movs	r1, r4
+ 495 003c 0093     		str	r3, [sp]
+ 496 003e FFF7FEFF 		bl	lr11xx_hal_write
+ 497 0042 09B0     		add	sp, sp, #36
+ 498              		@ sp needed
+ 499 0044 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 501              		.section	.text.lr11xx_wifi_search_country_code,"ax",%progbits
+ 502              		.align	1
+ 503              		.global	lr11xx_wifi_search_country_code
+ 504              		.syntax unified
+ 505              		.code	16
+ 506              		.thumb_func
+ 508              	lr11xx_wifi_search_country_code:
+ 509              		@ args = 8, pretend = 0, frame = 16
+ 510              		@ frame_needed = 0, uses_anonymous_args = 0
+ 511 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 512 0002 87B0     		sub	sp, sp, #28
+ 513 0004 0CAC     		add	r4, sp, #48
+ 514 0006 2588     		ldrh	r5, [r4]
+ 515 0008 0DAC     		add	r4, sp, #52
+ 516 000a 2678     		ldrb	r6, [r4]
+ 517 000c 03AC     		add	r4, sp, #12
+ 518 000e 6371     		strb	r3, [r4, #5]
+ 519 0010 0023     		movs	r3, #0
+ 520 0012 074F     		ldr	r7, .L32
+ 521 0014 49BA     		rev16	r1, r1
+ 522 0016 6DBA     		rev16	r5, r5
+ 523 0018 6180     		strh	r1, [r4, #2]
+ 524 001a 2271     		strb	r2, [r4, #4]
+ARM GAS  /tmp/ccBnJwDY.s 			page 10
+
+
+ 525 001c 2780     		strh	r7, [r4]
+ 526 001e E580     		strh	r5, [r4, #6]
+ 527 0020 2672     		strb	r6, [r4, #8]
+ 528 0022 0922     		movs	r2, #9
+ 529 0024 2100     		movs	r1, r4
+ 530 0026 0093     		str	r3, [sp]
+ 531 0028 FFF7FEFF 		bl	lr11xx_hal_write
+ 532 002c 07B0     		add	sp, sp, #28
+ 533              		@ sp needed
+ 534 002e F0BD     		pop	{r4, r5, r6, r7, pc}
+ 535              	.L33:
+ 536              		.align	2
+ 537              	.L32:
+ 538 0030 03020000 		.word	515
+ 540              		.section	.text.lr11xx_wifi_scan_time_limit,"ax",%progbits
+ 541              		.align	1
+ 542              		.global	lr11xx_wifi_scan_time_limit
+ 543              		.syntax unified
+ 544              		.code	16
+ 545              		.thumb_func
+ 547              	lr11xx_wifi_scan_time_limit:
+ 548              		@ args = 12, pretend = 0, frame = 24
+ 549              		@ frame_needed = 0, uses_anonymous_args = 0
+ 550 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 551 0002 89B0     		sub	sp, sp, #36
+ 552 0004 0393     		str	r3, [sp, #12]
+ 553 0006 0423     		movs	r3, #4
+ 554 0008 0EAC     		add	r4, sp, #56
+ 555 000a 2778     		ldrb	r7, [r4]
+ 556 000c 0FAC     		add	r4, sp, #60
+ 557 000e 2688     		ldrh	r6, [r4]
+ 558 0010 10AC     		add	r4, sp, #64
+ 559 0012 2588     		ldrh	r5, [r4]
+ 560 0014 FF33     		adds	r3, r3, #255
+ 561 0016 05AC     		add	r4, sp, #20
+ 562 0018 2380     		strh	r3, [r4]
+ 563 001a 039B     		ldr	r3, [sp, #12]
+ 564 001c A170     		strb	r1, [r4, #2]
+ 565 001e 6371     		strb	r3, [r4, #5]
+ 566 0020 330A     		lsrs	r3, r6, #8
+ 567 0022 E371     		strb	r3, [r4, #7]
+ 568 0024 2B0A     		lsrs	r3, r5, #8
+ 569 0026 6372     		strb	r3, [r4, #9]
+ 570 0028 0023     		movs	r3, #0
+ 571 002a 110A     		lsrs	r1, r2, #8
+ 572 002c E170     		strb	r1, [r4, #3]
+ 573 002e 2271     		strb	r2, [r4, #4]
+ 574 0030 A771     		strb	r7, [r4, #6]
+ 575 0032 2672     		strb	r6, [r4, #8]
+ 576 0034 A572     		strb	r5, [r4, #10]
+ 577 0036 0B22     		movs	r2, #11
+ 578 0038 2100     		movs	r1, r4
+ 579 003a 0093     		str	r3, [sp]
+ 580 003c FFF7FEFF 		bl	lr11xx_hal_write
+ 581 0040 09B0     		add	sp, sp, #36
+ 582              		@ sp needed
+ 583 0042 F0BD     		pop	{r4, r5, r6, r7, pc}
+ARM GAS  /tmp/ccBnJwDY.s 			page 11
+
+
+ 585              		.section	.text.lr11xx_wifi_search_country_code_time_limit,"ax",%progbits
+ 586              		.align	1
+ 587              		.global	lr11xx_wifi_search_country_code_time_limit
+ 588              		.syntax unified
+ 589              		.code	16
+ 590              		.thumb_func
+ 592              	lr11xx_wifi_search_country_code_time_limit:
+ 593              		@ args = 4, pretend = 0, frame = 16
+ 594              		@ frame_needed = 0, uses_anonymous_args = 0
+ 595 0000 70B5     		push	{r4, r5, r6, lr}
+ 596 0002 86B0     		sub	sp, sp, #24
+ 597 0004 0AAC     		add	r4, sp, #40
+ 598 0006 2588     		ldrh	r5, [r4]
+ 599 0008 03AC     		add	r4, sp, #12
+ 600 000a 2271     		strb	r2, [r4, #4]
+ 601 000c A371     		strb	r3, [r4, #6]
+ 602 000e 1A0A     		lsrs	r2, r3, #8
+ 603 0010 2B0A     		lsrs	r3, r5, #8
+ 604 0012 E371     		strb	r3, [r4, #7]
+ 605 0014 0023     		movs	r3, #0
+ 606 0016 064E     		ldr	r6, .L36
+ 607 0018 49BA     		rev16	r1, r1
+ 608 001a 6180     		strh	r1, [r4, #2]
+ 609 001c 6271     		strb	r2, [r4, #5]
+ 610 001e 2680     		strh	r6, [r4]
+ 611 0020 2572     		strb	r5, [r4, #8]
+ 612 0022 0922     		movs	r2, #9
+ 613 0024 2100     		movs	r1, r4
+ 614 0026 0093     		str	r3, [sp]
+ 615 0028 FFF7FEFF 		bl	lr11xx_hal_write
+ 616 002c 06B0     		add	sp, sp, #24
+ 617              		@ sp needed
+ 618 002e 70BD     		pop	{r4, r5, r6, pc}
+ 619              	.L37:
+ 620              		.align	2
+ 621              	.L36:
+ 622 0030 03030000 		.word	771
+ 624              		.section	.text.lr11xx_wifi_get_nb_results,"ax",%progbits
+ 625              		.align	1
+ 626              		.global	lr11xx_wifi_get_nb_results
+ 627              		.syntax unified
+ 628              		.code	16
+ 629              		.thumb_func
+ 631              	lr11xx_wifi_get_nb_results:
+ 632              		@ args = 0, pretend = 0, frame = 8
+ 633              		@ frame_needed = 0, uses_anonymous_args = 0
+ 634 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 635 0002 054A     		ldr	r2, .L39
+ 636 0004 0B00     		movs	r3, r1
+ 637 0006 03A9     		add	r1, sp, #12
+ 638 0008 0A80     		strh	r2, [r1]
+ 639 000a 0122     		movs	r2, #1
+ 640 000c 0092     		str	r2, [sp]
+ 641 000e 9218     		adds	r2, r2, r2
+ 642 0010 FFF7FEFF 		bl	lr11xx_hal_read
+ 643 0014 05B0     		add	sp, sp, #20
+ 644              		@ sp needed
+ARM GAS  /tmp/ccBnJwDY.s 			page 12
+
+
+ 645 0016 00BD     		pop	{pc}
+ 646              	.L40:
+ 647              		.align	2
+ 648              	.L39:
+ 649 0018 03050000 		.word	1283
+ 651              		.section	.text.lr11xx_wifi_read_basic_complete_results,"ax",%progbits
+ 652              		.align	1
+ 653              		.global	lr11xx_wifi_read_basic_complete_results
+ 654              		.syntax unified
+ 655              		.code	16
+ 656              		.thumb_func
+ 658              	lr11xx_wifi_read_basic_complete_results:
+ 659              		@ args = 0, pretend = 0, frame = 712
+ 660              		@ frame_needed = 0, uses_anonymous_args = 0
+ 661 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 662 0002 1600     		movs	r6, r2
+ 663 0004 B022     		movs	r2, #176
+ 664 0006 0C4C     		ldr	r4, .L42
+ 665 0008 0D00     		movs	r5, r1
+ 666 000a A544     		add	sp, sp, r4
+ 667 000c 06AF     		add	r7, sp, #24
+ 668 000e 0590     		str	r0, [sp, #20]
+ 669 0010 0021     		movs	r1, #0
+ 670 0012 3800     		movs	r0, r7
+ 671 0014 9200     		lsls	r2, r2, #2
+ 672 0016 1C00     		movs	r4, r3
+ 673 0018 FFF7FEFF 		bl	memset
+ 674 001c 0023     		movs	r3, #0
+ 675 001e 3200     		movs	r2, r6
+ 676 0020 0093     		str	r3, [sp]
+ 677 0022 2900     		movs	r1, r5
+ 678 0024 0598     		ldr	r0, [sp, #20]
+ 679 0026 0294     		str	r4, [sp, #8]
+ 680 0028 0197     		str	r7, [sp, #4]
+ 681 002a 2033     		adds	r3, r3, #32
+ 682 002c FFF7FEFF 		bl	fetch_and_aggregate_all_results
+ 683 0030 B723     		movs	r3, #183
+ 684 0032 9B00     		lsls	r3, r3, #2
+ 685 0034 9D44     		add	sp, sp, r3
+ 686              		@ sp needed
+ 687 0036 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 688              	.L43:
+ 689              		.align	2
+ 690              	.L42:
+ 691 0038 24FDFFFF 		.word	-732
+ 693              		.section	.text.lr11xx_wifi_read_basic_mac_type_channel_results,"ax",%progbits
+ 694              		.align	1
+ 695              		.global	lr11xx_wifi_read_basic_mac_type_channel_results
+ 696              		.syntax unified
+ 697              		.code	16
+ 698              		.thumb_func
+ 700              	lr11xx_wifi_read_basic_mac_type_channel_results:
+ 701              		@ args = 0, pretend = 0, frame = 296
+ 702              		@ frame_needed = 0, uses_anonymous_args = 0
+ 703 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 704 0002 1600     		movs	r6, r2
+ 705 0004 9022     		movs	r2, #144
+ARM GAS  /tmp/ccBnJwDY.s 			page 13
+
+
+ 706 0006 CFB0     		sub	sp, sp, #316
+ 707 0008 06AF     		add	r7, sp, #24
+ 708 000a 0D00     		movs	r5, r1
+ 709 000c 0590     		str	r0, [sp, #20]
+ 710 000e 0021     		movs	r1, #0
+ 711 0010 3800     		movs	r0, r7
+ 712 0012 5200     		lsls	r2, r2, #1
+ 713 0014 1C00     		movs	r4, r3
+ 714 0016 FFF7FEFF 		bl	memset
+ 715 001a 0123     		movs	r3, #1
+ 716 001c 3200     		movs	r2, r6
+ 717 001e 0093     		str	r3, [sp]
+ 718 0020 2900     		movs	r1, r5
+ 719 0022 0598     		ldr	r0, [sp, #20]
+ 720 0024 0294     		str	r4, [sp, #8]
+ 721 0026 0197     		str	r7, [sp, #4]
+ 722 0028 1F33     		adds	r3, r3, #31
+ 723 002a FFF7FEFF 		bl	fetch_and_aggregate_all_results
+ 724 002e 4FB0     		add	sp, sp, #316
+ 725              		@ sp needed
+ 726 0030 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 728              		.section	.text.lr11xx_wifi_read_extended_full_results,"ax",%progbits
+ 729              		.align	1
+ 730              		.global	lr11xx_wifi_read_extended_full_results
+ 731              		.syntax unified
+ 732              		.code	16
+ 733              		.thumb_func
+ 735              	lr11xx_wifi_read_extended_full_results:
+ 736              		@ args = 0, pretend = 0, frame = 960
+ 737              		@ frame_needed = 0, uses_anonymous_args = 0
+ 738 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 739 0002 1600     		movs	r6, r2
+ 740 0004 ED22     		movs	r2, #237
+ 741 0006 0C4C     		ldr	r4, .L46
+ 742 0008 0D00     		movs	r5, r1
+ 743 000a A544     		add	sp, sp, r4
+ 744 000c 07AF     		add	r7, sp, #28
+ 745 000e 0590     		str	r0, [sp, #20]
+ 746 0010 0021     		movs	r1, #0
+ 747 0012 3800     		movs	r0, r7
+ 748 0014 9200     		lsls	r2, r2, #2
+ 749 0016 1C00     		movs	r4, r3
+ 750 0018 FFF7FEFF 		bl	memset
+ 751 001c 0223     		movs	r3, #2
+ 752 001e 3200     		movs	r2, r6
+ 753 0020 0093     		str	r3, [sp]
+ 754 0022 2900     		movs	r1, r5
+ 755 0024 0598     		ldr	r0, [sp, #20]
+ 756 0026 0294     		str	r4, [sp, #8]
+ 757 0028 0197     		str	r7, [sp, #4]
+ 758 002a 0A33     		adds	r3, r3, #10
+ 759 002c FFF7FEFF 		bl	fetch_and_aggregate_all_results
+ 760 0030 F523     		movs	r3, #245
+ 761 0032 9B00     		lsls	r3, r3, #2
+ 762 0034 9D44     		add	sp, sp, r3
+ 763              		@ sp needed
+ 764 0036 F0BD     		pop	{r4, r5, r6, r7, pc}
+ARM GAS  /tmp/ccBnJwDY.s 			page 14
+
+
+ 765              	.L47:
+ 766              		.align	2
+ 767              	.L46:
+ 768 0038 2CFCFFFF 		.word	-980
+ 770              		.section	.text.lr11xx_wifi_reset_cumulative_timing,"ax",%progbits
+ 771              		.align	1
+ 772              		.global	lr11xx_wifi_reset_cumulative_timing
+ 773              		.syntax unified
+ 774              		.code	16
+ 775              		.thumb_func
+ 777              	lr11xx_wifi_reset_cumulative_timing:
+ 778              		@ args = 0, pretend = 0, frame = 8
+ 779              		@ frame_needed = 0, uses_anonymous_args = 0
+ 780 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 781 0002 054B     		ldr	r3, .L49
+ 782 0004 03A9     		add	r1, sp, #12
+ 783 0006 0B80     		strh	r3, [r1]
+ 784 0008 0023     		movs	r3, #0
+ 785 000a 0222     		movs	r2, #2
+ 786 000c 0093     		str	r3, [sp]
+ 787 000e FFF7FEFF 		bl	lr11xx_hal_write
+ 788 0012 05B0     		add	sp, sp, #20
+ 789              		@ sp needed
+ 790 0014 00BD     		pop	{pc}
+ 791              	.L50:
+ 792 0016 C046     		.align	2
+ 793              	.L49:
+ 794 0018 03070000 		.word	1795
+ 796              		.section	.text.lr11xx_wifi_read_cumulative_timing,"ax",%progbits
+ 797              		.align	1
+ 798              		.global	lr11xx_wifi_read_cumulative_timing
+ 799              		.syntax unified
+ 800              		.code	16
+ 801              		.thumb_func
+ 803              	lr11xx_wifi_read_cumulative_timing:
+ 804              		@ args = 0, pretend = 0, frame = 24
+ 805              		@ frame_needed = 0, uses_anonymous_args = 0
+ 806 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 807 0002 1027     		movs	r7, #16
+ 808 0004 0500     		movs	r5, r0
+ 809 0006 89B0     		sub	sp, sp, #36
+ 810 0008 0F4B     		ldr	r3, .L53
+ 811 000a 3A00     		movs	r2, r7
+ 812 000c 03AE     		add	r6, sp, #12
+ 813 000e 0C00     		movs	r4, r1
+ 814 0010 04A8     		add	r0, sp, #16
+ 815 0012 0021     		movs	r1, #0
+ 816 0014 3380     		strh	r3, [r6]
+ 817 0016 FFF7FEFF 		bl	memset
+ 818 001a 0222     		movs	r2, #2
+ 819 001c 3100     		movs	r1, r6
+ 820 001e 2800     		movs	r0, r5
+ 821 0020 0097     		str	r7, [sp]
+ 822 0022 04AB     		add	r3, sp, #16
+ 823 0024 FFF7FEFF 		bl	lr11xx_hal_read
+ 824 0028 0028     		cmp	r0, #0
+ 825 002a 0BD1     		bne	.L52
+ARM GAS  /tmp/ccBnJwDY.s 			page 15
+
+
+ 826 002c 049B     		ldr	r3, [sp, #16]
+ 827 002e 1BBA     		rev	r3, r3
+ 828 0030 2360     		str	r3, [r4]
+ 829 0032 059B     		ldr	r3, [sp, #20]
+ 830 0034 1BBA     		rev	r3, r3
+ 831 0036 6360     		str	r3, [r4, #4]
+ 832 0038 069B     		ldr	r3, [sp, #24]
+ 833 003a 1BBA     		rev	r3, r3
+ 834 003c A360     		str	r3, [r4, #8]
+ 835 003e 079B     		ldr	r3, [sp, #28]
+ 836 0040 1BBA     		rev	r3, r3
+ 837 0042 E360     		str	r3, [r4, #12]
+ 838              	.L52:
+ 839 0044 09B0     		add	sp, sp, #36
+ 840              		@ sp needed
+ 841 0046 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 842              	.L54:
+ 843              		.align	2
+ 844              	.L53:
+ 845 0048 03080000 		.word	2051
+ 847              		.section	.rodata.lr11xx_wifi_get_nb_country_code_results.str1.1,"aMS",%progbits,1
+ 848              	.LC1:
+ 849 0000 00       		.ascii	"\000"
+ 850              		.section	.text.lr11xx_wifi_get_nb_country_code_results,"ax",%progbits
+ 851              		.align	1
+ 852              		.global	lr11xx_wifi_get_nb_country_code_results
+ 853              		.syntax unified
+ 854              		.code	16
+ 855              		.thumb_func
+ 857              	lr11xx_wifi_get_nb_country_code_results:
+ 858              		@ args = 0, pretend = 0, frame = 8
+ 859              		@ frame_needed = 0, uses_anonymous_args = 0
+ 860 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 861 0002 6A46     		mov	r2, sp
+ 862 0004 094B     		ldr	r3, .L57
+ 863 0006 0C00     		movs	r4, r1
+ 864 0008 03A9     		add	r1, sp, #12
+ 865 000a 0B80     		strh	r3, [r1]
+ 866 000c 084B     		ldr	r3, .L57+4
+ 867 000e 1B78     		ldrb	r3, [r3]
+ 868 0010 1372     		strb	r3, [r2, #8]
+ 869 0012 0123     		movs	r3, #1
+ 870 0014 0222     		movs	r2, #2
+ 871 0016 0093     		str	r3, [sp]
+ 872 0018 02AB     		add	r3, sp, #8
+ 873 001a FFF7FEFF 		bl	lr11xx_hal_read
+ 874 001e 0028     		cmp	r0, #0
+ 875 0020 02D1     		bne	.L56
+ 876 0022 6B46     		mov	r3, sp
+ 877 0024 1B7A     		ldrb	r3, [r3, #8]
+ 878 0026 2370     		strb	r3, [r4]
+ 879              	.L56:
+ 880 0028 04B0     		add	sp, sp, #16
+ 881              		@ sp needed
+ 882 002a 10BD     		pop	{r4, pc}
+ 883              	.L58:
+ 884              		.align	2
+ARM GAS  /tmp/ccBnJwDY.s 			page 16
+
+
+ 885              	.L57:
+ 886 002c 03090000 		.word	2307
+ 887 0030 00000000 		.word	.LC1
+ 889              		.section	.text.lr11xx_wifi_read_country_code_results,"ax",%progbits
+ 890              		.align	1
+ 891              		.global	lr11xx_wifi_read_country_code_results
+ 892              		.syntax unified
+ 893              		.code	16
+ 894              		.thumb_func
+ 896              	lr11xx_wifi_read_country_code_results:
+ 897              		@ args = 0, pretend = 0, frame = 336
+ 898              		@ frame_needed = 0, uses_anonymous_args = 0
+ 899 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 900 0002 D7B0     		sub	sp, sp, #348
+ 901 0004 05AE     		add	r6, sp, #20
+ 902 0006 1400     		movs	r4, r2
+ 903 0008 F270     		strb	r2, [r6, #3]
+ 904 000a A022     		movs	r2, #160
+ 905 000c 06AD     		add	r5, sp, #24
+ 906 000e 1F00     		movs	r7, r3
+ 907 0010 184B     		ldr	r3, .L66
+ 908 0012 0390     		str	r0, [sp, #12]
+ 909 0014 B170     		strb	r1, [r6, #2]
+ 910 0016 5200     		lsls	r2, r2, #1
+ 911 0018 0021     		movs	r1, #0
+ 912 001a 2800     		movs	r0, r5
+ 913 001c 3380     		strh	r3, [r6]
+ 914 001e FFF7FEFF 		bl	memset
+ 915 0022 0A23     		movs	r3, #10
+ 916 0024 5C43     		muls	r4, r3
+ 917 0026 0422     		movs	r2, #4
+ 918 0028 2B00     		movs	r3, r5
+ 919 002a 3100     		movs	r1, r6
+ 920 002c 0398     		ldr	r0, [sp, #12]
+ 921 002e 0094     		str	r4, [sp]
+ 922 0030 FFF7FEFF 		bl	lr11xx_hal_read
+ 923 0034 0028     		cmp	r0, #0
+ 924 0036 03D1     		bne	.L64
+ 925 0038 3A00     		movs	r2, r7
+ 926 003a 0100     		movs	r1, r0
+ 927              	.L61:
+ 928 003c A142     		cmp	r1, r4
+ 929 003e 01D1     		bne	.L63
+ 930              	.L64:
+ 931 0040 57B0     		add	sp, sp, #348
+ 932              		@ sp needed
+ 933 0042 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 934              	.L63:
+ 935 0044 0B00     		movs	r3, r1
+ 936 0046 FF26     		movs	r6, #255
+ 937 0048 3340     		ands	r3, r6
+ 938 004a EF5C     		ldrb	r7, [r5, r3]
+ 939 004c EB18     		adds	r3, r5, r3
+ 940 004e 1770     		strb	r7, [r2]
+ 941 0050 5F78     		ldrb	r7, [r3, #1]
+ 942 0052 5770     		strb	r7, [r2, #1]
+ 943 0054 9F78     		ldrb	r7, [r3, #2]
+ARM GAS  /tmp/ccBnJwDY.s 			page 17
+
+
+ 944 0056 9770     		strb	r7, [r2, #2]
+ 945 0058 DF78     		ldrb	r7, [r3, #3]
+ 946 005a D770     		strb	r7, [r2, #3]
+ 947 005c 171D     		adds	r7, r2, #4
+ 948 005e 0A32     		adds	r2, r2, #10
+ 949              	.L62:
+ 950 0060 5E7A     		ldrb	r6, [r3, #9]
+ 951 0062 013B     		subs	r3, r3, #1
+ 952 0064 3E70     		strb	r6, [r7]
+ 953 0066 0137     		adds	r7, r7, #1
+ 954 0068 9742     		cmp	r7, r2
+ 955 006a F9D1     		bne	.L62
+ 956 006c 3A00     		movs	r2, r7
+ 957 006e 0A31     		adds	r1, r1, #10
+ 958 0070 E4E7     		b	.L61
+ 959              	.L67:
+ 960 0072 C046     		.align	2
+ 961              	.L66:
+ 962 0074 030A0000 		.word	2563
+ 964              		.section	.text.lr11xx_wifi_cfg_timestamp_ap_phone,"ax",%progbits
+ 965              		.align	1
+ 966              		.global	lr11xx_wifi_cfg_timestamp_ap_phone
+ 967              		.syntax unified
+ 968              		.code	16
+ 969              		.thumb_func
+ 971              	lr11xx_wifi_cfg_timestamp_ap_phone:
+ 972              		@ args = 0, pretend = 0, frame = 8
+ 973              		@ frame_needed = 0, uses_anonymous_args = 0
+ 974 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 975 0002 0B00     		movs	r3, r1
+ 976 0004 074A     		ldr	r2, .L69
+ 977 0006 02A9     		add	r1, sp, #8
+ 978 0008 0A80     		strh	r2, [r1]
+ 979 000a 1A0E     		lsrs	r2, r3, #24
+ 980 000c 8A70     		strb	r2, [r1, #2]
+ 981 000e 1A0C     		lsrs	r2, r3, #16
+ 982 0010 5BBA     		rev16	r3, r3
+ 983 0012 8B80     		strh	r3, [r1, #4]
+ 984 0014 0023     		movs	r3, #0
+ 985 0016 CA70     		strb	r2, [r1, #3]
+ 986 0018 0622     		movs	r2, #6
+ 987 001a 0093     		str	r3, [sp]
+ 988 001c FFF7FEFF 		bl	lr11xx_hal_write
+ 989 0020 05B0     		add	sp, sp, #20
+ 990              		@ sp needed
+ 991 0022 00BD     		pop	{pc}
+ 992              	.L70:
+ 993              		.align	2
+ 994              	.L69:
+ 995 0024 030B0000 		.word	2819
+ 997              		.section	.text.lr11xx_wifi_read_version,"ax",%progbits
+ 998              		.align	1
+ 999              		.global	lr11xx_wifi_read_version
+ 1000              		.syntax unified
+ 1001              		.code	16
+ 1002              		.thumb_func
+ 1004              	lr11xx_wifi_read_version:
+ARM GAS  /tmp/ccBnJwDY.s 			page 18
+
+
+ 1005              		@ args = 0, pretend = 0, frame = 8
+ 1006              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1007 0000 30B5     		push	{r4, r5, lr}
+ 1008 0002 0A4B     		ldr	r3, .L73
+ 1009 0004 85B0     		sub	sp, sp, #20
+ 1010 0006 0C00     		movs	r4, r1
+ 1011 0008 02A9     		add	r1, sp, #8
+ 1012 000a 0B80     		strh	r3, [r1]
+ 1013 000c 0222     		movs	r2, #2
+ 1014 000e 0023     		movs	r3, #0
+ 1015 0010 03AD     		add	r5, sp, #12
+ 1016 0012 2B80     		strh	r3, [r5]
+ 1017 0014 2B00     		movs	r3, r5
+ 1018 0016 0092     		str	r2, [sp]
+ 1019 0018 FFF7FEFF 		bl	lr11xx_hal_read
+ 1020 001c 0028     		cmp	r0, #0
+ 1021 001e 03D1     		bne	.L72
+ 1022 0020 2B78     		ldrb	r3, [r5]
+ 1023 0022 2370     		strb	r3, [r4]
+ 1024 0024 6B78     		ldrb	r3, [r5, #1]
+ 1025 0026 6370     		strb	r3, [r4, #1]
+ 1026              	.L72:
+ 1027 0028 05B0     		add	sp, sp, #20
+ 1028              		@ sp needed
+ 1029 002a 30BD     		pop	{r4, r5, pc}
+ 1030              	.L74:
+ 1031              		.align	2
+ 1032              	.L73:
+ 1033 002c 03200000 		.word	8195
+ 1035              		.section	.text.lr11xx_wifi_get_nb_results_max_per_chunk,"ax",%progbits
+ 1036              		.align	1
+ 1037              		.global	lr11xx_wifi_get_nb_results_max_per_chunk
+ 1038              		.syntax unified
+ 1039              		.code	16
+ 1040              		.thumb_func
+ 1042              	lr11xx_wifi_get_nb_results_max_per_chunk:
+ 1043              		@ args = 0, pretend = 0, frame = 0
+ 1044              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1045              		@ link register save eliminated.
+ 1046 0000 2020     		movs	r0, #32
+ 1047              		@ sp needed
+ 1048 0002 7047     		bx	lr
+ 1050              		.section	.text.lr11xx_wifi_parse_channel_info,"ax",%progbits
+ 1051              		.align	1
+ 1052              		.global	lr11xx_wifi_parse_channel_info
+ 1053              		.syntax unified
+ 1054              		.code	16
+ 1055              		.thumb_func
+ 1057              	lr11xx_wifi_parse_channel_info:
+ 1058              		@ args = 0, pretend = 0, frame = 0
+ 1059              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1060 0000 10B5     		push	{r4, lr}
+ 1061 0002 0F24     		movs	r4, #15
+ 1062              		@ sp needed
+ 1063 0004 0440     		ands	r4, r0
+ 1064 0006 0C70     		strb	r4, [r1]
+ 1065 0008 8106     		lsls	r1, r0, #26
+ARM GAS  /tmp/ccBnJwDY.s 			page 19
+
+
+ 1066 000a 890F     		lsrs	r1, r1, #30
+ 1067 000c 1970     		strb	r1, [r3]
+ 1068 000e 0123     		movs	r3, #1
+ 1069 0010 8009     		lsrs	r0, r0, #6
+ 1070 0012 8343     		bics	r3, r0
+ 1071 0014 1370     		strb	r3, [r2]
+ 1072 0016 10BD     		pop	{r4, pc}
+ 1074              		.section	.text.lr11xx_wifi_extract_channel_from_info_byte,"ax",%progbits
+ 1075              		.align	1
+ 1076              		.global	lr11xx_wifi_extract_channel_from_info_byte
+ 1077              		.syntax unified
+ 1078              		.code	16
+ 1079              		.thumb_func
+ 1081              	lr11xx_wifi_extract_channel_from_info_byte:
+ 1082              		@ args = 0, pretend = 0, frame = 0
+ 1083              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1084              		@ link register save eliminated.
+ 1085 0000 0F23     		movs	r3, #15
+ 1086              		@ sp needed
+ 1087 0002 1840     		ands	r0, r3
+ 1088 0004 7047     		bx	lr
+ 1090              		.section	.text.lr11xx_wifi_parse_frame_type_info,"ax",%progbits
+ 1091              		.align	1
+ 1092              		.global	lr11xx_wifi_parse_frame_type_info
+ 1093              		.syntax unified
+ 1094              		.code	16
+ 1095              		.thumb_func
+ 1097              	lr11xx_wifi_parse_frame_type_info:
+ 1098              		@ args = 4, pretend = 0, frame = 0
+ 1099              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1100 0000 10B5     		push	{r4, lr}
+ 1101 0002 8409     		lsrs	r4, r0, #6
+ 1102 0004 0C70     		strb	r4, [r1]
+ 1103 0006 8106     		lsls	r1, r0, #26
+ 1104 0008 090F     		lsrs	r1, r1, #28
+ 1105 000a 1170     		strb	r1, [r2]
+ 1106 000c 0121     		movs	r1, #1
+ 1107              		@ sp needed
+ 1108 000e 4208     		lsrs	r2, r0, #1
+ 1109 0010 0A40     		ands	r2, r1
+ 1110 0012 1A70     		strb	r2, [r3]
+ 1111 0014 029B     		ldr	r3, [sp, #8]
+ 1112 0016 0840     		ands	r0, r1
+ 1113 0018 1870     		strb	r0, [r3]
+ 1114 001a 10BD     		pop	{r4, pc}
+ 1116              		.section	.text.lr11xx_wifi_parse_data_rate_info,"ax",%progbits
+ 1117              		.align	1
+ 1118              		.global	lr11xx_wifi_parse_data_rate_info
+ 1119              		.syntax unified
+ 1120              		.code	16
+ 1121              		.thumb_func
+ 1123              	lr11xx_wifi_parse_data_rate_info:
+ 1124              		@ args = 0, pretend = 0, frame = 0
+ 1125              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1126              		@ link register save eliminated.
+ 1127 0000 0323     		movs	r3, #3
+ 1128              		@ sp needed
+ARM GAS  /tmp/ccBnJwDY.s 			page 20
+
+
+ 1129 0002 0340     		ands	r3, r0
+ 1130 0004 8008     		lsrs	r0, r0, #2
+ 1131 0006 0B70     		strb	r3, [r1]
+ 1132 0008 1070     		strb	r0, [r2]
+ 1133 000a 7047     		bx	lr
+ 1135              		.section	.text.lr11xx_wifi_extract_signal_type_from_data_rate_info,"ax",%progbits
+ 1136              		.align	1
+ 1137              		.global	lr11xx_wifi_extract_signal_type_from_data_rate_info
+ 1138              		.syntax unified
+ 1139              		.code	16
+ 1140              		.thumb_func
+ 1142              	lr11xx_wifi_extract_signal_type_from_data_rate_info:
+ 1143              		@ args = 0, pretend = 0, frame = 0
+ 1144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1145              		@ link register save eliminated.
+ 1146 0000 0323     		movs	r3, #3
+ 1147              		@ sp needed
+ 1148 0002 1840     		ands	r0, r3
+ 1149 0004 7047     		bx	lr
+ 1151              		.global	__aeabi_uldivmod
+ 1152              		.section	.text.lr11xx_wifi_get_consumption,"ax",%progbits
+ 1153              		.align	1
+ 1154              		.global	lr11xx_wifi_get_consumption
+ 1155              		.syntax unified
+ 1156              		.code	16
+ 1157              		.thumb_func
+ 1159              	lr11xx_wifi_get_consumption:
+ 1160              		@ args = 20, pretend = 16, frame = 0
+ 1161              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1162 0000 84B0     		sub	sp, sp, #16
+ 1163 0002 D0B5     		push	{r4, r6, r7, lr}
+ 1164 0004 0400     		movs	r4, r0
+ 1165 0006 FA20     		movs	r0, #250
+ 1166 0008 0591     		str	r1, [sp, #20]
+ 1167 000a 0692     		str	r2, [sp, #24]
+ 1168 000c 0899     		ldr	r1, [sp, #32]
+ 1169 000e 0793     		str	r3, [sp, #28]
+ 1170 0010 D318     		adds	r3, r2, r3
+ 1171 0012 0D4A     		ldr	r2, .L83
+ 1172 0014 CE18     		adds	r6, r1, r3
+ 1173 0016 5A43     		muls	r2, r3
+ 1174 0018 0027     		movs	r7, #0
+ 1175 001a 0023     		movs	r3, #0
+ 1176 001c 0001     		lsls	r0, r0, #4
+ 1177 001e 4843     		muls	r0, r1
+ 1178 0020 8018     		adds	r0, r0, r2
+ 1179 0022 0A4A     		ldr	r2, .L83+4
+ 1180 0024 3900     		movs	r1, r7
+ 1181 0026 921B     		subs	r2, r2, r6
+ 1182 0028 BB41     		sbcs	r3, r3, r7
+ 1183 002a FFF7FEFF 		bl	__aeabi_uldivmod
+ 1184 002e 0200     		movs	r2, r0
+ 1185 0030 0B00     		movs	r3, r1
+ 1186 0032 BC42     		cmp	r4, r7
+ 1187 0034 01D1     		bne	.L81
+ 1188 0036 9218     		adds	r2, r2, r2
+ 1189 0038 5B41     		adcs	r3, r3, r3
+ARM GAS  /tmp/ccBnJwDY.s 			page 21
+
+
+ 1190              	.L81:
+ 1191              		@ sp needed
+ 1192 003a 1000     		movs	r0, r2
+ 1193 003c 1900     		movs	r1, r3
+ 1194 003e D0BC     		pop	{r4, r6, r7}
+ 1195 0040 08BC     		pop	{r3}
+ 1196 0042 04B0     		add	sp, sp, #16
+ 1197 0044 1847     		bx	r3
+ 1198              	.L84:
+ 1199 0046 C046     		.align	2
+ 1200              	.L83:
+ 1201 0048 E02E0000 		.word	12000
+ 1202 004c 00A493D6 		.word	-694967296
+ 1204              		.section	.text.lr11xx_wifi_is_well_formed_utf8_byte_sequence,"ax",%progbits
+ 1205              		.align	1
+ 1206              		.global	lr11xx_wifi_is_well_formed_utf8_byte_sequence
+ 1207              		.syntax unified
+ 1208              		.code	16
+ 1209              		.thumb_func
+ 1211              	lr11xx_wifi_is_well_formed_utf8_byte_sequence:
+ 1212              		@ args = 0, pretend = 0, frame = 0
+ 1213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1214 0000 0023     		movs	r3, #0
+ 1215 0002 70B5     		push	{r4, r5, r6, lr}
+ 1216              	.L86:
+ 1217 0004 8B42     		cmp	r3, r1
+ 1218 0006 01D3     		bcc	.L99
+ 1219 0008 0120     		movs	r0, #1
+ 1220              	.L117:
+ 1221              		@ sp needed
+ 1222 000a 70BD     		pop	{r4, r5, r6, pc}
+ 1223              	.L99:
+ 1224 000c C456     		ldrsb	r4, [r0, r3]
+ 1225 000e C25C     		ldrb	r2, [r0, r3]
+ 1226 0010 002C     		cmp	r4, #0
+ 1227 0012 02DB     		blt	.L87
+ 1228 0014 0133     		adds	r3, r3, #1
+ 1229              	.L119:
+ 1230 0016 DBB2     		uxtb	r3, r3
+ 1231 0018 F4E7     		b	.L86
+ 1232              	.L87:
+ 1233 001a CC1A     		subs	r4, r1, r3
+ 1234 001c 012C     		cmp	r4, #1
+ 1235 001e 51DD     		ble	.L120
+ 1236 0020 1500     		movs	r5, r2
+ 1237 0022 3E35     		adds	r5, r5, #62
+ 1238 0024 EDB2     		uxtb	r5, r5
+ 1239 0026 1D2D     		cmp	r5, #29
+ 1240 0028 07D8     		bhi	.L90
+ 1241 002a C518     		adds	r5, r0, r3
+ 1242 002c 6D78     		ldrb	r5, [r5, #1]
+ 1243 002e 803D     		subs	r5, r5, #128
+ 1244 0030 EDB2     		uxtb	r5, r5
+ 1245 0032 3F2D     		cmp	r5, #63
+ 1246 0034 54D8     		bhi	.L91
+ 1247 0036 0233     		adds	r3, r3, #2
+ 1248 0038 EDE7     		b	.L119
+ARM GAS  /tmp/ccBnJwDY.s 			page 22
+
+
+ 1249              	.L90:
+ 1250 003a 022C     		cmp	r4, #2
+ 1251 003c 42D0     		beq	.L120
+ 1252 003e E02A     		cmp	r2, #224
+ 1253 0040 0CD1     		bne	.L92
+ 1254 0042 C618     		adds	r6, r0, r3
+ 1255 0044 7578     		ldrb	r5, [r6, #1]
+ 1256 0046 6035     		adds	r5, r5, #96
+ 1257 0048 EDB2     		uxtb	r5, r5
+ 1258 004a 1F2D     		cmp	r5, #31
+ 1259 004c 4AD8     		bhi	.L93
+ 1260 004e B578     		ldrb	r5, [r6, #2]
+ 1261 0050 803D     		subs	r5, r5, #128
+ 1262 0052 EDB2     		uxtb	r5, r5
+ 1263 0054 3F2D     		cmp	r5, #63
+ 1264 0056 45D8     		bhi	.L93
+ 1265              	.L124:
+ 1266 0058 0333     		adds	r3, r3, #3
+ 1267 005a DCE7     		b	.L119
+ 1268              	.L92:
+ 1269 005c 1500     		movs	r5, r2
+ 1270 005e 1F35     		adds	r5, r5, #31
+ 1271 0060 EDB2     		uxtb	r5, r5
+ 1272 0062 0B2D     		cmp	r5, #11
+ 1273 0064 15D8     		bhi	.L94
+ 1274 0066 C618     		adds	r6, r0, r3
+ 1275 0068 7578     		ldrb	r5, [r6, #1]
+ 1276 006a 803D     		subs	r5, r5, #128
+ 1277 006c EDB2     		uxtb	r5, r5
+ 1278 006e 3F2D     		cmp	r5, #63
+ 1279 0070 04D8     		bhi	.L95
+ 1280 0072 B578     		ldrb	r5, [r6, #2]
+ 1281 0074 803D     		subs	r5, r5, #128
+ 1282 0076 EDB2     		uxtb	r5, r5
+ 1283 0078 3F2D     		cmp	r5, #63
+ 1284 007a EDD9     		bls	.L124
+ 1285              	.L95:
+ 1286 007c 032C     		cmp	r4, #3
+ 1287 007e 21D0     		beq	.L120
+ 1288              	.L98:
+ 1289 0080 F42A     		cmp	r2, #244
+ 1290 0082 1FD1     		bne	.L120
+ 1291 0084 C418     		adds	r4, r0, r3
+ 1292 0086 6278     		ldrb	r2, [r4, #1]
+ 1293 0088 803A     		subs	r2, r2, #128
+ 1294 008a D2B2     		uxtb	r2, r2
+ 1295 008c 0F2A     		cmp	r2, #15
+ 1296 008e 33D9     		bls	.L128
+ 1297 0090 18E0     		b	.L120
+ 1298              	.L94:
+ 1299 0092 ED2A     		cmp	r2, #237
+ 1300 0094 0BD1     		bne	.L96
+ 1301 0096 C418     		adds	r4, r0, r3
+ 1302 0098 6278     		ldrb	r2, [r4, #1]
+ 1303 009a 803A     		subs	r2, r2, #128
+ 1304 009c D2B2     		uxtb	r2, r2
+ 1305 009e 1F2A     		cmp	r2, #31
+ARM GAS  /tmp/ccBnJwDY.s 			page 23
+
+
+ 1306 00a0 10D8     		bhi	.L120
+ 1307              	.L126:
+ 1308 00a2 A278     		ldrb	r2, [r4, #2]
+ 1309 00a4 803A     		subs	r2, r2, #128
+ 1310 00a6 D2B2     		uxtb	r2, r2
+ 1311 00a8 3F2A     		cmp	r2, #63
+ 1312 00aa 0BD8     		bhi	.L120
+ 1313 00ac D4E7     		b	.L124
+ 1314              	.L96:
+ 1315 00ae 1500     		movs	r5, r2
+ 1316 00b0 1235     		adds	r5, r5, #18
+ 1317 00b2 EDB2     		uxtb	r5, r5
+ 1318 00b4 012D     		cmp	r5, #1
+ 1319 00b6 15D8     		bhi	.L93
+ 1320 00b8 C418     		adds	r4, r0, r3
+ 1321 00ba 6278     		ldrb	r2, [r4, #1]
+ 1322 00bc 803A     		subs	r2, r2, #128
+ 1323 00be D2B2     		uxtb	r2, r2
+ 1324 00c0 3F2A     		cmp	r2, #63
+ 1325 00c2 EED9     		bls	.L126
+ 1326              	.L120:
+ 1327 00c4 0020     		movs	r0, #0
+ 1328 00c6 A0E7     		b	.L117
+ 1329              	.L97:
+ 1330 00c8 1400     		movs	r4, r2
+ 1331 00ca 0F34     		adds	r4, r4, #15
+ 1332 00cc E4B2     		uxtb	r4, r4
+ 1333 00ce 022C     		cmp	r4, #2
+ 1334 00d0 D6D8     		bhi	.L98
+ 1335 00d2 C418     		adds	r4, r0, r3
+ 1336 00d4 6278     		ldrb	r2, [r4, #1]
+ 1337 00d6 803A     		subs	r2, r2, #128
+ 1338 00d8 D2B2     		uxtb	r2, r2
+ 1339 00da 3F2A     		cmp	r2, #63
+ 1340 00dc F2D8     		bhi	.L120
+ 1341 00de 0BE0     		b	.L128
+ 1342              	.L91:
+ 1343 00e0 022C     		cmp	r4, #2
+ 1344 00e2 EFD0     		beq	.L120
+ 1345              	.L93:
+ 1346 00e4 032C     		cmp	r4, #3
+ 1347 00e6 EDD0     		beq	.L120
+ 1348 00e8 F02A     		cmp	r2, #240
+ 1349 00ea EDD1     		bne	.L97
+ 1350 00ec C418     		adds	r4, r0, r3
+ 1351 00ee 6278     		ldrb	r2, [r4, #1]
+ 1352 00f0 7032     		adds	r2, r2, #112
+ 1353 00f2 D2B2     		uxtb	r2, r2
+ 1354 00f4 2F2A     		cmp	r2, #47
+ 1355 00f6 E5D8     		bhi	.L120
+ 1356              	.L128:
+ 1357 00f8 A278     		ldrb	r2, [r4, #2]
+ 1358 00fa 803A     		subs	r2, r2, #128
+ 1359 00fc D2B2     		uxtb	r2, r2
+ 1360 00fe 3F2A     		cmp	r2, #63
+ 1361 0100 E0D8     		bhi	.L120
+ 1362 0102 E278     		ldrb	r2, [r4, #3]
+ARM GAS  /tmp/ccBnJwDY.s 			page 24
+
+
+ 1363 0104 803A     		subs	r2, r2, #128
+ 1364 0106 D2B2     		uxtb	r2, r2
+ 1365 0108 3F2A     		cmp	r2, #63
+ 1366 010a DBD8     		bhi	.L120
+ 1367 010c 0433     		adds	r3, r3, #4
+ 1368 010e 82E7     		b	.L119
+ 1370              		.section	.text.lr11xx_wifi_are_scan_mode_result_format_compatible,"ax",%progbits
+ 1371              		.align	1
+ 1372              		.global	lr11xx_wifi_are_scan_mode_result_format_compatible
+ 1373              		.syntax unified
+ 1374              		.code	16
+ 1375              		.thumb_func
+ 1377              	lr11xx_wifi_are_scan_mode_result_format_compatible:
+ 1378              		@ args = 0, pretend = 0, frame = 0
+ 1379              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1380              		@ link register save eliminated.
+ 1381 0000 0300     		movs	r3, r0
+ 1382 0002 0228     		cmp	r0, #2
+ 1383 0004 04D8     		bhi	.L131
+ 1384 0006 0020     		movs	r0, #0
+ 1385 0008 8342     		cmp	r3, r0
+ 1386 000a 0AD1     		bne	.L132
+ 1387 000c 1800     		movs	r0, r3
+ 1388              	.L133:
+ 1389              		@ sp needed
+ 1390 000e 7047     		bx	lr
+ 1391              	.L131:
+ 1392 0010 043B     		subs	r3, r3, #4
+ 1393 0012 0020     		movs	r0, #0
+ 1394 0014 012B     		cmp	r3, #1
+ 1395 0016 FAD8     		bhi	.L133
+ 1396 0018 0239     		subs	r1, r1, #2
+ 1397 001a 4B42     		rsbs	r3, r1, #0
+ 1398 001c 5941     		adcs	r1, r1, r3
+ 1399 001e C8B2     		uxtb	r0, r1
+ 1400 0020 F5E7     		b	.L133
+ 1401              	.L132:
+ 1402 0022 0123     		movs	r3, #1
+ 1403 0024 8B42     		cmp	r3, r1
+ 1404 0026 4041     		adcs	r0, r0, r0
+ 1405 0028 C0B2     		uxtb	r0, r0
+ 1406 002a F0E7     		b	.L133
+ 1408              		.section	.rodata.CSWTCH.16,"a"
+ 1411              	CSWTCH.16:
+ 1412 0000 16       		.byte	22
+ 1413 0001 09       		.byte	9
+ 1414 0002 4F       		.byte	79
+ 1415              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccBnJwDY.s 			page 25
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lr11xx_wifi.c
+     /tmp/ccBnJwDY.s:14     .text.uint16_from_array:00000000 $t
+     /tmp/ccBnJwDY.s:19     .text.uint16_from_array:00000000 uint16_from_array
+     /tmp/ccBnJwDY.s:33     .text.uint64_from_array:00000000 $t
+     /tmp/ccBnJwDY.s:38     .text.uint64_from_array:00000000 uint64_from_array
+     /tmp/ccBnJwDY.s:80     .text.lr11xx_wifi_read_mac_address_from_buffer:00000000 $t
+     /tmp/ccBnJwDY.s:85     .text.lr11xx_wifi_read_mac_address_from_buffer:00000000 lr11xx_wifi_read_mac_address_from_buffer
+     /tmp/ccBnJwDY.s:103    .text.fetch_and_aggregate_all_results:00000000 $t
+     /tmp/ccBnJwDY.s:108    .text.fetch_and_aggregate_all_results:00000000 fetch_and_aggregate_all_results
+     /tmp/ccBnJwDY.s:452    .text.fetch_and_aggregate_all_results:000002a4 $d
+     /tmp/ccBnJwDY.s:1411   .rodata.CSWTCH.16:00000000 CSWTCH.16
+     /tmp/ccBnJwDY.s:456    .text.lr11xx_wifi_scan:00000000 $t
+     /tmp/ccBnJwDY.s:462    .text.lr11xx_wifi_scan:00000000 lr11xx_wifi_scan
+     /tmp/ccBnJwDY.s:502    .text.lr11xx_wifi_search_country_code:00000000 $t
+     /tmp/ccBnJwDY.s:508    .text.lr11xx_wifi_search_country_code:00000000 lr11xx_wifi_search_country_code
+     /tmp/ccBnJwDY.s:538    .text.lr11xx_wifi_search_country_code:00000030 $d
+     /tmp/ccBnJwDY.s:541    .text.lr11xx_wifi_scan_time_limit:00000000 $t
+     /tmp/ccBnJwDY.s:547    .text.lr11xx_wifi_scan_time_limit:00000000 lr11xx_wifi_scan_time_limit
+     /tmp/ccBnJwDY.s:586    .text.lr11xx_wifi_search_country_code_time_limit:00000000 $t
+     /tmp/ccBnJwDY.s:592    .text.lr11xx_wifi_search_country_code_time_limit:00000000 lr11xx_wifi_search_country_code_time_limit
+     /tmp/ccBnJwDY.s:622    .text.lr11xx_wifi_search_country_code_time_limit:00000030 $d
+     /tmp/ccBnJwDY.s:625    .text.lr11xx_wifi_get_nb_results:00000000 $t
+     /tmp/ccBnJwDY.s:631    .text.lr11xx_wifi_get_nb_results:00000000 lr11xx_wifi_get_nb_results
+     /tmp/ccBnJwDY.s:649    .text.lr11xx_wifi_get_nb_results:00000018 $d
+     /tmp/ccBnJwDY.s:652    .text.lr11xx_wifi_read_basic_complete_results:00000000 $t
+     /tmp/ccBnJwDY.s:658    .text.lr11xx_wifi_read_basic_complete_results:00000000 lr11xx_wifi_read_basic_complete_results
+     /tmp/ccBnJwDY.s:691    .text.lr11xx_wifi_read_basic_complete_results:00000038 $d
+     /tmp/ccBnJwDY.s:694    .text.lr11xx_wifi_read_basic_mac_type_channel_results:00000000 $t
+     /tmp/ccBnJwDY.s:700    .text.lr11xx_wifi_read_basic_mac_type_channel_results:00000000 lr11xx_wifi_read_basic_mac_type_channel_results
+     /tmp/ccBnJwDY.s:729    .text.lr11xx_wifi_read_extended_full_results:00000000 $t
+     /tmp/ccBnJwDY.s:735    .text.lr11xx_wifi_read_extended_full_results:00000000 lr11xx_wifi_read_extended_full_results
+     /tmp/ccBnJwDY.s:768    .text.lr11xx_wifi_read_extended_full_results:00000038 $d
+     /tmp/ccBnJwDY.s:771    .text.lr11xx_wifi_reset_cumulative_timing:00000000 $t
+     /tmp/ccBnJwDY.s:777    .text.lr11xx_wifi_reset_cumulative_timing:00000000 lr11xx_wifi_reset_cumulative_timing
+     /tmp/ccBnJwDY.s:794    .text.lr11xx_wifi_reset_cumulative_timing:00000018 $d
+     /tmp/ccBnJwDY.s:797    .text.lr11xx_wifi_read_cumulative_timing:00000000 $t
+     /tmp/ccBnJwDY.s:803    .text.lr11xx_wifi_read_cumulative_timing:00000000 lr11xx_wifi_read_cumulative_timing
+     /tmp/ccBnJwDY.s:845    .text.lr11xx_wifi_read_cumulative_timing:00000048 $d
+     /tmp/ccBnJwDY.s:851    .text.lr11xx_wifi_get_nb_country_code_results:00000000 $t
+     /tmp/ccBnJwDY.s:857    .text.lr11xx_wifi_get_nb_country_code_results:00000000 lr11xx_wifi_get_nb_country_code_results
+     /tmp/ccBnJwDY.s:886    .text.lr11xx_wifi_get_nb_country_code_results:0000002c $d
+     /tmp/ccBnJwDY.s:890    .text.lr11xx_wifi_read_country_code_results:00000000 $t
+     /tmp/ccBnJwDY.s:896    .text.lr11xx_wifi_read_country_code_results:00000000 lr11xx_wifi_read_country_code_results
+     /tmp/ccBnJwDY.s:962    .text.lr11xx_wifi_read_country_code_results:00000074 $d
+     /tmp/ccBnJwDY.s:965    .text.lr11xx_wifi_cfg_timestamp_ap_phone:00000000 $t
+     /tmp/ccBnJwDY.s:971    .text.lr11xx_wifi_cfg_timestamp_ap_phone:00000000 lr11xx_wifi_cfg_timestamp_ap_phone
+     /tmp/ccBnJwDY.s:995    .text.lr11xx_wifi_cfg_timestamp_ap_phone:00000024 $d
+     /tmp/ccBnJwDY.s:998    .text.lr11xx_wifi_read_version:00000000 $t
+     /tmp/ccBnJwDY.s:1004   .text.lr11xx_wifi_read_version:00000000 lr11xx_wifi_read_version
+     /tmp/ccBnJwDY.s:1033   .text.lr11xx_wifi_read_version:0000002c $d
+     /tmp/ccBnJwDY.s:1036   .text.lr11xx_wifi_get_nb_results_max_per_chunk:00000000 $t
+     /tmp/ccBnJwDY.s:1042   .text.lr11xx_wifi_get_nb_results_max_per_chunk:00000000 lr11xx_wifi_get_nb_results_max_per_chunk
+     /tmp/ccBnJwDY.s:1051   .text.lr11xx_wifi_parse_channel_info:00000000 $t
+     /tmp/ccBnJwDY.s:1057   .text.lr11xx_wifi_parse_channel_info:00000000 lr11xx_wifi_parse_channel_info
+     /tmp/ccBnJwDY.s:1075   .text.lr11xx_wifi_extract_channel_from_info_byte:00000000 $t
+     /tmp/ccBnJwDY.s:1081   .text.lr11xx_wifi_extract_channel_from_info_byte:00000000 lr11xx_wifi_extract_channel_from_info_byte
+ARM GAS  /tmp/ccBnJwDY.s 			page 26
+
+
+     /tmp/ccBnJwDY.s:1091   .text.lr11xx_wifi_parse_frame_type_info:00000000 $t
+     /tmp/ccBnJwDY.s:1097   .text.lr11xx_wifi_parse_frame_type_info:00000000 lr11xx_wifi_parse_frame_type_info
+     /tmp/ccBnJwDY.s:1117   .text.lr11xx_wifi_parse_data_rate_info:00000000 $t
+     /tmp/ccBnJwDY.s:1123   .text.lr11xx_wifi_parse_data_rate_info:00000000 lr11xx_wifi_parse_data_rate_info
+     /tmp/ccBnJwDY.s:1136   .text.lr11xx_wifi_extract_signal_type_from_data_rate_info:00000000 $t
+     /tmp/ccBnJwDY.s:1142   .text.lr11xx_wifi_extract_signal_type_from_data_rate_info:00000000 lr11xx_wifi_extract_signal_type_from_data_rate_info
+     /tmp/ccBnJwDY.s:1153   .text.lr11xx_wifi_get_consumption:00000000 $t
+     /tmp/ccBnJwDY.s:1159   .text.lr11xx_wifi_get_consumption:00000000 lr11xx_wifi_get_consumption
+     /tmp/ccBnJwDY.s:1201   .text.lr11xx_wifi_get_consumption:00000048 $d
+     /tmp/ccBnJwDY.s:1205   .text.lr11xx_wifi_is_well_formed_utf8_byte_sequence:00000000 $t
+     /tmp/ccBnJwDY.s:1211   .text.lr11xx_wifi_is_well_formed_utf8_byte_sequence:00000000 lr11xx_wifi_is_well_formed_utf8_byte_sequence
+     /tmp/ccBnJwDY.s:1371   .text.lr11xx_wifi_are_scan_mode_result_format_compatible:00000000 $t
+     /tmp/ccBnJwDY.s:1377   .text.lr11xx_wifi_are_scan_mode_result_format_compatible:00000000 lr11xx_wifi_are_scan_mode_result_format_compatible
+
+UNDEFINED SYMBOLS
+__aeabi_uidiv
+__aeabi_idiv
+lr11xx_hal_read
+lr11xx_hal_write
+memset
+__aeabi_uldivmod

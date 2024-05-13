@@ -1,0 +1,1475 @@
+ARM GAS  /tmp/ccuAiNBV.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"rose.c"
+  12              		.text
+  13              		.section	.text.ROSE_payload_encrypt.constprop.0,"ax",%progbits
+  14              		.align	1
+  15              		.syntax unified
+  16              		.code	16
+  17              		.thumb_func
+  19              	ROSE_payload_encrypt.constprop.0:
+  20              		@ args = 0, pretend = 0, frame = 16
+  21              		@ frame_needed = 0, uses_anonymous_args = 0
+  22 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  23 0002 85B0     		sub	sp, sp, #20
+  24 0004 1400     		movs	r4, r2
+  25 0006 0500     		movs	r5, r0
+  26 0008 0E00     		movs	r6, r1
+  27 000a 0E22     		movs	r2, #14
+  28 000c 0021     		movs	r1, #0
+  29 000e 6846     		mov	r0, sp
+  30 0010 1F00     		movs	r7, r3
+  31 0012 FFF7FEFF 		bl	memset
+  32 0016 6A46     		mov	r2, sp
+  33 0018 0123     		movs	r3, #1
+  34 001a 1370     		strb	r3, [r2]
+  35 001c 4133     		adds	r3, r3, #65
+  36 001e 5371     		strb	r3, [r2, #5]
+  37 0020 230C     		lsrs	r3, r4, #16
+  38 0022 5481     		strh	r4, [r2, #10]
+  39 0024 1373     		strb	r3, [r2, #12]
+  40 0026 3100     		movs	r1, r6
+  41 0028 3B00     		movs	r3, r7
+  42 002a 2800     		movs	r0, r5
+  43 002c 240E     		lsrs	r4, r4, #24
+  44 002e 5473     		strb	r4, [r2, #13]
+  45 0030 FFF7FEFF 		bl	smtc_modem_services_aes_encrypt
+  46 0034 05B0     		add	sp, sp, #20
+  47              		@ sp needed
+  48 0036 F0BD     		pop	{r4, r5, r6, r7, pc}
+  50              		.section	.text.ROSE_rvec_len,"ax",%progbits
+  51              		.align	1
+  52              		.global	ROSE_rvec_len
+  53              		.syntax unified
+  54              		.code	16
+  55              		.thumb_func
+  57              	ROSE_rvec_len:
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60              		@ link register save eliminated.
+ARM GAS  /tmp/ccuAiNBV.s 			page 2
+
+
+  61 0000 8389     		ldrh	r3, [r0, #12]
+  62 0002 1020     		movs	r0, #16
+  63 0004 782B     		cmp	r3, #120
+  64 0006 01D9     		bls	.L2
+  65 0008 0733     		adds	r3, r3, #7
+  66 000a D810     		asrs	r0, r3, #3
+  67              	.L2:
+  68              		@ sp needed
+  69 000c 7047     		bx	lr
+  71              		.section	.text.ROSE_encWL,"ax",%progbits
+  72              		.align	1
+  73              		.global	ROSE_encWL
+  74              		.syntax unified
+  75              		.code	16
+  76              		.thumb_func
+  78              	ROSE_encWL:
+  79              		@ args = 0, pretend = 0, frame = 0
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81              		@ link register save eliminated.
+  82 0000 0300     		movs	r3, r0
+  83 0002 0C3B     		subs	r3, r3, #12
+  84 0004 002B     		cmp	r3, #0
+  85 0006 17DD     		ble	.L11
+  86 0008 0200     		movs	r2, r0
+  87 000a 0D3A     		subs	r2, r2, #13
+  88 000c 9310     		asrs	r3, r2, #2
+  89 000e FF2A     		cmp	r2, #255
+  90 0010 1EDD     		ble	.L12
+  91 0012 0300     		movs	r3, r0
+  92 0014 093B     		subs	r3, r3, #9
+  93 0016 FF3B     		subs	r3, r3, #255
+  94 0018 002B     		cmp	r3, #0
+  95 001a 0FDD     		ble	.L13
+  96 001c 013B     		subs	r3, r3, #1
+  97 001e DB10     		asrs	r3, r3, #3
+  98 0020 3F2B     		cmp	r3, #63
+  99 0022 17DD     		ble	.L14
+ 100 0024 0C4B     		ldr	r3, .L16
+ 101 0026 C318     		adds	r3, r0, r3
+ 102 0028 002B     		cmp	r3, #0
+ 103 002a 09DC     		bgt	.L8
+ 104 002c 0420     		movs	r0, #4
+ 105              	.L6:
+ 106 002e 0023     		movs	r3, #0
+ 107              	.L9:
+ 108 0030 4001     		lsls	r0, r0, #5
+ 109 0032 C018     		adds	r0, r0, r3
+ 110 0034 C0B2     		uxtb	r0, r0
+ 111              	.L10:
+ 112              		@ sp needed
+ 113 0036 7047     		bx	lr
+ 114              	.L11:
+ 115 0038 0020     		movs	r0, #0
+ 116 003a F8E7     		b	.L6
+ 117              	.L13:
+ 118 003c 0220     		movs	r0, #2
+ 119 003e F6E7     		b	.L6
+ARM GAS  /tmp/ccuAiNBV.s 			page 3
+
+
+ 120              	.L8:
+ 121 0040 064B     		ldr	r3, .L16+4
+ 122 0042 C018     		adds	r0, r0, r3
+ 123 0044 0311     		asrs	r3, r0, #4
+ 124 0046 BF20     		movs	r0, #191
+ 125 0048 3F2B     		cmp	r3, #63
+ 126 004a F4DC     		bgt	.L10
+ 127 004c BB38     		subs	r0, r0, #187
+ 128 004e EFE7     		b	.L9
+ 129              	.L12:
+ 130 0050 0020     		movs	r0, #0
+ 131 0052 EDE7     		b	.L9
+ 132              	.L14:
+ 133 0054 0220     		movs	r0, #2
+ 134 0056 EBE7     		b	.L9
+ 135              	.L17:
+ 136              		.align	2
+ 137              	.L16:
+ 138 0058 00FDFFFF 		.word	-768
+ 139 005c FFFCFFFF 		.word	-769
+ 141              		.section	.rodata.ROSE_decWL.cst1,"aM",%progbits,1
+ 142              	.LC1:
+ 143 0000 BF       		.byte	-65
+ 144              		.section	.text.ROSE_decWL,"ax",%progbits
+ 145              		.align	1
+ 146              		.global	ROSE_decWL
+ 147              		.syntax unified
+ 148              		.code	16
+ 149              		.thumb_func
+ 151              	ROSE_decWL:
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154 0000 10B5     		push	{r4, lr}
+ 155 0002 031C     		adds	r3, r0, #0
+ 156 0004 BF28     		cmp	r0, #191
+ 157 0006 01D9     		bls	.L19
+ 158 0008 0C4B     		ldr	r3, .L21
+ 159 000a 1B78     		ldrb	r3, [r3]
+ 160              	.L19:
+ 161 000c 0621     		movs	r1, #6
+ 162 000e 3F24     		movs	r4, #63
+ 163 0010 DBB2     		uxtb	r3, r3
+ 164 0012 5A09     		lsrs	r2, r3, #5
+ 165 0014 0A40     		ands	r2, r1
+ 166 0016 501C     		adds	r0, r2, #1
+ 167 0018 0949     		ldr	r1, .L21+4
+ 168 001a 4000     		lsls	r0, r0, #1
+ 169 001c 405A     		ldrh	r0, [r0, r1]
+ 170 001e 2340     		ands	r3, r4
+ 171 0020 4343     		muls	r3, r0
+ 172 0022 5200     		lsls	r2, r2, #1
+ 173 0024 525A     		ldrh	r2, [r2, r1]
+ 174 0026 9B18     		adds	r3, r3, r2
+ 175 0028 8022     		movs	r2, #128
+ 176 002a 181C     		adds	r0, r3, #0
+ 177 002c 9BB2     		uxth	r3, r3
+ 178 002e 9200     		lsls	r2, r2, #2
+ARM GAS  /tmp/ccuAiNBV.s 			page 4
+
+
+ 179 0030 9342     		cmp	r3, r2
+ 180 0032 00D9     		bls	.L20
+ 181 0034 101C     		adds	r0, r2, #0
+ 182              	.L20:
+ 183 0036 80B2     		uxth	r0, r0
+ 184              		@ sp needed
+ 185 0038 10BD     		pop	{r4, pc}
+ 186              	.L22:
+ 187 003a C046     		.align	2
+ 188              	.L21:
+ 189 003c 00000000 		.word	.LC1
+ 190 0040 00000000 		.word	WLENCP
+ 192              		.section	.text.ROSE_cipher,"ax",%progbits
+ 193              		.align	1
+ 194              		.global	ROSE_cipher
+ 195              		.syntax unified
+ 196              		.code	16
+ 197              		.thumb_func
+ 199              	ROSE_cipher:
+ 200              		@ args = 0, pretend = 0, frame = 24
+ 201              		@ frame_needed = 0, uses_anonymous_args = 0
+ 202 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 203 0002 87B0     		sub	sp, sp, #28
+ 204 0004 1600     		movs	r6, r2
+ 205 0006 1D00     		movs	r5, r3
+ 206 0008 0400     		movs	r4, r0
+ 207 000a 0391     		str	r1, [sp, #12]
+ 208 000c FFF7FEFF 		bl	ROSE_rvec_len
+ 209 0010 1F4B     		ldr	r3, .L29
+ 210 0012 241A     		subs	r4, r4, r0
+ 211 0014 E318     		adds	r3, r4, r3
+ 212 0016 0F27     		movs	r7, #15
+ 213 0018 3400     		movs	r4, r6
+ 214 001a 0293     		str	r3, [sp, #8]
+ 215 001c 039B     		ldr	r3, [sp, #12]
+ 216 001e 3C40     		ands	r4, r7
+ 217 0020 BE43     		bics	r6, r7
+ 218 0022 6519     		adds	r5, r4, r5
+ 219 0024 1B09     		lsrs	r3, r3, #4
+ 220 0026 0196     		str	r6, [sp, #4]
+ 221 0028 0593     		str	r3, [sp, #20]
+ 222 002a EEB2     		uxtb	r6, r5
+ 223              	.L24:
+ 224 002c B442     		cmp	r4, r6
+ 225 002e 01D3     		bcc	.L28
+ 226 0030 07B0     		add	sp, sp, #28
+ 227              		@ sp needed
+ 228 0032 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 229              	.L28:
+ 230 0034 002C     		cmp	r4, #0
+ 231 0036 0BD1     		bne	.L25
+ 232 0038 0F2E     		cmp	r6, #15
+ 233 003a 09D9     		bls	.L25
+ 234 003c 019B     		ldr	r3, [sp, #4]
+ 235 003e 1021     		movs	r1, #16
+ 236 0040 1800     		movs	r0, r3
+ 237 0042 059A     		ldr	r2, [sp, #20]
+ARM GAS  /tmp/ccuAiNBV.s 			page 5
+
+
+ 238 0044 FFF7FEFF 		bl	ROSE_payload_encrypt.constprop.0
+ 239              	.L26:
+ 240 0048 0F34     		adds	r4, r4, #15
+ 241 004a E4B2     		uxtb	r4, r4
+ 242 004c BC43     		bics	r4, r7
+ 243 004e EDE7     		b	.L24
+ 244              	.L25:
+ 245 0050 2500     		movs	r5, r4
+ 246 0052 1022     		movs	r2, #16
+ 247 0054 029B     		ldr	r3, [sp, #8]
+ 248 0056 3D40     		ands	r5, r7
+ 249 0058 1B19     		adds	r3, r3, r4
+ 250 005a 0393     		str	r3, [sp, #12]
+ 251 005c 019B     		ldr	r3, [sp, #4]
+ 252 005e 551B     		subs	r5, r2, r5
+ 253 0060 1B19     		adds	r3, r3, r4
+ 254 0062 0493     		str	r3, [sp, #16]
+ 255 0064 331B     		subs	r3, r6, r4
+ 256 0066 9D42     		cmp	r5, r3
+ 257 0068 00DD     		ble	.L27
+ 258 006a 1D00     		movs	r5, r3
+ 259              	.L27:
+ 260 006c 2A00     		movs	r2, r5
+ 261 006e 0499     		ldr	r1, [sp, #16]
+ 262 0070 0398     		ldr	r0, [sp, #12]
+ 263 0072 FFF7FEFF 		bl	memcpy
+ 264 0076 029B     		ldr	r3, [sp, #8]
+ 265 0078 059A     		ldr	r2, [sp, #20]
+ 266 007a 1800     		movs	r0, r3
+ 267 007c 1021     		movs	r1, #16
+ 268 007e FFF7FEFF 		bl	ROSE_payload_encrypt.constprop.0
+ 269 0082 2A00     		movs	r2, r5
+ 270 0084 0399     		ldr	r1, [sp, #12]
+ 271 0086 0498     		ldr	r0, [sp, #16]
+ 272 0088 FFF7FEFF 		bl	memcpy
+ 273 008c DCE7     		b	.L26
+ 274              	.L30:
+ 275 008e C046     		.align	2
+ 276              	.L29:
+ 277 0090 53040000 		.word	1107
+ 279              		.section	.rodata.ROSE_init.str1.1,"aMS",%progbits,1
+ 280              	.LC2:
+ 281 0000 6C626D2F 		.ascii	"lbm/smtc_modem_core/smtc_modem_services/src/stream/"
+ 281      736D7463 
+ 281      5F6D6F64 
+ 281      656D5F63 
+ 281      6F72652F 
+ 282 0033 726F7365 		.ascii	"rose.c\000"
+ 282      2E6300
+ 283              	.LC4:
+ 284 003a 4552524F 		.ascii	"ERROR\000"
+ 284      5200
+ 285              	.LC6:
+ 286 0040 25732028 		.ascii	"%s (%s:%d) \000"
+ 286      25733A25 
+ 286      64292000 
+ 287              	.LC8:
+ARM GAS  /tmp/ccuAiNBV.s 			page 6
+
+
+ 288 004c 524F5345 		.ascii	"ROSE_BAD_UNITSZ\012\000"
+ 288      5F424144 
+ 288      5F554E49 
+ 288      54535A0A 
+ 288      00
+ 289              	.LC10:
+ 290 005d 524F5345 		.ascii	"ROSE_NOMEM\012\000"
+ 290      5F4E4F4D 
+ 290      454D0A00 
+ 291              		.global	__aeabi_uidiv
+ 292              		.global	__aeabi_idiv
+ 293              		.section	.text.ROSE_init,"ax",%progbits
+ 294              		.align	1
+ 295              		.global	ROSE_init
+ 296              		.syntax unified
+ 297              		.code	16
+ 298              		.thumb_func
+ 300              	ROSE_init:
+ 301              		@ args = 4, pretend = 0, frame = 8
+ 302              		@ frame_needed = 0, uses_anonymous_args = 0
+ 303 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 304 0002 1E00     		movs	r6, r3
+ 305 0004 08AB     		add	r3, sp, #32
+ 306 0006 1D78     		ldrb	r5, [r3]
+ 307 0008 0192     		str	r2, [sp, #4]
+ 308 000a 0F00     		movs	r7, r1
+ 309 000c 244A     		ldr	r2, .L39
+ 310 000e 0021     		movs	r1, #0
+ 311 0010 0400     		movs	r4, r0
+ 312 0012 FFF7FEFF 		bl	memset
+ 313 0016 6B1E     		subs	r3, r5, #1
+ 314 0018 012B     		cmp	r3, #1
+ 315 001a 10D9     		bls	.L32
+ 316 001c FB22     		movs	r2, #251
+ 317 001e 2B1F     		subs	r3, r5, #4
+ 318 0020 1342     		tst	r3, r2
+ 319 0022 0CD0     		beq	.L32
+ 320 0024 2823     		movs	r3, #40
+ 321 0026 1F4A     		ldr	r2, .L39+4
+ 322 0028 1F49     		ldr	r1, .L39+8
+ 323 002a FF33     		adds	r3, r3, #255
+ 324 002c 1F48     		ldr	r0, .L39+12
+ 325 002e FFF7FEFF 		bl	printf
+ 326 0032 1F48     		ldr	r0, .L39+16
+ 327 0034 FFF7FEFF 		bl	printf
+ 328 0038 0420     		movs	r0, #4
+ 329              	.L38:
+ 330 003a 4042     		rsbs	r0, r0, #0
+ 331              	.L31:
+ 332              		@ sp needed
+ 333 003c FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
+ 334              	.L32:
+ 335 003e 3800     		movs	r0, r7
+ 336 0040 FFF7FEFF 		bl	ROSE_encWL
+ 337 0044 FFF7FEFF 		bl	ROSE_decWL
+ 338 0048 A574     		strb	r5, [r4, #18]
+ 339 004a 4543     		muls	r5, r0
+ARM GAS  /tmp/ccuAiNBV.s 			page 7
+
+
+ 340 004c 019B     		ldr	r3, [sp, #4]
+ 341 004e A081     		strh	r0, [r4, #12]
+ 342 0050 0700     		movs	r7, r0
+ 343 0052 2000     		movs	r0, r4
+ 344 0054 ED18     		adds	r5, r5, r3
+ 345 0056 FFF7FEFF 		bl	ROSE_rvec_len
+ 346 005a 164B     		ldr	r3, .L39+20
+ 347 005c 1335     		adds	r5, r5, #19
+ 348 005e 201A     		subs	r0, r4, r0
+ 349 0060 6519     		adds	r5, r4, r5
+ 350 0062 C018     		adds	r0, r0, r3
+ 351 0064 8542     		cmp	r5, r0
+ 352 0066 0BD9     		bls	.L34
+ 353 0068 3023     		movs	r3, #48
+ 354 006a 0E4A     		ldr	r2, .L39+4
+ 355 006c 0E49     		ldr	r1, .L39+8
+ 356 006e FF33     		adds	r3, r3, #255
+ 357 0070 0E48     		ldr	r0, .L39+12
+ 358 0072 FFF7FEFF 		bl	printf
+ 359 0076 1048     		ldr	r0, .L39+24
+ 360 0078 FFF7FEFF 		bl	printf
+ 361 007c 0220     		movs	r0, #2
+ 362 007e DCE7     		b	.L38
+ 363              	.L34:
+ 364 0080 3000     		movs	r0, r6
+ 365 0082 7843     		muls	r0, r7
+ 366 0084 6421     		movs	r1, #100
+ 367 0086 E670     		strb	r6, [r4, #3]
+ 368 0088 6330     		adds	r0, r0, #99
+ 369 008a FFF7FEFF 		bl	__aeabi_uidiv
+ 370 008e 8123     		movs	r3, #129
+ 371 0090 A060     		str	r0, [r4, #8]
+ 372 0092 0020     		movs	r0, #0
+ 373 0094 1B01     		lsls	r3, r3, #4
+ 374 0096 2782     		strh	r7, [r4, #16]
+ 375 0098 E781     		strh	r7, [r4, #14]
+ 376 009a 6060     		str	r0, [r4, #4]
+ 377 009c 2380     		strh	r3, [r4]
+ 378 009e CDE7     		b	.L31
+ 379              	.L40:
+ 380              		.align	2
+ 381              	.L39:
+ 382 00a0 54040000 		.word	1108
+ 383 00a4 00000000 		.word	.LC2
+ 384 00a8 3A000000 		.word	.LC4
+ 385 00ac 40000000 		.word	.LC6
+ 386 00b0 4C000000 		.word	.LC8
+ 387 00b4 53040000 		.word	1107
+ 388 00b8 5D000000 		.word	.LC10
+ 390              		.section	.text.ROSE_enable_encryption,"ax",%progbits
+ 391              		.align	1
+ 392              		.global	ROSE_enable_encryption
+ 393              		.syntax unified
+ 394              		.code	16
+ 395              		.thumb_func
+ 397              	ROSE_enable_encryption:
+ 398              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccuAiNBV.s 			page 8
+
+
+ 399              		@ frame_needed = 0, uses_anonymous_args = 0
+ 400              		@ link register save eliminated.
+ 401 0000 0378     		ldrb	r3, [r0]
+ 402 0002 102B     		cmp	r3, #16
+ 403 0004 03D1     		bne	.L43
+ 404 0006 0833     		adds	r3, r3, #8
+ 405 0008 0370     		strb	r3, [r0]
+ 406 000a 0020     		movs	r0, #0
+ 407              	.L42:
+ 408              		@ sp needed
+ 409 000c 7047     		bx	lr
+ 410              	.L43:
+ 411 000e 0720     		movs	r0, #7
+ 412 0010 4042     		rsbs	r0, r0, #0
+ 413 0012 FBE7     		b	.L42
+ 415              		.section	.text.ROSE_getSoff,"ax",%progbits
+ 416              		.align	1
+ 417              		.global	ROSE_getSoff
+ 418              		.syntax unified
+ 419              		.code	16
+ 420              		.thumb_func
+ 422              	ROSE_getSoff:
+ 423              		@ args = 0, pretend = 0, frame = 0
+ 424              		@ frame_needed = 0, uses_anonymous_args = 0
+ 425              		@ link register save eliminated.
+ 426 0000 038A     		ldrh	r3, [r0, #16]
+ 427 0002 4268     		ldr	r2, [r0, #4]
+ 428 0004 C089     		ldrh	r0, [r0, #14]
+ 429 0006 9B18     		adds	r3, r3, r2
+ 430 0008 181A     		subs	r0, r3, r0
+ 431              		@ sp needed
+ 432 000a 7047     		bx	lr
+ 434              		.section	.text.ROSE_getFree,"ax",%progbits
+ 435              		.align	1
+ 436              		.global	ROSE_getFree
+ 437              		.syntax unified
+ 438              		.code	16
+ 439              		.thumb_func
+ 441              	ROSE_getFree:
+ 442              		@ args = 0, pretend = 0, frame = 0
+ 443              		@ frame_needed = 0, uses_anonymous_args = 0
+ 444 0000 10B5     		push	{r4, lr}
+ 445 0002 0400     		movs	r4, r0
+ 446              		@ sp needed
+ 447 0004 FFF7FEFF 		bl	ROSE_rvec_len
+ 448 0008 218A     		ldrh	r1, [r4, #16]
+ 449 000a A27C     		ldrb	r2, [r4, #18]
+ 450 000c 034B     		ldr	r3, .L46
+ 451 000e 4A43     		muls	r2, r1
+ 452 0010 181A     		subs	r0, r3, r0
+ 453 0012 1332     		adds	r2, r2, #19
+ 454 0014 801A     		subs	r0, r0, r2
+ 455 0016 80B2     		uxth	r0, r0
+ 456 0018 10BD     		pop	{r4, pc}
+ 457              	.L47:
+ 458 001a C046     		.align	2
+ 459              	.L46:
+ARM GAS  /tmp/ccuAiNBV.s 			page 9
+
+
+ 460 001c 53040000 		.word	1107
+ 462              		.section	.text.ROSE_getPending,"ax",%progbits
+ 463              		.align	1
+ 464              		.global	ROSE_getPending
+ 465              		.syntax unified
+ 466              		.code	16
+ 467              		.thumb_func
+ 469              	ROSE_getPending:
+ 470              		@ args = 0, pretend = 0, frame = 0
+ 471              		@ frame_needed = 0, uses_anonymous_args = 0
+ 472              		@ link register save eliminated.
+ 473 0000 038A     		ldrh	r3, [r0, #16]
+ 474 0002 C289     		ldrh	r2, [r0, #14]
+ 475 0004 807C     		ldrb	r0, [r0, #18]
+ 476 0006 9B1A     		subs	r3, r3, r2
+ 477 0008 5843     		muls	r0, r3
+ 478              		@ sp needed
+ 479 000a 80B2     		uxth	r0, r0
+ 480 000c 7047     		bx	lr
+ 482              		.section	.text.ROSE_getStatus,"ax",%progbits
+ 483              		.align	1
+ 484              		.global	ROSE_getStatus
+ 485              		.syntax unified
+ 486              		.code	16
+ 487              		.thumb_func
+ 489              	ROSE_getStatus:
+ 490              		@ args = 0, pretend = 0, frame = 0
+ 491              		@ frame_needed = 0, uses_anonymous_args = 0
+ 492 0000 70B5     		push	{r4, r5, r6, lr}
+ 493 0002 018A     		ldrh	r1, [r0, #16]
+ 494 0004 C289     		ldrh	r2, [r0, #14]
+ 495 0006 0400     		movs	r4, r0
+ 496 0008 0223     		movs	r3, #2
+ 497 000a 9142     		cmp	r1, r2
+ 498 000c 12D8     		bhi	.L49
+ 499 000e 0578     		ldrb	r5, [r0]
+ 500 0010 6B06     		lsls	r3, r5, #25
+ 501 0012 0AD5     		bpl	.L51
+ 502 0014 8389     		ldrh	r3, [r0, #12]
+ 503 0016 C078     		ldrb	r0, [r0, #3]
+ 504 0018 6421     		movs	r1, #100
+ 505 001a 5843     		muls	r0, r3
+ 506 001c 6330     		adds	r0, r0, #99
+ 507 001e FFF7FEFF 		bl	__aeabi_uidiv
+ 508 0022 A268     		ldr	r2, [r4, #8]
+ 509 0024 0223     		movs	r3, #2
+ 510 0026 8242     		cmp	r2, r0
+ 511 0028 04DB     		blt	.L49
+ 512              	.L51:
+ 513 002a 0623     		movs	r3, #6
+ 514 002c 1D40     		ands	r5, r3
+ 515 002e 6B1E     		subs	r3, r5, #1
+ 516 0030 9D41     		sbcs	r5, r5, r3
+ 517 0032 6B1C     		adds	r3, r5, #1
+ 518              	.L49:
+ 519 0034 1800     		movs	r0, r3
+ 520              		@ sp needed
+ARM GAS  /tmp/ccuAiNBV.s 			page 10
+
+
+ 521 0036 70BD     		pop	{r4, r5, r6, pc}
+ 523              		.section	.rodata.ROSE_getData.str1.1,"aMS",%progbits,1
+ 524              	.LC14:
+ 525 0000 494E464F 		.ascii	"INFO\000"
+ 525      00
+ 526              	.LC17:
+ 527 0005 67657444 		.ascii	"getData %d redc %d sysc %d redc_target %d redcnt %d"
+ 527      61746120 
+ 527      25642072 
+ 527      65646320 
+ 527      25642073 
+ 528 0038 0A00     		.ascii	"\012\000"
+ 529              	.LC19:
+ 530 003a 4745543A 		.ascii	"GET: ROSE->redcnt %d redc %d\012\000"
+ 530      20524F53 
+ 530      452D3E72 
+ 530      6564636E 
+ 530      74202564 
+ 531              		.global	__aeabi_uidivmod
+ 532              	.LC21:
+ 533 0058 44494C55 		.ascii	"DILUTE: ROSE->redcnt %d shift %d\012\000"
+ 533      54453A20 
+ 533      524F5345 
+ 533      2D3E7265 
+ 533      64636E74 
+ 534              		.global	__aeabi_idivmod
+ 535              		.section	.text.ROSE_getData,"ax",%progbits
+ 536              		.align	1
+ 537              		.global	ROSE_getData
+ 538              		.syntax unified
+ 539              		.code	16
+ 540              		.thumb_func
+ 542              	ROSE_getData:
+ 543              		@ args = 0, pretend = 0, frame = 64
+ 544              		@ frame_needed = 0, uses_anonymous_args = 0
+ 545 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 546 0002 93B0     		sub	sp, sp, #76
+ 547 0004 0593     		str	r3, [sp, #20]
+ 548 0006 0378     		ldrb	r3, [r0]
+ 549 0008 0392     		str	r2, [sp, #12]
+ 550 000a 0793     		str	r3, [sp, #28]
+ 551 000c 0623     		movs	r3, #6
+ 552 000e 079A     		ldr	r2, [sp, #28]
+ 553 0010 0400     		movs	r4, r0
+ 554 0012 1A40     		ands	r2, r3
+ 555 0014 0A92     		str	r2, [sp, #40]
+ 556 0016 059A     		ldr	r2, [sp, #20]
+ 557 0018 0E91     		str	r1, [sp, #56]
+ 558 001a 1078     		ldrb	r0, [r2]
+ 559 001c 079A     		ldr	r2, [sp, #28]
+ 560 001e 1A42     		tst	r2, r3
+ 561 0020 35D0     		beq	.L60
+ 562 0022 0828     		cmp	r0, #8
+ 563 0024 05D8     		bhi	.L61
+ 564              	.L62:
+ 565 0026 0023     		movs	r3, #0
+ 566 0028 0320     		movs	r0, #3
+ARM GAS  /tmp/ccuAiNBV.s 			page 11
+
+
+ 567 002a 059A     		ldr	r2, [sp, #20]
+ 568 002c 1370     		strb	r3, [r2]
+ 569              	.L110:
+ 570 002e 4042     		rsbs	r0, r0, #0
+ 571 0030 2BE0     		b	.L59
+ 572              	.L61:
+ 573 0032 0322     		movs	r2, #3
+ 574 0034 A37C     		ldrb	r3, [r4, #18]
+ 575 0036 013B     		subs	r3, r3, #1
+ 576 0038 DBB2     		uxtb	r3, r3
+ 577 003a 9342     		cmp	r3, r2
+ 578 003c 01D8     		bhi	.L64
+ 579 003e BD4A     		ldr	r2, .L111
+ 580 0040 D25C     		ldrb	r2, [r2, r3]
+ 581              	.L64:
+ 582 0042 FF23     		movs	r3, #255
+ 583 0044 0399     		ldr	r1, [sp, #12]
+ 584 0046 5200     		lsls	r2, r2, #1
+ 585 0048 0B70     		strb	r3, [r1]
+ 586 004a 2378     		ldrb	r3, [r4]
+ 587 004c 5B07     		lsls	r3, r3, #29
+ 588 004e DB0F     		lsrs	r3, r3, #31
+ 589 0050 1343     		orrs	r3, r2
+ 590 0052 4B70     		strb	r3, [r1, #1]
+ 591 0054 A089     		ldrh	r0, [r4, #12]
+ 592 0056 FFF7FEFF 		bl	ROSE_encWL
+ 593 005a 039B     		ldr	r3, [sp, #12]
+ 594 005c 039A     		ldr	r2, [sp, #12]
+ 595 005e 9870     		strb	r0, [r3, #2]
+ 596 0060 E378     		ldrb	r3, [r4, #3]
+ 597 0062 0399     		ldr	r1, [sp, #12]
+ 598 0064 D370     		strb	r3, [r2, #3]
+ 599 0066 6378     		ldrb	r3, [r4, #1]
+ 600 0068 1372     		strb	r3, [r2, #8]
+ 601 006a 6368     		ldr	r3, [r4, #4]
+ 602 006c 1371     		strb	r3, [r2, #4]
+ 603 006e 1A0A     		lsrs	r2, r3, #8
+ 604 0070 4A71     		strb	r2, [r1, #5]
+ 605 0072 1A0C     		lsrs	r2, r3, #16
+ 606 0074 1B0E     		lsrs	r3, r3, #24
+ 607 0076 CB71     		strb	r3, [r1, #7]
+ 608 0078 0923     		movs	r3, #9
+ 609 007a 8A71     		strb	r2, [r1, #6]
+ 610 007c 059A     		ldr	r2, [sp, #20]
+ 611 007e 1370     		strb	r3, [r2]
+ 612 0080 0222     		movs	r2, #2
+ 613 0082 2378     		ldrb	r3, [r4]
+ 614 0084 9343     		bics	r3, r2
+ 615 0086 2370     		strb	r3, [r4]
+ 616              	.L65:
+ 617 0088 0020     		movs	r0, #0
+ 618              	.L59:
+ 619 008a 13B0     		add	sp, sp, #76
+ 620              		@ sp needed
+ 621 008c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 622              	.L60:
+ 623 008e 6368     		ldr	r3, [r4, #4]
+ARM GAS  /tmp/ccuAiNBV.s 			page 12
+
+
+ 624 0090 0693     		str	r3, [sp, #24]
+ 625 0092 A378     		ldrb	r3, [r4, #2]
+ 626 0094 002B     		cmp	r3, #0
+ 627 0096 01D1     		bne	.L66
+ 628 0098 0333     		adds	r3, r3, #3
+ 629 009a 0A93     		str	r3, [sp, #40]
+ 630              	.L66:
+ 631 009c A77C     		ldrb	r7, [r4, #18]
+ 632 009e 0A9B     		ldr	r3, [sp, #40]
+ 633 00a0 0338     		subs	r0, r0, #3
+ 634 00a2 3900     		movs	r1, r7
+ 635 00a4 C01A     		subs	r0, r0, r3
+ 636 00a6 FFF7FEFF 		bl	__aeabi_idiv
+ 637 00aa 0490     		str	r0, [sp, #16]
+ 638 00ac 0028     		cmp	r0, #0
+ 639 00ae BADD     		ble	.L62
+ 640 00b0 E189     		ldrh	r1, [r4, #14]
+ 641 00b2 A589     		ldrh	r5, [r4, #12]
+ 642 00b4 268A     		ldrh	r6, [r4, #16]
+ 643 00b6 A942     		cmp	r1, r5
+ 644 00b8 00D3     		bcc	.LCB665
+ 645 00ba 8FE0     		b	.L67	@long jump
+ 646              	.LCB665:
+ 647 00bc B542     		cmp	r5, r6
+ 648 00be 03D8     		bhi	.L68
+ 649 00c0 079B     		ldr	r3, [sp, #28]
+ 650 00c2 DB07     		lsls	r3, r3, #31
+ 651 00c4 00D5     		bpl	.LCB673
+ 652 00c6 83E0     		b	.L69	@long jump
+ 653              	.LCB673:
+ 654              	.L68:
+ 655 00c8 731A     		subs	r3, r6, r1
+ 656 00ca 00D5     		bpl	.LCB677
+ 657 00cc 7AE1     		b	.L96	@long jump
+ 658              	.LCB677:
+ 659 00ce 03D1     		bne	.L70
+ 660              	.L92:
+ 661 00d0 0023     		movs	r3, #0
+ 662 00d2 059A     		ldr	r2, [sp, #20]
+ 663 00d4 1370     		strb	r3, [r2]
+ 664 00d6 D7E7     		b	.L65
+ 665              	.L70:
+ 666 00d8 7E2B     		cmp	r3, #126
+ 667 00da 00DD     		ble	.L71
+ 668 00dc 7E23     		movs	r3, #126
+ 669              	.L71:
+ 670 00de 1E00     		movs	r6, r3
+ 671 00e0 049B     		ldr	r3, [sp, #16]
+ 672 00e2 9E42     		cmp	r6, r3
+ 673 00e4 00DD     		ble	.L72
+ 674 00e6 1E00     		movs	r6, r3
+ 675              	.L72:
+ 676 00e8 3200     		movs	r2, r6
+ 677 00ea 7943     		muls	r1, r7
+ 678 00ec 7A43     		muls	r2, r7
+ 679 00ee 0027     		movs	r7, #0
+ 680 00f0 039B     		ldr	r3, [sp, #12]
+ARM GAS  /tmp/ccuAiNBV.s 			page 13
+
+
+ 681 00f2 1331     		adds	r1, r1, #19
+ 682 00f4 D81C     		adds	r0, r3, #3
+ 683 00f6 6118     		adds	r1, r4, r1
+ 684 00f8 FFF7FEFF 		bl	memcpy
+ 685 00fc E389     		ldrh	r3, [r4, #14]
+ 686 00fe 9B19     		adds	r3, r3, r6
+ 687 0100 E381     		strh	r3, [r4, #14]
+ 688 0102 6368     		ldr	r3, [r4, #4]
+ 689 0104 9B19     		adds	r3, r3, r6
+ 690 0106 6360     		str	r3, [r4, #4]
+ 691              	.L73:
+ 692 0108 E289     		ldrh	r2, [r4, #14]
+ 693 010a A189     		ldrh	r1, [r4, #12]
+ 694 010c 8A42     		cmp	r2, r1
+ 695 010e 2CD9     		bls	.L91
+ 696 0110 238A     		ldrh	r3, [r4, #16]
+ 697 0112 551A     		subs	r5, r2, r1
+ 698 0114 CB18     		adds	r3, r1, r3
+ 699 0116 9B1A     		subs	r3, r3, r2
+ 700 0118 A068     		ldr	r0, [r4, #8]
+ 701 011a 2382     		strh	r3, [r4, #16]
+ 702 011c ABB2     		uxth	r3, r5
+ 703 011e CB1A     		subs	r3, r1, r3
+ 704 0120 5843     		muls	r0, r3
+ 705 0122 E181     		strh	r1, [r4, #14]
+ 706 0124 FFF7FEFF 		bl	__aeabi_idiv
+ 707 0128 F323     		movs	r3, #243
+ 708 012a 834A     		ldr	r2, .L111+4
+ 709 012c 5B00     		lsls	r3, r3, #1
+ 710 012e 8349     		ldr	r1, .L111+8
+ 711 0130 A060     		str	r0, [r4, #8]
+ 712 0132 8348     		ldr	r0, .L111+12
+ 713 0134 FFF7FEFF 		bl	printf
+ 714 0138 2A00     		movs	r2, r5
+ 715 013a A168     		ldr	r1, [r4, #8]
+ 716 013c 8148     		ldr	r0, .L111+16
+ 717 013e FFF7FEFF 		bl	printf
+ 718 0142 2000     		movs	r0, r4
+ 719 0144 A17C     		ldrb	r1, [r4, #18]
+ 720 0146 228A     		ldrh	r2, [r4, #16]
+ 721 0148 1330     		adds	r0, r0, #19
+ 722 014a 4A43     		muls	r2, r1
+ 723 014c 6943     		muls	r1, r5
+ 724 014e 1331     		adds	r1, r1, #19
+ 725 0150 6118     		adds	r1, r4, r1
+ 726 0152 FFF7FEFF 		bl	memmove
+ 727 0156 2A00     		movs	r2, r5
+ 728 0158 A07C     		ldrb	r0, [r4, #18]
+ 729 015a 238A     		ldrh	r3, [r4, #16]
+ 730 015c 4243     		muls	r2, r0
+ 731 015e 5843     		muls	r0, r3
+ 732 0160 1330     		adds	r0, r0, #19
+ 733 0162 0021     		movs	r1, #0
+ 734 0164 2018     		adds	r0, r4, r0
+ 735 0166 FFF7FEFF 		bl	memset
+ 736              	.L91:
+ 737 016a F719     		adds	r7, r6, r7
+ARM GAS  /tmp/ccuAiNBV.s 			page 14
+
+
+ 738 016c 002F     		cmp	r7, #0
+ 739 016e AFD0     		beq	.L92
+ 740 0170 A37C     		ldrb	r3, [r4, #18]
+ 741 0172 059A     		ldr	r2, [sp, #20]
+ 742 0174 7B43     		muls	r3, r7
+ 743 0176 0333     		adds	r3, r3, #3
+ 744 0178 1370     		strb	r3, [r2]
+ 745 017a 0699     		ldr	r1, [sp, #24]
+ 746 017c 039A     		ldr	r2, [sp, #12]
+ 747 017e F3B2     		uxtb	r3, r6
+ 748 0180 5170     		strb	r1, [r2, #1]
+ 749 0182 1370     		strb	r3, [r2]
+ 750 0184 6A46     		mov	r2, sp
+ 751 0186 128B     		ldrh	r2, [r2, #24]
+ 752 0188 0399     		ldr	r1, [sp, #12]
+ 753 018a 120A     		lsrs	r2, r2, #8
+ 754 018c 8A70     		strb	r2, [r1, #2]
+ 755 018e 0A9A     		ldr	r2, [sp, #40]
+ 756 0190 002A     		cmp	r2, #0
+ 757 0192 15D0     		beq	.L93
+ 758 0194 8022     		movs	r2, #128
+ 759 0196 5242     		rsbs	r2, r2, #0
+ 760 0198 1343     		orrs	r3, r2
+ 761 019a 0B70     		strb	r3, [r1]
+ 762 019c 059B     		ldr	r3, [sp, #20]
+ 763 019e 059A     		ldr	r2, [sp, #20]
+ 764 01a0 1D78     		ldrb	r5, [r3]
+ 765 01a2 EB1C     		adds	r3, r5, #3
+ 766 01a4 1370     		strb	r3, [r2]
+ 767 01a6 A089     		ldrh	r0, [r4, #12]
+ 768 01a8 4E19     		adds	r6, r1, r5
+ 769 01aa FFF7FEFF 		bl	ROSE_encWL
+ 770 01ae 039B     		ldr	r3, [sp, #12]
+ 771 01b0 0135     		adds	r5, r5, #1
+ 772 01b2 5D19     		adds	r5, r3, r5
+ 773 01b4 069B     		ldr	r3, [sp, #24]
+ 774 01b6 3070     		strb	r0, [r6]
+ 775 01b8 1B0C     		lsrs	r3, r3, #16
+ 776 01ba 2B70     		strb	r3, [r5]
+ 777 01bc 1B0A     		lsrs	r3, r3, #8
+ 778 01be 6B70     		strb	r3, [r5, #1]
+ 779              	.L93:
+ 780 01c0 A078     		ldrb	r0, [r4, #2]
+ 781 01c2 6178     		ldrb	r1, [r4, #1]
+ 782 01c4 0130     		adds	r0, r0, #1
+ 783 01c6 0131     		adds	r1, r1, #1
+ 784 01c8 FFF7FEFF 		bl	__aeabi_idivmod
+ 785 01cc A170     		strb	r1, [r4, #2]
+ 786 01ce 5BE7     		b	.L65
+ 787              	.L69:
+ 788 01d0 069B     		ldr	r3, [sp, #24]
+ 789 01d2 691A     		subs	r1, r5, r1
+ 790 01d4 5B18     		adds	r3, r3, r1
+ 791 01d6 0693     		str	r3, [sp, #24]
+ 792 01d8 6360     		str	r3, [r4, #4]
+ 793 01da E581     		strh	r5, [r4, #14]
+ 794              	.L67:
+ARM GAS  /tmp/ccuAiNBV.s 			page 15
+
+
+ 795 01dc E078     		ldrb	r0, [r4, #3]
+ 796 01de 6421     		movs	r1, #100
+ 797 01e0 6843     		muls	r0, r5
+ 798 01e2 6330     		adds	r0, r0, #99
+ 799 01e4 FFF7FEFF 		bl	__aeabi_uidiv
+ 800 01e8 A368     		ldr	r3, [r4, #8]
+ 801 01ea 0890     		str	r0, [sp, #32]
+ 802 01ec C31A     		subs	r3, r0, r3
+ 803 01ee DF43     		mvns	r7, r3
+ 804 01f0 FF17     		asrs	r7, r7, #31
+ 805 01f2 E289     		ldrh	r2, [r4, #14]
+ 806 01f4 1F40     		ands	r7, r3
+ 807 01f6 AF42     		cmp	r7, r5
+ 808 01f8 00DD     		ble	.L75
+ 809 01fa 2F00     		movs	r7, r5
+ 810              	.L75:
+ 811 01fc 049B     		ldr	r3, [sp, #16]
+ 812 01fe BB42     		cmp	r3, r7
+ 813 0200 41DB     		blt	.L97
+ 814 0202 B61A     		subs	r6, r6, r2
+ 815 0204 7E2E     		cmp	r6, #126
+ 816 0206 00DD     		ble	.L77
+ 817 0208 7E26     		movs	r6, #126
+ 818              	.L77:
+ 819 020a 049B     		ldr	r3, [sp, #16]
+ 820 020c DA1B     		subs	r2, r3, r7
+ 821 020e 9642     		cmp	r6, r2
+ 822 0210 00DD     		ble	.L78
+ 823 0212 1600     		movs	r6, r2
+ 824              	.L78:
+ 825 0214 049A     		ldr	r2, [sp, #16]
+ 826 0216 BB19     		adds	r3, r7, r6
+ 827 0218 9342     		cmp	r3, r2
+ 828 021a 09DA     		bge	.L76
+ 829 021c 3023     		movs	r3, #48
+ 830 021e 079A     		ldr	r2, [sp, #28]
+ 831 0220 1A40     		ands	r2, r3
+ 832 0222 202A     		cmp	r2, #32
+ 833 0224 04D1     		bne	.L76
+ 834 0226 049B     		ldr	r3, [sp, #16]
+ 835 0228 9F1B     		subs	r7, r3, r6
+ 836 022a AF42     		cmp	r7, r5
+ 837 022c 00DD     		ble	.L76
+ 838 022e 2F00     		movs	r7, r5
+ 839              	.L76:
+ 840 0230 E823     		movs	r3, #232
+ 841 0232 414A     		ldr	r2, .L111+4
+ 842 0234 4149     		ldr	r1, .L111+8
+ 843 0236 5B00     		lsls	r3, r3, #1
+ 844 0238 4148     		ldr	r0, .L111+12
+ 845 023a FFF7FEFF 		bl	printf
+ 846 023e A368     		ldr	r3, [r4, #8]
+ 847 0240 3A00     		movs	r2, r7
+ 848 0242 0193     		str	r3, [sp, #4]
+ 849 0244 089B     		ldr	r3, [sp, #32]
+ 850 0246 4048     		ldr	r0, .L111+20
+ 851 0248 0093     		str	r3, [sp]
+ARM GAS  /tmp/ccuAiNBV.s 			page 16
+
+
+ 852 024a 0E99     		ldr	r1, [sp, #56]
+ 853 024c 3300     		movs	r3, r6
+ 854 024e FFF7FEFF 		bl	printf
+ 855 0252 002E     		cmp	r6, #0
+ 856 0254 10D0     		beq	.L80
+ 857 0256 A17C     		ldrb	r1, [r4, #18]
+ 858 0258 E389     		ldrh	r3, [r4, #14]
+ 859 025a 0A00     		movs	r2, r1
+ 860 025c 5943     		muls	r1, r3
+ 861 025e 039B     		ldr	r3, [sp, #12]
+ 862 0260 1331     		adds	r1, r1, #19
+ 863 0262 D81C     		adds	r0, r3, #3
+ 864 0264 7243     		muls	r2, r6
+ 865 0266 6118     		adds	r1, r4, r1
+ 866 0268 FFF7FEFF 		bl	memcpy
+ 867 026c E389     		ldrh	r3, [r4, #14]
+ 868 026e 9B19     		adds	r3, r3, r6
+ 869 0270 E381     		strh	r3, [r4, #14]
+ 870 0272 6368     		ldr	r3, [r4, #4]
+ 871 0274 9B19     		adds	r3, r3, r6
+ 872 0276 6360     		str	r3, [r4, #4]
+ 873              	.L80:
+ 874 0278 002F     		cmp	r7, #0
+ 875 027a 07D1     		bne	.L81
+ 876              	.L90:
+ 877 027c 1022     		movs	r2, #16
+ 878 027e 2378     		ldrb	r3, [r4]
+ 879 0280 9343     		bics	r3, r2
+ 880 0282 2370     		strb	r3, [r4]
+ 881 0284 40E7     		b	.L73
+ 882              	.L97:
+ 883 0286 0026     		movs	r6, #0
+ 884 0288 049F     		ldr	r7, [sp, #16]
+ 885 028a D1E7     		b	.L76
+ 886              	.L81:
+ 887 028c A368     		ldr	r3, [r4, #8]
+ 888 028e 089A     		ldr	r2, [sp, #32]
+ 889 0290 FB18     		adds	r3, r7, r3
+ 890 0292 9342     		cmp	r3, r2
+ 891 0294 00DD     		ble	.L82
+ 892 0296 1300     		movs	r3, r2
+ 893              	.L82:
+ 894 0298 A360     		str	r3, [r4, #8]
+ 895 029a DC23     		movs	r3, #220
+ 896 029c 264A     		ldr	r2, .L111+4
+ 897 029e FF33     		adds	r3, r3, #255
+ 898 02a0 2649     		ldr	r1, .L111+8
+ 899 02a2 2748     		ldr	r0, .L111+12
+ 900 02a4 FFF7FEFF 		bl	printf
+ 901 02a8 A168     		ldr	r1, [r4, #8]
+ 902 02aa 3A00     		movs	r2, r7
+ 903 02ac 2748     		ldr	r0, .L111+24
+ 904 02ae FFF7FEFF 		bl	printf
+ 905 02b2 3300     		movs	r3, r6
+ 906 02b4 A57C     		ldrb	r5, [r4, #18]
+ 907 02b6 039A     		ldr	r2, [sp, #12]
+ 908 02b8 6B43     		muls	r3, r5
+ARM GAS  /tmp/ccuAiNBV.s 			page 17
+
+
+ 909 02ba 0333     		adds	r3, r3, #3
+ 910 02bc D318     		adds	r3, r2, r3
+ 911 02be 0993     		str	r3, [sp, #36]
+ 912 02c0 A389     		ldrh	r3, [r4, #12]
+ 913 02c2 2000     		movs	r0, r4
+ 914 02c4 0493     		str	r3, [sp, #16]
+ 915 02c6 049A     		ldr	r2, [sp, #16]
+ 916 02c8 013B     		subs	r3, r3, #1
+ 917 02ca 1340     		ands	r3, r2
+ 918 02cc 5A42     		rsbs	r2, r3, #0
+ 919 02ce 5341     		adcs	r3, r3, r2
+ 920 02d0 049A     		ldr	r2, [sp, #16]
+ 921 02d2 9B18     		adds	r3, r3, r2
+ 922 02d4 1093     		str	r3, [sp, #64]
+ 923 02d6 FFF7FEFF 		bl	ROSE_rvec_len
+ 924 02da 1D4A     		ldr	r2, .L111+28
+ 925 02dc 231A     		subs	r3, r4, r0
+ 926 02de 9B18     		adds	r3, r3, r2
+ 927 02e0 FAB2     		uxtb	r2, r7
+ 928 02e2 0D90     		str	r0, [sp, #52]
+ 929 02e4 0C93     		str	r3, [sp, #48]
+ 930 02e6 0021     		movs	r1, #0
+ 931 02e8 FBB2     		uxtb	r3, r7
+ 932 02ea 6A43     		muls	r2, r5
+ 933 02ec 0998     		ldr	r0, [sp, #36]
+ 934 02ee 0F93     		str	r3, [sp, #60]
+ 935 02f0 FFF7FEFF 		bl	memset
+ 936 02f4 049B     		ldr	r3, [sp, #16]
+ 937 02f6 5B08     		lsrs	r3, r3, #1
+ 938 02f8 1193     		str	r3, [sp, #68]
+ 939 02fa 0023     		movs	r3, #0
+ 940              	.L109:
+ 941 02fc 0793     		str	r3, [sp, #28]
+ 942 02fe 079A     		ldr	r2, [sp, #28]
+ 943 0300 0F9B     		ldr	r3, [sp, #60]
+ 944 0302 9342     		cmp	r3, r2
+ 945 0304 BAD0     		beq	.L90
+ 946 0306 079B     		ldr	r3, [sp, #28]
+ 947 0308 0E9A     		ldr	r2, [sp, #56]
+ 948 030a 124D     		ldr	r5, .L111+32
+ 949 030c 1B02     		lsls	r3, r3, #8
+ 950 030e 5340     		eors	r3, r2
+ 951 0310 5D43     		muls	r5, r3
+ 952 0312 0021     		movs	r1, #0
+ 953 0314 6B1C     		adds	r3, r5, #1
+ 954 0316 0D9A     		ldr	r2, [sp, #52]
+ 955 0318 0C98     		ldr	r0, [sp, #48]
+ 956 031a 0893     		str	r3, [sp, #32]
+ 957 031c FFF7FEFF 		bl	memset
+ 958 0320 0023     		movs	r3, #0
+ 959 0322 0B93     		str	r3, [sp, #44]
+ 960              	.L84:
+ 961 0324 0B9B     		ldr	r3, [sp, #44]
+ 962 0326 119A     		ldr	r2, [sp, #68]
+ 963 0328 9342     		cmp	r3, r2
+ 964 032a 15D3     		bcc	.L85
+ 965 032c 079B     		ldr	r3, [sp, #28]
+ARM GAS  /tmp/ccuAiNBV.s 			page 18
+
+
+ 966 032e 0133     		adds	r3, r3, #1
+ 967 0330 E4E7     		b	.L109
+ 968              	.L112:
+ 969 0332 C046     		.align	2
+ 970              	.L111:
+ 971 0334 00000000 		.word	CSWTCH.46
+ 972 0338 00000000 		.word	.LC2
+ 973 033c 00000000 		.word	.LC14
+ 974 0340 40000000 		.word	.LC6
+ 975 0344 58000000 		.word	.LC21
+ 976 0348 05000000 		.word	.LC17
+ 977 034c 3A000000 		.word	.LC19
+ 978 0350 53040000 		.word	1107
+ 979 0354 E9030000 		.word	1001
+ 980              	.L85:
+ 981 0358 089B     		ldr	r3, [sp, #32]
+ 982 035a 089A     		ldr	r2, [sp, #32]
+ 983 035c 5B09     		lsrs	r3, r3, #5
+ 984 035e 5340     		eors	r3, r2
+ 985 0360 8022     		movs	r2, #128
+ 986 0362 9B05     		lsls	r3, r3, #22
+ 987 0364 D203     		lsls	r2, r2, #15
+ 988 0366 1340     		ands	r3, r2
+ 989 0368 089A     		ldr	r2, [sp, #32]
+ 990 036a 1099     		ldr	r1, [sp, #64]
+ 991 036c 5508     		lsrs	r5, r2, #1
+ 992 036e 5B19     		adds	r3, r3, r5
+ 993 0370 1800     		movs	r0, r3
+ 994 0372 0893     		str	r3, [sp, #32]
+ 995 0374 FFF7FEFF 		bl	__aeabi_uidivmod
+ 996 0378 049B     		ldr	r3, [sp, #16]
+ 997 037a 8B42     		cmp	r3, r1
+ 998 037c ECD9     		bls	.L85
+ 999 037e 0723     		movs	r3, #7
+ 1000 0380 0122     		movs	r2, #1
+ 1001 0382 0B40     		ands	r3, r1
+ 1002 0384 9A40     		lsls	r2, r2, r3
+ 1003 0386 0C98     		ldr	r0, [sp, #48]
+ 1004 0388 0C9D     		ldr	r5, [sp, #48]
+ 1005 038a CB08     		lsrs	r3, r1, #3
+ 1006 038c C018     		adds	r0, r0, r3
+ 1007 038e EB5C     		ldrb	r3, [r5, r3]
+ 1008 0390 1A42     		tst	r2, r3
+ 1009 0392 C7D1     		bne	.L84
+ 1010 0394 1343     		orrs	r3, r2
+ 1011 0396 0370     		strb	r3, [r0]
+ 1012 0398 A37C     		ldrb	r3, [r4, #18]
+ 1013 039a 0B9D     		ldr	r5, [sp, #44]
+ 1014 039c 0798     		ldr	r0, [sp, #28]
+ 1015 039e 5943     		muls	r1, r3
+ 1016 03a0 5843     		muls	r0, r3
+ 1017 03a2 0135     		adds	r5, r5, #1
+ 1018 03a4 0B95     		str	r5, [sp, #44]
+ 1019 03a6 099D     		ldr	r5, [sp, #36]
+ 1020 03a8 099A     		ldr	r2, [sp, #36]
+ 1021 03aa EB18     		adds	r3, r5, r3
+ 1022 03ac 1218     		adds	r2, r2, r0
+ARM GAS  /tmp/ccuAiNBV.s 			page 19
+
+
+ 1023 03ae 6118     		adds	r1, r4, r1
+ 1024 03b0 1B18     		adds	r3, r3, r0
+ 1025              	.L87:
+ 1026 03b2 0131     		adds	r1, r1, #1
+ 1027 03b4 9342     		cmp	r3, r2
+ 1028 03b6 B5D0     		beq	.L84
+ 1029 03b8 1078     		ldrb	r0, [r2]
+ 1030 03ba 8D7C     		ldrb	r5, [r1, #18]
+ 1031 03bc 6840     		eors	r0, r5
+ 1032 03be 1070     		strb	r0, [r2]
+ 1033 03c0 0132     		adds	r2, r2, #1
+ 1034 03c2 F6E7     		b	.L87
+ 1035              	.L96:
+ 1036 03c4 0120     		movs	r0, #1
+ 1037 03c6 32E6     		b	.L110
+ 1039              		.section	.rodata.ROSE_processDnFrame.str1.1,"aMS",%progbits,1
+ 1040              	.LC24:
+ 1041 0000 5741524E 		.ascii	"WARN\000"
+ 1041      00
+ 1042              	.LC27:
+ 1043 0005 49676E6F 		.ascii	"Ignoring WL increase to avoid overwriting pending d"
+ 1043      72696E67 
+ 1043      20574C20 
+ 1043      696E6372 
+ 1043      65617365 
+ 1044 0038 6174610A 		.ascii	"ata\012\000"
+ 1044      00
+ 1045              	.LC30:
+ 1046 003d 4E455720 		.ascii	"NEW WL: ROSE->wl %d\012\000"
+ 1046      574C3A20 
+ 1046      524F5345 
+ 1046      2D3E776C 
+ 1046      2025640A 
+ 1047              		.section	.text.ROSE_processDnFrame,"ax",%progbits
+ 1048              		.align	1
+ 1049              		.global	ROSE_processDnFrame
+ 1050              		.syntax unified
+ 1051              		.code	16
+ 1052              		.thumb_func
+ 1054              	ROSE_processDnFrame:
+ 1055              		@ args = 0, pretend = 0, frame = 8
+ 1056              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1057 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 1058 0002 0F78     		ldrb	r7, [r1]
+ 1059 0004 0400     		movs	r4, r0
+ 1060 0006 0D00     		movs	r5, r1
+ 1061 0008 FB07     		lsls	r3, r7, #31
+ 1062 000a 00D4     		bmi	.LCB1110
+ 1063 000c 81E0     		b	.L124	@long jump
+ 1064              	.LCB1110:
+ 1065 000e 042A     		cmp	r2, #4
+ 1066 0010 00D0     		beq	.LCB1112
+ 1067 0012 7EE0     		b	.L124	@long jump
+ 1068              	.LCB1112:
+ 1069 0014 0223     		movs	r3, #2
+ 1070 0016 1F42     		tst	r7, r3
+ 1071 0018 02D0     		beq	.L115
+ARM GAS  /tmp/ccuAiNBV.s 			page 20
+
+
+ 1072 001a 0278     		ldrb	r2, [r0]
+ 1073 001c 1343     		orrs	r3, r2
+ 1074 001e 0370     		strb	r3, [r0]
+ 1075              	.L115:
+ 1076 0020 FB06     		lsls	r3, r7, #27
+ 1077 0022 01D5     		bpl	.L116
+ 1078 0024 AB78     		ldrb	r3, [r5, #2]
+ 1079 0026 E370     		strb	r3, [r4, #3]
+ 1080              	.L116:
+ 1081 0028 BB06     		lsls	r3, r7, #26
+ 1082 002a 01D5     		bpl	.L117
+ 1083 002c EB78     		ldrb	r3, [r5, #3]
+ 1084 002e 6370     		strb	r3, [r4, #1]
+ 1085              	.L117:
+ 1086 0030 3B07     		lsls	r3, r7, #28
+ 1087 0032 1DD5     		bpl	.L118
+ 1088 0034 6878     		ldrb	r0, [r5, #1]
+ 1089 0036 FFF7FEFF 		bl	ROSE_decWL
+ 1090 003a 1023     		movs	r3, #16
+ 1091 003c 0600     		movs	r6, r0
+ 1092 003e 7828     		cmp	r0, #120
+ 1093 0040 01DD     		ble	.L119
+ 1094 0042 C31D     		adds	r3, r0, #7
+ 1095 0044 DB10     		asrs	r3, r3, #3
+ 1096              	.L119:
+ 1097 0046 A17C     		ldrb	r1, [r4, #18]
+ 1098 0048 228A     		ldrh	r2, [r4, #16]
+ 1099 004a 0800     		movs	r0, r1
+ 1100 004c 5043     		muls	r0, r2
+ 1101 004e 1330     		adds	r0, r0, #19
+ 1102 0050 2018     		adds	r0, r4, r0
+ 1103 0052 8446     		mov	ip, r0
+ 1104 0054 3048     		ldr	r0, .L144
+ 1105 0056 C31A     		subs	r3, r0, r3
+ 1106 0058 E318     		adds	r3, r4, r3
+ 1107 005a 9C45     		cmp	ip, r3
+ 1108 005c 16D9     		bls	.L120
+ 1109 005e 2F4A     		ldr	r2, .L144+4
+ 1110 0060 2F49     		ldr	r1, .L144+8
+ 1111 0062 3048     		ldr	r0, .L144+12
+ 1112 0064 304B     		ldr	r3, .L144+16
+ 1113 0066 FFF7FEFF 		bl	printf
+ 1114 006a 3048     		ldr	r0, .L144+20
+ 1115 006c FFF7FEFF 		bl	printf
+ 1116              	.L118:
+ 1117 0070 0426     		movs	r6, #4
+ 1118 0072 3742     		tst	r7, r6
+ 1119 0074 08D0     		beq	.L122
+ 1120 0076 6878     		ldrb	r0, [r5, #1]
+ 1121 0078 A789     		ldrh	r7, [r4, #12]
+ 1122 007a FFF7FEFF 		bl	ROSE_decWL
+ 1123 007e 8742     		cmp	r7, r0
+ 1124 0080 02D1     		bne	.L122
+ 1125 0082 2378     		ldrb	r3, [r4]
+ 1126 0084 B343     		bics	r3, r6
+ 1127 0086 2370     		strb	r3, [r4]
+ 1128              	.L122:
+ARM GAS  /tmp/ccuAiNBV.s 			page 21
+
+
+ 1129 0088 0020     		movs	r0, #0
+ 1130              	.L113:
+ 1131              		@ sp needed
+ 1132 008a FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
+ 1133              	.L120:
+ 1134 008c A389     		ldrh	r3, [r4, #12]
+ 1135 008e 981B     		subs	r0, r3, r6
+ 1136 0090 0190     		str	r0, [sp, #4]
+ 1137 0092 0028     		cmp	r0, #0
+ 1138 0094 2DDD     		ble	.L121
+ 1139 0096 E089     		ldrh	r0, [r4, #14]
+ 1140 0098 F31A     		subs	r3, r6, r3
+ 1141 009a 9BB2     		uxth	r3, r3
+ 1142 009c D218     		adds	r2, r2, r3
+ 1143 009e 1B18     		adds	r3, r3, r0
+ 1144 00a0 2000     		movs	r0, r4
+ 1145 00a2 E381     		strh	r3, [r4, #14]
+ 1146 00a4 019B     		ldr	r3, [sp, #4]
+ 1147 00a6 92B2     		uxth	r2, r2
+ 1148 00a8 2282     		strh	r2, [r4, #16]
+ 1149 00aa 4A43     		muls	r2, r1
+ 1150 00ac 5943     		muls	r1, r3
+ 1151 00ae 1331     		adds	r1, r1, #19
+ 1152 00b0 6118     		adds	r1, r4, r1
+ 1153 00b2 1330     		adds	r0, r0, #19
+ 1154 00b4 FFF7FEFF 		bl	memmove
+ 1155 00b8 A07C     		ldrb	r0, [r4, #18]
+ 1156 00ba 238A     		ldrh	r3, [r4, #16]
+ 1157 00bc 019A     		ldr	r2, [sp, #4]
+ 1158 00be 0021     		movs	r1, #0
+ 1159 00c0 4243     		muls	r2, r0
+ 1160 00c2 5843     		muls	r0, r3
+ 1161 00c4 1330     		adds	r0, r0, #19
+ 1162 00c6 2018     		adds	r0, r4, r0
+ 1163 00c8 FFF7FEFF 		bl	memset
+ 1164 00cc 6B46     		mov	r3, sp
+ 1165 00ce A189     		ldrh	r1, [r4, #12]
+ 1166 00d0 9B88     		ldrh	r3, [r3, #4]
+ 1167 00d2 A068     		ldr	r0, [r4, #8]
+ 1168 00d4 CB1A     		subs	r3, r1, r3
+ 1169 00d6 5843     		muls	r0, r3
+ 1170 00d8 FFF7FEFF 		bl	__aeabi_idiv
+ 1171 00dc A060     		str	r0, [r4, #8]
+ 1172 00de 2000     		movs	r0, r4
+ 1173 00e0 FFF7FEFF 		bl	ROSE_rvec_len
+ 1174 00e4 0C4B     		ldr	r3, .L144
+ 1175 00e6 0200     		movs	r2, r0
+ 1176 00e8 181A     		subs	r0, r3, r0
+ 1177 00ea 0021     		movs	r1, #0
+ 1178 00ec 2018     		adds	r0, r4, r0
+ 1179 00ee FFF7FEFF 		bl	memset
+ 1180              	.L121:
+ 1181 00f2 0423     		movs	r3, #4
+ 1182 00f4 2278     		ldrb	r2, [r4]
+ 1183 00f6 0E49     		ldr	r1, .L144+24
+ 1184 00f8 1343     		orrs	r3, r2
+ 1185 00fa 2370     		strb	r3, [r4]
+ARM GAS  /tmp/ccuAiNBV.s 			page 22
+
+
+ 1186 00fc 074A     		ldr	r2, .L144+4
+ 1187 00fe 0D4B     		ldr	r3, .L144+28
+ 1188 0100 A681     		strh	r6, [r4, #12]
+ 1189 0102 0848     		ldr	r0, .L144+12
+ 1190 0104 FFF7FEFF 		bl	printf
+ 1191 0108 A189     		ldrh	r1, [r4, #12]
+ 1192 010a 0B48     		ldr	r0, .L144+32
+ 1193 010c FFF7FEFF 		bl	printf
+ 1194 0110 AEE7     		b	.L118
+ 1195              	.L124:
+ 1196 0112 0620     		movs	r0, #6
+ 1197 0114 4042     		rsbs	r0, r0, #0
+ 1198 0116 B8E7     		b	.L113
+ 1199              	.L145:
+ 1200              		.align	2
+ 1201              	.L144:
+ 1202 0118 53040000 		.word	1107
+ 1203 011c 00000000 		.word	.LC2
+ 1204 0120 00000000 		.word	.LC24
+ 1205 0124 40000000 		.word	.LC6
+ 1206 0128 4A020000 		.word	586
+ 1207 012c 05000000 		.word	.LC27
+ 1208 0130 00000000 		.word	.LC14
+ 1209 0134 63020000 		.word	611
+ 1210 0138 3D000000 		.word	.LC30
+ 1212              		.section	.text.ROSE_addRecord,"ax",%progbits
+ 1213              		.align	1
+ 1214              		.global	ROSE_addRecord
+ 1215              		.syntax unified
+ 1216              		.code	16
+ 1217              		.thumb_func
+ 1219              	ROSE_addRecord:
+ 1220              		@ args = 0, pretend = 0, frame = 16
+ 1221              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1222 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1223 0002 531E     		subs	r3, r2, #1
+ 1224 0004 85B0     		sub	sp, sp, #20
+ 1225 0006 0400     		movs	r4, r0
+ 1226 0008 1500     		movs	r5, r2
+ 1227 000a 0291     		str	r1, [sp, #8]
+ 1228 000c FD2B     		cmp	r3, #253
+ 1229 000e 50D8     		bhi	.L153
+ 1230 0010 867C     		ldrb	r6, [r0, #18]
+ 1231 0012 B018     		adds	r0, r6, r2
+ 1232 0014 3100     		movs	r1, r6
+ 1233 0016 0130     		adds	r0, r0, #1
+ 1234 0018 FFF7FEFF 		bl	__aeabi_idiv
+ 1235 001c 6B46     		mov	r3, sp
+ 1236 001e 0090     		str	r0, [sp]
+ 1237 0020 1B88     		ldrh	r3, [r3]
+ 1238 0022 2000     		movs	r0, r4
+ 1239 0024 0193     		str	r3, [sp, #4]
+ 1240 0026 FFF7FEFF 		bl	ROSE_rvec_len
+ 1241 002a 8823     		movs	r3, #136
+ 1242 002c DB00     		lsls	r3, r3, #3
+ 1243 002e 181A     		subs	r0, r3, r0
+ 1244 0030 3100     		movs	r1, r6
+ARM GAS  /tmp/ccuAiNBV.s 			page 23
+
+
+ 1245 0032 FFF7FEFF 		bl	__aeabi_idiv
+ 1246 0036 278A     		ldrh	r7, [r4, #16]
+ 1247 0038 019B     		ldr	r3, [sp, #4]
+ 1248 003a C01B     		subs	r0, r0, r7
+ 1249 003c 80B2     		uxth	r0, r0
+ 1250 003e 8342     		cmp	r3, r0
+ 1251 0040 3AD8     		bhi	.L154
+ 1252 0042 7743     		muls	r7, r6
+ 1253 0044 3E00     		movs	r6, r7
+ 1254 0046 1336     		adds	r6, r6, #19
+ 1255 0048 A619     		adds	r6, r4, r6
+ 1256 004a 731C     		adds	r3, r6, #1
+ 1257 004c 1800     		movs	r0, r3
+ 1258 004e 2A00     		movs	r2, r5
+ 1259 0050 0299     		ldr	r1, [sp, #8]
+ 1260 0052 0393     		str	r3, [sp, #12]
+ 1261 0054 FFF7FEFF 		bl	memcpy
+ 1262 0058 2378     		ldrb	r3, [r4]
+ 1263 005a 1B07     		lsls	r3, r3, #28
+ 1264 005c 05D5     		bpl	.L148
+ 1265 005e 2900     		movs	r1, r5
+ 1266 0060 6268     		ldr	r2, [r4, #4]
+ 1267 0062 0298     		ldr	r0, [sp, #8]
+ 1268 0064 731C     		adds	r3, r6, #1
+ 1269 0066 FFF7FEFF 		bl	ROSE_payload_encrypt.constprop.0
+ 1270              	.L148:
+ 1271 006a A021     		movs	r1, #160
+ 1272 006c A37C     		ldrb	r3, [r4, #18]
+ 1273 006e 009A     		ldr	r2, [sp]
+ 1274 0070 0135     		adds	r5, r5, #1
+ 1275 0072 5343     		muls	r3, r2
+ 1276 0074 DBB2     		uxtb	r3, r3
+ 1277              	.L149:
+ 1278 0076 1800     		movs	r0, r3
+ 1279 0078 013B     		subs	r3, r3, #1
+ 1280 007a DBB2     		uxtb	r3, r3
+ 1281 007c 1A00     		movs	r2, r3
+ 1282 007e F154     		strb	r1, [r6, r3]
+ 1283 0080 AB42     		cmp	r3, r5
+ 1284 0082 F8DC     		bgt	.L149
+ 1285 0084 0238     		subs	r0, r0, #2
+ 1286 0086 C0B2     		uxtb	r0, r0
+ 1287              	.L150:
+ 1288 0088 1300     		movs	r3, r2
+ 1289 008a 603B     		subs	r3, r3, #96
+ 1290 008c DBB2     		uxtb	r3, r3
+ 1291 008e 0028     		cmp	r0, #0
+ 1292 0090 07D1     		bne	.L152
+ 1293 0092 E219     		adds	r2, r4, r7
+ 1294 0094 D374     		strb	r3, [r2, #19]
+ 1295 0096 238A     		ldrh	r3, [r4, #16]
+ 1296 0098 019A     		ldr	r2, [sp, #4]
+ 1297 009a D318     		adds	r3, r2, r3
+ 1298 009c 2382     		strh	r3, [r4, #16]
+ 1299              	.L146:
+ 1300 009e 05B0     		add	sp, sp, #20
+ 1301              		@ sp needed
+ARM GAS  /tmp/ccuAiNBV.s 			page 24
+
+
+ 1302 00a0 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1303              	.L152:
+ 1304 00a2 315C     		ldrb	r1, [r6, r0]
+ 1305 00a4 A029     		cmp	r1, #160
+ 1306 00a6 02D1     		bne	.L151
+ 1307 00a8 0200     		movs	r2, r0
+ 1308 00aa 1B1A     		subs	r3, r3, r0
+ 1309 00ac 3354     		strb	r3, [r6, r0]
+ 1310              	.L151:
+ 1311 00ae 0138     		subs	r0, r0, #1
+ 1312 00b0 EAE7     		b	.L150
+ 1313              	.L153:
+ 1314 00b2 0520     		movs	r0, #5
+ 1315              	.L160:
+ 1316 00b4 4042     		rsbs	r0, r0, #0
+ 1317 00b6 F2E7     		b	.L146
+ 1318              	.L154:
+ 1319 00b8 0120     		movs	r0, #1
+ 1320 00ba FBE7     		b	.L160
+ 1322              		.section	.rodata.CSWTCH.46,"a"
+ 1325              	CSWTCH.46:
+ 1326 0000 00       		.byte	0
+ 1327 0001 01       		.byte	1
+ 1328 0002 03       		.byte	3
+ 1329 0003 02       		.byte	2
+ 1330              		.section	.rodata.WLENCP,"a"
+ 1331              		.align	2
+ 1334              	WLENCP:
+ 1335 0000 1000     		.short	16
+ 1336 0002 0400     		.short	4
+ 1337 0004 1001     		.short	272
+ 1338 0006 0800     		.short	8
+ 1339 0008 1003     		.short	784
+ 1340 000a 1000     		.short	16
+ 1341 000c 0000     		.short	0
+ 1342 000e 0000     		.short	0
+ 1343              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccuAiNBV.s 			page 25
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 rose.c
+     /tmp/ccuAiNBV.s:14     .text.ROSE_payload_encrypt.constprop.0:00000000 $t
+     /tmp/ccuAiNBV.s:19     .text.ROSE_payload_encrypt.constprop.0:00000000 ROSE_payload_encrypt.constprop.0
+     /tmp/ccuAiNBV.s:51     .text.ROSE_rvec_len:00000000 $t
+     /tmp/ccuAiNBV.s:57     .text.ROSE_rvec_len:00000000 ROSE_rvec_len
+     /tmp/ccuAiNBV.s:72     .text.ROSE_encWL:00000000 $t
+     /tmp/ccuAiNBV.s:78     .text.ROSE_encWL:00000000 ROSE_encWL
+     /tmp/ccuAiNBV.s:138    .text.ROSE_encWL:00000058 $d
+     /tmp/ccuAiNBV.s:145    .text.ROSE_decWL:00000000 $t
+     /tmp/ccuAiNBV.s:151    .text.ROSE_decWL:00000000 ROSE_decWL
+     /tmp/ccuAiNBV.s:189    .text.ROSE_decWL:0000003c $d
+     /tmp/ccuAiNBV.s:1334   .rodata.WLENCP:00000000 WLENCP
+     /tmp/ccuAiNBV.s:193    .text.ROSE_cipher:00000000 $t
+     /tmp/ccuAiNBV.s:199    .text.ROSE_cipher:00000000 ROSE_cipher
+     /tmp/ccuAiNBV.s:277    .text.ROSE_cipher:00000090 $d
+     /tmp/ccuAiNBV.s:294    .text.ROSE_init:00000000 $t
+     /tmp/ccuAiNBV.s:300    .text.ROSE_init:00000000 ROSE_init
+     /tmp/ccuAiNBV.s:382    .text.ROSE_init:000000a0 $d
+     /tmp/ccuAiNBV.s:391    .text.ROSE_enable_encryption:00000000 $t
+     /tmp/ccuAiNBV.s:397    .text.ROSE_enable_encryption:00000000 ROSE_enable_encryption
+     /tmp/ccuAiNBV.s:416    .text.ROSE_getSoff:00000000 $t
+     /tmp/ccuAiNBV.s:422    .text.ROSE_getSoff:00000000 ROSE_getSoff
+     /tmp/ccuAiNBV.s:435    .text.ROSE_getFree:00000000 $t
+     /tmp/ccuAiNBV.s:441    .text.ROSE_getFree:00000000 ROSE_getFree
+     /tmp/ccuAiNBV.s:460    .text.ROSE_getFree:0000001c $d
+     /tmp/ccuAiNBV.s:463    .text.ROSE_getPending:00000000 $t
+     /tmp/ccuAiNBV.s:469    .text.ROSE_getPending:00000000 ROSE_getPending
+     /tmp/ccuAiNBV.s:483    .text.ROSE_getStatus:00000000 $t
+     /tmp/ccuAiNBV.s:489    .text.ROSE_getStatus:00000000 ROSE_getStatus
+     /tmp/ccuAiNBV.s:536    .text.ROSE_getData:00000000 $t
+     /tmp/ccuAiNBV.s:542    .text.ROSE_getData:00000000 ROSE_getData
+     /tmp/ccuAiNBV.s:971    .text.ROSE_getData:00000334 $d
+     /tmp/ccuAiNBV.s:1325   .rodata.CSWTCH.46:00000000 CSWTCH.46
+     /tmp/ccuAiNBV.s:981    .text.ROSE_getData:00000358 $t
+     /tmp/ccuAiNBV.s:1048   .text.ROSE_processDnFrame:00000000 $t
+     /tmp/ccuAiNBV.s:1054   .text.ROSE_processDnFrame:00000000 ROSE_processDnFrame
+     /tmp/ccuAiNBV.s:1202   .text.ROSE_processDnFrame:00000118 $d
+     /tmp/ccuAiNBV.s:1213   .text.ROSE_addRecord:00000000 $t
+     /tmp/ccuAiNBV.s:1219   .text.ROSE_addRecord:00000000 ROSE_addRecord
+     /tmp/ccuAiNBV.s:1331   .rodata.WLENCP:00000000 $d
+
+UNDEFINED SYMBOLS
+memset
+smtc_modem_services_aes_encrypt
+memcpy
+__aeabi_uidiv
+__aeabi_idiv
+printf
+__aeabi_uidivmod
+__aeabi_idivmod
+memmove

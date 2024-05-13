@@ -6,8 +6,8 @@ for a bachelors project "LoRaWAN Båtsensor" at Hiof (Høgskolen i Østfold)*/
 
 
 // Global variables (declared in /application/main.c  )
-extern float VDR, temp, ADCmeas, Voltage, Door, water, hastydata1, hastydata2, prev_water,prev_door, door;
-extern ADC_HandleTypeDef hadc; // 
+extern float VDR, temp, Voltage, Door, water, hastydata1, hastydata2, prev_water,prev_door, door;
+extern ADC_HandleTypeDef hadc;
 extern TimerEvent_t water_timer, door_timer;
 
     hal_gpio_irq_t PC10_cb = {
@@ -33,9 +33,8 @@ extern TimerEvent_t water_timer, door_timer;
 void sensor_read(void) {                                    //function that calls functions for sensors
     SMTC_HAL_TRACE_PRINTF("----- sensor_read -----\n\r");   //and calculates the real value of battery
     temp = GETtemperature(1);                               //adc measurment
-    ADCmeas = GETvoltage(&hadc);
+    Voltage = GETvoltage(&hadc);
 
-    Voltage = ADCmeas * VDR;
     //gps_snap(); // Uncomment and implement gps_snap if applicable
 
 }
@@ -122,7 +121,7 @@ float GETvoltage(ADC_HandleTypeDef *hadc) {         // function that take a ADC 
     if (HAL_ADC_PollForConversion(hadc, HAL_MAX_DELAY) == HAL_OK) { // Polls the ADC for completion of conversion.  
                                                                     //Once completed, retrieves the ADC value and calculates the corresponding voltage.
         uint32_t adc_value = HAL_ADC_GetValue(hadc);                // Voltage is calculated using the formula: Voltage = (ADC_value * Vref) / Max_ADC_Value.
-        batt = (3.3f * adc_value) / 4095.0f;                        // Here, Vref is assumed to be 3.3 volts and Max_ADC_Value is 4095.
+        batt = ((3.3f * adc_value) / 4095.0f)*VDR;                        // Here, Vref is assumed to be 3.3 volts and Max_ADC_Value is 4095.
     }
 
     HAL_ADC_DeInit(hadc);       
@@ -173,11 +172,13 @@ void MX_ADC_Init(void)
 
 }
 
+
 void GPIO_Init(void) {                  //init for gpio pns called in main
 
     hal_gpio_init_out(PC_7,0);          //red led blinky
     hal_gpio_init_out(PC_1,1);          //green led blinky blinky will be removed from final code
     hal_gpio_init_out(PB_0,0);          //active antenna on/off
+    hal_gpio_init_out(PA_3,0);
     //more pins will be added later
    
 

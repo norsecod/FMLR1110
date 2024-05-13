@@ -1,0 +1,698 @@
+ARM GAS  /tmp/cc0bGBAR.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"functions.c"
+  12              		.text
+  13              		.section	.rodata.printCayenneLPPBuffer.str1.1,"aMS",%progbits,1
+  14              	.LC0:
+  15 0000 43617965 		.ascii	"CayenneLPP Buffer Content (Hex): \000"
+  15      6E6E654C 
+  15      50502042 
+  15      75666665 
+  15      7220436F 
+  16              	.LC2:
+  17 0022 25303258 		.ascii	"%02X \000"
+  17      2000
+  18              	.LC4:
+  19 0028 0A0D00   		.ascii	"\012\015\000"
+  20              		.section	.text.printCayenneLPPBuffer,"ax",%progbits
+  21              		.align	1
+  22              		.global	printCayenneLPPBuffer
+  23              		.syntax unified
+  24              		.code	16
+  25              		.thumb_func
+  27              	printCayenneLPPBuffer:
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30 0000 70B5     		push	{r4, r5, r6, lr}
+  31 0002 0500     		movs	r5, r0
+  32 0004 0948     		ldr	r0, .L4
+  33 0006 FFF7FEFF 		bl	hal_trace_print_var
+  34 000a 0024     		movs	r4, #0
+  35              	.L2:
+  36 000c 2B00     		movs	r3, r5
+  37 000e 2A33     		adds	r3, r3, #42
+  38 0010 1B78     		ldrb	r3, [r3]
+  39 0012 A342     		cmp	r3, r4
+  40 0014 03D8     		bhi	.L3
+  41              		@ sp needed
+  42 0016 0648     		ldr	r0, .L4+4
+  43 0018 FFF7FEFF 		bl	hal_trace_print_var
+  44 001c 70BD     		pop	{r4, r5, r6, pc}
+  45              	.L3:
+  46 001e 295D     		ldrb	r1, [r5, r4]
+  47 0020 0448     		ldr	r0, .L4+8
+  48 0022 0134     		adds	r4, r4, #1
+  49 0024 FFF7FEFF 		bl	hal_trace_print_var
+  50 0028 E4B2     		uxtb	r4, r4
+  51 002a EFE7     		b	.L2
+  52              	.L5:
+  53              		.align	2
+ARM GAS  /tmp/cc0bGBAR.s 			page 2
+
+
+  54              	.L4:
+  55 002c 00000000 		.word	.LC0
+  56 0030 28000000 		.word	.LC4
+  57 0034 22000000 		.word	.LC2
+  59              		.section	.text.sendLoRaWANPacket,"ax",%progbits
+  60              		.align	1
+  61              		.global	sendLoRaWANPacket
+  62              		.syntax unified
+  63              		.code	16
+  64              		.thumb_func
+  66              	sendLoRaWANPacket:
+  67              		@ args = 0, pretend = 0, frame = 0
+  68              		@ frame_needed = 0, uses_anonymous_args = 0
+  69 0000 07B5     		push	{r0, r1, r2, lr}
+  70 0002 0022     		movs	r2, #0
+  71              		@ sp needed
+  72 0004 0300     		movs	r3, r0
+  73 0006 0091     		str	r1, [sp]
+  74 0008 1000     		movs	r0, r2
+  75 000a 5521     		movs	r1, #85
+  76 000c FFF7FEFF 		bl	smtc_modem_request_uplink
+  77 0010 07BD     		pop	{r0, r1, r2, pc}
+  79              		.section	.text.sendData,"ax",%progbits
+  80              		.align	1
+  81              		.global	sendData
+  82              		.syntax unified
+  83              		.code	16
+  84              		.thumb_func
+  86              	sendData:
+  87              		@ args = 0, pretend = 0, frame = 48
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  90 0002 1500     		movs	r5, r2
+  91 0004 1C00     		movs	r4, r3
+  92 0006 8DB0     		sub	sp, sp, #52
+  93 0008 071C     		adds	r7, r0, #0
+  94 000a 01A8     		add	r0, sp, #4
+  95 000c 0E1C     		adds	r6, r1, #0
+  96 000e FFF7FEFF 		bl	cayenne_lpp_reset
+  97 0012 3A1C     		adds	r2, r7, #0
+  98 0014 01A8     		add	r0, sp, #4
+  99 0016 0121     		movs	r1, #1
+ 100 0018 FFF7FEFF 		bl	cayenne_lpp_add_temperature
+ 101 001c 321C     		adds	r2, r6, #0
+ 102 001e 01A8     		add	r0, sp, #4
+ 103 0020 0221     		movs	r1, #2
+ 104 0022 FFF7FEFF 		bl	cayenne_lpp_add_analog_input
+ 105 0026 2A00     		movs	r2, r5
+ 106 0028 01A8     		add	r0, sp, #4
+ 107 002a 0321     		movs	r1, #3
+ 108 002c FFF7FEFF 		bl	cayenne_lpp_add_digital_input
+ 109 0030 2200     		movs	r2, r4
+ 110 0032 01A8     		add	r0, sp, #4
+ 111 0034 0421     		movs	r1, #4
+ 112 0036 FFF7FEFF 		bl	cayenne_lpp_add_digital_input
+ 113 003a 2E23     		movs	r3, #46
+ 114 003c 6B44     		add	r3, r3, sp
+ARM GAS  /tmp/cc0bGBAR.s 			page 3
+
+
+ 115 003e 1978     		ldrb	r1, [r3]
+ 116 0040 01A8     		add	r0, sp, #4
+ 117 0042 FFF7FEFF 		bl	sendLoRaWANPacket
+ 118 0046 01A8     		add	r0, sp, #4
+ 119 0048 FFF7FEFF 		bl	printCayenneLPPBuffer
+ 120 004c 0DB0     		add	sp, sp, #52
+ 121              		@ sp needed
+ 122 004e F0BD     		pop	{r4, r5, r6, r7, pc}
+ 124              		.section	.text.wateralarm,"ax",%progbits
+ 125              		.align	1
+ 126              		.global	wateralarm
+ 127              		.syntax unified
+ 128              		.code	16
+ 129              		.thumb_func
+ 131              	wateralarm:
+ 132              		@ args = 0, pretend = 0, frame = 48
+ 133              		@ frame_needed = 0, uses_anonymous_args = 0
+ 134 0000 10B5     		push	{r4, lr}
+ 135 0002 0400     		movs	r4, r0
+ 136 0004 8CB0     		sub	sp, sp, #48
+ 137 0006 01A8     		add	r0, sp, #4
+ 138 0008 FFF7FEFF 		bl	cayenne_lpp_reset
+ 139 000c 2200     		movs	r2, r4
+ 140 000e 01A8     		add	r0, sp, #4
+ 141 0010 0421     		movs	r1, #4
+ 142 0012 FFF7FEFF 		bl	cayenne_lpp_add_digital_input
+ 143 0016 2E23     		movs	r3, #46
+ 144 0018 6B44     		add	r3, r3, sp
+ 145 001a 1978     		ldrb	r1, [r3]
+ 146 001c 01A8     		add	r0, sp, #4
+ 147 001e FFF7FEFF 		bl	sendLoRaWANPacket
+ 148 0022 01A8     		add	r0, sp, #4
+ 149 0024 FFF7FEFF 		bl	printCayenneLPPBuffer
+ 150 0028 0CB0     		add	sp, sp, #48
+ 151              		@ sp needed
+ 152 002a 10BD     		pop	{r4, pc}
+ 154              		.section	.text.dooralarm,"ax",%progbits
+ 155              		.align	1
+ 156              		.global	dooralarm
+ 157              		.syntax unified
+ 158              		.code	16
+ 159              		.thumb_func
+ 161              	dooralarm:
+ 162              		@ args = 0, pretend = 0, frame = 48
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164 0000 10B5     		push	{r4, lr}
+ 165 0002 0400     		movs	r4, r0
+ 166 0004 8CB0     		sub	sp, sp, #48
+ 167 0006 01A8     		add	r0, sp, #4
+ 168 0008 FFF7FEFF 		bl	cayenne_lpp_reset
+ 169 000c 2200     		movs	r2, r4
+ 170 000e 01A8     		add	r0, sp, #4
+ 171 0010 0321     		movs	r1, #3
+ 172 0012 FFF7FEFF 		bl	cayenne_lpp_add_digital_input
+ 173 0016 2E23     		movs	r3, #46
+ 174 0018 6B44     		add	r3, r3, sp
+ 175 001a 1978     		ldrb	r1, [r3]
+ARM GAS  /tmp/cc0bGBAR.s 			page 4
+
+
+ 176 001c 01A8     		add	r0, sp, #4
+ 177 001e FFF7FEFF 		bl	sendLoRaWANPacket
+ 178 0022 01A8     		add	r0, sp, #4
+ 179 0024 FFF7FEFF 		bl	printCayenneLPPBuffer
+ 180 0028 0CB0     		add	sp, sp, #48
+ 181              		@ sp needed
+ 182 002a 10BD     		pop	{r4, pc}
+ 184              		.global	__aeabi_i2f
+ 185              		.section	.text.GETtemperature,"ax",%progbits
+ 186              		.align	1
+ 187              		.global	GETtemperature
+ 188              		.syntax unified
+ 189              		.code	16
+ 190              		.thumb_func
+ 192              	GETtemperature:
+ 193              		@ args = 0, pretend = 0, frame = 8
+ 194              		@ frame_needed = 0, uses_anonymous_args = 0
+ 195 0000 0123     		movs	r3, #1
+ 196 0002 10B5     		push	{r4, lr}
+ 197 0004 1724     		movs	r4, #23
+ 198 0006 86B0     		sub	sp, sp, #24
+ 199 0008 5B42     		rsbs	r3, r3, #0
+ 200 000a 0293     		str	r3, [sp, #8]
+ 201 000c 6C44     		add	r4, r4, sp
+ 202 000e 0233     		adds	r3, r3, #2
+ 203 0010 0022     		movs	r2, #0
+ 204 0012 9021     		movs	r1, #144
+ 205 0014 0193     		str	r3, [sp, #4]
+ 206 0016 0094     		str	r4, [sp]
+ 207 0018 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 208 001c 0028     		cmp	r0, #0
+ 209 001e 05D1     		bne	.L12
+ 210 0020 0020     		movs	r0, #0
+ 211 0022 2056     		ldrsb	r0, [r4, r0]
+ 212 0024 FFF7FEFF 		bl	__aeabi_i2f
+ 213              	.L10:
+ 214 0028 06B0     		add	sp, sp, #24
+ 215              		@ sp needed
+ 216 002a 10BD     		pop	{r4, pc}
+ 217              	.L12:
+ 218 002c C320     		movs	r0, #195
+ 219 002e 0006     		lsls	r0, r0, #24
+ 220 0030 FAE7     		b	.L10
+ 222              		.section	.rodata.MX_ADC_Init.str1.1,"aMS",%progbits,1
+ 223              	.LC8:
+ 224 0000 4552524F 		.ascii	"ERROR: mcu_panic:%s\012\015\000"
+ 224      523A206D 
+ 224      63755F70 
+ 224      616E6963 
+ 224      3A25730A 
+ 225              	.LC10:
+ 226 0016 00       		.ascii	"\000"
+ 227              	.LC12:
+ 228 0017 4552524F 		.ascii	"ERROR: -> \000"
+ 228      523A202D 
+ 228      3E2000
+ 229              		.section	.text.MX_ADC_Init,"ax",%progbits
+ARM GAS  /tmp/cc0bGBAR.s 			page 5
+
+
+ 230              		.align	1
+ 231              		.global	MX_ADC_Init
+ 232              		.syntax unified
+ 233              		.code	16
+ 234              		.thumb_func
+ 236              	MX_ADC_Init:
+ 237              		@ args = 0, pretend = 0, frame = 8
+ 238              		@ frame_needed = 0, uses_anonymous_args = 0
+ 239 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
+ 240 0002 0822     		movs	r2, #8
+ 241 0004 0021     		movs	r1, #0
+ 242 0006 6846     		mov	r0, sp
+ 243 0008 FFF7FEFF 		bl	memset
+ 244 000c C221     		movs	r1, #194
+ 245 000e 254C     		ldr	r4, .L22
+ 246 0010 254B     		ldr	r3, .L22+4
+ 247 0012 FF31     		adds	r1, r1, #255
+ 248 0014 C022     		movs	r2, #192
+ 249 0016 6162     		str	r1, [r4, #36]
+ 250 0018 2100     		movs	r1, r4
+ 251 001a 2360     		str	r3, [r4]
+ 252 001c 0023     		movs	r3, #0
+ 253 001e 1206     		lsls	r2, r2, #24
+ 254 0020 2C31     		adds	r1, r1, #44
+ 255 0022 6260     		str	r2, [r4, #4]
+ 256 0024 0B70     		strb	r3, [r1]
+ 257 0026 0122     		movs	r2, #1
+ 258 0028 0421     		movs	r1, #4
+ 259 002a 2000     		movs	r0, r4
+ 260 002c E363     		str	r3, [r4, #60]
+ 261 002e A360     		str	r3, [r4, #8]
+ 262 0030 A363     		str	r3, [r4, #56]
+ 263 0032 2261     		str	r2, [r4, #16]
+ 264 0034 E360     		str	r3, [r4, #12]
+ 265 0036 2384     		strh	r3, [r4, #32]
+ 266 0038 A362     		str	r3, [r4, #40]
+ 267 003a 6161     		str	r1, [r4, #20]
+ 268 003c 2363     		str	r3, [r4, #48]
+ 269 003e A361     		str	r3, [r4, #24]
+ 270 0040 6263     		str	r2, [r4, #52]
+ 271 0042 E361     		str	r3, [r4, #28]
+ 272 0044 FFF7FEFF 		bl	HAL_ADC_Init
+ 273 0048 0028     		cmp	r0, #0
+ 274 004a 0FD0     		beq	.L14
+ 275 004c 1749     		ldr	r1, .L22+8
+ 276 004e 1848     		ldr	r0, .L22+12
+ 277 0050 FFF7FEFF 		bl	hal_trace_print_var
+ 278 0054 174D     		ldr	r5, .L22+16
+ 279 0056 2800     		movs	r0, r5
+ 280 0058 FFF7FEFF 		bl	hal_trace_print_var
+ 281 005c 1648     		ldr	r0, .L22+20
+ 282 005e FFF7FEFF 		bl	hal_trace_print_var
+ 283 0062 2800     		movs	r0, r5
+ 284 0064 FFF7FEFF 		bl	hal_trace_print_var
+ 285 0068 FFF7FEFF 		bl	hal_mcu_reset
+ 286              	.L14:
+ 287 006c 134B     		ldr	r3, .L22+24
+ARM GAS  /tmp/cc0bGBAR.s 			page 6
+
+
+ 288 006e 6946     		mov	r1, sp
+ 289 0070 0093     		str	r3, [sp]
+ 290 0072 8023     		movs	r3, #128
+ 291 0074 2000     		movs	r0, r4
+ 292 0076 5B01     		lsls	r3, r3, #5
+ 293 0078 0193     		str	r3, [sp, #4]
+ 294 007a FFF7FEFF 		bl	HAL_ADC_ConfigChannel
+ 295 007e 0028     		cmp	r0, #0
+ 296 0080 0FD0     		beq	.L13
+ 297 0082 0A49     		ldr	r1, .L22+8
+ 298 0084 0A48     		ldr	r0, .L22+12
+ 299 0086 FFF7FEFF 		bl	hal_trace_print_var
+ 300 008a 0A4C     		ldr	r4, .L22+16
+ 301 008c 2000     		movs	r0, r4
+ 302 008e FFF7FEFF 		bl	hal_trace_print_var
+ 303 0092 0948     		ldr	r0, .L22+20
+ 304 0094 FFF7FEFF 		bl	hal_trace_print_var
+ 305 0098 2000     		movs	r0, r4
+ 306 009a FFF7FEFF 		bl	hal_trace_print_var
+ 307 009e FFF7FEFF 		bl	hal_mcu_reset
+ 308              	.L13:
+ 309              		@ sp needed
+ 310 00a2 37BD     		pop	{r0, r1, r2, r4, r5, pc}
+ 311              	.L23:
+ 312              		.align	2
+ 313              	.L22:
+ 314 00a4 00000000 		.word	hadc
+ 315 00a8 00240140 		.word	1073816576
+ 316 00ac 00000000 		.word	__func__.1
+ 317 00b0 00000000 		.word	.LC8
+ 318 00b4 16000000 		.word	.LC10
+ 319 00b8 17000000 		.word	.LC12
+ 320 00bc 20000014 		.word	335544352
+ 322              		.global	__aeabi_fmul
+ 323              		.global	__aeabi_ui2f
+ 324              		.section	.text.GETvoltage,"ax",%progbits
+ 325              		.align	1
+ 326              		.global	GETvoltage
+ 327              		.syntax unified
+ 328              		.code	16
+ 329              		.thumb_func
+ 331              	GETvoltage:
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 0, uses_anonymous_args = 0
+ 334 0000 70B5     		push	{r4, r5, r6, lr}
+ 335 0002 0400     		movs	r4, r0
+ 336 0004 0121     		movs	r1, #1
+ 337 0006 0320     		movs	r0, #3
+ 338 0008 FFF7FEFF 		bl	hal_gpio_set_value
+ 339 000c FFF7FEFF 		bl	MX_ADC_Init
+ 340 0010 1E20     		movs	r0, #30
+ 341 0012 FFF7FEFF 		bl	HAL_Delay
+ 342 0016 2000     		movs	r0, r4
+ 343 0018 FFF7FEFF 		bl	HAL_ADC_Start
+ 344 001c 0028     		cmp	r0, #0
+ 345 001e 25D1     		bne	.L27
+ 346 0020 0121     		movs	r1, #1
+ARM GAS  /tmp/cc0bGBAR.s 			page 7
+
+
+ 347 0022 2000     		movs	r0, r4
+ 348 0024 4942     		rsbs	r1, r1, #0
+ 349 0026 FFF7FEFF 		bl	HAL_ADC_PollForConversion
+ 350 002a 0025     		movs	r5, #0
+ 351 002c 0028     		cmp	r0, #0
+ 352 002e 11D1     		bne	.L26
+ 353 0030 2000     		movs	r0, r4
+ 354 0032 FFF7FEFF 		bl	HAL_ADC_GetValue
+ 355 0036 0F4B     		ldr	r3, .L29
+ 356 0038 0F49     		ldr	r1, .L29+4
+ 357 003a 0600     		movs	r6, r0
+ 358 003c 1868     		ldr	r0, [r3]
+ 359 003e FFF7FEFF 		bl	__aeabi_fmul
+ 360 0042 051C     		adds	r5, r0, #0
+ 361 0044 3000     		movs	r0, r6
+ 362 0046 FFF7FEFF 		bl	__aeabi_ui2f
+ 363 004a 011C     		adds	r1, r0, #0
+ 364 004c 281C     		adds	r0, r5, #0
+ 365 004e FFF7FEFF 		bl	__aeabi_fmul
+ 366 0052 051C     		adds	r5, r0, #0
+ 367              	.L26:
+ 368 0054 2000     		movs	r0, r4
+ 369 0056 FFF7FEFF 		bl	HAL_ADC_DeInit
+ 370 005a 1E20     		movs	r0, #30
+ 371 005c FFF7FEFF 		bl	HAL_Delay
+ 372 0060 0021     		movs	r1, #0
+ 373 0062 0320     		movs	r0, #3
+ 374 0064 FFF7FEFF 		bl	hal_gpio_set_value
+ 375              	.L24:
+ 376              		@ sp needed
+ 377 0068 281C     		adds	r0, r5, #0
+ 378 006a 70BD     		pop	{r4, r5, r6, pc}
+ 379              	.L27:
+ 380 006c 8625     		movs	r5, #134
+ 381 006e ED05     		lsls	r5, r5, #23
+ 382 0070 FAE7     		b	.L24
+ 383              	.L30:
+ 384 0072 C046     		.align	2
+ 385              	.L29:
+ 386 0074 00000000 		.word	VDR
+ 387 0078 6840533A 		.word	978534504
+ 389              		.section	.rodata.sensor_read.str1.1,"aMS",%progbits,1
+ 390              	.LC16:
+ 391 0000 2D2D2D2D 		.ascii	"----- sensor_read -----\012\015\000"
+ 391      2D207365 
+ 391      6E736F72 
+ 391      5F726561 
+ 391      64202D2D 
+ 392              		.section	.text.sensor_read,"ax",%progbits
+ 393              		.align	1
+ 394              		.global	sensor_read
+ 395              		.syntax unified
+ 396              		.code	16
+ 397              		.thumb_func
+ 399              	sensor_read:
+ 400              		@ args = 0, pretend = 0, frame = 0
+ 401              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/cc0bGBAR.s 			page 8
+
+
+ 402 0000 10B5     		push	{r4, lr}
+ 403 0002 0748     		ldr	r0, .L32
+ 404 0004 FFF7FEFF 		bl	hal_trace_print_var
+ 405              		@ sp needed
+ 406 0008 0120     		movs	r0, #1
+ 407 000a FFF7FEFF 		bl	GETtemperature
+ 408 000e 054B     		ldr	r3, .L32+4
+ 409 0010 1860     		str	r0, [r3]
+ 410 0012 0548     		ldr	r0, .L32+8
+ 411 0014 FFF7FEFF 		bl	GETvoltage
+ 412 0018 044B     		ldr	r3, .L32+12
+ 413 001a 1860     		str	r0, [r3]
+ 414 001c 10BD     		pop	{r4, pc}
+ 415              	.L33:
+ 416 001e C046     		.align	2
+ 417              	.L32:
+ 418 0020 00000000 		.word	.LC16
+ 419 0024 00000000 		.word	temp
+ 420 0028 00000000 		.word	hadc
+ 421 002c 00000000 		.word	Voltage
+ 423              		.section	.text.MX_I2C1_Init,"ax",%progbits
+ 424              		.align	1
+ 425              		.global	MX_I2C1_Init
+ 426              		.syntax unified
+ 427              		.code	16
+ 428              		.thumb_func
+ 430              	MX_I2C1_Init:
+ 431              		@ args = 0, pretend = 0, frame = 0
+ 432              		@ frame_needed = 0, uses_anonymous_args = 0
+ 433 0000 70B5     		push	{r4, r5, r6, lr}
+ 434 0002 284B     		ldr	r3, .L47
+ 435 0004 284C     		ldr	r4, .L47+4
+ 436 0006 0122     		movs	r2, #1
+ 437 0008 2360     		str	r3, [r4]
+ 438 000a 284B     		ldr	r3, .L47+8
+ 439 000c 2000     		movs	r0, r4
+ 440 000e 6360     		str	r3, [r4, #4]
+ 441 0010 0023     		movs	r3, #0
+ 442 0012 E260     		str	r2, [r4, #12]
+ 443 0014 A360     		str	r3, [r4, #8]
+ 444 0016 2361     		str	r3, [r4, #16]
+ 445 0018 6361     		str	r3, [r4, #20]
+ 446 001a A361     		str	r3, [r4, #24]
+ 447 001c E361     		str	r3, [r4, #28]
+ 448 001e 2362     		str	r3, [r4, #32]
+ 449 0020 FFF7FEFF 		bl	HAL_I2C_Init
+ 450 0024 0028     		cmp	r0, #0
+ 451 0026 0FD0     		beq	.L35
+ 452 0028 2149     		ldr	r1, .L47+12
+ 453 002a 2248     		ldr	r0, .L47+16
+ 454 002c FFF7FEFF 		bl	hal_trace_print_var
+ 455 0030 214D     		ldr	r5, .L47+20
+ 456 0032 2800     		movs	r0, r5
+ 457 0034 FFF7FEFF 		bl	hal_trace_print_var
+ 458 0038 2048     		ldr	r0, .L47+24
+ 459 003a FFF7FEFF 		bl	hal_trace_print_var
+ 460 003e 2800     		movs	r0, r5
+ARM GAS  /tmp/cc0bGBAR.s 			page 9
+
+
+ 461 0040 FFF7FEFF 		bl	hal_trace_print_var
+ 462 0044 FFF7FEFF 		bl	hal_mcu_reset
+ 463              	.L35:
+ 464 0048 0021     		movs	r1, #0
+ 465 004a 2000     		movs	r0, r4
+ 466 004c FFF7FEFF 		bl	HAL_I2CEx_ConfigAnalogFilter
+ 467 0050 0028     		cmp	r0, #0
+ 468 0052 0FD0     		beq	.L36
+ 469 0054 1649     		ldr	r1, .L47+12
+ 470 0056 1748     		ldr	r0, .L47+16
+ 471 0058 FFF7FEFF 		bl	hal_trace_print_var
+ 472 005c 164D     		ldr	r5, .L47+20
+ 473 005e 2800     		movs	r0, r5
+ 474 0060 FFF7FEFF 		bl	hal_trace_print_var
+ 475 0064 1548     		ldr	r0, .L47+24
+ 476 0066 FFF7FEFF 		bl	hal_trace_print_var
+ 477 006a 2800     		movs	r0, r5
+ 478 006c FFF7FEFF 		bl	hal_trace_print_var
+ 479 0070 FFF7FEFF 		bl	hal_mcu_reset
+ 480              	.L36:
+ 481 0074 0021     		movs	r1, #0
+ 482 0076 2000     		movs	r0, r4
+ 483 0078 FFF7FEFF 		bl	HAL_I2CEx_ConfigDigitalFilter
+ 484 007c 0028     		cmp	r0, #0
+ 485 007e 0FD0     		beq	.L34
+ 486 0080 0B49     		ldr	r1, .L47+12
+ 487 0082 0C48     		ldr	r0, .L47+16
+ 488 0084 FFF7FEFF 		bl	hal_trace_print_var
+ 489 0088 0B4C     		ldr	r4, .L47+20
+ 490 008a 2000     		movs	r0, r4
+ 491 008c FFF7FEFF 		bl	hal_trace_print_var
+ 492 0090 0A48     		ldr	r0, .L47+24
+ 493 0092 FFF7FEFF 		bl	hal_trace_print_var
+ 494 0096 2000     		movs	r0, r4
+ 495 0098 FFF7FEFF 		bl	hal_trace_print_var
+ 496 009c FFF7FEFF 		bl	hal_mcu_reset
+ 497              	.L34:
+ 498              		@ sp needed
+ 499 00a0 70BD     		pop	{r4, r5, r6, pc}
+ 500              	.L48:
+ 501 00a2 C046     		.align	2
+ 502              	.L47:
+ 503 00a4 00540040 		.word	1073763328
+ 504 00a8 00000000 		.word	hi2c1
+ 505 00ac 5B3D3000 		.word	3161435
+ 506 00b0 00000000 		.word	__func__.0
+ 507 00b4 00000000 		.word	.LC8
+ 508 00b8 16000000 		.word	.LC10
+ 509 00bc 17000000 		.word	.LC12
+ 511              		.section	.text.GPIO_Init,"ax",%progbits
+ 512              		.align	1
+ 513              		.global	GPIO_Init
+ 514              		.syntax unified
+ 515              		.code	16
+ 516              		.thumb_func
+ 518              	GPIO_Init:
+ 519              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/cc0bGBAR.s 			page 10
+
+
+ 520              		@ frame_needed = 0, uses_anonymous_args = 0
+ 521 0000 10B5     		push	{r4, lr}
+ 522 0002 0021     		movs	r1, #0
+ 523              		@ sp needed
+ 524 0004 2720     		movs	r0, #39
+ 525 0006 FFF7FEFF 		bl	hal_gpio_init_out
+ 526 000a 0121     		movs	r1, #1
+ 527 000c 2120     		movs	r0, #33
+ 528 000e FFF7FEFF 		bl	hal_gpio_init_out
+ 529 0012 0021     		movs	r1, #0
+ 530 0014 1020     		movs	r0, #16
+ 531 0016 FFF7FEFF 		bl	hal_gpio_init_out
+ 532 001a 0021     		movs	r1, #0
+ 533 001c 0320     		movs	r0, #3
+ 534 001e FFF7FEFF 		bl	hal_gpio_init_out
+ 535 0022 0122     		movs	r2, #1
+ 536 0024 0221     		movs	r1, #2
+ 537 0026 2B20     		movs	r0, #43
+ 538 0028 074B     		ldr	r3, .L50
+ 539 002a FFF7FEFF 		bl	hal_gpio_init_in
+ 540 002e 0122     		movs	r2, #1
+ 541 0030 0221     		movs	r1, #2
+ 542 0032 2A20     		movs	r0, #42
+ 543 0034 054B     		ldr	r3, .L50+4
+ 544 0036 FFF7FEFF 		bl	hal_gpio_init_in
+ 545 003a 0122     		movs	r2, #1
+ 546 003c 0221     		movs	r1, #2
+ 547 003e 0F20     		movs	r0, #15
+ 548 0040 034B     		ldr	r3, .L50+8
+ 549 0042 FFF7FEFF 		bl	hal_gpio_init_in
+ 550 0046 10BD     		pop	{r4, pc}
+ 551              	.L51:
+ 552              		.align	2
+ 553              	.L50:
+ 554 0048 00000000 		.word	PC11_cb
+ 555 004c 00000000 		.word	PC10_cb
+ 556 0050 00000000 		.word	PA15_cb
+ 558              		.section	.rodata.__func__.0,"a"
+ 561              	__func__.0:
+ 562 0000 4D585F49 		.ascii	"MX_I2C1_Init\000"
+ 562      3243315F 
+ 562      496E6974 
+ 562      00
+ 563              		.section	.rodata.__func__.1,"a"
+ 566              	__func__.1:
+ 567 0000 4D585F41 		.ascii	"MX_ADC_Init\000"
+ 567      44435F49 
+ 567      6E697400 
+ 568              		.global	PA15_cb
+ 569              		.section	.data.PA15_cb,"aw"
+ 570              		.align	2
+ 573              	PA15_cb:
+ 574 0000 0F       		.byte	15
+ 575 0001 000000   		.space	3
+ 576 0004 00000000 		.word	0
+ 577 0008 00000000 		.word	PA15Callback
+ 578              		.global	PC11_cb
+ARM GAS  /tmp/cc0bGBAR.s 			page 11
+
+
+ 579              		.section	.data.PC11_cb,"aw"
+ 580              		.align	2
+ 583              	PC11_cb:
+ 584 0000 2B       		.byte	43
+ 585 0001 000000   		.space	3
+ 586 0004 00000000 		.word	0
+ 587 0008 00000000 		.word	PC11Callback
+ 588              		.global	PC10_cb
+ 589              		.section	.data.PC10_cb,"aw"
+ 590              		.align	2
+ 593              	PC10_cb:
+ 594 0000 2A       		.byte	42
+ 595 0001 000000   		.space	3
+ 596 0004 00000000 		.word	0
+ 597 0008 00000000 		.word	PC10Callback
+ 598              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/cc0bGBAR.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 functions.c
+     /tmp/cc0bGBAR.s:21     .text.printCayenneLPPBuffer:00000000 $t
+     /tmp/cc0bGBAR.s:27     .text.printCayenneLPPBuffer:00000000 printCayenneLPPBuffer
+     /tmp/cc0bGBAR.s:55     .text.printCayenneLPPBuffer:0000002c $d
+     /tmp/cc0bGBAR.s:60     .text.sendLoRaWANPacket:00000000 $t
+     /tmp/cc0bGBAR.s:66     .text.sendLoRaWANPacket:00000000 sendLoRaWANPacket
+     /tmp/cc0bGBAR.s:80     .text.sendData:00000000 $t
+     /tmp/cc0bGBAR.s:86     .text.sendData:00000000 sendData
+     /tmp/cc0bGBAR.s:125    .text.wateralarm:00000000 $t
+     /tmp/cc0bGBAR.s:131    .text.wateralarm:00000000 wateralarm
+     /tmp/cc0bGBAR.s:155    .text.dooralarm:00000000 $t
+     /tmp/cc0bGBAR.s:161    .text.dooralarm:00000000 dooralarm
+     /tmp/cc0bGBAR.s:186    .text.GETtemperature:00000000 $t
+     /tmp/cc0bGBAR.s:192    .text.GETtemperature:00000000 GETtemperature
+     /tmp/cc0bGBAR.s:230    .text.MX_ADC_Init:00000000 $t
+     /tmp/cc0bGBAR.s:236    .text.MX_ADC_Init:00000000 MX_ADC_Init
+     /tmp/cc0bGBAR.s:314    .text.MX_ADC_Init:000000a4 $d
+     /tmp/cc0bGBAR.s:566    .rodata.__func__.1:00000000 __func__.1
+     /tmp/cc0bGBAR.s:325    .text.GETvoltage:00000000 $t
+     /tmp/cc0bGBAR.s:331    .text.GETvoltage:00000000 GETvoltage
+     /tmp/cc0bGBAR.s:386    .text.GETvoltage:00000074 $d
+     /tmp/cc0bGBAR.s:393    .text.sensor_read:00000000 $t
+     /tmp/cc0bGBAR.s:399    .text.sensor_read:00000000 sensor_read
+     /tmp/cc0bGBAR.s:418    .text.sensor_read:00000020 $d
+     /tmp/cc0bGBAR.s:424    .text.MX_I2C1_Init:00000000 $t
+     /tmp/cc0bGBAR.s:430    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
+     /tmp/cc0bGBAR.s:503    .text.MX_I2C1_Init:000000a4 $d
+     /tmp/cc0bGBAR.s:561    .rodata.__func__.0:00000000 __func__.0
+     /tmp/cc0bGBAR.s:512    .text.GPIO_Init:00000000 $t
+     /tmp/cc0bGBAR.s:518    .text.GPIO_Init:00000000 GPIO_Init
+     /tmp/cc0bGBAR.s:554    .text.GPIO_Init:00000048 $d
+     /tmp/cc0bGBAR.s:583    .data.PC11_cb:00000000 PC11_cb
+     /tmp/cc0bGBAR.s:593    .data.PC10_cb:00000000 PC10_cb
+     /tmp/cc0bGBAR.s:573    .data.PA15_cb:00000000 PA15_cb
+     /tmp/cc0bGBAR.s:570    .data.PA15_cb:00000000 $d
+     /tmp/cc0bGBAR.s:580    .data.PC11_cb:00000000 $d
+     /tmp/cc0bGBAR.s:590    .data.PC10_cb:00000000 $d
+
+UNDEFINED SYMBOLS
+hal_trace_print_var
+smtc_modem_request_uplink
+cayenne_lpp_reset
+cayenne_lpp_add_temperature
+cayenne_lpp_add_analog_input
+cayenne_lpp_add_digital_input
+__aeabi_i2f
+HAL_I2C_Mem_Read
+memset
+HAL_ADC_Init
+hal_mcu_reset
+HAL_ADC_ConfigChannel
+hadc
+__aeabi_fmul
+__aeabi_ui2f
+hal_gpio_set_value
+HAL_Delay
+ARM GAS  /tmp/cc0bGBAR.s 			page 13
+
+
+HAL_ADC_Start
+HAL_ADC_PollForConversion
+HAL_ADC_GetValue
+HAL_ADC_DeInit
+VDR
+temp
+Voltage
+HAL_I2C_Init
+HAL_I2CEx_ConfigAnalogFilter
+HAL_I2CEx_ConfigDigitalFilter
+hi2c1
+hal_gpio_init_out
+hal_gpio_init_in
+PA15Callback
+PC11Callback
+PC10Callback

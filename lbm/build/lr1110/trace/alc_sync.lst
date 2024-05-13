@@ -1,0 +1,896 @@
+ARM GAS  /tmp/ccg3QDcb.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"alc_sync.c"
+  12              		.text
+  13              		.section	.text.alc_sync_init,"ax",%progbits
+  14              		.align	1
+  15              		.global	alc_sync_init
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	alc_sync_init:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23              		@ link register save eliminated.
+  24 0000 0023     		movs	r3, #0
+  25              		@ sp needed
+  26 0002 064A     		ldr	r2, .L2
+  27 0004 4370     		strb	r3, [r0, #1]
+  28 0006 8282     		strh	r2, [r0, #20]
+  29 0008 054A     		ldr	r2, .L2+4
+  30 000a 8370     		strb	r3, [r0, #2]
+  31 000c 8261     		str	r2, [r0, #24]
+  32 000e 054A     		ldr	r2, .L2+8
+  33 0010 4382     		strh	r3, [r0, #18]
+  34 0012 C361     		str	r3, [r0, #28]
+  35 0014 0362     		str	r3, [r0, #32]
+  36 0016 4262     		str	r2, [r0, #36]
+  37 0018 0385     		strh	r3, [r0, #40]
+  38 001a 7047     		bx	lr
+  39              	.L3:
+  40              		.align	2
+  41              	.L2:
+  42 001c 0FCAFFFF 		.word	-13809
+  43 0020 40FA0100 		.word	129600
+  44 0024 80994000 		.word	4233600
+  46              		.section	.rodata.alc_sync_parser.str1.1,"aMS",%progbits,1
+  47              	.LC0:
+  48 0000 6C626D2F 		.ascii	"lbm/smtc_modem_core/smtc_modem_services/src/alc_syn"
+  48      736D7463 
+  48      5F6D6F64 
+  48      656D5F63 
+  48      6F72652F 
+  49 0033 632F616C 		.ascii	"c/alc_sync.c\000"
+  49      635F7379 
+  49      6E632E63 
+  49      00
+  50              	.LC2:
+  51 0040 494E464F 		.ascii	"INFO\000"
+  51      00
+ARM GAS  /tmp/ccg3QDcb.s 			page 2
+
+
+  52              	.LC4:
+  53 0045 25732028 		.ascii	"%s (%s:%d) \000"
+  53      25733A25 
+  53      64292000 
+  54              	.LC6:
+  55 0051 414C4320 		.ascii	"ALC Sync time correction %d s -> new GPS Time: %d s"
+  55      53796E63 
+  55      2074696D 
+  55      6520636F 
+  55      72726563 
+  56 0084 0A00     		.ascii	"\012\000"
+  57              	.LC8:
+  58 0086 5741524E 		.ascii	"WARN\000"
+  58      00
+  59              	.LC10:
+  60 008b 414C4320 		.ascii	"ALC Sync token mismatch: %d - %d\012\000"
+  60      53796E63 
+  60      20746F6B 
+  60      656E206D 
+  60      69736D61 
+  61              	.LC12:
+  62 00ad 4552524F 		.ascii	"ERROR\000"
+  62      5200
+  63              	.LC15:
+  64 00b3 25730A00 		.ascii	"%s\012\000"
+  65              	.LC18:
+  66 00b7 25732049 		.ascii	"%s Illegal state\012 \000"
+  66      6C6C6567 
+  66      616C2073 
+  66      74617465 
+  66      0A2000
+  67              		.section	.text.alc_sync_parser,"ax",%progbits
+  68              		.align	1
+  69              		.global	alc_sync_parser
+  70              		.syntax unified
+  71              		.code	16
+  72              		.thumb_func
+  74              	alc_sync_parser:
+  75              		@ args = 0, pretend = 0, frame = 8
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+  78 0002 0024     		movs	r4, #0
+  79 0004 0500     		movs	r5, r0
+  80 0006 1700     		movs	r7, r2
+  81 0008 0091     		str	r1, [sp]
+  82 000a 8470     		strb	r4, [r0, #2]
+  83 000c 4470     		strb	r4, [r0, #1]
+  84              	.L5:
+  85 000e BC42     		cmp	r4, r7
+  86 0010 00D3     		bcc	.LCB45
+  87 0012 9FE0     		b	.L22	@long jump
+  88              	.LCB45:
+  89 0014 009B     		ldr	r3, [sp]
+  90 0016 185D     		ldrb	r0, [r3, r4]
+  91 0018 0328     		cmp	r0, #3
+  92 001a 00D9     		bls	.LCB49
+  93 001c 90E0     		b	.L6	@long jump
+ARM GAS  /tmp/ccg3QDcb.s 			page 3
+
+
+  94              	.LCB49:
+  95 001e FFF7FEFF 		bl	__gnu_thumb1_case_uqi
+  96              	.L8:
+  97 0022 02       		.byte	(.L11-.L8)/2
+  98 0023 09       		.byte	(.L10-.L8)/2
+  99 0024 5A       		.byte	(.L9-.L8)/2
+ 100 0025 7D       		.byte	(.L7-.L8)/2
+ 101              		.p2align 1
+ 102              	.L11:
+ 103 0026 0123     		movs	r3, #1
+ 104 0028 6A78     		ldrb	r2, [r5, #1]
+ 105 002a 0134     		adds	r4, r4, #1
+ 106 002c 1343     		orrs	r3, r2
+ 107 002e 6B70     		strb	r3, [r5, #1]
+ 108              	.L28:
+ 109 0030 E4B2     		uxtb	r4, r4
+ 110 0032 ECE7     		b	.L5
+ 111              	.L10:
+ 112 0034 484A     		ldr	r2, .L31
+ 113 0036 631D     		adds	r3, r4, #5
+ 114 0038 0192     		str	r2, [sp, #4]
+ 115 003a BB42     		cmp	r3, r7
+ 116 003c 40DA     		bge	.L13
+ 117 003e 0F21     		movs	r1, #15
+ 118 0040 009B     		ldr	r3, [sp]
+ 119 0042 661C     		adds	r6, r4, #1
+ 120 0044 9E19     		adds	r6, r3, r6
+ 121 0046 3279     		ldrb	r2, [r6, #4]
+ 122 0048 EB7C     		ldrb	r3, [r5, #19]
+ 123 004a 0A40     		ands	r2, r1
+ 124 004c 9342     		cmp	r3, r2
+ 125 004e 2BD1     		bne	.L14
+ 126 0050 0133     		adds	r3, r3, #1
+ 127 0052 0B40     		ands	r3, r1
+ 128 0054 EB74     		strb	r3, [r5, #19]
+ 129 0056 7378     		ldrb	r3, [r6, #1]
+ 130 0058 3278     		ldrb	r2, [r6]
+ 131 005a 1B02     		lsls	r3, r3, #8
+ 132 005c 1343     		orrs	r3, r2
+ 133 005e B278     		ldrb	r2, [r6, #2]
+ 134 0060 1204     		lsls	r2, r2, #16
+ 135 0062 1A43     		orrs	r2, r3
+ 136 0064 F378     		ldrb	r3, [r6, #3]
+ 137 0066 1B06     		lsls	r3, r3, #24
+ 138 0068 1343     		orrs	r3, r2
+ 139 006a EA69     		ldr	r2, [r5, #28]
+ 140 006c D318     		adds	r3, r2, r3
+ 141 006e EB61     		str	r3, [r5, #28]
+ 142 0070 0023     		movs	r3, #0
+ 143 0072 AB74     		strb	r3, [r5, #18]
+ 144 0074 2B00     		movs	r3, r5
+ 145 0076 0222     		movs	r2, #2
+ 146 0078 2833     		adds	r3, r3, #40
+ 147 007a 1A70     		strb	r2, [r3]
+ 148 007c FFF7FEFF 		bl	smtc_modem_services_get_time_s
+ 149 0080 8523     		movs	r3, #133
+ 150 0082 3649     		ldr	r1, .L31+4
+ARM GAS  /tmp/ccg3QDcb.s 			page 4
+
+
+ 151 0084 019A     		ldr	r2, [sp, #4]
+ 152 0086 2862     		str	r0, [r5, #32]
+ 153 0088 9B00     		lsls	r3, r3, #2
+ 154 008a 3548     		ldr	r0, .L31+8
+ 155 008c FFF7FEFF 		bl	printf
+ 156 0090 E969     		ldr	r1, [r5, #28]
+ 157 0092 2A6A     		ldr	r2, [r5, #32]
+ 158 0094 3348     		ldr	r0, .L31+12
+ 159 0096 8A18     		adds	r2, r1, r2
+ 160              	.L27:
+ 161 0098 FFF7FEFF 		bl	printf
+ 162 009c 0223     		movs	r3, #2
+ 163 009e 6A78     		ldrb	r2, [r5, #1]
+ 164 00a0 1343     		orrs	r3, r2
+ 165 00a2 6B70     		strb	r3, [r5, #1]
+ 166              	.L16:
+ 167 00a4 0634     		adds	r4, r4, #6
+ 168 00a6 C3E7     		b	.L28
+ 169              	.L14:
+ 170 00a8 2F49     		ldr	r1, .L31+16
+ 171 00aa 304B     		ldr	r3, .L31+20
+ 172 00ac 019A     		ldr	r2, [sp, #4]
+ 173 00ae 2C48     		ldr	r0, .L31+8
+ 174 00b0 FFF7FEFF 		bl	printf
+ 175 00b4 0F23     		movs	r3, #15
+ 176 00b6 3279     		ldrb	r2, [r6, #4]
+ 177 00b8 E97C     		ldrb	r1, [r5, #19]
+ 178 00ba 2D48     		ldr	r0, .L31+24
+ 179 00bc 1A40     		ands	r2, r3
+ 180 00be EBE7     		b	.L27
+ 181              	.L13:
+ 182 00c0 D223     		movs	r3, #210
+ 183 00c2 2C49     		ldr	r1, .L31+28
+ 184 00c4 019A     		ldr	r2, [sp, #4]
+ 185 00c6 2648     		ldr	r0, .L31+8
+ 186 00c8 FFF7FEFF 		bl	printf
+ 187 00cc 2A49     		ldr	r1, .L31+32
+ 188 00ce 2B48     		ldr	r0, .L31+36
+ 189 00d0 FFF7FEFF 		bl	printf
+ 190 00d4 E6E7     		b	.L16
+ 191              	.L9:
+ 192 00d6 631C     		adds	r3, r4, #1
+ 193 00d8 BB42     		cmp	r3, r7
+ 194 00da 14DA     		bge	.L17
+ 195 00dc 0F22     		movs	r2, #15
+ 196 00de 009B     		ldr	r3, [sp]
+ 197 00e0 1B19     		adds	r3, r3, r4
+ 198 00e2 5B78     		ldrb	r3, [r3, #1]
+ 199 00e4 1340     		ands	r3, r2
+ 200 00e6 7132     		adds	r2, r2, #113
+ 201 00e8 9A40     		lsls	r2, r2, r3
+ 202 00ea 0323     		movs	r3, #3
+ 203 00ec 5343     		muls	r3, r2
+ 204 00ee AA61     		str	r2, [r5, #24]
+ 205 00f0 234A     		ldr	r2, .L31+40
+ 206 00f2 9342     		cmp	r3, r2
+ 207 00f4 00D9     		bls	.L18
+ARM GAS  /tmp/ccg3QDcb.s 			page 5
+
+
+ 208 00f6 1300     		movs	r3, r2
+ 209              	.L18:
+ 210 00f8 6B62     		str	r3, [r5, #36]
+ 211 00fa 0423     		movs	r3, #4
+ 212 00fc 6A78     		ldrb	r2, [r5, #1]
+ 213              	.L30:
+ 214 00fe 1343     		orrs	r3, r2
+ 215 0100 6B70     		strb	r3, [r5, #1]
+ 216              	.L21:
+ 217 0102 0234     		adds	r4, r4, #2
+ 218 0104 94E7     		b	.L28
+ 219              	.L17:
+ 220 0106 E123     		movs	r3, #225
+ 221 0108 134A     		ldr	r2, .L31
+ 222 010a 1A49     		ldr	r1, .L31+28
+ 223 010c 1448     		ldr	r0, .L31+8
+ 224              	.L29:
+ 225 010e FFF7FEFF 		bl	printf
+ 226 0112 1949     		ldr	r1, .L31+32
+ 227 0114 1948     		ldr	r0, .L31+36
+ 228 0116 FFF7FEFF 		bl	printf
+ 229 011a F2E7     		b	.L21
+ 230              	.L7:
+ 231 011c 631C     		adds	r3, r4, #1
+ 232 011e BB42     		cmp	r3, r7
+ 233 0120 09DA     		bge	.L20
+ 234 0122 0722     		movs	r2, #7
+ 235 0124 009B     		ldr	r3, [sp]
+ 236 0126 1B19     		adds	r3, r3, r4
+ 237 0128 5B78     		ldrb	r3, [r3, #1]
+ 238 012a 1340     		ands	r3, r2
+ 239 012c AB74     		strb	r3, [r5, #18]
+ 240 012e E8D0     		beq	.L21
+ 241 0130 0823     		movs	r3, #8
+ 242 0132 6A78     		ldrb	r2, [r5, #1]
+ 243 0134 E3E7     		b	.L30
+ 244              	.L20:
+ 245 0136 F423     		movs	r3, #244
+ 246 0138 074A     		ldr	r2, .L31
+ 247 013a 0E49     		ldr	r1, .L31+28
+ 248 013c 0848     		ldr	r0, .L31+8
+ 249 013e E6E7     		b	.L29
+ 250              	.L6:
+ 251 0140 0C49     		ldr	r1, .L31+28
+ 252 0142 FA23     		movs	r3, #250
+ 253 0144 044A     		ldr	r2, .L31
+ 254 0146 0648     		ldr	r0, .L31+8
+ 255 0148 FFF7FEFF 		bl	printf
+ 256 014c 0D49     		ldr	r1, .L31+44
+ 257 014e 0E48     		ldr	r0, .L31+48
+ 258 0150 FFF7FEFF 		bl	printf
+ 259              	.L22:
+ 260              		@ sp needed
+ 261 0154 6878     		ldrb	r0, [r5, #1]
+ 262 0156 FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
+ 263              	.L32:
+ 264              		.align	2
+ARM GAS  /tmp/ccg3QDcb.s 			page 6
+
+
+ 265              	.L31:
+ 266 0158 00000000 		.word	.LC0
+ 267 015c 40000000 		.word	.LC2
+ 268 0160 45000000 		.word	.LC4
+ 269 0164 51000000 		.word	.LC6
+ 270 0168 86000000 		.word	.LC8
+ 271 016c 19020000 		.word	537
+ 272 0170 8B000000 		.word	.LC10
+ 273 0174 AD000000 		.word	.LC12
+ 274 0178 00000000 		.word	alc_sync_bad_size_str
+ 275 017c B3000000 		.word	.LC15
+ 276 0180 80994000 		.word	4233600
+ 277 0184 00000000 		.word	__func__.0
+ 278 0188 B7000000 		.word	.LC18
+ 280              		.section	.text.alc_sync_get_interval_second,"ax",%progbits
+ 281              		.align	1
+ 282              		.global	alc_sync_get_interval_second
+ 283              		.syntax unified
+ 284              		.code	16
+ 285              		.thumb_func
+ 287              	alc_sync_get_interval_second:
+ 288              		@ args = 0, pretend = 0, frame = 0
+ 289              		@ frame_needed = 0, uses_anonymous_args = 0
+ 290              		@ link register save eliminated.
+ 291 0000 8069     		ldr	r0, [r0, #24]
+ 292              		@ sp needed
+ 293 0002 7047     		bx	lr
+ 295              		.section	.text.alc_sync_set_interval_second,"ax",%progbits
+ 296              		.align	1
+ 297              		.global	alc_sync_set_interval_second
+ 298              		.syntax unified
+ 299              		.code	16
+ 300              		.thumb_func
+ 302              	alc_sync_set_interval_second:
+ 303              		@ args = 0, pretend = 0, frame = 0
+ 304              		@ frame_needed = 0, uses_anonymous_args = 0
+ 305              		@ link register save eliminated.
+ 306 0000 426A     		ldr	r2, [r0, #36]
+ 307 0002 0300     		movs	r3, r0
+ 308 0004 0020     		movs	r0, #0
+ 309 0006 8A42     		cmp	r2, r1
+ 310 0008 01D9     		bls	.L35
+ 311 000a 9961     		str	r1, [r3, #24]
+ 312 000c 0130     		adds	r0, r0, #1
+ 313              	.L35:
+ 314              		@ sp needed
+ 315 000e 7047     		bx	lr
+ 317              		.section	.text.alc_sync_get_time_correction_second,"ax",%progbits
+ 318              		.align	1
+ 319              		.global	alc_sync_get_time_correction_second
+ 320              		.syntax unified
+ 321              		.code	16
+ 322              		.thumb_func
+ 324              	alc_sync_get_time_correction_second:
+ 325              		@ args = 0, pretend = 0, frame = 0
+ 326              		@ frame_needed = 0, uses_anonymous_args = 0
+ 327              		@ link register save eliminated.
+ARM GAS  /tmp/ccg3QDcb.s 			page 7
+
+
+ 328 0000 C069     		ldr	r0, [r0, #28]
+ 329              		@ sp needed
+ 330 0002 7047     		bx	lr
+ 332              		.section	.text.alc_sync_set_time_correction_second,"ax",%progbits
+ 333              		.align	1
+ 334              		.global	alc_sync_set_time_correction_second
+ 335              		.syntax unified
+ 336              		.code	16
+ 337              		.thumb_func
+ 339              	alc_sync_set_time_correction_second:
+ 340              		@ args = 0, pretend = 0, frame = 0
+ 341              		@ frame_needed = 0, uses_anonymous_args = 0
+ 342 0000 10B5     		push	{r4, lr}
+ 343 0002 C161     		str	r1, [r0, #28]
+ 344 0004 0400     		movs	r4, r0
+ 345              		@ sp needed
+ 346 0006 FFF7FEFF 		bl	smtc_modem_services_get_time_s
+ 347 000a 0123     		movs	r3, #1
+ 348 000c 2062     		str	r0, [r4, #32]
+ 349 000e 2834     		adds	r4, r4, #40
+ 350 0010 2370     		strb	r3, [r4]
+ 351 0012 10BD     		pop	{r4, pc}
+ 353              		.section	.text.alc_sync_get_gps_time_second,"ax",%progbits
+ 354              		.align	1
+ 355              		.global	alc_sync_get_gps_time_second
+ 356              		.syntax unified
+ 357              		.code	16
+ 358              		.thumb_func
+ 360              	alc_sync_get_gps_time_second:
+ 361              		@ args = 0, pretend = 0, frame = 0
+ 362              		@ frame_needed = 0, uses_anonymous_args = 0
+ 363 0000 10B5     		push	{r4, lr}
+ 364 0002 0400     		movs	r4, r0
+ 365              		@ sp needed
+ 366 0004 FFF7FEFF 		bl	smtc_modem_services_get_time_s
+ 367 0008 E369     		ldr	r3, [r4, #28]
+ 368 000a C018     		adds	r0, r0, r3
+ 369 000c 10BD     		pop	{r4, pc}
+ 371              		.section	.text.alc_sync_get_time_left_connection_lost,"ax",%progbits
+ 372              		.align	1
+ 373              		.global	alc_sync_get_time_left_connection_lost
+ 374              		.syntax unified
+ 375              		.code	16
+ 376              		.thumb_func
+ 378              	alc_sync_get_time_left_connection_lost:
+ 379              		@ args = 0, pretend = 0, frame = 0
+ 380              		@ frame_needed = 0, uses_anonymous_args = 0
+ 381 0000 10B5     		push	{r4, lr}
+ 382 0002 0400     		movs	r4, r0
+ 383 0004 FFF7FEFF 		bl	smtc_modem_services_get_time_s
+ 384 0008 236A     		ldr	r3, [r4, #32]
+ 385 000a 0200     		movs	r2, r0
+ 386 000c 606A     		ldr	r0, [r4, #36]
+ 387 000e 002B     		cmp	r3, #0
+ 388 0010 07D0     		beq	.L40
+ 389 0012 D11A     		subs	r1, r2, r3
+ 390 0014 8842     		cmp	r0, r1
+ARM GAS  /tmp/ccg3QDcb.s 			page 8
+
+
+ 391 0016 04D3     		bcc	.L40
+ 392 0018 1B18     		adds	r3, r3, r0
+ 393 001a 9B1A     		subs	r3, r3, r2
+ 394 001c 9842     		cmp	r0, r3
+ 395 001e 01D3     		bcc	.L42
+ 396 0020 1800     		movs	r0, r3
+ 397              	.L40:
+ 398              		@ sp needed
+ 399 0022 10BD     		pop	{r4, pc}
+ 400              	.L42:
+ 401 0024 E120     		movs	r0, #225
+ 402 0026 0001     		lsls	r0, r0, #4
+ 403 0028 FBE7     		b	.L40
+ 405              		.section	.text.is_alc_sync_done,"ax",%progbits
+ 406              		.align	1
+ 407              		.global	is_alc_sync_done
+ 408              		.syntax unified
+ 409              		.code	16
+ 410              		.thumb_func
+ 412              	is_alc_sync_done:
+ 413              		@ args = 0, pretend = 0, frame = 0
+ 414              		@ frame_needed = 0, uses_anonymous_args = 0
+ 415              		@ link register save eliminated.
+ 416 0000 2830     		adds	r0, r0, #40
+ 417 0002 0378     		ldrb	r3, [r0]
+ 418 0004 0122     		movs	r2, #1
+ 419              		@ sp needed
+ 420 0006 0020     		movs	r0, #0
+ 421 0008 013B     		subs	r3, r3, #1
+ 422 000a DBB2     		uxtb	r3, r3
+ 423 000c 9A42     		cmp	r2, r3
+ 424 000e 4041     		adcs	r0, r0, r0
+ 425 0010 C0B2     		uxtb	r0, r0
+ 426 0012 7047     		bx	lr
+ 428              		.section	.text.is_alc_sync_time_valid,"ax",%progbits
+ 429              		.align	1
+ 430              		.global	is_alc_sync_time_valid
+ 431              		.syntax unified
+ 432              		.code	16
+ 433              		.thumb_func
+ 435              	is_alc_sync_time_valid:
+ 436              		@ args = 0, pretend = 0, frame = 0
+ 437              		@ frame_needed = 0, uses_anonymous_args = 0
+ 438 0000 10B5     		push	{r4, lr}
+ 439 0002 0400     		movs	r4, r0
+ 440 0004 FFF7FEFF 		bl	smtc_modem_services_get_time_s
+ 441 0008 0300     		movs	r3, r0
+ 442 000a 0020     		movs	r0, #0
+ 443 000c 226A     		ldr	r2, [r4, #32]
+ 444 000e 8242     		cmp	r2, r0
+ 445 0010 04D0     		beq	.L48
+ 446 0012 9B1A     		subs	r3, r3, r2
+ 447 0014 626A     		ldr	r2, [r4, #36]
+ 448 0016 9A42     		cmp	r2, r3
+ 449 0018 4041     		adcs	r0, r0, r0
+ 450 001a C0B2     		uxtb	r0, r0
+ 451              	.L48:
+ARM GAS  /tmp/ccg3QDcb.s 			page 9
+
+
+ 452              		@ sp needed
+ 453 001c 10BD     		pop	{r4, pc}
+ 455              		.section	.text.alc_sync_set_valid_delay_second,"ax",%progbits
+ 456              		.align	1
+ 457              		.global	alc_sync_set_valid_delay_second
+ 458              		.syntax unified
+ 459              		.code	16
+ 460              		.thumb_func
+ 462              	alc_sync_set_valid_delay_second:
+ 463              		@ args = 0, pretend = 0, frame = 0
+ 464              		@ frame_needed = 0, uses_anonymous_args = 0
+ 465              		@ link register save eliminated.
+ 466 0000 034A     		ldr	r2, .L54
+ 467 0002 0300     		movs	r3, r0
+ 468 0004 0020     		movs	r0, #0
+ 469 0006 9142     		cmp	r1, r2
+ 470 0008 01D8     		bhi	.L52
+ 471 000a 5962     		str	r1, [r3, #36]
+ 472 000c 0130     		adds	r0, r0, #1
+ 473              	.L52:
+ 474              		@ sp needed
+ 475 000e 7047     		bx	lr
+ 476              	.L55:
+ 477              		.align	2
+ 478              	.L54:
+ 479 0010 80994000 		.word	4233600
+ 481              		.section	.text.alc_sync_get_valid_delay_second,"ax",%progbits
+ 482              		.align	1
+ 483              		.global	alc_sync_get_valid_delay_second
+ 484              		.syntax unified
+ 485              		.code	16
+ 486              		.thumb_func
+ 488              	alc_sync_get_valid_delay_second:
+ 489              		@ args = 0, pretend = 0, frame = 0
+ 490              		@ frame_needed = 0, uses_anonymous_args = 0
+ 491              		@ link register save eliminated.
+ 492 0000 406A     		ldr	r0, [r0, #36]
+ 493              		@ sp needed
+ 494 0002 7047     		bx	lr
+ 496              		.section	.text.alc_sync_set_sync_lost,"ax",%progbits
+ 497              		.align	1
+ 498              		.global	alc_sync_set_sync_lost
+ 499              		.syntax unified
+ 500              		.code	16
+ 501              		.thumb_func
+ 503              	alc_sync_set_sync_lost:
+ 504              		@ args = 0, pretend = 0, frame = 0
+ 505              		@ frame_needed = 0, uses_anonymous_args = 0
+ 506              		@ link register save eliminated.
+ 507 0000 0200     		movs	r2, r0
+ 508              		@ sp needed
+ 509 0002 0023     		movs	r3, #0
+ 510 0004 2832     		adds	r2, r2, #40
+ 511 0006 1370     		strb	r3, [r2]
+ 512 0008 0362     		str	r3, [r0, #32]
+ 513 000a 7047     		bx	lr
+ 515              		.section	.text.alc_sync_get_nb_transmission,"ax",%progbits
+ARM GAS  /tmp/ccg3QDcb.s 			page 10
+
+
+ 516              		.align	1
+ 517              		.global	alc_sync_get_nb_transmission
+ 518              		.syntax unified
+ 519              		.code	16
+ 520              		.thumb_func
+ 522              	alc_sync_get_nb_transmission:
+ 523              		@ args = 0, pretend = 0, frame = 0
+ 524              		@ frame_needed = 0, uses_anonymous_args = 0
+ 525              		@ link register save eliminated.
+ 526 0000 807C     		ldrb	r0, [r0, #18]
+ 527              		@ sp needed
+ 528 0002 7047     		bx	lr
+ 530              		.section	.text.alc_sync_get_token_req,"ax",%progbits
+ 531              		.align	1
+ 532              		.global	alc_sync_get_token_req
+ 533              		.syntax unified
+ 534              		.code	16
+ 535              		.thumb_func
+ 537              	alc_sync_get_token_req:
+ 538              		@ args = 0, pretend = 0, frame = 0
+ 539              		@ frame_needed = 0, uses_anonymous_args = 0
+ 540              		@ link register save eliminated.
+ 541 0000 C07C     		ldrb	r0, [r0, #19]
+ 542              		@ sp needed
+ 543 0002 7047     		bx	lr
+ 545              		.section	.text.alc_sync_set_max_length_up_payload,"ax",%progbits
+ 546              		.align	1
+ 547              		.global	alc_sync_set_max_length_up_payload
+ 548              		.syntax unified
+ 549              		.code	16
+ 550              		.thumb_func
+ 552              	alc_sync_set_max_length_up_payload:
+ 553              		@ args = 0, pretend = 0, frame = 0
+ 554              		@ frame_needed = 0, uses_anonymous_args = 0
+ 555              		@ link register save eliminated.
+ 556 0000 0175     		strb	r1, [r0, #20]
+ 557              		@ sp needed
+ 558 0002 7047     		bx	lr
+ 560              		.section	.text.alc_sync_get_timestamp_last_correction_s,"ax",%progbits
+ 561              		.align	1
+ 562              		.global	alc_sync_get_timestamp_last_correction_s
+ 563              		.syntax unified
+ 564              		.code	16
+ 565              		.thumb_func
+ 567              	alc_sync_get_timestamp_last_correction_s:
+ 568              		@ args = 0, pretend = 0, frame = 0
+ 569              		@ frame_needed = 0, uses_anonymous_args = 0
+ 570              		@ link register save eliminated.
+ 571 0000 006A     		ldr	r0, [r0, #32]
+ 572              		@ sp needed
+ 573 0002 7047     		bx	lr
+ 575              		.section	.text.alc_sync_get_timestamp_ans_requested_s,"ax",%progbits
+ 576              		.align	1
+ 577              		.global	alc_sync_get_timestamp_ans_requested_s
+ 578              		.syntax unified
+ 579              		.code	16
+ 580              		.thumb_func
+ARM GAS  /tmp/ccg3QDcb.s 			page 11
+
+
+ 582              	alc_sync_get_timestamp_ans_requested_s:
+ 583              		@ args = 0, pretend = 0, frame = 0
+ 584              		@ frame_needed = 0, uses_anonymous_args = 0
+ 585              		@ link register save eliminated.
+ 586 0000 0323     		movs	r3, #3
+ 587 0002 0200     		movs	r2, r0
+ 588 0004 8069     		ldr	r0, [r0, #24]
+ 589 0006 526A     		ldr	r2, [r2, #36]
+ 590 0008 4343     		muls	r3, r0
+ 591 000a 1E30     		adds	r0, r0, #30
+ 592 000c 9342     		cmp	r3, r2
+ 593 000e 01D8     		bhi	.L62
+ 594 0010 1E32     		adds	r2, r2, #30
+ 595 0012 D01A     		subs	r0, r2, r3
+ 596              	.L62:
+ 597              		@ sp needed
+ 598 0014 7047     		bx	lr
+ 600              		.section	.rodata.alc_sync_create_uplink_payload.str1.1,"aMS",%progbits,1
+ 601              	.LC23:
+ 602 0000 6374782D 		.ascii	"ctx->tx_payload buffer is full\012\000"
+ 602      3E74785F 
+ 602      7061796C 
+ 602      6F616420 
+ 602      62756666 
+ 603              		.section	.text.alc_sync_create_uplink_payload,"ax",%progbits
+ 604              		.align	1
+ 605              		.global	alc_sync_create_uplink_payload
+ 606              		.syntax unified
+ 607              		.code	16
+ 608              		.thumb_func
+ 610              	alc_sync_create_uplink_payload:
+ 611              		@ args = 12, pretend = 0, frame = 0
+ 612              		@ frame_needed = 0, uses_anonymous_args = 0
+ 613 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 614 0002 0400     		movs	r4, r0
+ 615 0004 1600     		movs	r6, r2
+ 616 0006 0122     		movs	r2, #1
+ 617 0008 1F00     		movs	r7, r3
+ 618 000a 06AB     		add	r3, sp, #24
+ 619 000c 0D00     		movs	r5, r1
+ 620 000e 1878     		ldrb	r0, [r3]
+ 621 0010 6178     		ldrb	r1, [r4, #1]
+ 622 0012 2075     		strb	r0, [r4, #20]
+ 623 0014 1142     		tst	r1, r2
+ 624 0016 0CD0     		beq	.L66
+ 625 0018 A378     		ldrb	r3, [r4, #2]
+ 626 001a 0028     		cmp	r0, #0
+ 627 001c 3BD1     		bne	.L67
+ 628 001e D323     		movs	r3, #211
+ 629 0020 4B4A     		ldr	r2, .L84
+ 630 0022 4C49     		ldr	r1, .L84+4
+ 631 0024 4C48     		ldr	r0, .L84+8
+ 632 0026 5B00     		lsls	r3, r3, #1
+ 633 0028 FFF7FEFF 		bl	printf
+ 634 002c 4B48     		ldr	r0, .L84+12
+ 635 002e FFF7FEFF 		bl	printf
+ 636              	.L66:
+ARM GAS  /tmp/ccg3QDcb.s 			page 12
+
+
+ 637 0032 012F     		cmp	r7, #1
+ 638 0034 03D1     		bne	.L68
+ 639 0036 A37C     		ldrb	r3, [r4, #18]
+ 640 0038 002B     		cmp	r3, #0
+ 641 003a 46D0     		beq	.L69
+ 642 003c 0026     		movs	r6, #0
+ 643              	.L68:
+ 644 003e 227D     		ldrb	r2, [r4, #20]
+ 645 0040 A378     		ldrb	r3, [r4, #2]
+ 646 0042 002A     		cmp	r2, #0
+ 647 0044 37D0     		beq	.L70
+ 648 0046 A27C     		ldrb	r2, [r4, #18]
+ 649 0048 002A     		cmp	r2, #0
+ 650 004a 00D0     		beq	.LCB613
+ 651 004c 71E0     		b	.L71	@long jump
+ 652              	.LCB613:
+ 653              	.L72:
+ 654 004e 0121     		movs	r1, #1
+ 655 0050 E218     		adds	r2, r4, r3
+ 656 0052 D170     		strb	r1, [r2, #3]
+ 657 0054 5A18     		adds	r2, r3, r1
+ 658 0056 D2B2     		uxtb	r2, r2
+ 659 0058 A218     		adds	r2, r4, r2
+ 660 005a D570     		strb	r5, [r2, #3]
+ 661 005c 9A1C     		adds	r2, r3, #2
+ 662 005e D2B2     		uxtb	r2, r2
+ 663 0060 A218     		adds	r2, r4, r2
+ 664 0062 290A     		lsrs	r1, r5, #8
+ 665 0064 D170     		strb	r1, [r2, #3]
+ 666 0066 DA1C     		adds	r2, r3, #3
+ 667 0068 D2B2     		uxtb	r2, r2
+ 668 006a A218     		adds	r2, r4, r2
+ 669 006c 290C     		lsrs	r1, r5, #16
+ 670 006e D170     		strb	r1, [r2, #3]
+ 671 0070 1A1D     		adds	r2, r3, #4
+ 672 0072 D2B2     		uxtb	r2, r2
+ 673 0074 A218     		adds	r2, r4, r2
+ 674 0076 290E     		lsrs	r1, r5, #24
+ 675 0078 D170     		strb	r1, [r2, #3]
+ 676 007a 0F21     		movs	r1, #15
+ 677 007c E27C     		ldrb	r2, [r4, #19]
+ 678 007e 3601     		lsls	r6, r6, #4
+ 679 0080 0A40     		ands	r2, r1
+ 680 0082 991D     		adds	r1, r3, #6
+ 681 0084 A170     		strb	r1, [r4, #2]
+ 682 0086 1021     		movs	r1, #16
+ 683 0088 0533     		adds	r3, r3, #5
+ 684 008a DBB2     		uxtb	r3, r3
+ 685 008c 0E40     		ands	r6, r1
+ 686 008e E318     		adds	r3, r4, r3
+ 687 0090 3243     		orrs	r2, r6
+ 688 0092 DA70     		strb	r2, [r3, #3]
+ 689 0094 19E0     		b	.L69
+ 690              	.L67:
+ 691 0096 0020     		movs	r0, #0
+ 692 0098 9143     		bics	r1, r2
+ 693 009a 6170     		strb	r1, [r4, #1]
+ARM GAS  /tmp/ccg3QDcb.s 			page 13
+
+
+ 694 009c E118     		adds	r1, r4, r3
+ 695 009e C870     		strb	r0, [r1, #3]
+ 696 00a0 591C     		adds	r1, r3, #1
+ 697 00a2 C9B2     		uxtb	r1, r1
+ 698 00a4 6118     		adds	r1, r4, r1
+ 699 00a6 CA70     		strb	r2, [r1, #3]
+ 700 00a8 D91C     		adds	r1, r3, #3
+ 701 00aa 0233     		adds	r3, r3, #2
+ 702 00ac DBB2     		uxtb	r3, r3
+ 703 00ae E318     		adds	r3, r4, r3
+ 704 00b0 A170     		strb	r1, [r4, #2]
+ 705 00b2 DA70     		strb	r2, [r3, #3]
+ 706 00b4 BDE7     		b	.L66
+ 707              	.L70:
+ 708 00b6 E223     		movs	r3, #226
+ 709 00b8 254A     		ldr	r2, .L84
+ 710 00ba 2649     		ldr	r1, .L84+4
+ 711 00bc 2648     		ldr	r0, .L84+8
+ 712 00be 5B00     		lsls	r3, r3, #1
+ 713 00c0 FFF7FEFF 		bl	printf
+ 714 00c4 2548     		ldr	r0, .L84+12
+ 715 00c6 FFF7FEFF 		bl	printf
+ 716              	.L69:
+ 717 00ca 0421     		movs	r1, #4
+ 718 00cc 6278     		ldrb	r2, [r4, #1]
+ 719 00ce 0A42     		tst	r2, r1
+ 720 00d0 22D0     		beq	.L73
+ 721 00d2 207D     		ldrb	r0, [r4, #20]
+ 722 00d4 A378     		ldrb	r3, [r4, #2]
+ 723 00d6 0028     		cmp	r0, #0
+ 724 00d8 2ED0     		beq	.L74
+ 725 00da 8A43     		bics	r2, r1
+ 726 00dc 6270     		strb	r2, [r4, #1]
+ 727 00de 0239     		subs	r1, r1, #2
+ 728 00e0 E218     		adds	r2, r4, r3
+ 729 00e2 D170     		strb	r1, [r2, #3]
+ 730 00e4 0021     		movs	r1, #0
+ 731 00e6 5A1C     		adds	r2, r3, #1
+ 732 00e8 D2B2     		uxtb	r2, r2
+ 733 00ea A218     		adds	r2, r4, r2
+ 734 00ec D170     		strb	r1, [r2, #3]
+ 735 00ee 9A1C     		adds	r2, r3, #2
+ 736 00f0 D2B2     		uxtb	r2, r2
+ 737 00f2 A218     		adds	r2, r4, r2
+ 738 00f4 D570     		strb	r5, [r2, #3]
+ 739 00f6 DA1C     		adds	r2, r3, #3
+ 740 00f8 D2B2     		uxtb	r2, r2
+ 741 00fa 290A     		lsrs	r1, r5, #8
+ 742 00fc A218     		adds	r2, r4, r2
+ 743 00fe D170     		strb	r1, [r2, #3]
+ 744 0100 1A1D     		adds	r2, r3, #4
+ 745 0102 D2B2     		uxtb	r2, r2
+ 746 0104 A218     		adds	r2, r4, r2
+ 747 0106 290C     		lsrs	r1, r5, #16
+ 748 0108 D170     		strb	r1, [r2, #3]
+ 749 010a 9A1D     		adds	r2, r3, #6
+ 750 010c 0533     		adds	r3, r3, #5
+ARM GAS  /tmp/ccg3QDcb.s 			page 14
+
+
+ 751 010e DBB2     		uxtb	r3, r3
+ 752 0110 E318     		adds	r3, r4, r3
+ 753 0112 2D0E     		lsrs	r5, r5, #24
+ 754 0114 A270     		strb	r2, [r4, #2]
+ 755 0116 DD70     		strb	r5, [r3, #3]
+ 756              	.L73:
+ 757 0118 A278     		ldrb	r2, [r4, #2]
+ 758 011a 0798     		ldr	r0, [sp, #28]
+ 759 011c E11C     		adds	r1, r4, #3
+ 760 011e FFF7FEFF 		bl	memcpy
+ 761              		@ sp needed
+ 762 0122 A378     		ldrb	r3, [r4, #2]
+ 763 0124 089A     		ldr	r2, [sp, #32]
+ 764 0126 1370     		strb	r3, [r2]
+ 765 0128 0023     		movs	r3, #0
+ 766 012a A370     		strb	r3, [r4, #2]
+ 767 012c 0F33     		adds	r3, r3, #15
+ 768 012e 2375     		strb	r3, [r4, #20]
+ 769 0130 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 770              	.L71:
+ 771 0132 013A     		subs	r2, r2, #1
+ 772 0134 A274     		strb	r2, [r4, #18]
+ 773 0136 8AE7     		b	.L72
+ 774              	.L74:
+ 775 0138 EF23     		movs	r3, #239
+ 776 013a 054A     		ldr	r2, .L84
+ 777 013c 0549     		ldr	r1, .L84+4
+ 778 013e 5B00     		lsls	r3, r3, #1
+ 779 0140 0548     		ldr	r0, .L84+8
+ 780 0142 FFF7FEFF 		bl	printf
+ 781 0146 0548     		ldr	r0, .L84+12
+ 782 0148 FFF7FEFF 		bl	printf
+ 783 014c E4E7     		b	.L73
+ 784              	.L85:
+ 785 014e C046     		.align	2
+ 786              	.L84:
+ 787 0150 00000000 		.word	.LC0
+ 788 0154 AD000000 		.word	.LC12
+ 789 0158 45000000 		.word	.LC4
+ 790 015c 00000000 		.word	.LC23
+ 792              		.section	.rodata.__func__.0,"a"
+ 795              	__func__.0:
+ 796 0000 616C635F 		.ascii	"alc_sync_parser\000"
+ 796      73796E63 
+ 796      5F706172 
+ 796      73657200 
+ 797              		.section	.rodata.alc_sync_bad_size_str,"a"
+ 798              		.align	2
+ 801              	alc_sync_bad_size_str:
+ 802 0000 414C4320 		.ascii	"ALC Sync payload bad size\000"
+ 802      53796E63 
+ 802      20706179 
+ 802      6C6F6164 
+ 802      20626164 
+ 803              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccg3QDcb.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 alc_sync.c
+     /tmp/ccg3QDcb.s:14     .text.alc_sync_init:00000000 $t
+     /tmp/ccg3QDcb.s:20     .text.alc_sync_init:00000000 alc_sync_init
+     /tmp/ccg3QDcb.s:42     .text.alc_sync_init:0000001c $d
+     /tmp/ccg3QDcb.s:68     .text.alc_sync_parser:00000000 $t
+     /tmp/ccg3QDcb.s:74     .text.alc_sync_parser:00000000 alc_sync_parser
+     /tmp/ccg3QDcb.s:97     .text.alc_sync_parser:00000022 $d
+     /tmp/ccg3QDcb.s:101    .text.alc_sync_parser:00000026 $t
+     /tmp/ccg3QDcb.s:266    .text.alc_sync_parser:00000158 $d
+     /tmp/ccg3QDcb.s:801    .rodata.alc_sync_bad_size_str:00000000 alc_sync_bad_size_str
+     /tmp/ccg3QDcb.s:795    .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccg3QDcb.s:281    .text.alc_sync_get_interval_second:00000000 $t
+     /tmp/ccg3QDcb.s:287    .text.alc_sync_get_interval_second:00000000 alc_sync_get_interval_second
+     /tmp/ccg3QDcb.s:296    .text.alc_sync_set_interval_second:00000000 $t
+     /tmp/ccg3QDcb.s:302    .text.alc_sync_set_interval_second:00000000 alc_sync_set_interval_second
+     /tmp/ccg3QDcb.s:318    .text.alc_sync_get_time_correction_second:00000000 $t
+     /tmp/ccg3QDcb.s:324    .text.alc_sync_get_time_correction_second:00000000 alc_sync_get_time_correction_second
+     /tmp/ccg3QDcb.s:333    .text.alc_sync_set_time_correction_second:00000000 $t
+     /tmp/ccg3QDcb.s:339    .text.alc_sync_set_time_correction_second:00000000 alc_sync_set_time_correction_second
+     /tmp/ccg3QDcb.s:354    .text.alc_sync_get_gps_time_second:00000000 $t
+     /tmp/ccg3QDcb.s:360    .text.alc_sync_get_gps_time_second:00000000 alc_sync_get_gps_time_second
+     /tmp/ccg3QDcb.s:372    .text.alc_sync_get_time_left_connection_lost:00000000 $t
+     /tmp/ccg3QDcb.s:378    .text.alc_sync_get_time_left_connection_lost:00000000 alc_sync_get_time_left_connection_lost
+     /tmp/ccg3QDcb.s:406    .text.is_alc_sync_done:00000000 $t
+     /tmp/ccg3QDcb.s:412    .text.is_alc_sync_done:00000000 is_alc_sync_done
+     /tmp/ccg3QDcb.s:429    .text.is_alc_sync_time_valid:00000000 $t
+     /tmp/ccg3QDcb.s:435    .text.is_alc_sync_time_valid:00000000 is_alc_sync_time_valid
+     /tmp/ccg3QDcb.s:456    .text.alc_sync_set_valid_delay_second:00000000 $t
+     /tmp/ccg3QDcb.s:462    .text.alc_sync_set_valid_delay_second:00000000 alc_sync_set_valid_delay_second
+     /tmp/ccg3QDcb.s:479    .text.alc_sync_set_valid_delay_second:00000010 $d
+     /tmp/ccg3QDcb.s:482    .text.alc_sync_get_valid_delay_second:00000000 $t
+     /tmp/ccg3QDcb.s:488    .text.alc_sync_get_valid_delay_second:00000000 alc_sync_get_valid_delay_second
+     /tmp/ccg3QDcb.s:497    .text.alc_sync_set_sync_lost:00000000 $t
+     /tmp/ccg3QDcb.s:503    .text.alc_sync_set_sync_lost:00000000 alc_sync_set_sync_lost
+     /tmp/ccg3QDcb.s:516    .text.alc_sync_get_nb_transmission:00000000 $t
+     /tmp/ccg3QDcb.s:522    .text.alc_sync_get_nb_transmission:00000000 alc_sync_get_nb_transmission
+     /tmp/ccg3QDcb.s:531    .text.alc_sync_get_token_req:00000000 $t
+     /tmp/ccg3QDcb.s:537    .text.alc_sync_get_token_req:00000000 alc_sync_get_token_req
+     /tmp/ccg3QDcb.s:546    .text.alc_sync_set_max_length_up_payload:00000000 $t
+     /tmp/ccg3QDcb.s:552    .text.alc_sync_set_max_length_up_payload:00000000 alc_sync_set_max_length_up_payload
+     /tmp/ccg3QDcb.s:561    .text.alc_sync_get_timestamp_last_correction_s:00000000 $t
+     /tmp/ccg3QDcb.s:567    .text.alc_sync_get_timestamp_last_correction_s:00000000 alc_sync_get_timestamp_last_correction_s
+     /tmp/ccg3QDcb.s:576    .text.alc_sync_get_timestamp_ans_requested_s:00000000 $t
+     /tmp/ccg3QDcb.s:582    .text.alc_sync_get_timestamp_ans_requested_s:00000000 alc_sync_get_timestamp_ans_requested_s
+     /tmp/ccg3QDcb.s:604    .text.alc_sync_create_uplink_payload:00000000 $t
+     /tmp/ccg3QDcb.s:610    .text.alc_sync_create_uplink_payload:00000000 alc_sync_create_uplink_payload
+     /tmp/ccg3QDcb.s:787    .text.alc_sync_create_uplink_payload:00000150 $d
+     /tmp/ccg3QDcb.s:798    .rodata.alc_sync_bad_size_str:00000000 $d
+
+UNDEFINED SYMBOLS
+__gnu_thumb1_case_uqi
+smtc_modem_services_get_time_s
+printf
+memcpy

@@ -1,0 +1,923 @@
+ARM GAS  /tmp/ccOf5NEd.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"lr11xx_crypto_engine.c"
+  12              		.text
+  13              		.section	.text.lr11xx_crypto_fill_cbuffer_opcode_key_data,"ax",%progbits
+  14              		.align	1
+  15              		.syntax unified
+  16              		.code	16
+  17              		.thumb_func
+  19              	lr11xx_crypto_fill_cbuffer_opcode_key_data:
+  20              		@ args = 4, pretend = 0, frame = 0
+  21              		@ frame_needed = 0, uses_anonymous_args = 0
+  22 0000 30B5     		push	{r4, r5, lr}
+  23 0002 0525     		movs	r5, #5
+  24 0004 8270     		strb	r2, [r0, #2]
+  25 0006 0022     		movs	r2, #0
+  26 0008 03AC     		add	r4, sp, #12
+  27 000a 2488     		ldrh	r4, [r4]
+  28 000c 0570     		strb	r5, [r0]
+  29 000e 4170     		strb	r1, [r0, #1]
+  30 0010 0330     		adds	r0, r0, #3
+  31              	.L2:
+  32 0012 91B2     		uxth	r1, r2
+  33 0014 8C42     		cmp	r4, r1
+  34 0016 00D8     		bhi	.L3
+  35              		@ sp needed
+  36 0018 30BD     		pop	{r4, r5, pc}
+  37              	.L3:
+  38 001a 995C     		ldrb	r1, [r3, r2]
+  39 001c 8154     		strb	r1, [r0, r2]
+  40 001e 0132     		adds	r2, r2, #1
+  41 0020 F7E7     		b	.L2
+  43              		.section	.text.lr11xx_crypto_select,"ax",%progbits
+  44              		.align	1
+  45              		.global	lr11xx_crypto_select
+  46              		.syntax unified
+  47              		.code	16
+  48              		.thumb_func
+  50              	lr11xx_crypto_select:
+  51              		@ args = 0, pretend = 0, frame = 8
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53 0000 7FB5     		push	{r0, r1, r2, r3, r4, r5, r6, lr}
+  54 0002 0326     		movs	r6, #3
+  55 0004 0400     		movs	r4, r0
+  56 0006 0D00     		movs	r5, r1
+  57 0008 3200     		movs	r2, r6
+  58 000a 0021     		movs	r1, #0
+  59 000c 03A8     		add	r0, sp, #12
+  60 000e FFF7FEFF 		bl	memset
+ARM GAS  /tmp/ccOf5NEd.s 			page 2
+
+
+  61 0012 6A46     		mov	r2, sp
+  62 0014 0523     		movs	r3, #5
+  63 0016 1373     		strb	r3, [r2, #12]
+  64 0018 0023     		movs	r3, #0
+  65 001a 9573     		strb	r5, [r2, #14]
+  66 001c 2000     		movs	r0, r4
+  67 001e 3200     		movs	r2, r6
+  68 0020 0093     		str	r3, [sp]
+  69 0022 03A9     		add	r1, sp, #12
+  70 0024 FFF7FEFF 		bl	lr11xx_hal_write
+  71 0028 04B0     		add	sp, sp, #16
+  72              		@ sp needed
+  73 002a 70BD     		pop	{r4, r5, r6, pc}
+  75              		.section	.rodata.lr11xx_crypto_set_key.str1.1,"aMS",%progbits,1
+  76              	.LC0:
+  77 0000 00       		.ascii	"\000"
+  78              		.section	.text.lr11xx_crypto_set_key,"ax",%progbits
+  79              		.align	1
+  80              		.global	lr11xx_crypto_set_key
+  81              		.syntax unified
+  82              		.code	16
+  83              		.thumb_func
+  85              	lr11xx_crypto_set_key:
+  86              		@ args = 0, pretend = 0, frame = 24
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  89 0002 89B0     		sub	sp, sp, #36
+  90 0004 1700     		movs	r7, r2
+  91 0006 0500     		movs	r5, r0
+  92 0008 1322     		movs	r2, #19
+  93 000a 0C00     		movs	r4, r1
+  94 000c 03A8     		add	r0, sp, #12
+  95 000e 0021     		movs	r1, #0
+  96 0010 1E00     		movs	r6, r3
+  97 0012 FFF7FEFF 		bl	memset
+  98 0016 6A46     		mov	r2, sp
+  99 0018 0E4B     		ldr	r3, .L9
+ 100 001a 9773     		strb	r7, [r2, #14]
+ 101 001c 1B78     		ldrb	r3, [r3]
+ 102 001e 1372     		strb	r3, [r2, #8]
+ 103 0020 0D4B     		ldr	r3, .L9+4
+ 104 0022 9381     		strh	r3, [r2, #12]
+ 105 0024 0022     		movs	r2, #0
+ 106              	.L6:
+ 107 0026 B15C     		ldrb	r1, [r6, r2]
+ 108 0028 03AB     		add	r3, sp, #12
+ 109 002a 9B18     		adds	r3, r3, r2
+ 110 002c 0132     		adds	r2, r2, #1
+ 111 002e D970     		strb	r1, [r3, #3]
+ 112 0030 102A     		cmp	r2, #16
+ 113 0032 F8D1     		bne	.L6
+ 114 0034 0123     		movs	r3, #1
+ 115 0036 2800     		movs	r0, r5
+ 116 0038 0093     		str	r3, [sp]
+ 117 003a 0332     		adds	r2, r2, #3
+ 118 003c 02AB     		add	r3, sp, #8
+ 119 003e 03A9     		add	r1, sp, #12
+ARM GAS  /tmp/ccOf5NEd.s 			page 3
+
+
+ 120 0040 FFF7FEFF 		bl	lr11xx_hal_read
+ 121 0044 0028     		cmp	r0, #0
+ 122 0046 02D1     		bne	.L7
+ 123 0048 6B46     		mov	r3, sp
+ 124 004a 1B7A     		ldrb	r3, [r3, #8]
+ 125 004c 2370     		strb	r3, [r4]
+ 126              	.L7:
+ 127 004e 09B0     		add	sp, sp, #36
+ 128              		@ sp needed
+ 129 0050 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 130              	.L10:
+ 131 0052 C046     		.align	2
+ 132              	.L9:
+ 133 0054 00000000 		.word	.LC0
+ 134 0058 05020000 		.word	517
+ 136              		.section	.text.lr11xx_crypto_derive_key,"ax",%progbits
+ 137              		.align	1
+ 138              		.global	lr11xx_crypto_derive_key
+ 139              		.syntax unified
+ 140              		.code	16
+ 141              		.thumb_func
+ 143              	lr11xx_crypto_derive_key:
+ 144              		@ args = 4, pretend = 0, frame = 32
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 147 0002 8BB0     		sub	sp, sp, #44
+ 148 0004 05AC     		add	r4, sp, #20
+ 149 0006 1700     		movs	r7, r2
+ 150 0008 0390     		str	r0, [sp, #12]
+ 151 000a 1422     		movs	r2, #20
+ 152 000c 0D00     		movs	r5, r1
+ 153 000e 2000     		movs	r0, r4
+ 154 0010 0021     		movs	r1, #0
+ 155 0012 1E00     		movs	r6, r3
+ 156 0014 FFF7FEFF 		bl	memset
+ 157 0018 0F4B     		ldr	r3, .L15
+ 158 001a 02AA     		add	r2, sp, #8
+ 159 001c 1B78     		ldrb	r3, [r3]
+ 160 001e A770     		strb	r7, [r4, #2]
+ 161 0020 1372     		strb	r3, [r2, #8]
+ 162 0022 0E4B     		ldr	r3, .L15+4
+ 163 0024 E670     		strb	r6, [r4, #3]
+ 164 0026 2380     		strh	r3, [r4]
+ 165 0028 0023     		movs	r3, #0
+ 166              	.L12:
+ 167 002a 1099     		ldr	r1, [sp, #64]
+ 168 002c E218     		adds	r2, r4, r3
+ 169 002e C95C     		ldrb	r1, [r1, r3]
+ 170 0030 0133     		adds	r3, r3, #1
+ 171 0032 1171     		strb	r1, [r2, #4]
+ 172 0034 102B     		cmp	r3, #16
+ 173 0036 F8D1     		bne	.L12
+ 174 0038 0F3B     		subs	r3, r3, #15
+ 175 003a 0093     		str	r3, [sp]
+ 176 003c 1422     		movs	r2, #20
+ 177 003e 2100     		movs	r1, r4
+ 178 0040 0398     		ldr	r0, [sp, #12]
+ARM GAS  /tmp/ccOf5NEd.s 			page 4
+
+
+ 179 0042 04AB     		add	r3, sp, #16
+ 180 0044 FFF7FEFF 		bl	lr11xx_hal_read
+ 181 0048 0028     		cmp	r0, #0
+ 182 004a 02D1     		bne	.L13
+ 183 004c 02AB     		add	r3, sp, #8
+ 184 004e 1B7A     		ldrb	r3, [r3, #8]
+ 185 0050 2B70     		strb	r3, [r5]
+ 186              	.L13:
+ 187 0052 0BB0     		add	sp, sp, #44
+ 188              		@ sp needed
+ 189 0054 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 190              	.L16:
+ 191 0056 C046     		.align	2
+ 192              	.L15:
+ 193 0058 00000000 		.word	.LC0
+ 194 005c 05030000 		.word	773
+ 196              		.section	.text.lr11xx_crypto_process_join_accept,"ax",%progbits
+ 197              		.align	1
+ 198              		.global	lr11xx_crypto_process_join_accept
+ 199              		.syntax unified
+ 200              		.code	16
+ 201              		.thumb_func
+ 203              	lr11xx_crypto_process_join_accept:
+ 204              		@ args = 20, pretend = 0, frame = 104
+ 205              		@ frame_needed = 0, uses_anonymous_args = 0
+ 206 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 207 0002 9DB0     		sub	sp, sp, #116
+ 208 0004 0593     		str	r3, [sp, #20]
+ 209 0006 0FAD     		add	r5, sp, #60
+ 210 0008 22AB     		add	r3, sp, #136
+ 211 000a 1F78     		ldrb	r7, [r3]
+ 212 000c 0290     		str	r0, [sp, #8]
+ 213 000e 25AB     		add	r3, sp, #148
+ 214 0010 0391     		str	r1, [sp, #12]
+ 215 0012 0492     		str	r2, [sp, #16]
+ 216 0014 0021     		movs	r1, #0
+ 217 0016 3122     		movs	r2, #49
+ 218 0018 2800     		movs	r0, r5
+ 219 001a 06AC     		add	r4, sp, #24
+ 220 001c 1E78     		ldrb	r6, [r3]
+ 221 001e FFF7FEFF 		bl	memset
+ 222 0022 2122     		movs	r2, #33
+ 223 0024 0021     		movs	r1, #0
+ 224 0026 2000     		movs	r0, r4
+ 225 0028 FFF7FEFF 		bl	memset
+ 226 002c 0C22     		movs	r2, #12
+ 227 002e 002F     		cmp	r7, #0
+ 228 0030 00D1     		bne	.L18
+ 229 0032 0B3A     		subs	r2, r2, #11
+ 230              	.L18:
+ 231 0034 1A4B     		ldr	r3, .L29
+ 232 0036 2F71     		strb	r7, [r5, #4]
+ 233 0038 2B80     		strh	r3, [r5]
+ 234 003a 049B     		ldr	r3, [sp, #16]
+ 235 003c AB70     		strb	r3, [r5, #2]
+ 236 003e 059B     		ldr	r3, [sp, #20]
+ 237 0040 EB70     		strb	r3, [r5, #3]
+ARM GAS  /tmp/ccOf5NEd.s 			page 5
+
+
+ 238 0042 0023     		movs	r3, #0
+ 239              	.L19:
+ 240 0044 2398     		ldr	r0, [sp, #140]
+ 241 0046 E918     		adds	r1, r5, r3
+ 242 0048 C05C     		ldrb	r0, [r0, r3]
+ 243 004a 0133     		adds	r3, r3, #1
+ 244 004c 4871     		strb	r0, [r1, #5]
+ 245 004e D9B2     		uxtb	r1, r3
+ 246 0050 8A42     		cmp	r2, r1
+ 247 0052 F7D8     		bhi	.L19
+ 248 0054 249B     		ldr	r3, [sp, #144]
+ 249 0056 A918     		adds	r1, r5, r2
+ 250 0058 9819     		adds	r0, r3, r6
+ 251              	.L20:
+ 252 005a 0131     		adds	r1, r1, #1
+ 253 005c 8342     		cmp	r3, r0
+ 254 005e 16D1     		bne	.L21
+ 255 0060 731D     		adds	r3, r6, #5
+ 256 0062 D218     		adds	r2, r2, r3
+ 257 0064 731C     		adds	r3, r6, #1
+ 258 0066 0093     		str	r3, [sp]
+ 259 0068 2900     		movs	r1, r5
+ 260 006a 2300     		movs	r3, r4
+ 261 006c 0298     		ldr	r0, [sp, #8]
+ 262 006e FFF7FEFF 		bl	lr11xx_hal_read
+ 263 0072 0028     		cmp	r0, #0
+ 264 0074 09D1     		bne	.L27
+ 265 0076 2378     		ldrb	r3, [r4]
+ 266 0078 039A     		ldr	r2, [sp, #12]
+ 267 007a 1370     		strb	r3, [r2]
+ 268 007c 002B     		cmp	r3, #0
+ 269 007e 04D1     		bne	.L27
+ 270 0080 269B     		ldr	r3, [sp, #152]
+ 271 0082 9E19     		adds	r6, r3, r6
+ 272              	.L24:
+ 273 0084 0134     		adds	r4, r4, #1
+ 274 0086 B342     		cmp	r3, r6
+ 275 0088 05D1     		bne	.L25
+ 276              	.L27:
+ 277 008a 1DB0     		add	sp, sp, #116
+ 278              		@ sp needed
+ 279 008c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 280              	.L21:
+ 281 008e 1F78     		ldrb	r7, [r3]
+ 282 0090 0133     		adds	r3, r3, #1
+ 283 0092 0F71     		strb	r7, [r1, #4]
+ 284 0094 E1E7     		b	.L20
+ 285              	.L25:
+ 286 0096 2278     		ldrb	r2, [r4]
+ 287 0098 1A70     		strb	r2, [r3]
+ 288 009a 0133     		adds	r3, r3, #1
+ 289 009c F2E7     		b	.L24
+ 290              	.L30:
+ 291 009e C046     		.align	2
+ 292              	.L29:
+ 293 00a0 05040000 		.word	1029
+ 295              		.section	.text.lr11xx_crypto_compute_aes_cmac,"ax",%progbits
+ARM GAS  /tmp/ccOf5NEd.s 			page 6
+
+
+ 296              		.align	1
+ 297              		.global	lr11xx_crypto_compute_aes_cmac
+ 298              		.syntax unified
+ 299              		.code	16
+ 300              		.thumb_func
+ 302              	lr11xx_crypto_compute_aes_cmac:
+ 303              		@ args = 8, pretend = 0, frame = 296
+ 304              		@ frame_needed = 0, uses_anonymous_args = 0
+ 305 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 306 0002 1600     		movs	r6, r2
+ 307 0004 1422     		movs	r2, #20
+ 308 0006 0527     		movs	r7, #5
+ 309 0008 CDB0     		sub	sp, sp, #308
+ 310 000a 0393     		str	r3, [sp, #12]
+ 311 000c 52AB     		add	r3, sp, #328
+ 312 000e 1C88     		ldrh	r4, [r3]
+ 313 0010 0290     		str	r0, [sp, #8]
+ 314 0012 FF32     		adds	r2, r2, #255
+ 315 0014 0D00     		movs	r5, r1
+ 316 0016 07A8     		add	r0, sp, #28
+ 317 0018 0021     		movs	r1, #0
+ 318 001a FFF7FEFF 		bl	memset
+ 319 001e 3A00     		movs	r2, r7
+ 320 0020 0021     		movs	r1, #0
+ 321 0022 05A8     		add	r0, sp, #20
+ 322 0024 FFF7FEFF 		bl	memset
+ 323 0028 3200     		movs	r2, r6
+ 324 002a 039B     		ldr	r3, [sp, #12]
+ 325 002c 1049     		ldr	r1, .L35
+ 326 002e 0094     		str	r4, [sp]
+ 327 0030 07A8     		add	r0, sp, #28
+ 328 0032 0334     		adds	r4, r4, #3
+ 329 0034 FFF7FEFF 		bl	lr11xx_crypto_fill_cbuffer_opcode_key_data
+ 330 0038 0298     		ldr	r0, [sp, #8]
+ 331 003a A2B2     		uxth	r2, r4
+ 332 003c 0097     		str	r7, [sp]
+ 333 003e 05AB     		add	r3, sp, #20
+ 334 0040 07A9     		add	r1, sp, #28
+ 335 0042 FFF7FEFF 		bl	lr11xx_hal_read
+ 336 0046 0028     		cmp	r0, #0
+ 337 0048 0FD1     		bne	.L32
+ 338 004a 02AB     		add	r3, sp, #8
+ 339 004c 1B7B     		ldrb	r3, [r3, #12]
+ 340 004e 2B70     		strb	r3, [r5]
+ 341 0050 002B     		cmp	r3, #0
+ 342 0052 0AD1     		bne	.L32
+ 343 0054 539A     		ldr	r2, [sp, #332]
+ 344 0056 0133     		adds	r3, r3, #1
+ 345 0058 013A     		subs	r2, r2, #1
+ 346              	.L33:
+ 347 005a 0C24     		movs	r4, #12
+ 348 005c 02A9     		add	r1, sp, #8
+ 349 005e 0919     		adds	r1, r1, r4
+ 350 0060 C95C     		ldrb	r1, [r1, r3]
+ 351 0062 D154     		strb	r1, [r2, r3]
+ 352 0064 0133     		adds	r3, r3, #1
+ 353 0066 052B     		cmp	r3, #5
+ARM GAS  /tmp/ccOf5NEd.s 			page 7
+
+
+ 354 0068 F7D1     		bne	.L33
+ 355              	.L32:
+ 356 006a 4DB0     		add	sp, sp, #308
+ 357              		@ sp needed
+ 358 006c F0BD     		pop	{r4, r5, r6, r7, pc}
+ 359              	.L36:
+ 360 006e C046     		.align	2
+ 361              	.L35:
+ 362 0070 05050000 		.word	1285
+ 364              		.section	.text.lr11xx_crypto_verify_aes_cmac,"ax",%progbits
+ 365              		.align	1
+ 366              		.global	lr11xx_crypto_verify_aes_cmac
+ 367              		.syntax unified
+ 368              		.code	16
+ 369              		.thumb_func
+ 371              	lr11xx_crypto_verify_aes_cmac:
+ 372              		@ args = 8, pretend = 0, frame = 288
+ 373              		@ frame_needed = 0, uses_anonymous_args = 0
+ 374 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 375 0002 CBB0     		sub	sp, sp, #300
+ 376 0004 0492     		str	r2, [sp, #16]
+ 377 0006 0822     		movs	r2, #8
+ 378 0008 08AC     		add	r4, sp, #32
+ 379 000a 0390     		str	r0, [sp, #12]
+ 380 000c 0593     		str	r3, [sp, #20]
+ 381 000e FF32     		adds	r2, r2, #255
+ 382 0010 50AB     		add	r3, sp, #320
+ 383 0012 0F00     		movs	r7, r1
+ 384 0014 2000     		movs	r0, r4
+ 385 0016 0021     		movs	r1, #0
+ 386 0018 519E     		ldr	r6, [sp, #324]
+ 387 001a 1D88     		ldrh	r5, [r3]
+ 388 001c FFF7FEFF 		bl	memset
+ 389 0020 144B     		ldr	r3, .L41
+ 390 0022 04AA     		add	r2, sp, #16
+ 391 0024 1B78     		ldrb	r3, [r3]
+ 392 0026 1373     		strb	r3, [r2, #12]
+ 393 0028 134B     		ldr	r3, .L41+4
+ 394 002a 2380     		strh	r3, [r4]
+ 395 002c 049B     		ldr	r3, [sp, #16]
+ 396 002e A370     		strb	r3, [r4, #2]
+ 397 0030 3378     		ldrb	r3, [r6]
+ 398 0032 E370     		strb	r3, [r4, #3]
+ 399 0034 7378     		ldrb	r3, [r6, #1]
+ 400 0036 2371     		strb	r3, [r4, #4]
+ 401 0038 B378     		ldrb	r3, [r6, #2]
+ 402 003a 6371     		strb	r3, [r4, #5]
+ 403 003c F378     		ldrb	r3, [r6, #3]
+ 404 003e A371     		strb	r3, [r4, #6]
+ 405 0040 0023     		movs	r3, #0
+ 406              	.L38:
+ 407 0042 9AB2     		uxth	r2, r3
+ 408 0044 9542     		cmp	r5, r2
+ 409 0046 0FD8     		bhi	.L39
+ 410 0048 0123     		movs	r3, #1
+ 411 004a 0735     		adds	r5, r5, #7
+ 412 004c 0093     		str	r3, [sp]
+ARM GAS  /tmp/ccOf5NEd.s 			page 8
+
+
+ 413 004e 2100     		movs	r1, r4
+ 414 0050 0398     		ldr	r0, [sp, #12]
+ 415 0052 AAB2     		uxth	r2, r5
+ 416 0054 07AB     		add	r3, sp, #28
+ 417 0056 FFF7FEFF 		bl	lr11xx_hal_read
+ 418 005a 0028     		cmp	r0, #0
+ 419 005c 02D1     		bne	.L40
+ 420 005e 04AB     		add	r3, sp, #16
+ 421 0060 1B7B     		ldrb	r3, [r3, #12]
+ 422 0062 3B70     		strb	r3, [r7]
+ 423              	.L40:
+ 424 0064 4BB0     		add	sp, sp, #300
+ 425              		@ sp needed
+ 426 0066 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 427              	.L39:
+ 428 0068 0599     		ldr	r1, [sp, #20]
+ 429 006a E218     		adds	r2, r4, r3
+ 430 006c C95C     		ldrb	r1, [r1, r3]
+ 431 006e 0133     		adds	r3, r3, #1
+ 432 0070 D171     		strb	r1, [r2, #7]
+ 433 0072 E6E7     		b	.L38
+ 434              	.L42:
+ 435              		.align	2
+ 436              	.L41:
+ 437 0074 00000000 		.word	.LC0
+ 438 0078 05060000 		.word	1541
+ 440              		.section	.text.lr11xx_crypto_aes_encrypt_01,"ax",%progbits
+ 441              		.align	1
+ 442              		.global	lr11xx_crypto_aes_encrypt_01
+ 443              		.syntax unified
+ 444              		.code	16
+ 445              		.thumb_func
+ 447              	lr11xx_crypto_aes_encrypt_01:
+ 448              		@ args = 8, pretend = 0, frame = 528
+ 449              		@ frame_needed = 0, uses_anonymous_args = 0
+ 450 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 451 0002 1700     		movs	r7, r2
+ 452 0004 0422     		movs	r2, #4
+ 453 0006 1C4C     		ldr	r4, .L50
+ 454 0008 FF32     		adds	r2, r2, #255
+ 455 000a A544     		add	sp, sp, r4
+ 456 000c 0290     		str	r0, [sp, #8]
+ 457 000e 0393     		str	r3, [sp, #12]
+ 458 0010 0E00     		movs	r6, r1
+ 459 0012 8CAB     		add	r3, sp, #560
+ 460 0014 0021     		movs	r1, #0
+ 461 0016 45A8     		add	r0, sp, #276
+ 462 0018 1C88     		ldrh	r4, [r3]
+ 463 001a FFF7FEFF 		bl	memset
+ 464 001e 0222     		movs	r2, #2
+ 465 0020 04AD     		add	r5, sp, #16
+ 466 0022 0021     		movs	r1, #0
+ 467 0024 FF32     		adds	r2, r2, #255
+ 468 0026 2800     		movs	r0, r5
+ 469 0028 FFF7FEFF 		bl	memset
+ 470 002c 3A00     		movs	r2, r7
+ 471 002e 039B     		ldr	r3, [sp, #12]
+ARM GAS  /tmp/ccOf5NEd.s 			page 9
+
+
+ 472 0030 1249     		ldr	r1, .L50+4
+ 473 0032 45A8     		add	r0, sp, #276
+ 474 0034 0094     		str	r4, [sp]
+ 475 0036 FFF7FEFF 		bl	lr11xx_crypto_fill_cbuffer_opcode_key_data
+ 476 003a 631C     		adds	r3, r4, #1
+ 477 003c 9BB2     		uxth	r3, r3
+ 478 003e E21C     		adds	r2, r4, #3
+ 479 0040 0093     		str	r3, [sp]
+ 480 0042 0298     		ldr	r0, [sp, #8]
+ 481 0044 2B00     		movs	r3, r5
+ 482 0046 92B2     		uxth	r2, r2
+ 483 0048 45A9     		add	r1, sp, #276
+ 484 004a FFF7FEFF 		bl	lr11xx_hal_read
+ 485 004e 0028     		cmp	r0, #0
+ 486 0050 03D1     		bne	.L49
+ 487 0052 2B78     		ldrb	r3, [r5]
+ 488 0054 3370     		strb	r3, [r6]
+ 489 0056 002B     		cmp	r3, #0
+ 490 0058 0CD0     		beq	.L48
+ 491              	.L49:
+ 492 005a 8723     		movs	r3, #135
+ 493 005c 9B00     		lsls	r3, r3, #2
+ 494 005e 9D44     		add	sp, sp, r3
+ 495              		@ sp needed
+ 496 0060 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 497              	.L47:
+ 498 0062 EA18     		adds	r2, r5, r3
+ 499 0064 5278     		ldrb	r2, [r2, #1]
+ 500 0066 8D99     		ldr	r1, [sp, #564]
+ 501 0068 CA54     		strb	r2, [r1, r3]
+ 502 006a 0133     		adds	r3, r3, #1
+ 503              	.L45:
+ 504 006c 9AB2     		uxth	r2, r3
+ 505 006e 9442     		cmp	r4, r2
+ 506 0070 F7D8     		bhi	.L47
+ 507 0072 F2E7     		b	.L49
+ 508              	.L48:
+ 509 0074 0300     		movs	r3, r0
+ 510 0076 F9E7     		b	.L45
+ 511              	.L51:
+ 512              		.align	2
+ 513              	.L50:
+ 514 0078 E4FDFFFF 		.word	-540
+ 515 007c 07050000 		.word	1287
+ 517              		.section	.text.lr11xx_crypto_aes_encrypt,"ax",%progbits
+ 518              		.align	1
+ 519              		.global	lr11xx_crypto_aes_encrypt
+ 520              		.syntax unified
+ 521              		.code	16
+ 522              		.thumb_func
+ 524              	lr11xx_crypto_aes_encrypt:
+ 525              		@ args = 8, pretend = 0, frame = 528
+ 526              		@ frame_needed = 0, uses_anonymous_args = 0
+ 527 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 528 0002 1700     		movs	r7, r2
+ 529 0004 0422     		movs	r2, #4
+ 530 0006 1D4C     		ldr	r4, .L59
+ARM GAS  /tmp/ccOf5NEd.s 			page 10
+
+
+ 531 0008 FF32     		adds	r2, r2, #255
+ 532 000a A544     		add	sp, sp, r4
+ 533 000c 0290     		str	r0, [sp, #8]
+ 534 000e 0393     		str	r3, [sp, #12]
+ 535 0010 0E00     		movs	r6, r1
+ 536 0012 8CAB     		add	r3, sp, #560
+ 537 0014 0021     		movs	r1, #0
+ 538 0016 45A8     		add	r0, sp, #276
+ 539 0018 1C88     		ldrh	r4, [r3]
+ 540 001a FFF7FEFF 		bl	memset
+ 541 001e 0222     		movs	r2, #2
+ 542 0020 04AD     		add	r5, sp, #16
+ 543 0022 0021     		movs	r1, #0
+ 544 0024 FF32     		adds	r2, r2, #255
+ 545 0026 2800     		movs	r0, r5
+ 546 0028 FFF7FEFF 		bl	memset
+ 547 002c A121     		movs	r1, #161
+ 548 002e 3A00     		movs	r2, r7
+ 549 0030 039B     		ldr	r3, [sp, #12]
+ 550 0032 C900     		lsls	r1, r1, #3
+ 551 0034 45A8     		add	r0, sp, #276
+ 552 0036 0094     		str	r4, [sp]
+ 553 0038 FFF7FEFF 		bl	lr11xx_crypto_fill_cbuffer_opcode_key_data
+ 554 003c 631C     		adds	r3, r4, #1
+ 555 003e 9BB2     		uxth	r3, r3
+ 556 0040 E21C     		adds	r2, r4, #3
+ 557 0042 0093     		str	r3, [sp]
+ 558 0044 0298     		ldr	r0, [sp, #8]
+ 559 0046 2B00     		movs	r3, r5
+ 560 0048 92B2     		uxth	r2, r2
+ 561 004a 45A9     		add	r1, sp, #276
+ 562 004c FFF7FEFF 		bl	lr11xx_hal_read
+ 563 0050 0028     		cmp	r0, #0
+ 564 0052 03D1     		bne	.L58
+ 565 0054 2B78     		ldrb	r3, [r5]
+ 566 0056 3370     		strb	r3, [r6]
+ 567 0058 002B     		cmp	r3, #0
+ 568 005a 0CD0     		beq	.L57
+ 569              	.L58:
+ 570 005c 8723     		movs	r3, #135
+ 571 005e 9B00     		lsls	r3, r3, #2
+ 572 0060 9D44     		add	sp, sp, r3
+ 573              		@ sp needed
+ 574 0062 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 575              	.L56:
+ 576 0064 EA18     		adds	r2, r5, r3
+ 577 0066 5278     		ldrb	r2, [r2, #1]
+ 578 0068 8D99     		ldr	r1, [sp, #564]
+ 579 006a CA54     		strb	r2, [r1, r3]
+ 580 006c 0133     		adds	r3, r3, #1
+ 581              	.L54:
+ 582 006e 9AB2     		uxth	r2, r3
+ 583 0070 9442     		cmp	r4, r2
+ 584 0072 F7D8     		bhi	.L56
+ 585 0074 F2E7     		b	.L58
+ 586              	.L57:
+ 587 0076 0300     		movs	r3, r0
+ARM GAS  /tmp/ccOf5NEd.s 			page 11
+
+
+ 588 0078 F9E7     		b	.L54
+ 589              	.L60:
+ 590 007a C046     		.align	2
+ 591              	.L59:
+ 592 007c E4FDFFFF 		.word	-540
+ 594              		.section	.text.lr11xx_crypto_aes_decrypt,"ax",%progbits
+ 595              		.align	1
+ 596              		.global	lr11xx_crypto_aes_decrypt
+ 597              		.syntax unified
+ 598              		.code	16
+ 599              		.thumb_func
+ 601              	lr11xx_crypto_aes_decrypt:
+ 602              		@ args = 8, pretend = 0, frame = 528
+ 603              		@ frame_needed = 0, uses_anonymous_args = 0
+ 604 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 605 0002 1700     		movs	r7, r2
+ 606 0004 0422     		movs	r2, #4
+ 607 0006 1C4C     		ldr	r4, .L68
+ 608 0008 FF32     		adds	r2, r2, #255
+ 609 000a A544     		add	sp, sp, r4
+ 610 000c 0290     		str	r0, [sp, #8]
+ 611 000e 0393     		str	r3, [sp, #12]
+ 612 0010 0E00     		movs	r6, r1
+ 613 0012 8CAB     		add	r3, sp, #560
+ 614 0014 0021     		movs	r1, #0
+ 615 0016 45A8     		add	r0, sp, #276
+ 616 0018 1C88     		ldrh	r4, [r3]
+ 617 001a FFF7FEFF 		bl	memset
+ 618 001e 0222     		movs	r2, #2
+ 619 0020 04AD     		add	r5, sp, #16
+ 620 0022 0021     		movs	r1, #0
+ 621 0024 FF32     		adds	r2, r2, #255
+ 622 0026 2800     		movs	r0, r5
+ 623 0028 FFF7FEFF 		bl	memset
+ 624 002c 3A00     		movs	r2, r7
+ 625 002e 039B     		ldr	r3, [sp, #12]
+ 626 0030 1249     		ldr	r1, .L68+4
+ 627 0032 45A8     		add	r0, sp, #276
+ 628 0034 0094     		str	r4, [sp]
+ 629 0036 FFF7FEFF 		bl	lr11xx_crypto_fill_cbuffer_opcode_key_data
+ 630 003a 631C     		adds	r3, r4, #1
+ 631 003c 9BB2     		uxth	r3, r3
+ 632 003e E21C     		adds	r2, r4, #3
+ 633 0040 0093     		str	r3, [sp]
+ 634 0042 0298     		ldr	r0, [sp, #8]
+ 635 0044 2B00     		movs	r3, r5
+ 636 0046 92B2     		uxth	r2, r2
+ 637 0048 45A9     		add	r1, sp, #276
+ 638 004a FFF7FEFF 		bl	lr11xx_hal_read
+ 639 004e 0028     		cmp	r0, #0
+ 640 0050 03D1     		bne	.L67
+ 641 0052 2B78     		ldrb	r3, [r5]
+ 642 0054 3370     		strb	r3, [r6]
+ 643 0056 002B     		cmp	r3, #0
+ 644 0058 0CD0     		beq	.L66
+ 645              	.L67:
+ 646 005a 8723     		movs	r3, #135
+ARM GAS  /tmp/ccOf5NEd.s 			page 12
+
+
+ 647 005c 9B00     		lsls	r3, r3, #2
+ 648 005e 9D44     		add	sp, sp, r3
+ 649              		@ sp needed
+ 650 0060 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 651              	.L65:
+ 652 0062 EA18     		adds	r2, r5, r3
+ 653 0064 5278     		ldrb	r2, [r2, #1]
+ 654 0066 8D99     		ldr	r1, [sp, #564]
+ 655 0068 CA54     		strb	r2, [r1, r3]
+ 656 006a 0133     		adds	r3, r3, #1
+ 657              	.L63:
+ 658 006c 9AB2     		uxth	r2, r3
+ 659 006e 9442     		cmp	r4, r2
+ 660 0070 F7D8     		bhi	.L65
+ 661 0072 F2E7     		b	.L67
+ 662              	.L66:
+ 663 0074 0300     		movs	r3, r0
+ 664 0076 F9E7     		b	.L63
+ 665              	.L69:
+ 666              		.align	2
+ 667              	.L68:
+ 668 0078 E4FDFFFF 		.word	-540
+ 669 007c 09050000 		.word	1289
+ 671              		.section	.text.lr11xx_crypto_store_to_flash,"ax",%progbits
+ 672              		.align	1
+ 673              		.global	lr11xx_crypto_store_to_flash
+ 674              		.syntax unified
+ 675              		.code	16
+ 676              		.thumb_func
+ 678              	lr11xx_crypto_store_to_flash:
+ 679              		@ args = 0, pretend = 0, frame = 8
+ 680              		@ frame_needed = 0, uses_anonymous_args = 0
+ 681 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 682 0002 6A46     		mov	r2, sp
+ 683 0004 094B     		ldr	r3, .L72
+ 684 0006 0C00     		movs	r4, r1
+ 685 0008 1B78     		ldrb	r3, [r3]
+ 686 000a 03A9     		add	r1, sp, #12
+ 687 000c 1372     		strb	r3, [r2, #8]
+ 688 000e 084B     		ldr	r3, .L72+4
+ 689 0010 0222     		movs	r2, #2
+ 690 0012 0B80     		strh	r3, [r1]
+ 691 0014 0123     		movs	r3, #1
+ 692 0016 0093     		str	r3, [sp]
+ 693 0018 02AB     		add	r3, sp, #8
+ 694 001a FFF7FEFF 		bl	lr11xx_hal_read
+ 695 001e 0028     		cmp	r0, #0
+ 696 0020 02D1     		bne	.L71
+ 697 0022 6B46     		mov	r3, sp
+ 698 0024 1B7A     		ldrb	r3, [r3, #8]
+ 699 0026 2370     		strb	r3, [r4]
+ 700              	.L71:
+ 701 0028 04B0     		add	sp, sp, #16
+ 702              		@ sp needed
+ 703 002a 10BD     		pop	{r4, pc}
+ 704              	.L73:
+ 705              		.align	2
+ARM GAS  /tmp/ccOf5NEd.s 			page 13
+
+
+ 706              	.L72:
+ 707 002c 00000000 		.word	.LC0
+ 708 0030 050A0000 		.word	2565
+ 710              		.section	.text.lr11xx_crypto_restore_from_flash,"ax",%progbits
+ 711              		.align	1
+ 712              		.global	lr11xx_crypto_restore_from_flash
+ 713              		.syntax unified
+ 714              		.code	16
+ 715              		.thumb_func
+ 717              	lr11xx_crypto_restore_from_flash:
+ 718              		@ args = 0, pretend = 0, frame = 8
+ 719              		@ frame_needed = 0, uses_anonymous_args = 0
+ 720 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
+ 721 0002 6A46     		mov	r2, sp
+ 722 0004 094B     		ldr	r3, .L76
+ 723 0006 0C00     		movs	r4, r1
+ 724 0008 1B78     		ldrb	r3, [r3]
+ 725 000a 03A9     		add	r1, sp, #12
+ 726 000c 1372     		strb	r3, [r2, #8]
+ 727 000e 084B     		ldr	r3, .L76+4
+ 728 0010 0222     		movs	r2, #2
+ 729 0012 0B80     		strh	r3, [r1]
+ 730 0014 0123     		movs	r3, #1
+ 731 0016 0093     		str	r3, [sp]
+ 732 0018 02AB     		add	r3, sp, #8
+ 733 001a FFF7FEFF 		bl	lr11xx_hal_read
+ 734 001e 0028     		cmp	r0, #0
+ 735 0020 02D1     		bne	.L75
+ 736 0022 6B46     		mov	r3, sp
+ 737 0024 1B7A     		ldrb	r3, [r3, #8]
+ 738 0026 2370     		strb	r3, [r4]
+ 739              	.L75:
+ 740 0028 04B0     		add	sp, sp, #16
+ 741              		@ sp needed
+ 742 002a 10BD     		pop	{r4, pc}
+ 743              	.L77:
+ 744              		.align	2
+ 745              	.L76:
+ 746 002c 00000000 		.word	.LC0
+ 747 0030 050B0000 		.word	2821
+ 749              		.section	.text.lr11xx_crypto_set_parameter,"ax",%progbits
+ 750              		.align	1
+ 751              		.global	lr11xx_crypto_set_parameter
+ 752              		.syntax unified
+ 753              		.code	16
+ 754              		.thumb_func
+ 756              	lr11xx_crypto_set_parameter:
+ 757              		@ args = 0, pretend = 0, frame = 16
+ 758              		@ frame_needed = 0, uses_anonymous_args = 0
+ 759 0000 30B5     		push	{r4, r5, lr}
+ 760 0002 87B0     		sub	sp, sp, #28
+ 761 0004 6D46     		mov	r5, sp
+ 762 0006 0C00     		movs	r4, r1
+ 763 0008 0D49     		ldr	r1, .L80
+ 764 000a 0978     		ldrb	r1, [r1]
+ 765 000c 2973     		strb	r1, [r5, #12]
+ 766 000e 04A9     		add	r1, sp, #16
+ARM GAS  /tmp/ccOf5NEd.s 			page 14
+
+
+ 767 0010 8A70     		strb	r2, [r1, #2]
+ 768 0012 1A78     		ldrb	r2, [r3]
+ 769 0014 0B4D     		ldr	r5, .L80+4
+ 770 0016 CA70     		strb	r2, [r1, #3]
+ 771 0018 5A78     		ldrb	r2, [r3, #1]
+ 772 001a 0D80     		strh	r5, [r1]
+ 773 001c 0A71     		strb	r2, [r1, #4]
+ 774 001e 9A78     		ldrb	r2, [r3, #2]
+ 775 0020 DB78     		ldrb	r3, [r3, #3]
+ 776 0022 4A71     		strb	r2, [r1, #5]
+ 777 0024 8B71     		strb	r3, [r1, #6]
+ 778 0026 0123     		movs	r3, #1
+ 779 0028 0722     		movs	r2, #7
+ 780 002a 0093     		str	r3, [sp]
+ 781 002c 03AB     		add	r3, sp, #12
+ 782 002e FFF7FEFF 		bl	lr11xx_hal_read
+ 783 0032 0028     		cmp	r0, #0
+ 784 0034 02D1     		bne	.L79
+ 785 0036 6B46     		mov	r3, sp
+ 786 0038 1B7B     		ldrb	r3, [r3, #12]
+ 787 003a 2370     		strb	r3, [r4]
+ 788              	.L79:
+ 789 003c 07B0     		add	sp, sp, #28
+ 790              		@ sp needed
+ 791 003e 30BD     		pop	{r4, r5, pc}
+ 792              	.L81:
+ 793              		.align	2
+ 794              	.L80:
+ 795 0040 00000000 		.word	.LC0
+ 796 0044 050D0000 		.word	3333
+ 798              		.section	.text.lr11xx_crypto_get_parameter,"ax",%progbits
+ 799              		.align	1
+ 800              		.global	lr11xx_crypto_get_parameter
+ 801              		.syntax unified
+ 802              		.code	16
+ 803              		.thumb_func
+ 805              	lr11xx_crypto_get_parameter:
+ 806              		@ args = 0, pretend = 0, frame = 24
+ 807              		@ frame_needed = 0, uses_anonymous_args = 0
+ 808 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 809 0002 0527     		movs	r7, #5
+ 810 0004 1600     		movs	r6, r2
+ 811 0006 89B0     		sub	sp, sp, #36
+ 812 0008 3A00     		movs	r2, r7
+ 813 000a 0390     		str	r0, [sp, #12]
+ 814 000c 0C00     		movs	r4, r1
+ 815 000e 06A8     		add	r0, sp, #24
+ 816 0010 0021     		movs	r1, #0
+ 817 0012 1D00     		movs	r5, r3
+ 818 0014 FFF7FEFF 		bl	memset
+ 819 0018 0E4B     		ldr	r3, .L86
+ 820 001a 02AA     		add	r2, sp, #8
+ 821 001c 9381     		strh	r3, [r2, #12]
+ 822 001e 9673     		strb	r6, [r2, #14]
+ 823 0020 0398     		ldr	r0, [sp, #12]
+ 824 0022 0322     		movs	r2, #3
+ 825 0024 0097     		str	r7, [sp]
+ARM GAS  /tmp/ccOf5NEd.s 			page 15
+
+
+ 826 0026 06AB     		add	r3, sp, #24
+ 827 0028 05A9     		add	r1, sp, #20
+ 828 002a FFF7FEFF 		bl	lr11xx_hal_read
+ 829 002e 0028     		cmp	r0, #0
+ 830 0030 0ED1     		bne	.L83
+ 831 0032 02AB     		add	r3, sp, #8
+ 832 0034 1B7C     		ldrb	r3, [r3, #16]
+ 833 0036 2370     		strb	r3, [r4]
+ 834 0038 002B     		cmp	r3, #0
+ 835 003a 09D1     		bne	.L83
+ 836 003c 0133     		adds	r3, r3, #1
+ 837 003e 6A1E     		subs	r2, r5, #1
+ 838              	.L84:
+ 839 0040 1024     		movs	r4, #16
+ 840 0042 02A9     		add	r1, sp, #8
+ 841 0044 0919     		adds	r1, r1, r4
+ 842 0046 C95C     		ldrb	r1, [r1, r3]
+ 843 0048 D154     		strb	r1, [r2, r3]
+ 844 004a 0133     		adds	r3, r3, #1
+ 845 004c 052B     		cmp	r3, #5
+ 846 004e F7D1     		bne	.L84
+ 847              	.L83:
+ 848 0050 09B0     		add	sp, sp, #36
+ 849              		@ sp needed
+ 850 0052 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 851              	.L87:
+ 852              		.align	2
+ 853              	.L86:
+ 854 0054 050E0000 		.word	3589
+ 856              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccOf5NEd.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lr11xx_crypto_engine.c
+     /tmp/ccOf5NEd.s:14     .text.lr11xx_crypto_fill_cbuffer_opcode_key_data:00000000 $t
+     /tmp/ccOf5NEd.s:19     .text.lr11xx_crypto_fill_cbuffer_opcode_key_data:00000000 lr11xx_crypto_fill_cbuffer_opcode_key_data
+     /tmp/ccOf5NEd.s:44     .text.lr11xx_crypto_select:00000000 $t
+     /tmp/ccOf5NEd.s:50     .text.lr11xx_crypto_select:00000000 lr11xx_crypto_select
+     /tmp/ccOf5NEd.s:79     .text.lr11xx_crypto_set_key:00000000 $t
+     /tmp/ccOf5NEd.s:85     .text.lr11xx_crypto_set_key:00000000 lr11xx_crypto_set_key
+     /tmp/ccOf5NEd.s:133    .text.lr11xx_crypto_set_key:00000054 $d
+     /tmp/ccOf5NEd.s:137    .text.lr11xx_crypto_derive_key:00000000 $t
+     /tmp/ccOf5NEd.s:143    .text.lr11xx_crypto_derive_key:00000000 lr11xx_crypto_derive_key
+     /tmp/ccOf5NEd.s:193    .text.lr11xx_crypto_derive_key:00000058 $d
+     /tmp/ccOf5NEd.s:197    .text.lr11xx_crypto_process_join_accept:00000000 $t
+     /tmp/ccOf5NEd.s:203    .text.lr11xx_crypto_process_join_accept:00000000 lr11xx_crypto_process_join_accept
+     /tmp/ccOf5NEd.s:293    .text.lr11xx_crypto_process_join_accept:000000a0 $d
+     /tmp/ccOf5NEd.s:296    .text.lr11xx_crypto_compute_aes_cmac:00000000 $t
+     /tmp/ccOf5NEd.s:302    .text.lr11xx_crypto_compute_aes_cmac:00000000 lr11xx_crypto_compute_aes_cmac
+     /tmp/ccOf5NEd.s:362    .text.lr11xx_crypto_compute_aes_cmac:00000070 $d
+     /tmp/ccOf5NEd.s:365    .text.lr11xx_crypto_verify_aes_cmac:00000000 $t
+     /tmp/ccOf5NEd.s:371    .text.lr11xx_crypto_verify_aes_cmac:00000000 lr11xx_crypto_verify_aes_cmac
+     /tmp/ccOf5NEd.s:437    .text.lr11xx_crypto_verify_aes_cmac:00000074 $d
+     /tmp/ccOf5NEd.s:441    .text.lr11xx_crypto_aes_encrypt_01:00000000 $t
+     /tmp/ccOf5NEd.s:447    .text.lr11xx_crypto_aes_encrypt_01:00000000 lr11xx_crypto_aes_encrypt_01
+     /tmp/ccOf5NEd.s:514    .text.lr11xx_crypto_aes_encrypt_01:00000078 $d
+     /tmp/ccOf5NEd.s:518    .text.lr11xx_crypto_aes_encrypt:00000000 $t
+     /tmp/ccOf5NEd.s:524    .text.lr11xx_crypto_aes_encrypt:00000000 lr11xx_crypto_aes_encrypt
+     /tmp/ccOf5NEd.s:592    .text.lr11xx_crypto_aes_encrypt:0000007c $d
+     /tmp/ccOf5NEd.s:595    .text.lr11xx_crypto_aes_decrypt:00000000 $t
+     /tmp/ccOf5NEd.s:601    .text.lr11xx_crypto_aes_decrypt:00000000 lr11xx_crypto_aes_decrypt
+     /tmp/ccOf5NEd.s:668    .text.lr11xx_crypto_aes_decrypt:00000078 $d
+     /tmp/ccOf5NEd.s:672    .text.lr11xx_crypto_store_to_flash:00000000 $t
+     /tmp/ccOf5NEd.s:678    .text.lr11xx_crypto_store_to_flash:00000000 lr11xx_crypto_store_to_flash
+     /tmp/ccOf5NEd.s:707    .text.lr11xx_crypto_store_to_flash:0000002c $d
+     /tmp/ccOf5NEd.s:711    .text.lr11xx_crypto_restore_from_flash:00000000 $t
+     /tmp/ccOf5NEd.s:717    .text.lr11xx_crypto_restore_from_flash:00000000 lr11xx_crypto_restore_from_flash
+     /tmp/ccOf5NEd.s:746    .text.lr11xx_crypto_restore_from_flash:0000002c $d
+     /tmp/ccOf5NEd.s:750    .text.lr11xx_crypto_set_parameter:00000000 $t
+     /tmp/ccOf5NEd.s:756    .text.lr11xx_crypto_set_parameter:00000000 lr11xx_crypto_set_parameter
+     /tmp/ccOf5NEd.s:795    .text.lr11xx_crypto_set_parameter:00000040 $d
+     /tmp/ccOf5NEd.s:799    .text.lr11xx_crypto_get_parameter:00000000 $t
+     /tmp/ccOf5NEd.s:805    .text.lr11xx_crypto_get_parameter:00000000 lr11xx_crypto_get_parameter
+     /tmp/ccOf5NEd.s:854    .text.lr11xx_crypto_get_parameter:00000054 $d
+
+UNDEFINED SYMBOLS
+memset
+lr11xx_hal_write
+lr11xx_hal_read

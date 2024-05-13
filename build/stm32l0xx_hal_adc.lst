@@ -1,0 +1,1864 @@
+ARM GAS  /tmp/ccN85YAM.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32l0xx_hal_adc.c"
+  12              		.text
+  13              		.global	__aeabi_uidiv
+  14              		.section	.text.ADC_DelayMicroSecond,"ax",%progbits
+  15              		.align	1
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	ADC_DelayMicroSecond:
+  21              		@ args = 0, pretend = 0, frame = 8
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 084B     		ldr	r3, .L4
+  24 0002 13B5     		push	{r0, r1, r4, lr}
+  25 0004 0400     		movs	r4, r0
+  26 0006 0849     		ldr	r1, .L4+4
+  27 0008 1868     		ldr	r0, [r3]
+  28 000a FFF7FEFF 		bl	__aeabi_uidiv
+  29 000e 4443     		muls	r4, r0
+  30 0010 0194     		str	r4, [sp, #4]
+  31              	.L2:
+  32 0012 019B     		ldr	r3, [sp, #4]
+  33 0014 002B     		cmp	r3, #0
+  34 0016 00D1     		bne	.L3
+  35              		@ sp needed
+  36 0018 13BD     		pop	{r0, r1, r4, pc}
+  37              	.L3:
+  38 001a 019B     		ldr	r3, [sp, #4]
+  39 001c 013B     		subs	r3, r3, #1
+  40 001e 0193     		str	r3, [sp, #4]
+  41 0020 F7E7     		b	.L2
+  42              	.L5:
+  43 0022 C046     		.align	2
+  44              	.L4:
+  45 0024 00000000 		.word	SystemCoreClock
+  46 0028 40420F00 		.word	1000000
+  48              		.section	.text.ADC_ConversionStop,"ax",%progbits
+  49              		.align	1
+  50              		.syntax unified
+  51              		.code	16
+  52              		.thumb_func
+  54              	ADC_ConversionStop:
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57 0000 0422     		movs	r2, #4
+  58 0002 0368     		ldr	r3, [r0]
+  59 0004 70B5     		push	{r4, r5, r6, lr}
+  60 0006 9968     		ldr	r1, [r3, #8]
+ARM GAS  /tmp/ccN85YAM.s 			page 2
+
+
+  61 0008 0400     		movs	r4, r0
+  62 000a 1142     		tst	r1, r2
+  63 000c 01D1     		bne	.L7
+  64              	.L12:
+  65 000e 0020     		movs	r0, #0
+  66              	.L8:
+  67              		@ sp needed
+  68 0010 70BD     		pop	{r4, r5, r6, pc}
+  69              	.L7:
+  70 0012 9968     		ldr	r1, [r3, #8]
+  71 0014 1142     		tst	r1, r2
+  72 0016 06D0     		beq	.L9
+  73 0018 9A68     		ldr	r2, [r3, #8]
+  74 001a 9207     		lsls	r2, r2, #30
+  75 001c 03D4     		bmi	.L9
+  76 001e 1022     		movs	r2, #16
+  77 0020 9968     		ldr	r1, [r3, #8]
+  78 0022 0A43     		orrs	r2, r1
+  79 0024 9A60     		str	r2, [r3, #8]
+  80              	.L9:
+  81 0026 FFF7FEFF 		bl	HAL_GetTick
+  82 002a 0426     		movs	r6, #4
+  83 002c 0500     		movs	r5, r0
+  84              	.L16:
+  85 002e 2368     		ldr	r3, [r4]
+  86 0030 9B68     		ldr	r3, [r3, #8]
+  87 0032 3342     		tst	r3, r6
+  88 0034 EBD0     		beq	.L12
+  89 0036 FFF7FEFF 		bl	HAL_GetTick
+  90 003a 401B     		subs	r0, r0, r5
+  91 003c 0A28     		cmp	r0, #10
+  92 003e F6D9     		bls	.L16
+  93 0040 2368     		ldr	r3, [r4]
+  94 0042 9B68     		ldr	r3, [r3, #8]
+  95 0044 3342     		tst	r3, r6
+  96 0046 F2D0     		beq	.L16
+  97 0048 1023     		movs	r3, #16
+  98 004a 0120     		movs	r0, #1
+  99 004c 626D     		ldr	r2, [r4, #84]
+ 100 004e 1343     		orrs	r3, r2
+ 101 0050 6365     		str	r3, [r4, #84]
+ 102 0052 A36D     		ldr	r3, [r4, #88]
+ 103 0054 0343     		orrs	r3, r0
+ 104 0056 A365     		str	r3, [r4, #88]
+ 105 0058 DAE7     		b	.L8
+ 107              		.section	.text.ADC_Disable,"ax",%progbits
+ 108              		.align	1
+ 109              		.syntax unified
+ 110              		.code	16
+ 111              		.thumb_func
+ 113              	ADC_Disable:
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116 0000 0321     		movs	r1, #3
+ 117 0002 0268     		ldr	r2, [r0]
+ 118 0004 70B5     		push	{r4, r5, r6, lr}
+ 119 0006 9368     		ldr	r3, [r2, #8]
+ARM GAS  /tmp/ccN85YAM.s 			page 3
+
+
+ 120 0008 0400     		movs	r4, r0
+ 121 000a 0B40     		ands	r3, r1
+ 122 000c 012B     		cmp	r3, #1
+ 123 000e 01D0     		beq	.L21
+ 124              	.L23:
+ 125 0010 0020     		movs	r0, #0
+ 126              	.L22:
+ 127              		@ sp needed
+ 128 0012 70BD     		pop	{r4, r5, r6, pc}
+ 129              	.L21:
+ 130 0014 1068     		ldr	r0, [r2]
+ 131 0016 1842     		tst	r0, r3
+ 132 0018 FAD0     		beq	.L23
+ 133 001a 0520     		movs	r0, #5
+ 134 001c 9568     		ldr	r5, [r2, #8]
+ 135 001e 0540     		ands	r5, r0
+ 136 0020 012D     		cmp	r5, #1
+ 137 0022 1BD1     		bne	.L24
+ 138 0024 0223     		movs	r3, #2
+ 139 0026 9068     		ldr	r0, [r2, #8]
+ 140 0028 0343     		orrs	r3, r0
+ 141 002a 9360     		str	r3, [r2, #8]
+ 142 002c 1160     		str	r1, [r2]
+ 143 002e FFF7FEFF 		bl	HAL_GetTick
+ 144 0032 0600     		movs	r6, r0
+ 145              	.L31:
+ 146 0034 2368     		ldr	r3, [r4]
+ 147 0036 9B68     		ldr	r3, [r3, #8]
+ 148 0038 2B42     		tst	r3, r5
+ 149 003a E9D0     		beq	.L23
+ 150 003c FFF7FEFF 		bl	HAL_GetTick
+ 151 0040 801B     		subs	r0, r0, r6
+ 152 0042 0A28     		cmp	r0, #10
+ 153 0044 F6D9     		bls	.L31
+ 154 0046 2368     		ldr	r3, [r4]
+ 155 0048 9B68     		ldr	r3, [r3, #8]
+ 156 004a 2B42     		tst	r3, r5
+ 157 004c F2D0     		beq	.L31
+ 158 004e 1023     		movs	r3, #16
+ 159 0050 626D     		ldr	r2, [r4, #84]
+ 160 0052 1343     		orrs	r3, r2
+ 161 0054 6365     		str	r3, [r4, #84]
+ 162 0056 A36D     		ldr	r3, [r4, #88]
+ 163 0058 2B43     		orrs	r3, r5
+ 164 005a 05E0     		b	.L34
+ 165              	.L24:
+ 166 005c 1022     		movs	r2, #16
+ 167 005e 616D     		ldr	r1, [r4, #84]
+ 168 0060 0A43     		orrs	r2, r1
+ 169 0062 6265     		str	r2, [r4, #84]
+ 170 0064 A26D     		ldr	r2, [r4, #88]
+ 171 0066 1343     		orrs	r3, r2
+ 172              	.L34:
+ 173 0068 0120     		movs	r0, #1
+ 174 006a A365     		str	r3, [r4, #88]
+ 175 006c D1E7     		b	.L22
+ 177              		.section	.text.ADC_Enable,"ax",%progbits
+ARM GAS  /tmp/ccN85YAM.s 			page 4
+
+
+ 178              		.align	1
+ 179              		.syntax unified
+ 180              		.code	16
+ 181              		.thumb_func
+ 183              	ADC_Enable:
+ 184              		@ args = 0, pretend = 0, frame = 0
+ 185              		@ frame_needed = 0, uses_anonymous_args = 0
+ 186 0000 0321     		movs	r1, #3
+ 187 0002 0368     		ldr	r3, [r0]
+ 188 0004 70B5     		push	{r4, r5, r6, lr}
+ 189 0006 9A68     		ldr	r2, [r3, #8]
+ 190 0008 0400     		movs	r4, r0
+ 191 000a 0A40     		ands	r2, r1
+ 192 000c 012A     		cmp	r2, #1
+ 193 000e 04D1     		bne	.L36
+ 194 0010 1968     		ldr	r1, [r3]
+ 195 0012 1142     		tst	r1, r2
+ 196 0014 01D0     		beq	.L36
+ 197              	.L42:
+ 198 0016 0020     		movs	r0, #0
+ 199              	.L37:
+ 200              		@ sp needed
+ 201 0018 70BD     		pop	{r4, r5, r6, pc}
+ 202              	.L36:
+ 203 001a 9968     		ldr	r1, [r3, #8]
+ 204 001c 154A     		ldr	r2, .L48
+ 205 001e 1142     		tst	r1, r2
+ 206 0020 09D0     		beq	.L38
+ 207 0022 1023     		movs	r3, #16
+ 208 0024 626D     		ldr	r2, [r4, #84]
+ 209 0026 1343     		orrs	r3, r2
+ 210 0028 6365     		str	r3, [r4, #84]
+ 211 002a 0123     		movs	r3, #1
+ 212 002c A26D     		ldr	r2, [r4, #88]
+ 213 002e 1343     		orrs	r3, r2
+ 214              	.L47:
+ 215 0030 0120     		movs	r0, #1
+ 216 0032 A365     		str	r3, [r4, #88]
+ 217 0034 F0E7     		b	.L37
+ 218              	.L38:
+ 219 0036 0125     		movs	r5, #1
+ 220 0038 9A68     		ldr	r2, [r3, #8]
+ 221 003a 2800     		movs	r0, r5
+ 222 003c 2A43     		orrs	r2, r5
+ 223 003e 9A60     		str	r2, [r3, #8]
+ 224 0040 FFF7FEFF 		bl	ADC_DelayMicroSecond
+ 225 0044 FFF7FEFF 		bl	HAL_GetTick
+ 226 0048 0600     		movs	r6, r0
+ 227              	.L45:
+ 228 004a 2368     		ldr	r3, [r4]
+ 229 004c 1B68     		ldr	r3, [r3]
+ 230 004e 2B42     		tst	r3, r5
+ 231 0050 E1D1     		bne	.L42
+ 232 0052 FFF7FEFF 		bl	HAL_GetTick
+ 233 0056 801B     		subs	r0, r0, r6
+ 234 0058 0A28     		cmp	r0, #10
+ 235 005a F6D9     		bls	.L45
+ARM GAS  /tmp/ccN85YAM.s 			page 5
+
+
+ 236 005c 2368     		ldr	r3, [r4]
+ 237 005e 1B68     		ldr	r3, [r3]
+ 238 0060 2B42     		tst	r3, r5
+ 239 0062 F2D1     		bne	.L45
+ 240 0064 1023     		movs	r3, #16
+ 241 0066 626D     		ldr	r2, [r4, #84]
+ 242 0068 1343     		orrs	r3, r2
+ 243 006a 6365     		str	r3, [r4, #84]
+ 244 006c A36D     		ldr	r3, [r4, #88]
+ 245 006e 2B43     		orrs	r3, r5
+ 246 0070 DEE7     		b	.L47
+ 247              	.L49:
+ 248 0072 C046     		.align	2
+ 249              	.L48:
+ 250 0074 17000080 		.word	-2147483625
+ 252              		.section	.text.HAL_ADC_MspInit,"ax",%progbits
+ 253              		.align	1
+ 254              		.weak	HAL_ADC_MspInit
+ 255              		.syntax unified
+ 256              		.code	16
+ 257              		.thumb_func
+ 259              	HAL_ADC_MspInit:
+ 260              		@ args = 0, pretend = 0, frame = 0
+ 261              		@ frame_needed = 0, uses_anonymous_args = 0
+ 262              		@ link register save eliminated.
+ 263              		@ sp needed
+ 264 0000 7047     		bx	lr
+ 266              		.section	.text.HAL_ADC_Init,"ax",%progbits
+ 267              		.align	1
+ 268              		.global	HAL_ADC_Init
+ 269              		.syntax unified
+ 270              		.code	16
+ 271              		.thumb_func
+ 273              	HAL_ADC_Init:
+ 274              		@ args = 0, pretend = 0, frame = 0
+ 275              		@ frame_needed = 0, uses_anonymous_args = 0
+ 276 0000 70B5     		push	{r4, r5, r6, lr}
+ 277 0002 041E     		subs	r4, r0, #0
+ 278 0004 16D0     		beq	.L52
+ 279 0006 436D     		ldr	r3, [r0, #84]
+ 280 0008 002B     		cmp	r3, #0
+ 281 000a 05D1     		bne	.L53
+ 282 000c 0200     		movs	r2, r0
+ 283 000e 5032     		adds	r2, r2, #80
+ 284 0010 8365     		str	r3, [r0, #88]
+ 285 0012 1370     		strb	r3, [r2]
+ 286 0014 FFF7FEFF 		bl	HAL_ADC_MspInit
+ 287              	.L53:
+ 288 0018 636D     		ldr	r3, [r4, #84]
+ 289 001a DB06     		lsls	r3, r3, #27
+ 290 001c 03D4     		bmi	.L54
+ 291 001e 2368     		ldr	r3, [r4]
+ 292 0020 9A68     		ldr	r2, [r3, #8]
+ 293 0022 5207     		lsls	r2, r2, #29
+ 294 0024 08D5     		bpl	.L55
+ 295              	.L54:
+ 296 0026 1023     		movs	r3, #16
+ARM GAS  /tmp/ccN85YAM.s 			page 6
+
+
+ 297 0028 626D     		ldr	r2, [r4, #84]
+ 298 002a 5034     		adds	r4, r4, #80
+ 299 002c 1343     		orrs	r3, r2
+ 300 002e 6360     		str	r3, [r4, #4]
+ 301 0030 0023     		movs	r3, #0
+ 302 0032 2370     		strb	r3, [r4]
+ 303              	.L52:
+ 304 0034 0120     		movs	r0, #1
+ 305              	.L56:
+ 306              		@ sp needed
+ 307 0036 70BD     		pop	{r4, r5, r6, pc}
+ 308              	.L55:
+ 309 0038 616D     		ldr	r1, [r4, #84]
+ 310 003a 564A     		ldr	r2, .L75
+ 311 003c 1140     		ands	r1, r2
+ 312 003e 0632     		adds	r2, r2, #6
+ 313 0040 FF32     		adds	r2, r2, #255
+ 314 0042 0A43     		orrs	r2, r1
+ 315 0044 6265     		str	r2, [r4, #84]
+ 316 0046 0322     		movs	r2, #3
+ 317 0048 9968     		ldr	r1, [r3, #8]
+ 318 004a 1140     		ands	r1, r2
+ 319 004c 524A     		ldr	r2, .L75+4
+ 320 004e 0129     		cmp	r1, #1
+ 321 0050 02D1     		bne	.L57
+ 322 0052 1868     		ldr	r0, [r3]
+ 323 0054 0842     		tst	r0, r1
+ 324 0056 19D1     		bne	.L58
+ 325              	.L57:
+ 326 0058 8025     		movs	r5, #128
+ 327 005a 6168     		ldr	r1, [r4, #4]
+ 328 005c ED05     		lsls	r5, r5, #23
+ 329 005e 4800     		lsls	r0, r1, #1
+ 330 0060 4008     		lsrs	r0, r0, #1
+ 331 0062 A842     		cmp	r0, r5
+ 332 0064 03D0     		beq	.L59
+ 333 0066 8020     		movs	r0, #128
+ 334 0068 0006     		lsls	r0, r0, #24
+ 335 006a 8142     		cmp	r1, r0
+ 336 006c 76D1     		bne	.L60
+ 337              	.L59:
+ 338 006e 1869     		ldr	r0, [r3, #16]
+ 339 0070 8000     		lsls	r0, r0, #2
+ 340 0072 8008     		lsrs	r0, r0, #2
+ 341 0074 1861     		str	r0, [r3, #16]
+ 342 0076 1869     		ldr	r0, [r3, #16]
+ 343 0078 0143     		orrs	r1, r0
+ 344 007a 1961     		str	r1, [r3, #16]
+ 345              	.L61:
+ 346 007c 1820     		movs	r0, #24
+ 347 007e D968     		ldr	r1, [r3, #12]
+ 348 0080 8143     		bics	r1, r0
+ 349 0082 D960     		str	r1, [r3, #12]
+ 350 0084 D968     		ldr	r1, [r3, #12]
+ 351 0086 A068     		ldr	r0, [r4, #8]
+ 352 0088 0143     		orrs	r1, r0
+ 353 008a D960     		str	r1, [r3, #12]
+ARM GAS  /tmp/ccN85YAM.s 			page 7
+
+
+ 354              	.L58:
+ 355 008c 1168     		ldr	r1, [r2]
+ 356 008e 4348     		ldr	r0, .L75+8
+ 357 0090 0140     		ands	r1, r0
+ 358 0092 1160     		str	r1, [r2]
+ 359 0094 616B     		ldr	r1, [r4, #52]
+ 360 0096 1068     		ldr	r0, [r2]
+ 361 0098 4906     		lsls	r1, r1, #25
+ 362 009a 0143     		orrs	r1, r0
+ 363 009c 1160     		str	r1, [r2]
+ 364 009e 8022     		movs	r2, #128
+ 365 00a0 9968     		ldr	r1, [r3, #8]
+ 366 00a2 5205     		lsls	r2, r2, #21
+ 367 00a4 1142     		tst	r1, r2
+ 368 00a6 02D1     		bne	.L62
+ 369 00a8 9968     		ldr	r1, [r3, #8]
+ 370 00aa 0A43     		orrs	r2, r1
+ 371 00ac 9A60     		str	r2, [r3, #8]
+ 372              	.L62:
+ 373 00ae DA68     		ldr	r2, [r3, #12]
+ 374 00b0 3B49     		ldr	r1, .L75+12
+ 375 00b2 256B     		ldr	r5, [r4, #48]
+ 376 00b4 0A40     		ands	r2, r1
+ 377 00b6 DA60     		str	r2, [r3, #12]
+ 378 00b8 621C     		adds	r2, r4, #1
+ 379 00ba D17F     		ldrb	r1, [r2, #31]
+ 380 00bc E268     		ldr	r2, [r4, #12]
+ 381 00be D868     		ldr	r0, [r3, #12]
+ 382 00c0 2A43     		orrs	r2, r5
+ 383 00c2 0243     		orrs	r2, r0
+ 384 00c4 A069     		ldr	r0, [r4, #24]
+ 385 00c6 8003     		lsls	r0, r0, #14
+ 386 00c8 0243     		orrs	r2, r0
+ 387 00ca E069     		ldr	r0, [r4, #28]
+ 388 00cc C003     		lsls	r0, r0, #15
+ 389 00ce 0243     		orrs	r2, r0
+ 390 00d0 4803     		lsls	r0, r1, #13
+ 391 00d2 0243     		orrs	r2, r0
+ 392 00d4 2000     		movs	r0, r4
+ 393 00d6 2C30     		adds	r0, r0, #44
+ 394 00d8 0078     		ldrb	r0, [r0]
+ 395 00da 4000     		lsls	r0, r0, #1
+ 396 00dc 0243     		orrs	r2, r0
+ 397 00de 2069     		ldr	r0, [r4, #16]
+ 398 00e0 0238     		subs	r0, r0, #2
+ 399 00e2 4542     		rsbs	r5, r0, #0
+ 400 00e4 6841     		adcs	r0, r0, r5
+ 401 00e6 8000     		lsls	r0, r0, #2
+ 402 00e8 0243     		orrs	r2, r0
+ 403 00ea C220     		movs	r0, #194
+ 404 00ec DA60     		str	r2, [r3, #12]
+ 405 00ee 626A     		ldr	r2, [r4, #36]
+ 406 00f0 FF30     		adds	r0, r0, #255
+ 407 00f2 8242     		cmp	r2, r0
+ 408 00f4 04D0     		beq	.L63
+ 409 00f6 A56A     		ldr	r5, [r4, #40]
+ 410 00f8 D868     		ldr	r0, [r3, #12]
+ARM GAS  /tmp/ccN85YAM.s 			page 8
+
+
+ 411 00fa 2A43     		orrs	r2, r5
+ 412 00fc 0243     		orrs	r2, r0
+ 413 00fe DA60     		str	r2, [r3, #12]
+ 414              	.L63:
+ 415 0100 A21C     		adds	r2, r4, #2
+ 416 0102 D27F     		ldrb	r2, [r2, #31]
+ 417 0104 012A     		cmp	r2, #1
+ 418 0106 06D1     		bne	.L64
+ 419 0108 0029     		cmp	r1, #0
+ 420 010a 33D1     		bne	.L65
+ 421 010c 8022     		movs	r2, #128
+ 422 010e D968     		ldr	r1, [r3, #12]
+ 423 0110 5202     		lsls	r2, r2, #9
+ 424 0112 0A43     		orrs	r2, r1
+ 425 0114 DA60     		str	r2, [r3, #12]
+ 426              	.L64:
+ 427 0116 E16B     		ldr	r1, [r4, #60]
+ 428 0118 1A69     		ldr	r2, [r3, #16]
+ 429 011a 0129     		cmp	r1, #1
+ 430 011c 32D1     		bne	.L66
+ 431 011e 2148     		ldr	r0, .L75+16
+ 432 0120 656C     		ldr	r5, [r4, #68]
+ 433 0122 0240     		ands	r2, r0
+ 434 0124 1A61     		str	r2, [r3, #16]
+ 435 0126 226C     		ldr	r2, [r4, #64]
+ 436 0128 1869     		ldr	r0, [r3, #16]
+ 437 012a 2A43     		orrs	r2, r5
+ 438 012c A56C     		ldr	r5, [r4, #72]
+ 439 012e 2A43     		orrs	r2, r5
+ 440 0130 0243     		orrs	r2, r0
+ 441 0132 1A61     		str	r2, [r3, #16]
+ 442 0134 1A69     		ldr	r2, [r3, #16]
+ 443 0136 1143     		orrs	r1, r2
+ 444 0138 1961     		str	r1, [r3, #16]
+ 445              	.L67:
+ 446 013a 0721     		movs	r1, #7
+ 447 013c 5A69     		ldr	r2, [r3, #20]
+ 448 013e 0020     		movs	r0, #0
+ 449 0140 8A43     		bics	r2, r1
+ 450 0142 5A61     		str	r2, [r3, #20]
+ 451 0144 5A69     		ldr	r2, [r3, #20]
+ 452 0146 A16B     		ldr	r1, [r4, #56]
+ 453 0148 0A43     		orrs	r2, r1
+ 454 014a 5A61     		str	r2, [r3, #20]
+ 455 014c 0323     		movs	r3, #3
+ 456 014e A065     		str	r0, [r4, #88]
+ 457 0150 626D     		ldr	r2, [r4, #84]
+ 458 0152 9A43     		bics	r2, r3
+ 459 0154 023B     		subs	r3, r3, #2
+ 460 0156 1343     		orrs	r3, r2
+ 461 0158 6365     		str	r3, [r4, #84]
+ 462 015a 6CE7     		b	.L56
+ 463              	.L60:
+ 464 015c 1869     		ldr	r0, [r3, #16]
+ 465 015e 124D     		ldr	r5, .L75+20
+ 466 0160 8000     		lsls	r0, r0, #2
+ 467 0162 8008     		lsrs	r0, r0, #2
+ARM GAS  /tmp/ccN85YAM.s 			page 9
+
+
+ 468 0164 1861     		str	r0, [r3, #16]
+ 469 0166 1068     		ldr	r0, [r2]
+ 470 0168 2840     		ands	r0, r5
+ 471 016a 1060     		str	r0, [r2]
+ 472 016c 1068     		ldr	r0, [r2]
+ 473 016e 0143     		orrs	r1, r0
+ 474 0170 1160     		str	r1, [r2]
+ 475 0172 83E7     		b	.L61
+ 476              	.L65:
+ 477 0174 2021     		movs	r1, #32
+ 478 0176 606D     		ldr	r0, [r4, #84]
+ 479 0178 0143     		orrs	r1, r0
+ 480 017a 6165     		str	r1, [r4, #84]
+ 481 017c A16D     		ldr	r1, [r4, #88]
+ 482 017e 0A43     		orrs	r2, r1
+ 483 0180 A265     		str	r2, [r4, #88]
+ 484 0182 C8E7     		b	.L64
+ 485              	.L66:
+ 486 0184 0121     		movs	r1, #1
+ 487 0186 0A42     		tst	r2, r1
+ 488 0188 D7D0     		beq	.L67
+ 489 018a 1A69     		ldr	r2, [r3, #16]
+ 490 018c 8A43     		bics	r2, r1
+ 491 018e 1A61     		str	r2, [r3, #16]
+ 492 0190 D3E7     		b	.L67
+ 493              	.L76:
+ 494 0192 C046     		.align	2
+ 495              	.L75:
+ 496 0194 FDFEFFFF 		.word	-259
+ 497 0198 08270140 		.word	1073817352
+ 498 019c FFFFFFFD 		.word	-33554433
+ 499 01a0 1902FEFF 		.word	-130535
+ 500 01a4 03FCFFFF 		.word	-1021
+ 501 01a8 FFFFC3FF 		.word	-3932161
+ 503              		.section	.text.HAL_ADC_MspDeInit,"ax",%progbits
+ 504              		.align	1
+ 505              		.weak	HAL_ADC_MspDeInit
+ 506              		.syntax unified
+ 507              		.code	16
+ 508              		.thumb_func
+ 510              	HAL_ADC_MspDeInit:
+ 511              		@ args = 0, pretend = 0, frame = 0
+ 512              		@ frame_needed = 0, uses_anonymous_args = 0
+ 513              		@ link register save eliminated.
+ 514              		@ sp needed
+ 515 0000 7047     		bx	lr
+ 517              		.section	.text.HAL_ADC_DeInit,"ax",%progbits
+ 518              		.align	1
+ 519              		.global	HAL_ADC_DeInit
+ 520              		.syntax unified
+ 521              		.code	16
+ 522              		.thumb_func
+ 524              	HAL_ADC_DeInit:
+ 525              		@ args = 0, pretend = 0, frame = 0
+ 526              		@ frame_needed = 0, uses_anonymous_args = 0
+ 527 0000 70B5     		push	{r4, r5, r6, lr}
+ 528 0002 0400     		movs	r4, r0
+ARM GAS  /tmp/ccN85YAM.s 			page 10
+
+
+ 529 0004 0125     		movs	r5, #1
+ 530 0006 0028     		cmp	r0, #0
+ 531 0008 11D0     		beq	.L79
+ 532 000a 0223     		movs	r3, #2
+ 533 000c 426D     		ldr	r2, [r0, #84]
+ 534 000e 1343     		orrs	r3, r2
+ 535 0010 4365     		str	r3, [r0, #84]
+ 536 0012 FFF7FEFF 		bl	ADC_ConversionStop
+ 537 0016 051E     		subs	r5, r0, #0
+ 538 0018 37D1     		bne	.L80
+ 539 001a 2000     		movs	r0, r4
+ 540 001c FFF7FEFF 		bl	ADC_Disable
+ 541 0020 0500     		movs	r5, r0
+ 542 0022 0128     		cmp	r0, #1
+ 543 0024 05D1     		bne	.L81
+ 544              	.L84:
+ 545 0026 0125     		movs	r5, #1
+ 546              	.L82:
+ 547 0028 0023     		movs	r3, #0
+ 548 002a 5034     		adds	r4, r4, #80
+ 549 002c 2370     		strb	r3, [r4]
+ 550              	.L79:
+ 551 002e 2800     		movs	r0, r5
+ 552              		@ sp needed
+ 553 0030 70BD     		pop	{r4, r5, r6, pc}
+ 554              	.L81:
+ 555 0032 0123     		movs	r3, #1
+ 556 0034 6365     		str	r3, [r4, #84]
+ 557              	.L83:
+ 558 0036 2368     		ldr	r3, [r4]
+ 559 0038 1549     		ldr	r1, .L89
+ 560 003a 5A68     		ldr	r2, [r3, #4]
+ 561 003c 2000     		movs	r0, r4
+ 562 003e 0A40     		ands	r2, r1
+ 563 0040 5A60     		str	r2, [r3, #4]
+ 564 0042 144A     		ldr	r2, .L89+4
+ 565 0044 1449     		ldr	r1, .L89+8
+ 566 0046 1A60     		str	r2, [r3]
+ 567 0048 9A68     		ldr	r2, [r3, #8]
+ 568 004a 0A40     		ands	r2, r1
+ 569 004c 9A60     		str	r2, [r3, #8]
+ 570 004e DA68     		ldr	r2, [r3, #12]
+ 571 0050 1249     		ldr	r1, .L89+12
+ 572 0052 0A40     		ands	r2, r1
+ 573 0054 DA60     		str	r2, [r3, #12]
+ 574 0056 1A69     		ldr	r2, [r3, #16]
+ 575 0058 1149     		ldr	r1, .L89+16
+ 576 005a 0A40     		ands	r2, r1
+ 577 005c 0721     		movs	r1, #7
+ 578 005e 1A61     		str	r2, [r3, #16]
+ 579 0060 5A69     		ldr	r2, [r3, #20]
+ 580 0062 8A43     		bics	r2, r1
+ 581 0064 5A61     		str	r2, [r3, #20]
+ 582 0066 1A6A     		ldr	r2, [r3, #32]
+ 583 0068 0E49     		ldr	r1, .L89+20
+ 584 006a 0A40     		ands	r2, r1
+ 585 006c 7F21     		movs	r1, #127
+ARM GAS  /tmp/ccN85YAM.s 			page 11
+
+
+ 586 006e 1A62     		str	r2, [r3, #32]
+ 587 0070 B433     		adds	r3, r3, #180
+ 588 0072 1A68     		ldr	r2, [r3]
+ 589 0074 8A43     		bics	r2, r1
+ 590 0076 1A60     		str	r2, [r3]
+ 591 0078 1A68     		ldr	r2, [r3]
+ 592 007a 8A43     		bics	r2, r1
+ 593 007c 1A60     		str	r2, [r3]
+ 594 007e FFF7FEFF 		bl	HAL_ADC_MspDeInit
+ 595 0082 0023     		movs	r3, #0
+ 596 0084 A365     		str	r3, [r4, #88]
+ 597 0086 6365     		str	r3, [r4, #84]
+ 598 0088 CEE7     		b	.L82
+ 599              	.L80:
+ 600 008a 0128     		cmp	r0, #1
+ 601 008c D3D1     		bne	.L83
+ 602 008e CAE7     		b	.L84
+ 603              	.L90:
+ 604              		.align	2
+ 605              	.L89:
+ 606 0090 60F7FFFF 		.word	-2208
+ 607 0094 9F080000 		.word	2207
+ 608 0098 FFFFFFEF 		.word	-268435457
+ 609 009c 00023E83 		.word	-2093088256
+ 610 00a0 02FCFF3F 		.word	1073740802
+ 611 00a4 00F000F0 		.word	-268374016
+ 613              		.section	.text.HAL_ADC_Start,"ax",%progbits
+ 614              		.align	1
+ 615              		.global	HAL_ADC_Start
+ 616              		.syntax unified
+ 617              		.code	16
+ 618              		.thumb_func
+ 620              	HAL_ADC_Start:
+ 621              		@ args = 0, pretend = 0, frame = 0
+ 622              		@ frame_needed = 0, uses_anonymous_args = 0
+ 623 0000 0368     		ldr	r3, [r0]
+ 624 0002 70B5     		push	{r4, r5, r6, lr}
+ 625 0004 9B68     		ldr	r3, [r3, #8]
+ 626 0006 0400     		movs	r4, r0
+ 627 0008 0220     		movs	r0, #2
+ 628 000a 5B07     		lsls	r3, r3, #29
+ 629 000c 1AD4     		bmi	.L92
+ 630 000e 2500     		movs	r5, r4
+ 631 0010 5035     		adds	r5, r5, #80
+ 632 0012 2B78     		ldrb	r3, [r5]
+ 633 0014 012B     		cmp	r3, #1
+ 634 0016 15D0     		beq	.L92
+ 635 0018 0123     		movs	r3, #1
+ 636 001a 2B70     		strb	r3, [r5]
+ 637 001c E369     		ldr	r3, [r4, #28]
+ 638 001e 012B     		cmp	r3, #1
+ 639 0020 11D1     		bne	.L93
+ 640              	.L94:
+ 641 0022 626D     		ldr	r2, [r4, #84]
+ 642 0024 0B4B     		ldr	r3, .L101
+ 643 0026 0020     		movs	r0, #0
+ 644 0028 1A40     		ands	r2, r3
+ARM GAS  /tmp/ccN85YAM.s 			page 12
+
+
+ 645 002a 8023     		movs	r3, #128
+ 646 002c 5B00     		lsls	r3, r3, #1
+ 647 002e 1343     		orrs	r3, r2
+ 648 0030 1C22     		movs	r2, #28
+ 649 0032 6365     		str	r3, [r4, #84]
+ 650 0034 A065     		str	r0, [r4, #88]
+ 651 0036 2870     		strb	r0, [r5]
+ 652 0038 2368     		ldr	r3, [r4]
+ 653 003a 1A60     		str	r2, [r3]
+ 654 003c 9968     		ldr	r1, [r3, #8]
+ 655 003e 183A     		subs	r2, r2, #24
+ 656 0040 0A43     		orrs	r2, r1
+ 657 0042 9A60     		str	r2, [r3, #8]
+ 658              	.L92:
+ 659              		@ sp needed
+ 660 0044 70BD     		pop	{r4, r5, r6, pc}
+ 661              	.L93:
+ 662 0046 2000     		movs	r0, r4
+ 663 0048 FFF7FEFF 		bl	ADC_Enable
+ 664 004c 0028     		cmp	r0, #0
+ 665 004e E8D0     		beq	.L94
+ 666 0050 F8E7     		b	.L92
+ 667              	.L102:
+ 668 0052 C046     		.align	2
+ 669              	.L101:
+ 670 0054 FEF0FFFF 		.word	-3842
+ 672              		.section	.text.HAL_ADC_Stop,"ax",%progbits
+ 673              		.align	1
+ 674              		.global	HAL_ADC_Stop
+ 675              		.syntax unified
+ 676              		.code	16
+ 677              		.thumb_func
+ 679              	HAL_ADC_Stop:
+ 680              		@ args = 0, pretend = 0, frame = 0
+ 681              		@ frame_needed = 0, uses_anonymous_args = 0
+ 682 0000 70B5     		push	{r4, r5, r6, lr}
+ 683 0002 0600     		movs	r6, r0
+ 684 0004 5036     		adds	r6, r6, #80
+ 685 0006 3378     		ldrb	r3, [r6]
+ 686 0008 0400     		movs	r4, r0
+ 687 000a 0220     		movs	r0, #2
+ 688 000c 012B     		cmp	r3, #1
+ 689 000e 12D0     		beq	.L104
+ 690 0010 0125     		movs	r5, #1
+ 691 0012 2000     		movs	r0, r4
+ 692 0014 3570     		strb	r5, [r6]
+ 693 0016 FFF7FEFF 		bl	ADC_ConversionStop
+ 694 001a 0028     		cmp	r0, #0
+ 695 001c 09D1     		bne	.L105
+ 696 001e 2000     		movs	r0, r4
+ 697 0020 FFF7FEFF 		bl	ADC_Disable
+ 698 0024 0028     		cmp	r0, #0
+ 699 0026 04D1     		bne	.L105
+ 700 0028 636D     		ldr	r3, [r4, #84]
+ 701 002a 034A     		ldr	r2, .L109
+ 702 002c 1340     		ands	r3, r2
+ 703 002e 1D43     		orrs	r5, r3
+ARM GAS  /tmp/ccN85YAM.s 			page 13
+
+
+ 704 0030 6565     		str	r5, [r4, #84]
+ 705              	.L105:
+ 706 0032 0023     		movs	r3, #0
+ 707 0034 3370     		strb	r3, [r6]
+ 708              	.L104:
+ 709              		@ sp needed
+ 710 0036 70BD     		pop	{r4, r5, r6, pc}
+ 711              	.L110:
+ 712              		.align	2
+ 713              	.L109:
+ 714 0038 FEFEFFFF 		.word	-258
+ 716              		.section	.text.HAL_ADC_PollForConversion,"ax",%progbits
+ 717              		.align	1
+ 718              		.global	HAL_ADC_PollForConversion
+ 719              		.syntax unified
+ 720              		.code	16
+ 721              		.thumb_func
+ 723              	HAL_ADC_PollForConversion:
+ 724              		@ args = 0, pretend = 0, frame = 0
+ 725              		@ frame_needed = 0, uses_anonymous_args = 0
+ 726 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 727 0002 4569     		ldr	r5, [r0, #20]
+ 728 0004 0400     		movs	r4, r0
+ 729 0006 0E00     		movs	r6, r1
+ 730 0008 082D     		cmp	r5, #8
+ 731 000a 0DD0     		beq	.L112
+ 732 000c 0368     		ldr	r3, [r0]
+ 733 000e 0120     		movs	r0, #1
+ 734 0010 DB68     		ldr	r3, [r3, #12]
+ 735 0012 0C25     		movs	r5, #12
+ 736 0014 0342     		tst	r3, r0
+ 737 0016 07D0     		beq	.L112
+ 738 0018 2023     		movs	r3, #32
+ 739 001a 626D     		ldr	r2, [r4, #84]
+ 740 001c 5034     		adds	r4, r4, #80
+ 741 001e 1343     		orrs	r3, r2
+ 742 0020 6360     		str	r3, [r4, #4]
+ 743 0022 0023     		movs	r3, #0
+ 744 0024 2370     		strb	r3, [r4]
+ 745              	.L113:
+ 746              		@ sp needed
+ 747 0026 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 748              	.L112:
+ 749 0028 FFF7FEFF 		bl	HAL_GetTick
+ 750 002c 0700     		movs	r7, r0
+ 751              	.L114:
+ 752 002e 2368     		ldr	r3, [r4]
+ 753              	.L115:
+ 754 0030 1A68     		ldr	r2, [r3]
+ 755 0032 1542     		tst	r5, r2
+ 756 0034 23D0     		beq	.L120
+ 757 0036 8022     		movs	r2, #128
+ 758 0038 616D     		ldr	r1, [r4, #84]
+ 759 003a 9200     		lsls	r2, r2, #2
+ 760 003c 0A43     		orrs	r2, r1
+ 761 003e 6265     		str	r2, [r4, #84]
+ 762 0040 C022     		movs	r2, #192
+ARM GAS  /tmp/ccN85YAM.s 			page 14
+
+
+ 763 0042 D968     		ldr	r1, [r3, #12]
+ 764 0044 1201     		lsls	r2, r2, #4
+ 765 0046 1142     		tst	r1, r2
+ 766 0048 14D1     		bne	.L121
+ 767 004a 621C     		adds	r2, r4, #1
+ 768 004c D27F     		ldrb	r2, [r2, #31]
+ 769 004e 002A     		cmp	r2, #0
+ 770 0050 10D1     		bne	.L121
+ 771 0052 1A68     		ldr	r2, [r3]
+ 772 0054 1207     		lsls	r2, r2, #28
+ 773 0056 0DD5     		bpl	.L121
+ 774 0058 9A68     		ldr	r2, [r3, #8]
+ 775 005a 5207     		lsls	r2, r2, #29
+ 776 005c 27D4     		bmi	.L122
+ 777 005e 0C21     		movs	r1, #12
+ 778 0060 5A68     		ldr	r2, [r3, #4]
+ 779 0062 8A43     		bics	r2, r1
+ 780 0064 5A60     		str	r2, [r3, #4]
+ 781 0066 616D     		ldr	r1, [r4, #84]
+ 782 0068 174A     		ldr	r2, .L137
+ 783 006a 1140     		ands	r1, r2
+ 784 006c 0432     		adds	r2, r2, #4
+ 785 006e FF32     		adds	r2, r2, #255
+ 786 0070 0A43     		orrs	r2, r1
+ 787 0072 6265     		str	r2, [r4, #84]
+ 788              	.L121:
+ 789 0074 A269     		ldr	r2, [r4, #24]
+ 790 0076 002A     		cmp	r2, #0
+ 791 0078 22D0     		beq	.L123
+ 792              	.L124:
+ 793 007a 0020     		movs	r0, #0
+ 794 007c D3E7     		b	.L113
+ 795              	.L120:
+ 796 007e 721C     		adds	r2, r6, #1
+ 797 0080 D6D0     		beq	.L115
+ 798 0082 002E     		cmp	r6, #0
+ 799 0084 0DD1     		bne	.L116
+ 800              	.L119:
+ 801 0086 2A00     		movs	r2, r5
+ 802 0088 2368     		ldr	r3, [r4]
+ 803 008a 1B68     		ldr	r3, [r3]
+ 804 008c 1A40     		ands	r2, r3
+ 805 008e 1D42     		tst	r5, r3
+ 806 0090 CDD1     		bne	.L114
+ 807 0092 0423     		movs	r3, #4
+ 808 0094 616D     		ldr	r1, [r4, #84]
+ 809 0096 5034     		adds	r4, r4, #80
+ 810 0098 0B43     		orrs	r3, r1
+ 811 009a 6360     		str	r3, [r4, #4]
+ 812 009c 0320     		movs	r0, #3
+ 813 009e 2270     		strb	r2, [r4]
+ 814 00a0 C1E7     		b	.L113
+ 815              	.L116:
+ 816 00a2 FFF7FEFF 		bl	HAL_GetTick
+ 817 00a6 C01B     		subs	r0, r0, r7
+ 818 00a8 B042     		cmp	r0, r6
+ 819 00aa ECD8     		bhi	.L119
+ARM GAS  /tmp/ccN85YAM.s 			page 15
+
+
+ 820 00ac BFE7     		b	.L114
+ 821              	.L122:
+ 822 00ae 2022     		movs	r2, #32
+ 823 00b0 616D     		ldr	r1, [r4, #84]
+ 824 00b2 0A43     		orrs	r2, r1
+ 825 00b4 6265     		str	r2, [r4, #84]
+ 826 00b6 0122     		movs	r2, #1
+ 827 00b8 A16D     		ldr	r1, [r4, #88]
+ 828 00ba 0A43     		orrs	r2, r1
+ 829 00bc A265     		str	r2, [r4, #88]
+ 830 00be D9E7     		b	.L121
+ 831              	.L123:
+ 832 00c0 0C22     		movs	r2, #12
+ 833 00c2 1A60     		str	r2, [r3]
+ 834 00c4 D9E7     		b	.L124
+ 835              	.L138:
+ 836 00c6 C046     		.align	2
+ 837              	.L137:
+ 838 00c8 FEFEFFFF 		.word	-258
+ 840              		.section	.text.HAL_ADC_PollForEvent,"ax",%progbits
+ 841              		.align	1
+ 842              		.global	HAL_ADC_PollForEvent
+ 843              		.syntax unified
+ 844              		.code	16
+ 845              		.thumb_func
+ 847              	HAL_ADC_PollForEvent:
+ 848              		@ args = 0, pretend = 0, frame = 0
+ 849              		@ frame_needed = 0, uses_anonymous_args = 0
+ 850 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 851 0002 0400     		movs	r4, r0
+ 852 0004 0D00     		movs	r5, r1
+ 853 0006 1600     		movs	r6, r2
+ 854 0008 FFF7FEFF 		bl	HAL_GetTick
+ 855 000c 0700     		movs	r7, r0
+ 856              	.L140:
+ 857 000e 2368     		ldr	r3, [r4]
+ 858              	.L141:
+ 859 0010 1A68     		ldr	r2, [r3]
+ 860 0012 2A40     		ands	r2, r5
+ 861 0014 AA42     		cmp	r2, r5
+ 862 0016 09D1     		bne	.L147
+ 863 0018 802D     		cmp	r5, #128
+ 864 001a 1FD1     		bne	.L148
+ 865 001c 8022     		movs	r2, #128
+ 866 001e 616D     		ldr	r1, [r4, #84]
+ 867 0020 5202     		lsls	r2, r2, #9
+ 868 0022 0A43     		orrs	r2, r1
+ 869 0024 6265     		str	r2, [r4, #84]
+ 870 0026 1D60     		str	r5, [r3]
+ 871              	.L150:
+ 872 0028 0020     		movs	r0, #0
+ 873 002a 10E0     		b	.L146
+ 874              	.L147:
+ 875 002c 721C     		adds	r2, r6, #1
+ 876 002e EFD0     		beq	.L141
+ 877 0030 002E     		cmp	r6, #0
+ 878 0032 0DD1     		bne	.L142
+ARM GAS  /tmp/ccN85YAM.s 			page 16
+
+
+ 879              	.L145:
+ 880 0034 2368     		ldr	r3, [r4]
+ 881 0036 1B68     		ldr	r3, [r3]
+ 882 0038 2B40     		ands	r3, r5
+ 883 003a AB42     		cmp	r3, r5
+ 884 003c E7D0     		beq	.L140
+ 885 003e 0423     		movs	r3, #4
+ 886 0040 626D     		ldr	r2, [r4, #84]
+ 887 0042 0320     		movs	r0, #3
+ 888 0044 1343     		orrs	r3, r2
+ 889 0046 6365     		str	r3, [r4, #84]
+ 890 0048 0023     		movs	r3, #0
+ 891 004a 5034     		adds	r4, r4, #80
+ 892 004c 2370     		strb	r3, [r4]
+ 893              	.L146:
+ 894              		@ sp needed
+ 895 004e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 896              	.L142:
+ 897 0050 FFF7FEFF 		bl	HAL_GetTick
+ 898 0054 C01B     		subs	r0, r0, r7
+ 899 0056 B042     		cmp	r0, r6
+ 900 0058 ECD8     		bhi	.L145
+ 901 005a D8E7     		b	.L140
+ 902              	.L148:
+ 903 005c 226B     		ldr	r2, [r4, #48]
+ 904 005e 002A     		cmp	r2, #0
+ 905 0060 08D1     		bne	.L149
+ 906 0062 8022     		movs	r2, #128
+ 907 0064 616D     		ldr	r1, [r4, #84]
+ 908 0066 D200     		lsls	r2, r2, #3
+ 909 0068 0A43     		orrs	r2, r1
+ 910 006a 6265     		str	r2, [r4, #84]
+ 911 006c 0222     		movs	r2, #2
+ 912 006e A16D     		ldr	r1, [r4, #88]
+ 913 0070 0A43     		orrs	r2, r1
+ 914 0072 A265     		str	r2, [r4, #88]
+ 915              	.L149:
+ 916 0074 1022     		movs	r2, #16
+ 917 0076 1A60     		str	r2, [r3]
+ 918 0078 D6E7     		b	.L150
+ 920              		.section	.text.HAL_ADC_Start_IT,"ax",%progbits
+ 921              		.align	1
+ 922              		.global	HAL_ADC_Start_IT
+ 923              		.syntax unified
+ 924              		.code	16
+ 925              		.thumb_func
+ 927              	HAL_ADC_Start_IT:
+ 928              		@ args = 0, pretend = 0, frame = 0
+ 929              		@ frame_needed = 0, uses_anonymous_args = 0
+ 930 0000 0368     		ldr	r3, [r0]
+ 931 0002 70B5     		push	{r4, r5, r6, lr}
+ 932 0004 9B68     		ldr	r3, [r3, #8]
+ 933 0006 0400     		movs	r4, r0
+ 934 0008 0220     		movs	r0, #2
+ 935 000a 5B07     		lsls	r3, r3, #29
+ 936 000c 2CD4     		bmi	.L155
+ 937 000e 2500     		movs	r5, r4
+ARM GAS  /tmp/ccN85YAM.s 			page 17
+
+
+ 938 0010 5035     		adds	r5, r5, #80
+ 939 0012 2B78     		ldrb	r3, [r5]
+ 940 0014 012B     		cmp	r3, #1
+ 941 0016 27D0     		beq	.L155
+ 942 0018 0123     		movs	r3, #1
+ 943 001a 2B70     		strb	r3, [r5]
+ 944 001c E369     		ldr	r3, [r4, #28]
+ 945 001e 012B     		cmp	r3, #1
+ 946 0020 1DD1     		bne	.L156
+ 947              	.L159:
+ 948 0022 626D     		ldr	r2, [r4, #84]
+ 949 0024 124B     		ldr	r3, .L169
+ 950 0026 1A40     		ands	r2, r3
+ 951 0028 8023     		movs	r3, #128
+ 952 002a 5B00     		lsls	r3, r3, #1
+ 953 002c 1343     		orrs	r3, r2
+ 954 002e 6365     		str	r3, [r4, #84]
+ 955 0030 0023     		movs	r3, #0
+ 956 0032 1C22     		movs	r2, #28
+ 957 0034 A365     		str	r3, [r4, #88]
+ 958 0036 2B70     		strb	r3, [r5]
+ 959 0038 2368     		ldr	r3, [r4]
+ 960 003a 6169     		ldr	r1, [r4, #20]
+ 961 003c 1A60     		str	r2, [r3]
+ 962 003e 0829     		cmp	r1, #8
+ 963 0040 13D1     		bne	.L166
+ 964 0042 0421     		movs	r1, #4
+ 965 0044 5A68     		ldr	r2, [r3, #4]
+ 966 0046 8A43     		bics	r2, r1
+ 967 0048 5A60     		str	r2, [r3, #4]
+ 968 004a 1822     		movs	r2, #24
+ 969 004c 5968     		ldr	r1, [r3, #4]
+ 970              	.L168:
+ 971 004e 0A43     		orrs	r2, r1
+ 972 0050 5A60     		str	r2, [r3, #4]
+ 973 0052 0422     		movs	r2, #4
+ 974 0054 9968     		ldr	r1, [r3, #8]
+ 975 0056 0020     		movs	r0, #0
+ 976 0058 0A43     		orrs	r2, r1
+ 977 005a 9A60     		str	r2, [r3, #8]
+ 978 005c 04E0     		b	.L155
+ 979              	.L156:
+ 980 005e 2000     		movs	r0, r4
+ 981 0060 FFF7FEFF 		bl	ADC_Enable
+ 982 0064 0028     		cmp	r0, #0
+ 983 0066 DCD0     		beq	.L159
+ 984              	.L155:
+ 985              		@ sp needed
+ 986 0068 70BD     		pop	{r4, r5, r6, pc}
+ 987              	.L166:
+ 988 006a 5968     		ldr	r1, [r3, #4]
+ 989 006c EFE7     		b	.L168
+ 990              	.L170:
+ 991 006e C046     		.align	2
+ 992              	.L169:
+ 993 0070 FEF0FFFF 		.word	-3842
+ 995              		.section	.text.HAL_ADC_Stop_IT,"ax",%progbits
+ARM GAS  /tmp/ccN85YAM.s 			page 18
+
+
+ 996              		.align	1
+ 997              		.global	HAL_ADC_Stop_IT
+ 998              		.syntax unified
+ 999              		.code	16
+ 1000              		.thumb_func
+ 1002              	HAL_ADC_Stop_IT:
+ 1003              		@ args = 0, pretend = 0, frame = 0
+ 1004              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1005 0000 70B5     		push	{r4, r5, r6, lr}
+ 1006 0002 0600     		movs	r6, r0
+ 1007 0004 5036     		adds	r6, r6, #80
+ 1008 0006 3378     		ldrb	r3, [r6]
+ 1009 0008 0400     		movs	r4, r0
+ 1010 000a 0220     		movs	r0, #2
+ 1011 000c 012B     		cmp	r3, #1
+ 1012 000e 17D0     		beq	.L172
+ 1013 0010 0125     		movs	r5, #1
+ 1014 0012 2000     		movs	r0, r4
+ 1015 0014 3570     		strb	r5, [r6]
+ 1016 0016 FFF7FEFF 		bl	ADC_ConversionStop
+ 1017 001a 0028     		cmp	r0, #0
+ 1018 001c 0ED1     		bne	.L173
+ 1019 001e 1C21     		movs	r1, #28
+ 1020 0020 2268     		ldr	r2, [r4]
+ 1021 0022 2000     		movs	r0, r4
+ 1022 0024 5368     		ldr	r3, [r2, #4]
+ 1023 0026 8B43     		bics	r3, r1
+ 1024 0028 5360     		str	r3, [r2, #4]
+ 1025 002a FFF7FEFF 		bl	ADC_Disable
+ 1026 002e 0028     		cmp	r0, #0
+ 1027 0030 04D1     		bne	.L173
+ 1028 0032 636D     		ldr	r3, [r4, #84]
+ 1029 0034 034A     		ldr	r2, .L177
+ 1030 0036 1340     		ands	r3, r2
+ 1031 0038 1D43     		orrs	r5, r3
+ 1032 003a 6565     		str	r5, [r4, #84]
+ 1033              	.L173:
+ 1034 003c 0023     		movs	r3, #0
+ 1035 003e 3370     		strb	r3, [r6]
+ 1036              	.L172:
+ 1037              		@ sp needed
+ 1038 0040 70BD     		pop	{r4, r5, r6, pc}
+ 1039              	.L178:
+ 1040 0042 C046     		.align	2
+ 1041              	.L177:
+ 1042 0044 FEFEFFFF 		.word	-258
+ 1044              		.section	.text.HAL_ADC_Start_DMA,"ax",%progbits
+ 1045              		.align	1
+ 1046              		.global	HAL_ADC_Start_DMA
+ 1047              		.syntax unified
+ 1048              		.code	16
+ 1049              		.thumb_func
+ 1051              	HAL_ADC_Start_DMA:
+ 1052              		@ args = 0, pretend = 0, frame = 8
+ 1053              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1054 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
+ 1055 0002 0192     		str	r2, [sp, #4]
+ARM GAS  /tmp/ccN85YAM.s 			page 19
+
+
+ 1056 0004 0268     		ldr	r2, [r0]
+ 1057 0006 0400     		movs	r4, r0
+ 1058 0008 9368     		ldr	r3, [r2, #8]
+ 1059 000a 0E00     		movs	r6, r1
+ 1060 000c 0220     		movs	r0, #2
+ 1061 000e 5B07     		lsls	r3, r3, #29
+ 1062 0010 2FD4     		bmi	.L180
+ 1063 0012 2700     		movs	r7, r4
+ 1064 0014 5037     		adds	r7, r7, #80
+ 1065 0016 3B78     		ldrb	r3, [r7]
+ 1066 0018 012B     		cmp	r3, #1
+ 1067 001a 2AD0     		beq	.L180
+ 1068 001c 0123     		movs	r3, #1
+ 1069 001e 3B70     		strb	r3, [r7]
+ 1070 0020 D168     		ldr	r1, [r2, #12]
+ 1071 0022 0B43     		orrs	r3, r1
+ 1072 0024 D360     		str	r3, [r2, #12]
+ 1073 0026 E369     		ldr	r3, [r4, #28]
+ 1074 0028 012B     		cmp	r3, #1
+ 1075 002a 23D1     		bne	.L181
+ 1076              	.L182:
+ 1077 002c 626D     		ldr	r2, [r4, #84]
+ 1078 002e 144B     		ldr	r3, .L189
+ 1079 0030 0025     		movs	r5, #0
+ 1080 0032 1A40     		ands	r2, r3
+ 1081 0034 8023     		movs	r3, #128
+ 1082 0036 5B00     		lsls	r3, r3, #1
+ 1083 0038 1343     		orrs	r3, r2
+ 1084 003a 6365     		str	r3, [r4, #84]
+ 1085 003c A565     		str	r5, [r4, #88]
+ 1086 003e 3D70     		strb	r5, [r7]
+ 1087 0040 E06C     		ldr	r0, [r4, #76]
+ 1088 0042 104B     		ldr	r3, .L189+4
+ 1089 0044 2168     		ldr	r1, [r4]
+ 1090 0046 C362     		str	r3, [r0, #44]
+ 1091 0048 0F4B     		ldr	r3, .L189+8
+ 1092 004a 0363     		str	r3, [r0, #48]
+ 1093 004c 0F4B     		ldr	r3, .L189+12
+ 1094 004e 4363     		str	r3, [r0, #52]
+ 1095 0050 1C23     		movs	r3, #28
+ 1096 0052 0B60     		str	r3, [r1]
+ 1097 0054 4A68     		ldr	r2, [r1, #4]
+ 1098 0056 0C3B     		subs	r3, r3, #12
+ 1099 0058 1343     		orrs	r3, r2
+ 1100 005a 4B60     		str	r3, [r1, #4]
+ 1101 005c 3200     		movs	r2, r6
+ 1102 005e 019B     		ldr	r3, [sp, #4]
+ 1103 0060 4031     		adds	r1, r1, #64
+ 1104 0062 FFF7FEFF 		bl	HAL_DMA_Start_IT
+ 1105 0066 0423     		movs	r3, #4
+ 1106 0068 2800     		movs	r0, r5
+ 1107 006a 2268     		ldr	r2, [r4]
+ 1108 006c 9168     		ldr	r1, [r2, #8]
+ 1109 006e 0B43     		orrs	r3, r1
+ 1110 0070 9360     		str	r3, [r2, #8]
+ 1111              	.L180:
+ 1112              		@ sp needed
+ARM GAS  /tmp/ccN85YAM.s 			page 20
+
+
+ 1113 0072 FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
+ 1114              	.L181:
+ 1115 0074 2000     		movs	r0, r4
+ 1116 0076 FFF7FEFF 		bl	ADC_Enable
+ 1117 007a 0028     		cmp	r0, #0
+ 1118 007c D6D0     		beq	.L182
+ 1119 007e F8E7     		b	.L180
+ 1120              	.L190:
+ 1121              		.align	2
+ 1122              	.L189:
+ 1123 0080 FEF0FFFF 		.word	-3842
+ 1124 0084 00000000 		.word	ADC_DMAConvCplt
+ 1125 0088 00000000 		.word	ADC_DMAHalfConvCplt
+ 1126 008c 00000000 		.word	ADC_DMAError
+ 1128              		.section	.text.HAL_ADC_Stop_DMA,"ax",%progbits
+ 1129              		.align	1
+ 1130              		.global	HAL_ADC_Stop_DMA
+ 1131              		.syntax unified
+ 1132              		.code	16
+ 1133              		.thumb_func
+ 1135              	HAL_ADC_Stop_DMA:
+ 1136              		@ args = 0, pretend = 0, frame = 0
+ 1137              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1138 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1139 0002 0600     		movs	r6, r0
+ 1140 0004 5036     		adds	r6, r6, #80
+ 1141 0006 3378     		ldrb	r3, [r6]
+ 1142 0008 0500     		movs	r5, r0
+ 1143 000a 0224     		movs	r4, #2
+ 1144 000c 012B     		cmp	r3, #1
+ 1145 000e 24D0     		beq	.L192
+ 1146 0010 0127     		movs	r7, #1
+ 1147 0012 3770     		strb	r7, [r6]
+ 1148 0014 FFF7FEFF 		bl	ADC_ConversionStop
+ 1149 0018 041E     		subs	r4, r0, #0
+ 1150 001a 1CD1     		bne	.L193
+ 1151 001c 2A68     		ldr	r2, [r5]
+ 1152 001e E86C     		ldr	r0, [r5, #76]
+ 1153 0020 D368     		ldr	r3, [r2, #12]
+ 1154 0022 BB43     		bics	r3, r7
+ 1155 0024 D360     		str	r3, [r2, #12]
+ 1156 0026 831D     		adds	r3, r0, #6
+ 1157 0028 DB7F     		ldrb	r3, [r3, #31]
+ 1158 002a 022B     		cmp	r3, #2
+ 1159 002c 07D1     		bne	.L194
+ 1160 002e FFF7FEFF 		bl	HAL_DMA_Abort
+ 1161 0032 041E     		subs	r4, r0, #0
+ 1162 0034 03D0     		beq	.L194
+ 1163 0036 4023     		movs	r3, #64
+ 1164 0038 6A6D     		ldr	r2, [r5, #84]
+ 1165 003a 1343     		orrs	r3, r2
+ 1166 003c 6B65     		str	r3, [r5, #84]
+ 1167              	.L194:
+ 1168 003e 1021     		movs	r1, #16
+ 1169 0040 2A68     		ldr	r2, [r5]
+ 1170 0042 2800     		movs	r0, r5
+ 1171 0044 5368     		ldr	r3, [r2, #4]
+ARM GAS  /tmp/ccN85YAM.s 			page 21
+
+
+ 1172 0046 8B43     		bics	r3, r1
+ 1173 0048 5360     		str	r3, [r2, #4]
+ 1174 004a 002C     		cmp	r4, #0
+ 1175 004c 07D1     		bne	.L197
+ 1176 004e FFF7FEFF 		bl	ADC_Disable
+ 1177 0052 041E     		subs	r4, r0, #0
+ 1178 0054 06D0     		beq	.L198
+ 1179              	.L193:
+ 1180 0056 0023     		movs	r3, #0
+ 1181 0058 3370     		strb	r3, [r6]
+ 1182              	.L192:
+ 1183 005a 2000     		movs	r0, r4
+ 1184              		@ sp needed
+ 1185 005c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1186              	.L197:
+ 1187 005e FFF7FEFF 		bl	ADC_Disable
+ 1188 0062 F8E7     		b	.L193
+ 1189              	.L198:
+ 1190 0064 6A6D     		ldr	r2, [r5, #84]
+ 1191 0066 034B     		ldr	r3, .L201
+ 1192 0068 1A40     		ands	r2, r3
+ 1193 006a 0433     		adds	r3, r3, #4
+ 1194 006c FF33     		adds	r3, r3, #255
+ 1195 006e 1343     		orrs	r3, r2
+ 1196 0070 6B65     		str	r3, [r5, #84]
+ 1197 0072 F0E7     		b	.L193
+ 1198              	.L202:
+ 1199              		.align	2
+ 1200              	.L201:
+ 1201 0074 FEFEFFFF 		.word	-258
+ 1203              		.section	.text.HAL_ADC_GetValue,"ax",%progbits
+ 1204              		.align	1
+ 1205              		.global	HAL_ADC_GetValue
+ 1206              		.syntax unified
+ 1207              		.code	16
+ 1208              		.thumb_func
+ 1210              	HAL_ADC_GetValue:
+ 1211              		@ args = 0, pretend = 0, frame = 0
+ 1212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1213              		@ link register save eliminated.
+ 1214 0000 0368     		ldr	r3, [r0]
+ 1215              		@ sp needed
+ 1216 0002 186C     		ldr	r0, [r3, #64]
+ 1217 0004 7047     		bx	lr
+ 1219              		.section	.text.HAL_ADC_ConvCpltCallback,"ax",%progbits
+ 1220              		.align	1
+ 1221              		.weak	HAL_ADC_ConvCpltCallback
+ 1222              		.syntax unified
+ 1223              		.code	16
+ 1224              		.thumb_func
+ 1226              	HAL_ADC_ConvCpltCallback:
+ 1227              		@ args = 0, pretend = 0, frame = 0
+ 1228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1229              		@ link register save eliminated.
+ 1230              		@ sp needed
+ 1231 0000 7047     		bx	lr
+ 1233              		.section	.text.ADC_DMAConvCplt,"ax",%progbits
+ARM GAS  /tmp/ccN85YAM.s 			page 22
+
+
+ 1234              		.align	1
+ 1235              		.syntax unified
+ 1236              		.code	16
+ 1237              		.thumb_func
+ 1239              	ADC_DMAConvCplt:
+ 1240              		@ args = 0, pretend = 0, frame = 0
+ 1241              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1242 0000 5022     		movs	r2, #80
+ 1243 0002 836A     		ldr	r3, [r0, #40]
+ 1244 0004 10B5     		push	{r4, lr}
+ 1245 0006 596D     		ldr	r1, [r3, #84]
+ 1246 0008 1142     		tst	r1, r2
+ 1247 000a 2CD1     		bne	.L206
+ 1248 000c 596D     		ldr	r1, [r3, #84]
+ 1249 000e B132     		adds	r2, r2, #177
+ 1250 0010 FF32     		adds	r2, r2, #255
+ 1251 0012 0A43     		orrs	r2, r1
+ 1252 0014 C021     		movs	r1, #192
+ 1253 0016 5A65     		str	r2, [r3, #84]
+ 1254 0018 1A68     		ldr	r2, [r3]
+ 1255 001a 0901     		lsls	r1, r1, #4
+ 1256 001c D068     		ldr	r0, [r2, #12]
+ 1257 001e 0842     		tst	r0, r1
+ 1258 0020 14D1     		bne	.L207
+ 1259 0022 591C     		adds	r1, r3, #1
+ 1260 0024 C97F     		ldrb	r1, [r1, #31]
+ 1261 0026 0029     		cmp	r1, #0
+ 1262 0028 10D1     		bne	.L207
+ 1263 002a 1168     		ldr	r1, [r2]
+ 1264 002c 0907     		lsls	r1, r1, #28
+ 1265 002e 0DD5     		bpl	.L207
+ 1266 0030 9168     		ldr	r1, [r2, #8]
+ 1267 0032 4907     		lsls	r1, r1, #29
+ 1268 0034 0ED4     		bmi	.L208
+ 1269 0036 0C20     		movs	r0, #12
+ 1270 0038 5168     		ldr	r1, [r2, #4]
+ 1271 003a 8143     		bics	r1, r0
+ 1272 003c 5160     		str	r1, [r2, #4]
+ 1273 003e 596D     		ldr	r1, [r3, #84]
+ 1274 0040 0B4A     		ldr	r2, .L214
+ 1275 0042 1140     		ands	r1, r2
+ 1276 0044 0432     		adds	r2, r2, #4
+ 1277 0046 FF32     		adds	r2, r2, #255
+ 1278 0048 0A43     		orrs	r2, r1
+ 1279 004a 5A65     		str	r2, [r3, #84]
+ 1280              	.L207:
+ 1281 004c 1800     		movs	r0, r3
+ 1282 004e FFF7FEFF 		bl	HAL_ADC_ConvCpltCallback
+ 1283              	.L205:
+ 1284              		@ sp needed
+ 1285 0052 10BD     		pop	{r4, pc}
+ 1286              	.L208:
+ 1287 0054 2022     		movs	r2, #32
+ 1288 0056 596D     		ldr	r1, [r3, #84]
+ 1289 0058 0A43     		orrs	r2, r1
+ 1290 005a 5A65     		str	r2, [r3, #84]
+ 1291 005c 0122     		movs	r2, #1
+ARM GAS  /tmp/ccN85YAM.s 			page 23
+
+
+ 1292 005e 996D     		ldr	r1, [r3, #88]
+ 1293 0060 0A43     		orrs	r2, r1
+ 1294 0062 9A65     		str	r2, [r3, #88]
+ 1295 0064 F2E7     		b	.L207
+ 1296              	.L206:
+ 1297 0066 DB6C     		ldr	r3, [r3, #76]
+ 1298 0068 5B6B     		ldr	r3, [r3, #52]
+ 1299 006a 9847     		blx	r3
+ 1300 006c F1E7     		b	.L205
+ 1301              	.L215:
+ 1302 006e C046     		.align	2
+ 1303              	.L214:
+ 1304 0070 FEFEFFFF 		.word	-258
+ 1306              		.section	.text.HAL_ADC_ConvHalfCpltCallback,"ax",%progbits
+ 1307              		.align	1
+ 1308              		.weak	HAL_ADC_ConvHalfCpltCallback
+ 1309              		.syntax unified
+ 1310              		.code	16
+ 1311              		.thumb_func
+ 1313              	HAL_ADC_ConvHalfCpltCallback:
+ 1314              		@ args = 0, pretend = 0, frame = 0
+ 1315              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1316              		@ link register save eliminated.
+ 1317              		@ sp needed
+ 1318 0000 7047     		bx	lr
+ 1320              		.section	.text.ADC_DMAHalfConvCplt,"ax",%progbits
+ 1321              		.align	1
+ 1322              		.syntax unified
+ 1323              		.code	16
+ 1324              		.thumb_func
+ 1326              	ADC_DMAHalfConvCplt:
+ 1327              		@ args = 0, pretend = 0, frame = 0
+ 1328              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1329 0000 10B5     		push	{r4, lr}
+ 1330 0002 806A     		ldr	r0, [r0, #40]
+ 1331 0004 FFF7FEFF 		bl	HAL_ADC_ConvHalfCpltCallback
+ 1332              		@ sp needed
+ 1333 0008 10BD     		pop	{r4, pc}
+ 1335              		.section	.text.HAL_ADC_LevelOutOfWindowCallback,"ax",%progbits
+ 1336              		.align	1
+ 1337              		.weak	HAL_ADC_LevelOutOfWindowCallback
+ 1338              		.syntax unified
+ 1339              		.code	16
+ 1340              		.thumb_func
+ 1342              	HAL_ADC_LevelOutOfWindowCallback:
+ 1343              		@ args = 0, pretend = 0, frame = 0
+ 1344              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1345              		@ link register save eliminated.
+ 1346              		@ sp needed
+ 1347 0000 7047     		bx	lr
+ 1349              		.section	.text.HAL_ADC_ErrorCallback,"ax",%progbits
+ 1350              		.align	1
+ 1351              		.weak	HAL_ADC_ErrorCallback
+ 1352              		.syntax unified
+ 1353              		.code	16
+ 1354              		.thumb_func
+ 1356              	HAL_ADC_ErrorCallback:
+ARM GAS  /tmp/ccN85YAM.s 			page 24
+
+
+ 1357              		@ args = 0, pretend = 0, frame = 0
+ 1358              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1359              		@ link register save eliminated.
+ 1360              		@ sp needed
+ 1361 0000 7047     		bx	lr
+ 1363              		.section	.text.ADC_DMAError,"ax",%progbits
+ 1364              		.align	1
+ 1365              		.syntax unified
+ 1366              		.code	16
+ 1367              		.thumb_func
+ 1369              	ADC_DMAError:
+ 1370              		@ args = 0, pretend = 0, frame = 0
+ 1371              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1372 0000 4023     		movs	r3, #64
+ 1373 0002 806A     		ldr	r0, [r0, #40]
+ 1374 0004 10B5     		push	{r4, lr}
+ 1375 0006 426D     		ldr	r2, [r0, #84]
+ 1376              		@ sp needed
+ 1377 0008 1343     		orrs	r3, r2
+ 1378 000a 4365     		str	r3, [r0, #84]
+ 1379 000c 0423     		movs	r3, #4
+ 1380 000e 826D     		ldr	r2, [r0, #88]
+ 1381 0010 1343     		orrs	r3, r2
+ 1382 0012 8365     		str	r3, [r0, #88]
+ 1383 0014 FFF7FEFF 		bl	HAL_ADC_ErrorCallback
+ 1384 0018 10BD     		pop	{r4, pc}
+ 1386              		.section	.text.HAL_ADC_IRQHandler,"ax",%progbits
+ 1387              		.align	1
+ 1388              		.global	HAL_ADC_IRQHandler
+ 1389              		.syntax unified
+ 1390              		.code	16
+ 1391              		.thumb_func
+ 1393              	HAL_ADC_IRQHandler:
+ 1394              		@ args = 0, pretend = 0, frame = 0
+ 1395              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1396 0000 0422     		movs	r2, #4
+ 1397 0002 0368     		ldr	r3, [r0]
+ 1398 0004 70B5     		push	{r4, r5, r6, lr}
+ 1399 0006 1968     		ldr	r1, [r3]
+ 1400 0008 0400     		movs	r4, r0
+ 1401 000a 1142     		tst	r1, r2
+ 1402 000c 02D0     		beq	.L222
+ 1403 000e 5968     		ldr	r1, [r3, #4]
+ 1404 0010 1142     		tst	r1, r2
+ 1405 0012 06D1     		bne	.L223
+ 1406              	.L222:
+ 1407 0014 0822     		movs	r2, #8
+ 1408 0016 1968     		ldr	r1, [r3]
+ 1409 0018 1142     		tst	r1, r2
+ 1410 001a 2DD0     		beq	.L225
+ 1411 001c 5968     		ldr	r1, [r3, #4]
+ 1412 001e 1142     		tst	r1, r2
+ 1413 0020 2AD0     		beq	.L225
+ 1414              	.L223:
+ 1415 0022 626D     		ldr	r2, [r4, #84]
+ 1416 0024 D206     		lsls	r2, r2, #27
+ 1417 0026 04D4     		bmi	.L227
+ARM GAS  /tmp/ccN85YAM.s 			page 25
+
+
+ 1418 0028 8022     		movs	r2, #128
+ 1419 002a 616D     		ldr	r1, [r4, #84]
+ 1420 002c 9200     		lsls	r2, r2, #2
+ 1421 002e 0A43     		orrs	r2, r1
+ 1422 0030 6265     		str	r2, [r4, #84]
+ 1423              	.L227:
+ 1424 0032 C022     		movs	r2, #192
+ 1425 0034 D968     		ldr	r1, [r3, #12]
+ 1426 0036 1201     		lsls	r2, r2, #4
+ 1427 0038 1142     		tst	r1, r2
+ 1428 003a 14D1     		bne	.L228
+ 1429 003c 621C     		adds	r2, r4, #1
+ 1430 003e D27F     		ldrb	r2, [r2, #31]
+ 1431 0040 002A     		cmp	r2, #0
+ 1432 0042 10D1     		bne	.L228
+ 1433 0044 1A68     		ldr	r2, [r3]
+ 1434 0046 1207     		lsls	r2, r2, #28
+ 1435 0048 0DD5     		bpl	.L228
+ 1436 004a 9A68     		ldr	r2, [r3, #8]
+ 1437 004c 5207     		lsls	r2, r2, #29
+ 1438 004e 40D4     		bmi	.L229
+ 1439 0050 0C21     		movs	r1, #12
+ 1440 0052 5A68     		ldr	r2, [r3, #4]
+ 1441 0054 8A43     		bics	r2, r1
+ 1442 0056 5A60     		str	r2, [r3, #4]
+ 1443 0058 626D     		ldr	r2, [r4, #84]
+ 1444 005a 224B     		ldr	r3, .L267
+ 1445 005c 1A40     		ands	r2, r3
+ 1446 005e 0433     		adds	r3, r3, #4
+ 1447 0060 FF33     		adds	r3, r3, #255
+ 1448 0062 1343     		orrs	r3, r2
+ 1449 0064 6365     		str	r3, [r4, #84]
+ 1450              	.L228:
+ 1451 0066 2000     		movs	r0, r4
+ 1452 0068 FFF7FEFF 		bl	HAL_ADC_ConvCpltCallback
+ 1453 006c A369     		ldr	r3, [r4, #24]
+ 1454 006e 012B     		cmp	r3, #1
+ 1455 0070 02D0     		beq	.L225
+ 1456 0072 0C22     		movs	r2, #12
+ 1457 0074 2368     		ldr	r3, [r4]
+ 1458 0076 1A60     		str	r2, [r3]
+ 1459              	.L225:
+ 1460 0078 8025     		movs	r5, #128
+ 1461 007a 2368     		ldr	r3, [r4]
+ 1462 007c 1A68     		ldr	r2, [r3]
+ 1463 007e 2A42     		tst	r2, r5
+ 1464 0080 0CD0     		beq	.L230
+ 1465 0082 5B68     		ldr	r3, [r3, #4]
+ 1466 0084 2B42     		tst	r3, r5
+ 1467 0086 09D0     		beq	.L230
+ 1468 0088 8023     		movs	r3, #128
+ 1469 008a 626D     		ldr	r2, [r4, #84]
+ 1470 008c 5B02     		lsls	r3, r3, #9
+ 1471 008e 1343     		orrs	r3, r2
+ 1472 0090 6365     		str	r3, [r4, #84]
+ 1473 0092 2000     		movs	r0, r4
+ 1474 0094 FFF7FEFF 		bl	HAL_ADC_LevelOutOfWindowCallback
+ARM GAS  /tmp/ccN85YAM.s 			page 26
+
+
+ 1475 0098 2368     		ldr	r3, [r4]
+ 1476 009a 1D60     		str	r5, [r3]
+ 1477              	.L230:
+ 1478 009c 1022     		movs	r2, #16
+ 1479 009e 2368     		ldr	r3, [r4]
+ 1480 00a0 1968     		ldr	r1, [r3]
+ 1481 00a2 1142     		tst	r1, r2
+ 1482 00a4 14D0     		beq	.L221
+ 1483 00a6 5968     		ldr	r1, [r3, #4]
+ 1484 00a8 1142     		tst	r1, r2
+ 1485 00aa 11D0     		beq	.L221
+ 1486 00ac 226B     		ldr	r2, [r4, #48]
+ 1487 00ae 002A     		cmp	r2, #0
+ 1488 00b0 02D0     		beq	.L232
+ 1489 00b2 DA68     		ldr	r2, [r3, #12]
+ 1490 00b4 D207     		lsls	r2, r2, #31
+ 1491 00b6 08D5     		bpl	.L233
+ 1492              	.L232:
+ 1493 00b8 0222     		movs	r2, #2
+ 1494 00ba A16D     		ldr	r1, [r4, #88]
+ 1495 00bc 2000     		movs	r0, r4
+ 1496 00be 0A43     		orrs	r2, r1
+ 1497 00c0 A265     		str	r2, [r4, #88]
+ 1498 00c2 1022     		movs	r2, #16
+ 1499 00c4 1A60     		str	r2, [r3]
+ 1500 00c6 FFF7FEFF 		bl	HAL_ADC_ErrorCallback
+ 1501              	.L233:
+ 1502 00ca 1022     		movs	r2, #16
+ 1503 00cc 2368     		ldr	r3, [r4]
+ 1504 00ce 1A60     		str	r2, [r3]
+ 1505              	.L221:
+ 1506              		@ sp needed
+ 1507 00d0 70BD     		pop	{r4, r5, r6, pc}
+ 1508              	.L229:
+ 1509 00d2 2023     		movs	r3, #32
+ 1510 00d4 626D     		ldr	r2, [r4, #84]
+ 1511 00d6 1343     		orrs	r3, r2
+ 1512 00d8 6365     		str	r3, [r4, #84]
+ 1513 00da 0123     		movs	r3, #1
+ 1514 00dc A26D     		ldr	r2, [r4, #88]
+ 1515 00de 1343     		orrs	r3, r2
+ 1516 00e0 A365     		str	r3, [r4, #88]
+ 1517 00e2 C0E7     		b	.L228
+ 1518              	.L268:
+ 1519              		.align	2
+ 1520              	.L267:
+ 1521 00e4 FEFEFFFF 		.word	-258
+ 1523              		.section	.text.HAL_ADC_ConfigChannel,"ax",%progbits
+ 1524              		.align	1
+ 1525              		.global	HAL_ADC_ConfigChannel
+ 1526              		.syntax unified
+ 1527              		.code	16
+ 1528              		.thumb_func
+ 1530              	HAL_ADC_ConfigChannel:
+ 1531              		@ args = 0, pretend = 0, frame = 0
+ 1532              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1533 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ARM GAS  /tmp/ccN85YAM.s 			page 27
+
+
+ 1534 0002 0400     		movs	r4, r0
+ 1535 0004 5034     		adds	r4, r4, #80
+ 1536 0006 2278     		ldrb	r2, [r4]
+ 1537 0008 0300     		movs	r3, r0
+ 1538 000a 0220     		movs	r0, #2
+ 1539 000c 012A     		cmp	r2, #1
+ 1540 000e 0BD0     		beq	.L270
+ 1541 0010 0138     		subs	r0, r0, #1
+ 1542 0012 2070     		strb	r0, [r4]
+ 1543 0014 1A68     		ldr	r2, [r3]
+ 1544 0016 9568     		ldr	r5, [r2, #8]
+ 1545 0018 6D07     		lsls	r5, r5, #29
+ 1546 001a 06D5     		bpl	.L271
+ 1547 001c 2022     		movs	r2, #32
+ 1548 001e 596D     		ldr	r1, [r3, #84]
+ 1549 0020 0A43     		orrs	r2, r1
+ 1550 0022 5A65     		str	r2, [r3, #84]
+ 1551 0024 0023     		movs	r3, #0
+ 1552 0026 2370     		strb	r3, [r4]
+ 1553              	.L270:
+ 1554              		@ sp needed
+ 1555 0028 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1556              	.L271:
+ 1557 002a 8023     		movs	r3, #128
+ 1558 002c 8026     		movs	r6, #128
+ 1559 002e 0D68     		ldr	r5, [r1]
+ 1560 0030 194F     		ldr	r7, .L289
+ 1561 0032 4968     		ldr	r1, [r1, #4]
+ 1562 0034 6803     		lsls	r0, r5, #13
+ 1563 0036 DB02     		lsls	r3, r3, #11
+ 1564 0038 400B     		lsrs	r0, r0, #13
+ 1565 003a 2B40     		ands	r3, r5
+ 1566 003c B602     		lsls	r6, r6, #10
+ 1567 003e B942     		cmp	r1, r7
+ 1568 0040 18D0     		beq	.L272
+ 1569 0042 916A     		ldr	r1, [r2, #40]
+ 1570 0044 0143     		orrs	r1, r0
+ 1571 0046 9162     		str	r1, [r2, #40]
+ 1572 0048 002B     		cmp	r3, #0
+ 1573 004a 08D0     		beq	.L273
+ 1574 004c 8023     		movs	r3, #128
+ 1575 004e 134A     		ldr	r2, .L289+4
+ 1576 0050 1B04     		lsls	r3, r3, #16
+ 1577 0052 1168     		ldr	r1, [r2]
+ 1578 0054 0A20     		movs	r0, #10
+ 1579 0056 0B43     		orrs	r3, r1
+ 1580 0058 1360     		str	r3, [r2]
+ 1581 005a FFF7FEFF 		bl	ADC_DelayMicroSecond
+ 1582              	.L273:
+ 1583 005e 3542     		tst	r5, r6
+ 1584 0060 05D0     		beq	.L275
+ 1585 0062 8023     		movs	r3, #128
+ 1586 0064 0D4A     		ldr	r2, .L289+4
+ 1587 0066 DB03     		lsls	r3, r3, #15
+ 1588 0068 1168     		ldr	r1, [r2]
+ 1589 006a 0B43     		orrs	r3, r1
+ 1590              	.L288:
+ARM GAS  /tmp/ccN85YAM.s 			page 28
+
+
+ 1591 006c 1360     		str	r3, [r2]
+ 1592              	.L275:
+ 1593 006e 0020     		movs	r0, #0
+ 1594 0070 2070     		strb	r0, [r4]
+ 1595 0072 D9E7     		b	.L270
+ 1596              	.L272:
+ 1597 0074 916A     		ldr	r1, [r2, #40]
+ 1598 0076 8143     		bics	r1, r0
+ 1599 0078 9162     		str	r1, [r2, #40]
+ 1600 007a 002B     		cmp	r3, #0
+ 1601 007c 04D0     		beq	.L276
+ 1602 007e 074A     		ldr	r2, .L289+4
+ 1603 0080 0749     		ldr	r1, .L289+8
+ 1604 0082 1368     		ldr	r3, [r2]
+ 1605 0084 0B40     		ands	r3, r1
+ 1606 0086 1360     		str	r3, [r2]
+ 1607              	.L276:
+ 1608 0088 3542     		tst	r5, r6
+ 1609 008a F0D0     		beq	.L275
+ 1610 008c 034A     		ldr	r2, .L289+4
+ 1611 008e 0549     		ldr	r1, .L289+12
+ 1612 0090 1368     		ldr	r3, [r2]
+ 1613 0092 0B40     		ands	r3, r1
+ 1614 0094 EAE7     		b	.L288
+ 1615              	.L290:
+ 1616 0096 C046     		.align	2
+ 1617              	.L289:
+ 1618 0098 01100000 		.word	4097
+ 1619 009c 08270140 		.word	1073817352
+ 1620 00a0 FFFF7FFF 		.word	-8388609
+ 1621 00a4 FFFFBFFF 		.word	-4194305
+ 1623              		.section	.text.HAL_ADC_AnalogWDGConfig,"ax",%progbits
+ 1624              		.align	1
+ 1625              		.global	HAL_ADC_AnalogWDGConfig
+ 1626              		.syntax unified
+ 1627              		.code	16
+ 1628              		.thumb_func
+ 1630              	HAL_ADC_AnalogWDGConfig:
+ 1631              		@ args = 0, pretend = 0, frame = 0
+ 1632              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1633 0000 30B5     		push	{r4, r5, lr}
+ 1634 0002 0400     		movs	r4, r0
+ 1635 0004 5034     		adds	r4, r4, #80
+ 1636 0006 2378     		ldrb	r3, [r4]
+ 1637 0008 0200     		movs	r2, r0
+ 1638 000a 0220     		movs	r0, #2
+ 1639 000c 012B     		cmp	r3, #1
+ 1640 000e 32D0     		beq	.L292
+ 1641 0010 0138     		subs	r0, r0, #1
+ 1642 0012 2070     		strb	r0, [r4]
+ 1643 0014 1368     		ldr	r3, [r2]
+ 1644 0016 9D68     		ldr	r5, [r3, #8]
+ 1645 0018 6D07     		lsls	r5, r5, #29
+ 1646 001a 31D4     		bmi	.L293
+ 1647 001c 087A     		ldrb	r0, [r1, #8]
+ 1648 001e 8022     		movs	r2, #128
+ 1649 0020 0128     		cmp	r0, #1
+ARM GAS  /tmp/ccN85YAM.s 			page 29
+
+
+ 1650 0022 29D1     		bne	.L294
+ 1651 0024 5868     		ldr	r0, [r3, #4]
+ 1652 0026 0243     		orrs	r2, r0
+ 1653 0028 5A60     		str	r2, [r3, #4]
+ 1654              	.L295:
+ 1655 002a F825     		movs	r5, #248
+ 1656 002c DA68     		ldr	r2, [r3, #12]
+ 1657 002e 1748     		ldr	r0, .L298
+ 1658 0030 ED05     		lsls	r5, r5, #23
+ 1659 0032 0240     		ands	r2, r0
+ 1660 0034 DA60     		str	r2, [r3, #12]
+ 1661 0036 4A68     		ldr	r2, [r1, #4]
+ 1662 0038 D868     		ldr	r0, [r3, #12]
+ 1663 003a 2A40     		ands	r2, r5
+ 1664 003c 0D68     		ldr	r5, [r1]
+ 1665 003e 2843     		orrs	r0, r5
+ 1666 0040 0243     		orrs	r2, r0
+ 1667 0042 0320     		movs	r0, #3
+ 1668 0044 DA60     		str	r2, [r3, #12]
+ 1669 0046 DA68     		ldr	r2, [r3, #12]
+ 1670 0048 CD68     		ldr	r5, [r1, #12]
+ 1671 004a D208     		lsrs	r2, r2, #3
+ 1672 004c 0240     		ands	r2, r0
+ 1673 004e 5200     		lsls	r2, r2, #1
+ 1674 0050 9540     		lsls	r5, r5, r2
+ 1675 0052 DA68     		ldr	r2, [r3, #12]
+ 1676 0054 0969     		ldr	r1, [r1, #16]
+ 1677 0056 C240     		lsrs	r2, r2, r0
+ 1678 0058 0240     		ands	r2, r0
+ 1679 005a 5200     		lsls	r2, r2, #1
+ 1680 005c 9140     		lsls	r1, r1, r2
+ 1681 005e 0C48     		ldr	r0, .L298+4
+ 1682 0060 1A6A     		ldr	r2, [r3, #32]
+ 1683 0062 2D04     		lsls	r5, r5, #16
+ 1684 0064 0240     		ands	r2, r0
+ 1685 0066 0020     		movs	r0, #0
+ 1686 0068 1A62     		str	r2, [r3, #32]
+ 1687 006a 1D62     		str	r5, [r3, #32]
+ 1688 006c 1A6A     		ldr	r2, [r3, #32]
+ 1689 006e 0A43     		orrs	r2, r1
+ 1690 0070 1A62     		str	r2, [r3, #32]
+ 1691              	.L296:
+ 1692 0072 0023     		movs	r3, #0
+ 1693 0074 2370     		strb	r3, [r4]
+ 1694              	.L292:
+ 1695              		@ sp needed
+ 1696 0076 30BD     		pop	{r4, r5, pc}
+ 1697              	.L294:
+ 1698 0078 5868     		ldr	r0, [r3, #4]
+ 1699 007a 9043     		bics	r0, r2
+ 1700 007c 5860     		str	r0, [r3, #4]
+ 1701 007e D4E7     		b	.L295
+ 1702              	.L293:
+ 1703 0080 2023     		movs	r3, #32
+ 1704 0082 516D     		ldr	r1, [r2, #84]
+ 1705 0084 0B43     		orrs	r3, r1
+ 1706 0086 5365     		str	r3, [r2, #84]
+ARM GAS  /tmp/ccN85YAM.s 			page 30
+
+
+ 1707 0088 F3E7     		b	.L296
+ 1708              	.L299:
+ 1709 008a C046     		.align	2
+ 1710              	.L298:
+ 1711 008c FFFF3F83 		.word	-2092957697
+ 1712 0090 00F000F0 		.word	-268374016
+ 1714              		.section	.text.HAL_ADC_GetState,"ax",%progbits
+ 1715              		.align	1
+ 1716              		.global	HAL_ADC_GetState
+ 1717              		.syntax unified
+ 1718              		.code	16
+ 1719              		.thumb_func
+ 1721              	HAL_ADC_GetState:
+ 1722              		@ args = 0, pretend = 0, frame = 0
+ 1723              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1724              		@ link register save eliminated.
+ 1725 0000 406D     		ldr	r0, [r0, #84]
+ 1726              		@ sp needed
+ 1727 0002 7047     		bx	lr
+ 1729              		.section	.text.HAL_ADC_GetError,"ax",%progbits
+ 1730              		.align	1
+ 1731              		.global	HAL_ADC_GetError
+ 1732              		.syntax unified
+ 1733              		.code	16
+ 1734              		.thumb_func
+ 1736              	HAL_ADC_GetError:
+ 1737              		@ args = 0, pretend = 0, frame = 0
+ 1738              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1739              		@ link register save eliminated.
+ 1740 0000 806D     		ldr	r0, [r0, #88]
+ 1741              		@ sp needed
+ 1742 0002 7047     		bx	lr
+ 1744              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccN85YAM.s 			page 31
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32l0xx_hal_adc.c
+     /tmp/ccN85YAM.s:15     .text.ADC_DelayMicroSecond:00000000 $t
+     /tmp/ccN85YAM.s:20     .text.ADC_DelayMicroSecond:00000000 ADC_DelayMicroSecond
+     /tmp/ccN85YAM.s:45     .text.ADC_DelayMicroSecond:00000024 $d
+     /tmp/ccN85YAM.s:49     .text.ADC_ConversionStop:00000000 $t
+     /tmp/ccN85YAM.s:54     .text.ADC_ConversionStop:00000000 ADC_ConversionStop
+     /tmp/ccN85YAM.s:108    .text.ADC_Disable:00000000 $t
+     /tmp/ccN85YAM.s:113    .text.ADC_Disable:00000000 ADC_Disable
+     /tmp/ccN85YAM.s:178    .text.ADC_Enable:00000000 $t
+     /tmp/ccN85YAM.s:183    .text.ADC_Enable:00000000 ADC_Enable
+     /tmp/ccN85YAM.s:250    .text.ADC_Enable:00000074 $d
+     /tmp/ccN85YAM.s:253    .text.HAL_ADC_MspInit:00000000 $t
+     /tmp/ccN85YAM.s:259    .text.HAL_ADC_MspInit:00000000 HAL_ADC_MspInit
+     /tmp/ccN85YAM.s:267    .text.HAL_ADC_Init:00000000 $t
+     /tmp/ccN85YAM.s:273    .text.HAL_ADC_Init:00000000 HAL_ADC_Init
+     /tmp/ccN85YAM.s:496    .text.HAL_ADC_Init:00000194 $d
+     /tmp/ccN85YAM.s:504    .text.HAL_ADC_MspDeInit:00000000 $t
+     /tmp/ccN85YAM.s:510    .text.HAL_ADC_MspDeInit:00000000 HAL_ADC_MspDeInit
+     /tmp/ccN85YAM.s:518    .text.HAL_ADC_DeInit:00000000 $t
+     /tmp/ccN85YAM.s:524    .text.HAL_ADC_DeInit:00000000 HAL_ADC_DeInit
+     /tmp/ccN85YAM.s:606    .text.HAL_ADC_DeInit:00000090 $d
+     /tmp/ccN85YAM.s:614    .text.HAL_ADC_Start:00000000 $t
+     /tmp/ccN85YAM.s:620    .text.HAL_ADC_Start:00000000 HAL_ADC_Start
+     /tmp/ccN85YAM.s:670    .text.HAL_ADC_Start:00000054 $d
+     /tmp/ccN85YAM.s:673    .text.HAL_ADC_Stop:00000000 $t
+     /tmp/ccN85YAM.s:679    .text.HAL_ADC_Stop:00000000 HAL_ADC_Stop
+     /tmp/ccN85YAM.s:714    .text.HAL_ADC_Stop:00000038 $d
+     /tmp/ccN85YAM.s:717    .text.HAL_ADC_PollForConversion:00000000 $t
+     /tmp/ccN85YAM.s:723    .text.HAL_ADC_PollForConversion:00000000 HAL_ADC_PollForConversion
+     /tmp/ccN85YAM.s:838    .text.HAL_ADC_PollForConversion:000000c8 $d
+     /tmp/ccN85YAM.s:841    .text.HAL_ADC_PollForEvent:00000000 $t
+     /tmp/ccN85YAM.s:847    .text.HAL_ADC_PollForEvent:00000000 HAL_ADC_PollForEvent
+     /tmp/ccN85YAM.s:921    .text.HAL_ADC_Start_IT:00000000 $t
+     /tmp/ccN85YAM.s:927    .text.HAL_ADC_Start_IT:00000000 HAL_ADC_Start_IT
+     /tmp/ccN85YAM.s:993    .text.HAL_ADC_Start_IT:00000070 $d
+     /tmp/ccN85YAM.s:996    .text.HAL_ADC_Stop_IT:00000000 $t
+     /tmp/ccN85YAM.s:1002   .text.HAL_ADC_Stop_IT:00000000 HAL_ADC_Stop_IT
+     /tmp/ccN85YAM.s:1042   .text.HAL_ADC_Stop_IT:00000044 $d
+     /tmp/ccN85YAM.s:1045   .text.HAL_ADC_Start_DMA:00000000 $t
+     /tmp/ccN85YAM.s:1051   .text.HAL_ADC_Start_DMA:00000000 HAL_ADC_Start_DMA
+     /tmp/ccN85YAM.s:1123   .text.HAL_ADC_Start_DMA:00000080 $d
+     /tmp/ccN85YAM.s:1239   .text.ADC_DMAConvCplt:00000000 ADC_DMAConvCplt
+     /tmp/ccN85YAM.s:1326   .text.ADC_DMAHalfConvCplt:00000000 ADC_DMAHalfConvCplt
+     /tmp/ccN85YAM.s:1369   .text.ADC_DMAError:00000000 ADC_DMAError
+     /tmp/ccN85YAM.s:1129   .text.HAL_ADC_Stop_DMA:00000000 $t
+     /tmp/ccN85YAM.s:1135   .text.HAL_ADC_Stop_DMA:00000000 HAL_ADC_Stop_DMA
+     /tmp/ccN85YAM.s:1201   .text.HAL_ADC_Stop_DMA:00000074 $d
+     /tmp/ccN85YAM.s:1204   .text.HAL_ADC_GetValue:00000000 $t
+     /tmp/ccN85YAM.s:1210   .text.HAL_ADC_GetValue:00000000 HAL_ADC_GetValue
+     /tmp/ccN85YAM.s:1220   .text.HAL_ADC_ConvCpltCallback:00000000 $t
+     /tmp/ccN85YAM.s:1226   .text.HAL_ADC_ConvCpltCallback:00000000 HAL_ADC_ConvCpltCallback
+     /tmp/ccN85YAM.s:1234   .text.ADC_DMAConvCplt:00000000 $t
+     /tmp/ccN85YAM.s:1304   .text.ADC_DMAConvCplt:00000070 $d
+     /tmp/ccN85YAM.s:1307   .text.HAL_ADC_ConvHalfCpltCallback:00000000 $t
+     /tmp/ccN85YAM.s:1313   .text.HAL_ADC_ConvHalfCpltCallback:00000000 HAL_ADC_ConvHalfCpltCallback
+     /tmp/ccN85YAM.s:1321   .text.ADC_DMAHalfConvCplt:00000000 $t
+ARM GAS  /tmp/ccN85YAM.s 			page 32
+
+
+     /tmp/ccN85YAM.s:1336   .text.HAL_ADC_LevelOutOfWindowCallback:00000000 $t
+     /tmp/ccN85YAM.s:1342   .text.HAL_ADC_LevelOutOfWindowCallback:00000000 HAL_ADC_LevelOutOfWindowCallback
+     /tmp/ccN85YAM.s:1350   .text.HAL_ADC_ErrorCallback:00000000 $t
+     /tmp/ccN85YAM.s:1356   .text.HAL_ADC_ErrorCallback:00000000 HAL_ADC_ErrorCallback
+     /tmp/ccN85YAM.s:1364   .text.ADC_DMAError:00000000 $t
+     /tmp/ccN85YAM.s:1387   .text.HAL_ADC_IRQHandler:00000000 $t
+     /tmp/ccN85YAM.s:1393   .text.HAL_ADC_IRQHandler:00000000 HAL_ADC_IRQHandler
+     /tmp/ccN85YAM.s:1521   .text.HAL_ADC_IRQHandler:000000e4 $d
+     /tmp/ccN85YAM.s:1524   .text.HAL_ADC_ConfigChannel:00000000 $t
+     /tmp/ccN85YAM.s:1530   .text.HAL_ADC_ConfigChannel:00000000 HAL_ADC_ConfigChannel
+     /tmp/ccN85YAM.s:1618   .text.HAL_ADC_ConfigChannel:00000098 $d
+     /tmp/ccN85YAM.s:1624   .text.HAL_ADC_AnalogWDGConfig:00000000 $t
+     /tmp/ccN85YAM.s:1630   .text.HAL_ADC_AnalogWDGConfig:00000000 HAL_ADC_AnalogWDGConfig
+     /tmp/ccN85YAM.s:1711   .text.HAL_ADC_AnalogWDGConfig:0000008c $d
+     /tmp/ccN85YAM.s:1715   .text.HAL_ADC_GetState:00000000 $t
+     /tmp/ccN85YAM.s:1721   .text.HAL_ADC_GetState:00000000 HAL_ADC_GetState
+     /tmp/ccN85YAM.s:1730   .text.HAL_ADC_GetError:00000000 $t
+     /tmp/ccN85YAM.s:1736   .text.HAL_ADC_GetError:00000000 HAL_ADC_GetError
+
+UNDEFINED SYMBOLS
+__aeabi_uidiv
+SystemCoreClock
+HAL_GetTick
+HAL_DMA_Start_IT
+HAL_DMA_Abort

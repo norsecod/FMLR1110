@@ -1,0 +1,3 @@
+smtc_modem_core/smtc_ralf/src/ralf_lr11xx.c:72:14:ralf_lr11xx_setup_gfsk	16	static
+smtc_modem_core/smtc_ralf/src/ralf_lr11xx.c:129:14:ralf_lr11xx_setup_lora	16	static
+smtc_modem_core/smtc_ralf/src/ralf_lr11xx.c:176:14:ralf_lr11xx_setup_flrc	0	static

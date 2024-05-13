@@ -1,0 +1,211 @@
+ARM GAS  /tmp/cce3H3Cl.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"ralf_lr11xx.c"
+  12              		.text
+  13              		.section	.text.ralf_lr11xx_setup_gfsk,"ax",%progbits
+  14              		.align	1
+  15              		.global	ralf_lr11xx_setup_gfsk
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	ralf_lr11xx_setup_gfsk:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 70B5     		push	{r4, r5, r6, lr}
+  24 0002 036B     		ldr	r3, [r0, #48]
+  25 0004 0400     		movs	r4, r0
+  26 0006 0D00     		movs	r5, r1
+  27 0008 0068     		ldr	r0, [r0]
+  28 000a 0021     		movs	r1, #0
+  29 000c 9847     		blx	r3
+  30 000e 0028     		cmp	r0, #0
+  31 0010 2FD1     		bne	.L2
+  32 0012 0100     		movs	r1, r0
+  33 0014 A36E     		ldr	r3, [r4, #104]
+  34 0016 2068     		ldr	r0, [r4]
+  35 0018 9847     		blx	r3
+  36 001a 0028     		cmp	r0, #0
+  37 001c 29D1     		bne	.L2
+  38 001e 636E     		ldr	r3, [r4, #100]
+  39 0020 296A     		ldr	r1, [r5, #32]
+  40 0022 2068     		ldr	r0, [r4]
+  41 0024 9847     		blx	r3
+  42 0026 0028     		cmp	r0, #0
+  43 0028 23D1     		bne	.L2
+  44 002a 2B21     		movs	r1, #43
+  45 002c A36C     		ldr	r3, [r4, #72]
+  46 002e 6956     		ldrsb	r1, [r5, r1]
+  47 0030 2A6A     		ldr	r2, [r5, #32]
+  48 0032 2068     		ldr	r0, [r4]
+  49 0034 9847     		blx	r3
+  50 0036 0028     		cmp	r0, #0
+  51 0038 1BD1     		bne	.L2
+  52 003a 2900     		movs	r1, r5
+  53 003c 236F     		ldr	r3, [r4, #112]
+  54 003e 2068     		ldr	r0, [r4]
+  55 0040 9847     		blx	r3
+  56 0042 0028     		cmp	r0, #0
+  57 0044 15D1     		bne	.L2
+  58 0046 2900     		movs	r1, r5
+ARM GAS  /tmp/cce3H3Cl.s 			page 2
+
+
+  59 0048 636F     		ldr	r3, [r4, #116]
+  60 004a 2068     		ldr	r0, [r4]
+  61 004c 1031     		adds	r1, r1, #16
+  62 004e 9847     		blx	r3
+  63 0050 0028     		cmp	r0, #0
+  64 0052 0ED1     		bne	.L2
+  65 0054 EB7D     		ldrb	r3, [r5, #23]
+  66 0056 2068     		ldr	r0, [r4]
+  67 0058 002B     		cmp	r3, #0
+  68 005a 0BD1     		bne	.L3
+  69              	.L5:
+  70 005c 2300     		movs	r3, r4
+  71 005e EA7C     		ldrb	r2, [r5, #19]
+  72 0060 AC33     		adds	r3, r3, #172
+  73 0062 0732     		adds	r2, r2, #7
+  74 0064 1B68     		ldr	r3, [r3]
+  75 0066 E969     		ldr	r1, [r5, #28]
+  76 0068 2068     		ldr	r0, [r4]
+  77 006a D208     		lsrs	r2, r2, #3
+  78 006c 9847     		blx	r3
+  79 006e 0028     		cmp	r0, #0
+  80 0070 09D0     		beq	.L9
+  81              	.L2:
+  82              		@ sp needed
+  83 0072 70BD     		pop	{r4, r5, r6, pc}
+  84              	.L3:
+  85 0074 2300     		movs	r3, r4
+  86 0076 B833     		adds	r3, r3, #184
+  87 0078 EA8C     		ldrh	r2, [r5, #38]
+  88 007a A98C     		ldrh	r1, [r5, #36]
+  89 007c 1B68     		ldr	r3, [r3]
+  90 007e 9847     		blx	r3
+  91 0080 0028     		cmp	r0, #0
+  92 0082 EBD0     		beq	.L5
+  93 0084 F5E7     		b	.L2
+  94              	.L9:
+  95 0086 2B00     		movs	r3, r5
+  96 0088 2A33     		adds	r3, r3, #42
+  97 008a 1B78     		ldrb	r3, [r3]
+  98 008c 002B     		cmp	r3, #0
+  99 008e F0D0     		beq	.L2
+ 100 0090 2300     		movs	r3, r4
+ 101 0092 C033     		adds	r3, r3, #192
+ 102 0094 298D     		ldrh	r1, [r5, #40]
+ 103 0096 1B68     		ldr	r3, [r3]
+ 104 0098 2068     		ldr	r0, [r4]
+ 105 009a 9847     		blx	r3
+ 106 009c E9E7     		b	.L2
+ 108              		.section	.text.ralf_lr11xx_setup_lora,"ax",%progbits
+ 109              		.align	1
+ 110              		.global	ralf_lr11xx_setup_lora
+ 111              		.syntax unified
+ 112              		.code	16
+ 113              		.thumb_func
+ 115              	ralf_lr11xx_setup_lora:
+ 116              		@ args = 0, pretend = 0, frame = 0
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/cce3H3Cl.s 			page 3
+
+
+ 118 0000 70B5     		push	{r4, r5, r6, lr}
+ 119 0002 836E     		ldr	r3, [r0, #104]
+ 120 0004 0400     		movs	r4, r0
+ 121 0006 0D00     		movs	r5, r1
+ 122 0008 0068     		ldr	r0, [r0]
+ 123 000a 0121     		movs	r1, #1
+ 124 000c 9847     		blx	r3
+ 125 000e 0028     		cmp	r0, #0
+ 126 0010 2DD1     		bne	.L11
+ 127 0012 0100     		movs	r1, r0
+ 128 0014 236B     		ldr	r3, [r4, #48]
+ 129 0016 2068     		ldr	r0, [r4]
+ 130 0018 9847     		blx	r3
+ 131 001a 0028     		cmp	r0, #0
+ 132 001c 27D1     		bne	.L11
+ 133 001e 2300     		movs	r3, r4
+ 134 0020 0833     		adds	r3, r3, #8
+ 135 0022 A97C     		ldrb	r1, [r5, #18]
+ 136 0024 DB6F     		ldr	r3, [r3, #124]
+ 137 0026 2068     		ldr	r0, [r4]
+ 138 0028 9847     		blx	r3
+ 139 002a 0028     		cmp	r0, #0
+ 140 002c 1FD1     		bne	.L11
+ 141 002e 636E     		ldr	r3, [r4, #100]
+ 142 0030 E968     		ldr	r1, [r5, #12]
+ 143 0032 2068     		ldr	r0, [r4]
+ 144 0034 9847     		blx	r3
+ 145 0036 0028     		cmp	r0, #0
+ 146 0038 19D1     		bne	.L11
+ 147 003a 1021     		movs	r1, #16
+ 148 003c A36C     		ldr	r3, [r4, #72]
+ 149 003e 6956     		ldrsb	r1, [r5, r1]
+ 150 0040 EA68     		ldr	r2, [r5, #12]
+ 151 0042 2068     		ldr	r0, [r4]
+ 152 0044 9847     		blx	r3
+ 153 0046 0028     		cmp	r0, #0
+ 154 0048 11D1     		bne	.L11
+ 155 004a 2900     		movs	r1, r5
+ 156 004c A36F     		ldr	r3, [r4, #120]
+ 157 004e 2068     		ldr	r0, [r4]
+ 158 0050 9847     		blx	r3
+ 159 0052 0028     		cmp	r0, #0
+ 160 0054 0BD1     		bne	.L11
+ 161 0056 E36F     		ldr	r3, [r4, #124]
+ 162 0058 2068     		ldr	r0, [r4]
+ 163 005a 291D     		adds	r1, r5, #4
+ 164 005c 9847     		blx	r3
+ 165 005e 0028     		cmp	r0, #0
+ 166 0060 05D1     		bne	.L11
+ 167 0062 2300     		movs	r3, r4
+ 168 0064 B033     		adds	r3, r3, #176
+ 169 0066 697C     		ldrb	r1, [r5, #17]
+ 170 0068 1B68     		ldr	r3, [r3]
+ 171 006a 2068     		ldr	r0, [r4]
+ 172 006c 9847     		blx	r3
+ 173              	.L11:
+ 174              		@ sp needed
+ARM GAS  /tmp/cce3H3Cl.s 			page 4
+
+
+ 175 006e 70BD     		pop	{r4, r5, r6, pc}
+ 177              		.section	.text.ralf_lr11xx_setup_flrc,"ax",%progbits
+ 178              		.align	1
+ 179              		.global	ralf_lr11xx_setup_flrc
+ 180              		.syntax unified
+ 181              		.code	16
+ 182              		.thumb_func
+ 184              	ralf_lr11xx_setup_flrc:
+ 185              		@ args = 0, pretend = 0, frame = 0
+ 186              		@ frame_needed = 0, uses_anonymous_args = 0
+ 187              		@ link register save eliminated.
+ 188 0000 0120     		movs	r0, #1
+ 189              		@ sp needed
+ 190 0002 7047     		bx	lr
+ 192              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/cce3H3Cl.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ralf_lr11xx.c
+     /tmp/cce3H3Cl.s:14     .text.ralf_lr11xx_setup_gfsk:00000000 $t
+     /tmp/cce3H3Cl.s:20     .text.ralf_lr11xx_setup_gfsk:00000000 ralf_lr11xx_setup_gfsk
+     /tmp/cce3H3Cl.s:109    .text.ralf_lr11xx_setup_lora:00000000 $t
+     /tmp/cce3H3Cl.s:115    .text.ralf_lr11xx_setup_lora:00000000 ralf_lr11xx_setup_lora
+     /tmp/cce3H3Cl.s:178    .text.ralf_lr11xx_setup_flrc:00000000 $t
+     /tmp/cce3H3Cl.s:184    .text.ralf_lr11xx_setup_flrc:00000000 ralf_lr11xx_setup_flrc
+
+NO UNDEFINED SYMBOLS

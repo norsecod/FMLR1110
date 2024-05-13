@@ -41,11 +41,11 @@ MODEM_APP ?= nc
 #TRACE
 MODEM_TRACE ?= yes
 MODEM_DEEP_TRACE ?= yes
-MODEM_HAL_TRACE ?= no
+MODEM_HAL_TRACE ?= yes
 APP_TRACE ?= yes
 
 # GNSS
-USE_GNSS ?= no
+USE_GNSS ?= yes
 
 REGION ?= EU_868
 

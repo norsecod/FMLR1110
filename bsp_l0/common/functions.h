@@ -6,7 +6,8 @@
 #include "cayenne_lpp.h" // Cayenne LPP for sensor data formatting
 #include "smtc_hal_gpio.h" // HAL GPIO for hardware control
 #include "smtc_hal_rtc.h"  // HAL RTC for Real-Time Clock (if needed)
-#include "smtc_hal_i2c.h"  // HAL I2C for sensor communication
+//#include "smtc_hal_i2c.h"  // HAL I2C for sensor communication
+#include "stm32l0xx_hal_i2c.h"
 
 #include "smtc_hal_dbg_trace.h"
 #include "smtc_hal_mcu.h"

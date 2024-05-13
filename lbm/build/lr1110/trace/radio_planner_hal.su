@@ -1,0 +1,7 @@
+smtc_modem_core/radio_planner/src/radio_planner_hal.c:83:6:rp_hal_critical_section_begin	8	static
+smtc_modem_core/radio_planner/src/radio_planner_hal.c:88:6:rp_hal_critical_section_end	8	static
+smtc_modem_core/radio_planner/src/radio_planner_hal.c:93:6:rp_hal_timer_stop	8	static
+smtc_modem_core/radio_planner/src/radio_planner_hal.c:98:6:rp_hal_timer_start	8	static
+smtc_modem_core/radio_planner/src/radio_planner_hal.c:103:10:rp_hal_get_time_in_ms	8	static
+smtc_modem_core/radio_planner/src/radio_planner_hal.c:108:10:rp_hal_get_radio_irq_timestamp_in_100us	8	static
+smtc_modem_core/radio_planner/src/radio_planner_hal.c:113:6:rp_hal_irq_clear_pending	8	static

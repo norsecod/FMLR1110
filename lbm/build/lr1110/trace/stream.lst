@@ -1,0 +1,294 @@
+ARM GAS  /tmp/ccqcFwT1.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stream.c"
+  12              		.text
+  13              		.section	.text.stream_init,"ax",%progbits
+  14              		.align	1
+  15              		.global	stream_init
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	stream_init:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 07B5     		push	{r0, r1, r2, lr}
+  24 0002 8021     		movs	r1, #128
+  25              		@ sp needed
+  26 0004 0123     		movs	r3, #1
+  27 0006 8900     		lsls	r1, r1, #2
+  28 0008 0093     		str	r3, [sp]
+  29 000a 0A00     		movs	r2, r1
+  30 000c 6D33     		adds	r3, r3, #109
+  31 000e FFF7FEFF 		bl	ROSE_init
+  32 0012 431E     		subs	r3, r0, #1
+  33 0014 9841     		sbcs	r0, r0, r3
+  34 0016 8000     		lsls	r0, r0, #2
+  35 0018 0EBD     		pop	{r1, r2, r3, pc}
+  37              		.section	.text.stream_enable_encryption,"ax",%progbits
+  38              		.align	1
+  39              		.global	stream_enable_encryption
+  40              		.syntax unified
+  41              		.code	16
+  42              		.thumb_func
+  44              	stream_enable_encryption:
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47 0000 10B5     		push	{r4, lr}
+  48 0002 FFF7FEFF 		bl	ROSE_enable_encryption
+  49 0006 0300     		movs	r3, r0
+  50 0008 0320     		movs	r0, #3
+  51 000a 002B     		cmp	r3, #0
+  52 000c 00D1     		bne	.L3
+  53 000e 1800     		movs	r0, r3
+  54              	.L3:
+  55              		@ sp needed
+  56 0010 10BD     		pop	{r4, pc}
+  58              		.section	.text.stream_data_pending,"ax",%progbits
+  59              		.align	1
+  60              		.global	stream_data_pending
+  61              		.syntax unified
+ARM GAS  /tmp/ccqcFwT1.s 			page 2
+
+
+  62              		.code	16
+  63              		.thumb_func
+  65              	stream_data_pending:
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68 0000 10B5     		push	{r4, lr}
+  69 0002 FFF7FEFF 		bl	ROSE_getStatus
+  70              		@ sp needed
+  71 0006 0238     		subs	r0, r0, #2
+  72 0008 4342     		rsbs	r3, r0, #0
+  73 000a 5841     		adcs	r0, r0, r3
+  74 000c C0B2     		uxtb	r0, r0
+  75 000e 10BD     		pop	{r4, pc}
+  77              		.section	.text.stream_add_data,"ax",%progbits
+  78              		.align	1
+  79              		.global	stream_add_data
+  80              		.syntax unified
+  81              		.code	16
+  82              		.thumb_func
+  84              	stream_add_data:
+  85              		@ args = 0, pretend = 0, frame = 0
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  87 0000 10B5     		push	{r4, lr}
+  88 0002 0424     		movs	r4, #4
+  89 0004 0029     		cmp	r1, #0
+  90 0006 02D0     		beq	.L7
+  91 0008 002A     		cmp	r2, #0
+  92 000a 02D1     		bne	.L8
+  93              	.L9:
+  94 000c 0124     		movs	r4, #1
+  95              	.L7:
+  96              		@ sp needed
+  97 000e 2000     		movs	r0, r4
+  98 0010 10BD     		pop	{r4, pc}
+  99              	.L8:
+ 100 0012 FFF7FEFF 		bl	ROSE_addRecord
+ 101 0016 0300     		movs	r3, r0
+ 102 0018 421D     		adds	r2, r0, #5
+ 103 001a F7D0     		beq	.L9
+ 104 001c 0324     		movs	r4, #3
+ 105 001e 421C     		adds	r2, r0, #1
+ 106 0020 F5D0     		beq	.L7
+ 107 0022 5A1E     		subs	r2, r3, #1
+ 108 0024 9341     		sbcs	r3, r3, r2
+ 109 0026 9C00     		lsls	r4, r3, #2
+ 110 0028 F1E7     		b	.L7
+ 112              		.section	.text.stream_get_fragment,"ax",%progbits
+ 113              		.align	1
+ 114              		.global	stream_get_fragment
+ 115              		.syntax unified
+ 116              		.code	16
+ 117              		.thumb_func
+ 119              	stream_get_fragment:
+ 120              		@ args = 0, pretend = 0, frame = 0
+ 121              		@ frame_needed = 0, uses_anonymous_args = 0
+ 122 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 123 0002 0600     		movs	r6, r0
+ARM GAS  /tmp/ccqcFwT1.s 			page 3
+
+
+ 124 0004 0C00     		movs	r4, r1
+ 125 0006 1700     		movs	r7, r2
+ 126 0008 1D00     		movs	r5, r3
+ 127 000a 0420     		movs	r0, #4
+ 128 000c 0029     		cmp	r1, #0
+ 129 000e 05D0     		beq	.L18
+ 130 0010 002B     		cmp	r3, #0
+ 131 0012 03D0     		beq	.L18
+ 132 0014 1A78     		ldrb	r2, [r3]
+ 133 0016 002A     		cmp	r2, #0
+ 134 0018 01D1     		bne	.L19
+ 135              	.L20:
+ 136 001a 0120     		movs	r0, #1
+ 137              	.L18:
+ 138              		@ sp needed
+ 139 001c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 140              	.L19:
+ 141 001e FF21     		movs	r1, #255
+ 142 0020 2000     		movs	r0, r4
+ 143 0022 FFF7FEFF 		bl	memset
+ 144 0026 2B00     		movs	r3, r5
+ 145 0028 2200     		movs	r2, r4
+ 146 002a 3900     		movs	r1, r7
+ 147 002c 3000     		movs	r0, r6
+ 148 002e FFF7FEFF 		bl	ROSE_getData
+ 149 0032 0300     		movs	r3, r0
+ 150 0034 C21C     		adds	r2, r0, #3
+ 151 0036 F0D0     		beq	.L20
+ 152 0038 0520     		movs	r0, #5
+ 153 003a 0133     		adds	r3, r3, #1
+ 154 003c EED0     		beq	.L18
+ 155 003e 0020     		movs	r0, #0
+ 156 0040 ECE7     		b	.L18
+ 158              		.section	.text.stream_status,"ax",%progbits
+ 159              		.align	1
+ 160              		.global	stream_status
+ 161              		.syntax unified
+ 162              		.code	16
+ 163              		.thumb_func
+ 165              	stream_status:
+ 166              		@ args = 0, pretend = 0, frame = 0
+ 167              		@ frame_needed = 0, uses_anonymous_args = 0
+ 168 0000 70B5     		push	{r4, r5, r6, lr}
+ 169 0002 0500     		movs	r5, r0
+ 170 0004 0E00     		movs	r6, r1
+ 171 0006 1400     		movs	r4, r2
+ 172 0008 0029     		cmp	r1, #0
+ 173 000a 02D0     		beq	.L31
+ 174 000c FFF7FEFF 		bl	ROSE_getPending
+ 175 0010 3080     		strh	r0, [r6]
+ 176              	.L31:
+ 177 0012 002C     		cmp	r4, #0
+ 178 0014 03D0     		beq	.L30
+ 179 0016 2800     		movs	r0, r5
+ 180 0018 FFF7FEFF 		bl	ROSE_getFree
+ 181 001c 2080     		strh	r0, [r4]
+ 182              	.L30:
+ARM GAS  /tmp/ccqcFwT1.s 			page 4
+
+
+ 183              		@ sp needed
+ 184 001e 70BD     		pop	{r4, r5, r6, pc}
+ 186              		.section	.text.stream_process_dn_frame,"ax",%progbits
+ 187              		.align	1
+ 188              		.global	stream_process_dn_frame
+ 189              		.syntax unified
+ 190              		.code	16
+ 191              		.thumb_func
+ 193              	stream_process_dn_frame:
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196 0000 0423     		movs	r3, #4
+ 197 0002 10B5     		push	{r4, lr}
+ 198 0004 0029     		cmp	r1, #0
+ 199 0006 05D0     		beq	.L40
+ 200 0008 FFF7FEFF 		bl	ROSE_processDnFrame
+ 201 000c 0623     		movs	r3, #6
+ 202 000e 0630     		adds	r0, r0, #6
+ 203 0010 00D0     		beq	.L40
+ 204 0012 0023     		movs	r3, #0
+ 205              	.L40:
+ 206              		@ sp needed
+ 207 0014 1800     		movs	r0, r3
+ 208 0016 10BD     		pop	{r4, pc}
+ 210              		.section	.text.stream_get_rr,"ax",%progbits
+ 211              		.align	1
+ 212              		.global	stream_get_rr
+ 213              		.syntax unified
+ 214              		.code	16
+ 215              		.thumb_func
+ 217              	stream_get_rr:
+ 218              		@ args = 0, pretend = 0, frame = 0
+ 219              		@ frame_needed = 0, uses_anonymous_args = 0
+ 220              		@ link register save eliminated.
+ 221 0000 C078     		ldrb	r0, [r0, #3]
+ 222              		@ sp needed
+ 223 0002 7047     		bx	lr
+ 225              		.section	.text.stream_set_rr,"ax",%progbits
+ 226              		.align	1
+ 227              		.global	stream_set_rr
+ 228              		.syntax unified
+ 229              		.code	16
+ 230              		.thumb_func
+ 232              	stream_set_rr:
+ 233              		@ args = 0, pretend = 0, frame = 0
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235              		@ link register save eliminated.
+ 236 0000 C170     		strb	r1, [r0, #3]
+ 237              		@ sp needed
+ 238 0002 7047     		bx	lr
+ 240              		.section	.text.stream_reset,"ax",%progbits
+ 241              		.align	1
+ 242              		.global	stream_reset
+ 243              		.syntax unified
+ 244              		.code	16
+ 245              		.thumb_func
+ 247              	stream_reset:
+ARM GAS  /tmp/ccqcFwT1.s 			page 5
+
+
+ 248              		@ args = 0, pretend = 0, frame = 0
+ 249              		@ frame_needed = 0, uses_anonymous_args = 0
+ 250 0000 10B5     		push	{r4, lr}
+ 251 0002 0021     		movs	r1, #0
+ 252              		@ sp needed
+ 253 0004 024A     		ldr	r2, .L47
+ 254 0006 FFF7FEFF 		bl	memset
+ 255 000a 0020     		movs	r0, #0
+ 256 000c 10BD     		pop	{r4, pc}
+ 257              	.L48:
+ 258 000e C046     		.align	2
+ 259              	.L47:
+ 260 0010 54040000 		.word	1108
+ 262              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccqcFwT1.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stream.c
+     /tmp/ccqcFwT1.s:14     .text.stream_init:00000000 $t
+     /tmp/ccqcFwT1.s:20     .text.stream_init:00000000 stream_init
+     /tmp/ccqcFwT1.s:38     .text.stream_enable_encryption:00000000 $t
+     /tmp/ccqcFwT1.s:44     .text.stream_enable_encryption:00000000 stream_enable_encryption
+     /tmp/ccqcFwT1.s:59     .text.stream_data_pending:00000000 $t
+     /tmp/ccqcFwT1.s:65     .text.stream_data_pending:00000000 stream_data_pending
+     /tmp/ccqcFwT1.s:78     .text.stream_add_data:00000000 $t
+     /tmp/ccqcFwT1.s:84     .text.stream_add_data:00000000 stream_add_data
+     /tmp/ccqcFwT1.s:113    .text.stream_get_fragment:00000000 $t
+     /tmp/ccqcFwT1.s:119    .text.stream_get_fragment:00000000 stream_get_fragment
+     /tmp/ccqcFwT1.s:159    .text.stream_status:00000000 $t
+     /tmp/ccqcFwT1.s:165    .text.stream_status:00000000 stream_status
+     /tmp/ccqcFwT1.s:187    .text.stream_process_dn_frame:00000000 $t
+     /tmp/ccqcFwT1.s:193    .text.stream_process_dn_frame:00000000 stream_process_dn_frame
+     /tmp/ccqcFwT1.s:211    .text.stream_get_rr:00000000 $t
+     /tmp/ccqcFwT1.s:217    .text.stream_get_rr:00000000 stream_get_rr
+     /tmp/ccqcFwT1.s:226    .text.stream_set_rr:00000000 $t
+     /tmp/ccqcFwT1.s:232    .text.stream_set_rr:00000000 stream_set_rr
+     /tmp/ccqcFwT1.s:241    .text.stream_reset:00000000 $t
+     /tmp/ccqcFwT1.s:247    .text.stream_reset:00000000 stream_reset
+     /tmp/ccqcFwT1.s:260    .text.stream_reset:00000010 $d
+
+UNDEFINED SYMBOLS
+ROSE_init
+ROSE_enable_encryption
+ROSE_getStatus
+ROSE_addRecord
+memset
+ROSE_getData
+ROSE_getPending
+ROSE_getFree
+ROSE_processDnFrame

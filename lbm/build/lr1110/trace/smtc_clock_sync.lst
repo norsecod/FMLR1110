@@ -1,0 +1,833 @@
+ARM GAS  /tmp/ccefqkBz.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 23, 1
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 4
+   9              		.eabi_attribute 34, 0
+  10              		.eabi_attribute 18, 4
+  11              		.file	"smtc_clock_sync.c"
+  12              		.text
+  13              		.section	.text.clock_sync_init,"ax",%progbits
+  14              		.align	1
+  15              		.global	clock_sync_init
+  16              		.syntax unified
+  17              		.code	16
+  18              		.thumb_func
+  20              	clock_sync_init:
+  21              		@ args = 0, pretend = 0, frame = 0
+  22              		@ frame_needed = 0, uses_anonymous_args = 0
+  23 0000 70B5     		push	{r4, r5, r6, lr}
+  24 0002 0025     		movs	r5, #0
+  25              		@ sp needed
+  26 0004 084B     		ldr	r3, .L2
+  27 0006 0400     		movs	r4, r0
+  28 0008 0570     		strb	r5, [r0]
+  29 000a 4561     		str	r5, [r0, #20]
+  30 000c 8560     		str	r5, [r0, #8]
+  31 000e C560     		str	r5, [r0, #12]
+  32 0010 4360     		str	r3, [r0, #4]
+  33 0012 0E00     		movs	r6, r1
+  34 0014 FFF7FEFF 		bl	get_modem_dm_port
+  35 0018 631C     		adds	r3, r4, #1
+  36 001a 2574     		strb	r5, [r4, #16]
+  37 001c 6070     		strb	r0, [r4, #1]
+  38 001e DD77     		strb	r5, [r3, #31]
+  39 0020 A561     		str	r5, [r4, #24]
+  40 0022 E561     		str	r5, [r4, #28]
+  41 0024 6662     		str	r6, [r4, #36]
+  42 0026 70BD     		pop	{r4, r5, r6, pc}
+  43              	.L3:
+  44              		.align	2
+  45              	.L2:
+  46 0028 40FA0100 		.word	129600
+  48              		.section	.text.clock_sync_is_enabled,"ax",%progbits
+  49              		.align	1
+  50              		.global	clock_sync_is_enabled
+  51              		.syntax unified
+  52              		.code	16
+  53              		.thumb_func
+  55              	clock_sync_is_enabled:
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58              		@ link register save eliminated.
+  59 0000 0078     		ldrb	r0, [r0]
+  60              		@ sp needed
+ARM GAS  /tmp/ccefqkBz.s 			page 2
+
+
+  61 0002 7047     		bx	lr
+  63              		.section	.text.clock_sync_get_alcsync_port,"ax",%progbits
+  64              		.align	1
+  65              		.global	clock_sync_get_alcsync_port
+  66              		.syntax unified
+  67              		.code	16
+  68              		.thumb_func
+  70              	clock_sync_get_alcsync_port:
+  71              		@ args = 0, pretend = 0, frame = 0
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73              		@ link register save eliminated.
+  74 0000 4078     		ldrb	r0, [r0, #1]
+  75              		@ sp needed
+  76 0002 7047     		bx	lr
+  78              		.section	.text.clock_sync_get_current_service,"ax",%progbits
+  79              		.align	1
+  80              		.global	clock_sync_get_current_service
+  81              		.syntax unified
+  82              		.code	16
+  83              		.thumb_func
+  85              	clock_sync_get_current_service:
+  86              		@ args = 0, pretend = 0, frame = 0
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88              		@ link register save eliminated.
+  89 0000 007C     		ldrb	r0, [r0, #16]
+  90              		@ sp needed
+  91 0002 7047     		bx	lr
+  93              		.section	.text.clock_sync_set_alcsync_port,"ax",%progbits
+  94              		.align	1
+  95              		.global	clock_sync_set_alcsync_port
+  96              		.syntax unified
+  97              		.code	16
+  98              		.thumb_func
+ 100              	clock_sync_set_alcsync_port:
+ 101              		@ args = 0, pretend = 0, frame = 0
+ 102              		@ frame_needed = 0, uses_anonymous_args = 0
+ 103              		@ link register save eliminated.
+ 104 0000 4A1E     		subs	r2, r1, #1
+ 105 0002 D2B2     		uxtb	r2, r2
+ 106 0004 0300     		movs	r3, r0
+ 107 0006 0120     		movs	r0, #1
+ 108 0008 DE2A     		cmp	r2, #222
+ 109 000a 01D8     		bhi	.L8
+ 110 000c 0020     		movs	r0, #0
+ 111 000e 5970     		strb	r1, [r3, #1]
+ 112              	.L8:
+ 113              		@ sp needed
+ 114 0010 7047     		bx	lr
+ 116              		.section	.text.clock_sync_set_gps_time,"ax",%progbits
+ 117              		.align	1
+ 118              		.global	clock_sync_set_gps_time
+ 119              		.syntax unified
+ 120              		.code	16
+ 121              		.thumb_func
+ 123              	clock_sync_set_gps_time:
+ 124              		@ args = 0, pretend = 0, frame = 0
+ 125              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccefqkBz.s 			page 3
+
+
+ 126 0000 70B5     		push	{r4, r5, r6, lr}
+ 127 0002 037C     		ldrb	r3, [r0, #16]
+ 128 0004 0400     		movs	r4, r0
+ 129 0006 0D00     		movs	r5, r1
+ 130 0008 002B     		cmp	r3, #0
+ 131 000a 08D1     		bne	.L11
+ 132 000c C361     		str	r3, [r0, #28]
+ 133 000e 8161     		str	r1, [r0, #24]
+ 134 0010 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
+ 135 0014 0123     		movs	r3, #1
+ 136 0016 A060     		str	r0, [r4, #8]
+ 137 0018 0134     		adds	r4, r4, #1
+ 138 001a E377     		strb	r3, [r4, #31]
+ 139              	.L10:
+ 140              		@ sp needed
+ 141 001c 70BD     		pop	{r4, r5, r6, pc}
+ 142              	.L11:
+ 143 001e 446A     		ldr	r4, [r0, #36]
+ 144 0020 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
+ 145 0024 291A     		subs	r1, r5, r0
+ 146 0026 2000     		movs	r0, r4
+ 147 0028 FFF7FEFF 		bl	alc_sync_set_time_correction_second
+ 148 002c F6E7     		b	.L10
+ 150              		.section	.text.clock_sync_is_done,"ax",%progbits
+ 151              		.align	1
+ 152              		.global	clock_sync_is_done
+ 153              		.syntax unified
+ 154              		.code	16
+ 155              		.thumb_func
+ 157              	clock_sync_is_done:
+ 158              		@ args = 0, pretend = 0, frame = 0
+ 159              		@ frame_needed = 0, uses_anonymous_args = 0
+ 160 0000 10B5     		push	{r4, lr}
+ 161 0002 037C     		ldrb	r3, [r0, #16]
+ 162 0004 002B     		cmp	r3, #0
+ 163 0006 08D1     		bne	.L14
+ 164 0008 0121     		movs	r1, #1
+ 165 000a 0130     		adds	r0, r0, #1
+ 166 000c C27F     		ldrb	r2, [r0, #31]
+ 167 000e 013A     		subs	r2, r2, #1
+ 168 0010 D2B2     		uxtb	r2, r2
+ 169 0012 9142     		cmp	r1, r2
+ 170 0014 5B41     		adcs	r3, r3, r3
+ 171 0016 D8B2     		uxtb	r0, r3
+ 172              	.L15:
+ 173              		@ sp needed
+ 174 0018 10BD     		pop	{r4, pc}
+ 175              	.L14:
+ 176 001a 406A     		ldr	r0, [r0, #36]
+ 177 001c FFF7FEFF 		bl	is_alc_sync_done
+ 178 0020 FAE7     		b	.L15
+ 180              		.section	.text.clock_sync_is_time_valid,"ax",%progbits
+ 181              		.align	1
+ 182              		.global	clock_sync_is_time_valid
+ 183              		.syntax unified
+ 184              		.code	16
+ 185              		.thumb_func
+ARM GAS  /tmp/ccefqkBz.s 			page 4
+
+
+ 187              	clock_sync_is_time_valid:
+ 188              		@ args = 0, pretend = 0, frame = 0
+ 189              		@ frame_needed = 0, uses_anonymous_args = 0
+ 190 0000 10B5     		push	{r4, lr}
+ 191 0002 037C     		ldrb	r3, [r0, #16]
+ 192 0004 0400     		movs	r4, r0
+ 193 0006 002B     		cmp	r3, #0
+ 194 0008 0FD1     		bne	.L17
+ 195 000a 431C     		adds	r3, r0, #1
+ 196 000c DB7F     		ldrb	r3, [r3, #31]
+ 197 000e 012B     		cmp	r3, #1
+ 198 0010 08D1     		bne	.L18
+ 199 0012 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
+ 200 0016 A368     		ldr	r3, [r4, #8]
+ 201 0018 002B     		cmp	r3, #0
+ 202 001a 01D0     		beq	.L19
+ 203 001c FFF7FEFF 		bl	lorawan_api_get_device_time_invalid_delay_s
+ 204              	.L19:
+ 205 0020 0020     		movs	r0, #0
+ 206              	.L20:
+ 207              		@ sp needed
+ 208 0022 10BD     		pop	{r4, pc}
+ 209              	.L18:
+ 210 0024 FFF7FEFF 		bl	lorawan_api_is_time_valid
+ 211 0028 FBE7     		b	.L20
+ 212              	.L17:
+ 213 002a 406A     		ldr	r0, [r0, #36]
+ 214 002c FFF7FEFF 		bl	is_alc_sync_time_valid
+ 215 0030 F7E7     		b	.L20
+ 217              		.section	.text.clock_sync_get_gps_time_second,"ax",%progbits
+ 218              		.align	1
+ 219              		.global	clock_sync_get_gps_time_second
+ 220              		.syntax unified
+ 221              		.code	16
+ 222              		.thumb_func
+ 224              	clock_sync_get_gps_time_second:
+ 225              		@ args = 0, pretend = 0, frame = 0
+ 226              		@ frame_needed = 0, uses_anonymous_args = 0
+ 227 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 228 0002 431C     		adds	r3, r0, #1
+ 229 0004 DB7F     		ldrb	r3, [r3, #31]
+ 230 0006 0400     		movs	r4, r0
+ 231 0008 0E00     		movs	r6, r1
+ 232 000a 1700     		movs	r7, r2
+ 233 000c 012B     		cmp	r3, #1
+ 234 000e 0ED1     		bne	.L25
+ 235 0010 8569     		ldr	r5, [r0, #24]
+ 236 0012 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
+ 237 0016 A468     		ldr	r4, [r4, #8]
+ 238 0018 2C1B     		subs	r4, r5, r4
+ 239 001a 2418     		adds	r4, r4, r0
+ 240 001c FFF7FEFF 		bl	smtc_modem_hal_get_time_compensation_in_s
+ 241 0020 0023     		movs	r3, #0
+ 242 0022 1D00     		movs	r5, r3
+ 243 0024 0019     		adds	r0, r0, r4
+ 244 0026 3060     		str	r0, [r6]
+ 245              	.L26:
+ARM GAS  /tmp/ccefqkBz.s 			page 5
+
+
+ 246 0028 2800     		movs	r0, r5
+ 247              		@ sp needed
+ 248 002a 3B60     		str	r3, [r7]
+ 249 002c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 250              	.L25:
+ 251 002e 037C     		ldrb	r3, [r0, #16]
+ 252 0030 002B     		cmp	r3, #0
+ 253 0032 0CD1     		bne	.L27
+ 254 0034 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
+ 255 0038 2200     		movs	r2, r4
+ 256 003a 2100     		movs	r1, r4
+ 257 003c 1C32     		adds	r2, r2, #28
+ 258 003e 1831     		adds	r1, r1, #24
+ 259 0040 FFF7FEFF 		bl	lorawan_api_convert_rtc_to_gps_epoch_time
+ 260 0044 A369     		ldr	r3, [r4, #24]
+ 261 0046 0500     		movs	r5, r0
+ 262 0048 3360     		str	r3, [r6]
+ 263 004a E369     		ldr	r3, [r4, #28]
+ 264 004c ECE7     		b	.L26
+ 265              	.L27:
+ 266 004e FFF7FEFF 		bl	clock_sync_is_time_valid
+ 267 0052 0500     		movs	r5, r0
+ 268 0054 606A     		ldr	r0, [r4, #36]
+ 269 0056 FFF7FEFF 		bl	alc_sync_get_gps_time_second
+ 270 005a 0023     		movs	r3, #0
+ 271 005c 3060     		str	r0, [r6]
+ 272 005e E3E7     		b	.L26
+ 274              		.section	.text.clock_sync_set_sync_lost,"ax",%progbits
+ 275              		.align	1
+ 276              		.global	clock_sync_set_sync_lost
+ 277              		.syntax unified
+ 278              		.code	16
+ 279              		.thumb_func
+ 281              	clock_sync_set_sync_lost:
+ 282              		@ args = 0, pretend = 0, frame = 0
+ 283              		@ frame_needed = 0, uses_anonymous_args = 0
+ 284 0000 10B5     		push	{r4, lr}
+ 285 0002 037C     		ldrb	r3, [r0, #16]
+ 286 0004 002B     		cmp	r3, #0
+ 287 0006 03D1     		bne	.L29
+ 288 0008 421C     		adds	r2, r0, #1
+ 289 000a D377     		strb	r3, [r2, #31]
+ 290 000c 8360     		str	r3, [r0, #8]
+ 291              	.L28:
+ 292              		@ sp needed
+ 293 000e 10BD     		pop	{r4, pc}
+ 294              	.L29:
+ 295 0010 406A     		ldr	r0, [r0, #36]
+ 296 0012 FFF7FEFF 		bl	alc_sync_set_sync_lost
+ 297 0016 FAE7     		b	.L28
+ 299              		.section	.text.clock_sync_get_interval_second,"ax",%progbits
+ 300              		.align	1
+ 301              		.global	clock_sync_get_interval_second
+ 302              		.syntax unified
+ 303              		.code	16
+ 304              		.thumb_func
+ 306              	clock_sync_get_interval_second:
+ARM GAS  /tmp/ccefqkBz.s 			page 6
+
+
+ 307              		@ args = 0, pretend = 0, frame = 0
+ 308              		@ frame_needed = 0, uses_anonymous_args = 0
+ 309 0000 10B5     		push	{r4, lr}
+ 310 0002 037C     		ldrb	r3, [r0, #16]
+ 311 0004 002B     		cmp	r3, #0
+ 312 0006 01D1     		bne	.L32
+ 313 0008 4068     		ldr	r0, [r0, #4]
+ 314              	.L31:
+ 315              		@ sp needed
+ 316 000a 10BD     		pop	{r4, pc}
+ 317              	.L32:
+ 318 000c 406A     		ldr	r0, [r0, #36]
+ 319 000e FFF7FEFF 		bl	alc_sync_get_interval_second
+ 320 0012 FAE7     		b	.L31
+ 322              		.section	.text.clock_sync_set_interval_second,"ax",%progbits
+ 323              		.align	1
+ 324              		.global	clock_sync_set_interval_second
+ 325              		.syntax unified
+ 326              		.code	16
+ 327              		.thumb_func
+ 329              	clock_sync_set_interval_second:
+ 330              		@ args = 0, pretend = 0, frame = 0
+ 331              		@ frame_needed = 0, uses_anonymous_args = 0
+ 332 0000 70B5     		push	{r4, r5, r6, lr}
+ 333 0002 0500     		movs	r5, r0
+ 334 0004 0C00     		movs	r4, r1
+ 335 0006 FFF7FEFF 		bl	lorawan_api_get_device_time_invalid_delay_s
+ 336 000a 0126     		movs	r6, #1
+ 337 000c A042     		cmp	r0, r4
+ 338 000e 01D9     		bls	.L35
+ 339 0010 0026     		movs	r6, #0
+ 340 0012 6C60     		str	r4, [r5, #4]
+ 341              	.L35:
+ 342 0014 2100     		movs	r1, r4
+ 343 0016 686A     		ldr	r0, [r5, #36]
+ 344 0018 FFF7FEFF 		bl	alc_sync_set_interval_second
+ 345 001c 0028     		cmp	r0, #0
+ 346 001e 00D1     		bne	.L36
+ 347 0020 0126     		movs	r6, #1
+ 348              	.L36:
+ 349              		@ sp needed
+ 350 0022 3000     		movs	r0, r6
+ 351 0024 70BD     		pop	{r4, r5, r6, pc}
+ 353              		.section	.text.clock_sync_set_invalid_time_delay_s,"ax",%progbits
+ 354              		.align	1
+ 355              		.global	clock_sync_set_invalid_time_delay_s
+ 356              		.syntax unified
+ 357              		.code	16
+ 358              		.thumb_func
+ 360              	clock_sync_set_invalid_time_delay_s:
+ 361              		@ args = 0, pretend = 0, frame = 0
+ 362              		@ frame_needed = 0, uses_anonymous_args = 0
+ 363 0000 0C4B     		ldr	r3, .L46
+ 364 0002 70B5     		push	{r4, r5, r6, lr}
+ 365 0004 0600     		movs	r6, r0
+ 366 0006 0D00     		movs	r5, r1
+ 367 0008 9942     		cmp	r1, r3
+ARM GAS  /tmp/ccefqkBz.s 			page 7
+
+
+ 368 000a 03D8     		bhi	.L40
+ 369 000c FFF7FEFF 		bl	clock_sync_get_interval_second
+ 370 0010 A842     		cmp	r0, r5
+ 371 0012 01D3     		bcc	.L41
+ 372              	.L40:
+ 373 0014 0120     		movs	r0, #1
+ 374              	.L42:
+ 375              		@ sp needed
+ 376 0016 70BD     		pop	{r4, r5, r6, pc}
+ 377              	.L41:
+ 378 0018 2800     		movs	r0, r5
+ 379 001a FFF7FEFF 		bl	lorawan_api_set_device_time_invalid_delay_s
+ 380 001e 2900     		movs	r1, r5
+ 381 0020 0400     		movs	r4, r0
+ 382 0022 706A     		ldr	r0, [r6, #36]
+ 383 0024 FFF7FEFF 		bl	alc_sync_set_valid_delay_second
+ 384 0028 0028     		cmp	r0, #0
+ 385 002a F3D0     		beq	.L40
+ 386 002c 631E     		subs	r3, r4, #1
+ 387 002e 9C41     		sbcs	r4, r4, r3
+ 388 0030 E0B2     		uxtb	r0, r4
+ 389 0032 F0E7     		b	.L42
+ 390              	.L47:
+ 391              		.align	2
+ 392              	.L46:
+ 393 0034 80994000 		.word	4233600
+ 395              		.section	.text.clock_sync_get_invalid_time_delay_s,"ax",%progbits
+ 396              		.align	1
+ 397              		.global	clock_sync_get_invalid_time_delay_s
+ 398              		.syntax unified
+ 399              		.code	16
+ 400              		.thumb_func
+ 402              	clock_sync_get_invalid_time_delay_s:
+ 403              		@ args = 0, pretend = 0, frame = 0
+ 404              		@ frame_needed = 0, uses_anonymous_args = 0
+ 405 0000 10B5     		push	{r4, lr}
+ 406 0002 037C     		ldrb	r3, [r0, #16]
+ 407 0004 002B     		cmp	r3, #0
+ 408 0006 02D1     		bne	.L49
+ 409 0008 FFF7FEFF 		bl	lorawan_api_get_device_time_invalid_delay_s
+ 410              	.L48:
+ 411              		@ sp needed
+ 412 000c 10BD     		pop	{r4, pc}
+ 413              	.L49:
+ 414 000e 406A     		ldr	r0, [r0, #36]
+ 415 0010 FFF7FEFF 		bl	alc_sync_get_valid_delay_second
+ 416 0014 FAE7     		b	.L48
+ 418              		.section	.text.clock_sync_reset_nb_time_req,"ax",%progbits
+ 419              		.align	1
+ 420              		.global	clock_sync_reset_nb_time_req
+ 421              		.syntax unified
+ 422              		.code	16
+ 423              		.thumb_func
+ 425              	clock_sync_reset_nb_time_req:
+ 426              		@ args = 0, pretend = 0, frame = 0
+ 427              		@ frame_needed = 0, uses_anonymous_args = 0
+ 428              		@ link register save eliminated.
+ARM GAS  /tmp/ccefqkBz.s 			page 8
+
+
+ 429 0000 0023     		movs	r3, #0
+ 430              		@ sp needed
+ 431 0002 C360     		str	r3, [r0, #12]
+ 432 0004 7047     		bx	lr
+ 434              		.section	.text.clock_sync_get_time_left_connection_lost,"ax",%progbits
+ 435              		.align	1
+ 436              		.global	clock_sync_get_time_left_connection_lost
+ 437              		.syntax unified
+ 438              		.code	16
+ 439              		.thumb_func
+ 441              	clock_sync_get_time_left_connection_lost:
+ 442              		@ args = 0, pretend = 0, frame = 0
+ 443              		@ frame_needed = 0, uses_anonymous_args = 0
+ 444 0000 10B5     		push	{r4, lr}
+ 445 0002 037C     		ldrb	r3, [r0, #16]
+ 446 0004 002B     		cmp	r3, #0
+ 447 0006 02D1     		bne	.L53
+ 448 0008 FFF7FEFF 		bl	lorawan_api_get_time_left_connection_lost
+ 449              	.L52:
+ 450              		@ sp needed
+ 451 000c 10BD     		pop	{r4, pc}
+ 452              	.L53:
+ 453 000e 406A     		ldr	r0, [r0, #36]
+ 454 0010 FFF7FEFF 		bl	alc_sync_get_time_left_connection_lost
+ 455 0014 FAE7     		b	.L52
+ 457              		.section	.text.clock_sync_callback,"ax",%progbits
+ 458              		.align	1
+ 459              		.global	clock_sync_callback
+ 460              		.syntax unified
+ 461              		.code	16
+ 462              		.thumb_func
+ 464              	clock_sync_callback:
+ 465              		@ args = 0, pretend = 0, frame = 0
+ 466              		@ frame_needed = 0, uses_anonymous_args = 0
+ 467 0000 70B5     		push	{r4, r5, r6, lr}
+ 468 0002 037C     		ldrb	r3, [r0, #16]
+ 469 0004 0500     		movs	r5, r0
+ 470 0006 002B     		cmp	r3, #0
+ 471 0008 05D1     		bne	.L56
+ 472 000a FFF7FEFF 		bl	lorawan_api_get_timestamp_last_device_time_ans_s
+ 473 000e 0222     		movs	r2, #2
+ 474 0010 6B1C     		adds	r3, r5, #1
+ 475 0012 A860     		str	r0, [r5, #8]
+ 476 0014 DA77     		strb	r2, [r3, #31]
+ 477              	.L56:
+ 478 0016 2800     		movs	r0, r5
+ 479 0018 FFF7FEFF 		bl	clock_sync_is_done
+ 480 001c 0028     		cmp	r0, #0
+ 481 001e 49D0     		beq	.L57
+ 482 0020 2800     		movs	r0, r5
+ 483 0022 FFF7FEFF 		bl	clock_sync_is_time_valid
+ 484 0026 011E     		subs	r1, r0, #0
+ 485 0028 12D1     		bne	.L58
+ 486 002a 0D20     		movs	r0, #13
+ 487 002c FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 488 0030 2800     		movs	r0, r5
+ 489 0032 FFF7FEFF 		bl	clock_sync_set_sync_lost
+ARM GAS  /tmp/ccefqkBz.s 			page 9
+
+
+ 490 0036 0123     		movs	r3, #1
+ 491 0038 EB60     		str	r3, [r5, #12]
+ 492              	.L85:
+ 493 003a 2800     		movs	r0, r5
+ 494 003c FFF7FEFF 		bl	clock_sync_get_interval_second
+ 495 0040 8024     		movs	r4, #128
+ 496 0042 8028     		cmp	r0, #128
+ 497 0044 15D8     		bhi	.L60
+ 498              	.L84:
+ 499 0046 2800     		movs	r0, r5
+ 500 0048 FFF7FEFF 		bl	clock_sync_get_interval_second
+ 501 004c 0400     		movs	r4, r0
+ 502 004e 10E0     		b	.L60
+ 503              	.L58:
+ 504 0050 297C     		ldrb	r1, [r5, #16]
+ 505 0052 0129     		cmp	r1, #1
+ 506 0054 28D1     		bne	.L61
+ 507 0056 6B6A     		ldr	r3, [r5, #36]
+ 508 0058 2933     		adds	r3, r3, #41
+ 509 005a 1B78     		ldrb	r3, [r3]
+ 510 005c 002B     		cmp	r3, #0
+ 511 005e 00D1     		bne	.L83
+ 512              	.L82:
+ 513 0060 0131     		adds	r1, r1, #1
+ 514              	.L83:
+ 515 0062 0D20     		movs	r0, #13
+ 516 0064 FFF7FEFF 		bl	increment_asynchronous_msgnumber
+ 517 0068 2800     		movs	r0, r5
+ 518 006a FFF7FEFF 		bl	clock_sync_get_interval_second
+ 519 006e 041E     		subs	r4, r0, #0
+ 520 0070 E9D1     		bne	.L84
+ 521              	.L60:
+ 522 0072 2800     		movs	r0, r5
+ 523 0074 FFF7FEFF 		bl	clock_sync_get_time_left_connection_lost
+ 524 0078 A042     		cmp	r0, r4
+ 525 007a 03D8     		bhi	.L68
+ 526 007c 2800     		movs	r0, r5
+ 527 007e FFF7FEFF 		bl	clock_sync_get_time_left_connection_lost
+ 528 0082 0400     		movs	r4, r0
+ 529              	.L68:
+ 530 0084 2B78     		ldrb	r3, [r5]
+ 531 0086 002B     		cmp	r3, #0
+ 532 0088 0DD0     		beq	.L55
+ 533 008a 1E25     		movs	r5, #30
+ 534 008c 6D42     		rsbs	r5, r5, #0
+ 535              	.L71:
+ 536 008e 1E21     		movs	r1, #30
+ 537 0090 2800     		movs	r0, r5
+ 538 0092 FFF7FEFF 		bl	smtc_modem_hal_get_signed_random_nb_in_range
+ 539 0096 0028     		cmp	r0, #0
+ 540 0098 02DA     		bge	.L70
+ 541 009a 4342     		rsbs	r3, r0, #0
+ 542 009c A342     		cmp	r3, r4
+ 543 009e F6D8     		bhi	.L71
+ 544              	.L70:
+ 545 00a0 0019     		adds	r0, r0, r4
+ 546 00a2 FFF7FEFF 		bl	modem_supervisor_add_task_clock_sync_time_req
+ARM GAS  /tmp/ccefqkBz.s 			page 10
+
+
+ 547              	.L55:
+ 548              		@ sp needed
+ 549 00a6 70BD     		pop	{r4, r5, r6, pc}
+ 550              	.L61:
+ 551 00a8 FFF7FEFF 		bl	lorawan_api_get_device_time_req_status
+ 552 00ac 0100     		movs	r1, r0
+ 553 00ae 4B1E     		subs	r3, r1, #1
+ 554 00b0 9941     		sbcs	r1, r1, r3
+ 555 00b2 D5E7     		b	.L82
+ 556              	.L57:
+ 557 00b4 EB68     		ldr	r3, [r5, #12]
+ 558 00b6 022B     		cmp	r3, #2
+ 559 00b8 BFD9     		bls	.L85
+ 560 00ba 2800     		movs	r0, r5
+ 561 00bc 082B     		cmp	r3, #8
+ 562 00be 07D8     		bhi	.L67
+ 563 00c0 FFF7FEFF 		bl	clock_sync_get_interval_second
+ 564 00c4 E123     		movs	r3, #225
+ 565 00c6 9B01     		lsls	r3, r3, #6
+ 566              	.L87:
+ 567 00c8 1C00     		movs	r4, r3
+ 568 00ca 9842     		cmp	r0, r3
+ 569 00cc D1D8     		bhi	.L60
+ 570 00ce BAE7     		b	.L84
+ 571              	.L67:
+ 572 00d0 FFF7FEFF 		bl	clock_sync_get_interval_second
+ 573 00d4 004B     		ldr	r3, .L88
+ 574 00d6 F7E7     		b	.L87
+ 575              	.L89:
+ 576              		.align	2
+ 577              	.L88:
+ 578 00d8 40FA0100 		.word	129600
+ 580              		.section	.text.clock_sync_request,"ax",%progbits
+ 581              		.align	1
+ 582              		.global	clock_sync_request
+ 583              		.syntax unified
+ 584              		.code	16
+ 585              		.thumb_func
+ 587              	clock_sync_request:
+ 588              		@ args = 0, pretend = 0, frame = 40
+ 589              		@ frame_needed = 0, uses_anonymous_args = 0
+ 590 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 591 0002 037C     		ldrb	r3, [r0, #16]
+ 592 0004 0400     		movs	r4, r0
+ 593 0006 8FB0     		sub	sp, sp, #60
+ 594 0008 002B     		cmp	r3, #0
+ 595 000a 08D1     		bne	.L91
+ 596 000c 0D20     		movs	r0, #13
+ 597 000e FFF7FEFF 		bl	lorawan_api_send_stack_cid_req
+ 598              	.L92:
+ 599 0012 0028     		cmp	r0, #0
+ 600 0014 55D1     		bne	.L97
+ 601 0016 E368     		ldr	r3, [r4, #12]
+ 602 0018 0133     		adds	r3, r3, #1
+ 603 001a E360     		str	r3, [r4, #12]
+ 604 001c 52E0     		b	.L96
+ 605              	.L91:
+ARM GAS  /tmp/ccefqkBz.s 			page 11
+
+
+ 606 001e FFF7FEFF 		bl	lorawan_api_next_max_payload_length_get
+ 607 0022 C3B2     		uxtb	r3, r0
+ 608 0024 0793     		str	r3, [sp, #28]
+ 609 0026 1723     		movs	r3, #23
+ 610 0028 0025     		movs	r5, #0
+ 611 002a 04AA     		add	r2, sp, #16
+ 612 002c 9B18     		adds	r3, r3, r2
+ 613 002e 1D70     		strb	r5, [r3]
+ 614 0030 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
+ 615 0034 0321     		movs	r1, #3
+ 616 0036 0600     		movs	r6, r0
+ 617 0038 0120     		movs	r0, #1
+ 618 003a FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
+ 619 003e 3318     		adds	r3, r6, r0
+ 620 0040 2000     		movs	r0, r4
+ 621 0042 0593     		str	r3, [sp, #20]
+ 622 0044 FFF7FEFF 		bl	clock_sync_is_done
+ 623 0048 0127     		movs	r7, #1
+ 624 004a A842     		cmp	r0, r5
+ 625 004c 10D0     		beq	.L93
+ 626 004e 2000     		movs	r0, r4
+ 627 0050 FFF7FEFF 		bl	clock_sync_is_done
+ 628 0054 2F00     		movs	r7, r5
+ 629 0056 A842     		cmp	r0, r5
+ 630 0058 0AD0     		beq	.L93
+ 631 005a FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
+ 632 005e 0500     		movs	r5, r0
+ 633 0060 606A     		ldr	r0, [r4, #36]
+ 634 0062 FFF7FEFF 		bl	alc_sync_get_timestamp_last_correction_s
+ 635 0066 214F     		ldr	r7, .L103
+ 636 0068 2D1A     		subs	r5, r5, r0
+ 637 006a AF42     		cmp	r7, r5
+ 638 006c BF41     		sbcs	r7, r7, r7
+ 639 006e 7F42     		rsbs	r7, r7, #0
+ 640              	.L93:
+ 641 0070 FFF7FEFF 		bl	get_modem_dm_port
+ 642 0074 6378     		ldrb	r3, [r4, #1]
+ 643 0076 0025     		movs	r5, #0
+ 644 0078 8342     		cmp	r3, r0
+ 645 007a 03D1     		bne	.L94
+ 646 007c 1722     		movs	r2, #23
+ 647 007e 0AAB     		add	r3, sp, #40
+ 648 0080 1A70     		strb	r2, [r3]
+ 649 0082 0135     		adds	r5, r5, #1
+ 650              	.L94:
+ 651 0084 636A     		ldr	r3, [r4, #36]
+ 652 0086 0693     		str	r3, [sp, #24]
+ 653 0088 FFF7FEFF 		bl	smtc_modem_hal_get_time_compensation_in_s
+ 654 008c 0600     		movs	r6, r0
+ 655 008e 606A     		ldr	r0, [r4, #36]
+ 656 0090 FFF7FEFF 		bl	alc_sync_get_time_correction_second
+ 657 0094 3118     		adds	r1, r6, r0
+ 658 0096 1726     		movs	r6, #23
+ 659 0098 059B     		ldr	r3, [sp, #20]
+ 660 009a 3A00     		movs	r2, r7
+ 661 009c C918     		adds	r1, r1, r3
+ 662 009e 04AB     		add	r3, sp, #16
+ARM GAS  /tmp/ccefqkBz.s 			page 12
+
+
+ 663 00a0 F618     		adds	r6, r6, r3
+ 664 00a2 0AAB     		add	r3, sp, #40
+ 665 00a4 5B19     		adds	r3, r3, r5
+ 666 00a6 0193     		str	r3, [sp, #4]
+ 667 00a8 079B     		ldr	r3, [sp, #28]
+ 668 00aa 0698     		ldr	r0, [sp, #24]
+ 669 00ac 0093     		str	r3, [sp]
+ 670 00ae 0296     		str	r6, [sp, #8]
+ 671 00b0 0023     		movs	r3, #0
+ 672 00b2 FFF7FEFF 		bl	alc_sync_create_uplink_payload
+ 673 00b6 3378     		ldrb	r3, [r6]
+ 674 00b8 EB18     		adds	r3, r5, r3
+ 675 00ba DBB2     		uxtb	r3, r3
+ 676 00bc 3370     		strb	r3, [r6]
+ 677 00be 002B     		cmp	r3, #0
+ 678 00c0 02D1     		bne	.L95
+ 679              	.L97:
+ 680 00c2 0120     		movs	r0, #1
+ 681              	.L96:
+ 682 00c4 0FB0     		add	sp, sp, #60
+ 683              		@ sp needed
+ 684 00c6 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 685              	.L95:
+ 686 00c8 FA22     		movs	r2, #250
+ 687 00ca 0599     		ldr	r1, [sp, #20]
+ 688 00cc 9200     		lsls	r2, r2, #2
+ 689 00ce 4A43     		muls	r2, r1
+ 690 00d0 6078     		ldrb	r0, [r4, #1]
+ 691 00d2 0192     		str	r2, [sp, #4]
+ 692 00d4 0222     		movs	r2, #2
+ 693 00d6 0121     		movs	r1, #1
+ 694 00d8 0092     		str	r2, [sp]
+ 695 00da 0AAA     		add	r2, sp, #40
+ 696 00dc FFF7FEFF 		bl	lorawan_api_payload_send_at_time
+ 697 00e0 0022     		movs	r2, #0
+ 698 00e2 636A     		ldr	r3, [r4, #36]
+ 699 00e4 2933     		adds	r3, r3, #41
+ 700 00e6 1A70     		strb	r2, [r3]
+ 701 00e8 93E7     		b	.L92
+ 702              	.L104:
+ 703 00ea C046     		.align	2
+ 704              	.L103:
+ 705 00ec C04C2000 		.word	2116800
+ 707              		.section	.text.clock_sync_reset,"ax",%progbits
+ 708              		.align	1
+ 709              		.global	clock_sync_reset
+ 710              		.syntax unified
+ 711              		.code	16
+ 712              		.thumb_func
+ 714              	clock_sync_reset:
+ 715              		@ args = 0, pretend = 0, frame = 0
+ 716              		@ frame_needed = 0, uses_anonymous_args = 0
+ 717              		@ link register save eliminated.
+ 718 0000 0023     		movs	r3, #0
+ 719              		@ sp needed
+ 720 0002 421C     		adds	r2, r0, #1
+ 721 0004 4361     		str	r3, [r0, #20]
+ARM GAS  /tmp/ccefqkBz.s 			page 13
+
+
+ 722 0006 8360     		str	r3, [r0, #8]
+ 723 0008 C360     		str	r3, [r0, #12]
+ 724 000a D377     		strb	r3, [r2, #31]
+ 725 000c 8361     		str	r3, [r0, #24]
+ 726 000e C361     		str	r3, [r0, #28]
+ 727 0010 7047     		bx	lr
+ 729              		.section	.text.clock_sync_set_enabled,"ax",%progbits
+ 730              		.align	1
+ 731              		.global	clock_sync_set_enabled
+ 732              		.syntax unified
+ 733              		.code	16
+ 734              		.thumb_func
+ 736              	clock_sync_set_enabled:
+ 737              		@ args = 0, pretend = 0, frame = 0
+ 738              		@ frame_needed = 0, uses_anonymous_args = 0
+ 739 0000 70B5     		push	{r4, r5, r6, lr}
+ 740 0002 0400     		movs	r4, r0
+ 741              		@ sp needed
+ 742 0004 0E00     		movs	r6, r1
+ 743 0006 1500     		movs	r5, r2
+ 744 0008 FFF7FEFF 		bl	clock_sync_reset
+ 745 000c 2670     		strb	r6, [r4]
+ 746 000e 2574     		strb	r5, [r4, #16]
+ 747 0010 70BD     		pop	{r4, r5, r6, pc}
+ 749              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccefqkBz.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 smtc_clock_sync.c
+     /tmp/ccefqkBz.s:14     .text.clock_sync_init:00000000 $t
+     /tmp/ccefqkBz.s:20     .text.clock_sync_init:00000000 clock_sync_init
+     /tmp/ccefqkBz.s:46     .text.clock_sync_init:00000028 $d
+     /tmp/ccefqkBz.s:49     .text.clock_sync_is_enabled:00000000 $t
+     /tmp/ccefqkBz.s:55     .text.clock_sync_is_enabled:00000000 clock_sync_is_enabled
+     /tmp/ccefqkBz.s:64     .text.clock_sync_get_alcsync_port:00000000 $t
+     /tmp/ccefqkBz.s:70     .text.clock_sync_get_alcsync_port:00000000 clock_sync_get_alcsync_port
+     /tmp/ccefqkBz.s:79     .text.clock_sync_get_current_service:00000000 $t
+     /tmp/ccefqkBz.s:85     .text.clock_sync_get_current_service:00000000 clock_sync_get_current_service
+     /tmp/ccefqkBz.s:94     .text.clock_sync_set_alcsync_port:00000000 $t
+     /tmp/ccefqkBz.s:100    .text.clock_sync_set_alcsync_port:00000000 clock_sync_set_alcsync_port
+     /tmp/ccefqkBz.s:117    .text.clock_sync_set_gps_time:00000000 $t
+     /tmp/ccefqkBz.s:123    .text.clock_sync_set_gps_time:00000000 clock_sync_set_gps_time
+     /tmp/ccefqkBz.s:151    .text.clock_sync_is_done:00000000 $t
+     /tmp/ccefqkBz.s:157    .text.clock_sync_is_done:00000000 clock_sync_is_done
+     /tmp/ccefqkBz.s:181    .text.clock_sync_is_time_valid:00000000 $t
+     /tmp/ccefqkBz.s:187    .text.clock_sync_is_time_valid:00000000 clock_sync_is_time_valid
+     /tmp/ccefqkBz.s:218    .text.clock_sync_get_gps_time_second:00000000 $t
+     /tmp/ccefqkBz.s:224    .text.clock_sync_get_gps_time_second:00000000 clock_sync_get_gps_time_second
+     /tmp/ccefqkBz.s:275    .text.clock_sync_set_sync_lost:00000000 $t
+     /tmp/ccefqkBz.s:281    .text.clock_sync_set_sync_lost:00000000 clock_sync_set_sync_lost
+     /tmp/ccefqkBz.s:300    .text.clock_sync_get_interval_second:00000000 $t
+     /tmp/ccefqkBz.s:306    .text.clock_sync_get_interval_second:00000000 clock_sync_get_interval_second
+     /tmp/ccefqkBz.s:323    .text.clock_sync_set_interval_second:00000000 $t
+     /tmp/ccefqkBz.s:329    .text.clock_sync_set_interval_second:00000000 clock_sync_set_interval_second
+     /tmp/ccefqkBz.s:354    .text.clock_sync_set_invalid_time_delay_s:00000000 $t
+     /tmp/ccefqkBz.s:360    .text.clock_sync_set_invalid_time_delay_s:00000000 clock_sync_set_invalid_time_delay_s
+     /tmp/ccefqkBz.s:393    .text.clock_sync_set_invalid_time_delay_s:00000034 $d
+     /tmp/ccefqkBz.s:396    .text.clock_sync_get_invalid_time_delay_s:00000000 $t
+     /tmp/ccefqkBz.s:402    .text.clock_sync_get_invalid_time_delay_s:00000000 clock_sync_get_invalid_time_delay_s
+     /tmp/ccefqkBz.s:419    .text.clock_sync_reset_nb_time_req:00000000 $t
+     /tmp/ccefqkBz.s:425    .text.clock_sync_reset_nb_time_req:00000000 clock_sync_reset_nb_time_req
+     /tmp/ccefqkBz.s:435    .text.clock_sync_get_time_left_connection_lost:00000000 $t
+     /tmp/ccefqkBz.s:441    .text.clock_sync_get_time_left_connection_lost:00000000 clock_sync_get_time_left_connection_lost
+     /tmp/ccefqkBz.s:458    .text.clock_sync_callback:00000000 $t
+     /tmp/ccefqkBz.s:464    .text.clock_sync_callback:00000000 clock_sync_callback
+     /tmp/ccefqkBz.s:578    .text.clock_sync_callback:000000d8 $d
+     /tmp/ccefqkBz.s:581    .text.clock_sync_request:00000000 $t
+     /tmp/ccefqkBz.s:587    .text.clock_sync_request:00000000 clock_sync_request
+     /tmp/ccefqkBz.s:705    .text.clock_sync_request:000000ec $d
+     /tmp/ccefqkBz.s:708    .text.clock_sync_reset:00000000 $t
+     /tmp/ccefqkBz.s:714    .text.clock_sync_reset:00000000 clock_sync_reset
+     /tmp/ccefqkBz.s:730    .text.clock_sync_set_enabled:00000000 $t
+     /tmp/ccefqkBz.s:736    .text.clock_sync_set_enabled:00000000 clock_sync_set_enabled
+
+UNDEFINED SYMBOLS
+get_modem_dm_port
+smtc_modem_hal_get_time_in_s
+alc_sync_set_time_correction_second
+is_alc_sync_done
+lorawan_api_get_device_time_invalid_delay_s
+lorawan_api_is_time_valid
+is_alc_sync_time_valid
+smtc_modem_hal_get_time_compensation_in_s
+smtc_modem_hal_get_time_in_ms
+ARM GAS  /tmp/ccefqkBz.s 			page 15
+
+
+lorawan_api_convert_rtc_to_gps_epoch_time
+alc_sync_get_gps_time_second
+alc_sync_set_sync_lost
+alc_sync_get_interval_second
+alc_sync_set_interval_second
+lorawan_api_set_device_time_invalid_delay_s
+alc_sync_set_valid_delay_second
+alc_sync_get_valid_delay_second
+lorawan_api_get_time_left_connection_lost
+alc_sync_get_time_left_connection_lost
+lorawan_api_get_timestamp_last_device_time_ans_s
+increment_asynchronous_msgnumber
+smtc_modem_hal_get_signed_random_nb_in_range
+modem_supervisor_add_task_clock_sync_time_req
+lorawan_api_get_device_time_req_status
+lorawan_api_send_stack_cid_req
+lorawan_api_next_max_payload_length_get
+smtc_modem_hal_get_random_nb_in_range
+alc_sync_get_timestamp_last_correction_s
+alc_sync_get_time_correction_second
+alc_sync_create_uplink_payload
+lorawan_api_payload_send_at_time
