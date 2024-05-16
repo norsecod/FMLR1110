@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccANsUHm.s 			page 1
+ARM GAS  /tmp/ccCjdw1k.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
   56 003c 8362     		str	r3, [r0, #40]
   57 003e 0123     		movs	r3, #1
   58 0040 4361     		str	r3, [r0, #20]
-ARM GAS  /tmp/ccANsUHm.s 			page 2
+ARM GAS  /tmp/ccCjdw1k.s 			page 2
 
 
   59 0042 7047     		bx	lr
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  117 000e 4568     		ldr	r5, [r0, #4]
  118 0010 8369     		ldr	r3, [r0, #24]
  119              		@ sp needed
-ARM GAS  /tmp/ccANsUHm.s 			page 3
+ARM GAS  /tmp/ccCjdw1k.s 			page 3
 
 
  120 0012 1340     		ands	r3, r2
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  176 0032 0F35     		adds	r5, r5, #15
  177 0034 2B40     		ands	r3, r5
  178 0036 1343     		orrs	r3, r2
-ARM GAS  /tmp/ccANsUHm.s 			page 4
+ARM GAS  /tmp/ccCjdw1k.s 			page 4
 
 
  179 0038 0A22     		movs	r2, #10
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  237 000c 4A68     		ldr	r2, [r1, #4]
  238 000e 1043     		orrs	r0, r2
  239 0010 A043     		bics	r0, r4
-ARM GAS  /tmp/ccANsUHm.s 			page 5
+ARM GAS  /tmp/ccCjdw1k.s 			page 5
 
 
  240 0012 0C68     		ldr	r4, [r1]
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  294 0070 AA43     		bics	r2, r5
  295 0072 1A62     		str	r2, [r3, #32]
  296 0074 F022     		movs	r2, #240
-ARM GAS  /tmp/ccANsUHm.s 			page 6
+ARM GAS  /tmp/ccCjdw1k.s 			page 6
 
 
  297 0076 9869     		ldr	r0, [r3, #24]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  352              		.weak	HAL_TIM_Base_MspInit
  353              		.syntax unified
  354              		.code	16
-ARM GAS  /tmp/ccANsUHm.s 			page 7
+ARM GAS  /tmp/ccCjdw1k.s 			page 7
 
 
  355              		.thumb_func
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  413              		.align	1
  414              		.weak	HAL_TIM_Base_MspDeInit
  415              		.syntax unified
-ARM GAS  /tmp/ccANsUHm.s 			page 8
+ARM GAS  /tmp/ccCjdw1k.s 			page 8
 
 
  416              		.code	16
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  474              		.align	1
  475              		.global	HAL_TIM_Base_Start
  476              		.syntax unified
-ARM GAS  /tmp/ccANsUHm.s 			page 9
+ARM GAS  /tmp/ccCjdw1k.s 			page 9
 
 
  477              		.code	16
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  532 0054 00140140 		.word	1073812480
  534              		.section	.text.HAL_TIM_Base_Stop,"ax",%progbits
  535              		.align	1
-ARM GAS  /tmp/ccANsUHm.s 			page 10
+ARM GAS  /tmp/ccCjdw1k.s 			page 10
 
 
  536              		.global	HAL_TIM_Base_Stop
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  593 0022 8B42     		cmp	r3, r1
  594 0024 08D0     		beq	.L61
  595 0026 0B49     		ldr	r1, .L69
-ARM GAS  /tmp/ccANsUHm.s 			page 11
+ARM GAS  /tmp/ccCjdw1k.s 			page 11
 
 
  596 0028 8B42     		cmp	r3, r1
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  652 0018 1A60     		str	r2, [r3]
  653              	.L72:
  654 001a 0123     		movs	r3, #1
-ARM GAS  /tmp/ccANsUHm.s 			page 12
+ARM GAS  /tmp/ccCjdw1k.s 			page 12
 
 
  655              		@ sp needed
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  711 0040 EAD1     		bne	.L79
  712 0042 8022     		movs	r2, #128
  713 0044 2368     		ldr	r3, [r4]
-ARM GAS  /tmp/ccANsUHm.s 			page 13
+ARM GAS  /tmp/ccCjdw1k.s 			page 13
 
 
  714 0046 5200     		lsls	r2, r2, #1
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  770 000e D360     		str	r3, [r2, #12]
  771 0010 FFF7FEFF 		bl	HAL_DMA_Abort_IT
  772 0014 2368     		ldr	r3, [r4]
-ARM GAS  /tmp/ccANsUHm.s 			page 14
+ARM GAS  /tmp/ccCjdw1k.s 			page 14
 
 
  773 0016 074A     		ldr	r2, .L93+4
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  831 001a 2000     		movs	r0, r4
  832 001c 1A70     		strb	r2, [r3]
  833 001e FFF7FEFF 		bl	HAL_TIM_OC_MspInit
-ARM GAS  /tmp/ccANsUHm.s 			page 15
+ARM GAS  /tmp/ccCjdw1k.s 			page 15
 
 
  834              	.L98:
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  892 0018 1A68     		ldr	r2, [r3]
  893 001a 8A43     		bics	r2, r1
  894 001c 1A60     		str	r2, [r3]
-ARM GAS  /tmp/ccANsUHm.s 			page 16
+ARM GAS  /tmp/ccCjdw1k.s 			page 16
 
 
  895              	.L102:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  951              	.L111:
  952 0026 3D32     		adds	r2, r2, #61
  953 0028 F0E7     		b	.L131
-ARM GAS  /tmp/ccANsUHm.s 			page 17
+ARM GAS  /tmp/ccCjdw1k.s 			page 17
 
 
  954              	.L128:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1010 000a 0D00     		movs	r5, r1
  1011 000c FFF7FEFF 		bl	TIM_CCxChannelCmd
  1012 0010 326A     		ldr	r2, [r6, #32]
-ARM GAS  /tmp/ccANsUHm.s 			page 18
+ARM GAS  /tmp/ccCjdw1k.s 			page 18
 
 
  1013 0012 0C4B     		ldr	r3, .L143
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1069              	.L146:
  1070 0014 0300     		movs	r3, r0
  1071 0016 0429     		cmp	r1, #4
-ARM GAS  /tmp/ccANsUHm.s 			page 19
+ARM GAS  /tmp/ccCjdw1k.s 			page 19
 
 
  1072 0018 22D1     		bne	.L149
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1126 0076 CBD1     		bne	.L147
  1127 0078 0268     		ldr	r2, [r0]
  1128 007a 1023     		movs	r3, #16
-ARM GAS  /tmp/ccANsUHm.s 			page 20
+ARM GAS  /tmp/ccCjdw1k.s 			page 20
 
 
  1129 007c D468     		ldr	r4, [r2, #12]
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1185 0024 0221     		movs	r1, #2
  1186 0026 0268     		ldr	r2, [r0]
  1187 0028 D368     		ldr	r3, [r2, #12]
-ARM GAS  /tmp/ccANsUHm.s 			page 21
+ARM GAS  /tmp/ccCjdw1k.s 			page 21
 
 
  1188              	.L183:
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1244              	HAL_TIM_OC_Start_DMA:
  1245              		@ args = 0, pretend = 0, frame = 0
  1246              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccANsUHm.s 			page 22
+ARM GAS  /tmp/ccCjdw1k.s 			page 22
 
 
  1247 0000 70B5     		push	{r4, r5, r6, lr}
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1301              	.L196:
  1302 0058 082E     		cmp	r6, #8
  1303 005a 01D1     		bne	.L197
-ARM GAS  /tmp/ccANsUHm.s 			page 23
+ARM GAS  /tmp/ccCjdw1k.s 			page 23
 
 
  1304 005c 3C32     		adds	r2, r2, #60
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1358              	.L210:
  1359 00c4 0722     		movs	r2, #7
  1360 00c6 A368     		ldr	r3, [r4, #8]
-ARM GAS  /tmp/ccANsUHm.s 			page 24
+ARM GAS  /tmp/ccCjdw1k.s 			page 24
 
 
  1361 00c8 1340     		ands	r3, r2
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1415 0130 B3E7     		b	.L227
  1416              	.L205:
  1417 0132 3D30     		adds	r0, r0, #61
-ARM GAS  /tmp/ccANsUHm.s 			page 25
+ARM GAS  /tmp/ccCjdw1k.s 			page 25
 
 
  1418 0134 0270     		strb	r2, [r0]
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1474 0016 70BD     		pop	{r4, r5, r6, pc}
  1475              	.L234:
  1476 0018 0C29     		cmp	r1, #12
-ARM GAS  /tmp/ccANsUHm.s 			page 26
+ARM GAS  /tmp/ccCjdw1k.s 			page 26
 
 
  1477 001a FBD1     		bne	.L247
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1531 007e DAE7     		b	.L245
  1532              	.L241:
  1533 0080 042D     		cmp	r5, #4
-ARM GAS  /tmp/ccANsUHm.s 			page 27
+ARM GAS  /tmp/ccCjdw1k.s 			page 27
 
 
  1534 0082 01D1     		bne	.L243
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1592 001c 1A70     		strb	r2, [r3]
  1593 001e FFF7FEFF 		bl	HAL_TIM_PWM_MspInit
  1594              	.L253:
-ARM GAS  /tmp/ccANsUHm.s 			page 28
+ARM GAS  /tmp/ccCjdw1k.s 			page 28
 
 
  1595 0022 0223     		movs	r3, #2
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1653 001a 8A43     		bics	r2, r1
  1654 001c 1A60     		str	r2, [r3]
  1655              	.L257:
-ARM GAS  /tmp/ccANsUHm.s 			page 29
+ARM GAS  /tmp/ccCjdw1k.s 			page 29
 
 
  1656 001e 2000     		movs	r0, r4
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1716              		@ frame_needed = 0, uses_anonymous_args = 0
  1717 0000 10B5     		push	{r4, lr}
  1718 0002 FFF7FEFF 		bl	HAL_TIM_OC_Start_IT
-ARM GAS  /tmp/ccANsUHm.s 			page 30
+ARM GAS  /tmp/ccCjdw1k.s 			page 30
 
 
  1719              		@ sp needed
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1782              		.align	1
  1783              		.global	HAL_TIM_IC_Init
  1784              		.syntax unified
-ARM GAS  /tmp/ccANsUHm.s 			page 31
+ARM GAS  /tmp/ccCjdw1k.s 			page 31
 
 
  1785              		.code	16
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1843              		.section	.text.HAL_TIM_IC_DeInit,"ax",%progbits
  1844              		.align	1
  1845              		.global	HAL_TIM_IC_DeInit
-ARM GAS  /tmp/ccANsUHm.s 			page 32
+ARM GAS  /tmp/ccCjdw1k.s 			page 32
 
 
  1846              		.syntax unified
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1903 0006 0029     		cmp	r1, #0
  1904 0008 23D1     		bne	.L277
  1905 000a 3A32     		adds	r2, r2, #58
-ARM GAS  /tmp/ccANsUHm.s 			page 33
+ARM GAS  /tmp/ccCjdw1k.s 			page 33
 
 
  1906              	.L301:
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  1960 0066 C046     		.align	2
  1961              	.L304:
  1962 0068 00040040 		.word	1073742848
-ARM GAS  /tmp/ccANsUHm.s 			page 34
+ARM GAS  /tmp/ccCjdw1k.s 			page 34
 
 
  1963 006c 00080140 		.word	1073809408
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2021 0034 0468     		ldr	r4, [r0]
  2022 0036 D360     		str	r3, [r2, #12]
  2023 0038 2000     		movs	r0, r4
-ARM GAS  /tmp/ccANsUHm.s 			page 35
+ARM GAS  /tmp/ccCjdw1k.s 			page 35
 
 
  2024 003a 0122     		movs	r2, #1
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2078 0096 C046     		.align	2
  2079              	.L330:
  2080 0098 00040040 		.word	1073742848
-ARM GAS  /tmp/ccANsUHm.s 			page 36
+ARM GAS  /tmp/ccCjdw1k.s 			page 36
 
 
  2081 009c 00080140 		.word	1073809408
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2139 0030 3C33     		adds	r3, r3, #60
  2140 0032 EEE7     		b	.L362
  2141              	.L337:
-ARM GAS  /tmp/ccANsUHm.s 			page 37
+ARM GAS  /tmp/ccCjdw1k.s 			page 37
 
 
  2142 0034 3D33     		adds	r3, r3, #61
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2196 0096 1A60     		str	r2, [r3]
  2197 0098 C2E7     		b	.L338
  2198              	.L342:
-ARM GAS  /tmp/ccANsUHm.s 			page 38
+ARM GAS  /tmp/ccCjdw1k.s 			page 38
 
 
  2199 009a 042E     		cmp	r6, #4
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2253 0100 D168     		ldr	r1, [r2, #12]
  2254              	.L364:
  2255 0102 0B43     		orrs	r3, r1
-ARM GAS  /tmp/ccANsUHm.s 			page 39
+ARM GAS  /tmp/ccCjdw1k.s 			page 39
 
 
  2256 0104 0025     		movs	r5, #0
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2310 0170 00000000 		.word	TIM_DMACaptureHalfCplt
  2311 0174 00000000 		.word	TIM_DMAError
  2313              		.section	.text.HAL_TIM_IC_Stop_DMA,"ax",%progbits
-ARM GAS  /tmp/ccANsUHm.s 			page 40
+ARM GAS  /tmp/ccCjdw1k.s 			page 40
 
 
  2314              		.align	1
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2369 0052 0123     		movs	r3, #1
  2370 0054 002D     		cmp	r5, #0
  2371 0056 0FD1     		bne	.L376
-ARM GAS  /tmp/ccANsUHm.s 			page 41
+ARM GAS  /tmp/ccCjdw1k.s 			page 41
 
 
  2372 0058 3A34     		adds	r4, r4, #58
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2429              		.global	HAL_TIM_OnePulse_Init
  2430              		.syntax unified
  2431              		.code	16
-ARM GAS  /tmp/ccANsUHm.s 			page 42
+ARM GAS  /tmp/ccCjdw1k.s 			page 42
 
 
  2432              		.thumb_func
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2489              	HAL_TIM_OnePulse_MspDeInit:
  2490              		@ args = 0, pretend = 0, frame = 0
  2491              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccANsUHm.s 			page 43
+ARM GAS  /tmp/ccCjdw1k.s 			page 43
 
 
  2492              		@ link register save eliminated.
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2550              		@ frame_needed = 0, uses_anonymous_args = 0
  2551 0000 0300     		movs	r3, r0
  2552 0002 30B5     		push	{r4, r5, lr}
-ARM GAS  /tmp/ccANsUHm.s 			page 44
+ARM GAS  /tmp/ccCjdw1k.s 			page 44
 
 
  2553 0004 1900     		movs	r1, r3
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2609 0012 1A6A     		ldr	r2, [r3, #32]
  2610 0014 A243     		bics	r2, r4
  2611 0016 1A62     		str	r2, [r3, #32]
-ARM GAS  /tmp/ccANsUHm.s 			page 45
+ARM GAS  /tmp/ccCjdw1k.s 			page 45
 
 
  2612 0018 1A6A     		ldr	r2, [r3, #32]
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2668 002c D968     		ldr	r1, [r3, #12]
  2669 002e 0A43     		orrs	r2, r1
  2670 0030 DA60     		str	r2, [r3, #12]
-ARM GAS  /tmp/ccANsUHm.s 			page 46
+ARM GAS  /tmp/ccCjdw1k.s 			page 46
 
 
  2671 0032 1A6A     		ldr	r2, [r3, #32]
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2727 0032 02D1     		bne	.L406
  2728 0034 1A68     		ldr	r2, [r3]
  2729 0036 8A43     		bics	r2, r1
-ARM GAS  /tmp/ccANsUHm.s 			page 47
+ARM GAS  /tmp/ccCjdw1k.s 			page 47
 
 
  2730 0038 1A60     		str	r2, [r3]
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2788 0024 0223     		movs	r3, #2
  2789 0026 2100     		movs	r1, r4
  2790 0028 3B70     		strb	r3, [r7]
-ARM GAS  /tmp/ccANsUHm.s 			page 48
+ARM GAS  /tmp/ccCjdw1k.s 			page 48
 
 
  2791 002a 40C9     		ldmia	r1!, {r6}
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2845              	.L411:
  2846              		@ sp needed
  2847 0098 FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
-ARM GAS  /tmp/ccANsUHm.s 			page 49
+ARM GAS  /tmp/ccCjdw1k.s 			page 49
 
 
  2848              	.L415:
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2906 0034 2870     		strb	r0, [r5]
  2907 0036 2070     		strb	r0, [r4]
  2908 0038 70BD     		pop	{r4, r5, r6, pc}
-ARM GAS  /tmp/ccANsUHm.s 			page 50
+ARM GAS  /tmp/ccCjdw1k.s 			page 50
 
 
  2909              	.L420:
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  2965 004a 1A68     		ldr	r2, [r3]
  2966              	.L430:
  2967 004c 1021     		movs	r1, #16
-ARM GAS  /tmp/ccANsUHm.s 			page 51
+ARM GAS  /tmp/ccCjdw1k.s 			page 51
 
 
  2968 004e 106A     		ldr	r0, [r2, #32]
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3024 0024 1A6A     		ldr	r2, [r3, #32]
  3025 0026 1A62     		str	r2, [r3, #32]
  3026 0028 1C6A     		ldr	r4, [r3, #32]
-ARM GAS  /tmp/ccANsUHm.s 			page 52
+ARM GAS  /tmp/ccCjdw1k.s 			page 52
 
 
  3027 002a 0B4A     		ldr	r2, .L446
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3083 0018 0128     		cmp	r0, #1
  3084 001a 3DD1     		bne	.L455
  3085 001c 0231     		adds	r1, r1, #2
-ARM GAS  /tmp/ccANsUHm.s 			page 53
+ARM GAS  /tmp/ccCjdw1k.s 			page 53
 
 
  3086 001e 2970     		strb	r1, [r5]
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3140 007e 1C62     		str	r4, [r3, #32]
  3141 0080 1C6A     		ldr	r4, [r3, #32]
  3142 0082 8443     		bics	r4, r0
-ARM GAS  /tmp/ccANsUHm.s 			page 54
+ARM GAS  /tmp/ccCjdw1k.s 			page 54
 
 
  3143 0084 1C62     		str	r4, [r3, #32]
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3199 003a 1A68     		ldr	r2, [r3]
  3200 003c A243     		bics	r2, r4
  3201 003e 1A60     		str	r2, [r3]
-ARM GAS  /tmp/ccANsUHm.s 			page 55
+ARM GAS  /tmp/ccCjdw1k.s 			page 55
 
 
  3202              	.L462:
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3258 0002 1E00     		movs	r6, r3
  3259 0004 08AB     		add	r3, sp, #32
  3260 0006 1D88     		ldrh	r5, [r3]
-ARM GAS  /tmp/ccANsUHm.s 			page 56
+ARM GAS  /tmp/ccCjdw1k.s 			page 56
 
 
  3261 0008 3A23     		movs	r3, #58
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3315 006c 196A     		ldr	r1, [r3, #32]
  3316 006e 1143     		orrs	r1, r2
  3317              	.L501:
-ARM GAS  /tmp/ccANsUHm.s 			page 57
+ARM GAS  /tmp/ccCjdw1k.s 			page 57
 
 
  3318 0070 1962     		str	r1, [r3, #32]
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3372 00d6 A9D0     		beq	.L475
  3373 00d8 022B     		cmp	r3, #2
  3374 00da 46D0     		beq	.L488
-ARM GAS  /tmp/ccANsUHm.s 			page 58
+ARM GAS  /tmp/ccCjdw1k.s 			page 58
 
 
  3375 00dc 0128     		cmp	r0, #1
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3429 0144 8022     		movs	r2, #128
  3430 0146 D968     		ldr	r1, [r3, #12]
  3431 0148 D200     		lsls	r2, r2, #3
-ARM GAS  /tmp/ccANsUHm.s 			page 59
+ARM GAS  /tmp/ccCjdw1k.s 			page 59
 
 
  3432 014a 0A43     		orrs	r2, r1
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3488 0028 1E4A     		ldr	r2, .L518+4
  3489 002a 196A     		ldr	r1, [r3, #32]
  3490 002c 1142     		tst	r1, r2
-ARM GAS  /tmp/ccANsUHm.s 			page 60
+ARM GAS  /tmp/ccCjdw1k.s 			page 60
 
 
  3491 002e 03D1     		bne	.L509
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3545 0090 3A34     		adds	r4, r4, #58
  3546 0092 2370     		strb	r3, [r4]
  3547              	.L513:
-ARM GAS  /tmp/ccANsUHm.s 			page 61
+ARM GAS  /tmp/ccCjdw1k.s 			page 61
 
 
  3548 0094 0020     		movs	r0, #0
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3604 0036 1948     		ldr	r0, .L532+4
  3605 0038 5E68     		ldr	r6, [r3, #4]
  3606 003a DA69     		ldr	r2, [r3, #28]
-ARM GAS  /tmp/ccANsUHm.s 			page 62
+ARM GAS  /tmp/ccCjdw1k.s 			page 62
 
 
  3607 003c 0240     		ands	r2, r0
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3661 00a0 FFDFFFFF 		.word	-8193
  3662 00a4 FFFEFFFF 		.word	-257
  3663 00a8 FFFDFFFF 		.word	-513
-ARM GAS  /tmp/ccANsUHm.s 			page 63
+ARM GAS  /tmp/ccCjdw1k.s 			page 63
 
 
  3665              		.section	.text.HAL_TIM_IC_ConfigChannel,"ax",%progbits
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3720 0052 3840     		ands	r0, r7
  3721 0054 090C     		lsrs	r1, r1, #16
  3722 0056 1E6A     		ldr	r6, [r3, #32]
-ARM GAS  /tmp/ccANsUHm.s 			page 64
+ARM GAS  /tmp/ccCjdw1k.s 			page 64
 
 
  3723 0058 0143     		orrs	r1, r0
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3777 00c0 3840     		ands	r0, r7
  3778 00c2 090C     		lsrs	r1, r1, #16
  3779 00c4 0143     		orrs	r1, r0
-ARM GAS  /tmp/ccANsUHm.s 			page 65
+ARM GAS  /tmp/ccCjdw1k.s 			page 65
 
 
  3780 00c6 A020     		movs	r0, #160
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3834              	.L544:
  3835 0130 0A43     		orrs	r2, r1
  3836 0132 DA61     		str	r2, [r3, #28]
-ARM GAS  /tmp/ccANsUHm.s 			page 66
+ARM GAS  /tmp/ccCjdw1k.s 			page 66
 
 
  3837 0134 B2E7     		b	.L542
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3893 003c 5E68     		ldr	r6, [r3, #4]
  3894 003e DA69     		ldr	r2, [r3, #28]
  3895 0040 0A40     		ands	r2, r1
-ARM GAS  /tmp/ccANsUHm.s 			page 67
+ARM GAS  /tmp/ccCjdw1k.s 			page 67
 
 
  3896 0042 2168     		ldr	r1, [r4]
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  3950 00aa 1B01     		lsls	r3, r3, #4
  3951 00ac 1343     		orrs	r3, r2
  3952 00ae B361     		str	r3, [r6, #24]
-ARM GAS  /tmp/ccANsUHm.s 			page 68
+ARM GAS  /tmp/ccCjdw1k.s 			page 68
 
 
  3953 00b0 B369     		ldr	r3, [r6, #24]
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4008              		.align	1
  4009              		.global	HAL_TIM_OnePulse_ConfigChannel
  4010              		.syntax unified
-ARM GAS  /tmp/ccANsUHm.s 			page 69
+ARM GAS  /tmp/ccCjdw1k.s 			page 69
 
 
  4011              		.code	16
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4066 0058 042F     		cmp	r7, #4
  4067 005a EFD1     		bne	.L569
  4068 005c 1027     		movs	r7, #16
-ARM GAS  /tmp/ccANsUHm.s 			page 70
+ARM GAS  /tmp/ccCjdw1k.s 			page 70
 
 
  4069 005e 2368     		ldr	r3, [r4]
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4123 00c8 2768     		ldr	r7, [r4]
  4124 00ca 0C35     		adds	r5, r5, #12
  4125 00cc 0ECD     		ldmia	r5!, {r1, r2, r3}
-ARM GAS  /tmp/ccANsUHm.s 			page 71
+ARM GAS  /tmp/ccCjdw1k.s 			page 71
 
 
  4126 00ce 3800     		movs	r0, r7
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4182 001c 06D1     		bne	.L577
  4183 001e 0029     		cmp	r1, #0
  4184 0020 02D1     		bne	.L578
-ARM GAS  /tmp/ccANsUHm.s 			page 72
+ARM GAS  /tmp/ccCjdw1k.s 			page 72
 
 
  4185 0022 0698     		ldr	r0, [sp, #24]
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4239 0084 E3D1     		bne	.L579
  4240 0086 0020     		movs	r0, #0
  4241 0088 069E     		ldr	r6, [sp, #24]
-ARM GAS  /tmp/ccANsUHm.s 			page 73
+ARM GAS  /tmp/ccCjdw1k.s 			page 73
 
 
  4242 008a 2368     		ldr	r3, [r4]
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4299              		.align	1
  4300              		.global	HAL_TIM_DMABurst_WriteStop
  4301              		.syntax unified
-ARM GAS  /tmp/ccANsUHm.s 			page 74
+ARM GAS  /tmp/ccCjdw1k.s 			page 74
 
 
  4302              		.code	16
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4357              	.L603:
  4358 0058 006A     		ldr	r0, [r0, #32]
  4359 005a F2E7     		b	.L610
-ARM GAS  /tmp/ccANsUHm.s 			page 75
+ARM GAS  /tmp/ccCjdw1k.s 			page 75
 
 
  4360              	.L604:
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4416 0044 2DD0     		beq	.L620
  4417 0046 8021     		movs	r1, #128
  4418 0048 4900     		lsls	r1, r1, #1
-ARM GAS  /tmp/ccANsUHm.s 			page 76
+ARM GAS  /tmp/ccCjdw1k.s 			page 76
 
 
  4419 004a 8D42     		cmp	r5, r1
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4473              	.L617:
  4474 00a6 A06A     		ldr	r0, [r4, #40]
  4475 00a8 F7E7     		b	.L633
-ARM GAS  /tmp/ccANsUHm.s 			page 77
+ARM GAS  /tmp/ccCjdw1k.s 			page 77
 
 
  4476              	.L622:
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4536 0002 30B5     		push	{r4, r5, lr}
  4537 0004 0224     		movs	r4, #2
  4538 0006 3832     		adds	r2, r2, #56
-ARM GAS  /tmp/ccANsUHm.s 			page 78
+ARM GAS  /tmp/ccCjdw1k.s 			page 78
 
 
  4539 0008 1578     		ldrb	r5, [r2]
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4595 0034 3840     		ands	r0, r7
  4596              	.L659:
  4597 0036 B060     		str	r0, [r6, #8]
-ARM GAS  /tmp/ccANsUHm.s 			page 79
+ARM GAS  /tmp/ccCjdw1k.s 			page 79
 
 
  4598 0038 082A     		cmp	r2, #8
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4652 0092 0029     		cmp	r1, #0
  4653 0094 03D0     		beq	.L654
  4654 0096 9169     		ldr	r1, [r2, #24]
-ARM GAS  /tmp/ccANsUHm.s 			page 80
+ARM GAS  /tmp/ccCjdw1k.s 			page 80
 
 
  4655 0098 0B43     		orrs	r3, r1
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4710              		.code	16
  4711              		.thumb_func
  4713              	HAL_TIM_ConfigClockSource:
-ARM GAS  /tmp/ccANsUHm.s 			page 81
+ARM GAS  /tmp/ccCjdw1k.s 			page 81
 
 
  4714              		@ args = 0, pretend = 0, frame = 0
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4768 005c 2DE0     		b	.L688
  4769              	.L670:
  4770 005e 502A     		cmp	r2, #80
-ARM GAS  /tmp/ccANsUHm.s 			page 82
+ARM GAS  /tmp/ccCjdw1k.s 			page 82
 
 
  4771 0060 F0D1     		bne	.L673
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4825 00c4 1D4A     		ldr	r2, .L689+4
  4826 00c6 4E68     		ldr	r6, [r1, #4]
  4827 00c8 1040     		ands	r0, r2
-ARM GAS  /tmp/ccANsUHm.s 			page 83
+ARM GAS  /tmp/ccCjdw1k.s 			page 83
 
 
  4828 00ca 8A68     		ldr	r2, [r1, #8]
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4882 0132 9143     		bics	r1, r2
  4883 0134 293A     		subs	r2, r2, #41
  4884 0136 C0E7     		b	.L688
-ARM GAS  /tmp/ccANsUHm.s 			page 84
+ARM GAS  /tmp/ccCjdw1k.s 			page 84
 
 
  4885              	.L690:
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  4943 002a 3E70     		strb	r6, [r7]
  4944 002c 2B70     		strb	r3, [r5]
  4945              	.L693:
-ARM GAS  /tmp/ccANsUHm.s 			page 85
+ARM GAS  /tmp/ccCjdw1k.s 			page 85
 
 
  4946              		@ sp needed
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5002 0030 4022     		movs	r2, #64
  5003 0032 2368     		ldr	r3, [r4]
  5004 0034 D968     		ldr	r1, [r3, #12]
-ARM GAS  /tmp/ccANsUHm.s 			page 86
+ARM GAS  /tmp/ccCjdw1k.s 			page 86
 
 
  5005 0036 0A43     		orrs	r2, r1
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5062              		.align	1
  5063              		.weak	HAL_TIM_PeriodElapsedCallback
  5064              		.syntax unified
-ARM GAS  /tmp/ccANsUHm.s 			page 87
+ARM GAS  /tmp/ccCjdw1k.s 			page 87
 
 
  5065              		.code	16
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5126 0008 10BD     		pop	{r4, pc}
  5128              		.section	.text.HAL_TIM_OC_DelayElapsedCallback,"ax",%progbits
  5129              		.align	1
-ARM GAS  /tmp/ccANsUHm.s 			page 88
+ARM GAS  /tmp/ccCjdw1k.s 			page 88
 
 
  5130              		.weak	HAL_TIM_OC_DelayElapsedCallback
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5189 002a 09D1     		bne	.L723
  5190 002c 0222     		movs	r2, #2
  5191 002e 2276     		strb	r2, [r4, #24]
-ARM GAS  /tmp/ccANsUHm.s 			page 89
+ARM GAS  /tmp/ccCjdw1k.s 			page 89
 
 
  5192 0030 DB69     		ldr	r3, [r3, #28]
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5250              		@ args = 0, pretend = 0, frame = 0
  5251              		@ frame_needed = 0, uses_anonymous_args = 0
  5252 0000 10B5     		push	{r4, lr}
-ARM GAS  /tmp/ccANsUHm.s 			page 90
+ARM GAS  /tmp/ccCjdw1k.s 			page 90
 
 
  5253 0002 846A     		ldr	r4, [r0, #40]
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5311 0004 226A     		ldr	r2, [r4, #32]
  5312 0006 8242     		cmp	r2, r0
  5313 0008 0DD1     		bne	.L736
-ARM GAS  /tmp/ccANsUHm.s 			page 91
+ARM GAS  /tmp/ccCjdw1k.s 			page 91
 
 
  5314 000a 0123     		movs	r3, #1
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5368 006c 3D33     		adds	r3, r3, #61
  5369 006e E5E7     		b	.L742
  5371              		.section	.text.HAL_TIM_PWM_PulseFinishedHalfCpltCallback,"ax",%progbits
-ARM GAS  /tmp/ccANsUHm.s 			page 92
+ARM GAS  /tmp/ccCjdw1k.s 			page 92
 
 
  5372              		.align	1
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5430              		.weak	HAL_TIM_TriggerCallback
  5431              		.syntax unified
  5432              		.code	16
-ARM GAS  /tmp/ccANsUHm.s 			page 93
+ARM GAS  /tmp/ccCjdw1k.s 			page 93
 
 
  5433              		.thumb_func
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5490 004a 1A42     		tst	r2, r3
  5491 004c 4ED0     		beq	.L756
  5492 004e FFF7FEFF 		bl	HAL_TIM_IC_CaptureCallback
-ARM GAS  /tmp/ccANsUHm.s 			page 94
+ARM GAS  /tmp/ccCjdw1k.s 			page 94
 
 
  5493              	.L757:
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5547 00b6 1142     		tst	r1, r2
  5548 00b8 04D0     		beq	.L764
  5549 00ba 033A     		subs	r2, r2, #3
-ARM GAS  /tmp/ccANsUHm.s 			page 95
+ARM GAS  /tmp/ccCjdw1k.s 			page 95
 
 
  5550 00bc 2000     		movs	r0, r4
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5606 000e 0122     		movs	r2, #1
  5607 0010 3933     		adds	r3, r3, #57
  5608 0012 1A70     		strb	r2, [r3]
-ARM GAS  /tmp/ccANsUHm.s 			page 96
+ARM GAS  /tmp/ccCjdw1k.s 			page 96
 
 
  5609              	.L803:
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5671 0008 05D1     		bne	.L808
  5672 000a 0123     		movs	r3, #1
  5673 000c 2200     		movs	r2, r4
-ARM GAS  /tmp/ccANsUHm.s 			page 97
+ARM GAS  /tmp/ccCjdw1k.s 			page 97
 
 
  5674 000e 2376     		strb	r3, [r4, #24]
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5730              		@ link register save eliminated.
  5731 0000 3930     		adds	r0, r0, #57
  5732 0002 0078     		ldrb	r0, [r0]
-ARM GAS  /tmp/ccANsUHm.s 			page 98
+ARM GAS  /tmp/ccCjdw1k.s 			page 98
 
 
  5733              		@ sp needed
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5795              	HAL_TIM_OnePulse_GetState:
  5796              		@ args = 0, pretend = 0, frame = 0
  5797              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccANsUHm.s 			page 99
+ARM GAS  /tmp/ccCjdw1k.s 			page 99
 
 
  5798              		@ link register save eliminated.
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5858 000e 01D1     		bne	.L824
  5859 0010 3B30     		adds	r0, r0, #59
  5860 0012 F8E7     		b	.L826
-ARM GAS  /tmp/ccANsUHm.s 			page 100
+ARM GAS  /tmp/ccCjdw1k.s 			page 100
 
 
  5861              	.L824:
@@ -5965,286 +5965,286 @@ ARM GAS  /tmp/ccANsUHm.s 			page 1
  5884 0004 C0B2     		uxtb	r0, r0
  5885 0006 7047     		bx	lr
  5887              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccANsUHm.s 			page 101
+ARM GAS  /tmp/ccCjdw1k.s 			page 101
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32l0xx_hal_tim.c
-     /tmp/ccANsUHm.s:14     .text.TIM_Base_SetConfig:00000000 $t
-     /tmp/ccANsUHm.s:19     .text.TIM_Base_SetConfig:00000000 TIM_Base_SetConfig
-     /tmp/ccANsUHm.s:63     .text.TIM_Base_SetConfig:00000044 $d
-     /tmp/ccANsUHm.s:69     .text.TIM_OC1_SetConfig:00000000 $t
-     /tmp/ccANsUHm.s:74     .text.TIM_OC1_SetConfig:00000000 TIM_OC1_SetConfig
-     /tmp/ccANsUHm.s:102    .text.TIM_OC2_SetConfig:00000000 $t
-     /tmp/ccANsUHm.s:107    .text.TIM_OC2_SetConfig:00000000 TIM_OC2_SetConfig
-     /tmp/ccANsUHm.s:138    .text.TIM_OC2_SetConfig:00000030 $d
-     /tmp/ccANsUHm.s:141    .text.TIM_TI1_SetConfig:00000000 $t
-     /tmp/ccANsUHm.s:146    .text.TIM_TI1_SetConfig:00000000 TIM_TI1_SetConfig
-     /tmp/ccANsUHm.s:194    .text.TIM_TI1_SetConfig:00000050 $d
-     /tmp/ccANsUHm.s:199    .text.TIM_CCxChannelCmd:00000000 $t
-     /tmp/ccANsUHm.s:204    .text.TIM_CCxChannelCmd:00000000 TIM_CCxChannelCmd
-     /tmp/ccANsUHm.s:223    .text.TIM_SlaveTimer_SetConfig.constprop.0:00000000 $t
-     /tmp/ccANsUHm.s:228    .text.TIM_SlaveTimer_SetConfig.constprop.0:00000000 TIM_SlaveTimer_SetConfig.constprop.0
-     /tmp/ccANsUHm.s:347    .text.TIM_SlaveTimer_SetConfig.constprop.0:000000d0 $d
-     /tmp/ccANsUHm.s:351    .text.HAL_TIM_Base_MspInit:00000000 $t
-     /tmp/ccANsUHm.s:357    .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
-     /tmp/ccANsUHm.s:365    .text.HAL_TIM_Base_Init:00000000 $t
-     /tmp/ccANsUHm.s:371    .text.HAL_TIM_Base_Init:00000000 HAL_TIM_Base_Init
-     /tmp/ccANsUHm.s:413    .text.HAL_TIM_Base_MspDeInit:00000000 $t
-     /tmp/ccANsUHm.s:419    .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
-     /tmp/ccANsUHm.s:427    .text.HAL_TIM_Base_DeInit:00000000 $t
-     /tmp/ccANsUHm.s:433    .text.HAL_TIM_Base_DeInit:00000000 HAL_TIM_Base_DeInit
-     /tmp/ccANsUHm.s:471    .text.HAL_TIM_Base_DeInit:00000040 $d
-     /tmp/ccANsUHm.s:474    .text.HAL_TIM_Base_Start:00000000 $t
-     /tmp/ccANsUHm.s:480    .text.HAL_TIM_Base_Start:00000000 HAL_TIM_Base_Start
-     /tmp/ccANsUHm.s:530    .text.HAL_TIM_Base_Start:0000004c $d
-     /tmp/ccANsUHm.s:535    .text.HAL_TIM_Base_Stop:00000000 $t
-     /tmp/ccANsUHm.s:541    .text.HAL_TIM_Base_Stop:00000000 HAL_TIM_Base_Stop
-     /tmp/ccANsUHm.s:564    .text.HAL_TIM_Base_Stop:0000001c $d
-     /tmp/ccANsUHm.s:567    .text.HAL_TIM_Base_Start_IT:00000000 $t
-     /tmp/ccANsUHm.s:573    .text.HAL_TIM_Base_Start_IT:00000000 HAL_TIM_Base_Start_IT
-     /tmp/ccANsUHm.s:626    .text.HAL_TIM_Base_Start_IT:00000054 $d
-     /tmp/ccANsUHm.s:631    .text.HAL_TIM_Base_Stop_IT:00000000 $t
-     /tmp/ccANsUHm.s:637    .text.HAL_TIM_Base_Stop_IT:00000000 HAL_TIM_Base_Stop_IT
-     /tmp/ccANsUHm.s:663    .text.HAL_TIM_Base_Stop_IT:00000024 $d
-     /tmp/ccANsUHm.s:666    .text.HAL_TIM_Base_Start_DMA:00000000 $t
-     /tmp/ccANsUHm.s:672    .text.HAL_TIM_Base_Start_DMA:00000000 HAL_TIM_Base_Start_DMA
-     /tmp/ccANsUHm.s:746    .text.HAL_TIM_Base_Start_DMA:0000007c $d
-     /tmp/ccANsUHm.s:5081   .text.TIM_DMAPeriodElapsedCplt:00000000 TIM_DMAPeriodElapsedCplt
-     /tmp/ccANsUHm.s:5119   .text.TIM_DMAPeriodElapsedHalfCplt:00000000 TIM_DMAPeriodElapsedHalfCplt
-     /tmp/ccANsUHm.s:5664   .text.TIM_DMAError:00000000 TIM_DMAError
-     /tmp/ccANsUHm.s:754    .text.HAL_TIM_Base_Stop_DMA:00000000 $t
-     /tmp/ccANsUHm.s:760    .text.HAL_TIM_Base_Stop_DMA:00000000 HAL_TIM_Base_Stop_DMA
-     /tmp/ccANsUHm.s:791    .text.HAL_TIM_Base_Stop_DMA:00000030 $d
-     /tmp/ccANsUHm.s:795    .text.HAL_TIM_OC_MspInit:00000000 $t
-     /tmp/ccANsUHm.s:801    .text.HAL_TIM_OC_MspInit:00000000 HAL_TIM_OC_MspInit
-     /tmp/ccANsUHm.s:809    .text.HAL_TIM_OC_Init:00000000 $t
-     /tmp/ccANsUHm.s:815    .text.HAL_TIM_OC_Init:00000000 HAL_TIM_OC_Init
-     /tmp/ccANsUHm.s:857    .text.HAL_TIM_OC_MspDeInit:00000000 $t
-     /tmp/ccANsUHm.s:863    .text.HAL_TIM_OC_MspDeInit:00000000 HAL_TIM_OC_MspDeInit
-     /tmp/ccANsUHm.s:871    .text.HAL_TIM_OC_DeInit:00000000 $t
-     /tmp/ccANsUHm.s:877    .text.HAL_TIM_OC_DeInit:00000000 HAL_TIM_OC_DeInit
-     /tmp/ccANsUHm.s:915    .text.HAL_TIM_OC_DeInit:00000040 $d
-ARM GAS  /tmp/ccANsUHm.s 			page 102
+     /tmp/ccCjdw1k.s:14     .text.TIM_Base_SetConfig:00000000 $t
+     /tmp/ccCjdw1k.s:19     .text.TIM_Base_SetConfig:00000000 TIM_Base_SetConfig
+     /tmp/ccCjdw1k.s:63     .text.TIM_Base_SetConfig:00000044 $d
+     /tmp/ccCjdw1k.s:69     .text.TIM_OC1_SetConfig:00000000 $t
+     /tmp/ccCjdw1k.s:74     .text.TIM_OC1_SetConfig:00000000 TIM_OC1_SetConfig
+     /tmp/ccCjdw1k.s:102    .text.TIM_OC2_SetConfig:00000000 $t
+     /tmp/ccCjdw1k.s:107    .text.TIM_OC2_SetConfig:00000000 TIM_OC2_SetConfig
+     /tmp/ccCjdw1k.s:138    .text.TIM_OC2_SetConfig:00000030 $d
+     /tmp/ccCjdw1k.s:141    .text.TIM_TI1_SetConfig:00000000 $t
+     /tmp/ccCjdw1k.s:146    .text.TIM_TI1_SetConfig:00000000 TIM_TI1_SetConfig
+     /tmp/ccCjdw1k.s:194    .text.TIM_TI1_SetConfig:00000050 $d
+     /tmp/ccCjdw1k.s:199    .text.TIM_CCxChannelCmd:00000000 $t
+     /tmp/ccCjdw1k.s:204    .text.TIM_CCxChannelCmd:00000000 TIM_CCxChannelCmd
+     /tmp/ccCjdw1k.s:223    .text.TIM_SlaveTimer_SetConfig.constprop.0:00000000 $t
+     /tmp/ccCjdw1k.s:228    .text.TIM_SlaveTimer_SetConfig.constprop.0:00000000 TIM_SlaveTimer_SetConfig.constprop.0
+     /tmp/ccCjdw1k.s:347    .text.TIM_SlaveTimer_SetConfig.constprop.0:000000d0 $d
+     /tmp/ccCjdw1k.s:351    .text.HAL_TIM_Base_MspInit:00000000 $t
+     /tmp/ccCjdw1k.s:357    .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
+     /tmp/ccCjdw1k.s:365    .text.HAL_TIM_Base_Init:00000000 $t
+     /tmp/ccCjdw1k.s:371    .text.HAL_TIM_Base_Init:00000000 HAL_TIM_Base_Init
+     /tmp/ccCjdw1k.s:413    .text.HAL_TIM_Base_MspDeInit:00000000 $t
+     /tmp/ccCjdw1k.s:419    .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
+     /tmp/ccCjdw1k.s:427    .text.HAL_TIM_Base_DeInit:00000000 $t
+     /tmp/ccCjdw1k.s:433    .text.HAL_TIM_Base_DeInit:00000000 HAL_TIM_Base_DeInit
+     /tmp/ccCjdw1k.s:471    .text.HAL_TIM_Base_DeInit:00000040 $d
+     /tmp/ccCjdw1k.s:474    .text.HAL_TIM_Base_Start:00000000 $t
+     /tmp/ccCjdw1k.s:480    .text.HAL_TIM_Base_Start:00000000 HAL_TIM_Base_Start
+     /tmp/ccCjdw1k.s:530    .text.HAL_TIM_Base_Start:0000004c $d
+     /tmp/ccCjdw1k.s:535    .text.HAL_TIM_Base_Stop:00000000 $t
+     /tmp/ccCjdw1k.s:541    .text.HAL_TIM_Base_Stop:00000000 HAL_TIM_Base_Stop
+     /tmp/ccCjdw1k.s:564    .text.HAL_TIM_Base_Stop:0000001c $d
+     /tmp/ccCjdw1k.s:567    .text.HAL_TIM_Base_Start_IT:00000000 $t
+     /tmp/ccCjdw1k.s:573    .text.HAL_TIM_Base_Start_IT:00000000 HAL_TIM_Base_Start_IT
+     /tmp/ccCjdw1k.s:626    .text.HAL_TIM_Base_Start_IT:00000054 $d
+     /tmp/ccCjdw1k.s:631    .text.HAL_TIM_Base_Stop_IT:00000000 $t
+     /tmp/ccCjdw1k.s:637    .text.HAL_TIM_Base_Stop_IT:00000000 HAL_TIM_Base_Stop_IT
+     /tmp/ccCjdw1k.s:663    .text.HAL_TIM_Base_Stop_IT:00000024 $d
+     /tmp/ccCjdw1k.s:666    .text.HAL_TIM_Base_Start_DMA:00000000 $t
+     /tmp/ccCjdw1k.s:672    .text.HAL_TIM_Base_Start_DMA:00000000 HAL_TIM_Base_Start_DMA
+     /tmp/ccCjdw1k.s:746    .text.HAL_TIM_Base_Start_DMA:0000007c $d
+     /tmp/ccCjdw1k.s:5081   .text.TIM_DMAPeriodElapsedCplt:00000000 TIM_DMAPeriodElapsedCplt
+     /tmp/ccCjdw1k.s:5119   .text.TIM_DMAPeriodElapsedHalfCplt:00000000 TIM_DMAPeriodElapsedHalfCplt
+     /tmp/ccCjdw1k.s:5664   .text.TIM_DMAError:00000000 TIM_DMAError
+     /tmp/ccCjdw1k.s:754    .text.HAL_TIM_Base_Stop_DMA:00000000 $t
+     /tmp/ccCjdw1k.s:760    .text.HAL_TIM_Base_Stop_DMA:00000000 HAL_TIM_Base_Stop_DMA
+     /tmp/ccCjdw1k.s:791    .text.HAL_TIM_Base_Stop_DMA:00000030 $d
+     /tmp/ccCjdw1k.s:795    .text.HAL_TIM_OC_MspInit:00000000 $t
+     /tmp/ccCjdw1k.s:801    .text.HAL_TIM_OC_MspInit:00000000 HAL_TIM_OC_MspInit
+     /tmp/ccCjdw1k.s:809    .text.HAL_TIM_OC_Init:00000000 $t
+     /tmp/ccCjdw1k.s:815    .text.HAL_TIM_OC_Init:00000000 HAL_TIM_OC_Init
+     /tmp/ccCjdw1k.s:857    .text.HAL_TIM_OC_MspDeInit:00000000 $t
+     /tmp/ccCjdw1k.s:863    .text.HAL_TIM_OC_MspDeInit:00000000 HAL_TIM_OC_MspDeInit
+     /tmp/ccCjdw1k.s:871    .text.HAL_TIM_OC_DeInit:00000000 $t
+     /tmp/ccCjdw1k.s:877    .text.HAL_TIM_OC_DeInit:00000000 HAL_TIM_OC_DeInit
+     /tmp/ccCjdw1k.s:915    .text.HAL_TIM_OC_DeInit:00000040 $d
+ARM GAS  /tmp/ccCjdw1k.s 			page 102
 
 
-     /tmp/ccANsUHm.s:918    .text.HAL_TIM_OC_Start:00000000 $t
-     /tmp/ccANsUHm.s:924    .text.HAL_TIM_OC_Start:00000000 HAL_TIM_OC_Start
-     /tmp/ccANsUHm.s:991    .text.HAL_TIM_OC_Start:00000068 $d
-     /tmp/ccANsUHm.s:996    .text.HAL_TIM_OC_Stop:00000000 $t
-     /tmp/ccANsUHm.s:1002   .text.HAL_TIM_OC_Stop:00000000 HAL_TIM_OC_Stop
-     /tmp/ccANsUHm.s:1046   .text.HAL_TIM_OC_Stop:00000044 $d
-     /tmp/ccANsUHm.s:1049   .text.HAL_TIM_OC_Start_IT:00000000 $t
-     /tmp/ccANsUHm.s:1055   .text.HAL_TIM_OC_Start_IT:00000000 HAL_TIM_OC_Start_IT
-     /tmp/ccANsUHm.s:1148   .text.HAL_TIM_OC_Start_IT:00000098 $d
-     /tmp/ccANsUHm.s:1153   .text.HAL_TIM_OC_Stop_IT:00000000 $t
-     /tmp/ccANsUHm.s:1159   .text.HAL_TIM_OC_Stop_IT:00000000 HAL_TIM_OC_Stop_IT
-     /tmp/ccANsUHm.s:1235   .text.HAL_TIM_OC_Stop_IT:00000074 $d
-     /tmp/ccANsUHm.s:1238   .text.HAL_TIM_OC_Start_DMA:00000000 $t
-     /tmp/ccANsUHm.s:1244   .text.HAL_TIM_OC_Start_DMA:00000000 HAL_TIM_OC_Start_DMA
-     /tmp/ccANsUHm.s:1443   .text.HAL_TIM_OC_Start_DMA:00000160 $d
-     /tmp/ccANsUHm.s:5306   .text.TIM_DMADelayPulseCplt:00000000 TIM_DMADelayPulseCplt
-     /tmp/ccANsUHm.s:5391   .text.TIM_DMADelayPulseHalfCplt:00000000 TIM_DMADelayPulseHalfCplt
-     /tmp/ccANsUHm.s:1451   .text.HAL_TIM_OC_Stop_DMA:00000000 $t
-     /tmp/ccANsUHm.s:1457   .text.HAL_TIM_OC_Stop_DMA:00000000 HAL_TIM_OC_Stop_DMA
-     /tmp/ccANsUHm.s:1548   .text.HAL_TIM_OC_Stop_DMA:00000094 $d
-     /tmp/ccANsUHm.s:1555   .text.HAL_TIM_PWM_MspInit:00000000 $t
-     /tmp/ccANsUHm.s:1561   .text.HAL_TIM_PWM_MspInit:00000000 HAL_TIM_PWM_MspInit
-     /tmp/ccANsUHm.s:1569   .text.HAL_TIM_PWM_Init:00000000 $t
-     /tmp/ccANsUHm.s:1575   .text.HAL_TIM_PWM_Init:00000000 HAL_TIM_PWM_Init
-     /tmp/ccANsUHm.s:1617   .text.HAL_TIM_PWM_MspDeInit:00000000 $t
-     /tmp/ccANsUHm.s:1623   .text.HAL_TIM_PWM_MspDeInit:00000000 HAL_TIM_PWM_MspDeInit
-     /tmp/ccANsUHm.s:1631   .text.HAL_TIM_PWM_DeInit:00000000 $t
-     /tmp/ccANsUHm.s:1637   .text.HAL_TIM_PWM_DeInit:00000000 HAL_TIM_PWM_DeInit
-     /tmp/ccANsUHm.s:1675   .text.HAL_TIM_PWM_DeInit:00000040 $d
-     /tmp/ccANsUHm.s:1678   .text.HAL_TIM_PWM_Start:00000000 $t
-     /tmp/ccANsUHm.s:1684   .text.HAL_TIM_PWM_Start:00000000 HAL_TIM_PWM_Start
-     /tmp/ccANsUHm.s:1693   .text.HAL_TIM_PWM_Stop:00000000 $t
-     /tmp/ccANsUHm.s:1699   .text.HAL_TIM_PWM_Stop:00000000 HAL_TIM_PWM_Stop
-     /tmp/ccANsUHm.s:1708   .text.HAL_TIM_PWM_Start_IT:00000000 $t
-     /tmp/ccANsUHm.s:1714   .text.HAL_TIM_PWM_Start_IT:00000000 HAL_TIM_PWM_Start_IT
-     /tmp/ccANsUHm.s:1723   .text.HAL_TIM_PWM_Stop_IT:00000000 $t
-     /tmp/ccANsUHm.s:1729   .text.HAL_TIM_PWM_Stop_IT:00000000 HAL_TIM_PWM_Stop_IT
-     /tmp/ccANsUHm.s:1738   .text.HAL_TIM_PWM_Start_DMA:00000000 $t
-     /tmp/ccANsUHm.s:1744   .text.HAL_TIM_PWM_Start_DMA:00000000 HAL_TIM_PWM_Start_DMA
-     /tmp/ccANsUHm.s:1753   .text.HAL_TIM_PWM_Stop_DMA:00000000 $t
-     /tmp/ccANsUHm.s:1759   .text.HAL_TIM_PWM_Stop_DMA:00000000 HAL_TIM_PWM_Stop_DMA
-     /tmp/ccANsUHm.s:1768   .text.HAL_TIM_IC_MspInit:00000000 $t
-     /tmp/ccANsUHm.s:1774   .text.HAL_TIM_IC_MspInit:00000000 HAL_TIM_IC_MspInit
-     /tmp/ccANsUHm.s:1782   .text.HAL_TIM_IC_Init:00000000 $t
-     /tmp/ccANsUHm.s:1788   .text.HAL_TIM_IC_Init:00000000 HAL_TIM_IC_Init
-     /tmp/ccANsUHm.s:1830   .text.HAL_TIM_IC_MspDeInit:00000000 $t
-     /tmp/ccANsUHm.s:1836   .text.HAL_TIM_IC_MspDeInit:00000000 HAL_TIM_IC_MspDeInit
-     /tmp/ccANsUHm.s:1844   .text.HAL_TIM_IC_DeInit:00000000 $t
-     /tmp/ccANsUHm.s:1850   .text.HAL_TIM_IC_DeInit:00000000 HAL_TIM_IC_DeInit
-     /tmp/ccANsUHm.s:1888   .text.HAL_TIM_IC_DeInit:00000040 $d
-     /tmp/ccANsUHm.s:1891   .text.HAL_TIM_IC_Start:00000000 $t
-     /tmp/ccANsUHm.s:1897   .text.HAL_TIM_IC_Start:00000000 HAL_TIM_IC_Start
-     /tmp/ccANsUHm.s:1962   .text.HAL_TIM_IC_Start:00000068 $d
-     /tmp/ccANsUHm.s:1967   .text.HAL_TIM_IC_Stop:00000000 $t
-     /tmp/ccANsUHm.s:1973   .text.HAL_TIM_IC_Stop:00000000 HAL_TIM_IC_Stop
-     /tmp/ccANsUHm.s:1982   .text.HAL_TIM_IC_Start_IT:00000000 $t
-     /tmp/ccANsUHm.s:1988   .text.HAL_TIM_IC_Start_IT:00000000 HAL_TIM_IC_Start_IT
-ARM GAS  /tmp/ccANsUHm.s 			page 103
+     /tmp/ccCjdw1k.s:918    .text.HAL_TIM_OC_Start:00000000 $t
+     /tmp/ccCjdw1k.s:924    .text.HAL_TIM_OC_Start:00000000 HAL_TIM_OC_Start
+     /tmp/ccCjdw1k.s:991    .text.HAL_TIM_OC_Start:00000068 $d
+     /tmp/ccCjdw1k.s:996    .text.HAL_TIM_OC_Stop:00000000 $t
+     /tmp/ccCjdw1k.s:1002   .text.HAL_TIM_OC_Stop:00000000 HAL_TIM_OC_Stop
+     /tmp/ccCjdw1k.s:1046   .text.HAL_TIM_OC_Stop:00000044 $d
+     /tmp/ccCjdw1k.s:1049   .text.HAL_TIM_OC_Start_IT:00000000 $t
+     /tmp/ccCjdw1k.s:1055   .text.HAL_TIM_OC_Start_IT:00000000 HAL_TIM_OC_Start_IT
+     /tmp/ccCjdw1k.s:1148   .text.HAL_TIM_OC_Start_IT:00000098 $d
+     /tmp/ccCjdw1k.s:1153   .text.HAL_TIM_OC_Stop_IT:00000000 $t
+     /tmp/ccCjdw1k.s:1159   .text.HAL_TIM_OC_Stop_IT:00000000 HAL_TIM_OC_Stop_IT
+     /tmp/ccCjdw1k.s:1235   .text.HAL_TIM_OC_Stop_IT:00000074 $d
+     /tmp/ccCjdw1k.s:1238   .text.HAL_TIM_OC_Start_DMA:00000000 $t
+     /tmp/ccCjdw1k.s:1244   .text.HAL_TIM_OC_Start_DMA:00000000 HAL_TIM_OC_Start_DMA
+     /tmp/ccCjdw1k.s:1443   .text.HAL_TIM_OC_Start_DMA:00000160 $d
+     /tmp/ccCjdw1k.s:5306   .text.TIM_DMADelayPulseCplt:00000000 TIM_DMADelayPulseCplt
+     /tmp/ccCjdw1k.s:5391   .text.TIM_DMADelayPulseHalfCplt:00000000 TIM_DMADelayPulseHalfCplt
+     /tmp/ccCjdw1k.s:1451   .text.HAL_TIM_OC_Stop_DMA:00000000 $t
+     /tmp/ccCjdw1k.s:1457   .text.HAL_TIM_OC_Stop_DMA:00000000 HAL_TIM_OC_Stop_DMA
+     /tmp/ccCjdw1k.s:1548   .text.HAL_TIM_OC_Stop_DMA:00000094 $d
+     /tmp/ccCjdw1k.s:1555   .text.HAL_TIM_PWM_MspInit:00000000 $t
+     /tmp/ccCjdw1k.s:1561   .text.HAL_TIM_PWM_MspInit:00000000 HAL_TIM_PWM_MspInit
+     /tmp/ccCjdw1k.s:1569   .text.HAL_TIM_PWM_Init:00000000 $t
+     /tmp/ccCjdw1k.s:1575   .text.HAL_TIM_PWM_Init:00000000 HAL_TIM_PWM_Init
+     /tmp/ccCjdw1k.s:1617   .text.HAL_TIM_PWM_MspDeInit:00000000 $t
+     /tmp/ccCjdw1k.s:1623   .text.HAL_TIM_PWM_MspDeInit:00000000 HAL_TIM_PWM_MspDeInit
+     /tmp/ccCjdw1k.s:1631   .text.HAL_TIM_PWM_DeInit:00000000 $t
+     /tmp/ccCjdw1k.s:1637   .text.HAL_TIM_PWM_DeInit:00000000 HAL_TIM_PWM_DeInit
+     /tmp/ccCjdw1k.s:1675   .text.HAL_TIM_PWM_DeInit:00000040 $d
+     /tmp/ccCjdw1k.s:1678   .text.HAL_TIM_PWM_Start:00000000 $t
+     /tmp/ccCjdw1k.s:1684   .text.HAL_TIM_PWM_Start:00000000 HAL_TIM_PWM_Start
+     /tmp/ccCjdw1k.s:1693   .text.HAL_TIM_PWM_Stop:00000000 $t
+     /tmp/ccCjdw1k.s:1699   .text.HAL_TIM_PWM_Stop:00000000 HAL_TIM_PWM_Stop
+     /tmp/ccCjdw1k.s:1708   .text.HAL_TIM_PWM_Start_IT:00000000 $t
+     /tmp/ccCjdw1k.s:1714   .text.HAL_TIM_PWM_Start_IT:00000000 HAL_TIM_PWM_Start_IT
+     /tmp/ccCjdw1k.s:1723   .text.HAL_TIM_PWM_Stop_IT:00000000 $t
+     /tmp/ccCjdw1k.s:1729   .text.HAL_TIM_PWM_Stop_IT:00000000 HAL_TIM_PWM_Stop_IT
+     /tmp/ccCjdw1k.s:1738   .text.HAL_TIM_PWM_Start_DMA:00000000 $t
+     /tmp/ccCjdw1k.s:1744   .text.HAL_TIM_PWM_Start_DMA:00000000 HAL_TIM_PWM_Start_DMA
+     /tmp/ccCjdw1k.s:1753   .text.HAL_TIM_PWM_Stop_DMA:00000000 $t
+     /tmp/ccCjdw1k.s:1759   .text.HAL_TIM_PWM_Stop_DMA:00000000 HAL_TIM_PWM_Stop_DMA
+     /tmp/ccCjdw1k.s:1768   .text.HAL_TIM_IC_MspInit:00000000 $t
+     /tmp/ccCjdw1k.s:1774   .text.HAL_TIM_IC_MspInit:00000000 HAL_TIM_IC_MspInit
+     /tmp/ccCjdw1k.s:1782   .text.HAL_TIM_IC_Init:00000000 $t
+     /tmp/ccCjdw1k.s:1788   .text.HAL_TIM_IC_Init:00000000 HAL_TIM_IC_Init
+     /tmp/ccCjdw1k.s:1830   .text.HAL_TIM_IC_MspDeInit:00000000 $t
+     /tmp/ccCjdw1k.s:1836   .text.HAL_TIM_IC_MspDeInit:00000000 HAL_TIM_IC_MspDeInit
+     /tmp/ccCjdw1k.s:1844   .text.HAL_TIM_IC_DeInit:00000000 $t
+     /tmp/ccCjdw1k.s:1850   .text.HAL_TIM_IC_DeInit:00000000 HAL_TIM_IC_DeInit
+     /tmp/ccCjdw1k.s:1888   .text.HAL_TIM_IC_DeInit:00000040 $d
+     /tmp/ccCjdw1k.s:1891   .text.HAL_TIM_IC_Start:00000000 $t
+     /tmp/ccCjdw1k.s:1897   .text.HAL_TIM_IC_Start:00000000 HAL_TIM_IC_Start
+     /tmp/ccCjdw1k.s:1962   .text.HAL_TIM_IC_Start:00000068 $d
+     /tmp/ccCjdw1k.s:1967   .text.HAL_TIM_IC_Stop:00000000 $t
+     /tmp/ccCjdw1k.s:1973   .text.HAL_TIM_IC_Stop:00000000 HAL_TIM_IC_Stop
+     /tmp/ccCjdw1k.s:1982   .text.HAL_TIM_IC_Start_IT:00000000 $t
+     /tmp/ccCjdw1k.s:1988   .text.HAL_TIM_IC_Start_IT:00000000 HAL_TIM_IC_Start_IT
+ARM GAS  /tmp/ccCjdw1k.s 			page 103
 
 
-     /tmp/ccANsUHm.s:2080   .text.HAL_TIM_IC_Start_IT:00000098 $d
-     /tmp/ccANsUHm.s:2085   .text.HAL_TIM_IC_Stop_IT:00000000 $t
-     /tmp/ccANsUHm.s:2091   .text.HAL_TIM_IC_Stop_IT:00000000 HAL_TIM_IC_Stop_IT
-     /tmp/ccANsUHm.s:2100   .text.HAL_TIM_IC_Start_DMA:00000000 $t
-     /tmp/ccANsUHm.s:2106   .text.HAL_TIM_IC_Start_DMA:00000000 HAL_TIM_IC_Start_DMA
-     /tmp/ccANsUHm.s:2306   .text.HAL_TIM_IC_Start_DMA:00000160 $d
-     /tmp/ccANsUHm.s:5163   .text.TIM_DMACaptureCplt:00000000 TIM_DMACaptureCplt
-     /tmp/ccANsUHm.s:5249   .text.TIM_DMACaptureHalfCplt:00000000 TIM_DMACaptureHalfCplt
-     /tmp/ccANsUHm.s:2314   .text.HAL_TIM_IC_Stop_DMA:00000000 $t
-     /tmp/ccANsUHm.s:2320   .text.HAL_TIM_IC_Stop_DMA:00000000 HAL_TIM_IC_Stop_DMA
-     /tmp/ccANsUHm.s:2407   .text.HAL_TIM_IC_Stop_DMA:0000008c $d
-     /tmp/ccANsUHm.s:2414   .text.HAL_TIM_OnePulse_MspInit:00000000 $t
-     /tmp/ccANsUHm.s:2420   .text.HAL_TIM_OnePulse_MspInit:00000000 HAL_TIM_OnePulse_MspInit
-     /tmp/ccANsUHm.s:2428   .text.HAL_TIM_OnePulse_Init:00000000 $t
-     /tmp/ccANsUHm.s:2434   .text.HAL_TIM_OnePulse_Init:00000000 HAL_TIM_OnePulse_Init
-     /tmp/ccANsUHm.s:2483   .text.HAL_TIM_OnePulse_MspDeInit:00000000 $t
-     /tmp/ccANsUHm.s:2489   .text.HAL_TIM_OnePulse_MspDeInit:00000000 HAL_TIM_OnePulse_MspDeInit
-     /tmp/ccANsUHm.s:2497   .text.HAL_TIM_OnePulse_DeInit:00000000 $t
-     /tmp/ccANsUHm.s:2503   .text.HAL_TIM_OnePulse_DeInit:00000000 HAL_TIM_OnePulse_DeInit
-     /tmp/ccANsUHm.s:2539   .text.HAL_TIM_OnePulse_DeInit:0000003c $d
-     /tmp/ccANsUHm.s:2542   .text.HAL_TIM_OnePulse_Start:00000000 $t
-     /tmp/ccANsUHm.s:2548   .text.HAL_TIM_OnePulse_Start:00000000 HAL_TIM_OnePulse_Start
-     /tmp/ccANsUHm.s:2591   .text.HAL_TIM_OnePulse_Stop:00000000 $t
-     /tmp/ccANsUHm.s:2597   .text.HAL_TIM_OnePulse_Stop:00000000 HAL_TIM_OnePulse_Stop
-     /tmp/ccANsUHm.s:2634   .text.HAL_TIM_OnePulse_Stop:0000003c $d
-     /tmp/ccANsUHm.s:2637   .text.HAL_TIM_OnePulse_Start_IT:00000000 $t
-     /tmp/ccANsUHm.s:2643   .text.HAL_TIM_OnePulse_Start_IT:00000000 HAL_TIM_OnePulse_Start_IT
-     /tmp/ccANsUHm.s:2693   .text.HAL_TIM_OnePulse_Stop_IT:00000000 $t
-     /tmp/ccANsUHm.s:2699   .text.HAL_TIM_OnePulse_Stop_IT:00000000 HAL_TIM_OnePulse_Stop_IT
-     /tmp/ccANsUHm.s:2744   .text.HAL_TIM_OnePulse_Stop_IT:0000004c $d
-     /tmp/ccANsUHm.s:2747   .text.HAL_TIM_Encoder_MspInit:00000000 $t
-     /tmp/ccANsUHm.s:2753   .text.HAL_TIM_Encoder_MspInit:00000000 HAL_TIM_Encoder_MspInit
-     /tmp/ccANsUHm.s:2761   .text.HAL_TIM_Encoder_Init:00000000 $t
-     /tmp/ccANsUHm.s:2767   .text.HAL_TIM_Encoder_Init:00000000 HAL_TIM_Encoder_Init
-     /tmp/ccANsUHm.s:2851   .text.HAL_TIM_Encoder_Init:0000009c $d
-     /tmp/ccANsUHm.s:2856   .text.HAL_TIM_Encoder_MspDeInit:00000000 $t
-     /tmp/ccANsUHm.s:2862   .text.HAL_TIM_Encoder_MspDeInit:00000000 HAL_TIM_Encoder_MspDeInit
-     /tmp/ccANsUHm.s:2870   .text.HAL_TIM_Encoder_DeInit:00000000 $t
-     /tmp/ccANsUHm.s:2876   .text.HAL_TIM_Encoder_DeInit:00000000 HAL_TIM_Encoder_DeInit
-     /tmp/ccANsUHm.s:2912   .text.HAL_TIM_Encoder_DeInit:0000003c $d
-     /tmp/ccANsUHm.s:2915   .text.HAL_TIM_Encoder_Start:00000000 $t
-     /tmp/ccANsUHm.s:2921   .text.HAL_TIM_Encoder_Start:00000000 HAL_TIM_Encoder_Start
-     /tmp/ccANsUHm.s:2994   .text.HAL_TIM_Encoder_Stop:00000000 $t
-     /tmp/ccANsUHm.s:3000   .text.HAL_TIM_Encoder_Stop:00000000 HAL_TIM_Encoder_Stop
-     /tmp/ccANsUHm.s:3059   .text.HAL_TIM_Encoder_Stop:00000058 $d
-     /tmp/ccANsUHm.s:3062   .text.HAL_TIM_Encoder_Start_IT:00000000 $t
-     /tmp/ccANsUHm.s:3068   .text.HAL_TIM_Encoder_Start_IT:00000000 HAL_TIM_Encoder_Start_IT
-     /tmp/ccANsUHm.s:3158   .text.HAL_TIM_Encoder_Stop_IT:00000000 $t
-     /tmp/ccANsUHm.s:3164   .text.HAL_TIM_Encoder_Stop_IT:00000000 HAL_TIM_Encoder_Stop_IT
-     /tmp/ccANsUHm.s:3245   .text.HAL_TIM_Encoder_Stop_IT:00000084 $d
-     /tmp/ccANsUHm.s:3248   .text.HAL_TIM_Encoder_Start_DMA:00000000 $t
-     /tmp/ccANsUHm.s:3254   .text.HAL_TIM_Encoder_Start_DMA:00000000 HAL_TIM_Encoder_Start_DMA
-     /tmp/ccANsUHm.s:3454   .text.HAL_TIM_Encoder_Start_DMA:00000170 $d
-     /tmp/ccANsUHm.s:3459   .text.HAL_TIM_Encoder_Stop_DMA:00000000 $t
-     /tmp/ccANsUHm.s:3465   .text.HAL_TIM_Encoder_Stop_DMA:00000000 HAL_TIM_Encoder_Stop_DMA
-     /tmp/ccANsUHm.s:3558   .text.HAL_TIM_Encoder_Stop_DMA:000000a0 $d
-     /tmp/ccANsUHm.s:3563   .text.HAL_TIM_OC_ConfigChannel:00000000 $t
-ARM GAS  /tmp/ccANsUHm.s 			page 104
+     /tmp/ccCjdw1k.s:2080   .text.HAL_TIM_IC_Start_IT:00000098 $d
+     /tmp/ccCjdw1k.s:2085   .text.HAL_TIM_IC_Stop_IT:00000000 $t
+     /tmp/ccCjdw1k.s:2091   .text.HAL_TIM_IC_Stop_IT:00000000 HAL_TIM_IC_Stop_IT
+     /tmp/ccCjdw1k.s:2100   .text.HAL_TIM_IC_Start_DMA:00000000 $t
+     /tmp/ccCjdw1k.s:2106   .text.HAL_TIM_IC_Start_DMA:00000000 HAL_TIM_IC_Start_DMA
+     /tmp/ccCjdw1k.s:2306   .text.HAL_TIM_IC_Start_DMA:00000160 $d
+     /tmp/ccCjdw1k.s:5163   .text.TIM_DMACaptureCplt:00000000 TIM_DMACaptureCplt
+     /tmp/ccCjdw1k.s:5249   .text.TIM_DMACaptureHalfCplt:00000000 TIM_DMACaptureHalfCplt
+     /tmp/ccCjdw1k.s:2314   .text.HAL_TIM_IC_Stop_DMA:00000000 $t
+     /tmp/ccCjdw1k.s:2320   .text.HAL_TIM_IC_Stop_DMA:00000000 HAL_TIM_IC_Stop_DMA
+     /tmp/ccCjdw1k.s:2407   .text.HAL_TIM_IC_Stop_DMA:0000008c $d
+     /tmp/ccCjdw1k.s:2414   .text.HAL_TIM_OnePulse_MspInit:00000000 $t
+     /tmp/ccCjdw1k.s:2420   .text.HAL_TIM_OnePulse_MspInit:00000000 HAL_TIM_OnePulse_MspInit
+     /tmp/ccCjdw1k.s:2428   .text.HAL_TIM_OnePulse_Init:00000000 $t
+     /tmp/ccCjdw1k.s:2434   .text.HAL_TIM_OnePulse_Init:00000000 HAL_TIM_OnePulse_Init
+     /tmp/ccCjdw1k.s:2483   .text.HAL_TIM_OnePulse_MspDeInit:00000000 $t
+     /tmp/ccCjdw1k.s:2489   .text.HAL_TIM_OnePulse_MspDeInit:00000000 HAL_TIM_OnePulse_MspDeInit
+     /tmp/ccCjdw1k.s:2497   .text.HAL_TIM_OnePulse_DeInit:00000000 $t
+     /tmp/ccCjdw1k.s:2503   .text.HAL_TIM_OnePulse_DeInit:00000000 HAL_TIM_OnePulse_DeInit
+     /tmp/ccCjdw1k.s:2539   .text.HAL_TIM_OnePulse_DeInit:0000003c $d
+     /tmp/ccCjdw1k.s:2542   .text.HAL_TIM_OnePulse_Start:00000000 $t
+     /tmp/ccCjdw1k.s:2548   .text.HAL_TIM_OnePulse_Start:00000000 HAL_TIM_OnePulse_Start
+     /tmp/ccCjdw1k.s:2591   .text.HAL_TIM_OnePulse_Stop:00000000 $t
+     /tmp/ccCjdw1k.s:2597   .text.HAL_TIM_OnePulse_Stop:00000000 HAL_TIM_OnePulse_Stop
+     /tmp/ccCjdw1k.s:2634   .text.HAL_TIM_OnePulse_Stop:0000003c $d
+     /tmp/ccCjdw1k.s:2637   .text.HAL_TIM_OnePulse_Start_IT:00000000 $t
+     /tmp/ccCjdw1k.s:2643   .text.HAL_TIM_OnePulse_Start_IT:00000000 HAL_TIM_OnePulse_Start_IT
+     /tmp/ccCjdw1k.s:2693   .text.HAL_TIM_OnePulse_Stop_IT:00000000 $t
+     /tmp/ccCjdw1k.s:2699   .text.HAL_TIM_OnePulse_Stop_IT:00000000 HAL_TIM_OnePulse_Stop_IT
+     /tmp/ccCjdw1k.s:2744   .text.HAL_TIM_OnePulse_Stop_IT:0000004c $d
+     /tmp/ccCjdw1k.s:2747   .text.HAL_TIM_Encoder_MspInit:00000000 $t
+     /tmp/ccCjdw1k.s:2753   .text.HAL_TIM_Encoder_MspInit:00000000 HAL_TIM_Encoder_MspInit
+     /tmp/ccCjdw1k.s:2761   .text.HAL_TIM_Encoder_Init:00000000 $t
+     /tmp/ccCjdw1k.s:2767   .text.HAL_TIM_Encoder_Init:00000000 HAL_TIM_Encoder_Init
+     /tmp/ccCjdw1k.s:2851   .text.HAL_TIM_Encoder_Init:0000009c $d
+     /tmp/ccCjdw1k.s:2856   .text.HAL_TIM_Encoder_MspDeInit:00000000 $t
+     /tmp/ccCjdw1k.s:2862   .text.HAL_TIM_Encoder_MspDeInit:00000000 HAL_TIM_Encoder_MspDeInit
+     /tmp/ccCjdw1k.s:2870   .text.HAL_TIM_Encoder_DeInit:00000000 $t
+     /tmp/ccCjdw1k.s:2876   .text.HAL_TIM_Encoder_DeInit:00000000 HAL_TIM_Encoder_DeInit
+     /tmp/ccCjdw1k.s:2912   .text.HAL_TIM_Encoder_DeInit:0000003c $d
+     /tmp/ccCjdw1k.s:2915   .text.HAL_TIM_Encoder_Start:00000000 $t
+     /tmp/ccCjdw1k.s:2921   .text.HAL_TIM_Encoder_Start:00000000 HAL_TIM_Encoder_Start
+     /tmp/ccCjdw1k.s:2994   .text.HAL_TIM_Encoder_Stop:00000000 $t
+     /tmp/ccCjdw1k.s:3000   .text.HAL_TIM_Encoder_Stop:00000000 HAL_TIM_Encoder_Stop
+     /tmp/ccCjdw1k.s:3059   .text.HAL_TIM_Encoder_Stop:00000058 $d
+     /tmp/ccCjdw1k.s:3062   .text.HAL_TIM_Encoder_Start_IT:00000000 $t
+     /tmp/ccCjdw1k.s:3068   .text.HAL_TIM_Encoder_Start_IT:00000000 HAL_TIM_Encoder_Start_IT
+     /tmp/ccCjdw1k.s:3158   .text.HAL_TIM_Encoder_Stop_IT:00000000 $t
+     /tmp/ccCjdw1k.s:3164   .text.HAL_TIM_Encoder_Stop_IT:00000000 HAL_TIM_Encoder_Stop_IT
+     /tmp/ccCjdw1k.s:3245   .text.HAL_TIM_Encoder_Stop_IT:00000084 $d
+     /tmp/ccCjdw1k.s:3248   .text.HAL_TIM_Encoder_Start_DMA:00000000 $t
+     /tmp/ccCjdw1k.s:3254   .text.HAL_TIM_Encoder_Start_DMA:00000000 HAL_TIM_Encoder_Start_DMA
+     /tmp/ccCjdw1k.s:3454   .text.HAL_TIM_Encoder_Start_DMA:00000170 $d
+     /tmp/ccCjdw1k.s:3459   .text.HAL_TIM_Encoder_Stop_DMA:00000000 $t
+     /tmp/ccCjdw1k.s:3465   .text.HAL_TIM_Encoder_Stop_DMA:00000000 HAL_TIM_Encoder_Stop_DMA
+     /tmp/ccCjdw1k.s:3558   .text.HAL_TIM_Encoder_Stop_DMA:000000a0 $d
+     /tmp/ccCjdw1k.s:3563   .text.HAL_TIM_OC_ConfigChannel:00000000 $t
+ARM GAS  /tmp/ccCjdw1k.s 			page 104
 
 
-     /tmp/ccANsUHm.s:3569   .text.HAL_TIM_OC_ConfigChannel:00000000 HAL_TIM_OC_ConfigChannel
-     /tmp/ccANsUHm.s:3659   .text.HAL_TIM_OC_ConfigChannel:00000098 $d
-     /tmp/ccANsUHm.s:3666   .text.HAL_TIM_IC_ConfigChannel:00000000 $t
-     /tmp/ccANsUHm.s:3672   .text.HAL_TIM_IC_ConfigChannel:00000000 HAL_TIM_IC_ConfigChannel
-     /tmp/ccANsUHm.s:3841   .text.HAL_TIM_IC_ConfigChannel:00000138 $d
-     /tmp/ccANsUHm.s:3850   .text.HAL_TIM_PWM_ConfigChannel:00000000 $t
-     /tmp/ccANsUHm.s:3856   .text.HAL_TIM_PWM_ConfigChannel:00000000 HAL_TIM_PWM_ConfigChannel
-     /tmp/ccANsUHm.s:4000   .text.HAL_TIM_PWM_ConfigChannel:00000104 $d
-     /tmp/ccANsUHm.s:4008   .text.HAL_TIM_OnePulse_ConfigChannel:00000000 $t
-     /tmp/ccANsUHm.s:4014   .text.HAL_TIM_OnePulse_ConfigChannel:00000000 HAL_TIM_OnePulse_ConfigChannel
-     /tmp/ccANsUHm.s:4154   .text.HAL_TIM_OnePulse_ConfigChannel:00000100 $d
-     /tmp/ccANsUHm.s:4159   .text.HAL_TIM_DMABurst_MultiWriteStart:00000000 $t
-     /tmp/ccANsUHm.s:4165   .text.HAL_TIM_DMABurst_MultiWriteStart:00000000 HAL_TIM_DMABurst_MultiWriteStart
-     /tmp/ccANsUHm.s:4270   .text.HAL_TIM_DMABurst_MultiWriteStart:000000b0 $d
-     /tmp/ccANsUHm.s:5596   .text.TIM_DMATriggerCplt:00000000 TIM_DMATriggerCplt
-     /tmp/ccANsUHm.s:5634   .text.TIM_DMATriggerHalfCplt:00000000 TIM_DMATriggerHalfCplt
-     /tmp/ccANsUHm.s:4279   .text.HAL_TIM_DMABurst_WriteStart:00000000 $t
-     /tmp/ccANsUHm.s:4285   .text.HAL_TIM_DMABurst_WriteStart:00000000 HAL_TIM_DMABurst_WriteStart
-     /tmp/ccANsUHm.s:4299   .text.HAL_TIM_DMABurst_WriteStop:00000000 $t
-     /tmp/ccANsUHm.s:4305   .text.HAL_TIM_DMABurst_WriteStop:00000000 HAL_TIM_DMABurst_WriteStop
-     /tmp/ccANsUHm.s:4371   .text.HAL_TIM_DMABurst_MultiReadStart:00000000 $t
-     /tmp/ccANsUHm.s:4377   .text.HAL_TIM_DMABurst_MultiReadStart:00000000 HAL_TIM_DMABurst_MultiReadStart
-     /tmp/ccANsUHm.s:4482   .text.HAL_TIM_DMABurst_MultiReadStart:000000b0 $d
-     /tmp/ccANsUHm.s:4491   .text.HAL_TIM_DMABurst_ReadStart:00000000 $t
-     /tmp/ccANsUHm.s:4497   .text.HAL_TIM_DMABurst_ReadStart:00000000 HAL_TIM_DMABurst_ReadStart
-     /tmp/ccANsUHm.s:4511   .text.HAL_TIM_DMABurst_ReadStop:00000000 $t
-     /tmp/ccANsUHm.s:4517   .text.HAL_TIM_DMABurst_ReadStop:00000000 HAL_TIM_DMABurst_ReadStop
-     /tmp/ccANsUHm.s:4526   .text.HAL_TIM_GenerateEvent:00000000 $t
-     /tmp/ccANsUHm.s:4532   .text.HAL_TIM_GenerateEvent:00000000 HAL_TIM_GenerateEvent
-     /tmp/ccANsUHm.s:4558   .text.HAL_TIM_ConfigOCrefClear:00000000 $t
-     /tmp/ccANsUHm.s:4564   .text.HAL_TIM_ConfigOCrefClear:00000000 HAL_TIM_ConfigOCrefClear
-     /tmp/ccANsUHm.s:4703   .text.HAL_TIM_ConfigOCrefClear:000000e4 $d
-     /tmp/ccANsUHm.s:4707   .text.HAL_TIM_ConfigClockSource:00000000 $t
-     /tmp/ccANsUHm.s:4713   .text.HAL_TIM_ConfigClockSource:00000000 HAL_TIM_ConfigClockSource
-     /tmp/ccANsUHm.s:4888   .text.HAL_TIM_ConfigClockSource:00000138 $d
-     /tmp/ccANsUHm.s:4893   .text.HAL_TIM_ConfigTI1Input:00000000 $t
-     /tmp/ccANsUHm.s:4899   .text.HAL_TIM_ConfigTI1Input:00000000 HAL_TIM_ConfigTI1Input
-     /tmp/ccANsUHm.s:4914   .text.HAL_TIM_SlaveConfigSynchro:00000000 $t
-     /tmp/ccANsUHm.s:4920   .text.HAL_TIM_SlaveConfigSynchro:00000000 HAL_TIM_SlaveConfigSynchro
-     /tmp/ccANsUHm.s:4964   .text.HAL_TIM_SlaveConfigSynchro:00000048 $d
-     /tmp/ccANsUHm.s:4967   .text.HAL_TIM_SlaveConfigSynchro_IT:00000000 $t
-     /tmp/ccANsUHm.s:4973   .text.HAL_TIM_SlaveConfigSynchro_IT:00000000 HAL_TIM_SlaveConfigSynchro_IT
-     /tmp/ccANsUHm.s:5017   .text.HAL_TIM_SlaveConfigSynchro_IT:00000048 $d
-     /tmp/ccANsUHm.s:5020   .text.HAL_TIM_ReadCapturedValue:00000000 $t
-     /tmp/ccANsUHm.s:5026   .text.HAL_TIM_ReadCapturedValue:00000000 HAL_TIM_ReadCapturedValue
-     /tmp/ccANsUHm.s:5062   .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-     /tmp/ccANsUHm.s:5068   .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-     /tmp/ccANsUHm.s:5076   .text.TIM_DMAPeriodElapsedCplt:00000000 $t
-     /tmp/ccANsUHm.s:5100   .text.HAL_TIM_PeriodElapsedHalfCpltCallback:00000000 $t
-     /tmp/ccANsUHm.s:5106   .text.HAL_TIM_PeriodElapsedHalfCpltCallback:00000000 HAL_TIM_PeriodElapsedHalfCpltCallback
-     /tmp/ccANsUHm.s:5114   .text.TIM_DMAPeriodElapsedHalfCplt:00000000 $t
-     /tmp/ccANsUHm.s:5129   .text.HAL_TIM_OC_DelayElapsedCallback:00000000 $t
-     /tmp/ccANsUHm.s:5135   .text.HAL_TIM_OC_DelayElapsedCallback:00000000 HAL_TIM_OC_DelayElapsedCallback
-     /tmp/ccANsUHm.s:5143   .text.HAL_TIM_IC_CaptureCallback:00000000 $t
-     /tmp/ccANsUHm.s:5149   .text.HAL_TIM_IC_CaptureCallback:00000000 HAL_TIM_IC_CaptureCallback
-     /tmp/ccANsUHm.s:5157   .text.TIM_DMACaptureCplt:00000000 $t
-     /tmp/ccANsUHm.s:5229   .text.HAL_TIM_IC_CaptureHalfCpltCallback:00000000 $t
-ARM GAS  /tmp/ccANsUHm.s 			page 105
+     /tmp/ccCjdw1k.s:3569   .text.HAL_TIM_OC_ConfigChannel:00000000 HAL_TIM_OC_ConfigChannel
+     /tmp/ccCjdw1k.s:3659   .text.HAL_TIM_OC_ConfigChannel:00000098 $d
+     /tmp/ccCjdw1k.s:3666   .text.HAL_TIM_IC_ConfigChannel:00000000 $t
+     /tmp/ccCjdw1k.s:3672   .text.HAL_TIM_IC_ConfigChannel:00000000 HAL_TIM_IC_ConfigChannel
+     /tmp/ccCjdw1k.s:3841   .text.HAL_TIM_IC_ConfigChannel:00000138 $d
+     /tmp/ccCjdw1k.s:3850   .text.HAL_TIM_PWM_ConfigChannel:00000000 $t
+     /tmp/ccCjdw1k.s:3856   .text.HAL_TIM_PWM_ConfigChannel:00000000 HAL_TIM_PWM_ConfigChannel
+     /tmp/ccCjdw1k.s:4000   .text.HAL_TIM_PWM_ConfigChannel:00000104 $d
+     /tmp/ccCjdw1k.s:4008   .text.HAL_TIM_OnePulse_ConfigChannel:00000000 $t
+     /tmp/ccCjdw1k.s:4014   .text.HAL_TIM_OnePulse_ConfigChannel:00000000 HAL_TIM_OnePulse_ConfigChannel
+     /tmp/ccCjdw1k.s:4154   .text.HAL_TIM_OnePulse_ConfigChannel:00000100 $d
+     /tmp/ccCjdw1k.s:4159   .text.HAL_TIM_DMABurst_MultiWriteStart:00000000 $t
+     /tmp/ccCjdw1k.s:4165   .text.HAL_TIM_DMABurst_MultiWriteStart:00000000 HAL_TIM_DMABurst_MultiWriteStart
+     /tmp/ccCjdw1k.s:4270   .text.HAL_TIM_DMABurst_MultiWriteStart:000000b0 $d
+     /tmp/ccCjdw1k.s:5596   .text.TIM_DMATriggerCplt:00000000 TIM_DMATriggerCplt
+     /tmp/ccCjdw1k.s:5634   .text.TIM_DMATriggerHalfCplt:00000000 TIM_DMATriggerHalfCplt
+     /tmp/ccCjdw1k.s:4279   .text.HAL_TIM_DMABurst_WriteStart:00000000 $t
+     /tmp/ccCjdw1k.s:4285   .text.HAL_TIM_DMABurst_WriteStart:00000000 HAL_TIM_DMABurst_WriteStart
+     /tmp/ccCjdw1k.s:4299   .text.HAL_TIM_DMABurst_WriteStop:00000000 $t
+     /tmp/ccCjdw1k.s:4305   .text.HAL_TIM_DMABurst_WriteStop:00000000 HAL_TIM_DMABurst_WriteStop
+     /tmp/ccCjdw1k.s:4371   .text.HAL_TIM_DMABurst_MultiReadStart:00000000 $t
+     /tmp/ccCjdw1k.s:4377   .text.HAL_TIM_DMABurst_MultiReadStart:00000000 HAL_TIM_DMABurst_MultiReadStart
+     /tmp/ccCjdw1k.s:4482   .text.HAL_TIM_DMABurst_MultiReadStart:000000b0 $d
+     /tmp/ccCjdw1k.s:4491   .text.HAL_TIM_DMABurst_ReadStart:00000000 $t
+     /tmp/ccCjdw1k.s:4497   .text.HAL_TIM_DMABurst_ReadStart:00000000 HAL_TIM_DMABurst_ReadStart
+     /tmp/ccCjdw1k.s:4511   .text.HAL_TIM_DMABurst_ReadStop:00000000 $t
+     /tmp/ccCjdw1k.s:4517   .text.HAL_TIM_DMABurst_ReadStop:00000000 HAL_TIM_DMABurst_ReadStop
+     /tmp/ccCjdw1k.s:4526   .text.HAL_TIM_GenerateEvent:00000000 $t
+     /tmp/ccCjdw1k.s:4532   .text.HAL_TIM_GenerateEvent:00000000 HAL_TIM_GenerateEvent
+     /tmp/ccCjdw1k.s:4558   .text.HAL_TIM_ConfigOCrefClear:00000000 $t
+     /tmp/ccCjdw1k.s:4564   .text.HAL_TIM_ConfigOCrefClear:00000000 HAL_TIM_ConfigOCrefClear
+     /tmp/ccCjdw1k.s:4703   .text.HAL_TIM_ConfigOCrefClear:000000e4 $d
+     /tmp/ccCjdw1k.s:4707   .text.HAL_TIM_ConfigClockSource:00000000 $t
+     /tmp/ccCjdw1k.s:4713   .text.HAL_TIM_ConfigClockSource:00000000 HAL_TIM_ConfigClockSource
+     /tmp/ccCjdw1k.s:4888   .text.HAL_TIM_ConfigClockSource:00000138 $d
+     /tmp/ccCjdw1k.s:4893   .text.HAL_TIM_ConfigTI1Input:00000000 $t
+     /tmp/ccCjdw1k.s:4899   .text.HAL_TIM_ConfigTI1Input:00000000 HAL_TIM_ConfigTI1Input
+     /tmp/ccCjdw1k.s:4914   .text.HAL_TIM_SlaveConfigSynchro:00000000 $t
+     /tmp/ccCjdw1k.s:4920   .text.HAL_TIM_SlaveConfigSynchro:00000000 HAL_TIM_SlaveConfigSynchro
+     /tmp/ccCjdw1k.s:4964   .text.HAL_TIM_SlaveConfigSynchro:00000048 $d
+     /tmp/ccCjdw1k.s:4967   .text.HAL_TIM_SlaveConfigSynchro_IT:00000000 $t
+     /tmp/ccCjdw1k.s:4973   .text.HAL_TIM_SlaveConfigSynchro_IT:00000000 HAL_TIM_SlaveConfigSynchro_IT
+     /tmp/ccCjdw1k.s:5017   .text.HAL_TIM_SlaveConfigSynchro_IT:00000048 $d
+     /tmp/ccCjdw1k.s:5020   .text.HAL_TIM_ReadCapturedValue:00000000 $t
+     /tmp/ccCjdw1k.s:5026   .text.HAL_TIM_ReadCapturedValue:00000000 HAL_TIM_ReadCapturedValue
+     /tmp/ccCjdw1k.s:5062   .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+     /tmp/ccCjdw1k.s:5068   .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+     /tmp/ccCjdw1k.s:5076   .text.TIM_DMAPeriodElapsedCplt:00000000 $t
+     /tmp/ccCjdw1k.s:5100   .text.HAL_TIM_PeriodElapsedHalfCpltCallback:00000000 $t
+     /tmp/ccCjdw1k.s:5106   .text.HAL_TIM_PeriodElapsedHalfCpltCallback:00000000 HAL_TIM_PeriodElapsedHalfCpltCallback
+     /tmp/ccCjdw1k.s:5114   .text.TIM_DMAPeriodElapsedHalfCplt:00000000 $t
+     /tmp/ccCjdw1k.s:5129   .text.HAL_TIM_OC_DelayElapsedCallback:00000000 $t
+     /tmp/ccCjdw1k.s:5135   .text.HAL_TIM_OC_DelayElapsedCallback:00000000 HAL_TIM_OC_DelayElapsedCallback
+     /tmp/ccCjdw1k.s:5143   .text.HAL_TIM_IC_CaptureCallback:00000000 $t
+     /tmp/ccCjdw1k.s:5149   .text.HAL_TIM_IC_CaptureCallback:00000000 HAL_TIM_IC_CaptureCallback
+     /tmp/ccCjdw1k.s:5157   .text.TIM_DMACaptureCplt:00000000 $t
+     /tmp/ccCjdw1k.s:5229   .text.HAL_TIM_IC_CaptureHalfCpltCallback:00000000 $t
+ARM GAS  /tmp/ccCjdw1k.s 			page 105
 
 
-     /tmp/ccANsUHm.s:5235   .text.HAL_TIM_IC_CaptureHalfCpltCallback:00000000 HAL_TIM_IC_CaptureHalfCpltCallback
-     /tmp/ccANsUHm.s:5243   .text.TIM_DMACaptureHalfCplt:00000000 $t
-     /tmp/ccANsUHm.s:5287   .text.HAL_TIM_PWM_PulseFinishedCallback:00000000 $t
-     /tmp/ccANsUHm.s:5293   .text.HAL_TIM_PWM_PulseFinishedCallback:00000000 HAL_TIM_PWM_PulseFinishedCallback
-     /tmp/ccANsUHm.s:5301   .text.TIM_DMADelayPulseCplt:00000000 $t
-     /tmp/ccANsUHm.s:5372   .text.HAL_TIM_PWM_PulseFinishedHalfCpltCallback:00000000 $t
-     /tmp/ccANsUHm.s:5378   .text.HAL_TIM_PWM_PulseFinishedHalfCpltCallback:00000000 HAL_TIM_PWM_PulseFinishedHalfCpltCallback
-     /tmp/ccANsUHm.s:5386   .text.TIM_DMADelayPulseHalfCplt:00000000 $t
-     /tmp/ccANsUHm.s:5429   .text.HAL_TIM_TriggerCallback:00000000 $t
-     /tmp/ccANsUHm.s:5435   .text.HAL_TIM_TriggerCallback:00000000 HAL_TIM_TriggerCallback
-     /tmp/ccANsUHm.s:5443   .text.HAL_TIM_IRQHandler:00000000 $t
-     /tmp/ccANsUHm.s:5449   .text.HAL_TIM_IRQHandler:00000000 HAL_TIM_IRQHandler
-     /tmp/ccANsUHm.s:5591   .text.TIM_DMATriggerCplt:00000000 $t
-     /tmp/ccANsUHm.s:5615   .text.HAL_TIM_TriggerHalfCpltCallback:00000000 $t
-     /tmp/ccANsUHm.s:5621   .text.HAL_TIM_TriggerHalfCpltCallback:00000000 HAL_TIM_TriggerHalfCpltCallback
-     /tmp/ccANsUHm.s:5629   .text.TIM_DMATriggerHalfCplt:00000000 $t
-     /tmp/ccANsUHm.s:5644   .text.HAL_TIM_ErrorCallback:00000000 $t
-     /tmp/ccANsUHm.s:5650   .text.HAL_TIM_ErrorCallback:00000000 HAL_TIM_ErrorCallback
-     /tmp/ccANsUHm.s:5658   .text.TIM_DMAError:00000000 $t
-     /tmp/ccANsUHm.s:5721   .text.HAL_TIM_Base_GetState:00000000 $t
-     /tmp/ccANsUHm.s:5727   .text.HAL_TIM_Base_GetState:00000000 HAL_TIM_Base_GetState
-     /tmp/ccANsUHm.s:5738   .text.HAL_TIM_OC_GetState:00000000 $t
-     /tmp/ccANsUHm.s:5744   .text.HAL_TIM_OC_GetState:00000000 HAL_TIM_OC_GetState
-     /tmp/ccANsUHm.s:5755   .text.HAL_TIM_PWM_GetState:00000000 $t
-     /tmp/ccANsUHm.s:5761   .text.HAL_TIM_PWM_GetState:00000000 HAL_TIM_PWM_GetState
-     /tmp/ccANsUHm.s:5772   .text.HAL_TIM_IC_GetState:00000000 $t
-     /tmp/ccANsUHm.s:5778   .text.HAL_TIM_IC_GetState:00000000 HAL_TIM_IC_GetState
-     /tmp/ccANsUHm.s:5789   .text.HAL_TIM_OnePulse_GetState:00000000 $t
-     /tmp/ccANsUHm.s:5795   .text.HAL_TIM_OnePulse_GetState:00000000 HAL_TIM_OnePulse_GetState
-     /tmp/ccANsUHm.s:5806   .text.HAL_TIM_Encoder_GetState:00000000 $t
-     /tmp/ccANsUHm.s:5812   .text.HAL_TIM_Encoder_GetState:00000000 HAL_TIM_Encoder_GetState
-     /tmp/ccANsUHm.s:5823   .text.HAL_TIM_GetActiveChannel:00000000 $t
-     /tmp/ccANsUHm.s:5829   .text.HAL_TIM_GetActiveChannel:00000000 HAL_TIM_GetActiveChannel
-     /tmp/ccANsUHm.s:5838   .text.HAL_TIM_GetChannelState:00000000 $t
-     /tmp/ccANsUHm.s:5844   .text.HAL_TIM_GetChannelState:00000000 HAL_TIM_GetChannelState
-     /tmp/ccANsUHm.s:5871   .text.HAL_TIM_DMABurstState:00000000 $t
-     /tmp/ccANsUHm.s:5877   .text.HAL_TIM_DMABurstState:00000000 HAL_TIM_DMABurstState
+     /tmp/ccCjdw1k.s:5235   .text.HAL_TIM_IC_CaptureHalfCpltCallback:00000000 HAL_TIM_IC_CaptureHalfCpltCallback
+     /tmp/ccCjdw1k.s:5243   .text.TIM_DMACaptureHalfCplt:00000000 $t
+     /tmp/ccCjdw1k.s:5287   .text.HAL_TIM_PWM_PulseFinishedCallback:00000000 $t
+     /tmp/ccCjdw1k.s:5293   .text.HAL_TIM_PWM_PulseFinishedCallback:00000000 HAL_TIM_PWM_PulseFinishedCallback
+     /tmp/ccCjdw1k.s:5301   .text.TIM_DMADelayPulseCplt:00000000 $t
+     /tmp/ccCjdw1k.s:5372   .text.HAL_TIM_PWM_PulseFinishedHalfCpltCallback:00000000 $t
+     /tmp/ccCjdw1k.s:5378   .text.HAL_TIM_PWM_PulseFinishedHalfCpltCallback:00000000 HAL_TIM_PWM_PulseFinishedHalfCpltCallback
+     /tmp/ccCjdw1k.s:5386   .text.TIM_DMADelayPulseHalfCplt:00000000 $t
+     /tmp/ccCjdw1k.s:5429   .text.HAL_TIM_TriggerCallback:00000000 $t
+     /tmp/ccCjdw1k.s:5435   .text.HAL_TIM_TriggerCallback:00000000 HAL_TIM_TriggerCallback
+     /tmp/ccCjdw1k.s:5443   .text.HAL_TIM_IRQHandler:00000000 $t
+     /tmp/ccCjdw1k.s:5449   .text.HAL_TIM_IRQHandler:00000000 HAL_TIM_IRQHandler
+     /tmp/ccCjdw1k.s:5591   .text.TIM_DMATriggerCplt:00000000 $t
+     /tmp/ccCjdw1k.s:5615   .text.HAL_TIM_TriggerHalfCpltCallback:00000000 $t
+     /tmp/ccCjdw1k.s:5621   .text.HAL_TIM_TriggerHalfCpltCallback:00000000 HAL_TIM_TriggerHalfCpltCallback
+     /tmp/ccCjdw1k.s:5629   .text.TIM_DMATriggerHalfCplt:00000000 $t
+     /tmp/ccCjdw1k.s:5644   .text.HAL_TIM_ErrorCallback:00000000 $t
+     /tmp/ccCjdw1k.s:5650   .text.HAL_TIM_ErrorCallback:00000000 HAL_TIM_ErrorCallback
+     /tmp/ccCjdw1k.s:5658   .text.TIM_DMAError:00000000 $t
+     /tmp/ccCjdw1k.s:5721   .text.HAL_TIM_Base_GetState:00000000 $t
+     /tmp/ccCjdw1k.s:5727   .text.HAL_TIM_Base_GetState:00000000 HAL_TIM_Base_GetState
+     /tmp/ccCjdw1k.s:5738   .text.HAL_TIM_OC_GetState:00000000 $t
+     /tmp/ccCjdw1k.s:5744   .text.HAL_TIM_OC_GetState:00000000 HAL_TIM_OC_GetState
+     /tmp/ccCjdw1k.s:5755   .text.HAL_TIM_PWM_GetState:00000000 $t
+     /tmp/ccCjdw1k.s:5761   .text.HAL_TIM_PWM_GetState:00000000 HAL_TIM_PWM_GetState
+     /tmp/ccCjdw1k.s:5772   .text.HAL_TIM_IC_GetState:00000000 $t
+     /tmp/ccCjdw1k.s:5778   .text.HAL_TIM_IC_GetState:00000000 HAL_TIM_IC_GetState
+     /tmp/ccCjdw1k.s:5789   .text.HAL_TIM_OnePulse_GetState:00000000 $t
+     /tmp/ccCjdw1k.s:5795   .text.HAL_TIM_OnePulse_GetState:00000000 HAL_TIM_OnePulse_GetState
+     /tmp/ccCjdw1k.s:5806   .text.HAL_TIM_Encoder_GetState:00000000 $t
+     /tmp/ccCjdw1k.s:5812   .text.HAL_TIM_Encoder_GetState:00000000 HAL_TIM_Encoder_GetState
+     /tmp/ccCjdw1k.s:5823   .text.HAL_TIM_GetActiveChannel:00000000 $t
+     /tmp/ccCjdw1k.s:5829   .text.HAL_TIM_GetActiveChannel:00000000 HAL_TIM_GetActiveChannel
+     /tmp/ccCjdw1k.s:5838   .text.HAL_TIM_GetChannelState:00000000 $t
+     /tmp/ccCjdw1k.s:5844   .text.HAL_TIM_GetChannelState:00000000 HAL_TIM_GetChannelState
+     /tmp/ccCjdw1k.s:5871   .text.HAL_TIM_DMABurstState:00000000 $t
+     /tmp/ccCjdw1k.s:5877   .text.HAL_TIM_DMABurstState:00000000 HAL_TIM_DMABurstState
 
 UNDEFINED SYMBOLS
 HAL_DMA_Start_IT

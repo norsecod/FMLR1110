@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc1E6Ilg.s 			page 1
+ARM GAS  /tmp/cc5RY9aO.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
   49      3A206372 
   49      61736820 
   50              	.LC9:
-ARM GAS  /tmp/cc1E6Ilg.s 			page 2
+ARM GAS  /tmp/cc5RY9aO.s 			page 2
 
 
   51 001e 1B5B303B 		.ascii	"\033[0;31mERROR: -> \000"
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  102 0050 02D1     		bne	.L8
  103 0052 FFF7FEFF 		bl	region_eu_868_init
  104              	.L7:
-ARM GAS  /tmp/cc1E6Ilg.s 			page 3
+ARM GAS  /tmp/cc5RY9aO.s 			page 3
 
 
  105              		@ sp needed
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  161 002a FFF7FEFF 		bl	smtc_modem_hal_print_trace
  162 002e 2000     		movs	r0, r4
  163 0030 FFF7FEFF 		bl	smtc_modem_hal_print_trace
-ARM GAS  /tmp/cc1E6Ilg.s 			page 4
+ARM GAS  /tmp/cc5RY9aO.s 			page 4
 
 
  164 0034 FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  220              	.L26:
  221              		@ sp needed
  222 003e 5134     		adds	r4, r4, #81
-ARM GAS  /tmp/cc1E6Ilg.s 			page 5
+ARM GAS  /tmp/cc5RY9aO.s 			page 5
 
 
  223 0040 2370     		strb	r3, [r4]
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  277              	.L32:
  278 00a0 9327     		movs	r7, #147
  279 00a2 044B     		ldr	r3, .L37
-ARM GAS  /tmp/cc1E6Ilg.s 			page 6
+ARM GAS  /tmp/cc5RY9aO.s 			page 6
 
 
  280 00a4 0020     		movs	r0, #0
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  338 002a 0848     		ldr	r0, .L44+12
  339 002c FFF7FEFF 		bl	smtc_modem_hal_print_trace
  340 0030 2000     		movs	r0, r4
-ARM GAS  /tmp/cc1E6Ilg.s 			page 7
+ARM GAS  /tmp/cc5RY9aO.s 			page 7
 
 
  341 0032 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  397 0044 00000000 		.word	__func__.32
  398 0048 00000000 		.word	.LC6
  399 004c 25000000 		.word	.LC3
-ARM GAS  /tmp/cc1E6Ilg.s 			page 8
+ARM GAS  /tmp/cc5RY9aO.s 			page 8
 
 
  400 0050 1E000000 		.word	.LC9
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  458              		@ frame_needed = 0, uses_anonymous_args = 0
  459 0000 836B     		ldr	r3, [r0, #56]
  460 0002 10B5     		push	{r4, lr}
-ARM GAS  /tmp/cc1E6Ilg.s 			page 9
+ARM GAS  /tmp/cc5RY9aO.s 			page 9
 
 
  461 0004 1B78     		ldrb	r3, [r3]
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  513 000c 5030     		adds	r0, r0, #80
  514 000e 8A42     		cmp	r2, r1
  515 0010 07D2     		bcs	.L62
-ARM GAS  /tmp/cc1E6Ilg.s 			page 10
+ARM GAS  /tmp/cc5RY9aO.s 			page 10
 
 
  516 0012 0370     		strb	r3, [r0]
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  572 0030 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  573 0034 2000     		movs	r0, r4
  574 0036 FFF7FEFF 		bl	smtc_modem_hal_print_trace
-ARM GAS  /tmp/cc1E6Ilg.s 			page 11
+ARM GAS  /tmp/cc5RY9aO.s 			page 11
 
 
  575 003a FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  633 002e 2000     		movs	r0, r4
  634 0030 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  635 0034 FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
-ARM GAS  /tmp/cc1E6Ilg.s 			page 12
+ARM GAS  /tmp/cc5RY9aO.s 			page 12
 
 
  636              	.L74:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  693              		.code	16
  694              		.thumb_func
  696              	smtc_real_build_channel_mask:
-ARM GAS  /tmp/cc1E6Ilg.s 			page 13
+ARM GAS  /tmp/cc5RY9aO.s 			page 13
 
 
  697              		@ args = 0, pretend = 0, frame = 0
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  753 000e 1C4C     		ldr	r4, .L105
  754 0010 2000     		movs	r0, r4
  755 0012 FFF7FEFF 		bl	smtc_modem_hal_store_crashlog
-ARM GAS  /tmp/cc1E6Ilg.s 			page 14
+ARM GAS  /tmp/cc5RY9aO.s 			page 14
 
 
  756 0016 0120     		movs	r0, #1
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  810 0084 00000000 		.word	.LC6
  811 0088 25000000 		.word	.LC3
  812 008c 1E000000 		.word	.LC9
-ARM GAS  /tmp/cc1E6Ilg.s 			page 15
+ARM GAS  /tmp/cc5RY9aO.s 			page 15
 
 
  814              		.section	.rodata.smtc_real_is_rx1_dr_offset_valid.str1.1,"aMS",%progbits,1
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  862              	smtc_real_is_rx_dr_valid:
  863              		@ args = 0, pretend = 0, frame = 0
  864              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cc1E6Ilg.s 			page 16
+ARM GAS  /tmp/cc5RY9aO.s 			page 16
 
 
  865 0000 806B     		ldr	r0, [r0, #56]
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  917 0004 0300     		movs	r3, r0
  918 0006 3833     		adds	r3, r3, #56
  919 0008 1B78     		ldrb	r3, [r3]
-ARM GAS  /tmp/cc1E6Ilg.s 			page 17
+ARM GAS  /tmp/cc5RY9aO.s 			page 17
 
 
  920 000a 0C00     		movs	r4, r1
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  968 0002 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
  969 0004 0E00     		movs	r6, r1
  970 0006 1978     		ldrb	r1, [r3]
-ARM GAS  /tmp/cc1E6Ilg.s 			page 18
+ARM GAS  /tmp/cc5RY9aO.s 			page 18
 
 
  971 0008 0500     		movs	r5, r0
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1025 0068 1B68     		ldr	r3, [r3]
  1026 006a 2100     		movs	r1, r4
  1027 006c DA5B     		ldrh	r2, [r3, r7]
-ARM GAS  /tmp/cc1E6Ilg.s 			page 19
+ARM GAS  /tmp/cc5RY9aO.s 			page 19
 
 
  1028 006e 1548     		ldr	r0, .L138+8
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1084 000a AA6B     		ldr	r2, [r5, #56]
  1085 000c 1300     		movs	r3, r2
  1086 000e 3833     		adds	r3, r3, #56
-ARM GAS  /tmp/cc1E6Ilg.s 			page 20
+ARM GAS  /tmp/cc5RY9aO.s 			page 20
 
 
  1087 0010 1B78     		ldrb	r3, [r3]
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1141 0080 00000000 		.word	__func__.25
  1142 0084 00000000 		.word	.LC6
  1143 0088 25000000 		.word	.LC3
-ARM GAS  /tmp/cc1E6Ilg.s 			page 21
+ARM GAS  /tmp/cc5RY9aO.s 			page 21
 
 
  1144 008c 1E000000 		.word	.LC9
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1195 0048 0848     		ldr	r0, .L158+16
  1196 004a FFF7FEFF 		bl	smtc_modem_hal_print_trace
  1197 004e 2000     		movs	r0, r4
-ARM GAS  /tmp/cc1E6Ilg.s 			page 22
+ARM GAS  /tmp/cc5RY9aO.s 			page 22
 
 
  1198 0050 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1250 003e 3800     		movs	r0, r7
  1251 0040 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  1252 0044 FFF7FEFF 		bl	smtc_modem_hal_reset_mcu
-ARM GAS  /tmp/cc1E6Ilg.s 			page 23
+ARM GAS  /tmp/cc5RY9aO.s 			page 23
 
 
  1253              	.L161:
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1309 000e 17D8     		bhi	.L171
  1310 0010 124D     		ldr	r5, .L174
  1311 0012 2800     		movs	r0, r5
-ARM GAS  /tmp/cc1E6Ilg.s 			page 24
+ARM GAS  /tmp/cc5RY9aO.s 			page 24
 
 
  1312 0014 FFF7FEFF 		bl	smtc_modem_hal_store_crashlog
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1368 000c 9042     		cmp	r0, r2
  1369 000e 18D8     		bhi	.L178
  1370 0010 1B4D     		ldr	r5, .L181
-ARM GAS  /tmp/cc1E6Ilg.s 			page 25
+ARM GAS  /tmp/cc5RY9aO.s 			page 25
 
 
  1371 0012 2800     		movs	r0, r5
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1426              		.align	1
  1427              		.global	smtc_real_set_channel_dr
  1428              		.syntax unified
-ARM GAS  /tmp/cc1E6Ilg.s 			page 26
+ARM GAS  /tmp/cc5RY9aO.s 			page 26
 
 
  1429              		.code	16
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1484 0066 1868     		ldr	r0, [r3]
  1485 0068 2100     		movs	r1, r4
  1486 006a 4019     		adds	r0, r0, r5
-ARM GAS  /tmp/cc1E6Ilg.s 			page 27
+ARM GAS  /tmp/cc5RY9aO.s 			page 27
 
 
  1487 006c 0134     		adds	r4, r4, #1
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1543              		@ sp needed
  1544 004e 70BD     		pop	{r4, r5, r6, pc}
  1545              	.L196:
-ARM GAS  /tmp/cc1E6Ilg.s 			page 28
+ARM GAS  /tmp/cc5RY9aO.s 			page 28
 
 
  1546              		.align	2
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1602 0056 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
  1603 005a 2100     		movs	r1, r4
  1604 005c 0948     		ldr	r0, .L201+4
-ARM GAS  /tmp/cc1E6Ilg.s 			page 29
+ARM GAS  /tmp/cc5RY9aO.s 			page 29
 
 
  1605 005e FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1661              	.L205:
  1662 0042 AB6B     		ldr	r3, [r5, #56]
  1663 0044 A400     		lsls	r4, r4, #2
-ARM GAS  /tmp/cc1E6Ilg.s 			page 30
+ARM GAS  /tmp/cc5RY9aO.s 			page 30
 
 
  1664 0046 0433     		adds	r3, r3, #4
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1720 0014 2B00     		movs	r3, r5
  1721 0016 5B33     		adds	r3, r3, #91
  1722 0018 1B78     		ldrb	r3, [r3]
-ARM GAS  /tmp/cc1E6Ilg.s 			page 31
+ARM GAS  /tmp/cc5RY9aO.s 			page 31
 
 
  1723 001a 002B     		cmp	r3, #0
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1777 007c 331C     		adds	r3, r6, #0
  1778              	.L214:
  1779 007e DCB2     		uxtb	r4, r3
-ARM GAS  /tmp/cc1E6Ilg.s 			page 32
+ARM GAS  /tmp/cc5RY9aO.s 			page 32
 
 
  1780              	.L213:
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1836 0048 92040000 		.word	1170
  1838              		.section	.text.smtc_real_get_max_tx_channel_dr,"ax",%progbits
  1839              		.align	1
-ARM GAS  /tmp/cc1E6Ilg.s 			page 33
+ARM GAS  /tmp/cc5RY9aO.s 			page 33
 
 
  1840              		.global	smtc_real_get_max_tx_channel_dr
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1895 0054 E4B2     		uxtb	r4, r4
  1896 0056 A242     		cmp	r2, r4
  1897 0058 E9D2     		bcs	.L235
-ARM GAS  /tmp/cc1E6Ilg.s 			page 34
+ARM GAS  /tmp/cc5RY9aO.s 			page 34
 
 
  1898 005a BA42     		cmp	r2, r7
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  1956 0002 0500     		movs	r5, r0
  1957 0004 FFF7FEFF 		bl	smtc_real_mask_tx_dr_channel
  1958 0008 6B46     		mov	r3, sp
-ARM GAS  /tmp/cc1E6Ilg.s 			page 35
+ARM GAS  /tmp/cc5RY9aO.s 			page 35
 
 
  1959 000a D880     		strh	r0, [r3, #6]
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2015              	.L250:
  2016 001c 9C27     		movs	r7, #156
  2017 001e 0021     		movs	r1, #0
-ARM GAS  /tmp/cc1E6Ilg.s 			page 36
+ARM GAS  /tmp/cc5RY9aO.s 			page 36
 
 
  2018 0020 1A00     		movs	r2, r3
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2072 008c 1978     		ldrb	r1, [r3]
  2073 008e 0B1C     		adds	r3, r1, #0
  2074 0090 9142     		cmp	r1, r2
-ARM GAS  /tmp/cc1E6Ilg.s 			page 37
+ARM GAS  /tmp/cc5RY9aO.s 			page 37
 
 
  2075 0092 00D2     		bcs	.L254
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2129 00f6 0123     		movs	r3, #1
  2130 00f8 E355     		strb	r3, [r4, r7]
  2131              	.L261:
-ARM GAS  /tmp/cc1E6Ilg.s 			page 38
+ARM GAS  /tmp/cc5RY9aO.s 			page 38
 
 
  2132 00fa 0020     		movs	r0, #0
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2185 000c 4232     		adds	r2, r2, #66
  2186 000e 1278     		ldrb	r2, [r2]
  2187 0010 9831     		adds	r1, r1, #152
-ARM GAS  /tmp/cc1E6Ilg.s 			page 39
+ARM GAS  /tmp/cc5RY9aO.s 			page 39
 
 
  2188              	.L278:
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2242 006a 0ADC     		bgt	.L295
  2243 006c 1848     		ldr	r0, .L301
  2244 006e FFF7FEFF 		bl	smtc_modem_hal_print_trace
-ARM GAS  /tmp/cc1E6Ilg.s 			page 40
+ARM GAS  /tmp/cc5RY9aO.s 			page 40
 
 
  2245 0072 1848     		ldr	r0, .L301+4
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2299              		.align	2
  2300              	.L301:
  2301 00d0 00000000 		.word	.LC113
-ARM GAS  /tmp/cc1E6Ilg.s 			page 41
+ARM GAS  /tmp/cc5RY9aO.s 			page 41
 
 
  2302 00d4 25000000 		.word	.LC3
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2360              		@ frame_needed = 0, uses_anonymous_args = 0
  2361 0000 10B5     		push	{r4, lr}
  2362 0002 0400     		movs	r4, r0
-ARM GAS  /tmp/cc1E6Ilg.s 			page 42
+ARM GAS  /tmp/cc5RY9aO.s 			page 42
 
 
  2363 0004 0800     		movs	r0, r1
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2419              	.L313:
  2420              		@ sp needed
  2421 0014 10BD     		pop	{r4, pc}
-ARM GAS  /tmp/cc1E6Ilg.s 			page 43
+ARM GAS  /tmp/cc5RY9aO.s 			page 43
 
 
  2422              	.L314:
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2478 0028 0848     		ldr	r0, .L321+4
  2479 002a FFF7FEFF 		bl	smtc_modem_hal_print_trace
  2480 002e 084C     		ldr	r4, .L321+8
-ARM GAS  /tmp/cc1E6Ilg.s 			page 44
+ARM GAS  /tmp/cc5RY9aO.s 			page 44
 
 
  2481 0030 2000     		movs	r0, r4
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2537              	.L329:
  2538 0040 00000000 		.word	__func__.9
  2539 0044 00000000 		.word	.LC6
-ARM GAS  /tmp/cc1E6Ilg.s 			page 45
+ARM GAS  /tmp/cc5RY9aO.s 			page 45
 
 
  2540 0048 25000000 		.word	.LC3
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2598 0004 0600     		movs	r6, r0
  2599 0006 0F00     		movs	r7, r1
  2600 0008 2500     		movs	r5, r4
-ARM GAS  /tmp/cc1E6Ilg.s 			page 46
+ARM GAS  /tmp/cc5RY9aO.s 			page 46
 
 
  2601              	.L339:
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2657 0024 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  2658 0028 0848     		ldr	r0, .L349+12
  2659 002a FFF7FEFF 		bl	smtc_modem_hal_print_trace
-ARM GAS  /tmp/cc1E6Ilg.s 			page 47
+ARM GAS  /tmp/cc5RY9aO.s 			page 47
 
 
  2660 002e 2000     		movs	r0, r4
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2716 0036 D258     		ldr	r2, [r2, r3]
  2717 0038 2B78     		ldrb	r3, [r5]
  2718 003a 9B00     		lsls	r3, r3, #2
-ARM GAS  /tmp/cc1E6Ilg.s 			page 48
+ARM GAS  /tmp/cc5RY9aO.s 			page 48
 
 
  2719 003c DA51     		str	r2, [r3, r7]
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2780              		.syntax unified
  2781              		.code	16
  2782              		.thumb_func
-ARM GAS  /tmp/cc1E6Ilg.s 			page 49
+ARM GAS  /tmp/cc5RY9aO.s 			page 49
 
 
  2784              	smtc_real_get_rx2_join_dr:
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2845              		.align	1
  2846              		.global	smtc_real_get_adr_ack_limit
  2847              		.syntax unified
-ARM GAS  /tmp/cc1E6Ilg.s 			page 50
+ARM GAS  /tmp/cc5RY9aO.s 			page 50
 
 
  2848              		.code	16
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2909 0006 7047     		bx	lr
  2911              		.section	.text.smtc_real_set_sync_word,"ax",%progbits
  2912              		.align	1
-ARM GAS  /tmp/cc1E6Ilg.s 			page 51
+ARM GAS  /tmp/cc5RY9aO.s 			page 51
 
 
  2913              		.global	smtc_real_set_sync_word
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  2974 0004 1878     		ldrb	r0, [r3]
  2975 0006 7047     		bx	lr
  2977              		.section	.text.smtc_real_is_lbt_supported,"ax",%progbits
-ARM GAS  /tmp/cc1E6Ilg.s 			page 52
+ARM GAS  /tmp/cc5RY9aO.s 			page 52
 
 
  2978              		.align	1
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3035              		.align	2
  3036              	.L376:
  3037 0044 00000000 		.word	__func__.6
-ARM GAS  /tmp/cc1E6Ilg.s 			page 53
+ARM GAS  /tmp/cc5RY9aO.s 			page 53
 
 
  3038 0048 00000000 		.word	.LC6
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3095              		.syntax unified
  3096              		.code	16
  3097              		.thumb_func
-ARM GAS  /tmp/cc1E6Ilg.s 			page 54
+ARM GAS  /tmp/cc5RY9aO.s 			page 54
 
 
  3099              	smtc_real_get_lbt_bw_hz:
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3155 000c A06B     		ldr	r0, [r4, #56]
  3156 000e 7822     		movs	r2, #120
  3157 0010 0021     		movs	r1, #0
-ARM GAS  /tmp/cc1E6Ilg.s 			page 55
+ARM GAS  /tmp/cc5RY9aO.s 			page 55
 
 
  3158 0012 0430     		adds	r0, r0, #4
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3212 008c A033     		adds	r3, r3, #160
  3213 008e 1A70     		strb	r2, [r3]
  3214 0090 07B0     		add	sp, sp, #28
-ARM GAS  /tmp/cc1E6Ilg.s 			page 56
+ARM GAS  /tmp/cc5RY9aO.s 			page 56
 
 
  3215              		@ sp needed
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3271 001e 0120     		movs	r0, #1
  3272 0020 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
  3273 0024 3900     		movs	r1, r7
-ARM GAS  /tmp/cc1E6Ilg.s 			page 57
+ARM GAS  /tmp/cc5RY9aO.s 			page 57
 
 
  3274 0026 0D48     		ldr	r0, .L402+4
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3332              		@ sp needed
  3333 0002 7133     		adds	r3, r3, #113
  3334 0004 1878     		ldrb	r0, [r3]
-ARM GAS  /tmp/cc1E6Ilg.s 			page 58
+ARM GAS  /tmp/cc5RY9aO.s 			page 58
 
 
  3335 0006 7047     		bx	lr
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3393 0000 836B     		ldr	r3, [r0, #56]
  3394 0002 10B5     		push	{r4, lr}
  3395 0004 1A78     		ldrb	r2, [r3]
-ARM GAS  /tmp/cc1E6Ilg.s 			page 59
+ARM GAS  /tmp/cc5RY9aO.s 			page 59
 
 
  3396 0006 012A     		cmp	r2, #1
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3454              		@ args = 0, pretend = 0, frame = 0
  3455              		@ frame_needed = 0, uses_anonymous_args = 0
  3456 0000 4A78     		ldrb	r2, [r1, #1]
-ARM GAS  /tmp/cc1E6Ilg.s 			page 60
+ARM GAS  /tmp/cc5RY9aO.s 			page 60
 
 
  3457 0002 10B5     		push	{r4, lr}
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3510              		.align	1
  3511              		.global	smtc_real_is_nwk_received_tx_frequency_valid
  3512              		.syntax unified
-ARM GAS  /tmp/cc1E6Ilg.s 			page 61
+ARM GAS  /tmp/cc5RY9aO.s 			page 61
 
 
  3513              		.code	16
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3564      290A00
  3565              	.LC185:
  3566 0037 4D616354 		.ascii	"MacTxFrequency [%d] = %d \012\000"
-ARM GAS  /tmp/cc1E6Ilg.s 			page 62
+ARM GAS  /tmp/cc5RY9aO.s 			page 62
 
 
  3566      78467265 
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3588              		.syntax unified
  3589              		.code	16
  3590              		.thumb_func
-ARM GAS  /tmp/cc1E6Ilg.s 			page 63
+ARM GAS  /tmp/cc5RY9aO.s 			page 63
 
 
  3592              	smtc_real_update_cflist:
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3646 0064 0436     		adds	r6, r6, #4
  3647 0066 1860     		str	r0, [r3]
  3648 0068 F36F     		ldr	r3, [r6, #124]
-ARM GAS  /tmp/cc1E6Ilg.s 			page 64
+ARM GAS  /tmp/cc5RY9aO.s 			page 64
 
 
  3649 006a 0100     		movs	r1, r0
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3703 00de 0100     		movs	r1, r0
  3704 00e0 EDB2     		uxtb	r5, r5
  3705 00e2 1800     		movs	r0, r3
-ARM GAS  /tmp/cc1E6Ilg.s 			page 65
+ARM GAS  /tmp/cc5RY9aO.s 			page 65
 
 
  3706 00e4 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3760 0152 FFF7FEFF 		bl	smtc_real_get_number_of_chmask_in_cflist
  3761 0156 0025     		movs	r5, #0
  3762 0158 0700     		movs	r7, r0
-ARM GAS  /tmp/cc1E6Ilg.s 			page 66
+ARM GAS  /tmp/cc5RY9aO.s 			page 66
 
 
  3763 015a 2000     		movs	r0, r4
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3817 01d4 D5000000 		.word	.LC197
  3818 01d8 23000000 		.word	.LC57
  3819 01dc F3000000 		.word	.LC200
-ARM GAS  /tmp/cc1E6Ilg.s 			page 67
+ARM GAS  /tmp/cc5RY9aO.s 			page 67
 
 
  3821              		.section	.rodata.smtc_real_is_tx_power_valid.str1.1,"aMS",%progbits,1
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3874              	.L464:
  3875 0008 01000102 		.word	33619969
  3877              		.section	.rodata.smtc_real_get_symbol_duration_us.str1.1,"aMS",%progbits,1
-ARM GAS  /tmp/cc1E6Ilg.s 			page 68
+ARM GAS  /tmp/cc5RY9aO.s 			page 68
 
 
  3878              	.LC210:
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3929 0040 76BD     		pop	{r1, r2, r4, r5, r6, pc}
  3930              	.L469:
  3931 0042 C821     		movs	r1, #200
-ARM GAS  /tmp/cc1E6Ilg.s 			page 69
+ARM GAS  /tmp/cc5RY9aO.s 			page 69
 
 
  3932 0044 8900     		lsls	r1, r1, #2
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  3988 0002 0193     		str	r3, [sp, #4]
  3989 0004 0AAB     		add	r3, sp, #40
  3990 0006 0E00     		movs	r6, r1
-ARM GAS  /tmp/cc1E6Ilg.s 			page 70
+ARM GAS  /tmp/cc5RY9aO.s 			page 70
 
 
  3991 0008 1F78     		ldrb	r7, [r3]
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  4045 0076 04D9     		bls	.L485
  4046 0078 FA21     		movs	r1, #250
  4047 007a 8900     		lsls	r1, r1, #2
-ARM GAS  /tmp/cc1E6Ilg.s 			page 71
+ARM GAS  /tmp/cc5RY9aO.s 			page 71
 
 
  4048 007c FFF7FEFF 		bl	__aeabi_uidiv
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  4104 0032 F7BD     		pop	{r0, r1, r2, r4, r5, r6, r7, pc}
  4105              	.L494:
  4106 0034 063C     		subs	r4, r4, #6
-ARM GAS  /tmp/cc1E6Ilg.s 			page 72
+ARM GAS  /tmp/cc5RY9aO.s 			page 72
 
 
  4107 0036 E30F     		lsrs	r3, r4, #31
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  4149      745F6C62 
  4149      745F6475 
  4150              		.section	.rodata.__func__.7,"a"
-ARM GAS  /tmp/cc1E6Ilg.s 			page 73
+ARM GAS  /tmp/cc5RY9aO.s 			page 73
 
 
  4153              	__func__.7:
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  4189      315F6368 
  4190              		.section	.rodata.__func__.15,"a"
  4193              	__func__.15:
-ARM GAS  /tmp/cc1E6Ilg.s 			page 74
+ARM GAS  /tmp/cc5RY9aO.s 			page 74
 
 
  4194 0000 736D7463 		.ascii	"smtc_real_get_tx_channel_frequency\000"
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  4230              		.section	.rodata.__func__.23,"a"
  4233              	__func__.23:
  4234 0000 736D7463 		.ascii	"smtc_real_is_tx_dr_acceptable\000"
-ARM GAS  /tmp/cc1E6Ilg.s 			page 75
+ARM GAS  /tmp/cc5RY9aO.s 			page 75
 
 
  4234      5F726561 
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  4273              	__func__.31:
  4274 0000 736D7463 		.ascii	"smtc_real_get_join_next_channel\000"
  4274      5F726561 
-ARM GAS  /tmp/cc1E6Ilg.s 			page 76
+ARM GAS  /tmp/cc5RY9aO.s 			page 76
 
 
  4274      6C5F6765 
@@ -4539,277 +4539,277 @@ ARM GAS  /tmp/cc1E6Ilg.s 			page 1
  4299      6E666967 
  4299      00
  4300              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc1E6Ilg.s 			page 77
+ARM GAS  /tmp/cc5RY9aO.s 			page 77
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_real.c
-     /tmp/cc1E6Ilg.s:19     .text.smtc_real_is_supported_region:00000000 $t
-     /tmp/cc1E6Ilg.s:25     .text.smtc_real_is_supported_region:00000000 smtc_real_is_supported_region
-     /tmp/cc1E6Ilg.s:44     .text.smtc_real_is_supported_region:0000001c $d
-     /tmp/cc1E6Ilg.s:53     .text.smtc_real_init:00000000 $t
-     /tmp/cc1E6Ilg.s:59     .text.smtc_real_init:00000000 smtc_real_init
-     /tmp/cc1E6Ilg.s:128    .text.smtc_real_init:00000088 $d
-     /tmp/cc1E6Ilg.s:4293   .rodata.__func__.35:00000000 __func__.35
-     /tmp/cc1E6Ilg.s:135    .text.smtc_real_init_session:00000000 $t
-     /tmp/cc1E6Ilg.s:141    .text.smtc_real_init_session:00000000 smtc_real_init_session
-     /tmp/cc1E6Ilg.s:171    .text.smtc_real_init_session:0000003c $d
-     /tmp/cc1E6Ilg.s:4288   .rodata.__func__.34:00000000 __func__.34
-     /tmp/cc1E6Ilg.s:177    .text.smtc_real_set_dr_distribution:00000000 $t
-     /tmp/cc1E6Ilg.s:183    .text.smtc_real_set_dr_distribution:00000000 smtc_real_set_dr_distribution
-     /tmp/cc1E6Ilg.s:199    .text.smtc_real_set_dr_distribution:0000001a $d
-     /tmp/cc1E6Ilg.s:203    .text.smtc_real_set_dr_distribution:0000001e $t
-     /tmp/cc1E6Ilg.s:292    .text.smtc_real_set_dr_distribution:000000b4 $d
-     /tmp/cc1E6Ilg.s:295    .text.smtc_real_cf_list_type_supported:00000000 $t
-     /tmp/cc1E6Ilg.s:301    .text.smtc_real_cf_list_type_supported:00000000 smtc_real_cf_list_type_supported
-     /tmp/cc1E6Ilg.s:312    .text.smtc_real_get_number_of_chmask_in_cflist:00000000 $t
-     /tmp/cc1E6Ilg.s:318    .text.smtc_real_get_number_of_chmask_in_cflist:00000000 smtc_real_get_number_of_chmask_in_cflist
-     /tmp/cc1E6Ilg.s:350    .text.smtc_real_get_number_of_chmask_in_cflist:00000040 $d
-     /tmp/cc1E6Ilg.s:4283   .rodata.__func__.33:00000000 __func__.33
-     /tmp/cc1E6Ilg.s:356    .text.smtc_real_get_next_channel:00000000 $t
-     /tmp/cc1E6Ilg.s:362    .text.smtc_real_get_next_channel:00000000 smtc_real_get_next_channel
-     /tmp/cc1E6Ilg.s:397    .text.smtc_real_get_next_channel:00000044 $d
-     /tmp/cc1E6Ilg.s:4278   .rodata.__func__.32:00000000 __func__.32
-     /tmp/cc1E6Ilg.s:403    .text.smtc_real_get_join_next_channel:00000000 $t
-     /tmp/cc1E6Ilg.s:409    .text.smtc_real_get_join_next_channel:00000000 smtc_real_get_join_next_channel
-     /tmp/cc1E6Ilg.s:444    .text.smtc_real_get_join_next_channel:00000044 $d
-     /tmp/cc1E6Ilg.s:4273   .rodata.__func__.31:00000000 __func__.31
-     /tmp/cc1E6Ilg.s:450    .text.smtc_real_set_rx_config:00000000 $t
-     /tmp/cc1E6Ilg.s:456    .text.smtc_real_set_rx_config:00000000 smtc_real_set_rx_config
-     /tmp/cc1E6Ilg.s:489    .text.smtc_real_set_rx_config:00000040 $d
-     /tmp/cc1E6Ilg.s:4268   .rodata.__func__.30:00000000 __func__.30
-     /tmp/cc1E6Ilg.s:498    .text.smtc_real_set_power:00000000 $t
-     /tmp/cc1E6Ilg.s:504    .text.smtc_real_set_power:00000000 smtc_real_set_power
-     /tmp/cc1E6Ilg.s:537    .text.smtc_real_set_power:00000034 $d
-     /tmp/cc1E6Ilg.s:541    .text.smtc_real_set_channel_mask:00000000 $t
-     /tmp/cc1E6Ilg.s:547    .text.smtc_real_set_channel_mask:00000000 smtc_real_set_channel_mask
-     /tmp/cc1E6Ilg.s:580    .text.smtc_real_set_channel_mask:00000040 $d
-     /tmp/cc1E6Ilg.s:4263   .rodata.__func__.29:00000000 __func__.29
-     /tmp/cc1E6Ilg.s:586    .text.smtc_real_init_channel_mask:00000000 $t
-     /tmp/cc1E6Ilg.s:592    .text.smtc_real_init_channel_mask:00000000 smtc_real_init_channel_mask
-     /tmp/cc1E6Ilg.s:606    .text.smtc_real_init_join_snapshot_channel_mask:00000000 $t
-     /tmp/cc1E6Ilg.s:612    .text.smtc_real_init_join_snapshot_channel_mask:00000000 smtc_real_init_join_snapshot_channel_mask
-     /tmp/cc1E6Ilg.s:642    .text.smtc_real_init_join_snapshot_channel_mask:0000003c $d
-     /tmp/cc1E6Ilg.s:4258   .rodata.__func__.28:00000000 __func__.28
-     /tmp/cc1E6Ilg.s:648    .text.smtc_real_init_after_join_snapshot_channel_mask:00000000 $t
-     /tmp/cc1E6Ilg.s:654    .text.smtc_real_init_after_join_snapshot_channel_mask:00000000 smtc_real_init_after_join_snapshot_channel_mask
-     /tmp/cc1E6Ilg.s:684    .text.smtc_real_init_after_join_snapshot_channel_mask:0000003c $d
-     /tmp/cc1E6Ilg.s:4253   .rodata.__func__.27:00000000 __func__.27
-     /tmp/cc1E6Ilg.s:690    .text.smtc_real_build_channel_mask:00000000 $t
-     /tmp/cc1E6Ilg.s:696    .text.smtc_real_build_channel_mask:00000000 smtc_real_build_channel_mask
-     /tmp/cc1E6Ilg.s:731    .text.smtc_real_build_channel_mask:00000044 $d
-     /tmp/cc1E6Ilg.s:4248   .rodata.__func__.26:00000000 __func__.26
-ARM GAS  /tmp/cc1E6Ilg.s 			page 78
+     /tmp/cc5RY9aO.s:19     .text.smtc_real_is_supported_region:00000000 $t
+     /tmp/cc5RY9aO.s:25     .text.smtc_real_is_supported_region:00000000 smtc_real_is_supported_region
+     /tmp/cc5RY9aO.s:44     .text.smtc_real_is_supported_region:0000001c $d
+     /tmp/cc5RY9aO.s:53     .text.smtc_real_init:00000000 $t
+     /tmp/cc5RY9aO.s:59     .text.smtc_real_init:00000000 smtc_real_init
+     /tmp/cc5RY9aO.s:128    .text.smtc_real_init:00000088 $d
+     /tmp/cc5RY9aO.s:4293   .rodata.__func__.35:00000000 __func__.35
+     /tmp/cc5RY9aO.s:135    .text.smtc_real_init_session:00000000 $t
+     /tmp/cc5RY9aO.s:141    .text.smtc_real_init_session:00000000 smtc_real_init_session
+     /tmp/cc5RY9aO.s:171    .text.smtc_real_init_session:0000003c $d
+     /tmp/cc5RY9aO.s:4288   .rodata.__func__.34:00000000 __func__.34
+     /tmp/cc5RY9aO.s:177    .text.smtc_real_set_dr_distribution:00000000 $t
+     /tmp/cc5RY9aO.s:183    .text.smtc_real_set_dr_distribution:00000000 smtc_real_set_dr_distribution
+     /tmp/cc5RY9aO.s:199    .text.smtc_real_set_dr_distribution:0000001a $d
+     /tmp/cc5RY9aO.s:203    .text.smtc_real_set_dr_distribution:0000001e $t
+     /tmp/cc5RY9aO.s:292    .text.smtc_real_set_dr_distribution:000000b4 $d
+     /tmp/cc5RY9aO.s:295    .text.smtc_real_cf_list_type_supported:00000000 $t
+     /tmp/cc5RY9aO.s:301    .text.smtc_real_cf_list_type_supported:00000000 smtc_real_cf_list_type_supported
+     /tmp/cc5RY9aO.s:312    .text.smtc_real_get_number_of_chmask_in_cflist:00000000 $t
+     /tmp/cc5RY9aO.s:318    .text.smtc_real_get_number_of_chmask_in_cflist:00000000 smtc_real_get_number_of_chmask_in_cflist
+     /tmp/cc5RY9aO.s:350    .text.smtc_real_get_number_of_chmask_in_cflist:00000040 $d
+     /tmp/cc5RY9aO.s:4283   .rodata.__func__.33:00000000 __func__.33
+     /tmp/cc5RY9aO.s:356    .text.smtc_real_get_next_channel:00000000 $t
+     /tmp/cc5RY9aO.s:362    .text.smtc_real_get_next_channel:00000000 smtc_real_get_next_channel
+     /tmp/cc5RY9aO.s:397    .text.smtc_real_get_next_channel:00000044 $d
+     /tmp/cc5RY9aO.s:4278   .rodata.__func__.32:00000000 __func__.32
+     /tmp/cc5RY9aO.s:403    .text.smtc_real_get_join_next_channel:00000000 $t
+     /tmp/cc5RY9aO.s:409    .text.smtc_real_get_join_next_channel:00000000 smtc_real_get_join_next_channel
+     /tmp/cc5RY9aO.s:444    .text.smtc_real_get_join_next_channel:00000044 $d
+     /tmp/cc5RY9aO.s:4273   .rodata.__func__.31:00000000 __func__.31
+     /tmp/cc5RY9aO.s:450    .text.smtc_real_set_rx_config:00000000 $t
+     /tmp/cc5RY9aO.s:456    .text.smtc_real_set_rx_config:00000000 smtc_real_set_rx_config
+     /tmp/cc5RY9aO.s:489    .text.smtc_real_set_rx_config:00000040 $d
+     /tmp/cc5RY9aO.s:4268   .rodata.__func__.30:00000000 __func__.30
+     /tmp/cc5RY9aO.s:498    .text.smtc_real_set_power:00000000 $t
+     /tmp/cc5RY9aO.s:504    .text.smtc_real_set_power:00000000 smtc_real_set_power
+     /tmp/cc5RY9aO.s:537    .text.smtc_real_set_power:00000034 $d
+     /tmp/cc5RY9aO.s:541    .text.smtc_real_set_channel_mask:00000000 $t
+     /tmp/cc5RY9aO.s:547    .text.smtc_real_set_channel_mask:00000000 smtc_real_set_channel_mask
+     /tmp/cc5RY9aO.s:580    .text.smtc_real_set_channel_mask:00000040 $d
+     /tmp/cc5RY9aO.s:4263   .rodata.__func__.29:00000000 __func__.29
+     /tmp/cc5RY9aO.s:586    .text.smtc_real_init_channel_mask:00000000 $t
+     /tmp/cc5RY9aO.s:592    .text.smtc_real_init_channel_mask:00000000 smtc_real_init_channel_mask
+     /tmp/cc5RY9aO.s:606    .text.smtc_real_init_join_snapshot_channel_mask:00000000 $t
+     /tmp/cc5RY9aO.s:612    .text.smtc_real_init_join_snapshot_channel_mask:00000000 smtc_real_init_join_snapshot_channel_mask
+     /tmp/cc5RY9aO.s:642    .text.smtc_real_init_join_snapshot_channel_mask:0000003c $d
+     /tmp/cc5RY9aO.s:4258   .rodata.__func__.28:00000000 __func__.28
+     /tmp/cc5RY9aO.s:648    .text.smtc_real_init_after_join_snapshot_channel_mask:00000000 $t
+     /tmp/cc5RY9aO.s:654    .text.smtc_real_init_after_join_snapshot_channel_mask:00000000 smtc_real_init_after_join_snapshot_channel_mask
+     /tmp/cc5RY9aO.s:684    .text.smtc_real_init_after_join_snapshot_channel_mask:0000003c $d
+     /tmp/cc5RY9aO.s:4253   .rodata.__func__.27:00000000 __func__.27
+     /tmp/cc5RY9aO.s:690    .text.smtc_real_build_channel_mask:00000000 $t
+     /tmp/cc5RY9aO.s:696    .text.smtc_real_build_channel_mask:00000000 smtc_real_build_channel_mask
+     /tmp/cc5RY9aO.s:731    .text.smtc_real_build_channel_mask:00000044 $d
+     /tmp/cc5RY9aO.s:4248   .rodata.__func__.26:00000000 __func__.26
+ARM GAS  /tmp/cc5RY9aO.s 			page 78
 
 
-     /tmp/cc1E6Ilg.s:737    .text.smtc_real_enable_all_channels_with_valid_freq:00000000 $t
-     /tmp/cc1E6Ilg.s:743    .text.smtc_real_enable_all_channels_with_valid_freq:00000000 smtc_real_enable_all_channels_with_valid_freq
-     /tmp/cc1E6Ilg.s:809    .text.smtc_real_enable_all_channels_with_valid_freq:00000080 $d
-     /tmp/cc1E6Ilg.s:4238   .rodata.__func__.24:00000000 __func__.24
-     /tmp/cc1E6Ilg.s:820    .text.smtc_real_is_rx1_dr_offset_valid:00000000 $t
-     /tmp/cc1E6Ilg.s:826    .text.smtc_real_is_rx1_dr_offset_valid:00000000 smtc_real_is_rx1_dr_offset_valid
-     /tmp/cc1E6Ilg.s:848    .text.smtc_real_is_rx1_dr_offset_valid:00000020 $d
-     /tmp/cc1E6Ilg.s:856    .text.smtc_real_is_rx_dr_valid:00000000 $t
-     /tmp/cc1E6Ilg.s:862    .text.smtc_real_is_rx_dr_valid:00000000 smtc_real_is_rx_dr_valid
-     /tmp/cc1E6Ilg.s:899    .text.smtc_real_is_rx_dr_valid:0000003c $d
-     /tmp/cc1E6Ilg.s:906    .text.smtc_real_is_tx_dr_valid:00000000 $t
-     /tmp/cc1E6Ilg.s:912    .text.smtc_real_is_tx_dr_valid:00000000 smtc_real_is_tx_dr_valid
-     /tmp/cc1E6Ilg.s:949    .text.smtc_real_is_tx_dr_valid:0000003c $d
-     /tmp/cc1E6Ilg.s:958    .text.smtc_real_is_tx_dr_acceptable:00000000 $t
-     /tmp/cc1E6Ilg.s:964    .text.smtc_real_is_tx_dr_acceptable:00000000 smtc_real_is_tx_dr_acceptable
-     /tmp/cc1E6Ilg.s:1061   .text.smtc_real_is_tx_dr_acceptable:000000bc $d
-     /tmp/cc1E6Ilg.s:4233   .rodata.__func__.23:00000000 __func__.23
-     /tmp/cc1E6Ilg.s:1069   .text.smtc_real_decrement_dr_simulation:00000000 $t
-     /tmp/cc1E6Ilg.s:1075   .text.smtc_real_decrement_dr_simulation:00000000 smtc_real_decrement_dr_simulation
-     /tmp/cc1E6Ilg.s:1141   .text.smtc_real_decrement_dr_simulation:00000080 $d
-     /tmp/cc1E6Ilg.s:4243   .rodata.__func__.25:00000000 __func__.25
-     /tmp/cc1E6Ilg.s:1151   .text.smtc_real_is_channel_index_valid:00000000 $t
-     /tmp/cc1E6Ilg.s:1157   .text.smtc_real_is_channel_index_valid:00000000 smtc_real_is_channel_index_valid
-     /tmp/cc1E6Ilg.s:1204   .text.smtc_real_is_channel_index_valid:0000005c $d
-     /tmp/cc1E6Ilg.s:4223   .rodata.__func__.21:00000000 __func__.21
-     /tmp/cc1E6Ilg.s:1215   .text.smtc_real_is_payload_size_valid:00000000 $t
-     /tmp/cc1E6Ilg.s:1221   .text.smtc_real_is_payload_size_valid:00000000 smtc_real_is_payload_size_valid
-     /tmp/cc1E6Ilg.s:1286   .text.smtc_real_is_payload_size_valid:00000080 $d
-     /tmp/cc1E6Ilg.s:4218   .rodata.__func__.20:00000000 __func__.20
-     /tmp/cc1E6Ilg.s:1293   .text.smtc_real_set_tx_frequency_channel:00000000 $t
-     /tmp/cc1E6Ilg.s:1299   .text.smtc_real_set_tx_frequency_channel:00000000 smtc_real_set_tx_frequency_channel
-     /tmp/cc1E6Ilg.s:1347   .text.smtc_real_set_tx_frequency_channel:0000005c $d
-     /tmp/cc1E6Ilg.s:4213   .rodata.__func__.19:00000000 __func__.19
-     /tmp/cc1E6Ilg.s:1353   .text.smtc_real_set_rx1_frequency_channel:00000000 $t
-     /tmp/cc1E6Ilg.s:1359   .text.smtc_real_set_rx1_frequency_channel:00000000 smtc_real_set_rx1_frequency_channel
-     /tmp/cc1E6Ilg.s:1420   .text.smtc_real_set_rx1_frequency_channel:00000080 $d
-     /tmp/cc1E6Ilg.s:4208   .rodata.__func__.18:00000000 __func__.18
-     /tmp/cc1E6Ilg.s:1426   .text.smtc_real_set_channel_dr:00000000 $t
-     /tmp/cc1E6Ilg.s:1432   .text.smtc_real_set_channel_dr:00000000 smtc_real_set_channel_dr
-     /tmp/cc1E6Ilg.s:1494   .text.smtc_real_set_channel_dr:00000078 $d
-     /tmp/cc1E6Ilg.s:4203   .rodata.__func__.17:00000000 __func__.17
-     /tmp/cc1E6Ilg.s:1500   .text.smtc_real_set_channel_enabled:00000000 $t
-     /tmp/cc1E6Ilg.s:1506   .text.smtc_real_set_channel_enabled:00000000 smtc_real_set_channel_enabled
-     /tmp/cc1E6Ilg.s:1548   .text.smtc_real_set_channel_enabled:00000050 $d
-     /tmp/cc1E6Ilg.s:4198   .rodata.__func__.16:00000000 __func__.16
-     /tmp/cc1E6Ilg.s:1554   .text.smtc_real_get_tx_channel_frequency:00000000 $t
-     /tmp/cc1E6Ilg.s:1560   .text.smtc_real_get_tx_channel_frequency:00000000 smtc_real_get_tx_channel_frequency
-     /tmp/cc1E6Ilg.s:1620   .text.smtc_real_get_tx_channel_frequency:00000080 $d
-     /tmp/cc1E6Ilg.s:4193   .rodata.__func__.15:00000000 __func__.15
-     /tmp/cc1E6Ilg.s:1626   .text.smtc_real_get_rx1_channel_frequency:00000000 $t
-     /tmp/cc1E6Ilg.s:1632   .text.smtc_real_get_rx1_channel_frequency:00000000 smtc_real_get_rx1_channel_frequency
-     /tmp/cc1E6Ilg.s:1693   .text.smtc_real_get_rx1_channel_frequency:00000084 $d
-     /tmp/cc1E6Ilg.s:4188   .rodata.__func__.14:00000000 __func__.14
-     /tmp/cc1E6Ilg.s:1699   .text.smtc_real_get_min_tx_channel_dr:00000000 $t
-     /tmp/cc1E6Ilg.s:1705   .text.smtc_real_get_min_tx_channel_dr:00000000 smtc_real_get_min_tx_channel_dr
-     /tmp/cc1E6Ilg.s:1786   .text.smtc_real_decrement_dr:00000000 $t
-     /tmp/cc1E6Ilg.s:1792   .text.smtc_real_decrement_dr:00000000 smtc_real_decrement_dr
-ARM GAS  /tmp/cc1E6Ilg.s 			page 79
+     /tmp/cc5RY9aO.s:737    .text.smtc_real_enable_all_channels_with_valid_freq:00000000 $t
+     /tmp/cc5RY9aO.s:743    .text.smtc_real_enable_all_channels_with_valid_freq:00000000 smtc_real_enable_all_channels_with_valid_freq
+     /tmp/cc5RY9aO.s:809    .text.smtc_real_enable_all_channels_with_valid_freq:00000080 $d
+     /tmp/cc5RY9aO.s:4238   .rodata.__func__.24:00000000 __func__.24
+     /tmp/cc5RY9aO.s:820    .text.smtc_real_is_rx1_dr_offset_valid:00000000 $t
+     /tmp/cc5RY9aO.s:826    .text.smtc_real_is_rx1_dr_offset_valid:00000000 smtc_real_is_rx1_dr_offset_valid
+     /tmp/cc5RY9aO.s:848    .text.smtc_real_is_rx1_dr_offset_valid:00000020 $d
+     /tmp/cc5RY9aO.s:856    .text.smtc_real_is_rx_dr_valid:00000000 $t
+     /tmp/cc5RY9aO.s:862    .text.smtc_real_is_rx_dr_valid:00000000 smtc_real_is_rx_dr_valid
+     /tmp/cc5RY9aO.s:899    .text.smtc_real_is_rx_dr_valid:0000003c $d
+     /tmp/cc5RY9aO.s:906    .text.smtc_real_is_tx_dr_valid:00000000 $t
+     /tmp/cc5RY9aO.s:912    .text.smtc_real_is_tx_dr_valid:00000000 smtc_real_is_tx_dr_valid
+     /tmp/cc5RY9aO.s:949    .text.smtc_real_is_tx_dr_valid:0000003c $d
+     /tmp/cc5RY9aO.s:958    .text.smtc_real_is_tx_dr_acceptable:00000000 $t
+     /tmp/cc5RY9aO.s:964    .text.smtc_real_is_tx_dr_acceptable:00000000 smtc_real_is_tx_dr_acceptable
+     /tmp/cc5RY9aO.s:1061   .text.smtc_real_is_tx_dr_acceptable:000000bc $d
+     /tmp/cc5RY9aO.s:4233   .rodata.__func__.23:00000000 __func__.23
+     /tmp/cc5RY9aO.s:1069   .text.smtc_real_decrement_dr_simulation:00000000 $t
+     /tmp/cc5RY9aO.s:1075   .text.smtc_real_decrement_dr_simulation:00000000 smtc_real_decrement_dr_simulation
+     /tmp/cc5RY9aO.s:1141   .text.smtc_real_decrement_dr_simulation:00000080 $d
+     /tmp/cc5RY9aO.s:4243   .rodata.__func__.25:00000000 __func__.25
+     /tmp/cc5RY9aO.s:1151   .text.smtc_real_is_channel_index_valid:00000000 $t
+     /tmp/cc5RY9aO.s:1157   .text.smtc_real_is_channel_index_valid:00000000 smtc_real_is_channel_index_valid
+     /tmp/cc5RY9aO.s:1204   .text.smtc_real_is_channel_index_valid:0000005c $d
+     /tmp/cc5RY9aO.s:4223   .rodata.__func__.21:00000000 __func__.21
+     /tmp/cc5RY9aO.s:1215   .text.smtc_real_is_payload_size_valid:00000000 $t
+     /tmp/cc5RY9aO.s:1221   .text.smtc_real_is_payload_size_valid:00000000 smtc_real_is_payload_size_valid
+     /tmp/cc5RY9aO.s:1286   .text.smtc_real_is_payload_size_valid:00000080 $d
+     /tmp/cc5RY9aO.s:4218   .rodata.__func__.20:00000000 __func__.20
+     /tmp/cc5RY9aO.s:1293   .text.smtc_real_set_tx_frequency_channel:00000000 $t
+     /tmp/cc5RY9aO.s:1299   .text.smtc_real_set_tx_frequency_channel:00000000 smtc_real_set_tx_frequency_channel
+     /tmp/cc5RY9aO.s:1347   .text.smtc_real_set_tx_frequency_channel:0000005c $d
+     /tmp/cc5RY9aO.s:4213   .rodata.__func__.19:00000000 __func__.19
+     /tmp/cc5RY9aO.s:1353   .text.smtc_real_set_rx1_frequency_channel:00000000 $t
+     /tmp/cc5RY9aO.s:1359   .text.smtc_real_set_rx1_frequency_channel:00000000 smtc_real_set_rx1_frequency_channel
+     /tmp/cc5RY9aO.s:1420   .text.smtc_real_set_rx1_frequency_channel:00000080 $d
+     /tmp/cc5RY9aO.s:4208   .rodata.__func__.18:00000000 __func__.18
+     /tmp/cc5RY9aO.s:1426   .text.smtc_real_set_channel_dr:00000000 $t
+     /tmp/cc5RY9aO.s:1432   .text.smtc_real_set_channel_dr:00000000 smtc_real_set_channel_dr
+     /tmp/cc5RY9aO.s:1494   .text.smtc_real_set_channel_dr:00000078 $d
+     /tmp/cc5RY9aO.s:4203   .rodata.__func__.17:00000000 __func__.17
+     /tmp/cc5RY9aO.s:1500   .text.smtc_real_set_channel_enabled:00000000 $t
+     /tmp/cc5RY9aO.s:1506   .text.smtc_real_set_channel_enabled:00000000 smtc_real_set_channel_enabled
+     /tmp/cc5RY9aO.s:1548   .text.smtc_real_set_channel_enabled:00000050 $d
+     /tmp/cc5RY9aO.s:4198   .rodata.__func__.16:00000000 __func__.16
+     /tmp/cc5RY9aO.s:1554   .text.smtc_real_get_tx_channel_frequency:00000000 $t
+     /tmp/cc5RY9aO.s:1560   .text.smtc_real_get_tx_channel_frequency:00000000 smtc_real_get_tx_channel_frequency
+     /tmp/cc5RY9aO.s:1620   .text.smtc_real_get_tx_channel_frequency:00000080 $d
+     /tmp/cc5RY9aO.s:4193   .rodata.__func__.15:00000000 __func__.15
+     /tmp/cc5RY9aO.s:1626   .text.smtc_real_get_rx1_channel_frequency:00000000 $t
+     /tmp/cc5RY9aO.s:1632   .text.smtc_real_get_rx1_channel_frequency:00000000 smtc_real_get_rx1_channel_frequency
+     /tmp/cc5RY9aO.s:1693   .text.smtc_real_get_rx1_channel_frequency:00000084 $d
+     /tmp/cc5RY9aO.s:4188   .rodata.__func__.14:00000000 __func__.14
+     /tmp/cc5RY9aO.s:1699   .text.smtc_real_get_min_tx_channel_dr:00000000 $t
+     /tmp/cc5RY9aO.s:1705   .text.smtc_real_get_min_tx_channel_dr:00000000 smtc_real_get_min_tx_channel_dr
+     /tmp/cc5RY9aO.s:1786   .text.smtc_real_decrement_dr:00000000 $t
+     /tmp/cc5RY9aO.s:1792   .text.smtc_real_decrement_dr:00000000 smtc_real_decrement_dr
+ARM GAS  /tmp/cc5RY9aO.s 			page 79
 
 
-     /tmp/cc1E6Ilg.s:1836   .text.smtc_real_decrement_dr:00000048 $d
-     /tmp/cc1E6Ilg.s:1839   .text.smtc_real_get_max_tx_channel_dr:00000000 $t
-     /tmp/cc1E6Ilg.s:1845   .text.smtc_real_get_max_tx_channel_dr:00000000 smtc_real_get_max_tx_channel_dr
-     /tmp/cc1E6Ilg.s:1906   .text.smtc_real_mask_tx_dr_channel:00000000 $t
-     /tmp/cc1E6Ilg.s:1912   .text.smtc_real_mask_tx_dr_channel:00000000 smtc_real_mask_tx_dr_channel
-     /tmp/cc1E6Ilg.s:1946   .text.smtc_real_mask_tx_dr_channel_up_dwell_time_check:00000000 $t
-     /tmp/cc1E6Ilg.s:1952   .text.smtc_real_mask_tx_dr_channel_up_dwell_time_check:00000000 smtc_real_mask_tx_dr_channel_up_dwell_time_check
-     /tmp/cc1E6Ilg.s:1991   .text.smtc_real_get_next_dr:00000000 $t
-     /tmp/cc1E6Ilg.s:1997   .text.smtc_real_get_next_dr:00000000 smtc_real_get_next_dr
-     /tmp/cc1E6Ilg.s:2146   .text.smtc_real_get_next_dr:0000010c $d
-     /tmp/cc1E6Ilg.s:2151   .text.smtc_real_get_preamble_len:00000000 $t
-     /tmp/cc1E6Ilg.s:2157   .text.smtc_real_get_preamble_len:00000000 smtc_real_get_preamble_len
-     /tmp/cc1E6Ilg.s:2170   .text.smtc_real_is_channel_mask_for_mobile_mode:00000000 $t
-     /tmp/cc1E6Ilg.s:2176   .text.smtc_real_is_channel_mask_for_mobile_mode:00000000 smtc_real_is_channel_mask_for_mobile_mode
-     /tmp/cc1E6Ilg.s:2301   .text.smtc_real_is_channel_mask_for_mobile_mode:000000d0 $d
-     /tmp/cc1E6Ilg.s:2305   .text.smtc_real_get_modulation_type_from_datarate:00000000 $t
-     /tmp/cc1E6Ilg.s:2311   .text.smtc_real_get_modulation_type_from_datarate:00000000 smtc_real_get_modulation_type_from_datarate
-     /tmp/cc1E6Ilg.s:2346   .text.smtc_real_get_modulation_type_from_datarate:00000044 $d
-     /tmp/cc1E6Ilg.s:4183   .rodata.__func__.13:00000000 __func__.13
-     /tmp/cc1E6Ilg.s:2352   .text.smtc_real_lora_dr_to_sf_bw:00000000 $t
-     /tmp/cc1E6Ilg.s:2358   .text.smtc_real_lora_dr_to_sf_bw:00000000 smtc_real_lora_dr_to_sf_bw
-     /tmp/cc1E6Ilg.s:2395   .text.smtc_real_lora_dr_to_sf_bw:00000048 $d
-     /tmp/cc1E6Ilg.s:4178   .rodata.__func__.12:00000000 __func__.12
-     /tmp/cc1E6Ilg.s:2401   .text.smtc_real_fsk_dr_to_bitrate:00000000 $t
-     /tmp/cc1E6Ilg.s:2407   .text.smtc_real_fsk_dr_to_bitrate:00000000 smtc_real_fsk_dr_to_bitrate
-     /tmp/cc1E6Ilg.s:2443   .text.smtc_real_fsk_dr_to_bitrate:00000048 $d
-     /tmp/cc1E6Ilg.s:4173   .rodata.__func__.11:00000000 __func__.11
-     /tmp/cc1E6Ilg.s:2449   .text.smtc_real_lr_fhss_dr_to_cr_bw:00000000 $t
-     /tmp/cc1E6Ilg.s:2455   .text.smtc_real_lr_fhss_dr_to_cr_bw:00000000 smtc_real_lr_fhss_dr_to_cr_bw
-     /tmp/cc1E6Ilg.s:2492   .text.smtc_real_lr_fhss_dr_to_cr_bw:00000048 $d
-     /tmp/cc1E6Ilg.s:4168   .rodata.__func__.10:00000000 __func__.10
-     /tmp/cc1E6Ilg.s:2498   .text.smtc_real_lr_fhss_get_header_count:00000000 $t
-     /tmp/cc1E6Ilg.s:2504   .text.smtc_real_lr_fhss_get_header_count:00000000 smtc_real_lr_fhss_get_header_count
-     /tmp/cc1E6Ilg.s:2538   .text.smtc_real_lr_fhss_get_header_count:00000040 $d
-     /tmp/cc1E6Ilg.s:4163   .rodata.__func__.9:00000000 __func__.9
-     /tmp/cc1E6Ilg.s:2544   .text.smtc_real_lr_fhss_get_grid:00000000 $t
-     /tmp/cc1E6Ilg.s:2550   .text.smtc_real_lr_fhss_get_grid:00000000 smtc_real_lr_fhss_get_grid
-     /tmp/cc1E6Ilg.s:2581   .text.smtc_real_lr_fhss_get_grid:0000003c $d
-     /tmp/cc1E6Ilg.s:4158   .rodata.__func__.8:00000000 __func__.8
-     /tmp/cc1E6Ilg.s:2587   .text.smtc_real_get_number_of_enabled_channels_for_a_datarate:00000000 $t
-     /tmp/cc1E6Ilg.s:2593   .text.smtc_real_get_number_of_enabled_channels_for_a_datarate:00000000 smtc_real_get_number_of_enabled_channels_for_a_datarate
-     /tmp/cc1E6Ilg.s:2633   .text.smtc_real_clamp_output_power_eirp_vs_freq_and_dr:00000000 $t
-     /tmp/cc1E6Ilg.s:2639   .text.smtc_real_clamp_output_power_eirp_vs_freq_and_dr:00000000 smtc_real_clamp_output_power_eirp_vs_freq_and_dr
-     /tmp/cc1E6Ilg.s:2671   .text.smtc_real_clamp_output_power_eirp_vs_freq_and_dr:00000040 $d
-     /tmp/cc1E6Ilg.s:4153   .rodata.__func__.7:00000000 __func__.7
-     /tmp/cc1E6Ilg.s:2677   .text.smtc_real_get_current_enabled_frequency_list:00000000 $t
-     /tmp/cc1E6Ilg.s:2683   .text.smtc_real_get_current_enabled_frequency_list:00000000 smtc_real_get_current_enabled_frequency_list
-     /tmp/cc1E6Ilg.s:2728   .text.smtc_real_is_tx_param_setup_req_supported:00000000 $t
-     /tmp/cc1E6Ilg.s:2734   .text.smtc_real_is_tx_param_setup_req_supported:00000000 smtc_real_is_tx_param_setup_req_supported
-     /tmp/cc1E6Ilg.s:2745   .text.smtc_real_is_new_channel_req_supported:00000000 $t
-     /tmp/cc1E6Ilg.s:2751   .text.smtc_real_is_new_channel_req_supported:00000000 smtc_real_is_new_channel_req_supported
-     /tmp/cc1E6Ilg.s:2762   .text.smtc_real_get_rx1_join_delay:00000000 $t
-     /tmp/cc1E6Ilg.s:2768   .text.smtc_real_get_rx1_join_delay:00000000 smtc_real_get_rx1_join_delay
-     /tmp/cc1E6Ilg.s:2778   .text.smtc_real_get_rx2_join_dr:00000000 $t
-     /tmp/cc1E6Ilg.s:2784   .text.smtc_real_get_rx2_join_dr:00000000 smtc_real_get_rx2_join_dr
-     /tmp/cc1E6Ilg.s:2795   .text.smtc_real_get_frequency_factor:00000000 $t
-     /tmp/cc1E6Ilg.s:2801   .text.smtc_real_get_frequency_factor:00000000 smtc_real_get_frequency_factor
-ARM GAS  /tmp/cc1E6Ilg.s 			page 80
+     /tmp/cc5RY9aO.s:1836   .text.smtc_real_decrement_dr:00000048 $d
+     /tmp/cc5RY9aO.s:1839   .text.smtc_real_get_max_tx_channel_dr:00000000 $t
+     /tmp/cc5RY9aO.s:1845   .text.smtc_real_get_max_tx_channel_dr:00000000 smtc_real_get_max_tx_channel_dr
+     /tmp/cc5RY9aO.s:1906   .text.smtc_real_mask_tx_dr_channel:00000000 $t
+     /tmp/cc5RY9aO.s:1912   .text.smtc_real_mask_tx_dr_channel:00000000 smtc_real_mask_tx_dr_channel
+     /tmp/cc5RY9aO.s:1946   .text.smtc_real_mask_tx_dr_channel_up_dwell_time_check:00000000 $t
+     /tmp/cc5RY9aO.s:1952   .text.smtc_real_mask_tx_dr_channel_up_dwell_time_check:00000000 smtc_real_mask_tx_dr_channel_up_dwell_time_check
+     /tmp/cc5RY9aO.s:1991   .text.smtc_real_get_next_dr:00000000 $t
+     /tmp/cc5RY9aO.s:1997   .text.smtc_real_get_next_dr:00000000 smtc_real_get_next_dr
+     /tmp/cc5RY9aO.s:2146   .text.smtc_real_get_next_dr:0000010c $d
+     /tmp/cc5RY9aO.s:2151   .text.smtc_real_get_preamble_len:00000000 $t
+     /tmp/cc5RY9aO.s:2157   .text.smtc_real_get_preamble_len:00000000 smtc_real_get_preamble_len
+     /tmp/cc5RY9aO.s:2170   .text.smtc_real_is_channel_mask_for_mobile_mode:00000000 $t
+     /tmp/cc5RY9aO.s:2176   .text.smtc_real_is_channel_mask_for_mobile_mode:00000000 smtc_real_is_channel_mask_for_mobile_mode
+     /tmp/cc5RY9aO.s:2301   .text.smtc_real_is_channel_mask_for_mobile_mode:000000d0 $d
+     /tmp/cc5RY9aO.s:2305   .text.smtc_real_get_modulation_type_from_datarate:00000000 $t
+     /tmp/cc5RY9aO.s:2311   .text.smtc_real_get_modulation_type_from_datarate:00000000 smtc_real_get_modulation_type_from_datarate
+     /tmp/cc5RY9aO.s:2346   .text.smtc_real_get_modulation_type_from_datarate:00000044 $d
+     /tmp/cc5RY9aO.s:4183   .rodata.__func__.13:00000000 __func__.13
+     /tmp/cc5RY9aO.s:2352   .text.smtc_real_lora_dr_to_sf_bw:00000000 $t
+     /tmp/cc5RY9aO.s:2358   .text.smtc_real_lora_dr_to_sf_bw:00000000 smtc_real_lora_dr_to_sf_bw
+     /tmp/cc5RY9aO.s:2395   .text.smtc_real_lora_dr_to_sf_bw:00000048 $d
+     /tmp/cc5RY9aO.s:4178   .rodata.__func__.12:00000000 __func__.12
+     /tmp/cc5RY9aO.s:2401   .text.smtc_real_fsk_dr_to_bitrate:00000000 $t
+     /tmp/cc5RY9aO.s:2407   .text.smtc_real_fsk_dr_to_bitrate:00000000 smtc_real_fsk_dr_to_bitrate
+     /tmp/cc5RY9aO.s:2443   .text.smtc_real_fsk_dr_to_bitrate:00000048 $d
+     /tmp/cc5RY9aO.s:4173   .rodata.__func__.11:00000000 __func__.11
+     /tmp/cc5RY9aO.s:2449   .text.smtc_real_lr_fhss_dr_to_cr_bw:00000000 $t
+     /tmp/cc5RY9aO.s:2455   .text.smtc_real_lr_fhss_dr_to_cr_bw:00000000 smtc_real_lr_fhss_dr_to_cr_bw
+     /tmp/cc5RY9aO.s:2492   .text.smtc_real_lr_fhss_dr_to_cr_bw:00000048 $d
+     /tmp/cc5RY9aO.s:4168   .rodata.__func__.10:00000000 __func__.10
+     /tmp/cc5RY9aO.s:2498   .text.smtc_real_lr_fhss_get_header_count:00000000 $t
+     /tmp/cc5RY9aO.s:2504   .text.smtc_real_lr_fhss_get_header_count:00000000 smtc_real_lr_fhss_get_header_count
+     /tmp/cc5RY9aO.s:2538   .text.smtc_real_lr_fhss_get_header_count:00000040 $d
+     /tmp/cc5RY9aO.s:4163   .rodata.__func__.9:00000000 __func__.9
+     /tmp/cc5RY9aO.s:2544   .text.smtc_real_lr_fhss_get_grid:00000000 $t
+     /tmp/cc5RY9aO.s:2550   .text.smtc_real_lr_fhss_get_grid:00000000 smtc_real_lr_fhss_get_grid
+     /tmp/cc5RY9aO.s:2581   .text.smtc_real_lr_fhss_get_grid:0000003c $d
+     /tmp/cc5RY9aO.s:4158   .rodata.__func__.8:00000000 __func__.8
+     /tmp/cc5RY9aO.s:2587   .text.smtc_real_get_number_of_enabled_channels_for_a_datarate:00000000 $t
+     /tmp/cc5RY9aO.s:2593   .text.smtc_real_get_number_of_enabled_channels_for_a_datarate:00000000 smtc_real_get_number_of_enabled_channels_for_a_datarate
+     /tmp/cc5RY9aO.s:2633   .text.smtc_real_clamp_output_power_eirp_vs_freq_and_dr:00000000 $t
+     /tmp/cc5RY9aO.s:2639   .text.smtc_real_clamp_output_power_eirp_vs_freq_and_dr:00000000 smtc_real_clamp_output_power_eirp_vs_freq_and_dr
+     /tmp/cc5RY9aO.s:2671   .text.smtc_real_clamp_output_power_eirp_vs_freq_and_dr:00000040 $d
+     /tmp/cc5RY9aO.s:4153   .rodata.__func__.7:00000000 __func__.7
+     /tmp/cc5RY9aO.s:2677   .text.smtc_real_get_current_enabled_frequency_list:00000000 $t
+     /tmp/cc5RY9aO.s:2683   .text.smtc_real_get_current_enabled_frequency_list:00000000 smtc_real_get_current_enabled_frequency_list
+     /tmp/cc5RY9aO.s:2728   .text.smtc_real_is_tx_param_setup_req_supported:00000000 $t
+     /tmp/cc5RY9aO.s:2734   .text.smtc_real_is_tx_param_setup_req_supported:00000000 smtc_real_is_tx_param_setup_req_supported
+     /tmp/cc5RY9aO.s:2745   .text.smtc_real_is_new_channel_req_supported:00000000 $t
+     /tmp/cc5RY9aO.s:2751   .text.smtc_real_is_new_channel_req_supported:00000000 smtc_real_is_new_channel_req_supported
+     /tmp/cc5RY9aO.s:2762   .text.smtc_real_get_rx1_join_delay:00000000 $t
+     /tmp/cc5RY9aO.s:2768   .text.smtc_real_get_rx1_join_delay:00000000 smtc_real_get_rx1_join_delay
+     /tmp/cc5RY9aO.s:2778   .text.smtc_real_get_rx2_join_dr:00000000 $t
+     /tmp/cc5RY9aO.s:2784   .text.smtc_real_get_rx2_join_dr:00000000 smtc_real_get_rx2_join_dr
+     /tmp/cc5RY9aO.s:2795   .text.smtc_real_get_frequency_factor:00000000 $t
+     /tmp/cc5RY9aO.s:2801   .text.smtc_real_get_frequency_factor:00000000 smtc_real_get_frequency_factor
+ARM GAS  /tmp/cc5RY9aO.s 			page 80
 
 
-     /tmp/cc1E6Ilg.s:2812   .text.smtc_real_get_coding_rate:00000000 $t
-     /tmp/cc1E6Ilg.s:2818   .text.smtc_real_get_coding_rate:00000000 smtc_real_get_coding_rate
-     /tmp/cc1E6Ilg.s:2829   .text.smtc_real_get_adr_ack_delay:00000000 $t
-     /tmp/cc1E6Ilg.s:2835   .text.smtc_real_get_adr_ack_delay:00000000 smtc_real_get_adr_ack_delay
-     /tmp/cc1E6Ilg.s:2845   .text.smtc_real_get_adr_ack_limit:00000000 $t
-     /tmp/cc1E6Ilg.s:2851   .text.smtc_real_get_adr_ack_limit:00000000 smtc_real_get_adr_ack_limit
-     /tmp/cc1E6Ilg.s:2861   .text.smtc_real_get_public_sync_word:00000000 $t
-     /tmp/cc1E6Ilg.s:2867   .text.smtc_real_get_public_sync_word:00000000 smtc_real_get_public_sync_word
-     /tmp/cc1E6Ilg.s:2878   .text.smtc_real_get_private_sync_word:00000000 $t
-     /tmp/cc1E6Ilg.s:2884   .text.smtc_real_get_private_sync_word:00000000 smtc_real_get_private_sync_word
-     /tmp/cc1E6Ilg.s:2895   .text.smtc_real_get_sync_word:00000000 $t
-     /tmp/cc1E6Ilg.s:2901   .text.smtc_real_get_sync_word:00000000 smtc_real_get_sync_word
-     /tmp/cc1E6Ilg.s:2912   .text.smtc_real_set_sync_word:00000000 $t
-     /tmp/cc1E6Ilg.s:2918   .text.smtc_real_set_sync_word:00000000 smtc_real_set_sync_word
-     /tmp/cc1E6Ilg.s:2929   .text.smtc_real_get_gfsk_sync_word:00000000 $t
-     /tmp/cc1E6Ilg.s:2935   .text.smtc_real_get_gfsk_sync_word:00000000 smtc_real_get_gfsk_sync_word
-     /tmp/cc1E6Ilg.s:2945   .text.smtc_real_get_lr_fhss_sync_word:00000000 $t
-     /tmp/cc1E6Ilg.s:2951   .text.smtc_real_get_lr_fhss_sync_word:00000000 smtc_real_get_lr_fhss_sync_word
-     /tmp/cc1E6Ilg.s:2961   .text.smtc_real_is_dtc_supported:00000000 $t
-     /tmp/cc1E6Ilg.s:2967   .text.smtc_real_is_dtc_supported:00000000 smtc_real_is_dtc_supported
-     /tmp/cc1E6Ilg.s:2978   .text.smtc_real_is_lbt_supported:00000000 $t
-     /tmp/cc1E6Ilg.s:2984   .text.smtc_real_is_lbt_supported:00000000 smtc_real_is_lbt_supported
-     /tmp/cc1E6Ilg.s:2995   .text.smtc_real_get_lbt_duration_ms:00000000 $t
-     /tmp/cc1E6Ilg.s:3001   .text.smtc_real_get_lbt_duration_ms:00000000 smtc_real_get_lbt_duration_ms
-     /tmp/cc1E6Ilg.s:3037   .text.smtc_real_get_lbt_duration_ms:00000044 $d
-     /tmp/cc1E6Ilg.s:4148   .rodata.__func__.6:00000000 __func__.6
-     /tmp/cc1E6Ilg.s:3043   .text.smtc_real_get_lbt_threshold_dbm:00000000 $t
-     /tmp/cc1E6Ilg.s:3049   .text.smtc_real_get_lbt_threshold_dbm:00000000 smtc_real_get_lbt_threshold_dbm
-     /tmp/cc1E6Ilg.s:3087   .text.smtc_real_get_lbt_threshold_dbm:00000048 $d
-     /tmp/cc1E6Ilg.s:4143   .rodata.__func__.5:00000000 __func__.5
-     /tmp/cc1E6Ilg.s:3093   .text.smtc_real_get_lbt_bw_hz:00000000 $t
-     /tmp/cc1E6Ilg.s:3099   .text.smtc_real_get_lbt_bw_hz:00000000 smtc_real_get_lbt_bw_hz
-     /tmp/cc1E6Ilg.s:3135   .text.smtc_real_get_lbt_bw_hz:00000044 $d
-     /tmp/cc1E6Ilg.s:4138   .rodata.__func__.4:00000000 __func__.4
-     /tmp/cc1E6Ilg.s:3141   .text.smtc_real_config:00000000 $t
-     /tmp/cc1E6Ilg.s:3147   .text.smtc_real_config:00000000 smtc_real_config
-     /tmp/cc1E6Ilg.s:3238   .text.smtc_real_config:000000c4 $d
-     /tmp/cc1E6Ilg.s:4298   .rodata.__func__.36:00000000 __func__.36
-     /tmp/cc1E6Ilg.s:3248   .text.smtc_real_get_max_payload_size:00000000 $t
-     /tmp/cc1E6Ilg.s:3254   .text.smtc_real_get_max_payload_size:00000000 smtc_real_get_max_payload_size
-     /tmp/cc1E6Ilg.s:3299   .text.smtc_real_get_max_payload_size:00000058 $d
-     /tmp/cc1E6Ilg.s:4133   .rodata.__func__.3:00000000 __func__.3
-     /tmp/cc1E6Ilg.s:3305   .text.smtc_real_get_default_max_eirp:00000000 $t
-     /tmp/cc1E6Ilg.s:3311   .text.smtc_real_get_default_max_eirp:00000000 smtc_real_get_default_max_eirp
-     /tmp/cc1E6Ilg.s:3321   .text.smtc_real_get_beacon_dr:00000000 $t
-     /tmp/cc1E6Ilg.s:3327   .text.smtc_real_get_beacon_dr:00000000 smtc_real_get_beacon_dr
-     /tmp/cc1E6Ilg.s:3338   .text.smtc_real_get_beacon_frequency:00000000 $t
-     /tmp/cc1E6Ilg.s:3344   .text.smtc_real_get_beacon_frequency:00000000 smtc_real_get_beacon_frequency
-     /tmp/cc1E6Ilg.s:3378   .text.smtc_real_get_beacon_frequency:00000040 $d
-     /tmp/cc1E6Ilg.s:4128   .rodata.__func__.2:00000000 __func__.2
-     /tmp/cc1E6Ilg.s:3384   .text.smtc_real_get_ping_slot_frequency:00000000 $t
-     /tmp/cc1E6Ilg.s:3390   .text.smtc_real_get_ping_slot_frequency:00000000 smtc_real_get_ping_slot_frequency
-     /tmp/cc1E6Ilg.s:3424   .text.smtc_real_get_ping_slot_frequency:00000040 $d
-     /tmp/cc1E6Ilg.s:4123   .rodata.__func__.1:00000000 __func__.1
-     /tmp/cc1E6Ilg.s:3430   .text.smtc_real_get_ping_slot_datarate:00000000 $t
-     /tmp/cc1E6Ilg.s:3436   .text.smtc_real_get_ping_slot_datarate:00000000 smtc_real_get_ping_slot_datarate
-     /tmp/cc1E6Ilg.s:3447   .text.smtc_real_decode_freq_from_buf:00000000 $t
-ARM GAS  /tmp/cc1E6Ilg.s 			page 81
+     /tmp/cc5RY9aO.s:2812   .text.smtc_real_get_coding_rate:00000000 $t
+     /tmp/cc5RY9aO.s:2818   .text.smtc_real_get_coding_rate:00000000 smtc_real_get_coding_rate
+     /tmp/cc5RY9aO.s:2829   .text.smtc_real_get_adr_ack_delay:00000000 $t
+     /tmp/cc5RY9aO.s:2835   .text.smtc_real_get_adr_ack_delay:00000000 smtc_real_get_adr_ack_delay
+     /tmp/cc5RY9aO.s:2845   .text.smtc_real_get_adr_ack_limit:00000000 $t
+     /tmp/cc5RY9aO.s:2851   .text.smtc_real_get_adr_ack_limit:00000000 smtc_real_get_adr_ack_limit
+     /tmp/cc5RY9aO.s:2861   .text.smtc_real_get_public_sync_word:00000000 $t
+     /tmp/cc5RY9aO.s:2867   .text.smtc_real_get_public_sync_word:00000000 smtc_real_get_public_sync_word
+     /tmp/cc5RY9aO.s:2878   .text.smtc_real_get_private_sync_word:00000000 $t
+     /tmp/cc5RY9aO.s:2884   .text.smtc_real_get_private_sync_word:00000000 smtc_real_get_private_sync_word
+     /tmp/cc5RY9aO.s:2895   .text.smtc_real_get_sync_word:00000000 $t
+     /tmp/cc5RY9aO.s:2901   .text.smtc_real_get_sync_word:00000000 smtc_real_get_sync_word
+     /tmp/cc5RY9aO.s:2912   .text.smtc_real_set_sync_word:00000000 $t
+     /tmp/cc5RY9aO.s:2918   .text.smtc_real_set_sync_word:00000000 smtc_real_set_sync_word
+     /tmp/cc5RY9aO.s:2929   .text.smtc_real_get_gfsk_sync_word:00000000 $t
+     /tmp/cc5RY9aO.s:2935   .text.smtc_real_get_gfsk_sync_word:00000000 smtc_real_get_gfsk_sync_word
+     /tmp/cc5RY9aO.s:2945   .text.smtc_real_get_lr_fhss_sync_word:00000000 $t
+     /tmp/cc5RY9aO.s:2951   .text.smtc_real_get_lr_fhss_sync_word:00000000 smtc_real_get_lr_fhss_sync_word
+     /tmp/cc5RY9aO.s:2961   .text.smtc_real_is_dtc_supported:00000000 $t
+     /tmp/cc5RY9aO.s:2967   .text.smtc_real_is_dtc_supported:00000000 smtc_real_is_dtc_supported
+     /tmp/cc5RY9aO.s:2978   .text.smtc_real_is_lbt_supported:00000000 $t
+     /tmp/cc5RY9aO.s:2984   .text.smtc_real_is_lbt_supported:00000000 smtc_real_is_lbt_supported
+     /tmp/cc5RY9aO.s:2995   .text.smtc_real_get_lbt_duration_ms:00000000 $t
+     /tmp/cc5RY9aO.s:3001   .text.smtc_real_get_lbt_duration_ms:00000000 smtc_real_get_lbt_duration_ms
+     /tmp/cc5RY9aO.s:3037   .text.smtc_real_get_lbt_duration_ms:00000044 $d
+     /tmp/cc5RY9aO.s:4148   .rodata.__func__.6:00000000 __func__.6
+     /tmp/cc5RY9aO.s:3043   .text.smtc_real_get_lbt_threshold_dbm:00000000 $t
+     /tmp/cc5RY9aO.s:3049   .text.smtc_real_get_lbt_threshold_dbm:00000000 smtc_real_get_lbt_threshold_dbm
+     /tmp/cc5RY9aO.s:3087   .text.smtc_real_get_lbt_threshold_dbm:00000048 $d
+     /tmp/cc5RY9aO.s:4143   .rodata.__func__.5:00000000 __func__.5
+     /tmp/cc5RY9aO.s:3093   .text.smtc_real_get_lbt_bw_hz:00000000 $t
+     /tmp/cc5RY9aO.s:3099   .text.smtc_real_get_lbt_bw_hz:00000000 smtc_real_get_lbt_bw_hz
+     /tmp/cc5RY9aO.s:3135   .text.smtc_real_get_lbt_bw_hz:00000044 $d
+     /tmp/cc5RY9aO.s:4138   .rodata.__func__.4:00000000 __func__.4
+     /tmp/cc5RY9aO.s:3141   .text.smtc_real_config:00000000 $t
+     /tmp/cc5RY9aO.s:3147   .text.smtc_real_config:00000000 smtc_real_config
+     /tmp/cc5RY9aO.s:3238   .text.smtc_real_config:000000c4 $d
+     /tmp/cc5RY9aO.s:4298   .rodata.__func__.36:00000000 __func__.36
+     /tmp/cc5RY9aO.s:3248   .text.smtc_real_get_max_payload_size:00000000 $t
+     /tmp/cc5RY9aO.s:3254   .text.smtc_real_get_max_payload_size:00000000 smtc_real_get_max_payload_size
+     /tmp/cc5RY9aO.s:3299   .text.smtc_real_get_max_payload_size:00000058 $d
+     /tmp/cc5RY9aO.s:4133   .rodata.__func__.3:00000000 __func__.3
+     /tmp/cc5RY9aO.s:3305   .text.smtc_real_get_default_max_eirp:00000000 $t
+     /tmp/cc5RY9aO.s:3311   .text.smtc_real_get_default_max_eirp:00000000 smtc_real_get_default_max_eirp
+     /tmp/cc5RY9aO.s:3321   .text.smtc_real_get_beacon_dr:00000000 $t
+     /tmp/cc5RY9aO.s:3327   .text.smtc_real_get_beacon_dr:00000000 smtc_real_get_beacon_dr
+     /tmp/cc5RY9aO.s:3338   .text.smtc_real_get_beacon_frequency:00000000 $t
+     /tmp/cc5RY9aO.s:3344   .text.smtc_real_get_beacon_frequency:00000000 smtc_real_get_beacon_frequency
+     /tmp/cc5RY9aO.s:3378   .text.smtc_real_get_beacon_frequency:00000040 $d
+     /tmp/cc5RY9aO.s:4128   .rodata.__func__.2:00000000 __func__.2
+     /tmp/cc5RY9aO.s:3384   .text.smtc_real_get_ping_slot_frequency:00000000 $t
+     /tmp/cc5RY9aO.s:3390   .text.smtc_real_get_ping_slot_frequency:00000000 smtc_real_get_ping_slot_frequency
+     /tmp/cc5RY9aO.s:3424   .text.smtc_real_get_ping_slot_frequency:00000040 $d
+     /tmp/cc5RY9aO.s:4123   .rodata.__func__.1:00000000 __func__.1
+     /tmp/cc5RY9aO.s:3430   .text.smtc_real_get_ping_slot_datarate:00000000 $t
+     /tmp/cc5RY9aO.s:3436   .text.smtc_real_get_ping_slot_datarate:00000000 smtc_real_get_ping_slot_datarate
+     /tmp/cc5RY9aO.s:3447   .text.smtc_real_decode_freq_from_buf:00000000 $t
+ARM GAS  /tmp/cc5RY9aO.s 			page 81
 
 
-     /tmp/cc1E6Ilg.s:3453   .text.smtc_real_decode_freq_from_buf:00000000 smtc_real_decode_freq_from_buf
-     /tmp/cc1E6Ilg.s:3475   .text.smtc_real_is_frequency_valid:00000000 $t
-     /tmp/cc1E6Ilg.s:3481   .text.smtc_real_is_frequency_valid:00000000 smtc_real_is_frequency_valid
-     /tmp/cc1E6Ilg.s:3506   .text.smtc_real_is_frequency_valid:00000024 $d
-     /tmp/cc1E6Ilg.s:3510   .text.smtc_real_is_nwk_received_tx_frequency_valid:00000000 $t
-     /tmp/cc1E6Ilg.s:3516   .text.smtc_real_is_nwk_received_tx_frequency_valid:00000000 smtc_real_is_nwk_received_tx_frequency_valid
-     /tmp/cc1E6Ilg.s:3556   .text.smtc_real_is_nwk_received_tx_frequency_valid:00000050 $d
-     /tmp/cc1E6Ilg.s:4228   .rodata.__func__.22:00000000 __func__.22
-     /tmp/cc1E6Ilg.s:3586   .text.smtc_real_update_cflist:00000000 $t
-     /tmp/cc1E6Ilg.s:3592   .text.smtc_real_update_cflist:00000000 smtc_real_update_cflist
-     /tmp/cc1E6Ilg.s:3807   .text.smtc_real_update_cflist:000001ac $d
-     /tmp/cc1E6Ilg.s:3826   .text.smtc_real_is_tx_power_valid:00000000 $t
-     /tmp/cc1E6Ilg.s:3832   .text.smtc_real_is_tx_power_valid:00000000 smtc_real_is_tx_power_valid
-     /tmp/cc1E6Ilg.s:3853   .text.smtc_real_is_tx_power_valid:00000020 $d
-     /tmp/cc1E6Ilg.s:3857   .text.smtc_real_get_regional_parameters_version:00000000 $t
-     /tmp/cc1E6Ilg.s:3863   .text.smtc_real_get_regional_parameters_version:00000000 smtc_real_get_regional_parameters_version
-     /tmp/cc1E6Ilg.s:3875   .text.smtc_real_get_regional_parameters_version:00000008 $d
-     /tmp/cc1E6Ilg.s:3883   .text.smtc_real_get_symbol_duration_us:00000000 $t
-     /tmp/cc1E6Ilg.s:3889   .text.smtc_real_get_symbol_duration_us:00000000 smtc_real_get_symbol_duration_us
-     /tmp/cc1E6Ilg.s:3912   .text.smtc_real_get_symbol_duration_us:0000002c $d
-     /tmp/cc1E6Ilg.s:3918   .text.smtc_real_get_symbol_duration_us:00000032 $t
-     /tmp/cc1E6Ilg.s:3972   .text.smtc_real_get_symbol_duration_us:00000098 $d
-     /tmp/cc1E6Ilg.s:4118   .rodata.__func__.0:00000000 __func__.0
-     /tmp/cc1E6Ilg.s:3978   .text.smtc_real_get_rx_window_parameters:00000000 $t
-     /tmp/cc1E6Ilg.s:3984   .text.smtc_real_get_rx_window_parameters:00000000 smtc_real_get_rx_window_parameters
-     /tmp/cc1E6Ilg.s:4066   .text.smtc_real_get_rx_window_parameters:00000098 $d
-     /tmp/cc1E6Ilg.s:4071   .text.smtc_real_get_rx_start_time_offset_ms:00000000 $t
-     /tmp/cc1E6Ilg.s:4077   .text.smtc_real_get_rx_start_time_offset_ms:00000000 smtc_real_get_rx_start_time_offset_ms
+     /tmp/cc5RY9aO.s:3453   .text.smtc_real_decode_freq_from_buf:00000000 smtc_real_decode_freq_from_buf
+     /tmp/cc5RY9aO.s:3475   .text.smtc_real_is_frequency_valid:00000000 $t
+     /tmp/cc5RY9aO.s:3481   .text.smtc_real_is_frequency_valid:00000000 smtc_real_is_frequency_valid
+     /tmp/cc5RY9aO.s:3506   .text.smtc_real_is_frequency_valid:00000024 $d
+     /tmp/cc5RY9aO.s:3510   .text.smtc_real_is_nwk_received_tx_frequency_valid:00000000 $t
+     /tmp/cc5RY9aO.s:3516   .text.smtc_real_is_nwk_received_tx_frequency_valid:00000000 smtc_real_is_nwk_received_tx_frequency_valid
+     /tmp/cc5RY9aO.s:3556   .text.smtc_real_is_nwk_received_tx_frequency_valid:00000050 $d
+     /tmp/cc5RY9aO.s:4228   .rodata.__func__.22:00000000 __func__.22
+     /tmp/cc5RY9aO.s:3586   .text.smtc_real_update_cflist:00000000 $t
+     /tmp/cc5RY9aO.s:3592   .text.smtc_real_update_cflist:00000000 smtc_real_update_cflist
+     /tmp/cc5RY9aO.s:3807   .text.smtc_real_update_cflist:000001ac $d
+     /tmp/cc5RY9aO.s:3826   .text.smtc_real_is_tx_power_valid:00000000 $t
+     /tmp/cc5RY9aO.s:3832   .text.smtc_real_is_tx_power_valid:00000000 smtc_real_is_tx_power_valid
+     /tmp/cc5RY9aO.s:3853   .text.smtc_real_is_tx_power_valid:00000020 $d
+     /tmp/cc5RY9aO.s:3857   .text.smtc_real_get_regional_parameters_version:00000000 $t
+     /tmp/cc5RY9aO.s:3863   .text.smtc_real_get_regional_parameters_version:00000000 smtc_real_get_regional_parameters_version
+     /tmp/cc5RY9aO.s:3875   .text.smtc_real_get_regional_parameters_version:00000008 $d
+     /tmp/cc5RY9aO.s:3883   .text.smtc_real_get_symbol_duration_us:00000000 $t
+     /tmp/cc5RY9aO.s:3889   .text.smtc_real_get_symbol_duration_us:00000000 smtc_real_get_symbol_duration_us
+     /tmp/cc5RY9aO.s:3912   .text.smtc_real_get_symbol_duration_us:0000002c $d
+     /tmp/cc5RY9aO.s:3918   .text.smtc_real_get_symbol_duration_us:00000032 $t
+     /tmp/cc5RY9aO.s:3972   .text.smtc_real_get_symbol_duration_us:00000098 $d
+     /tmp/cc5RY9aO.s:4118   .rodata.__func__.0:00000000 __func__.0
+     /tmp/cc5RY9aO.s:3978   .text.smtc_real_get_rx_window_parameters:00000000 $t
+     /tmp/cc5RY9aO.s:3984   .text.smtc_real_get_rx_window_parameters:00000000 smtc_real_get_rx_window_parameters
+     /tmp/cc5RY9aO.s:4066   .text.smtc_real_get_rx_window_parameters:00000098 $d
+     /tmp/cc5RY9aO.s:4071   .text.smtc_real_get_rx_start_time_offset_ms:00000000 $t
+     /tmp/cc5RY9aO.s:4077   .text.smtc_real_get_rx_start_time_offset_ms:00000000 smtc_real_get_rx_start_time_offset_ms
 
 UNDEFINED SYMBOLS
 smtc_modem_hal_print_trace
@@ -4839,7 +4839,7 @@ region_eu_868_lr_fhss_dr_to_cr_bw
 smtc_duty_cycle_init
 memset
 region_eu_868_config
-ARM GAS  /tmp/cc1E6Ilg.s 			page 82
+ARM GAS  /tmp/cc5RY9aO.s 			page 82
 
 
 smtc_lbt_init

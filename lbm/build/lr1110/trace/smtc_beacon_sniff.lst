@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc6bczZi.s 			page 1
+ARM GAS  /tmp/ccxHlV91.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
   56 003a F0BD     		pop	{r4, r5, r6, r7, pc}
   57              	.L13:
   58              		.align	2
-ARM GAS  /tmp/cc6bczZi.s 			page 2
+ARM GAS  /tmp/ccxHlV91.s 			page 2
 
 
   59              	.L12:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  106 0040 E5E7     		b	.L16
  107              	.L18:
  108 0042 C046     		.align	2
-ARM GAS  /tmp/cc6bczZi.s 			page 3
+ARM GAS  /tmp/ccxHlV91.s 			page 3
 
 
  109              	.L17:
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  161 0040 9847     		blx	r3
  162 0042 0028     		cmp	r0, #0
  163 0044 04D0     		beq	.L22
-ARM GAS  /tmp/cc6bczZi.s 			page 4
+ARM GAS  /tmp/ccxHlV91.s 			page 4
 
 
  164 0046 6E21     		movs	r1, #110
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  218 00b0 84090000 		.word	2436
  219 00b4 C9050000 		.word	1481
  220 00b8 00000000 		.word	.LC8
-ARM GAS  /tmp/cc6bczZi.s 			page 5
+ARM GAS  /tmp/ccxHlV91.s 			page 5
 
 
  221 00bc 00000000 		.word	__func__.1
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  277 005e 0100     		movs	r1, r0
  278 0060 AA18     		adds	r2, r5, r2
  279 0062 11A8     		add	r0, sp, #68
-ARM GAS  /tmp/cc6bczZi.s 			page 6
+ARM GAS  /tmp/ccxHlV91.s 			page 6
 
 
  280 0064 238E     		ldrh	r3, [r4, #48]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  334 00e2 AB71     		strb	r3, [r5, #6]
  335 00e4 A368     		ldr	r3, [r4, #8]
  336 00e6 A870     		strb	r0, [r5, #2]
-ARM GAS  /tmp/cc6bczZi.s 			page 7
+ARM GAS  /tmp/ccxHlV91.s 			page 7
 
 
  337 00e8 1800     		movs	r0, r3
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  391 0164 FFF7FEFF 		bl	__gnu_thumb1_case_uqi
  392              	.L43:
  393 0168 45       		.byte	(.L52-.L43)/2
-ARM GAS  /tmp/cc6bczZi.s 			page 8
+ARM GAS  /tmp/ccxHlV91.s 			page 8
 
 
  394 0169 45       		.byte	(.L52-.L43)/2
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  448 01c4 F0BD     		pop	{r4, r5, r6, r7, pc}
  449              	.L44:
  450 01c6 0C3B     		subs	r3, r3, #12
-ARM GAS  /tmp/cc6bczZi.s 			page 9
+ARM GAS  /tmp/ccxHlV91.s 			page 9
 
 
  451 01c8 5A42     		rsbs	r2, r3, #0
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  507 0012 FFF7FEFF 		bl	memset
  508 0016 019B     		ldr	r3, [sp, #4]
  509 0018 2200     		movs	r2, r4
-ARM GAS  /tmp/cc6bczZi.s 			page 10
+ARM GAS  /tmp/ccxHlV91.s 			page 10
 
 
  510 001a A360     		str	r3, [r4, #8]
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  566              	.L64:
  567              		@ sp needed
  568 001c 10BD     		pop	{r4, pc}
-ARM GAS  /tmp/cc6bczZi.s 			page 11
+ARM GAS  /tmp/ccxHlV91.s 			page 11
 
 
  570              		.section	.text.smtc_beacon_class_b_enable_service,"ax",%progbits
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  610              		@ frame_needed = 0, uses_anonymous_args = 0
  611 0000 F0B5     		push	{r4, r5, r6, r7, lr}
  612 0002 87B0     		sub	sp, sp, #28
-ARM GAS  /tmp/cc6bczZi.s 			page 12
+ARM GAS  /tmp/ccxHlV91.s 			page 12
 
 
  613 0004 0400     		movs	r4, r0
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  667 0072 1340     		ands	r3, r2
  668 0074 5D43     		muls	r5, r3
  669 0076 059B     		ldr	r3, [sp, #20]
-ARM GAS  /tmp/cc6bczZi.s 			page 13
+ARM GAS  /tmp/ccxHlV91.s 			page 13
 
 
  670 0078 A668     		ldr	r6, [r4, #8]
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  724 00ee FFF7FEFF 		bl	smtc_real_get_symbol_duration_us
  725 00f2 3100     		movs	r1, r6
  726 00f4 FFF7FEFF 		bl	__aeabi_uidiv
-ARM GAS  /tmp/cc6bczZi.s 			page 14
+ARM GAS  /tmp/ccxHlV91.s 			page 14
 
 
  727 00f8 0100     		movs	r1, r0
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  783 000a 5831     		adds	r1, r1, #88
  784 000c FFF7FEFF 		bl	memcpy
  785 0010 10BD     		pop	{r4, pc}
-ARM GAS  /tmp/cc6bczZi.s 			page 15
+ARM GAS  /tmp/ccxHlV91.s 			page 15
 
 
  787              		.section	.rodata.smtc_decode_beacon_epoch_time.str1.1,"aMS",%progbits,1
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  839 004a EFE7     		b	.L84
  840              	.L92:
  841              		.align	2
-ARM GAS  /tmp/cc6bczZi.s 			page 16
+ARM GAS  /tmp/ccxHlV91.s 			page 16
 
 
  842              	.L91:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  867      494E464F 
  867      2070706C 
  867      5F706861 
-ARM GAS  /tmp/cc6bczZi.s 			page 17
+ARM GAS  /tmp/ccxHlV91.s 			page 17
 
 
  868 011b 6C5F6672 		.ascii	"l_frequency_100us = %d \012\015\000"
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  891              		@ args = 0, pretend = 0, frame = 24
  892              		@ frame_needed = 0, uses_anonymous_args = 0
  893 0000 F0B5     		push	{r4, r5, r6, r7, lr}
-ARM GAS  /tmp/cc6bczZi.s 			page 18
+ARM GAS  /tmp/ccxHlV91.s 			page 18
 
 
  894 0002 C37B     		ldrb	r3, [r0, #15]
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  948 007c 0100     		movs	r1, r0
  949 007e 09AB     		add	r3, sp, #36
  950 0080 3800     		movs	r0, r7
-ARM GAS  /tmp/cc6bczZi.s 			page 19
+ARM GAS  /tmp/ccxHlV91.s 			page 19
 
 
  951 0082 FFF7FEFF 		bl	smtc_real_lora_dr_to_sf_bw
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1005 00f6 AE4B     		ldr	r3, .L200+12
  1006 00f8 E563     		str	r5, [r4, #60]
  1007 00fa 6364     		str	r3, [r4, #68]
-ARM GAS  /tmp/cc6bczZi.s 			page 20
+ARM GAS  /tmp/ccxHlV91.s 			page 20
 
 
  1008 00fc 636B     		ldr	r3, [r4, #52]
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1062              	.L104:
  1063 0160 1B18     		adds	r3, r3, r0
  1064 0162 9B18     		adds	r3, r3, r2
-ARM GAS  /tmp/cc6bczZi.s 			page 21
+ARM GAS  /tmp/ccxHlV91.s 			page 21
 
 
  1065 0164 A364     		str	r3, [r4, #72]
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1119 01ce 5343     		muls	r3, r2
  1120 01d0 069A     		ldr	r2, [sp, #24]
  1121 01d2 0600     		movs	r6, r0
-ARM GAS  /tmp/cc6bczZi.s 			page 22
+ARM GAS  /tmp/ccxHlV91.s 			page 22
 
 
  1122 01d4 D318     		adds	r3, r2, r3
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1176 0240 FA25     		movs	r5, #250
  1177 0242 FFF7FEFF 		bl	smtc_real_get_symbol_duration_us
  1178 0246 AD00     		lsls	r5, r5, #2
-ARM GAS  /tmp/cc6bczZi.s 			page 23
+ARM GAS  /tmp/ccxHlV91.s 			page 23
 
 
  1179              	.L199:
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1233 02b6 FFF7FEFF 		bl	smtc_real_get_symbol_duration_us
  1234 02ba 3900     		movs	r1, r7
  1235 02bc FFF7FEFF 		bl	__aeabi_uidiv
-ARM GAS  /tmp/cc6bczZi.s 			page 24
+ARM GAS  /tmp/ccxHlV91.s 			page 24
 
 
  1236 02c0 0100     		movs	r1, r0
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1290 032e FFF7FEFF 		bl	smtc_real_get_rx_window_parameters
  1291 0332 636E     		ldr	r3, [r4, #100]
  1292 0334 002B     		cmp	r3, #0
-ARM GAS  /tmp/cc6bczZi.s 			page 25
+ARM GAS  /tmp/ccxHlV91.s 			page 25
 
 
  1293 0336 00D0     		beq	.LCB1308
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1347 03ac 71000000 		.word	.LC32
  1348 03b0 00881300 		.word	1280000
  1349 03b4 45000000 		.word	.LC29
-ARM GAS  /tmp/cc6bczZi.s 			page 26
+ARM GAS  /tmp/ccxHlV91.s 			page 26
 
 
  1350 03b8 1E000000 		.word	.LC4
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1404 0434 FA25     		movs	r5, #250
  1405 0436 0121     		movs	r1, #1
  1406 0438 AD00     		lsls	r5, r5, #2
-ARM GAS  /tmp/cc6bczZi.s 			page 27
+ARM GAS  /tmp/ccxHlV91.s 			page 27
 
 
  1407 043a A842     		cmp	r0, r5
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1461 04b6 A668     		ldr	r6, [r4, #8]
  1462 04b8 3000     		movs	r0, r6
  1463 04ba FFF7FEFF 		bl	smtc_real_get_beacon_dr
-ARM GAS  /tmp/cc6bczZi.s 			page 28
+ARM GAS  /tmp/ccxHlV91.s 			page 28
 
 
  1464 04be 0100     		movs	r1, r0
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1518 0534 0100     		movs	r1, r0
  1519 0536 3000     		movs	r0, r6
  1520 0538 FFF7FEFF 		bl	smtc_real_get_symbol_duration_us
-ARM GAS  /tmp/cc6bczZi.s 			page 29
+ARM GAS  /tmp/ccxHlV91.s 			page 29
 
 
  1521 053c 0121     		movs	r1, #1
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1575 05b0 FFF7FEFF 		bl	smtc_real_get_symbol_duration_us
  1576 05b4 2900     		movs	r1, r5
  1577 05b6 FFF7FEFF 		bl	__aeabi_uidiv
-ARM GAS  /tmp/cc6bczZi.s 			page 30
+ARM GAS  /tmp/ccxHlV91.s 			page 30
 
 
  1578 05ba 0100     		movs	r1, r0
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1632 0626 FFF7FEFF 		bl	smtc_real_get_beacon_dr
  1633 062a 0100     		movs	r1, r0
  1634 062c 3000     		movs	r0, r6
-ARM GAS  /tmp/cc6bczZi.s 			page 31
+ARM GAS  /tmp/ccxHlV91.s 			page 31
 
 
  1635 062e FFF7FEFF 		bl	smtc_real_get_symbol_duration_us
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1689 06b2 C000     		lsls	r0, r0, #3
  1690 06b4 FFF7FEFF 		bl	__aeabi_uidiv
  1691 06b8 0628     		cmp	r0, #6
-ARM GAS  /tmp/cc6bczZi.s 			page 32
+ARM GAS  /tmp/ccxHlV91.s 			page 32
 
 
  1692 06ba A4D8     		bhi	.L153
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1746 0728 A56C     		ldr	r5, [r4, #72]
  1747 072a 0A21     		movs	r1, #10
  1748 072c 2800     		movs	r0, r5
-ARM GAS  /tmp/cc6bczZi.s 			page 33
+ARM GAS  /tmp/ccxHlV91.s 			page 33
 
 
  1749 072e FFF7FEFF 		bl	__aeabi_uidiv
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1803 07a4 3000     		movs	r0, r6
  1804 07a6 FFF7FEFF 		bl	smtc_real_get_symbol_duration_us
  1805 07aa 0121     		movs	r1, #1
-ARM GAS  /tmp/cc6bczZi.s 			page 34
+ARM GAS  /tmp/ccxHlV91.s 			page 34
 
 
  1806 07ac A842     		cmp	r0, r5
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1860 0820 12020000 		.word	.LC50
  1861 0824 46050000 		.word	1350
  1862 0828 B80B0000 		.word	3000
-ARM GAS  /tmp/cc6bczZi.s 			page 35
+ARM GAS  /tmp/ccxHlV91.s 			page 35
 
 
  1863 082c 48080000 		.word	2120
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1917 002e C11B     		subs	r1, r0, r7
  1918 0030 0131     		adds	r1, r1, #1
  1919 0032 89B2     		uxth	r1, r1
-ARM GAS  /tmp/cc6bczZi.s 			page 36
+ARM GAS  /tmp/ccxHlV91.s 			page 36
 
 
  1920 0034 ADB2     		uxth	r5, r5
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1974      6F6E5F72 
  1974      705F7265 
  1974      71756573 
-ARM GAS  /tmp/cc6bczZi.s 			page 37
+ARM GAS  /tmp/ccxHlV91.s 			page 37
 
 
  1974      7400
@@ -2170,56 +2170,56 @@ ARM GAS  /tmp/cc6bczZi.s 			page 1
  1979      736E6966 
  1979      665F7374 
  1980              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc6bczZi.s 			page 38
+ARM GAS  /tmp/ccxHlV91.s 			page 38
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_beacon_sniff.c
-     /tmp/cc6bczZi.s:14     .text.crc16_beacon.part.0:00000000 $t
-     /tmp/cc6bczZi.s:19     .text.crc16_beacon.part.0:00000000 crc16_beacon.part.0
-     /tmp/cc6bczZi.s:60     .text.crc16_beacon.part.0:0000003c $d
-     /tmp/cc6bczZi.s:70     .text.get_beacon_length:00000000 $t
-     /tmp/cc6bczZi.s:75     .text.get_beacon_length:00000000 get_beacon_length
-     /tmp/cc6bczZi.s:110    .text.get_beacon_length:00000044 $d
-     /tmp/cc6bczZi.s:1954   .rodata.CSWTCH.66:00000000 CSWTCH.66
-     /tmp/cc6bczZi.s:1963   .rodata.__func__.0:00000000 __func__.0
-     /tmp/cc6bczZi.s:121    .text.smtc_beacon_sniff_launch_callback_for_rp:00000000 $t
-     /tmp/cc6bczZi.s:126    .text.smtc_beacon_sniff_launch_callback_for_rp:00000000 smtc_beacon_sniff_launch_callback_for_rp
-     /tmp/cc6bczZi.s:218    .text.smtc_beacon_sniff_launch_callback_for_rp:000000b0 $d
-     /tmp/cc6bczZi.s:1968   .rodata.__func__.1:00000000 __func__.1
-     /tmp/cc6bczZi.s:227    .text.beacon_rp_request:00000000 $t
-     /tmp/cc6bczZi.s:232    .text.beacon_rp_request:00000000 beacon_rp_request
-     /tmp/cc6bczZi.s:393    .text.beacon_rp_request:00000168 $d
-     /tmp/cc6bczZi.s:483    .text.beacon_rp_request:000001f8 $d
-     /tmp/cc6bczZi.s:1973   .rodata.__func__.2:00000000 __func__.2
-     /tmp/cc6bczZi.s:488    .text.smtc_beacon_sniff_init:00000000 $t
-     /tmp/cc6bczZi.s:494    .text.smtc_beacon_sniff_init:00000000 smtc_beacon_sniff_init
-     /tmp/cc6bczZi.s:541    .text.smtc_beacon_sniff_init:00000058 $d
-     /tmp/cc6bczZi.s:890    .text.smtc_beacon_sniff_rp_callback:00000000 smtc_beacon_sniff_rp_callback
-     /tmp/cc6bczZi.s:545    .text.smtc_beacon_sniff_stop:00000000 $t
-     /tmp/cc6bczZi.s:551    .text.smtc_beacon_sniff_stop:00000000 smtc_beacon_sniff_stop
-     /tmp/cc6bczZi.s:571    .text.smtc_beacon_class_b_enable_service:00000000 $t
-     /tmp/cc6bczZi.s:577    .text.smtc_beacon_class_b_enable_service:00000000 smtc_beacon_class_b_enable_service
-     /tmp/cc6bczZi.s:602    .text.smtc_beacon_sniff_start:00000000 $t
-     /tmp/cc6bczZi.s:608    .text.smtc_beacon_sniff_start:00000000 smtc_beacon_sniff_start
-     /tmp/cc6bczZi.s:760    .text.smtc_beacon_sniff_start:00000140 $d
-     /tmp/cc6bczZi.s:1978   .rodata.__func__.3:00000000 __func__.3
-     /tmp/cc6bczZi.s:768    .text.smtc_beacon_sniff_get_metadata:00000000 $t
-     /tmp/cc6bczZi.s:774    .text.smtc_beacon_sniff_get_metadata:00000000 smtc_beacon_sniff_get_metadata
-     /tmp/cc6bczZi.s:791    .text.smtc_decode_beacon_epoch_time:00000000 $t
-     /tmp/cc6bczZi.s:797    .text.smtc_decode_beacon_epoch_time:00000000 smtc_decode_beacon_epoch_time
-     /tmp/cc6bczZi.s:843    .text.smtc_decode_beacon_epoch_time:0000004c $d
-     /tmp/cc6bczZi.s:884    .text.smtc_beacon_sniff_rp_callback:00000000 $t
-     /tmp/cc6bczZi.s:1345   .text.smtc_beacon_sniff_rp_callback:000003a4 $d
-     /tmp/cc6bczZi.s:1354   .text.smtc_beacon_sniff_rp_callback:000003c4 $t
-     /tmp/cc6bczZi.s:1854   .text.smtc_beacon_sniff_rp_callback:00000808 $d
-     /tmp/cc6bczZi.s:1868   .text.smtc_decode_beacon_param:00000000 $t
-     /tmp/cc6bczZi.s:1874   .text.smtc_decode_beacon_param:00000000 smtc_decode_beacon_param
-     /tmp/cc6bczZi.s:1888   .text.smtc_decode_beacon_gw_specific:00000000 $t
-     /tmp/cc6bczZi.s:1894   .text.smtc_decode_beacon_gw_specific:00000000 smtc_decode_beacon_gw_specific
-     /tmp/cc6bczZi.s:1949   .text.smtc_decode_beacon_gw_specific:00000068 $d
-     /tmp/cc6bczZi.s:406    .text.beacon_rp_request:00000175 $d
-     /tmp/cc6bczZi.s:406    .text.beacon_rp_request:00000176 $t
+     /tmp/ccxHlV91.s:14     .text.crc16_beacon.part.0:00000000 $t
+     /tmp/ccxHlV91.s:19     .text.crc16_beacon.part.0:00000000 crc16_beacon.part.0
+     /tmp/ccxHlV91.s:60     .text.crc16_beacon.part.0:0000003c $d
+     /tmp/ccxHlV91.s:70     .text.get_beacon_length:00000000 $t
+     /tmp/ccxHlV91.s:75     .text.get_beacon_length:00000000 get_beacon_length
+     /tmp/ccxHlV91.s:110    .text.get_beacon_length:00000044 $d
+     /tmp/ccxHlV91.s:1954   .rodata.CSWTCH.66:00000000 CSWTCH.66
+     /tmp/ccxHlV91.s:1963   .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccxHlV91.s:121    .text.smtc_beacon_sniff_launch_callback_for_rp:00000000 $t
+     /tmp/ccxHlV91.s:126    .text.smtc_beacon_sniff_launch_callback_for_rp:00000000 smtc_beacon_sniff_launch_callback_for_rp
+     /tmp/ccxHlV91.s:218    .text.smtc_beacon_sniff_launch_callback_for_rp:000000b0 $d
+     /tmp/ccxHlV91.s:1968   .rodata.__func__.1:00000000 __func__.1
+     /tmp/ccxHlV91.s:227    .text.beacon_rp_request:00000000 $t
+     /tmp/ccxHlV91.s:232    .text.beacon_rp_request:00000000 beacon_rp_request
+     /tmp/ccxHlV91.s:393    .text.beacon_rp_request:00000168 $d
+     /tmp/ccxHlV91.s:483    .text.beacon_rp_request:000001f8 $d
+     /tmp/ccxHlV91.s:1973   .rodata.__func__.2:00000000 __func__.2
+     /tmp/ccxHlV91.s:488    .text.smtc_beacon_sniff_init:00000000 $t
+     /tmp/ccxHlV91.s:494    .text.smtc_beacon_sniff_init:00000000 smtc_beacon_sniff_init
+     /tmp/ccxHlV91.s:541    .text.smtc_beacon_sniff_init:00000058 $d
+     /tmp/ccxHlV91.s:890    .text.smtc_beacon_sniff_rp_callback:00000000 smtc_beacon_sniff_rp_callback
+     /tmp/ccxHlV91.s:545    .text.smtc_beacon_sniff_stop:00000000 $t
+     /tmp/ccxHlV91.s:551    .text.smtc_beacon_sniff_stop:00000000 smtc_beacon_sniff_stop
+     /tmp/ccxHlV91.s:571    .text.smtc_beacon_class_b_enable_service:00000000 $t
+     /tmp/ccxHlV91.s:577    .text.smtc_beacon_class_b_enable_service:00000000 smtc_beacon_class_b_enable_service
+     /tmp/ccxHlV91.s:602    .text.smtc_beacon_sniff_start:00000000 $t
+     /tmp/ccxHlV91.s:608    .text.smtc_beacon_sniff_start:00000000 smtc_beacon_sniff_start
+     /tmp/ccxHlV91.s:760    .text.smtc_beacon_sniff_start:00000140 $d
+     /tmp/ccxHlV91.s:1978   .rodata.__func__.3:00000000 __func__.3
+     /tmp/ccxHlV91.s:768    .text.smtc_beacon_sniff_get_metadata:00000000 $t
+     /tmp/ccxHlV91.s:774    .text.smtc_beacon_sniff_get_metadata:00000000 smtc_beacon_sniff_get_metadata
+     /tmp/ccxHlV91.s:791    .text.smtc_decode_beacon_epoch_time:00000000 $t
+     /tmp/ccxHlV91.s:797    .text.smtc_decode_beacon_epoch_time:00000000 smtc_decode_beacon_epoch_time
+     /tmp/ccxHlV91.s:843    .text.smtc_decode_beacon_epoch_time:0000004c $d
+     /tmp/ccxHlV91.s:884    .text.smtc_beacon_sniff_rp_callback:00000000 $t
+     /tmp/ccxHlV91.s:1345   .text.smtc_beacon_sniff_rp_callback:000003a4 $d
+     /tmp/ccxHlV91.s:1354   .text.smtc_beacon_sniff_rp_callback:000003c4 $t
+     /tmp/ccxHlV91.s:1854   .text.smtc_beacon_sniff_rp_callback:00000808 $d
+     /tmp/ccxHlV91.s:1868   .text.smtc_decode_beacon_param:00000000 $t
+     /tmp/ccxHlV91.s:1874   .text.smtc_decode_beacon_param:00000000 smtc_decode_beacon_param
+     /tmp/ccxHlV91.s:1888   .text.smtc_decode_beacon_gw_specific:00000000 $t
+     /tmp/ccxHlV91.s:1894   .text.smtc_decode_beacon_gw_specific:00000000 smtc_decode_beacon_gw_specific
+     /tmp/ccxHlV91.s:1949   .text.smtc_decode_beacon_gw_specific:00000068 $d
+     /tmp/ccxHlV91.s:406    .text.beacon_rp_request:00000175 $d
+     /tmp/ccxHlV91.s:406    .text.beacon_rp_request:00000176 $t
 
 UNDEFINED SYMBOLS
 smtc_modem_hal_store_crashlog
@@ -2230,7 +2230,7 @@ rp_task_abort
 smtc_modem_hal_start_radio_tcxo
 smtc_modem_hal_assert_fail
 smtc_modem_hal_get_time_in_ms
-ARM GAS  /tmp/cc6bczZi.s 			page 39
+ARM GAS  /tmp/ccxHlV91.s 			page 39
 
 
 __aeabi_uidivmod

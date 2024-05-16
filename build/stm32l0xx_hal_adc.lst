@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccN85YAM.s 			page 1
+ARM GAS  /tmp/ccEypj4U.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
   58 0002 0368     		ldr	r3, [r0]
   59 0004 70B5     		push	{r4, r5, r6, lr}
   60 0006 9968     		ldr	r1, [r3, #8]
-ARM GAS  /tmp/ccN85YAM.s 			page 2
+ARM GAS  /tmp/ccEypj4U.s 			page 2
 
 
   61 0008 0400     		movs	r4, r0
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  117 0002 0268     		ldr	r2, [r0]
  118 0004 70B5     		push	{r4, r5, r6, lr}
  119 0006 9368     		ldr	r3, [r2, #8]
-ARM GAS  /tmp/ccN85YAM.s 			page 3
+ARM GAS  /tmp/ccEypj4U.s 			page 3
 
 
  120 0008 0400     		movs	r4, r0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  174 006a A365     		str	r3, [r4, #88]
  175 006c D1E7     		b	.L22
  177              		.section	.text.ADC_Enable,"ax",%progbits
-ARM GAS  /tmp/ccN85YAM.s 			page 4
+ARM GAS  /tmp/ccEypj4U.s 			page 4
 
 
  178              		.align	1
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  233 0056 801B     		subs	r0, r0, r6
  234 0058 0A28     		cmp	r0, #10
  235 005a F6D9     		bls	.L45
-ARM GAS  /tmp/ccN85YAM.s 			page 5
+ARM GAS  /tmp/ccEypj4U.s 			page 5
 
 
  236 005c 2368     		ldr	r3, [r4]
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  294 0024 08D5     		bpl	.L55
  295              	.L54:
  296 0026 1023     		movs	r3, #16
-ARM GAS  /tmp/ccN85YAM.s 			page 6
+ARM GAS  /tmp/ccEypj4U.s 			page 6
 
 
  297 0028 626D     		ldr	r2, [r4, #84]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  351 0086 A068     		ldr	r0, [r4, #8]
  352 0088 0143     		orrs	r1, r0
  353 008a D960     		str	r1, [r3, #12]
-ARM GAS  /tmp/ccN85YAM.s 			page 7
+ARM GAS  /tmp/ccEypj4U.s 			page 7
 
 
  354              	.L58:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  408 00f4 04D0     		beq	.L63
  409 00f6 A56A     		ldr	r5, [r4, #40]
  410 00f8 D868     		ldr	r0, [r3, #12]
-ARM GAS  /tmp/ccN85YAM.s 			page 8
+ARM GAS  /tmp/ccEypj4U.s 			page 8
 
 
  411 00fa 2A43     		orrs	r2, r5
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  465 015e 124D     		ldr	r5, .L75+20
  466 0160 8000     		lsls	r0, r0, #2
  467 0162 8008     		lsrs	r0, r0, #2
-ARM GAS  /tmp/ccN85YAM.s 			page 9
+ARM GAS  /tmp/ccEypj4U.s 			page 9
 
 
  468 0164 1861     		str	r0, [r3, #16]
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  526              		@ frame_needed = 0, uses_anonymous_args = 0
  527 0000 70B5     		push	{r4, r5, r6, lr}
  528 0002 0400     		movs	r4, r0
-ARM GAS  /tmp/ccN85YAM.s 			page 10
+ARM GAS  /tmp/ccEypj4U.s 			page 10
 
 
  529 0004 0125     		movs	r5, #1
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  583 0068 0E49     		ldr	r1, .L89+20
  584 006a 0A40     		ands	r2, r1
  585 006c 7F21     		movs	r1, #127
-ARM GAS  /tmp/ccN85YAM.s 			page 11
+ARM GAS  /tmp/ccEypj4U.s 			page 11
 
 
  586 006e 1A62     		str	r2, [r3, #32]
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  642 0024 0B4B     		ldr	r3, .L101
  643 0026 0020     		movs	r0, #0
  644 0028 1A40     		ands	r2, r3
-ARM GAS  /tmp/ccN85YAM.s 			page 12
+ARM GAS  /tmp/ccEypj4U.s 			page 12
 
 
  645 002a 8023     		movs	r3, #128
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  701 002a 034A     		ldr	r2, .L109
  702 002c 1340     		ands	r3, r2
  703 002e 1D43     		orrs	r5, r3
-ARM GAS  /tmp/ccN85YAM.s 			page 13
+ARM GAS  /tmp/ccEypj4U.s 			page 13
 
 
  704 0030 6565     		str	r5, [r4, #84]
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  760 003c 0A43     		orrs	r2, r1
  761 003e 6265     		str	r2, [r4, #84]
  762 0040 C022     		movs	r2, #192
-ARM GAS  /tmp/ccN85YAM.s 			page 14
+ARM GAS  /tmp/ccEypj4U.s 			page 14
 
 
  763 0042 D968     		ldr	r1, [r3, #12]
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  817 00a6 C01B     		subs	r0, r0, r7
  818 00a8 B042     		cmp	r0, r6
  819 00aa ECD8     		bhi	.L119
-ARM GAS  /tmp/ccN85YAM.s 			page 15
+ARM GAS  /tmp/ccEypj4U.s 			page 15
 
 
  820 00ac BFE7     		b	.L114
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  876 002e EFD0     		beq	.L141
  877 0030 002E     		cmp	r6, #0
  878 0032 0DD1     		bne	.L142
-ARM GAS  /tmp/ccN85YAM.s 			page 16
+ARM GAS  /tmp/ccEypj4U.s 			page 16
 
 
  879              	.L145:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  935 000a 5B07     		lsls	r3, r3, #29
  936 000c 2CD4     		bmi	.L155
  937 000e 2500     		movs	r5, r4
-ARM GAS  /tmp/ccN85YAM.s 			page 17
+ARM GAS  /tmp/ccEypj4U.s 			page 17
 
 
  938 0010 5035     		adds	r5, r5, #80
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  992              	.L169:
  993 0070 FEF0FFFF 		.word	-3842
  995              		.section	.text.HAL_ADC_Stop_IT,"ax",%progbits
-ARM GAS  /tmp/ccN85YAM.s 			page 18
+ARM GAS  /tmp/ccEypj4U.s 			page 18
 
 
  996              		.align	1
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1053              		@ frame_needed = 0, uses_anonymous_args = 0
  1054 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
  1055 0002 0192     		str	r2, [sp, #4]
-ARM GAS  /tmp/ccN85YAM.s 			page 19
+ARM GAS  /tmp/ccEypj4U.s 			page 19
 
 
  1056 0004 0268     		ldr	r2, [r0]
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1110 0070 9360     		str	r3, [r2, #8]
  1111              	.L180:
  1112              		@ sp needed
-ARM GAS  /tmp/ccN85YAM.s 			page 20
+ARM GAS  /tmp/ccEypj4U.s 			page 20
 
 
  1113 0072 FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1169 0040 2A68     		ldr	r2, [r5]
  1170 0042 2800     		movs	r0, r5
  1171 0044 5368     		ldr	r3, [r2, #4]
-ARM GAS  /tmp/ccN85YAM.s 			page 21
+ARM GAS  /tmp/ccEypj4U.s 			page 21
 
 
  1172 0046 8B43     		bics	r3, r1
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1230              		@ sp needed
  1231 0000 7047     		bx	lr
  1233              		.section	.text.ADC_DMAConvCplt,"ax",%progbits
-ARM GAS  /tmp/ccN85YAM.s 			page 22
+ARM GAS  /tmp/ccEypj4U.s 			page 22
 
 
  1234              		.align	1
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1289 0058 0A43     		orrs	r2, r1
  1290 005a 5A65     		str	r2, [r3, #84]
  1291 005c 0122     		movs	r2, #1
-ARM GAS  /tmp/ccN85YAM.s 			page 23
+ARM GAS  /tmp/ccEypj4U.s 			page 23
 
 
  1292 005e 996D     		ldr	r1, [r3, #88]
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1353              		.code	16
  1354              		.thumb_func
  1356              	HAL_ADC_ErrorCallback:
-ARM GAS  /tmp/ccN85YAM.s 			page 24
+ARM GAS  /tmp/ccEypj4U.s 			page 24
 
 
  1357              		@ args = 0, pretend = 0, frame = 0
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1415 0022 626D     		ldr	r2, [r4, #84]
  1416 0024 D206     		lsls	r2, r2, #27
  1417 0026 04D4     		bmi	.L227
-ARM GAS  /tmp/ccN85YAM.s 			page 25
+ARM GAS  /tmp/ccEypj4U.s 			page 25
 
 
  1418 0028 8022     		movs	r2, #128
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1472 0090 6365     		str	r3, [r4, #84]
  1473 0092 2000     		movs	r0, r4
  1474 0094 FFF7FEFF 		bl	HAL_ADC_LevelOutOfWindowCallback
-ARM GAS  /tmp/ccN85YAM.s 			page 26
+ARM GAS  /tmp/ccEypj4U.s 			page 26
 
 
  1475 0098 2368     		ldr	r3, [r4]
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1531              		@ args = 0, pretend = 0, frame = 0
  1532              		@ frame_needed = 0, uses_anonymous_args = 0
  1533 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
-ARM GAS  /tmp/ccN85YAM.s 			page 27
+ARM GAS  /tmp/ccEypj4U.s 			page 27
 
 
  1534 0002 0400     		movs	r4, r0
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1588 0068 1168     		ldr	r1, [r2]
  1589 006a 0B43     		orrs	r3, r1
  1590              	.L288:
-ARM GAS  /tmp/ccN85YAM.s 			page 28
+ARM GAS  /tmp/ccEypj4U.s 			page 28
 
 
  1591 006c 1360     		str	r3, [r2]
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1647 001c 087A     		ldrb	r0, [r1, #8]
  1648 001e 8022     		movs	r2, #128
  1649 0020 0128     		cmp	r0, #1
-ARM GAS  /tmp/ccN85YAM.s 			page 29
+ARM GAS  /tmp/ccEypj4U.s 			page 29
 
 
  1650 0022 29D1     		bne	.L294
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1704 0082 516D     		ldr	r1, [r2, #84]
  1705 0084 0B43     		orrs	r3, r1
  1706 0086 5365     		str	r3, [r2, #84]
-ARM GAS  /tmp/ccN85YAM.s 			page 30
+ARM GAS  /tmp/ccEypj4U.s 			page 30
 
 
  1707 0088 F3E7     		b	.L296
@@ -1774,87 +1774,87 @@ ARM GAS  /tmp/ccN85YAM.s 			page 1
  1741              		@ sp needed
  1742 0002 7047     		bx	lr
  1744              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccN85YAM.s 			page 31
+ARM GAS  /tmp/ccEypj4U.s 			page 31
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32l0xx_hal_adc.c
-     /tmp/ccN85YAM.s:15     .text.ADC_DelayMicroSecond:00000000 $t
-     /tmp/ccN85YAM.s:20     .text.ADC_DelayMicroSecond:00000000 ADC_DelayMicroSecond
-     /tmp/ccN85YAM.s:45     .text.ADC_DelayMicroSecond:00000024 $d
-     /tmp/ccN85YAM.s:49     .text.ADC_ConversionStop:00000000 $t
-     /tmp/ccN85YAM.s:54     .text.ADC_ConversionStop:00000000 ADC_ConversionStop
-     /tmp/ccN85YAM.s:108    .text.ADC_Disable:00000000 $t
-     /tmp/ccN85YAM.s:113    .text.ADC_Disable:00000000 ADC_Disable
-     /tmp/ccN85YAM.s:178    .text.ADC_Enable:00000000 $t
-     /tmp/ccN85YAM.s:183    .text.ADC_Enable:00000000 ADC_Enable
-     /tmp/ccN85YAM.s:250    .text.ADC_Enable:00000074 $d
-     /tmp/ccN85YAM.s:253    .text.HAL_ADC_MspInit:00000000 $t
-     /tmp/ccN85YAM.s:259    .text.HAL_ADC_MspInit:00000000 HAL_ADC_MspInit
-     /tmp/ccN85YAM.s:267    .text.HAL_ADC_Init:00000000 $t
-     /tmp/ccN85YAM.s:273    .text.HAL_ADC_Init:00000000 HAL_ADC_Init
-     /tmp/ccN85YAM.s:496    .text.HAL_ADC_Init:00000194 $d
-     /tmp/ccN85YAM.s:504    .text.HAL_ADC_MspDeInit:00000000 $t
-     /tmp/ccN85YAM.s:510    .text.HAL_ADC_MspDeInit:00000000 HAL_ADC_MspDeInit
-     /tmp/ccN85YAM.s:518    .text.HAL_ADC_DeInit:00000000 $t
-     /tmp/ccN85YAM.s:524    .text.HAL_ADC_DeInit:00000000 HAL_ADC_DeInit
-     /tmp/ccN85YAM.s:606    .text.HAL_ADC_DeInit:00000090 $d
-     /tmp/ccN85YAM.s:614    .text.HAL_ADC_Start:00000000 $t
-     /tmp/ccN85YAM.s:620    .text.HAL_ADC_Start:00000000 HAL_ADC_Start
-     /tmp/ccN85YAM.s:670    .text.HAL_ADC_Start:00000054 $d
-     /tmp/ccN85YAM.s:673    .text.HAL_ADC_Stop:00000000 $t
-     /tmp/ccN85YAM.s:679    .text.HAL_ADC_Stop:00000000 HAL_ADC_Stop
-     /tmp/ccN85YAM.s:714    .text.HAL_ADC_Stop:00000038 $d
-     /tmp/ccN85YAM.s:717    .text.HAL_ADC_PollForConversion:00000000 $t
-     /tmp/ccN85YAM.s:723    .text.HAL_ADC_PollForConversion:00000000 HAL_ADC_PollForConversion
-     /tmp/ccN85YAM.s:838    .text.HAL_ADC_PollForConversion:000000c8 $d
-     /tmp/ccN85YAM.s:841    .text.HAL_ADC_PollForEvent:00000000 $t
-     /tmp/ccN85YAM.s:847    .text.HAL_ADC_PollForEvent:00000000 HAL_ADC_PollForEvent
-     /tmp/ccN85YAM.s:921    .text.HAL_ADC_Start_IT:00000000 $t
-     /tmp/ccN85YAM.s:927    .text.HAL_ADC_Start_IT:00000000 HAL_ADC_Start_IT
-     /tmp/ccN85YAM.s:993    .text.HAL_ADC_Start_IT:00000070 $d
-     /tmp/ccN85YAM.s:996    .text.HAL_ADC_Stop_IT:00000000 $t
-     /tmp/ccN85YAM.s:1002   .text.HAL_ADC_Stop_IT:00000000 HAL_ADC_Stop_IT
-     /tmp/ccN85YAM.s:1042   .text.HAL_ADC_Stop_IT:00000044 $d
-     /tmp/ccN85YAM.s:1045   .text.HAL_ADC_Start_DMA:00000000 $t
-     /tmp/ccN85YAM.s:1051   .text.HAL_ADC_Start_DMA:00000000 HAL_ADC_Start_DMA
-     /tmp/ccN85YAM.s:1123   .text.HAL_ADC_Start_DMA:00000080 $d
-     /tmp/ccN85YAM.s:1239   .text.ADC_DMAConvCplt:00000000 ADC_DMAConvCplt
-     /tmp/ccN85YAM.s:1326   .text.ADC_DMAHalfConvCplt:00000000 ADC_DMAHalfConvCplt
-     /tmp/ccN85YAM.s:1369   .text.ADC_DMAError:00000000 ADC_DMAError
-     /tmp/ccN85YAM.s:1129   .text.HAL_ADC_Stop_DMA:00000000 $t
-     /tmp/ccN85YAM.s:1135   .text.HAL_ADC_Stop_DMA:00000000 HAL_ADC_Stop_DMA
-     /tmp/ccN85YAM.s:1201   .text.HAL_ADC_Stop_DMA:00000074 $d
-     /tmp/ccN85YAM.s:1204   .text.HAL_ADC_GetValue:00000000 $t
-     /tmp/ccN85YAM.s:1210   .text.HAL_ADC_GetValue:00000000 HAL_ADC_GetValue
-     /tmp/ccN85YAM.s:1220   .text.HAL_ADC_ConvCpltCallback:00000000 $t
-     /tmp/ccN85YAM.s:1226   .text.HAL_ADC_ConvCpltCallback:00000000 HAL_ADC_ConvCpltCallback
-     /tmp/ccN85YAM.s:1234   .text.ADC_DMAConvCplt:00000000 $t
-     /tmp/ccN85YAM.s:1304   .text.ADC_DMAConvCplt:00000070 $d
-     /tmp/ccN85YAM.s:1307   .text.HAL_ADC_ConvHalfCpltCallback:00000000 $t
-     /tmp/ccN85YAM.s:1313   .text.HAL_ADC_ConvHalfCpltCallback:00000000 HAL_ADC_ConvHalfCpltCallback
-     /tmp/ccN85YAM.s:1321   .text.ADC_DMAHalfConvCplt:00000000 $t
-ARM GAS  /tmp/ccN85YAM.s 			page 32
+     /tmp/ccEypj4U.s:15     .text.ADC_DelayMicroSecond:00000000 $t
+     /tmp/ccEypj4U.s:20     .text.ADC_DelayMicroSecond:00000000 ADC_DelayMicroSecond
+     /tmp/ccEypj4U.s:45     .text.ADC_DelayMicroSecond:00000024 $d
+     /tmp/ccEypj4U.s:49     .text.ADC_ConversionStop:00000000 $t
+     /tmp/ccEypj4U.s:54     .text.ADC_ConversionStop:00000000 ADC_ConversionStop
+     /tmp/ccEypj4U.s:108    .text.ADC_Disable:00000000 $t
+     /tmp/ccEypj4U.s:113    .text.ADC_Disable:00000000 ADC_Disable
+     /tmp/ccEypj4U.s:178    .text.ADC_Enable:00000000 $t
+     /tmp/ccEypj4U.s:183    .text.ADC_Enable:00000000 ADC_Enable
+     /tmp/ccEypj4U.s:250    .text.ADC_Enable:00000074 $d
+     /tmp/ccEypj4U.s:253    .text.HAL_ADC_MspInit:00000000 $t
+     /tmp/ccEypj4U.s:259    .text.HAL_ADC_MspInit:00000000 HAL_ADC_MspInit
+     /tmp/ccEypj4U.s:267    .text.HAL_ADC_Init:00000000 $t
+     /tmp/ccEypj4U.s:273    .text.HAL_ADC_Init:00000000 HAL_ADC_Init
+     /tmp/ccEypj4U.s:496    .text.HAL_ADC_Init:00000194 $d
+     /tmp/ccEypj4U.s:504    .text.HAL_ADC_MspDeInit:00000000 $t
+     /tmp/ccEypj4U.s:510    .text.HAL_ADC_MspDeInit:00000000 HAL_ADC_MspDeInit
+     /tmp/ccEypj4U.s:518    .text.HAL_ADC_DeInit:00000000 $t
+     /tmp/ccEypj4U.s:524    .text.HAL_ADC_DeInit:00000000 HAL_ADC_DeInit
+     /tmp/ccEypj4U.s:606    .text.HAL_ADC_DeInit:00000090 $d
+     /tmp/ccEypj4U.s:614    .text.HAL_ADC_Start:00000000 $t
+     /tmp/ccEypj4U.s:620    .text.HAL_ADC_Start:00000000 HAL_ADC_Start
+     /tmp/ccEypj4U.s:670    .text.HAL_ADC_Start:00000054 $d
+     /tmp/ccEypj4U.s:673    .text.HAL_ADC_Stop:00000000 $t
+     /tmp/ccEypj4U.s:679    .text.HAL_ADC_Stop:00000000 HAL_ADC_Stop
+     /tmp/ccEypj4U.s:714    .text.HAL_ADC_Stop:00000038 $d
+     /tmp/ccEypj4U.s:717    .text.HAL_ADC_PollForConversion:00000000 $t
+     /tmp/ccEypj4U.s:723    .text.HAL_ADC_PollForConversion:00000000 HAL_ADC_PollForConversion
+     /tmp/ccEypj4U.s:838    .text.HAL_ADC_PollForConversion:000000c8 $d
+     /tmp/ccEypj4U.s:841    .text.HAL_ADC_PollForEvent:00000000 $t
+     /tmp/ccEypj4U.s:847    .text.HAL_ADC_PollForEvent:00000000 HAL_ADC_PollForEvent
+     /tmp/ccEypj4U.s:921    .text.HAL_ADC_Start_IT:00000000 $t
+     /tmp/ccEypj4U.s:927    .text.HAL_ADC_Start_IT:00000000 HAL_ADC_Start_IT
+     /tmp/ccEypj4U.s:993    .text.HAL_ADC_Start_IT:00000070 $d
+     /tmp/ccEypj4U.s:996    .text.HAL_ADC_Stop_IT:00000000 $t
+     /tmp/ccEypj4U.s:1002   .text.HAL_ADC_Stop_IT:00000000 HAL_ADC_Stop_IT
+     /tmp/ccEypj4U.s:1042   .text.HAL_ADC_Stop_IT:00000044 $d
+     /tmp/ccEypj4U.s:1045   .text.HAL_ADC_Start_DMA:00000000 $t
+     /tmp/ccEypj4U.s:1051   .text.HAL_ADC_Start_DMA:00000000 HAL_ADC_Start_DMA
+     /tmp/ccEypj4U.s:1123   .text.HAL_ADC_Start_DMA:00000080 $d
+     /tmp/ccEypj4U.s:1239   .text.ADC_DMAConvCplt:00000000 ADC_DMAConvCplt
+     /tmp/ccEypj4U.s:1326   .text.ADC_DMAHalfConvCplt:00000000 ADC_DMAHalfConvCplt
+     /tmp/ccEypj4U.s:1369   .text.ADC_DMAError:00000000 ADC_DMAError
+     /tmp/ccEypj4U.s:1129   .text.HAL_ADC_Stop_DMA:00000000 $t
+     /tmp/ccEypj4U.s:1135   .text.HAL_ADC_Stop_DMA:00000000 HAL_ADC_Stop_DMA
+     /tmp/ccEypj4U.s:1201   .text.HAL_ADC_Stop_DMA:00000074 $d
+     /tmp/ccEypj4U.s:1204   .text.HAL_ADC_GetValue:00000000 $t
+     /tmp/ccEypj4U.s:1210   .text.HAL_ADC_GetValue:00000000 HAL_ADC_GetValue
+     /tmp/ccEypj4U.s:1220   .text.HAL_ADC_ConvCpltCallback:00000000 $t
+     /tmp/ccEypj4U.s:1226   .text.HAL_ADC_ConvCpltCallback:00000000 HAL_ADC_ConvCpltCallback
+     /tmp/ccEypj4U.s:1234   .text.ADC_DMAConvCplt:00000000 $t
+     /tmp/ccEypj4U.s:1304   .text.ADC_DMAConvCplt:00000070 $d
+     /tmp/ccEypj4U.s:1307   .text.HAL_ADC_ConvHalfCpltCallback:00000000 $t
+     /tmp/ccEypj4U.s:1313   .text.HAL_ADC_ConvHalfCpltCallback:00000000 HAL_ADC_ConvHalfCpltCallback
+     /tmp/ccEypj4U.s:1321   .text.ADC_DMAHalfConvCplt:00000000 $t
+ARM GAS  /tmp/ccEypj4U.s 			page 32
 
 
-     /tmp/ccN85YAM.s:1336   .text.HAL_ADC_LevelOutOfWindowCallback:00000000 $t
-     /tmp/ccN85YAM.s:1342   .text.HAL_ADC_LevelOutOfWindowCallback:00000000 HAL_ADC_LevelOutOfWindowCallback
-     /tmp/ccN85YAM.s:1350   .text.HAL_ADC_ErrorCallback:00000000 $t
-     /tmp/ccN85YAM.s:1356   .text.HAL_ADC_ErrorCallback:00000000 HAL_ADC_ErrorCallback
-     /tmp/ccN85YAM.s:1364   .text.ADC_DMAError:00000000 $t
-     /tmp/ccN85YAM.s:1387   .text.HAL_ADC_IRQHandler:00000000 $t
-     /tmp/ccN85YAM.s:1393   .text.HAL_ADC_IRQHandler:00000000 HAL_ADC_IRQHandler
-     /tmp/ccN85YAM.s:1521   .text.HAL_ADC_IRQHandler:000000e4 $d
-     /tmp/ccN85YAM.s:1524   .text.HAL_ADC_ConfigChannel:00000000 $t
-     /tmp/ccN85YAM.s:1530   .text.HAL_ADC_ConfigChannel:00000000 HAL_ADC_ConfigChannel
-     /tmp/ccN85YAM.s:1618   .text.HAL_ADC_ConfigChannel:00000098 $d
-     /tmp/ccN85YAM.s:1624   .text.HAL_ADC_AnalogWDGConfig:00000000 $t
-     /tmp/ccN85YAM.s:1630   .text.HAL_ADC_AnalogWDGConfig:00000000 HAL_ADC_AnalogWDGConfig
-     /tmp/ccN85YAM.s:1711   .text.HAL_ADC_AnalogWDGConfig:0000008c $d
-     /tmp/ccN85YAM.s:1715   .text.HAL_ADC_GetState:00000000 $t
-     /tmp/ccN85YAM.s:1721   .text.HAL_ADC_GetState:00000000 HAL_ADC_GetState
-     /tmp/ccN85YAM.s:1730   .text.HAL_ADC_GetError:00000000 $t
-     /tmp/ccN85YAM.s:1736   .text.HAL_ADC_GetError:00000000 HAL_ADC_GetError
+     /tmp/ccEypj4U.s:1336   .text.HAL_ADC_LevelOutOfWindowCallback:00000000 $t
+     /tmp/ccEypj4U.s:1342   .text.HAL_ADC_LevelOutOfWindowCallback:00000000 HAL_ADC_LevelOutOfWindowCallback
+     /tmp/ccEypj4U.s:1350   .text.HAL_ADC_ErrorCallback:00000000 $t
+     /tmp/ccEypj4U.s:1356   .text.HAL_ADC_ErrorCallback:00000000 HAL_ADC_ErrorCallback
+     /tmp/ccEypj4U.s:1364   .text.ADC_DMAError:00000000 $t
+     /tmp/ccEypj4U.s:1387   .text.HAL_ADC_IRQHandler:00000000 $t
+     /tmp/ccEypj4U.s:1393   .text.HAL_ADC_IRQHandler:00000000 HAL_ADC_IRQHandler
+     /tmp/ccEypj4U.s:1521   .text.HAL_ADC_IRQHandler:000000e4 $d
+     /tmp/ccEypj4U.s:1524   .text.HAL_ADC_ConfigChannel:00000000 $t
+     /tmp/ccEypj4U.s:1530   .text.HAL_ADC_ConfigChannel:00000000 HAL_ADC_ConfigChannel
+     /tmp/ccEypj4U.s:1618   .text.HAL_ADC_ConfigChannel:00000098 $d
+     /tmp/ccEypj4U.s:1624   .text.HAL_ADC_AnalogWDGConfig:00000000 $t
+     /tmp/ccEypj4U.s:1630   .text.HAL_ADC_AnalogWDGConfig:00000000 HAL_ADC_AnalogWDGConfig
+     /tmp/ccEypj4U.s:1711   .text.HAL_ADC_AnalogWDGConfig:0000008c $d
+     /tmp/ccEypj4U.s:1715   .text.HAL_ADC_GetState:00000000 $t
+     /tmp/ccEypj4U.s:1721   .text.HAL_ADC_GetState:00000000 HAL_ADC_GetState
+     /tmp/ccEypj4U.s:1730   .text.HAL_ADC_GetError:00000000 $t
+     /tmp/ccEypj4U.s:1736   .text.HAL_ADC_GetError:00000000 HAL_ADC_GetError
 
 UNDEFINED SYMBOLS
 __aeabi_uidiv

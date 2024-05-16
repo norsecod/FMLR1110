@@ -2,15 +2,15 @@
 for a bachelors project "LoRaWAN Båtsensor" at Hiof (Høgskolen i Østfold)*/
 
 #include "functions.h"
+#include "smtc_hal_i2c.h"
 
-
-
+#define adxl_addr 0x53<<1
 // Global variables (declared in /application/main.c  )
 extern float VDR, temp, Voltage, Door, water, hastydata1, hastydata2, prev_water,prev_door, door;
 extern ADC_HandleTypeDef hadc;
 extern TimerEvent_t water_timer, door_timer;
+extern uint16_t axisxyz[3]; 
 
- 
 
     hal_gpio_irq_t PC10_cb = {
         .pin      = PC_10,
@@ -33,11 +33,14 @@ extern TimerEvent_t water_timer, door_timer;
 
 
 void sensor_read(void) {                                    //function that calls functions for sensors
+
     SMTC_HAL_TRACE_PRINTF("----- sensor_read -----\n\r");   //and calculates the real value of battery
-    temp = GETtemperature(1);                               //adc measurment
+    temp = GETtemperature(1);   
+    hal_mcu_delay_ms(10);                            //adc measurment
     Voltage = GETvoltage(&hadc);
-    adxl343_read_xyz(&x, &y, &z);
-    gps_snap(); // Uncomment and implement gps_snap if applicable
+    hal_mcu_delay_ms(10);
+   // gps_snap(); // Uncomment and implement gps_snap if applicable
+
 
 }
 
@@ -65,7 +68,7 @@ void sendData(float temperature, float analogValue, bool digitalValue1, bool dig
     cayenne_lpp_reset(&lpp);    //resets the structure lpp so it is empty
 
     cayenne_lpp_add_temperature(&lpp, 1, temperature);  //temperature channel 1
-    cayenne_lpp_add_analog_input(&lpp, 2, analogValue); //ADC (analog) value on channel 2
+    cayenne_lpp_add_analog_input(&lpp, 2, analogValue); //voltage value on channel 2
     cayenne_lpp_add_digital_input(&lpp, 3, digitalValue1);  //Door magnet on channel 3 (high or low)
     cayenne_lpp_add_digital_input(&lpp, 4, digitalValue2);  //watersensor on channel 4 (high or low)
 
@@ -110,7 +113,6 @@ float GETtemperature(const uint32_t id) {    //function that calls TC74A0, and r
 
 float GETvoltage(ADC_HandleTypeDef *hadc) {         // function that take a ADC measurment
     float batt = 0.0;                               //stores the battery voltage (adc value)
-    float Volt = 0;
     hal_gpio_set_value(PA_3, 1);                    //turns on the mosfet for the voltage divider
     MX_ADC_Init();                                  //adc init
 
@@ -177,12 +179,9 @@ void MX_ADC_Init(void)
 
 void GPIO_Init(void) {                  //init for gpio pns called in main
 
-    hal_gpio_init_out(PC_7,0);          //red led blinky
-    hal_gpio_init_out(PC_1,1);          //green led blinky blinky will be removed from final code
     hal_gpio_init_out(PB_0,0);          //active antenna on/off
     hal_gpio_init_out(PA_3,0);          //voltage divider on/off
-    //more pins will be added later
-   
+  
 
     hal_gpio_init_in( PC_11, BSP_GPIO_PULL_MODE_DOWN, BSP_GPIO_IRQ_MODE_RISING, &PC11_cb ); //EXTI interrupt doormagnet
     hal_gpio_init_in( PC_10, BSP_GPIO_PULL_MODE_DOWN, BSP_GPIO_IRQ_MODE_RISING, &PC10_cb ); //EXTI interrupt watersensor    
@@ -191,44 +190,52 @@ void GPIO_Init(void) {                  //init for gpio pns called in main
 
 /*=============================functions for ADCL343========================================*/
 
-/*Variables which hold some variable*/
-uint8_t data_rec[6];
-uint8_t acc_range;
-int16_t x,y,z;
-void adxl345_init(adxl345Parameters param)
-	{
-		acc_range=param;
-		i2c_writeByte(ADXL343_ADDRESS, ADXL3XX_REG_DATA_FORMAT, param);
-		i2c_writeByte(ADXL343_ADDRESS, ADXL3XX_REG_POWER_CTL , RESET);
-		i2c_writeByte(ADXL343_ADDRESS,ADXL3XX_REG_POWER_CTL , ADXL3XX_SET_MEASURE_BYTE);
-	}
 
+// Function to write data to ADXL343
+void adxl_write(uint8_t reg, uint8_t value) {
+    
+    hal_i2c_write(1, adxl_addr , reg, value);
+}
 
-void adxl345_update()
-	{
+// Function to read data from ADXL343
+void adxl_read(uint8_t reg, uint8_t *data_rec, uint8_t numberofbytes) {
+    hal_i2c_read_buffer(1, adxl_addr , reg, data_rec, numberofbytes);
+}
 
+// Function to initialize ADXL343
+void adxl_init() {
+    uint8_t data_rec[1];
+    adxl_read(0x00, data_rec, 1);
+    hal_mcu_delay_ms(10);
+    SMTC_HAL_TRACE_PRINTF("Data read from register 0x%02X: 0x%02X\n",0x00, data_rec[0]);
+    if (data_rec[0]== 0xE5)
+    {
+        SMTC_HAL_TRACE_PRINTF("ADXL found\n\r");
+ 
+        adxl_write(0x2d, 0x00);  // reset all bits
+        adxl_write(0x2d, 0x08);  // measure mode
 
+        adxl_write(0x31, 0x01);  // +- 4g range
 
-		i2c_ReadMulti(ADXL343_ADDRESS, ADXL3XX_REG_DATAX0, 6, (char*)data_rec);
+    }
+    else
+    {
+        SMTC_HAL_TRACE_PRINTF("ADXL not found\n\r");
+    }
+    
+}
 
-		x = ((data_rec[1]<<8)|data_rec[0]);
-		y = ((data_rec[3]<<8)|data_rec[2]);
-		z = ((data_rec[5]<<8)|data_rec[4]);
+// Function to read acceleration data from ADXL343
+void adxl_read_acceleration(uint16_t *axis) {
+    uint8_t data_rec[6];
 
-	}
+    // Read 6 bytes of data from 0x32 to 0x37
+    adxl_read(0x32, data_rec, 6);
 
-void adxl345_get_values(accleration_values_t * values)
-	{
-	float divider;
-	switch(acc_range)
-	{
-		case accl_2g: divider=0.003906; /*1/256*/	break;
-		case accl_4g: divider=0.0078125;/*1/128*/	break;
-		case accl_8g: divider=0.01563;	/*1/64*/	break;
-		case accl_16g: divider=0.03125;	/*1/32*/	break;
-	}
+    // Convert the raw data to 16-bit integers
+    axis[0] = (uint16_t)((data_rec[1] << 8) | data_rec[0]);
+    axis[1] = (uint16_t)((data_rec[3] << 8) | data_rec[2]);
+    axis[2] = (uint16_t)((data_rec[5] << 8) | data_rec[4]);
+   
 
-		values->xx=x*divider;
-		values->yy=y*divider;
-		values->zz=z*divider;
-	}
+}

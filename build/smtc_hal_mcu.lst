@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccQUdeoX.s 			page 1
+ARM GAS  /tmp/ccIl8Hp3.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
   56 0032 9A42     		cmp	r2, r3
   57 0034 F7D3     		bcc	.L3
   58 0036 C046     		nop
-ARM GAS  /tmp/ccQUdeoX.s 			page 2
+ARM GAS  /tmp/ccIl8Hp3.s 			page 2
 
 
   59 0038 C046     		nop
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  119              		@ args = 0, pretend = 0, frame = 0
  120              		@ frame_needed = 0, uses_anonymous_args = 0
  121              		@ link register save eliminated.
-ARM GAS  /tmp/ccQUdeoX.s 			page 3
+ARM GAS  /tmp/ccIl8Hp3.s 			page 3
 
 
  122 0000 0368     		ldr	r3, [r0]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  182              		@ frame_needed = 0, uses_anonymous_args = 0
  183              		@ link register save eliminated.
  184              		.syntax divided
-ARM GAS  /tmp/ccQUdeoX.s 			page 4
+ARM GAS  /tmp/ccIl8Hp3.s 			page 4
 
 
  185              	@ 209 "bsp_l0/mcu_drivers/cmsis/Core/Include/cmsis_gcc.h" 1
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  241 0024 FFF7FEFF 		bl	memset
  242 0028 FFF7FEFF 		bl	HAL_PWR_EnableBkUpAccess
  243 002c 236D     		ldr	r3, [r4, #80]
-ARM GAS  /tmp/ccQUdeoX.s 			page 5
+ARM GAS  /tmp/ccIl8Hp3.s 			page 5
 
 
  244 002e 4B4A     		ldr	r2, .L18+4
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  298 00a2 0397     		str	r7, [sp, #12]
  299 00a4 FFF7FEFF 		bl	HAL_RCC_ClockConfig
  300 00a8 0028     		cmp	r0, #0
-ARM GAS  /tmp/ccQUdeoX.s 			page 6
+ARM GAS  /tmp/ccIl8Hp3.s 			page 6
 
 
  301 00aa DDD1     		bne	.L17
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  355 012c 1622     		movs	r2, #22
  356 012e 1921     		movs	r1, #25
  357 0130 0120     		movs	r0, #1
-ARM GAS  /tmp/ccQUdeoX.s 			page 7
+ARM GAS  /tmp/ccIl8Hp3.s 			page 7
 
 
  358 0132 FFF7FEFF 		bl	hal_i2c_init
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  414 0024 0125     		movs	r5, #1
  415              	.L30:
  416 0026 4E4B     		ldr	r3, .L36+4
-ARM GAS  /tmp/ccQUdeoX.s 			page 8
+ARM GAS  /tmp/ccIl8Hp3.s 			page 8
 
 
  417 0028 4E49     		ldr	r1, .L36+8
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  471 0098 0396     		str	r6, [sp, #12]
  472 009a 916B     		ldr	r1, [r2, #56]
  473 009c 5B05     		lsls	r3, r3, #21
-ARM GAS  /tmp/ccQUdeoX.s 			page 9
+ARM GAS  /tmp/ccIl8Hp3.s 			page 9
 
 
  474 009e 0B43     		orrs	r3, r1
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  528 011c FFF7FEFF 		bl	hal_spi_init
  529 0120 1A23     		movs	r3, #26
  530 0122 1E22     		movs	r2, #30
-ARM GAS  /tmp/ccQUdeoX.s 			page 10
+ARM GAS  /tmp/ccIl8Hp3.s 			page 10
 
 
  531 0124 1F21     		movs	r1, #31
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  587              		@ sp needed
  588 0002 024B     		ldr	r3, .L39
  589 0004 1A70     		strb	r2, [r3]
-ARM GAS  /tmp/ccQUdeoX.s 			page 11
+ARM GAS  /tmp/ccIl8Hp3.s 			page 11
 
 
  590 0006 024B     		ldr	r3, .L39+4
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  649              		.align	1
  650              		.global	SysTick_Handler
  651              		.syntax unified
-ARM GAS  /tmp/ccQUdeoX.s 			page 12
+ARM GAS  /tmp/ccIl8Hp3.s 			page 12
 
 
  652              		.code	16
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  713 0008 1635     		adds	r5, r5, #22
  714 000a FFF7FEFF 		bl	hal_trace_print_var
  715 000e 2800     		movs	r0, r5
-ARM GAS  /tmp/ccQUdeoX.s 			page 13
+ARM GAS  /tmp/ccIl8Hp3.s 			page 13
 
 
  716 0010 FFF7FEFF 		bl	hal_trace_print_var
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  769      616E6963 
  769      3A25730A 
  770              	.LC4:
-ARM GAS  /tmp/ccQUdeoX.s 			page 14
+ARM GAS  /tmp/ccIl8Hp3.s 			page 14
 
 
  771 0016 00       		.ascii	"\000"
@@ -802,67 +802,67 @@ ARM GAS  /tmp/ccQUdeoX.s 			page 1
  779      523A201B 
  779      5B306D00 
  780              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccQUdeoX.s 			page 15
+ARM GAS  /tmp/ccIl8Hp3.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_hal_mcu.c
-     /tmp/ccQUdeoX.s:15     .text.hal_mcu_wait_us:00000000 $t
-     /tmp/ccQUdeoX.s:22     .text.hal_mcu_wait_us:00000000 hal_mcu_wait_us
-     /tmp/ccQUdeoX.s:65     .text.wut_cb:00000000 $t
-     /tmp/ccQUdeoX.s:70     .text.wut_cb:00000000 wut_cb
-     /tmp/ccQUdeoX.s:82     .text.wut_cb:00000008 $d
-     /tmp/ccQUdeoX.s:748    .bss.wut_flag:00000000 wut_flag
-     /tmp/ccQUdeoX.s:85     .text.hal_mcu_critical_section_begin:00000000 $t
-     /tmp/ccQUdeoX.s:91     .text.hal_mcu_critical_section_begin:00000000 hal_mcu_critical_section_begin
-     /tmp/ccQUdeoX.s:112    .text.hal_mcu_critical_section_end:00000000 $t
-     /tmp/ccQUdeoX.s:118    .text.hal_mcu_critical_section_end:00000000 hal_mcu_critical_section_end
-     /tmp/ccQUdeoX.s:133    .text.hal_mcu_disable_irq:00000000 $t
-     /tmp/ccQUdeoX.s:139    .text.hal_mcu_disable_irq:00000000 hal_mcu_disable_irq
-     /tmp/ccQUdeoX.s:153    .text.hal_mcu_enable_irq:00000000 $t
-     /tmp/ccQUdeoX.s:159    .text.hal_mcu_enable_irq:00000000 hal_mcu_enable_irq
-     /tmp/ccQUdeoX.s:173    .text.hal_mcu_reset:00000000 $t
-     /tmp/ccQUdeoX.s:179    .text.hal_mcu_reset:00000000 hal_mcu_reset
-     /tmp/ccQUdeoX.s:213    .text.hal_mcu_reset:00000014 $d
-     /tmp/ccQUdeoX.s:217    .text.hal_mcu_init:00000000 $t
-     /tmp/ccQUdeoX.s:223    .text.hal_mcu_init:00000000 hal_mcu_init
-     /tmp/ccQUdeoX.s:376    .text.hal_mcu_init:00000158 $d
-     /tmp/ccQUdeoX.s:743    .rodata.__func__.1:00000000 __func__.1
-     /tmp/ccQUdeoX.s:754    .bss.wut:00000000 wut
-     /tmp/ccQUdeoX.s:385    .text.hal_mcu_set_sleep_for_ms:00000000 $t
-     /tmp/ccQUdeoX.s:391    .text.hal_mcu_set_sleep_for_ms:00000000 hal_mcu_set_sleep_for_ms
-     /tmp/ccQUdeoX.s:566    .text.hal_mcu_set_sleep_for_ms:0000015c $d
-     /tmp/ccQUdeoX.s:759    .bss.lp_current_mode:00000000 lp_current_mode
-     /tmp/ccQUdeoX.s:738    .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccQUdeoX.s:576    .text.hal_mcu_disable_low_power_wait:00000000 $t
-     /tmp/ccQUdeoX.s:582    .text.hal_mcu_disable_low_power_wait:00000000 hal_mcu_disable_low_power_wait
-     /tmp/ccQUdeoX.s:596    .text.hal_mcu_disable_low_power_wait:0000000c $d
-     /tmp/ccQUdeoX.s:764    .bss.exit_wait:00000000 exit_wait
-     /tmp/ccQUdeoX.s:600    .text.hal_mcu_enable_low_power_wait:00000000 $t
-     /tmp/ccQUdeoX.s:606    .text.hal_mcu_enable_low_power_wait:00000000 hal_mcu_enable_low_power_wait
-     /tmp/ccQUdeoX.s:620    .text.hal_mcu_enable_low_power_wait:0000000c $d
-     /tmp/ccQUdeoX.s:624    .text.hal_mcu_disable_once_low_power_wait:00000000 $t
-     /tmp/ccQUdeoX.s:630    .text.hal_mcu_disable_once_low_power_wait:00000000 hal_mcu_disable_once_low_power_wait
-     /tmp/ccQUdeoX.s:645    .text.hal_mcu_disable_once_low_power_wait:00000010 $d
-     /tmp/ccQUdeoX.s:649    .text.SysTick_Handler:00000000 $t
-     /tmp/ccQUdeoX.s:655    .text.SysTick_Handler:00000000 SysTick_Handler
-     /tmp/ccQUdeoX.s:665    .text.HAL_MspInit:00000000 $t
-     /tmp/ccQUdeoX.s:671    .text.HAL_MspInit:00000000 HAL_MspInit
-     /tmp/ccQUdeoX.s:684    .text.hal_mcu_delay_ms:00000000 $t
-     /tmp/ccQUdeoX.s:690    .text.hal_mcu_delay_ms:00000000 hal_mcu_delay_ms
-     /tmp/ccQUdeoX.s:699    .text.HardFault_Handler:00000000 $t
-     /tmp/ccQUdeoX.s:705    .text.HardFault_Handler:00000000 HardFault_Handler
-     /tmp/ccQUdeoX.s:732    .text.HardFault_Handler:00000034 $d
-     /tmp/ccQUdeoX.s:749    .bss.wut_flag:00000000 $d
-     /tmp/ccQUdeoX.s:751    .bss.wut:00000000 $d
-     /tmp/ccQUdeoX.s:760    .bss.lp_current_mode:00000000 $d
-     /tmp/ccQUdeoX.s:765    .bss.exit_wait:00000000 $d
+     /tmp/ccIl8Hp3.s:15     .text.hal_mcu_wait_us:00000000 $t
+     /tmp/ccIl8Hp3.s:22     .text.hal_mcu_wait_us:00000000 hal_mcu_wait_us
+     /tmp/ccIl8Hp3.s:65     .text.wut_cb:00000000 $t
+     /tmp/ccIl8Hp3.s:70     .text.wut_cb:00000000 wut_cb
+     /tmp/ccIl8Hp3.s:82     .text.wut_cb:00000008 $d
+     /tmp/ccIl8Hp3.s:748    .bss.wut_flag:00000000 wut_flag
+     /tmp/ccIl8Hp3.s:85     .text.hal_mcu_critical_section_begin:00000000 $t
+     /tmp/ccIl8Hp3.s:91     .text.hal_mcu_critical_section_begin:00000000 hal_mcu_critical_section_begin
+     /tmp/ccIl8Hp3.s:112    .text.hal_mcu_critical_section_end:00000000 $t
+     /tmp/ccIl8Hp3.s:118    .text.hal_mcu_critical_section_end:00000000 hal_mcu_critical_section_end
+     /tmp/ccIl8Hp3.s:133    .text.hal_mcu_disable_irq:00000000 $t
+     /tmp/ccIl8Hp3.s:139    .text.hal_mcu_disable_irq:00000000 hal_mcu_disable_irq
+     /tmp/ccIl8Hp3.s:153    .text.hal_mcu_enable_irq:00000000 $t
+     /tmp/ccIl8Hp3.s:159    .text.hal_mcu_enable_irq:00000000 hal_mcu_enable_irq
+     /tmp/ccIl8Hp3.s:173    .text.hal_mcu_reset:00000000 $t
+     /tmp/ccIl8Hp3.s:179    .text.hal_mcu_reset:00000000 hal_mcu_reset
+     /tmp/ccIl8Hp3.s:213    .text.hal_mcu_reset:00000014 $d
+     /tmp/ccIl8Hp3.s:217    .text.hal_mcu_init:00000000 $t
+     /tmp/ccIl8Hp3.s:223    .text.hal_mcu_init:00000000 hal_mcu_init
+     /tmp/ccIl8Hp3.s:376    .text.hal_mcu_init:00000158 $d
+     /tmp/ccIl8Hp3.s:743    .rodata.__func__.1:00000000 __func__.1
+     /tmp/ccIl8Hp3.s:754    .bss.wut:00000000 wut
+     /tmp/ccIl8Hp3.s:385    .text.hal_mcu_set_sleep_for_ms:00000000 $t
+     /tmp/ccIl8Hp3.s:391    .text.hal_mcu_set_sleep_for_ms:00000000 hal_mcu_set_sleep_for_ms
+     /tmp/ccIl8Hp3.s:566    .text.hal_mcu_set_sleep_for_ms:0000015c $d
+     /tmp/ccIl8Hp3.s:759    .bss.lp_current_mode:00000000 lp_current_mode
+     /tmp/ccIl8Hp3.s:738    .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccIl8Hp3.s:576    .text.hal_mcu_disable_low_power_wait:00000000 $t
+     /tmp/ccIl8Hp3.s:582    .text.hal_mcu_disable_low_power_wait:00000000 hal_mcu_disable_low_power_wait
+     /tmp/ccIl8Hp3.s:596    .text.hal_mcu_disable_low_power_wait:0000000c $d
+     /tmp/ccIl8Hp3.s:764    .bss.exit_wait:00000000 exit_wait
+     /tmp/ccIl8Hp3.s:600    .text.hal_mcu_enable_low_power_wait:00000000 $t
+     /tmp/ccIl8Hp3.s:606    .text.hal_mcu_enable_low_power_wait:00000000 hal_mcu_enable_low_power_wait
+     /tmp/ccIl8Hp3.s:620    .text.hal_mcu_enable_low_power_wait:0000000c $d
+     /tmp/ccIl8Hp3.s:624    .text.hal_mcu_disable_once_low_power_wait:00000000 $t
+     /tmp/ccIl8Hp3.s:630    .text.hal_mcu_disable_once_low_power_wait:00000000 hal_mcu_disable_once_low_power_wait
+     /tmp/ccIl8Hp3.s:645    .text.hal_mcu_disable_once_low_power_wait:00000010 $d
+     /tmp/ccIl8Hp3.s:649    .text.SysTick_Handler:00000000 $t
+     /tmp/ccIl8Hp3.s:655    .text.SysTick_Handler:00000000 SysTick_Handler
+     /tmp/ccIl8Hp3.s:665    .text.HAL_MspInit:00000000 $t
+     /tmp/ccIl8Hp3.s:671    .text.HAL_MspInit:00000000 HAL_MspInit
+     /tmp/ccIl8Hp3.s:684    .text.hal_mcu_delay_ms:00000000 $t
+     /tmp/ccIl8Hp3.s:690    .text.hal_mcu_delay_ms:00000000 hal_mcu_delay_ms
+     /tmp/ccIl8Hp3.s:699    .text.HardFault_Handler:00000000 $t
+     /tmp/ccIl8Hp3.s:705    .text.HardFault_Handler:00000000 HardFault_Handler
+     /tmp/ccIl8Hp3.s:732    .text.HardFault_Handler:00000034 $d
+     /tmp/ccIl8Hp3.s:749    .bss.wut_flag:00000000 $d
+     /tmp/ccIl8Hp3.s:751    .bss.wut:00000000 $d
+     /tmp/ccIl8Hp3.s:760    .bss.lp_current_mode:00000000 $d
+     /tmp/ccIl8Hp3.s:765    .bss.exit_wait:00000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_idiv
 HAL_Init
 memset
-ARM GAS  /tmp/ccQUdeoX.s 			page 16
+ARM GAS  /tmp/ccIl8Hp3.s 			page 16
 
 
 HAL_PWR_EnableBkUpAccess

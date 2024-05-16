@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc6ugntu.s 			page 1
+ARM GAS  /tmp/ccGkGyvV.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
   56 003e 0093     		str	r3, [sp]
   57 0040 009B     		ldr	r3, [sp]
   58 0042 0723     		movs	r3, #7
-ARM GAS  /tmp/cc6ugntu.s 			page 2
+ARM GAS  /tmp/ccGkGyvV.s 			page 2
 
 
   59 0044 2370     		strb	r3, [r4]
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  117 0012 DD19     		adds	r5, r3, r7
  118 0014 2D1A     		subs	r5, r5, r0
  119 0016 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  /tmp/cc6ugntu.s 			page 3
+ARM GAS  /tmp/ccGkGyvV.s 			page 3
 
 
  120 001a 284B     		ldr	r3, .L26
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  174 007e A26A     		ldr	r2, [r4, #40]
  175 0080 8901     		lsls	r1, r1, #6
  176 0082 8A42     		cmp	r2, r1
-ARM GAS  /tmp/cc6ugntu.s 			page 4
+ARM GAS  /tmp/ccGkGyvV.s 			page 4
 
 
  177 0084 06D1     		bne	.L16
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  233 0014 9B00     		lsls	r3, r3, #2
  234 0016 4343     		muls	r3, r0
  235 0018 0393     		str	r3, [sp, #12]
-ARM GAS  /tmp/cc6ugntu.s 			page 5
+ARM GAS  /tmp/ccGkGyvV.s 			page 5
 
 
  236 001a 8223     		movs	r3, #130
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  292 0008 4068     		ldr	r0, [r0, #4]
  293 000a 4900     		lsls	r1, r1, #1
  294 000c 8842     		cmp	r0, r1
-ARM GAS  /tmp/cc6ugntu.s 			page 6
+ARM GAS  /tmp/ccGkGyvV.s 			page 6
 
 
  295 000e 0AD0     		beq	.L43
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  350              		.thumb_func
  352              	HAL_SPI_MspInit:
  353              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/cc6ugntu.s 			page 7
+ARM GAS  /tmp/ccGkGyvV.s 			page 7
 
 
  354              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  410 0050 A668     		ldr	r6, [r4, #8]
  411 0052 A06A     		ldr	r0, [r4, #40]
  412 0054 3E40     		ands	r6, r7
-ARM GAS  /tmp/cc6ugntu.s 			page 8
+ARM GAS  /tmp/ccGkGyvV.s 			page 8
 
 
  413 0056 8027     		movs	r7, #128
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  467              	.L61:
  468              		@ sp needed
  469 00c0 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
-ARM GAS  /tmp/cc6ugntu.s 			page 9
+ARM GAS  /tmp/ccGkGyvV.s 			page 9
 
 
  470              	.L62:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  529              		.section	.text.HAL_SPI_Transmit,"ax",%progbits
  530              		.align	1
  531              		.global	HAL_SPI_Transmit
-ARM GAS  /tmp/cc6ugntu.s 			page 10
+ARM GAS  /tmp/ccGkGyvV.s 			page 10
 
 
  532              		.syntax unified
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  587 005a A786     		strh	r7, [r4, #52]
  588 005c 1202     		lsls	r2, r2, #8
  589 005e 9142     		cmp	r1, r2
-ARM GAS  /tmp/cc6ugntu.s 			page 11
+ARM GAS  /tmp/ccGkGyvV.s 			page 11
 
 
  590 0060 08D1     		bne	.L76
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  644              	.L85:
  645 00c2 2268     		ldr	r2, [r4]
  646 00c4 9368     		ldr	r3, [r2, #8]
-ARM GAS  /tmp/cc6ugntu.s 			page 12
+ARM GAS  /tmp/ccGkGyvV.s 			page 12
 
 
  647 00c6 2B42     		tst	r3, r5
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  701 0128 FFF7FEFF 		bl	HAL_GetTick
  702 012c 019B     		ldr	r3, [sp, #4]
  703 012e C01A     		subs	r0, r0, r3
-ARM GAS  /tmp/cc6ugntu.s 			page 13
+ARM GAS  /tmp/ccGkGyvV.s 			page 13
 
 
  704 0130 B042     		cmp	r0, r6
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  758 018a EED1     		bne	.L94
  759 018c A9E7     		b	.L95
  760              	.L90:
-ARM GAS  /tmp/cc6ugntu.s 			page 14
+ARM GAS  /tmp/ccGkGyvV.s 			page 14
 
 
  761 018e FFF7FEFF 		bl	HAL_GetTick
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  817 003e 002B     		cmp	r3, #0
  818 0040 07D1     		bne	.L125
  819 0042 042A     		cmp	r2, #4
-ARM GAS  /tmp/cc6ugntu.s 			page 15
+ARM GAS  /tmp/ccGkGyvV.s 			page 15
 
 
  820 0044 05D1     		bne	.L125
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  874 00a2 1868     		ldr	r0, [r3]
  875 00a4 0243     		orrs	r2, r0
  876 00a6 1A60     		str	r2, [r3]
-ARM GAS  /tmp/cc6ugntu.s 			page 16
+ARM GAS  /tmp/ccGkGyvV.s 			page 16
 
 
  877              	.L129:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  931 0108 00D1     		bne	.LCB1010
  932 010a 97E0     		b	.L156	@long jump
  933              	.LCB1010:
-ARM GAS  /tmp/cc6ugntu.s 			page 17
+ARM GAS  /tmp/ccGkGyvV.s 			page 17
 
 
  934 010c 0223     		movs	r3, #2
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  988 0172 E38F     		ldrh	r3, [r4, #62]
  989 0174 013B     		subs	r3, r3, #1
  990 0176 9BB2     		uxth	r3, r3
-ARM GAS  /tmp/cc6ugntu.s 			page 18
+ARM GAS  /tmp/ccGkGyvV.s 			page 18
 
 
  991 0178 E387     		strh	r3, [r4, #62]
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1045 01d8 2363     		str	r3, [r4, #48]
  1046 01da E38E     		ldrh	r3, [r4, #54]
  1047 01dc 013B     		subs	r3, r3, #1
-ARM GAS  /tmp/cc6ugntu.s 			page 19
+ARM GAS  /tmp/ccGkGyvV.s 			page 19
 
 
  1048 01de 9BB2     		uxth	r3, r3
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1102              	.L143:
  1103 0244 2268     		ldr	r2, [r4]
  1104 0246 0027     		movs	r7, #0
-ARM GAS  /tmp/cc6ugntu.s 			page 20
+ARM GAS  /tmp/ccGkGyvV.s 			page 20
 
 
  1105 0248 9368     		ldr	r3, [r2, #8]
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1161 000c 4268     		ldr	r2, [r0, #4]
  1162 000e 0533     		adds	r3, r3, #5
  1163 0010 FF33     		adds	r3, r3, #255
-ARM GAS  /tmp/cc6ugntu.s 			page 21
+ARM GAS  /tmp/ccGkGyvV.s 			page 21
 
 
  1164 0012 0400     		movs	r4, r0
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1218 0078 6365     		str	r3, [r4, #84]
  1219 007a A263     		str	r2, [r4, #56]
  1220 007c A26A     		ldr	r2, [r4, #40]
-ARM GAS  /tmp/cc6ugntu.s 			page 22
+ARM GAS  /tmp/ccGkGyvV.s 			page 22
 
 
  1221 007e E687     		strh	r6, [r4, #62]
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1275 00e0 8023     		movs	r3, #128
  1276 00e2 A26A     		ldr	r2, [r4, #40]
  1277 00e4 9B01     		lsls	r3, r3, #6
-ARM GAS  /tmp/cc6ugntu.s 			page 23
+ARM GAS  /tmp/ccGkGyvV.s 			page 23
 
 
  1278 00e6 9A42     		cmp	r2, r3
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1332 0152 C2E7     		b	.L224
  1333              	.L226:
  1334 0154 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  /tmp/cc6ugntu.s 			page 24
+ARM GAS  /tmp/ccGkGyvV.s 			page 24
 
 
  1335 0158 C01B     		subs	r0, r0, r7
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1389 01b6 2000     		movs	r0, r4
  1390 01b8 FFF7FEFF 		bl	SPI_EndRxTransaction
  1391 01bc 0028     		cmp	r0, #0
-ARM GAS  /tmp/cc6ugntu.s 			page 25
+ARM GAS  /tmp/ccGkGyvV.s 			page 25
 
 
  1392 01be 01D0     		beq	.L240
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1448 0020 5135     		adds	r5, r5, #81
  1449 0022 2E78     		ldrb	r6, [r5]
  1450 0024 0018     		adds	r0, r0, r0
-ARM GAS  /tmp/cc6ugntu.s 			page 26
+ARM GAS  /tmp/ccGkGyvV.s 			page 26
 
 
  1451 0026 012E     		cmp	r6, #1
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1505 008c 1168     		ldr	r1, [r2]
  1506 008e 1942     		tst	r1, r3
  1507 0090 03D0     		beq	.L272
-ARM GAS  /tmp/cc6ugntu.s 			page 27
+ARM GAS  /tmp/ccGkGyvV.s 			page 27
 
 
  1508              	.L273:
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1564 0034 33D1     		bne	.L285
  1565 0036 019F     		ldr	r7, [sp, #4]
  1566 0038 042F     		cmp	r7, #4
-ARM GAS  /tmp/cc6ugntu.s 			page 28
+ARM GAS  /tmp/ccGkGyvV.s 			page 28
 
 
  1567 003a 30D1     		bne	.L285
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1621 009c 0020     		movs	r0, #0
  1622              	.L285:
  1623 009e 0023     		movs	r3, #0
-ARM GAS  /tmp/cc6ugntu.s 			page 29
+ARM GAS  /tmp/ccGkGyvV.s 			page 29
 
 
  1624 00a0 2B70     		strb	r3, [r5]
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1680 002c 2A78     		ldrb	r2, [r5]
  1681 002e 0220     		movs	r0, #2
  1682 0030 012A     		cmp	r2, #1
-ARM GAS  /tmp/cc6ugntu.s 			page 30
+ARM GAS  /tmp/ccGkGyvV.s 			page 30
 
 
  1683 0032 F8D0     		beq	.L309
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1737 009a 1968     		ldr	r1, [r3]
  1738 009c 0A43     		orrs	r2, r1
  1739 009e 1A60     		str	r2, [r3]
-ARM GAS  /tmp/cc6ugntu.s 			page 31
+ARM GAS  /tmp/ccGkGyvV.s 			page 31
 
 
  1740              	.L313:
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1796 001e 58D1     		bne	.L337
  1797 0020 0029     		cmp	r1, #0
  1798 0022 40D0     		beq	.L330
-ARM GAS  /tmp/cc6ugntu.s 			page 32
+ARM GAS  /tmp/ccGkGyvV.s 			page 32
 
 
  1799 0024 002A     		cmp	r2, #0
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1853 008c 8363     		str	r3, [r0, #56]
  1854 008e E38E     		ldrh	r3, [r4, #54]
  1855 0090 9BB2     		uxth	r3, r3
-ARM GAS  /tmp/cc6ugntu.s 			page 33
+ARM GAS  /tmp/ccGkGyvV.s 			page 33
 
 
  1856 0092 FFF7FEFF 		bl	HAL_DMA_Start_IT
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1912              		@ frame_needed = 0, uses_anonymous_args = 0
  1913 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
  1914 0002 0600     		movs	r6, r0
-ARM GAS  /tmp/cc6ugntu.s 			page 34
+ARM GAS  /tmp/ccGkGyvV.s 			page 34
 
 
  1915 0004 5036     		adds	r6, r6, #80
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  1969 006c 8001     		lsls	r0, r0, #6
  1970 006e 8342     		cmp	r3, r0
  1971 0070 06D1     		bne	.L352
-ARM GAS  /tmp/cc6ugntu.s 			page 35
+ARM GAS  /tmp/ccGkGyvV.s 			page 35
 
 
  1972 0072 0868     		ldr	r0, [r1]
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2026 00d0 4363     		str	r3, [r0, #52]
  2027 00d2 8363     		str	r3, [r0, #56]
  2028 00d4 E38E     		ldrh	r3, [r4, #54]
-ARM GAS  /tmp/cc6ugntu.s 			page 36
+ARM GAS  /tmp/ccGkGyvV.s 			page 36
 
 
  2029 00d6 216B     		ldr	r1, [r4, #48]
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2085 000a 0FD1     		bne	.L380
  2086 000c 8222     		movs	r2, #130
  2087 000e 6568     		ldr	r5, [r4, #4]
-ARM GAS  /tmp/cc6ugntu.s 			page 37
+ARM GAS  /tmp/ccGkGyvV.s 			page 37
 
 
  2088 0010 5200     		lsls	r2, r2, #1
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2142 0078 1368     		ldr	r3, [r2]
  2143 007a 2048     		ldr	r0, .L396
  2144 007c 0340     		ands	r3, r0
-ARM GAS  /tmp/cc6ugntu.s 			page 38
+ARM GAS  /tmp/ccGkGyvV.s 			page 38
 
 
  2145 007e 1360     		str	r3, [r2]
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2199              	.L387:
  2200 00e4 2022     		movs	r2, #32
  2201 00e6 5968     		ldr	r1, [r3, #4]
-ARM GAS  /tmp/cc6ugntu.s 			page 39
+ARM GAS  /tmp/ccGkGyvV.s 			page 39
 
 
  2202 00e8 0025     		movs	r5, #0
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2258 0034 60D1     		bne	.L400
  2259 0036 616D     		ldr	r1, [r4, #84]
  2260 0038 4032     		adds	r2, r2, #64
-ARM GAS  /tmp/cc6ugntu.s 			page 40
+ARM GAS  /tmp/ccGkGyvV.s 			page 40
 
 
  2261 003a 0A43     		orrs	r2, r1
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2315 0098 5B68     		ldr	r3, [r3, #4]
  2316 009a DB07     		lsls	r3, r3, #31
  2317 009c 13D5     		bpl	.L412
-ARM GAS  /tmp/cc6ugntu.s 			page 41
+ARM GAS  /tmp/ccGkGyvV.s 			page 41
 
 
  2318 009e E06C     		ldr	r0, [r4, #76]
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2372 0102 95D1     		bne	.L402
  2373 0104 9BE7     		b	.L401
  2374              	.L404:
-ARM GAS  /tmp/cc6ugntu.s 			page 42
+ARM GAS  /tmp/ccGkGyvV.s 			page 42
 
 
  2375 0106 009A     		ldr	r2, [sp]
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2432              		.thumb_func
  2434              	HAL_SPI_DMAResume:
  2435              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/cc6ugntu.s 			page 43
+ARM GAS  /tmp/ccGkGyvV.s 			page 43
 
 
  2436              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2492 002e 8B43     		bics	r3, r1
  2493 0030 5360     		str	r3, [r2, #4]
  2494 0032 0123     		movs	r3, #1
-ARM GAS  /tmp/cc6ugntu.s 			page 44
+ARM GAS  /tmp/ccGkGyvV.s 			page 44
 
 
  2495 0034 2370     		strb	r3, [r4]
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2557              	HAL_SPI_TxHalfCpltCallback:
  2558              		@ args = 0, pretend = 0, frame = 0
  2559              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cc6ugntu.s 			page 45
+ARM GAS  /tmp/ccGkGyvV.s 			page 45
 
 
  2560              		@ link register save eliminated.
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2623              		.align	1
  2624              		.syntax unified
  2625              		.code	16
-ARM GAS  /tmp/cc6ugntu.s 			page 46
+ARM GAS  /tmp/ccGkGyvV.s 			page 46
 
 
  2626              		.thumb_func
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2685 0032 5960     		str	r1, [r3, #4]
  2686 0034 2000     		movs	r0, r4
  2687 0036 6421     		movs	r1, #100
-ARM GAS  /tmp/cc6ugntu.s 			page 47
+ARM GAS  /tmp/ccGkGyvV.s 			page 47
 
 
  2688 0038 FFF7FEFF 		bl	SPI_EndRxTxTransaction
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2744              		@ frame_needed = 0, uses_anonymous_args = 0
  2745 0000 10B5     		push	{r4, lr}
  2746 0002 026B     		ldr	r2, [r0, #48]
-ARM GAS  /tmp/cc6ugntu.s 			page 48
+ARM GAS  /tmp/ccGkGyvV.s 			page 48
 
 
  2747 0004 0368     		ldr	r3, [r0]
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2803 0022 9942     		cmp	r1, r3
  2804 0024 04D1     		bne	.L499
  2805 0026 8023     		movs	r3, #128
-ARM GAS  /tmp/cc6ugntu.s 			page 49
+ARM GAS  /tmp/ccGkGyvV.s 			page 49
 
 
  2806 0028 1168     		ldr	r1, [r2]
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2862 004a 0222     		movs	r2, #2
  2863 004c 2000     		movs	r0, r4
  2864 004e 616D     		ldr	r1, [r4, #84]
-ARM GAS  /tmp/cc6ugntu.s 			page 50
+ARM GAS  /tmp/ccGkGyvV.s 			page 50
 
 
  2865 0050 0A43     		orrs	r2, r1
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2921              	.L512:
  2922 0034 C38F     		ldrh	r3, [r0, #62]
  2923 0036 002B     		cmp	r3, #0
-ARM GAS  /tmp/cc6ugntu.s 			page 51
+ARM GAS  /tmp/ccGkGyvV.s 			page 51
 
 
  2924 0038 06D1     		bne	.L511
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  2982 000e C38F     		ldrh	r3, [r0, #62]
  2983 0010 013B     		subs	r3, r3, #1
  2984 0012 9BB2     		uxth	r3, r3
-ARM GAS  /tmp/cc6ugntu.s 			page 52
+ARM GAS  /tmp/ccGkGyvV.s 			page 52
 
 
  2985 0014 C387     		strh	r3, [r0, #62]
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3041 0014 5A60     		str	r2, [r3, #4]
  3042 0016 FFF7FEFF 		bl	SPI_CloseRx_ISR
  3043 001a 07BD     		pop	{r0, r1, r2, pc}
-ARM GAS  /tmp/cc6ugntu.s 			page 53
+ARM GAS  /tmp/ccGkGyvV.s 			page 53
 
 
  3045              		.section	.text.SPI_CloseRxTx_ISR,"ax",%progbits
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3100              	.L530:
  3101 005c 2300     		movs	r3, r4
  3102 005e 8868     		ldr	r0, [r1, #8]
-ARM GAS  /tmp/cc6ugntu.s 			page 54
+ARM GAS  /tmp/ccGkGyvV.s 			page 54
 
 
  3103 0060 0122     		movs	r2, #1
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3159              		@ args = 0, pretend = 0, frame = 0
  3160              		@ frame_needed = 0, uses_anonymous_args = 0
  3161 0000 10B5     		push	{r4, lr}
-ARM GAS  /tmp/cc6ugntu.s 			page 55
+ARM GAS  /tmp/ccGkGyvV.s 			page 55
 
 
  3162 0002 026B     		ldr	r2, [r0, #48]
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3218 0008 1A70     		strb	r2, [r3]
  3219 000a 836B     		ldr	r3, [r0, #56]
  3220 000c 0133     		adds	r3, r3, #1
-ARM GAS  /tmp/cc6ugntu.s 			page 56
+ARM GAS  /tmp/ccGkGyvV.s 			page 56
 
 
  3221 000e 8363     		str	r3, [r0, #56]
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3277 001a 5A60     		str	r2, [r3, #4]
  3278 001c C38E     		ldrh	r3, [r0, #54]
  3279 001e 002B     		cmp	r3, #0
-ARM GAS  /tmp/cc6ugntu.s 			page 57
+ARM GAS  /tmp/ccGkGyvV.s 			page 57
 
 
  3280 0020 01D1     		bne	.L555
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3337              		.section	.text.SPI_2linesRxISR_16BIT,"ax",%progbits
  3338              		.align	1
  3339              		.syntax unified
-ARM GAS  /tmp/cc6ugntu.s 			page 58
+ARM GAS  /tmp/ccGkGyvV.s 			page 58
 
 
  3340              		.code	16
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3397              		@ sp needed
  3398 0006 0193     		str	r3, [sp, #4]
  3399 0008 0368     		ldr	r3, [r0]
-ARM GAS  /tmp/cc6ugntu.s 			page 59
+ARM GAS  /tmp/ccGkGyvV.s 			page 59
 
 
  3400 000a DA68     		ldr	r2, [r3, #12]
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3458 001a 5968     		ldr	r1, [r3, #4]
  3459 001c A943     		bics	r1, r5
  3460 001e 5960     		str	r1, [r3, #4]
-ARM GAS  /tmp/cc6ugntu.s 			page 60
+ARM GAS  /tmp/ccGkGyvV.s 			page 60
 
 
  3461 0020 5968     		ldr	r1, [r3, #4]
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3517 000a FFF7FEFF 		bl	HAL_GetTick
  3518 000e 2021     		movs	r1, #32
  3519 0010 3368     		ldr	r3, [r6]
-ARM GAS  /tmp/cc6ugntu.s 			page 61
+ARM GAS  /tmp/ccGkGyvV.s 			page 61
 
 
  3520 0012 0500     		movs	r5, r0
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3574 007a 0023     		movs	r3, #0
  3575 007c E387     		strh	r3, [r4, #62]
  3576 007e 2300     		movs	r3, r4
-ARM GAS  /tmp/cc6ugntu.s 			page 62
+ARM GAS  /tmp/ccGkGyvV.s 			page 62
 
 
  3577 0080 0122     		movs	r2, #1
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3633 001a 2268     		ldr	r2, [r4]
  3634 001c 5368     		ldr	r3, [r2, #4]
  3635 001e 8B43     		bics	r3, r1
-ARM GAS  /tmp/cc6ugntu.s 			page 63
+ARM GAS  /tmp/ccGkGyvV.s 			page 63
 
 
  3636 0020 5360     		str	r3, [r2, #4]
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3690 008a 064A     		ldr	r2, .L627
  3691 008c 9A60     		str	r2, [r3, #8]
  3692              	.L612:
-ARM GAS  /tmp/cc6ugntu.s 			page 64
+ARM GAS  /tmp/ccGkGyvV.s 			page 64
 
 
  3693 008e 636D     		ldr	r3, [r4, #84]
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3749 0032 636C     		ldr	r3, [r4, #68]
  3750 0034 F5E7     		b	.L683
  3751              	.L632:
-ARM GAS  /tmp/cc6ugntu.s 			page 65
+ARM GAS  /tmp/ccGkGyvV.s 			page 65
 
 
  3752 0036 8027     		movs	r7, #128
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3806 009e 9A68     		ldr	r2, [r3, #8]
  3807 00a0 0392     		str	r2, [sp, #12]
  3808 00a2 039A     		ldr	r2, [sp, #12]
-ARM GAS  /tmp/cc6ugntu.s 			page 66
+ARM GAS  /tmp/ccGkGyvV.s 			page 66
 
 
  3809              	.L638:
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3863 010c 2000     		movs	r0, r4
  3864 010e FFF7FEFF 		bl	HAL_SPI_ErrorCallback
  3865 0112 88E7     		b	.L629
-ARM GAS  /tmp/cc6ugntu.s 			page 67
+ARM GAS  /tmp/ccGkGyvV.s 			page 67
 
 
  3866              	.L685:
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3926 001c 5A68     		ldr	r2, [r3, #4]
  3927 001e 8A43     		bics	r2, r1
  3928 0020 5A60     		str	r2, [r3, #4]
-ARM GAS  /tmp/cc6ugntu.s 			page 68
+ARM GAS  /tmp/ccGkGyvV.s 			page 68
 
 
  3929 0022 5A68     		ldr	r2, [r3, #4]
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  3983 0080 0121     		movs	r1, #1
  3984 0082 2E00     		movs	r6, r5
  3985 0084 0E40     		ands	r6, r1
-ARM GAS  /tmp/cc6ugntu.s 			page 69
+ARM GAS  /tmp/ccGkGyvV.s 			page 69
 
 
  3986 0086 0D42     		tst	r5, r1
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  4040 00e6 BAE7     		b	.L695
  4041              	.L698:
  4042 00e8 8563     		str	r5, [r0, #56]
-ARM GAS  /tmp/cc6ugntu.s 			page 70
+ARM GAS  /tmp/ccGkGyvV.s 			page 70
 
 
  4043 00ea C5E7     		b	.L697
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  4099              	SPI_DMARxAbortCallback:
  4100              		@ args = 0, pretend = 0, frame = 8
  4101              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cc6ugntu.s 			page 71
+ARM GAS  /tmp/ccGkGyvV.s 			page 71
 
 
  4102 0000 37B5     		push	{r0, r1, r2, r4, r5, lr}
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  4156 006a 5133     		adds	r3, r3, #81
  4157 006c 1A70     		strb	r2, [r3]
  4158 006e FFF7FEFF 		bl	HAL_SPI_AbortCpltCallback
-ARM GAS  /tmp/cc6ugntu.s 			page 72
+ARM GAS  /tmp/ccGkGyvV.s 			page 72
 
 
  4159              	.L743:
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  4215 0050 2000     		movs	r0, r4
  4216 0052 0291     		str	r1, [sp, #8]
  4217 0054 9968     		ldr	r1, [r3, #8]
-ARM GAS  /tmp/cc6ugntu.s 			page 73
+ARM GAS  /tmp/ccGkGyvV.s 			page 73
 
 
  4218 0056 0291     		str	r1, [sp, #8]
@@ -4377,161 +4377,161 @@ ARM GAS  /tmp/cc6ugntu.s 			page 1
  4275              		@ sp needed
  4276 0002 7047     		bx	lr
  4278              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc6ugntu.s 			page 74
+ARM GAS  /tmp/ccGkGyvV.s 			page 74
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32l0xx_hal_spi.c
-     /tmp/cc6ugntu.s:15     .text.SPI_AbortRx_ISR:00000000 $t
-     /tmp/cc6ugntu.s:20     .text.SPI_AbortRx_ISR:00000000 SPI_AbortRx_ISR
-     /tmp/cc6ugntu.s:72     .text.SPI_AbortRx_ISR:00000058 $d
-     /tmp/cc6ugntu.s:76     .text.SPI_AbortTx_ISR:00000000 $t
-     /tmp/cc6ugntu.s:81     .text.SPI_AbortTx_ISR:00000000 SPI_AbortTx_ISR
-     /tmp/cc6ugntu.s:101    .text.SPI_WaitFlagStateUntilTimeout:00000000 $t
-     /tmp/cc6ugntu.s:106    .text.SPI_WaitFlagStateUntilTimeout:00000000 SPI_WaitFlagStateUntilTimeout
-     /tmp/cc6ugntu.s:212    .text.SPI_WaitFlagStateUntilTimeout:000000bc $d
-     /tmp/cc6ugntu.s:216    .text.SPI_EndRxTxTransaction:00000000 $t
-     /tmp/cc6ugntu.s:221    .text.SPI_EndRxTxTransaction:00000000 SPI_EndRxTxTransaction
-     /tmp/cc6ugntu.s:276    .text.SPI_EndRxTxTransaction:00000060 $d
-     /tmp/cc6ugntu.s:280    .text.SPI_EndRxTransaction:00000000 $t
-     /tmp/cc6ugntu.s:285    .text.SPI_EndRxTransaction:00000000 SPI_EndRxTransaction
-     /tmp/cc6ugntu.s:346    .text.HAL_SPI_MspInit:00000000 $t
-     /tmp/cc6ugntu.s:352    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-     /tmp/cc6ugntu.s:360    .text.HAL_SPI_Init:00000000 $t
-     /tmp/cc6ugntu.s:366    .text.HAL_SPI_Init:00000000 HAL_SPI_Init
-     /tmp/cc6ugntu.s:478    .text.HAL_SPI_Init:000000cc $d
-     /tmp/cc6ugntu.s:481    .text.HAL_SPI_MspDeInit:00000000 $t
-     /tmp/cc6ugntu.s:487    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-     /tmp/cc6ugntu.s:495    .text.HAL_SPI_DeInit:00000000 $t
-     /tmp/cc6ugntu.s:501    .text.HAL_SPI_DeInit:00000000 HAL_SPI_DeInit
-     /tmp/cc6ugntu.s:530    .text.HAL_SPI_Transmit:00000000 $t
-     /tmp/cc6ugntu.s:536    .text.HAL_SPI_Transmit:00000000 HAL_SPI_Transmit
-     /tmp/cc6ugntu.s:775    .text.HAL_SPI_Transmit:000001a4 $d
-     /tmp/cc6ugntu.s:778    .text.HAL_SPI_TransmitReceive:00000000 $t
-     /tmp/cc6ugntu.s:784    .text.HAL_SPI_TransmitReceive:00000000 HAL_SPI_TransmitReceive
-     /tmp/cc6ugntu.s:1142   .text.HAL_SPI_TransmitReceive:00000288 $d
-     /tmp/cc6ugntu.s:1146   .text.HAL_SPI_Receive:00000000 $t
-     /tmp/cc6ugntu.s:1152   .text.HAL_SPI_Receive:00000000 HAL_SPI_Receive
-     /tmp/cc6ugntu.s:1418   .text.HAL_SPI_Receive:000001e8 $d
-     /tmp/cc6ugntu.s:1423   .text.HAL_SPI_Transmit_IT:00000000 $t
-     /tmp/cc6ugntu.s:1429   .text.HAL_SPI_Transmit_IT:00000000 HAL_SPI_Transmit_IT
-     /tmp/cc6ugntu.s:1524   .text.HAL_SPI_Transmit_IT:000000a4 $d
-     /tmp/cc6ugntu.s:2742   .text.SPI_TxISR_8BIT:00000000 SPI_TxISR_8BIT
-     /tmp/cc6ugntu.s:2783   .text.SPI_TxISR_16BIT:00000000 SPI_TxISR_16BIT
-     /tmp/cc6ugntu.s:1529   .text.HAL_SPI_TransmitReceive_IT:00000000 $t
-     /tmp/cc6ugntu.s:1535   .text.HAL_SPI_TransmitReceive_IT:00000000 HAL_SPI_TransmitReceive_IT
-     /tmp/cc6ugntu.s:1640   .text.HAL_SPI_TransmitReceive_IT:000000b4 $d
-     /tmp/cc6ugntu.s:3292   .text.SPI_2linesTxISR_16BIT:00000000 SPI_2linesTxISR_16BIT
-     /tmp/cc6ugntu.s:3343   .text.SPI_2linesRxISR_16BIT:00000000 SPI_2linesRxISR_16BIT
-     /tmp/cc6ugntu.s:3158   .text.SPI_2linesTxISR_8BIT:00000000 SPI_2linesTxISR_8BIT
-     /tmp/cc6ugntu.s:3211   .text.SPI_2linesRxISR_8BIT:00000000 SPI_2linesRxISR_8BIT
-     /tmp/cc6ugntu.s:1647   .text.HAL_SPI_Receive_IT:00000000 $t
-     /tmp/cc6ugntu.s:1653   .text.HAL_SPI_Receive_IT:00000000 HAL_SPI_Receive_IT
-     /tmp/cc6ugntu.s:1766   .text.HAL_SPI_Receive_IT:000000c4 $d
-     /tmp/cc6ugntu.s:2892   .text.SPI_RxISR_8BIT:00000000 SPI_RxISR_8BIT
-     /tmp/cc6ugntu.s:2972   .text.SPI_RxISR_16BIT:00000000 SPI_RxISR_16BIT
-     /tmp/cc6ugntu.s:1772   .text.HAL_SPI_Transmit_DMA:00000000 $t
-     /tmp/cc6ugntu.s:1778   .text.HAL_SPI_Transmit_DMA:00000000 HAL_SPI_Transmit_DMA
-     /tmp/cc6ugntu.s:1898   .text.HAL_SPI_Transmit_DMA:000000d8 $d
-     /tmp/cc6ugntu.s:2570   .text.SPI_DMAHalfTransmitCplt:00000000 SPI_DMAHalfTransmitCplt
-     /tmp/cc6ugntu.s:3443   .text.SPI_DMATransmitCplt:00000000 SPI_DMATransmitCplt
-     /tmp/cc6ugntu.s:3415   .text.SPI_DMAError:00000000 SPI_DMAError
-     /tmp/cc6ugntu.s:1904   .text.HAL_SPI_TransmitReceive_DMA:00000000 $t
-ARM GAS  /tmp/cc6ugntu.s 			page 75
+     /tmp/ccGkGyvV.s:15     .text.SPI_AbortRx_ISR:00000000 $t
+     /tmp/ccGkGyvV.s:20     .text.SPI_AbortRx_ISR:00000000 SPI_AbortRx_ISR
+     /tmp/ccGkGyvV.s:72     .text.SPI_AbortRx_ISR:00000058 $d
+     /tmp/ccGkGyvV.s:76     .text.SPI_AbortTx_ISR:00000000 $t
+     /tmp/ccGkGyvV.s:81     .text.SPI_AbortTx_ISR:00000000 SPI_AbortTx_ISR
+     /tmp/ccGkGyvV.s:101    .text.SPI_WaitFlagStateUntilTimeout:00000000 $t
+     /tmp/ccGkGyvV.s:106    .text.SPI_WaitFlagStateUntilTimeout:00000000 SPI_WaitFlagStateUntilTimeout
+     /tmp/ccGkGyvV.s:212    .text.SPI_WaitFlagStateUntilTimeout:000000bc $d
+     /tmp/ccGkGyvV.s:216    .text.SPI_EndRxTxTransaction:00000000 $t
+     /tmp/ccGkGyvV.s:221    .text.SPI_EndRxTxTransaction:00000000 SPI_EndRxTxTransaction
+     /tmp/ccGkGyvV.s:276    .text.SPI_EndRxTxTransaction:00000060 $d
+     /tmp/ccGkGyvV.s:280    .text.SPI_EndRxTransaction:00000000 $t
+     /tmp/ccGkGyvV.s:285    .text.SPI_EndRxTransaction:00000000 SPI_EndRxTransaction
+     /tmp/ccGkGyvV.s:346    .text.HAL_SPI_MspInit:00000000 $t
+     /tmp/ccGkGyvV.s:352    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+     /tmp/ccGkGyvV.s:360    .text.HAL_SPI_Init:00000000 $t
+     /tmp/ccGkGyvV.s:366    .text.HAL_SPI_Init:00000000 HAL_SPI_Init
+     /tmp/ccGkGyvV.s:478    .text.HAL_SPI_Init:000000cc $d
+     /tmp/ccGkGyvV.s:481    .text.HAL_SPI_MspDeInit:00000000 $t
+     /tmp/ccGkGyvV.s:487    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+     /tmp/ccGkGyvV.s:495    .text.HAL_SPI_DeInit:00000000 $t
+     /tmp/ccGkGyvV.s:501    .text.HAL_SPI_DeInit:00000000 HAL_SPI_DeInit
+     /tmp/ccGkGyvV.s:530    .text.HAL_SPI_Transmit:00000000 $t
+     /tmp/ccGkGyvV.s:536    .text.HAL_SPI_Transmit:00000000 HAL_SPI_Transmit
+     /tmp/ccGkGyvV.s:775    .text.HAL_SPI_Transmit:000001a4 $d
+     /tmp/ccGkGyvV.s:778    .text.HAL_SPI_TransmitReceive:00000000 $t
+     /tmp/ccGkGyvV.s:784    .text.HAL_SPI_TransmitReceive:00000000 HAL_SPI_TransmitReceive
+     /tmp/ccGkGyvV.s:1142   .text.HAL_SPI_TransmitReceive:00000288 $d
+     /tmp/ccGkGyvV.s:1146   .text.HAL_SPI_Receive:00000000 $t
+     /tmp/ccGkGyvV.s:1152   .text.HAL_SPI_Receive:00000000 HAL_SPI_Receive
+     /tmp/ccGkGyvV.s:1418   .text.HAL_SPI_Receive:000001e8 $d
+     /tmp/ccGkGyvV.s:1423   .text.HAL_SPI_Transmit_IT:00000000 $t
+     /tmp/ccGkGyvV.s:1429   .text.HAL_SPI_Transmit_IT:00000000 HAL_SPI_Transmit_IT
+     /tmp/ccGkGyvV.s:1524   .text.HAL_SPI_Transmit_IT:000000a4 $d
+     /tmp/ccGkGyvV.s:2742   .text.SPI_TxISR_8BIT:00000000 SPI_TxISR_8BIT
+     /tmp/ccGkGyvV.s:2783   .text.SPI_TxISR_16BIT:00000000 SPI_TxISR_16BIT
+     /tmp/ccGkGyvV.s:1529   .text.HAL_SPI_TransmitReceive_IT:00000000 $t
+     /tmp/ccGkGyvV.s:1535   .text.HAL_SPI_TransmitReceive_IT:00000000 HAL_SPI_TransmitReceive_IT
+     /tmp/ccGkGyvV.s:1640   .text.HAL_SPI_TransmitReceive_IT:000000b4 $d
+     /tmp/ccGkGyvV.s:3292   .text.SPI_2linesTxISR_16BIT:00000000 SPI_2linesTxISR_16BIT
+     /tmp/ccGkGyvV.s:3343   .text.SPI_2linesRxISR_16BIT:00000000 SPI_2linesRxISR_16BIT
+     /tmp/ccGkGyvV.s:3158   .text.SPI_2linesTxISR_8BIT:00000000 SPI_2linesTxISR_8BIT
+     /tmp/ccGkGyvV.s:3211   .text.SPI_2linesRxISR_8BIT:00000000 SPI_2linesRxISR_8BIT
+     /tmp/ccGkGyvV.s:1647   .text.HAL_SPI_Receive_IT:00000000 $t
+     /tmp/ccGkGyvV.s:1653   .text.HAL_SPI_Receive_IT:00000000 HAL_SPI_Receive_IT
+     /tmp/ccGkGyvV.s:1766   .text.HAL_SPI_Receive_IT:000000c4 $d
+     /tmp/ccGkGyvV.s:2892   .text.SPI_RxISR_8BIT:00000000 SPI_RxISR_8BIT
+     /tmp/ccGkGyvV.s:2972   .text.SPI_RxISR_16BIT:00000000 SPI_RxISR_16BIT
+     /tmp/ccGkGyvV.s:1772   .text.HAL_SPI_Transmit_DMA:00000000 $t
+     /tmp/ccGkGyvV.s:1778   .text.HAL_SPI_Transmit_DMA:00000000 HAL_SPI_Transmit_DMA
+     /tmp/ccGkGyvV.s:1898   .text.HAL_SPI_Transmit_DMA:000000d8 $d
+     /tmp/ccGkGyvV.s:2570   .text.SPI_DMAHalfTransmitCplt:00000000 SPI_DMAHalfTransmitCplt
+     /tmp/ccGkGyvV.s:3443   .text.SPI_DMATransmitCplt:00000000 SPI_DMATransmitCplt
+     /tmp/ccGkGyvV.s:3415   .text.SPI_DMAError:00000000 SPI_DMAError
+     /tmp/ccGkGyvV.s:1904   .text.HAL_SPI_TransmitReceive_DMA:00000000 $t
+ARM GAS  /tmp/ccGkGyvV.s 			page 75
 
 
-     /tmp/cc6ugntu.s:1910   .text.HAL_SPI_TransmitReceive_DMA:00000000 HAL_SPI_TransmitReceive_DMA
-     /tmp/cc6ugntu.s:2063   .text.HAL_SPI_TransmitReceive_DMA:00000114 $d
-     /tmp/cc6ugntu.s:2628   .text.SPI_DMAHalfTransmitReceiveCplt:00000000 SPI_DMAHalfTransmitReceiveCplt
-     /tmp/cc6ugntu.s:3618   .text.SPI_DMATransmitReceiveCplt:00000000 SPI_DMATransmitReceiveCplt
-     /tmp/cc6ugntu.s:2599   .text.SPI_DMAHalfReceiveCplt:00000000 SPI_DMAHalfReceiveCplt
-     /tmp/cc6ugntu.s:3509   .text.SPI_DMAReceiveCplt:00000000 SPI_DMAReceiveCplt
-     /tmp/cc6ugntu.s:2071   .text.HAL_SPI_Receive_DMA:00000000 $t
-     /tmp/cc6ugntu.s:2077   .text.HAL_SPI_Receive_DMA:00000000 HAL_SPI_Receive_DMA
-     /tmp/cc6ugntu.s:2216   .text.HAL_SPI_Receive_DMA:000000fc $d
-     /tmp/cc6ugntu.s:2223   .text.HAL_SPI_Abort:00000000 $t
-     /tmp/cc6ugntu.s:2229   .text.HAL_SPI_Abort:00000000 HAL_SPI_Abort
-     /tmp/cc6ugntu.s:2393   .text.HAL_SPI_Abort:00000124 $d
-     /tmp/cc6ugntu.s:2399   .text.HAL_SPI_DMAPause:00000000 $t
-     /tmp/cc6ugntu.s:2405   .text.HAL_SPI_DMAPause:00000000 HAL_SPI_DMAPause
-     /tmp/cc6ugntu.s:2428   .text.HAL_SPI_DMAResume:00000000 $t
-     /tmp/cc6ugntu.s:2434   .text.HAL_SPI_DMAResume:00000000 HAL_SPI_DMAResume
-     /tmp/cc6ugntu.s:2457   .text.HAL_SPI_DMAStop:00000000 $t
-     /tmp/cc6ugntu.s:2463   .text.HAL_SPI_DMAStop:00000000 HAL_SPI_DMAStop
-     /tmp/cc6ugntu.s:2509   .text.HAL_SPI_TxCpltCallback:00000000 $t
-     /tmp/cc6ugntu.s:2515   .text.HAL_SPI_TxCpltCallback:00000000 HAL_SPI_TxCpltCallback
-     /tmp/cc6ugntu.s:2523   .text.HAL_SPI_RxCpltCallback:00000000 $t
-     /tmp/cc6ugntu.s:2529   .text.HAL_SPI_RxCpltCallback:00000000 HAL_SPI_RxCpltCallback
-     /tmp/cc6ugntu.s:2537   .text.HAL_SPI_TxRxCpltCallback:00000000 $t
-     /tmp/cc6ugntu.s:2543   .text.HAL_SPI_TxRxCpltCallback:00000000 HAL_SPI_TxRxCpltCallback
-     /tmp/cc6ugntu.s:2551   .text.HAL_SPI_TxHalfCpltCallback:00000000 $t
-     /tmp/cc6ugntu.s:2557   .text.HAL_SPI_TxHalfCpltCallback:00000000 HAL_SPI_TxHalfCpltCallback
-     /tmp/cc6ugntu.s:2565   .text.SPI_DMAHalfTransmitCplt:00000000 $t
-     /tmp/cc6ugntu.s:2580   .text.HAL_SPI_RxHalfCpltCallback:00000000 $t
-     /tmp/cc6ugntu.s:2586   .text.HAL_SPI_RxHalfCpltCallback:00000000 HAL_SPI_RxHalfCpltCallback
-     /tmp/cc6ugntu.s:2594   .text.SPI_DMAHalfReceiveCplt:00000000 $t
-     /tmp/cc6ugntu.s:2609   .text.HAL_SPI_TxRxHalfCpltCallback:00000000 $t
-     /tmp/cc6ugntu.s:2615   .text.HAL_SPI_TxRxHalfCpltCallback:00000000 HAL_SPI_TxRxHalfCpltCallback
-     /tmp/cc6ugntu.s:2623   .text.SPI_DMAHalfTransmitReceiveCplt:00000000 $t
-     /tmp/cc6ugntu.s:2638   .text.HAL_SPI_ErrorCallback:00000000 $t
-     /tmp/cc6ugntu.s:2644   .text.HAL_SPI_ErrorCallback:00000000 HAL_SPI_ErrorCallback
-     /tmp/cc6ugntu.s:2652   .text.SPI_CloseTx_ISR:00000000 $t
-     /tmp/cc6ugntu.s:2657   .text.SPI_CloseTx_ISR:00000000 SPI_CloseTx_ISR
-     /tmp/cc6ugntu.s:2733   .text.SPI_CloseTx_ISR:00000088 $d
-     /tmp/cc6ugntu.s:2737   .text.SPI_TxISR_8BIT:00000000 $t
-     /tmp/cc6ugntu.s:2778   .text.SPI_TxISR_16BIT:00000000 $t
-     /tmp/cc6ugntu.s:2817   .text.SPI_CloseRx_ISR:00000000 $t
-     /tmp/cc6ugntu.s:2822   .text.SPI_CloseRx_ISR:00000000 SPI_CloseRx_ISR
-     /tmp/cc6ugntu.s:2884   .text.SPI_CloseRx_ISR:0000006c $d
-     /tmp/cc6ugntu.s:2887   .text.SPI_RxISR_8BIT:00000000 $t
-     /tmp/cc6ugntu.s:2941   .text.SPI_RxISR_8BIT:00000050 $d
-     /tmp/cc6ugntu.s:2949   .text.SPI_RxISR_8BITCRC:00000000 SPI_RxISR_8BITCRC
-     /tmp/cc6ugntu.s:2944   .text.SPI_RxISR_8BITCRC:00000000 $t
-     /tmp/cc6ugntu.s:2967   .text.SPI_RxISR_16BIT:00000000 $t
-     /tmp/cc6ugntu.s:3019   .text.SPI_RxISR_16BIT:0000004c $d
-     /tmp/cc6ugntu.s:3027   .text.SPI_RxISR_16BITCRC:00000000 SPI_RxISR_16BITCRC
-     /tmp/cc6ugntu.s:3022   .text.SPI_RxISR_16BITCRC:00000000 $t
-     /tmp/cc6ugntu.s:3046   .text.SPI_CloseRxTx_ISR:00000000 $t
-     /tmp/cc6ugntu.s:3051   .text.SPI_CloseRxTx_ISR:00000000 SPI_CloseRxTx_ISR
-     /tmp/cc6ugntu.s:3148   .text.SPI_CloseRxTx_ISR:000000ac $d
-     /tmp/cc6ugntu.s:3153   .text.SPI_2linesTxISR_8BIT:00000000 $t
-     /tmp/cc6ugntu.s:3206   .text.SPI_2linesRxISR_8BIT:00000000 $t
-     /tmp/cc6ugntu.s:3253   .text.SPI_2linesRxISR_8BIT:00000044 $d
-ARM GAS  /tmp/cc6ugntu.s 			page 76
+     /tmp/ccGkGyvV.s:1910   .text.HAL_SPI_TransmitReceive_DMA:00000000 HAL_SPI_TransmitReceive_DMA
+     /tmp/ccGkGyvV.s:2063   .text.HAL_SPI_TransmitReceive_DMA:00000114 $d
+     /tmp/ccGkGyvV.s:2628   .text.SPI_DMAHalfTransmitReceiveCplt:00000000 SPI_DMAHalfTransmitReceiveCplt
+     /tmp/ccGkGyvV.s:3618   .text.SPI_DMATransmitReceiveCplt:00000000 SPI_DMATransmitReceiveCplt
+     /tmp/ccGkGyvV.s:2599   .text.SPI_DMAHalfReceiveCplt:00000000 SPI_DMAHalfReceiveCplt
+     /tmp/ccGkGyvV.s:3509   .text.SPI_DMAReceiveCplt:00000000 SPI_DMAReceiveCplt
+     /tmp/ccGkGyvV.s:2071   .text.HAL_SPI_Receive_DMA:00000000 $t
+     /tmp/ccGkGyvV.s:2077   .text.HAL_SPI_Receive_DMA:00000000 HAL_SPI_Receive_DMA
+     /tmp/ccGkGyvV.s:2216   .text.HAL_SPI_Receive_DMA:000000fc $d
+     /tmp/ccGkGyvV.s:2223   .text.HAL_SPI_Abort:00000000 $t
+     /tmp/ccGkGyvV.s:2229   .text.HAL_SPI_Abort:00000000 HAL_SPI_Abort
+     /tmp/ccGkGyvV.s:2393   .text.HAL_SPI_Abort:00000124 $d
+     /tmp/ccGkGyvV.s:2399   .text.HAL_SPI_DMAPause:00000000 $t
+     /tmp/ccGkGyvV.s:2405   .text.HAL_SPI_DMAPause:00000000 HAL_SPI_DMAPause
+     /tmp/ccGkGyvV.s:2428   .text.HAL_SPI_DMAResume:00000000 $t
+     /tmp/ccGkGyvV.s:2434   .text.HAL_SPI_DMAResume:00000000 HAL_SPI_DMAResume
+     /tmp/ccGkGyvV.s:2457   .text.HAL_SPI_DMAStop:00000000 $t
+     /tmp/ccGkGyvV.s:2463   .text.HAL_SPI_DMAStop:00000000 HAL_SPI_DMAStop
+     /tmp/ccGkGyvV.s:2509   .text.HAL_SPI_TxCpltCallback:00000000 $t
+     /tmp/ccGkGyvV.s:2515   .text.HAL_SPI_TxCpltCallback:00000000 HAL_SPI_TxCpltCallback
+     /tmp/ccGkGyvV.s:2523   .text.HAL_SPI_RxCpltCallback:00000000 $t
+     /tmp/ccGkGyvV.s:2529   .text.HAL_SPI_RxCpltCallback:00000000 HAL_SPI_RxCpltCallback
+     /tmp/ccGkGyvV.s:2537   .text.HAL_SPI_TxRxCpltCallback:00000000 $t
+     /tmp/ccGkGyvV.s:2543   .text.HAL_SPI_TxRxCpltCallback:00000000 HAL_SPI_TxRxCpltCallback
+     /tmp/ccGkGyvV.s:2551   .text.HAL_SPI_TxHalfCpltCallback:00000000 $t
+     /tmp/ccGkGyvV.s:2557   .text.HAL_SPI_TxHalfCpltCallback:00000000 HAL_SPI_TxHalfCpltCallback
+     /tmp/ccGkGyvV.s:2565   .text.SPI_DMAHalfTransmitCplt:00000000 $t
+     /tmp/ccGkGyvV.s:2580   .text.HAL_SPI_RxHalfCpltCallback:00000000 $t
+     /tmp/ccGkGyvV.s:2586   .text.HAL_SPI_RxHalfCpltCallback:00000000 HAL_SPI_RxHalfCpltCallback
+     /tmp/ccGkGyvV.s:2594   .text.SPI_DMAHalfReceiveCplt:00000000 $t
+     /tmp/ccGkGyvV.s:2609   .text.HAL_SPI_TxRxHalfCpltCallback:00000000 $t
+     /tmp/ccGkGyvV.s:2615   .text.HAL_SPI_TxRxHalfCpltCallback:00000000 HAL_SPI_TxRxHalfCpltCallback
+     /tmp/ccGkGyvV.s:2623   .text.SPI_DMAHalfTransmitReceiveCplt:00000000 $t
+     /tmp/ccGkGyvV.s:2638   .text.HAL_SPI_ErrorCallback:00000000 $t
+     /tmp/ccGkGyvV.s:2644   .text.HAL_SPI_ErrorCallback:00000000 HAL_SPI_ErrorCallback
+     /tmp/ccGkGyvV.s:2652   .text.SPI_CloseTx_ISR:00000000 $t
+     /tmp/ccGkGyvV.s:2657   .text.SPI_CloseTx_ISR:00000000 SPI_CloseTx_ISR
+     /tmp/ccGkGyvV.s:2733   .text.SPI_CloseTx_ISR:00000088 $d
+     /tmp/ccGkGyvV.s:2737   .text.SPI_TxISR_8BIT:00000000 $t
+     /tmp/ccGkGyvV.s:2778   .text.SPI_TxISR_16BIT:00000000 $t
+     /tmp/ccGkGyvV.s:2817   .text.SPI_CloseRx_ISR:00000000 $t
+     /tmp/ccGkGyvV.s:2822   .text.SPI_CloseRx_ISR:00000000 SPI_CloseRx_ISR
+     /tmp/ccGkGyvV.s:2884   .text.SPI_CloseRx_ISR:0000006c $d
+     /tmp/ccGkGyvV.s:2887   .text.SPI_RxISR_8BIT:00000000 $t
+     /tmp/ccGkGyvV.s:2941   .text.SPI_RxISR_8BIT:00000050 $d
+     /tmp/ccGkGyvV.s:2949   .text.SPI_RxISR_8BITCRC:00000000 SPI_RxISR_8BITCRC
+     /tmp/ccGkGyvV.s:2944   .text.SPI_RxISR_8BITCRC:00000000 $t
+     /tmp/ccGkGyvV.s:2967   .text.SPI_RxISR_16BIT:00000000 $t
+     /tmp/ccGkGyvV.s:3019   .text.SPI_RxISR_16BIT:0000004c $d
+     /tmp/ccGkGyvV.s:3027   .text.SPI_RxISR_16BITCRC:00000000 SPI_RxISR_16BITCRC
+     /tmp/ccGkGyvV.s:3022   .text.SPI_RxISR_16BITCRC:00000000 $t
+     /tmp/ccGkGyvV.s:3046   .text.SPI_CloseRxTx_ISR:00000000 $t
+     /tmp/ccGkGyvV.s:3051   .text.SPI_CloseRxTx_ISR:00000000 SPI_CloseRxTx_ISR
+     /tmp/ccGkGyvV.s:3148   .text.SPI_CloseRxTx_ISR:000000ac $d
+     /tmp/ccGkGyvV.s:3153   .text.SPI_2linesTxISR_8BIT:00000000 $t
+     /tmp/ccGkGyvV.s:3206   .text.SPI_2linesRxISR_8BIT:00000000 $t
+     /tmp/ccGkGyvV.s:3253   .text.SPI_2linesRxISR_8BIT:00000044 $d
+ARM GAS  /tmp/ccGkGyvV.s 			page 76
 
 
-     /tmp/cc6ugntu.s:3261   .text.SPI_2linesRxISR_8BITCRC:00000000 SPI_2linesRxISR_8BITCRC
-     /tmp/cc6ugntu.s:3256   .text.SPI_2linesRxISR_8BITCRC:00000000 $t
-     /tmp/cc6ugntu.s:3287   .text.SPI_2linesTxISR_16BIT:00000000 $t
-     /tmp/cc6ugntu.s:3338   .text.SPI_2linesRxISR_16BIT:00000000 $t
-     /tmp/cc6ugntu.s:3383   .text.SPI_2linesRxISR_16BIT:00000040 $d
-     /tmp/cc6ugntu.s:3391   .text.SPI_2linesRxISR_16BITCRC:00000000 SPI_2linesRxISR_16BITCRC
-     /tmp/cc6ugntu.s:3386   .text.SPI_2linesRxISR_16BITCRC:00000000 $t
-     /tmp/cc6ugntu.s:3410   .text.SPI_DMAError:00000000 $t
-     /tmp/cc6ugntu.s:3438   .text.SPI_DMATransmitCplt:00000000 $t
-     /tmp/cc6ugntu.s:3504   .text.SPI_DMAReceiveCplt:00000000 $t
-     /tmp/cc6ugntu.s:3610   .text.SPI_DMAReceiveCplt:000000b8 $d
-     /tmp/cc6ugntu.s:3613   .text.SPI_DMATransmitReceiveCplt:00000000 $t
-     /tmp/cc6ugntu.s:3708   .text.SPI_DMATransmitReceiveCplt:000000a4 $d
-     /tmp/cc6ugntu.s:3711   .text.HAL_SPI_IRQHandler:00000000 $t
-     /tmp/cc6ugntu.s:3717   .text.HAL_SPI_IRQHandler:00000000 HAL_SPI_IRQHandler
-     /tmp/cc6ugntu.s:3869   .text.HAL_SPI_IRQHandler:00000114 $d
-     /tmp/cc6ugntu.s:3877   .text.SPI_DMAAbortOnError:00000000 SPI_DMAAbortOnError
-     /tmp/cc6ugntu.s:3872   .text.SPI_DMAAbortOnError:00000000 $t
-     /tmp/cc6ugntu.s:3890   .text.HAL_SPI_AbortCpltCallback:00000000 $t
-     /tmp/cc6ugntu.s:3896   .text.HAL_SPI_AbortCpltCallback:00000000 HAL_SPI_AbortCpltCallback
-     /tmp/cc6ugntu.s:3904   .text.HAL_SPI_Abort_IT:00000000 $t
-     /tmp/cc6ugntu.s:3910   .text.HAL_SPI_Abort_IT:00000000 HAL_SPI_Abort_IT
-     /tmp/cc6ugntu.s:4086   .text.HAL_SPI_Abort_IT:00000134 $d
-     /tmp/cc6ugntu.s:4169   .text.SPI_DMATxAbortCallback:00000000 SPI_DMATxAbortCallback
-     /tmp/cc6ugntu.s:4099   .text.SPI_DMARxAbortCallback:00000000 SPI_DMARxAbortCallback
-     /tmp/cc6ugntu.s:4094   .text.SPI_DMARxAbortCallback:00000000 $t
-     /tmp/cc6ugntu.s:4164   .text.SPI_DMATxAbortCallback:00000000 $t
-     /tmp/cc6ugntu.s:4243   .text.SPI_DMATxAbortCallback:00000080 $d
-     /tmp/cc6ugntu.s:4247   .text.HAL_SPI_GetState:00000000 $t
-     /tmp/cc6ugntu.s:4253   .text.HAL_SPI_GetState:00000000 HAL_SPI_GetState
-     /tmp/cc6ugntu.s:4264   .text.HAL_SPI_GetError:00000000 $t
-     /tmp/cc6ugntu.s:4270   .text.HAL_SPI_GetError:00000000 HAL_SPI_GetError
+     /tmp/ccGkGyvV.s:3261   .text.SPI_2linesRxISR_8BITCRC:00000000 SPI_2linesRxISR_8BITCRC
+     /tmp/ccGkGyvV.s:3256   .text.SPI_2linesRxISR_8BITCRC:00000000 $t
+     /tmp/ccGkGyvV.s:3287   .text.SPI_2linesTxISR_16BIT:00000000 $t
+     /tmp/ccGkGyvV.s:3338   .text.SPI_2linesRxISR_16BIT:00000000 $t
+     /tmp/ccGkGyvV.s:3383   .text.SPI_2linesRxISR_16BIT:00000040 $d
+     /tmp/ccGkGyvV.s:3391   .text.SPI_2linesRxISR_16BITCRC:00000000 SPI_2linesRxISR_16BITCRC
+     /tmp/ccGkGyvV.s:3386   .text.SPI_2linesRxISR_16BITCRC:00000000 $t
+     /tmp/ccGkGyvV.s:3410   .text.SPI_DMAError:00000000 $t
+     /tmp/ccGkGyvV.s:3438   .text.SPI_DMATransmitCplt:00000000 $t
+     /tmp/ccGkGyvV.s:3504   .text.SPI_DMAReceiveCplt:00000000 $t
+     /tmp/ccGkGyvV.s:3610   .text.SPI_DMAReceiveCplt:000000b8 $d
+     /tmp/ccGkGyvV.s:3613   .text.SPI_DMATransmitReceiveCplt:00000000 $t
+     /tmp/ccGkGyvV.s:3708   .text.SPI_DMATransmitReceiveCplt:000000a4 $d
+     /tmp/ccGkGyvV.s:3711   .text.HAL_SPI_IRQHandler:00000000 $t
+     /tmp/ccGkGyvV.s:3717   .text.HAL_SPI_IRQHandler:00000000 HAL_SPI_IRQHandler
+     /tmp/ccGkGyvV.s:3869   .text.HAL_SPI_IRQHandler:00000114 $d
+     /tmp/ccGkGyvV.s:3877   .text.SPI_DMAAbortOnError:00000000 SPI_DMAAbortOnError
+     /tmp/ccGkGyvV.s:3872   .text.SPI_DMAAbortOnError:00000000 $t
+     /tmp/ccGkGyvV.s:3890   .text.HAL_SPI_AbortCpltCallback:00000000 $t
+     /tmp/ccGkGyvV.s:3896   .text.HAL_SPI_AbortCpltCallback:00000000 HAL_SPI_AbortCpltCallback
+     /tmp/ccGkGyvV.s:3904   .text.HAL_SPI_Abort_IT:00000000 $t
+     /tmp/ccGkGyvV.s:3910   .text.HAL_SPI_Abort_IT:00000000 HAL_SPI_Abort_IT
+     /tmp/ccGkGyvV.s:4086   .text.HAL_SPI_Abort_IT:00000134 $d
+     /tmp/ccGkGyvV.s:4169   .text.SPI_DMATxAbortCallback:00000000 SPI_DMATxAbortCallback
+     /tmp/ccGkGyvV.s:4099   .text.SPI_DMARxAbortCallback:00000000 SPI_DMARxAbortCallback
+     /tmp/ccGkGyvV.s:4094   .text.SPI_DMARxAbortCallback:00000000 $t
+     /tmp/ccGkGyvV.s:4164   .text.SPI_DMATxAbortCallback:00000000 $t
+     /tmp/ccGkGyvV.s:4243   .text.SPI_DMATxAbortCallback:00000080 $d
+     /tmp/ccGkGyvV.s:4247   .text.HAL_SPI_GetState:00000000 $t
+     /tmp/ccGkGyvV.s:4253   .text.HAL_SPI_GetState:00000000 HAL_SPI_GetState
+     /tmp/ccGkGyvV.s:4264   .text.HAL_SPI_GetError:00000000 $t
+     /tmp/ccGkGyvV.s:4270   .text.HAL_SPI_GetError:00000000 HAL_SPI_GetError
 
 UNDEFINED SYMBOLS
 __aeabi_uidiv

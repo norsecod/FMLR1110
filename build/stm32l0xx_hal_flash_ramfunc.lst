@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccOOO1BY.s 			page 1
+ARM GAS  /tmp/cckQLJZb.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccOOO1BY.s 			page 1
   56 0038 5205     		lsls	r2, r2, #21
   57 003a 0FD4     		bmi	.L7
   58 003c 9A69     		ldr	r2, [r3, #24]
-ARM GAS  /tmp/ccOOO1BY.s 			page 2
+ARM GAS  /tmp/cckQLJZb.s 			page 2
 
 
   59 003e 1205     		lsls	r2, r2, #20
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccOOO1BY.s 			page 1
  113 00a2 8020     		movs	r0, #128
  114 00a4 9969     		ldr	r1, [r3, #24]
  115 00a6 0001     		lsls	r0, r0, #4
-ARM GAS  /tmp/ccOOO1BY.s 			page 3
+ARM GAS  /tmp/cckQLJZb.s 			page 3
 
 
  116 00a8 0142     		tst	r1, r0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccOOO1BY.s 			page 1
  171              		.syntax unified
  172              		.code	16
  173              		.thumb_func
-ARM GAS  /tmp/ccOOO1BY.s 			page 4
+ARM GAS  /tmp/cckQLJZb.s 			page 4
 
 
  175              	HAL_FLASHEx_EnableRunPowerDown:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccOOO1BY.s 			page 1
  233              	HAL_FLASHEx_EraseParallelPage:
  234              		@ args = 0, pretend = 0, frame = 0
  235              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccOOO1BY.s 			page 5
+ARM GAS  /tmp/cckQLJZb.s 			page 5
 
 
  236 0150 F8B5     		push	{r3, r4, r5, r6, r7, lr}
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccOOO1BY.s 			page 1
  292 01ac 0E00     		movs	r6, r1
  293 01ae 1D00     		movs	r5, r3
  294 01b0 0192     		str	r2, [sp, #4]
-ARM GAS  /tmp/ccOOO1BY.s 			page 6
+ARM GAS  /tmp/cckQLJZb.s 			page 6
 
 
  295 01b2 FFF725FF 		bl	FLASHRAM_WaitForLastOperation.constprop.0
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccOOO1BY.s 			page 1
  349 020a 6368     		ldr	r3, [r4, #4]
  350 020c 044A     		ldr	r2, .L68+4
  351 020e 1340     		ands	r3, r2
-ARM GAS  /tmp/ccOOO1BY.s 			page 7
+ARM GAS  /tmp/cckQLJZb.s 			page 7
 
 
  352 0210 6360     		str	r3, [r4, #4]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccOOO1BY.s 			page 1
  408              	@ 0 "" 2
  409              		.thumb
  410              		.syntax unified
-ARM GAS  /tmp/ccOOO1BY.s 			page 8
+ARM GAS  /tmp/cckQLJZb.s 			page 8
 
 
  411 025a FFF7D1FE 		bl	FLASHRAM_WaitForLastOperation.constprop.0
@@ -458,32 +458,32 @@ ARM GAS  /tmp/ccOOO1BY.s 			page 1
  447              	.L77:
  448 0284 00000000 		.word	pFlash
  450              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccOOO1BY.s 			page 9
+ARM GAS  /tmp/cckQLJZb.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32l0xx_hal_flash_ramfunc.c
-     /tmp/ccOOO1BY.s:14     .RamFunc:00000000 $t
-     /tmp/ccOOO1BY.s:19     .RamFunc:00000000 FLASHRAM_WaitForLastOperation.constprop.0
-     /tmp/ccOOO1BY.s:165    .RamFunc:000000fc $d
-     /tmp/ccOOO1BY.s:169    .RamFunc:00000108 $t
-     /tmp/ccOOO1BY.s:175    .RamFunc:00000108 HAL_FLASHEx_EnableRunPowerDown
-     /tmp/ccOOO1BY.s:194    .RamFunc:00000120 $d
-     /tmp/ccOOO1BY.s:198    .RamFunc:0000012c $t
-     /tmp/ccOOO1BY.s:204    .RamFunc:0000012c HAL_FLASHEx_DisableRunPowerDown
-     /tmp/ccOOO1BY.s:223    .RamFunc:00000144 $d
-     /tmp/ccOOO1BY.s:227    .RamFunc:00000150 $t
-     /tmp/ccOOO1BY.s:233    .RamFunc:00000150 HAL_FLASHEx_EraseParallelPage
-     /tmp/ccOOO1BY.s:277    .RamFunc:0000019c $d
-     /tmp/ccOOO1BY.s:281    .RamFunc:000001a8 $t
-     /tmp/ccOOO1BY.s:287    .RamFunc:000001a8 HAL_FLASHEx_ProgramParallelHalfPage
-     /tmp/ccOOO1BY.s:363    .RamFunc:0000021c $d
-     /tmp/ccOOO1BY.s:367    .RamFunc:00000228 $t
-     /tmp/ccOOO1BY.s:373    .RamFunc:00000228 HAL_FLASHEx_HalfPageProgram
-     /tmp/ccOOO1BY.s:426    .RamFunc:00000270 $d
-     /tmp/ccOOO1BY.s:429    .RamFunc:00000278 $t
-     /tmp/ccOOO1BY.s:435    .RamFunc:00000278 HAL_FLASHEx_GetError
-     /tmp/ccOOO1BY.s:448    .RamFunc:00000284 $d
+     /tmp/cckQLJZb.s:14     .RamFunc:00000000 $t
+     /tmp/cckQLJZb.s:19     .RamFunc:00000000 FLASHRAM_WaitForLastOperation.constprop.0
+     /tmp/cckQLJZb.s:165    .RamFunc:000000fc $d
+     /tmp/cckQLJZb.s:169    .RamFunc:00000108 $t
+     /tmp/cckQLJZb.s:175    .RamFunc:00000108 HAL_FLASHEx_EnableRunPowerDown
+     /tmp/cckQLJZb.s:194    .RamFunc:00000120 $d
+     /tmp/cckQLJZb.s:198    .RamFunc:0000012c $t
+     /tmp/cckQLJZb.s:204    .RamFunc:0000012c HAL_FLASHEx_DisableRunPowerDown
+     /tmp/cckQLJZb.s:223    .RamFunc:00000144 $d
+     /tmp/cckQLJZb.s:227    .RamFunc:00000150 $t
+     /tmp/cckQLJZb.s:233    .RamFunc:00000150 HAL_FLASHEx_EraseParallelPage
+     /tmp/cckQLJZb.s:277    .RamFunc:0000019c $d
+     /tmp/cckQLJZb.s:281    .RamFunc:000001a8 $t
+     /tmp/cckQLJZb.s:287    .RamFunc:000001a8 HAL_FLASHEx_ProgramParallelHalfPage
+     /tmp/cckQLJZb.s:363    .RamFunc:0000021c $d
+     /tmp/cckQLJZb.s:367    .RamFunc:00000228 $t
+     /tmp/cckQLJZb.s:373    .RamFunc:00000228 HAL_FLASHEx_HalfPageProgram
+     /tmp/cckQLJZb.s:426    .RamFunc:00000270 $d
+     /tmp/cckQLJZb.s:429    .RamFunc:00000278 $t
+     /tmp/cckQLJZb.s:435    .RamFunc:00000278 HAL_FLASHEx_GetError
+     /tmp/cckQLJZb.s:448    .RamFunc:00000284 $d
 
 UNDEFINED SYMBOLS
 pFlash
