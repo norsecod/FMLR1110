@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccAuKMRt.s 			page 1
+ARM GAS  /tmp/cc3uPdFw.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
   56 0046 9B18     		adds	r3, r3, r2
   57 0048 3D22     		movs	r2, #61
   58 004a 7243     		muls	r2, r6
-ARM GAS  /tmp/ccAuKMRt.s 			page 2
+ARM GAS  /tmp/cc3uPdFw.s 			page 2
 
 
   59 004c 7600     		lsls	r6, r6, #1
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  115              		@ args = 0, pretend = 0, frame = 0
  116              		@ frame_needed = 0, uses_anonymous_args = 0
  117              		@ link register save eliminated.
-ARM GAS  /tmp/ccAuKMRt.s 			page 3
+ARM GAS  /tmp/cc3uPdFw.s 			page 3
 
 
  118 0000 014B     		ldr	r3, .L9
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  170 0002 1F22     		movs	r2, #31
  171 0004 1C4C     		ldr	r4, .L19
  172 0006 1D4B     		ldr	r3, .L19+4
-ARM GAS  /tmp/ccAuKMRt.s 			page 4
+ARM GAS  /tmp/cc3uPdFw.s 			page 4
 
 
  173 0008 A260     		str	r2, [r4, #8]
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  227 0088 00000000 		.word	.LC7
  228 008c 16000000 		.word	.LC9
  229 0090 17000000 		.word	.LC11
-ARM GAS  /tmp/ccAuKMRt.s 			page 5
+ARM GAS  /tmp/cc3uPdFw.s 			page 5
 
 
  230 0094 01010100 		.word	65793
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  291              		.align	1
  292              		.global	hal_rtc_wakeup_timer_stop
  293              		.syntax unified
-ARM GAS  /tmp/ccAuKMRt.s 			page 6
+ARM GAS  /tmp/cc3uPdFw.s 			page 6
 
 
  294              		.code	16
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  353 000c 9200     		lsls	r2, r2, #2
  354 000e 5043     		muls	r0, r2
  355 0010 9B0A     		lsrs	r3, r3, #10
-ARM GAS  /tmp/ccAuKMRt.s 			page 7
+ARM GAS  /tmp/cc3uPdFw.s 			page 7
 
 
  356 0012 1818     		adds	r0, r3, r0
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  416              		@ args = 0, pretend = 0, frame = 8
  417              		@ frame_needed = 0, uses_anonymous_args = 0
  418 0000 13B5     		push	{r0, r1, r4, lr}
-ARM GAS  /tmp/ccAuKMRt.s 			page 8
+ARM GAS  /tmp/cc3uPdFw.s 			page 8
 
 
  419 0002 6B46     		mov	r3, sp
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  478              		.thumb_func
  480              	rtc_ms_2_wakeup_timer_tick:
  481              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccAuKMRt.s 			page 9
+ARM GAS  /tmp/cc3uPdFw.s 			page 9
 
 
  482              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  538 004c 00000000 		.word	wut_timer_irq_happened
  540              		.section	.text.rtc_set_timestamp,"ax",%progbits
  541              		.align	1
-ARM GAS  /tmp/ccAuKMRt.s 			page 10
+ARM GAS  /tmp/cc3uPdFw.s 			page 10
 
 
  542              		.global	rtc_set_timestamp
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  599 001c 2000     		movs	r0, r4
  600 001e FFF7FEFF 		bl	HAL_RTC_GetTime
  601 0022 BA6A     		ldr	r2, [r7, #40]
-ARM GAS  /tmp/ccAuKMRt.s 			page 11
+ARM GAS  /tmp/cc3uPdFw.s 			page 11
 
 
  602 0024 019B     		ldr	r3, [sp, #4]
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  659              		.syntax unified
  660              		.code	16
  661              		.thumb_func
-ARM GAS  /tmp/ccAuKMRt.s 			page 12
+ARM GAS  /tmp/cc3uPdFw.s 			page 12
 
 
  663              	HAL_RTC_MspInit:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  721              	wakeup_timer_rounds:
  722 0000 00000000 		.space	4
  723              		.section	.bss.wut_timer_irq_happened,"aw",%nobits
-ARM GAS  /tmp/ccAuKMRt.s 			page 13
+ARM GAS  /tmp/cc3uPdFw.s 			page 13
 
 
  726              	wut_timer_irq_happened:
@@ -732,80 +732,80 @@ ARM GAS  /tmp/ccAuKMRt.s 			page 1
  733      00000000 
  733      00000000 
  734              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccAuKMRt.s 			page 14
+ARM GAS  /tmp/cc3uPdFw.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_hal_rtc.c
-     /tmp/ccAuKMRt.s:14     .text.rtc_get_timestamp_in_ticks:00000000 $t
-     /tmp/ccAuKMRt.s:19     .text.rtc_get_timestamp_in_ticks:00000000 rtc_get_timestamp_in_ticks
-     /tmp/ccAuKMRt.s:99     .text.rtc_get_timestamp_in_ticks:00000094 $d
-     /tmp/ccAuKMRt.s:732    .bss.bsp_rtc:00000000 bsp_rtc
-     /tmp/ccAuKMRt.s:108    .text.hal_rtc_get_timer_context:00000000 $t
-     /tmp/ccAuKMRt.s:114    .text.hal_rtc_get_timer_context:00000000 hal_rtc_get_timer_context
-     /tmp/ccAuKMRt.s:125    .text.hal_rtc_get_timer_context:00000008 $d
-     /tmp/ccAuKMRt.s:128    .text.hal_rtc_set_timer_context:00000000 $t
-     /tmp/ccAuKMRt.s:134    .text.hal_rtc_set_timer_context:00000000 hal_rtc_set_timer_context
-     /tmp/ccAuKMRt.s:148    .text.hal_rtc_set_timer_context:00000010 $d
-     /tmp/ccAuKMRt.s:160    .text.hal_rtc_init:00000000 $t
-     /tmp/ccAuKMRt.s:166    .text.hal_rtc_init:00000000 hal_rtc_init
-     /tmp/ccAuKMRt.s:223    .text.hal_rtc_init:00000078 $d
-     /tmp/ccAuKMRt.s:715    .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccAuKMRt.s:233    .text.hal_rtc_get_timer_elapsed_time:00000000 $t
-     /tmp/ccAuKMRt.s:239    .text.hal_rtc_get_timer_elapsed_time:00000000 hal_rtc_get_timer_elapsed_time
-     /tmp/ccAuKMRt.s:255    .text.hal_rtc_get_timer_elapsed_time:00000014 $d
-     /tmp/ccAuKMRt.s:258    .text.hal_rtc_get_minimum_timeout:00000000 $t
-     /tmp/ccAuKMRt.s:264    .text.hal_rtc_get_minimum_timeout:00000000 hal_rtc_get_minimum_timeout
-     /tmp/ccAuKMRt.s:273    .text.hal_rtc_get_time_ticks:00000000 $t
-     /tmp/ccAuKMRt.s:279    .text.hal_rtc_get_time_ticks:00000000 hal_rtc_get_time_ticks
-     /tmp/ccAuKMRt.s:291    .text.hal_rtc_wakeup_timer_stop:00000000 $t
-     /tmp/ccAuKMRt.s:297    .text.hal_rtc_wakeup_timer_stop:00000000 hal_rtc_wakeup_timer_stop
-     /tmp/ccAuKMRt.s:311    .text.hal_rtc_wakeup_timer_stop:00000010 $d
-     /tmp/ccAuKMRt.s:721    .bss.wakeup_timer_rounds:00000000 wakeup_timer_rounds
-     /tmp/ccAuKMRt.s:315    .text.hal_rtc_has_wut_irq_happened:00000000 $t
-     /tmp/ccAuKMRt.s:321    .text.hal_rtc_has_wut_irq_happened:00000000 hal_rtc_has_wut_irq_happened
-     /tmp/ccAuKMRt.s:333    .text.hal_rtc_has_wut_irq_happened:00000008 $d
-     /tmp/ccAuKMRt.s:726    .bss.wut_timer_irq_happened:00000000 wut_timer_irq_happened
-     /tmp/ccAuKMRt.s:336    .text.rtc_tick_2_ms:00000000 $t
-     /tmp/ccAuKMRt.s:342    .text.rtc_tick_2_ms:00000000 rtc_tick_2_ms
-     /tmp/ccAuKMRt.s:361    .text.rtc_tick_2_ms:00000018 $d
-     /tmp/ccAuKMRt.s:364    .text.rtc_get_calendar_time:00000000 $t
-     /tmp/ccAuKMRt.s:369    .text.rtc_get_calendar_time:00000000 rtc_get_calendar_time
-     /tmp/ccAuKMRt.s:392    .text.hal_rtc_get_time_s:00000000 $t
-     /tmp/ccAuKMRt.s:398    .text.hal_rtc_get_time_s:00000000 hal_rtc_get_time_s
-     /tmp/ccAuKMRt.s:409    .text.hal_rtc_get_time_100us:00000000 $t
-     /tmp/ccAuKMRt.s:415    .text.hal_rtc_get_time_100us:00000000 hal_rtc_get_time_100us
-     /tmp/ccAuKMRt.s:432    .text.hal_rtc_get_time_100us:00000018 $d
-     /tmp/ccAuKMRt.s:436    .text.hal_rtc_get_time_ms:00000000 $t
-     /tmp/ccAuKMRt.s:442    .text.hal_rtc_get_time_ms:00000000 hal_rtc_get_time_ms
-     /tmp/ccAuKMRt.s:455    .text.rtc_ms_2_ticks:00000000 $t
-     /tmp/ccAuKMRt.s:461    .text.rtc_ms_2_ticks:00000000 rtc_ms_2_ticks
-     /tmp/ccAuKMRt.s:474    .text.rtc_ms_2_wakeup_timer_tick:00000000 $t
-     /tmp/ccAuKMRt.s:480    .text.rtc_ms_2_wakeup_timer_tick:00000000 rtc_ms_2_wakeup_timer_tick
-     /tmp/ccAuKMRt.s:494    .text.hal_rtc_wakeup_timer_set_ms:00000000 $t
-     /tmp/ccAuKMRt.s:500    .text.hal_rtc_wakeup_timer_set_ms:00000000 hal_rtc_wakeup_timer_set_ms
-     /tmp/ccAuKMRt.s:535    .text.hal_rtc_wakeup_timer_set_ms:00000040 $d
-     /tmp/ccAuKMRt.s:541    .text.rtc_set_timestamp:00000000 $t
-     /tmp/ccAuKMRt.s:547    .text.rtc_set_timestamp:00000000 rtc_set_timestamp
-     /tmp/ccAuKMRt.s:573    .text.rtc_set_timestamp:0000002c $d
-     /tmp/ccAuKMRt.s:576    .text.rtc_get_timestamp:00000000 $t
-     /tmp/ccAuKMRt.s:582    .text.rtc_get_timestamp:00000000 rtc_get_timestamp
-     /tmp/ccAuKMRt.s:610    .text.rtc_get_timestamp:0000002c $d
-     /tmp/ccAuKMRt.s:614    .text.RTC_IRQHandler:00000000 $t
-ARM GAS  /tmp/ccAuKMRt.s 			page 15
+     /tmp/cc3uPdFw.s:14     .text.rtc_get_timestamp_in_ticks:00000000 $t
+     /tmp/cc3uPdFw.s:19     .text.rtc_get_timestamp_in_ticks:00000000 rtc_get_timestamp_in_ticks
+     /tmp/cc3uPdFw.s:99     .text.rtc_get_timestamp_in_ticks:00000094 $d
+     /tmp/cc3uPdFw.s:732    .bss.bsp_rtc:00000000 bsp_rtc
+     /tmp/cc3uPdFw.s:108    .text.hal_rtc_get_timer_context:00000000 $t
+     /tmp/cc3uPdFw.s:114    .text.hal_rtc_get_timer_context:00000000 hal_rtc_get_timer_context
+     /tmp/cc3uPdFw.s:125    .text.hal_rtc_get_timer_context:00000008 $d
+     /tmp/cc3uPdFw.s:128    .text.hal_rtc_set_timer_context:00000000 $t
+     /tmp/cc3uPdFw.s:134    .text.hal_rtc_set_timer_context:00000000 hal_rtc_set_timer_context
+     /tmp/cc3uPdFw.s:148    .text.hal_rtc_set_timer_context:00000010 $d
+     /tmp/cc3uPdFw.s:160    .text.hal_rtc_init:00000000 $t
+     /tmp/cc3uPdFw.s:166    .text.hal_rtc_init:00000000 hal_rtc_init
+     /tmp/cc3uPdFw.s:223    .text.hal_rtc_init:00000078 $d
+     /tmp/cc3uPdFw.s:715    .rodata.__func__.0:00000000 __func__.0
+     /tmp/cc3uPdFw.s:233    .text.hal_rtc_get_timer_elapsed_time:00000000 $t
+     /tmp/cc3uPdFw.s:239    .text.hal_rtc_get_timer_elapsed_time:00000000 hal_rtc_get_timer_elapsed_time
+     /tmp/cc3uPdFw.s:255    .text.hal_rtc_get_timer_elapsed_time:00000014 $d
+     /tmp/cc3uPdFw.s:258    .text.hal_rtc_get_minimum_timeout:00000000 $t
+     /tmp/cc3uPdFw.s:264    .text.hal_rtc_get_minimum_timeout:00000000 hal_rtc_get_minimum_timeout
+     /tmp/cc3uPdFw.s:273    .text.hal_rtc_get_time_ticks:00000000 $t
+     /tmp/cc3uPdFw.s:279    .text.hal_rtc_get_time_ticks:00000000 hal_rtc_get_time_ticks
+     /tmp/cc3uPdFw.s:291    .text.hal_rtc_wakeup_timer_stop:00000000 $t
+     /tmp/cc3uPdFw.s:297    .text.hal_rtc_wakeup_timer_stop:00000000 hal_rtc_wakeup_timer_stop
+     /tmp/cc3uPdFw.s:311    .text.hal_rtc_wakeup_timer_stop:00000010 $d
+     /tmp/cc3uPdFw.s:721    .bss.wakeup_timer_rounds:00000000 wakeup_timer_rounds
+     /tmp/cc3uPdFw.s:315    .text.hal_rtc_has_wut_irq_happened:00000000 $t
+     /tmp/cc3uPdFw.s:321    .text.hal_rtc_has_wut_irq_happened:00000000 hal_rtc_has_wut_irq_happened
+     /tmp/cc3uPdFw.s:333    .text.hal_rtc_has_wut_irq_happened:00000008 $d
+     /tmp/cc3uPdFw.s:726    .bss.wut_timer_irq_happened:00000000 wut_timer_irq_happened
+     /tmp/cc3uPdFw.s:336    .text.rtc_tick_2_ms:00000000 $t
+     /tmp/cc3uPdFw.s:342    .text.rtc_tick_2_ms:00000000 rtc_tick_2_ms
+     /tmp/cc3uPdFw.s:361    .text.rtc_tick_2_ms:00000018 $d
+     /tmp/cc3uPdFw.s:364    .text.rtc_get_calendar_time:00000000 $t
+     /tmp/cc3uPdFw.s:369    .text.rtc_get_calendar_time:00000000 rtc_get_calendar_time
+     /tmp/cc3uPdFw.s:392    .text.hal_rtc_get_time_s:00000000 $t
+     /tmp/cc3uPdFw.s:398    .text.hal_rtc_get_time_s:00000000 hal_rtc_get_time_s
+     /tmp/cc3uPdFw.s:409    .text.hal_rtc_get_time_100us:00000000 $t
+     /tmp/cc3uPdFw.s:415    .text.hal_rtc_get_time_100us:00000000 hal_rtc_get_time_100us
+     /tmp/cc3uPdFw.s:432    .text.hal_rtc_get_time_100us:00000018 $d
+     /tmp/cc3uPdFw.s:436    .text.hal_rtc_get_time_ms:00000000 $t
+     /tmp/cc3uPdFw.s:442    .text.hal_rtc_get_time_ms:00000000 hal_rtc_get_time_ms
+     /tmp/cc3uPdFw.s:455    .text.rtc_ms_2_ticks:00000000 $t
+     /tmp/cc3uPdFw.s:461    .text.rtc_ms_2_ticks:00000000 rtc_ms_2_ticks
+     /tmp/cc3uPdFw.s:474    .text.rtc_ms_2_wakeup_timer_tick:00000000 $t
+     /tmp/cc3uPdFw.s:480    .text.rtc_ms_2_wakeup_timer_tick:00000000 rtc_ms_2_wakeup_timer_tick
+     /tmp/cc3uPdFw.s:494    .text.hal_rtc_wakeup_timer_set_ms:00000000 $t
+     /tmp/cc3uPdFw.s:500    .text.hal_rtc_wakeup_timer_set_ms:00000000 hal_rtc_wakeup_timer_set_ms
+     /tmp/cc3uPdFw.s:535    .text.hal_rtc_wakeup_timer_set_ms:00000040 $d
+     /tmp/cc3uPdFw.s:541    .text.rtc_set_timestamp:00000000 $t
+     /tmp/cc3uPdFw.s:547    .text.rtc_set_timestamp:00000000 rtc_set_timestamp
+     /tmp/cc3uPdFw.s:573    .text.rtc_set_timestamp:0000002c $d
+     /tmp/cc3uPdFw.s:576    .text.rtc_get_timestamp:00000000 $t
+     /tmp/cc3uPdFw.s:582    .text.rtc_get_timestamp:00000000 rtc_get_timestamp
+     /tmp/cc3uPdFw.s:610    .text.rtc_get_timestamp:0000002c $d
+     /tmp/cc3uPdFw.s:614    .text.RTC_IRQHandler:00000000 $t
+ARM GAS  /tmp/cc3uPdFw.s 			page 15
 
 
-     /tmp/ccAuKMRt.s:620    .text.RTC_IRQHandler:00000000 RTC_IRQHandler
-     /tmp/ccAuKMRt.s:651    .text.RTC_IRQHandler:00000034 $d
-     /tmp/ccAuKMRt.s:657    .text.HAL_RTC_MspInit:00000000 $t
-     /tmp/ccAuKMRt.s:663    .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
-     /tmp/ccAuKMRt.s:684    .text.HAL_RTC_MspInit:00000020 $d
-     /tmp/ccAuKMRt.s:687    .text.HAL_RTC_MspDeInit:00000000 $t
-     /tmp/ccAuKMRt.s:693    .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
-     /tmp/ccAuKMRt.s:709    .text.HAL_RTC_MspDeInit:00000014 $d
-     /tmp/ccAuKMRt.s:718    .bss.wakeup_timer_rounds:00000000 $d
-     /tmp/ccAuKMRt.s:727    .bss.wut_timer_irq_happened:00000000 $d
-     /tmp/ccAuKMRt.s:729    .bss.bsp_rtc:00000000 $d
+     /tmp/cc3uPdFw.s:620    .text.RTC_IRQHandler:00000000 RTC_IRQHandler
+     /tmp/cc3uPdFw.s:651    .text.RTC_IRQHandler:00000034 $d
+     /tmp/cc3uPdFw.s:657    .text.HAL_RTC_MspInit:00000000 $t
+     /tmp/cc3uPdFw.s:663    .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
+     /tmp/cc3uPdFw.s:684    .text.HAL_RTC_MspInit:00000020 $d
+     /tmp/cc3uPdFw.s:687    .text.HAL_RTC_MspDeInit:00000000 $t
+     /tmp/cc3uPdFw.s:693    .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
+     /tmp/cc3uPdFw.s:709    .text.HAL_RTC_MspDeInit:00000014 $d
+     /tmp/cc3uPdFw.s:718    .bss.wakeup_timer_rounds:00000000 $d
+     /tmp/cc3uPdFw.s:727    .bss.wut_timer_irq_happened:00000000 $d
+     /tmp/cc3uPdFw.s:729    .bss.bsp_rtc:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_RTC_GetDate

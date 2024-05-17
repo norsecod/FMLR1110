@@ -18,6 +18,7 @@
 
 #include "ralf_lr11xx.h"
 #include "lr11xx_gnss.h"
+#include "ral_lr11xx.h"
 
 #include "cayenne_lpp.h"
 #include "functions.h"
@@ -26,6 +27,7 @@
 #include "string.h"
 
 #include "settings.h"
+#include <assert.h>
 /*
  * -----------------------------------------------------------------------------
  * --- PRIVATE CONSTANTS -------------------------------------------------------
@@ -44,14 +46,22 @@
  * Stack id value (multistacks modem is not yet available)
  */
 #define STACK_ID 0
-
+#define MAX_SATELLITES 32
 
 const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
 #define RADIO   "LR11XX"
+#define RESULT_BUFFER_SIZE 256
+#define LR11XX_GNSS_SNR_TO_CNR_OFFSET ( 31 )
 
 
 
+typedef struct {
+    uint8_t satellite_id;
+    uint8_t cnr;
+    int16_t doppler;
+} parsed_gnss_data_t;
 
+parsed_gnss_data_t gnss_data_buffer[6];
 /*
  * -----------------------------------------------------------------------------
  * --- PRIVATE TYPES -----------------------------------------------------------
@@ -67,8 +77,8 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
 
     bool hastydata1 = false;
     bool hastydata2 = false;
-    static bool firstflag = true;
-
+    bool hastydata3 = false;
+    bool tapflag = false;
     float temp = 0.0f;
     float Voltage = 0;
     float VDR = 16/3.3;
@@ -76,15 +86,17 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     int prev_door = -1;
     int water = 0;
     int prev_water = -1;
-    int cntup = 0;
+    int prev_tap = 3;
+    
+    
     static uint8_t gnss_count;
     static uint8_t       rx_payload[255]      = { 0 };  // Buffer for rx payload
     static uint8_t       rx_payload_size      = 0;      // Size of the payload in the rx_payload buffer
-    extern settings_t    settings;
+    extern settings_t    settings;                      //holds the LoRaWAN keys
     uint32_t txdone_counter = 0;
     uint32_t link_check_attempts = 0;
     static uint32_t tx_pending;
-    uint16_t axisxyz[3]; 
+    //uint16_t axisxyz[3];          //variable used for debuggng adxl343
     
 /*
  * -----------------------------------------------------------------------------
@@ -117,6 +129,15 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     
 }
 
+    TimerEvent_t tap_timer;
+    static void tap_timer_cb( void* context ) {
+    SMTC_HAL_TRACE_PRINTF( "tap_timer_cb\n\r" );
+    hastydata3 = 0;
+    
+    PA15Callback(NULL);
+    
+}
+
   
 /*
  * -----------------------------------------------------------------------------
@@ -135,6 +156,7 @@ int main( void )
     SMTC_HAL_TRACE_PRINTF("_______________________________________________________________________________\n\r");
     SMTC_HAL_TRACE_PRINTF("Miromico-FMLR1110\n\n\r");
     SMTC_HAL_TRACE_PRINTF("Radio:%s\n\r", RADIO);
+    hal_rtc_init();
 
     // Init the modem and use get_event as event callback, please note that the callback will be
     // called immediately after the first call to smtc_modem_run_engine because of the reset detection
@@ -172,6 +194,11 @@ int main( void )
     TimerInit( &door_timer, &door_timer_cb );
     TimerSetValue( &door_timer, ALARM_TIMER_PERIOD );
     TimerSetContext( &door_timer, NULL );
+
+        //timer activated when tap is detected
+    TimerInit( &tap_timer, &tap_timer_cb );
+    TimerSetValue( &tap_timer, ALARM_TIMER_PERIOD );
+    TimerSetContext( &tap_timer, NULL );
  
 
     lr11xx_status_t ret;
@@ -181,6 +208,7 @@ int main( void )
     hal_mcu_delay_ms(1000);
     adxl_init();
     hal_mcu_delay_ms(1000);
+    
 
     while(true) 
     {
@@ -190,8 +218,8 @@ int main( void )
         // Execute modem runtime, this function must be recalled in sleep_time_ms (max value, can be recalled sooner)
         uint32_t sleep_time_ms = smtc_modem_run_engine( );
 
-           adxl_read_acceleration(axisxyz);
-     SMTC_HAL_TRACE_PRINTF("x:%d y:%d z:%d \n\r",axisxyz[0],axisxyz[1],axisxyz[2]);
+        //adxl_read_acceleration(axisxyz);                                                  //used to debug adxl
+        //SMTC_HAL_TRACE_PRINTF("x:%d y:%d z:%d \n\r",axisxyz[0],axisxyz[1],axisxyz[2]);
 
         //sleep_time_ms -= ( hal_rtc_get_time_ms( ) - start );
         sleep_time_ms = smtc_modem_run_engine( );
@@ -203,17 +231,15 @@ int main( void )
             hal_mcu_delay_ms(20);
             sensor_read();
             hal_mcu_delay_ms(20);
-            sendData(temp, Voltage,door,water);
-          
+            sendData(temp, Voltage,door,water,tapflag);
 
-            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C Voltage: %.2fV door: %s water: %s cnutp: %d hasty1: %d hasty2: %d\n\r",
+
+            SMTC_HAL_TRACE_PRINTF("Temp: %.2f°C Voltage: %.2fV door: %s water: %s tap: %s \n\r",
                       temp,
                       Voltage,
                       door == 1 ? "high" : "low",
                       water == 1 ? "high" : "low",
-                      cntup,
-                      hastydata1,
-                      hastydata2);    
+                      tapflag == 1 ? "high" : "low");    
             PC10Callback(NULL); //checks status on PC10 watersensor
             PC11Callback(NULL); //checks status on PC11 doormagnet
             PA15Callback(NULL); //checks status on PA15 accelerometer
@@ -244,24 +270,94 @@ int main( void )
 
 
 
-void gps_snap( void ) {
+void gps_snap(void) {
+    SMTC_HAL_TRACE_PRINTF("\n-----------------GPS snap----------------\n\r");
 
-    SMTC_HAL_TRACE_PRINTF( "\n-----------------GPS snap----------------\n\r" );
-    //hal_gpio_set_value( PB_0, 1 );    //activates active antenna
+    // Initialize the RTC if not already initialized
+    hal_rtc_init();
+
+    // Activate the active antenna
+    hal_gpio_set_value(PB_0, 1);
+
     lr11xx_status_t ret;
-    uint8_t nb_sat;
-    SMTC_HAL_TRACE_PRINTF( "lr11xx_gnss_scan_autonomous...\n\r" );
-    ret = lr11xx_gnss_scan_autonomous( modem_radio.ral.context, 1338595200, LR11XX_GNSS_OPTION_BEST_EFFORT, 1, 6 );
-    hal_mcu_delay_ms( 5000 );
-    ret = lr11xx_gnss_get_nb_detected_satellites( modem_radio.ral.context, &nb_sat );
-    SMTC_HAL_TRACE_PRINTF( "number of satellites found: %d\n\n\r", nb_sat );
+    uint8_t nb_sat = 0;
+    uint8_t result_buffer[RESULT_BUFFER_SIZE];
+    uint16_t result_size = 0;
 
-    if( ret != LR11XX_STATUS_OK ) {
-        SMTC_HAL_TRACE_PRINTF( "LR1110 ERROR \n\r" );
+    // Get the current GNSS time
+    uint32_t gnss_time = get_current_gnss_time();
+    SMTC_HAL_TRACE_PRINTF("Starting GNSS scan with time: %u\n\r", gnss_time);
+
+    // Set the GNSS constellations to use (GPS and BeiDou)
+    uint32_t constellations = LR11XX_GNSS_GPS_MASK | LR11XX_GNSS_BEIDOU_MASK;
+    ret = lr11xx_gnss_set_constellations_to_use(modem_radio.ral.context, constellations);
+    if (ret != LR11XX_STATUS_OK) {
+        SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Failed to set constellations\n\r");
+        hal_gpio_set_value(PB_0, 0);
+        return;
     }
 
-    gnss_count = nb_sat;  //number of satalites scanned
-    //hal_gpio_set_value( PB_0, 0 ); //deactivates active antenna
+    // Set assistance position to Høgskole i Østfold, Fredrikstad, Norway
+    lr11xx_gnss_solver_assistance_position_t assistance_position;
+    assistance_position.latitude = 59.2184;  // Latitude for Høgskole i Østfold
+    assistance_position.longitude = 10.9291;  // Longitude for Høgskole i Østfold
+    ret = lr11xx_gnss_set_assistance_position(modem_radio.ral.context, &assistance_position);
+    if (ret != LR11XX_STATUS_OK) {
+        SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Failed to set assistance position\n\r");
+        hal_gpio_set_value(PB_0, 0);
+        return;
+    }
+
+    // Start the GNSS autonomous scan with best effort mode
+    ret = lr11xx_gnss_scan_autonomous(modem_radio.ral.context, gnss_time, LR11XX_GNSS_OPTION_BEST_EFFORT, 1, 6);
+    if (ret != LR11XX_STATUS_OK) {
+        SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Failed to start autonomous scan\n\r");
+        hal_gpio_set_value(PB_0, 0);
+        return;
+    }
+
+    // Wait for the scan to complete
+    hal_mcu_delay_ms(5000);
+
+    // Get the number of detected satellites
+    ret = lr11xx_gnss_get_nb_detected_satellites(modem_radio.ral.context, &nb_sat);
+    if (ret != LR11XX_STATUS_OK) {
+        SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Failed to get number of detected satellites\n\r");
+    } else {
+        SMTC_HAL_TRACE_PRINTF("Number of satellites found: %d\n\r", nb_sat);
+    }
+
+    // Get the size of the GNSS results
+    ret = lr11xx_gnss_get_result_size(modem_radio.ral.context, &result_size);
+    if (ret == LR11XX_STATUS_OK && result_size <= RESULT_BUFFER_SIZE) {
+        // Read the GNSS results
+        ret = lr11xx_gnss_read_results(modem_radio.ral.context, result_buffer, result_size);
+        if (ret == LR11XX_STATUS_OK) {
+            // Print the raw result buffer data
+            SMTC_HAL_TRACE_PRINTF("Raw GNSS result buffer: ");
+            for (uint16_t i = 0; i < result_size; i++) {
+                SMTC_HAL_TRACE_PRINTF("%02X ", result_buffer[i]);
+            }
+            SMTC_HAL_TRACE_PRINTF("\n\r");
+
+            // Parse and store satellite information in the buffer
+            for (uint8_t i = 0; i < nb_sat; i++) {
+                gnss_data_buffer[i].satellite_id = result_buffer[i * 4];
+                gnss_data_buffer[i].cnr = result_buffer[i * 4 + 1] + LR11XX_GNSS_SNR_TO_CNR_OFFSET;
+                gnss_data_buffer[i].doppler = (int16_t)((result_buffer[i * 4 + 2] << 8) | result_buffer[i * 4 + 3]);
+
+                SMTC_HAL_TRACE_PRINTF("Parsed Data - Satellite ID: %d, CNR: %d, Doppler: %d\n\r",
+                                      gnss_data_buffer[i].satellite_id, gnss_data_buffer[i].cnr, gnss_data_buffer[i].doppler);
+            }
+        } else {
+            SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Failed to read GNSS results\n\r");
+        }
+    } else {
+        SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Invalid result size\n\r");
+    }
+
+    // Deactivate the active antenna
+    hal_gpio_set_value(PB_0, 0);
 }
 
 static void get_event( void ) {
@@ -302,13 +398,6 @@ static void get_event( void ) {
             SMTC_HAL_TRACE_INFO( "Send hello_world message \n\r" );
             char data[] = "hello_world";
             smtc_modem_request_uplink( STACK_ID, 102, false, ( uint8_t* )&data, sizeof( data ) );
-            if (firstflag == true)
-            {   SMTC_HAL_TRACE_PRINTF("------------<sending first data>------------\n\r");
-                sendData(temp, Voltage,door,water);
-                
-                firstflag = false;
-            }
-
             break;
 
         case SMTC_MODEM_EVENT_TXDONE:
@@ -486,14 +575,37 @@ void PC11Callback(void* context)
     }
 }
 void PA15Callback(void* context )
-{   if (hal_gpio_get_value(PA_15) == GPIO_PIN_SET)
-    {
+{   uint8_t data;
     
+    adxl_read(0x30, &data, 1);
+  
+   
+ if ((data>>5)& 0x01) 
+  {
+   SMTC_HAL_TRACE_PRINTF("double tap detected\n\r");
+    tapflag = true;
 
+  }
+ else if ((data>>6) & 0x01)
+  {
+   SMTC_HAL_TRACE_PRINTF("Single tap detected\n\r");
+   tapflag = true;
+   
+  }
+    if (hastydata3 == 0)
+    {
+       
+     hastydata3=1;
+    
+    if (tapflag !=prev_tap)
+    {
+        tapalarm(tapflag);
         
+        prev_tap = tapflag;
+        tapflag = 0;
     }
+        TimerStart(&tap_timer);
+    } 
+
 }
-
-
-
 

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cchUoDWJ.s 			page 1
+ARM GAS  /tmp/ccYFuGBW.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cchUoDWJ.s 			page 1
   56              	.L2:
   57              		@ sp needed
   58 0044 76BD     		pop	{r1, r2, r4, r5, r6, pc}
-ARM GAS  /tmp/cchUoDWJ.s 			page 2
+ARM GAS  /tmp/ccYFuGBW.s 			page 2
 
 
   60              		.section	.text.lr11xx_bootloader_clear_reset_status_info,"ax",%progbits
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cchUoDWJ.s 			page 1
  117 0030 10BD     		pop	{r4, pc}
  119              		.section	.text.lr11xx_bootloader_erase_flash,"ax",%progbits
  120              		.align	1
-ARM GAS  /tmp/cchUoDWJ.s 			page 3
+ARM GAS  /tmp/ccYFuGBW.s 			page 3
 
 
  121              		.global	lr11xx_bootloader_erase_flash
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cchUoDWJ.s 			page 1
  178 0036 3100     		movs	r1, r6
  179 0038 3800     		movs	r0, r7
  180 003a 0095     		str	r5, [sp]
-ARM GAS  /tmp/cchUoDWJ.s 			page 4
+ARM GAS  /tmp/ccYFuGBW.s 			page 4
 
 
  181 003c 04AB     		add	r3, sp, #16
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cchUoDWJ.s 			page 1
  237 0032 0135     		adds	r5, r5, #1
  238 0034 FF35     		adds	r5, r5, #255
  239 0036 402C     		cmp	r4, #64
-ARM GAS  /tmp/cchUoDWJ.s 			page 5
+ARM GAS  /tmp/ccYFuGBW.s 			page 5
 
 
  240 0038 00D2     		bcs	.L14
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cchUoDWJ.s 			page 1
  298 0016 05B0     		add	sp, sp, #20
  299              		@ sp needed
  300 0018 00BD     		pop	{pc}
-ARM GAS  /tmp/cchUoDWJ.s 			page 6
+ARM GAS  /tmp/ccYFuGBW.s 			page 6
 
 
  302              		.section	.text.lr11xx_bootloader_read_chip_eui,"ax",%progbits
@@ -346,31 +346,31 @@ ARM GAS  /tmp/cchUoDWJ.s 			page 1
  347              		@ sp needed
  348 0018 00BD     		pop	{pc}
  350              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cchUoDWJ.s 			page 7
+ARM GAS  /tmp/ccYFuGBW.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lr11xx_bootloader.c
-     /tmp/cchUoDWJ.s:14     .text.lr11xx_bootloader_get_status:00000000 $t
-     /tmp/cchUoDWJ.s:20     .text.lr11xx_bootloader_get_status:00000000 lr11xx_bootloader_get_status
-     /tmp/cchUoDWJ.s:61     .text.lr11xx_bootloader_clear_reset_status_info:00000000 $t
-     /tmp/cchUoDWJ.s:67     .text.lr11xx_bootloader_clear_reset_status_info:00000000 lr11xx_bootloader_clear_reset_status_info
-     /tmp/cchUoDWJ.s:83     .text.lr11xx_bootloader_get_version:00000000 $t
-     /tmp/cchUoDWJ.s:89     .text.lr11xx_bootloader_get_version:00000000 lr11xx_bootloader_get_version
-     /tmp/cchUoDWJ.s:120    .text.lr11xx_bootloader_erase_flash:00000000 $t
-     /tmp/cchUoDWJ.s:126    .text.lr11xx_bootloader_erase_flash:00000000 lr11xx_bootloader_erase_flash
-     /tmp/cchUoDWJ.s:142    .text.lr11xx_bootloader_write_flash_encrypted:00000000 $t
-     /tmp/cchUoDWJ.s:148    .text.lr11xx_bootloader_write_flash_encrypted:00000000 lr11xx_bootloader_write_flash_encrypted
-     /tmp/cchUoDWJ.s:199    .text.lr11xx_bootloader_write_flash_encrypted_full:00000000 $t
-     /tmp/cchUoDWJ.s:205    .text.lr11xx_bootloader_write_flash_encrypted_full:00000000 lr11xx_bootloader_write_flash_encrypted_full
-     /tmp/cchUoDWJ.s:247    .text.lr11xx_bootloader_reboot:00000000 $t
-     /tmp/cchUoDWJ.s:253    .text.lr11xx_bootloader_reboot:00000000 lr11xx_bootloader_reboot
-     /tmp/cchUoDWJ.s:279    .text.lr11xx_bootloader_read_pin:00000000 $t
-     /tmp/cchUoDWJ.s:285    .text.lr11xx_bootloader_read_pin:00000000 lr11xx_bootloader_read_pin
-     /tmp/cchUoDWJ.s:303    .text.lr11xx_bootloader_read_chip_eui:00000000 $t
-     /tmp/cchUoDWJ.s:309    .text.lr11xx_bootloader_read_chip_eui:00000000 lr11xx_bootloader_read_chip_eui
-     /tmp/cchUoDWJ.s:327    .text.lr11xx_bootloader_read_join_eui:00000000 $t
-     /tmp/cchUoDWJ.s:333    .text.lr11xx_bootloader_read_join_eui:00000000 lr11xx_bootloader_read_join_eui
+     /tmp/ccYFuGBW.s:14     .text.lr11xx_bootloader_get_status:00000000 $t
+     /tmp/ccYFuGBW.s:20     .text.lr11xx_bootloader_get_status:00000000 lr11xx_bootloader_get_status
+     /tmp/ccYFuGBW.s:61     .text.lr11xx_bootloader_clear_reset_status_info:00000000 $t
+     /tmp/ccYFuGBW.s:67     .text.lr11xx_bootloader_clear_reset_status_info:00000000 lr11xx_bootloader_clear_reset_status_info
+     /tmp/ccYFuGBW.s:83     .text.lr11xx_bootloader_get_version:00000000 $t
+     /tmp/ccYFuGBW.s:89     .text.lr11xx_bootloader_get_version:00000000 lr11xx_bootloader_get_version
+     /tmp/ccYFuGBW.s:120    .text.lr11xx_bootloader_erase_flash:00000000 $t
+     /tmp/ccYFuGBW.s:126    .text.lr11xx_bootloader_erase_flash:00000000 lr11xx_bootloader_erase_flash
+     /tmp/ccYFuGBW.s:142    .text.lr11xx_bootloader_write_flash_encrypted:00000000 $t
+     /tmp/ccYFuGBW.s:148    .text.lr11xx_bootloader_write_flash_encrypted:00000000 lr11xx_bootloader_write_flash_encrypted
+     /tmp/ccYFuGBW.s:199    .text.lr11xx_bootloader_write_flash_encrypted_full:00000000 $t
+     /tmp/ccYFuGBW.s:205    .text.lr11xx_bootloader_write_flash_encrypted_full:00000000 lr11xx_bootloader_write_flash_encrypted_full
+     /tmp/ccYFuGBW.s:247    .text.lr11xx_bootloader_reboot:00000000 $t
+     /tmp/ccYFuGBW.s:253    .text.lr11xx_bootloader_reboot:00000000 lr11xx_bootloader_reboot
+     /tmp/ccYFuGBW.s:279    .text.lr11xx_bootloader_read_pin:00000000 $t
+     /tmp/ccYFuGBW.s:285    .text.lr11xx_bootloader_read_pin:00000000 lr11xx_bootloader_read_pin
+     /tmp/ccYFuGBW.s:303    .text.lr11xx_bootloader_read_chip_eui:00000000 $t
+     /tmp/ccYFuGBW.s:309    .text.lr11xx_bootloader_read_chip_eui:00000000 lr11xx_bootloader_read_chip_eui
+     /tmp/ccYFuGBW.s:327    .text.lr11xx_bootloader_read_join_eui:00000000 $t
+     /tmp/ccYFuGBW.s:333    .text.lr11xx_bootloader_read_join_eui:00000000 lr11xx_bootloader_read_join_eui
 
 UNDEFINED SYMBOLS
 lr11xx_hal_direct_read

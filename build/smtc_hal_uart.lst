@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc5cAmSH.s 			page 1
+ARM GAS  /tmp/ccZubTZj.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc5cAmSH.s 			page 1
   50 002a 0A49     		ldr	r1, .L6+8
   51 002c 0A48     		ldr	r0, .L6+12
   52 002e FFF7FEFF 		bl	hal_trace_print_var
-ARM GAS  /tmp/cc5cAmSH.s 			page 2
+ARM GAS  /tmp/ccZubTZj.s 			page 2
 
 
   53 0032 0A4C     		ldr	r4, .L6+16
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc5cAmSH.s 			page 1
  111 000e 0022     		movs	r2, #0
  112 0010 1B6B     		ldr	r3, [r3, #48]
  113 0012 0B40     		ands	r3, r1
-ARM GAS  /tmp/cc5cAmSH.s 			page 3
+ARM GAS  /tmp/ccZubTZj.s 			page 3
 
 
  114 0014 0193     		str	r3, [sp, #4]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc5cAmSH.s 			page 1
  168 0090 16000000 		.word	.LC4
  169 0094 17000000 		.word	.LC6
  171              		.section	.text.uart2_deinit,"ax",%progbits
-ARM GAS  /tmp/cc5cAmSH.s 			page 4
+ARM GAS  /tmp/ccZubTZj.s 			page 4
 
 
  172              		.align	1
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc5cAmSH.s 			page 1
  231 0002 0248     		ldr	r0, .L25
  232 0004 FFF7FEFF 		bl	HAL_UART_DMAStop
  233              		@ sp needed
-ARM GAS  /tmp/cc5cAmSH.s 			page 5
+ARM GAS  /tmp/ccZubTZj.s 			page 5
 
 
  234 0008 10BD     		pop	{r4, pc}
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc5cAmSH.s 			page 1
  293              		.syntax unified
  294              		.code	16
  295              		.thumb_func
-ARM GAS  /tmp/cc5cAmSH.s 			page 6
+ARM GAS  /tmp/ccZubTZj.s 			page 6
 
 
  297              	HAL_UART_MspInit:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc5cAmSH.s 			page 1
  351 0062 9A63     		str	r2, [r3, #56]
  352 0064 DA6A     		ldr	r2, [r3, #44]
  353 0066 0426     		movs	r6, #4
-ARM GAS  /tmp/cc5cAmSH.s 			page 7
+ARM GAS  /tmp/ccZubTZj.s 			page 7
 
 
  354 0068 0A43     		orrs	r2, r1
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc5cAmSH.s 			page 1
  408 00e2 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
  409 00e6 B0E7     		b	.L33
  410              	.L36:
-ARM GAS  /tmp/cc5cAmSH.s 			page 8
+ARM GAS  /tmp/ccZubTZj.s 			page 8
 
 
  411 00e8 0D49     		ldr	r1, .L41+20
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc5cAmSH.s 			page 1
  467              		@ sp needed
  468 002c 10BD     		pop	{r4, pc}
  469              	.L44:
-ARM GAS  /tmp/cc5cAmSH.s 			page 9
+ARM GAS  /tmp/ccZubTZj.s 			page 9
 
 
  470 002e 0F4A     		ldr	r2, .L46+12
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc5cAmSH.s 			page 1
  528              	USART2_IRQHandler:
  529              		@ args = 0, pretend = 0, frame = 0
  530              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cc5cAmSH.s 			page 10
+ARM GAS  /tmp/ccZubTZj.s 			page 10
 
 
  531 0000 10B5     		push	{r4, lr}
@@ -592,56 +592,56 @@ ARM GAS  /tmp/cc5cAmSH.s 			page 1
  573      00000000 
  573      00000000 
  574              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc5cAmSH.s 			page 11
+ARM GAS  /tmp/ccZubTZj.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_hal_uart.c
-     /tmp/cc5cAmSH.s:21     .text.uart1_init:00000000 $t
-     /tmp/cc5cAmSH.s:27     .text.uart1_init:00000000 uart1_init
-     /tmp/cc5cAmSH.s:67     .text.uart1_init:0000004c $d
-     /tmp/cc5cAmSH.s:566    .bss.huart1:00000000 huart1
-     /tmp/cc5cAmSH.s:554    .rodata.__func__.2:00000000 __func__.2
-     /tmp/cc5cAmSH.s:75     .text.uart1_deinit:00000000 $t
-     /tmp/cc5cAmSH.s:81     .text.uart1_deinit:00000000 uart1_deinit
-     /tmp/cc5cAmSH.s:92     .text.uart1_deinit:0000000c $d
-     /tmp/cc5cAmSH.s:95     .text.uart2_init:00000000 $t
-     /tmp/cc5cAmSH.s:101    .text.uart2_init:00000000 uart2_init
-     /tmp/cc5cAmSH.s:163    .text.uart2_init:0000007c $d
-     /tmp/cc5cAmSH.s:560    .bss.huart2:00000000 huart2
-     /tmp/cc5cAmSH.s:549    .rodata.__func__.1:00000000 __func__.1
-     /tmp/cc5cAmSH.s:172    .text.uart2_deinit:00000000 $t
-     /tmp/cc5cAmSH.s:178    .text.uart2_deinit:00000000 uart2_deinit
-     /tmp/cc5cAmSH.s:194    .text.uart2_deinit:00000014 $d
-     /tmp/cc5cAmSH.s:198    .text.uart2_dma_start_rx:00000000 $t
-     /tmp/cc5cAmSH.s:204    .text.uart2_dma_start_rx:00000000 uart2_dma_start_rx
-     /tmp/cc5cAmSH.s:218    .text.uart2_dma_start_rx:00000010 $d
-     /tmp/cc5cAmSH.s:221    .text.uart2_dma_stop_rx:00000000 $t
-     /tmp/cc5cAmSH.s:227    .text.uart2_dma_stop_rx:00000000 uart2_dma_stop_rx
-     /tmp/cc5cAmSH.s:238    .text.uart2_dma_stop_rx:0000000c $d
-     /tmp/cc5cAmSH.s:241    .text.uart1_tx:00000000 $t
-     /tmp/cc5cAmSH.s:247    .text.uart1_tx:00000000 uart1_tx
-     /tmp/cc5cAmSH.s:262    .text.uart1_tx:00000014 $d
-     /tmp/cc5cAmSH.s:266    .text.uart2_tx:00000000 $t
-     /tmp/cc5cAmSH.s:272    .text.uart2_tx:00000000 uart2_tx
-     /tmp/cc5cAmSH.s:287    .text.uart2_tx:00000014 $d
-     /tmp/cc5cAmSH.s:291    .text.HAL_UART_MspInit:00000000 $t
-     /tmp/cc5cAmSH.s:297    .text.HAL_UART_MspInit:00000000 HAL_UART_MspInit
-     /tmp/cc5cAmSH.s:426    .text.HAL_UART_MspInit:0000010c $d
-     /tmp/cc5cAmSH.s:572    .bss.hdma_usart2_rx:00000000 hdma_usart2_rx
-     /tmp/cc5cAmSH.s:544    .rodata.__func__.0:00000000 __func__.0
-     /tmp/cc5cAmSH.s:437    .text.HAL_UART_MspDeInit:00000000 $t
-     /tmp/cc5cAmSH.s:443    .text.HAL_UART_MspDeInit:00000000 HAL_UART_MspDeInit
-     /tmp/cc5cAmSH.s:494    .text.HAL_UART_MspDeInit:00000060 $d
-     /tmp/cc5cAmSH.s:502    .text.DMA1_Channel4_5_6_7_IRQHandler:00000000 $t
-     /tmp/cc5cAmSH.s:508    .text.DMA1_Channel4_5_6_7_IRQHandler:00000000 DMA1_Channel4_5_6_7_IRQHandler
-     /tmp/cc5cAmSH.s:519    .text.DMA1_Channel4_5_6_7_IRQHandler:0000000c $d
-     /tmp/cc5cAmSH.s:522    .text.USART2_IRQHandler:00000000 $t
-     /tmp/cc5cAmSH.s:528    .text.USART2_IRQHandler:00000000 USART2_IRQHandler
-     /tmp/cc5cAmSH.s:539    .text.USART2_IRQHandler:0000000c $d
-     /tmp/cc5cAmSH.s:557    .bss.huart2:00000000 $d
-     /tmp/cc5cAmSH.s:563    .bss.huart1:00000000 $d
-     /tmp/cc5cAmSH.s:569    .bss.hdma_usart2_rx:00000000 $d
+     /tmp/ccZubTZj.s:21     .text.uart1_init:00000000 $t
+     /tmp/ccZubTZj.s:27     .text.uart1_init:00000000 uart1_init
+     /tmp/ccZubTZj.s:67     .text.uart1_init:0000004c $d
+     /tmp/ccZubTZj.s:566    .bss.huart1:00000000 huart1
+     /tmp/ccZubTZj.s:554    .rodata.__func__.2:00000000 __func__.2
+     /tmp/ccZubTZj.s:75     .text.uart1_deinit:00000000 $t
+     /tmp/ccZubTZj.s:81     .text.uart1_deinit:00000000 uart1_deinit
+     /tmp/ccZubTZj.s:92     .text.uart1_deinit:0000000c $d
+     /tmp/ccZubTZj.s:95     .text.uart2_init:00000000 $t
+     /tmp/ccZubTZj.s:101    .text.uart2_init:00000000 uart2_init
+     /tmp/ccZubTZj.s:163    .text.uart2_init:0000007c $d
+     /tmp/ccZubTZj.s:560    .bss.huart2:00000000 huart2
+     /tmp/ccZubTZj.s:549    .rodata.__func__.1:00000000 __func__.1
+     /tmp/ccZubTZj.s:172    .text.uart2_deinit:00000000 $t
+     /tmp/ccZubTZj.s:178    .text.uart2_deinit:00000000 uart2_deinit
+     /tmp/ccZubTZj.s:194    .text.uart2_deinit:00000014 $d
+     /tmp/ccZubTZj.s:198    .text.uart2_dma_start_rx:00000000 $t
+     /tmp/ccZubTZj.s:204    .text.uart2_dma_start_rx:00000000 uart2_dma_start_rx
+     /tmp/ccZubTZj.s:218    .text.uart2_dma_start_rx:00000010 $d
+     /tmp/ccZubTZj.s:221    .text.uart2_dma_stop_rx:00000000 $t
+     /tmp/ccZubTZj.s:227    .text.uart2_dma_stop_rx:00000000 uart2_dma_stop_rx
+     /tmp/ccZubTZj.s:238    .text.uart2_dma_stop_rx:0000000c $d
+     /tmp/ccZubTZj.s:241    .text.uart1_tx:00000000 $t
+     /tmp/ccZubTZj.s:247    .text.uart1_tx:00000000 uart1_tx
+     /tmp/ccZubTZj.s:262    .text.uart1_tx:00000014 $d
+     /tmp/ccZubTZj.s:266    .text.uart2_tx:00000000 $t
+     /tmp/ccZubTZj.s:272    .text.uart2_tx:00000000 uart2_tx
+     /tmp/ccZubTZj.s:287    .text.uart2_tx:00000014 $d
+     /tmp/ccZubTZj.s:291    .text.HAL_UART_MspInit:00000000 $t
+     /tmp/ccZubTZj.s:297    .text.HAL_UART_MspInit:00000000 HAL_UART_MspInit
+     /tmp/ccZubTZj.s:426    .text.HAL_UART_MspInit:0000010c $d
+     /tmp/ccZubTZj.s:572    .bss.hdma_usart2_rx:00000000 hdma_usart2_rx
+     /tmp/ccZubTZj.s:544    .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccZubTZj.s:437    .text.HAL_UART_MspDeInit:00000000 $t
+     /tmp/ccZubTZj.s:443    .text.HAL_UART_MspDeInit:00000000 HAL_UART_MspDeInit
+     /tmp/ccZubTZj.s:494    .text.HAL_UART_MspDeInit:00000060 $d
+     /tmp/ccZubTZj.s:502    .text.DMA1_Channel4_5_6_7_IRQHandler:00000000 $t
+     /tmp/ccZubTZj.s:508    .text.DMA1_Channel4_5_6_7_IRQHandler:00000000 DMA1_Channel4_5_6_7_IRQHandler
+     /tmp/ccZubTZj.s:519    .text.DMA1_Channel4_5_6_7_IRQHandler:0000000c $d
+     /tmp/ccZubTZj.s:522    .text.USART2_IRQHandler:00000000 $t
+     /tmp/ccZubTZj.s:528    .text.USART2_IRQHandler:00000000 USART2_IRQHandler
+     /tmp/ccZubTZj.s:539    .text.USART2_IRQHandler:0000000c $d
+     /tmp/ccZubTZj.s:557    .bss.huart2:00000000 $d
+     /tmp/ccZubTZj.s:563    .bss.huart1:00000000 $d
+     /tmp/ccZubTZj.s:569    .bss.hdma_usart2_rx:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_UART_Init
@@ -652,7 +652,7 @@ HAL_NVIC_SetPriority
 HAL_NVIC_EnableIRQ
 HAL_UART_Receive_DMA
 HAL_UART_DMAStop
-ARM GAS  /tmp/cc5cAmSH.s 			page 12
+ARM GAS  /tmp/ccZubTZj.s 			page 12
 
 
 HAL_UART_Transmit

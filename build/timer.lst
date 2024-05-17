@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc44uIzR.s 			page 1
+ARM GAS  /tmp/ccVAsbP2.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc44uIzR.s 			page 1
   58              		@ args = 0, pretend = 0, frame = 0
   59              		@ frame_needed = 0, uses_anonymous_args = 0
   60 0000 70B5     		push	{r4, r5, r6, lr}
-ARM GAS  /tmp/cc44uIzR.s 			page 2
+ARM GAS  /tmp/ccVAsbP2.s 			page 2
 
 
   61 0002 0400     		movs	r4, r0
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc44uIzR.s 			page 1
  119 0006 0381     		strh	r3, [r0, #8]
  120 0008 C160     		str	r1, [r0, #12]
  121 000a 0361     		str	r3, [r0, #16]
-ARM GAS  /tmp/cc44uIzR.s 			page 3
+ARM GAS  /tmp/ccVAsbP2.s 			page 3
 
 
  122 000c 4361     		str	r3, [r0, #20]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc44uIzR.s 			page 1
  180 003a 5B69     		ldr	r3, [r3, #20]
  181 003c EAE7     		b	.L21
  182              	.L32:
-ARM GAS  /tmp/cc44uIzR.s 			page 4
+ARM GAS  /tmp/ccVAsbP2.s 			page 4
 
 
  183 003e FFF7FEFF 		bl	hal_rtc_get_timer_elapsed_time
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc44uIzR.s 			page 1
  239              	.L49:
  240 003a FFF7FEFF 		bl	hal_rtc_get_timer_elapsed_time
  241 003e 2368     		ldr	r3, [r4]
-ARM GAS  /tmp/cc44uIzR.s 			page 5
+ARM GAS  /tmp/ccVAsbP2.s 			page 5
 
 
  242 0040 C018     		adds	r0, r0, r3
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc44uIzR.s 			page 1
  300 0028 08D1     		bne	.L62
  301              	.L60:
  302 002a FEE7     		b	.L60
-ARM GAS  /tmp/cc44uIzR.s 			page 6
+ARM GAS  /tmp/ccVAsbP2.s 			page 6
 
 
  303              	.L58:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc44uIzR.s 			page 1
  358              		.thumb_func
  360              	TimerStop:
  361              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  /tmp/cc44uIzR.s 			page 7
+ARM GAS  /tmp/ccVAsbP2.s 			page 7
 
 
  362              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc44uIzR.s 			page 1
  417              		.syntax unified
  418              		.code	16
  419              		.thumb_func
-ARM GAS  /tmp/cc44uIzR.s 			page 8
+ARM GAS  /tmp/ccVAsbP2.s 			page 8
 
 
  421              	TimerReset:
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc44uIzR.s 			page 1
  481              	TimerGetElapsedTime:
  482              		@ args = 0, pretend = 0, frame = 0
  483              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cc44uIzR.s 			page 9
+ARM GAS  /tmp/ccVAsbP2.s 			page 9
 
 
  484 0000 70B5     		push	{r4, r5, r6, lr}
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc44uIzR.s 			page 1
  540 0038 00000000 		.word	TimerListHead
  541 003c 00000000 		.word	backuped_timers
  542 0040 00000000 		.word	backup
-ARM GAS  /tmp/cc44uIzR.s 			page 10
+ARM GAS  /tmp/ccVAsbP2.s 			page 10
 
 
  544              		.section	.text.TimerRestore,"ax",%progbits
@@ -590,57 +590,57 @@ ARM GAS  /tmp/cc44uIzR.s 			page 1
  594              	TimerListHead:
  595 0000 00000000 		.space	4
  596              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc44uIzR.s 			page 11
+ARM GAS  /tmp/ccVAsbP2.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 timer.c
-     /tmp/cc44uIzR.s:14     .text.TimerInsertTimer:00000000 $t
-     /tmp/cc44uIzR.s:19     .text.TimerInsertTimer:00000000 TimerInsertTimer
-     /tmp/cc44uIzR.s:49     .text.TimerInsertTimer:00000028 $d
-     /tmp/cc44uIzR.s:594    .bss.TimerListHead:00000000 TimerListHead
-     /tmp/cc44uIzR.s:52     .text.TimerSetTimeout:00000000 $t
-     /tmp/cc44uIzR.s:57     .text.TimerSetTimeout:00000000 TimerSetTimeout
-     /tmp/cc44uIzR.s:78     .text.TimerInsertNewHeadTimer:00000000 $t
-     /tmp/cc44uIzR.s:83     .text.TimerInsertNewHeadTimer:00000000 TimerInsertNewHeadTimer
-     /tmp/cc44uIzR.s:102    .text.TimerInsertNewHeadTimer:00000018 $d
-     /tmp/cc44uIzR.s:105    .text.TimerInit:00000000 $t
-     /tmp/cc44uIzR.s:111    .text.TimerInit:00000000 TimerInit
-     /tmp/cc44uIzR.s:126    .text.TimerSetContext:00000000 $t
-     /tmp/cc44uIzR.s:132    .text.TimerSetContext:00000000 TimerSetContext
-     /tmp/cc44uIzR.s:141    .text.TimerStart:00000000 $t
-     /tmp/cc44uIzR.s:147    .text.TimerStart:00000000 TimerStart
-     /tmp/cc44uIzR.s:197    .text.TimerStart:00000058 $d
-     /tmp/cc44uIzR.s:200    .text.TimerStartNoReload:00000000 $t
-     /tmp/cc44uIzR.s:206    .text.TimerStartNoReload:00000000 TimerStartNoReload
-     /tmp/cc44uIzR.s:254    .text.TimerStartNoReload:00000054 $d
-     /tmp/cc44uIzR.s:257    .text.TimerIsStarted:00000000 $t
-     /tmp/cc44uIzR.s:263    .text.TimerIsStarted:00000000 TimerIsStarted
-     /tmp/cc44uIzR.s:272    .text.TimerIrqHandler:00000000 $t
-     /tmp/cc44uIzR.s:278    .text.TimerIrqHandler:00000000 TimerIrqHandler
-     /tmp/cc44uIzR.s:351    .text.TimerIrqHandler:00000078 $d
-     /tmp/cc44uIzR.s:354    .text.TimerStop:00000000 $t
-     /tmp/cc44uIzR.s:360    .text.TimerStop:00000000 TimerStop
-     /tmp/cc44uIzR.s:412    .text.TimerStop:00000058 $d
-     /tmp/cc44uIzR.s:415    .text.TimerReset:00000000 $t
-     /tmp/cc44uIzR.s:421    .text.TimerReset:00000000 TimerReset
-     /tmp/cc44uIzR.s:433    .text.TimerSetValue:00000000 $t
-     /tmp/cc44uIzR.s:439    .text.TimerSetValue:00000000 TimerSetValue
-     /tmp/cc44uIzR.s:460    .text.TimerGetCurrentTime:00000000 $t
-     /tmp/cc44uIzR.s:466    .text.TimerGetCurrentTime:00000000 TimerGetCurrentTime
-     /tmp/cc44uIzR.s:475    .text.TimerGetElapsedTime:00000000 $t
-     /tmp/cc44uIzR.s:481    .text.TimerGetElapsedTime:00000000 TimerGetElapsedTime
-     /tmp/cc44uIzR.s:500    .text.TimerBackup:00000000 $t
-     /tmp/cc44uIzR.s:506    .text.TimerBackup:00000000 TimerBackup
-     /tmp/cc44uIzR.s:540    .text.TimerBackup:00000038 $d
-     /tmp/cc44uIzR.s:582    .bss.backuped_timers:00000000 backuped_timers
-     /tmp/cc44uIzR.s:588    .bss.backup:00000000 backup
-     /tmp/cc44uIzR.s:545    .text.TimerRestore:00000000 $t
-     /tmp/cc44uIzR.s:551    .text.TimerRestore:00000000 TimerRestore
-     /tmp/cc44uIzR.s:576    .text.TimerRestore:00000024 $d
-     /tmp/cc44uIzR.s:583    .bss.backuped_timers:00000000 $d
-     /tmp/cc44uIzR.s:585    .bss.backup:00000000 $d
-     /tmp/cc44uIzR.s:591    .bss.TimerListHead:00000000 $d
+     /tmp/ccVAsbP2.s:14     .text.TimerInsertTimer:00000000 $t
+     /tmp/ccVAsbP2.s:19     .text.TimerInsertTimer:00000000 TimerInsertTimer
+     /tmp/ccVAsbP2.s:49     .text.TimerInsertTimer:00000028 $d
+     /tmp/ccVAsbP2.s:594    .bss.TimerListHead:00000000 TimerListHead
+     /tmp/ccVAsbP2.s:52     .text.TimerSetTimeout:00000000 $t
+     /tmp/ccVAsbP2.s:57     .text.TimerSetTimeout:00000000 TimerSetTimeout
+     /tmp/ccVAsbP2.s:78     .text.TimerInsertNewHeadTimer:00000000 $t
+     /tmp/ccVAsbP2.s:83     .text.TimerInsertNewHeadTimer:00000000 TimerInsertNewHeadTimer
+     /tmp/ccVAsbP2.s:102    .text.TimerInsertNewHeadTimer:00000018 $d
+     /tmp/ccVAsbP2.s:105    .text.TimerInit:00000000 $t
+     /tmp/ccVAsbP2.s:111    .text.TimerInit:00000000 TimerInit
+     /tmp/ccVAsbP2.s:126    .text.TimerSetContext:00000000 $t
+     /tmp/ccVAsbP2.s:132    .text.TimerSetContext:00000000 TimerSetContext
+     /tmp/ccVAsbP2.s:141    .text.TimerStart:00000000 $t
+     /tmp/ccVAsbP2.s:147    .text.TimerStart:00000000 TimerStart
+     /tmp/ccVAsbP2.s:197    .text.TimerStart:00000058 $d
+     /tmp/ccVAsbP2.s:200    .text.TimerStartNoReload:00000000 $t
+     /tmp/ccVAsbP2.s:206    .text.TimerStartNoReload:00000000 TimerStartNoReload
+     /tmp/ccVAsbP2.s:254    .text.TimerStartNoReload:00000054 $d
+     /tmp/ccVAsbP2.s:257    .text.TimerIsStarted:00000000 $t
+     /tmp/ccVAsbP2.s:263    .text.TimerIsStarted:00000000 TimerIsStarted
+     /tmp/ccVAsbP2.s:272    .text.TimerIrqHandler:00000000 $t
+     /tmp/ccVAsbP2.s:278    .text.TimerIrqHandler:00000000 TimerIrqHandler
+     /tmp/ccVAsbP2.s:351    .text.TimerIrqHandler:00000078 $d
+     /tmp/ccVAsbP2.s:354    .text.TimerStop:00000000 $t
+     /tmp/ccVAsbP2.s:360    .text.TimerStop:00000000 TimerStop
+     /tmp/ccVAsbP2.s:412    .text.TimerStop:00000058 $d
+     /tmp/ccVAsbP2.s:415    .text.TimerReset:00000000 $t
+     /tmp/ccVAsbP2.s:421    .text.TimerReset:00000000 TimerReset
+     /tmp/ccVAsbP2.s:433    .text.TimerSetValue:00000000 $t
+     /tmp/ccVAsbP2.s:439    .text.TimerSetValue:00000000 TimerSetValue
+     /tmp/ccVAsbP2.s:460    .text.TimerGetCurrentTime:00000000 $t
+     /tmp/ccVAsbP2.s:466    .text.TimerGetCurrentTime:00000000 TimerGetCurrentTime
+     /tmp/ccVAsbP2.s:475    .text.TimerGetElapsedTime:00000000 $t
+     /tmp/ccVAsbP2.s:481    .text.TimerGetElapsedTime:00000000 TimerGetElapsedTime
+     /tmp/ccVAsbP2.s:500    .text.TimerBackup:00000000 $t
+     /tmp/ccVAsbP2.s:506    .text.TimerBackup:00000000 TimerBackup
+     /tmp/ccVAsbP2.s:540    .text.TimerBackup:00000038 $d
+     /tmp/ccVAsbP2.s:582    .bss.backuped_timers:00000000 backuped_timers
+     /tmp/ccVAsbP2.s:588    .bss.backup:00000000 backup
+     /tmp/ccVAsbP2.s:545    .text.TimerRestore:00000000 $t
+     /tmp/ccVAsbP2.s:551    .text.TimerRestore:00000000 TimerRestore
+     /tmp/ccVAsbP2.s:576    .text.TimerRestore:00000024 $d
+     /tmp/ccVAsbP2.s:583    .bss.backuped_timers:00000000 $d
+     /tmp/ccVAsbP2.s:585    .bss.backup:00000000 $d
+     /tmp/ccVAsbP2.s:591    .bss.TimerListHead:00000000 $d
 
 UNDEFINED SYMBOLS
 hal_rtc_get_minimum_timeout
@@ -650,7 +650,7 @@ hal_mcu_critical_section_begin
 hal_rtc_set_timer_context
 hal_mcu_critical_section_end
 hal_rtc_get_timer_context
-ARM GAS  /tmp/cc44uIzR.s 			page 12
+ARM GAS  /tmp/ccVAsbP2.s 			page 12
 
 
 hal_rtc_wakeup_timer_stop

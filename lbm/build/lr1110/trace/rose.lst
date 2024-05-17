@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccBJkirX.s 			page 1
+ARM GAS  /tmp/ccEhOXv4.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
   58              		@ args = 0, pretend = 0, frame = 0
   59              		@ frame_needed = 0, uses_anonymous_args = 0
   60              		@ link register save eliminated.
-ARM GAS  /tmp/ccBJkirX.s 			page 2
+ARM GAS  /tmp/ccEhOXv4.s 			page 2
 
 
   61 0000 8389     		ldrh	r3, [r0, #12]
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  117              	.L13:
  118 003c 0220     		movs	r0, #2
  119 003e F6E7     		b	.L6
-ARM GAS  /tmp/ccBJkirX.s 			page 3
+ARM GAS  /tmp/ccEhOXv4.s 			page 3
 
 
  120              	.L8:
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  176 002a 181C     		adds	r0, r3, #0
  177 002c 9BB2     		uxth	r3, r3
  178 002e 9200     		lsls	r2, r2, #2
-ARM GAS  /tmp/ccBJkirX.s 			page 4
+ARM GAS  /tmp/ccEhOXv4.s 			page 4
 
 
  179 0030 9342     		cmp	r3, r2
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  235 003e 1021     		movs	r1, #16
  236 0040 1800     		movs	r0, r3
  237 0042 059A     		ldr	r2, [sp, #20]
-ARM GAS  /tmp/ccBJkirX.s 			page 5
+ARM GAS  /tmp/ccEhOXv4.s 			page 5
 
 
  238 0044 FFF7FEFF 		bl	ROSE_payload_encrypt.constprop.0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  286      25733A25 
  286      64292000 
  287              	.LC8:
-ARM GAS  /tmp/ccBJkirX.s 			page 6
+ARM GAS  /tmp/ccEhOXv4.s 			page 6
 
 
  288 004c 524F5345 		.ascii	"ROSE_BAD_UNITSZ\012\000"
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  337 0044 FFF7FEFF 		bl	ROSE_decWL
  338 0048 A574     		strb	r5, [r4, #18]
  339 004a 4543     		muls	r5, r0
-ARM GAS  /tmp/ccBJkirX.s 			page 7
+ARM GAS  /tmp/ccEhOXv4.s 			page 7
 
 
  340 004c 019B     		ldr	r3, [sp, #4]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  395              		.thumb_func
  397              	ROSE_enable_encryption:
  398              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccBJkirX.s 			page 8
+ARM GAS  /tmp/ccEhOXv4.s 			page 8
 
 
  399              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  457              	.L47:
  458 001a C046     		.align	2
  459              	.L46:
-ARM GAS  /tmp/ccBJkirX.s 			page 9
+ARM GAS  /tmp/ccEhOXv4.s 			page 9
 
 
  460 001c 53040000 		.word	1107
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  518              	.L49:
  519 0034 1800     		movs	r0, r3
  520              		@ sp needed
-ARM GAS  /tmp/ccBJkirX.s 			page 10
+ARM GAS  /tmp/ccEhOXv4.s 			page 10
 
 
  521 0036 70BD     		pop	{r4, r5, r6, pc}
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  564              	.L62:
  565 0026 0023     		movs	r3, #0
  566 0028 0320     		movs	r0, #3
-ARM GAS  /tmp/ccBJkirX.s 			page 11
+ARM GAS  /tmp/ccEhOXv4.s 			page 11
 
 
  567 002a 059A     		ldr	r2, [sp, #20]
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  621 008c F0BD     		pop	{r4, r5, r6, r7, pc}
  622              	.L60:
  623 008e 6368     		ldr	r3, [r4, #4]
-ARM GAS  /tmp/ccBJkirX.s 			page 12
+ARM GAS  /tmp/ccEhOXv4.s 			page 12
 
 
  624 0090 0693     		str	r3, [sp, #24]
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  678 00ec 7A43     		muls	r2, r7
  679 00ee 0027     		movs	r7, #0
  680 00f0 039B     		ldr	r3, [sp, #12]
-ARM GAS  /tmp/ccBJkirX.s 			page 13
+ARM GAS  /tmp/ccEhOXv4.s 			page 13
 
 
  681 00f2 1331     		adds	r1, r1, #19
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  735 0166 FFF7FEFF 		bl	memset
  736              	.L91:
  737 016a F719     		adds	r7, r6, r7
-ARM GAS  /tmp/ccBJkirX.s 			page 14
+ARM GAS  /tmp/ccEhOXv4.s 			page 14
 
 
  738 016c 002F     		cmp	r7, #0
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  792 01d8 6360     		str	r3, [r4, #4]
  793 01da E581     		strh	r5, [r4, #14]
  794              	.L67:
-ARM GAS  /tmp/ccBJkirX.s 			page 15
+ARM GAS  /tmp/ccEhOXv4.s 			page 15
 
 
  795 01dc E078     		ldrb	r0, [r4, #3]
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  849 0244 089B     		ldr	r3, [sp, #32]
  850 0246 4048     		ldr	r0, .L111+20
  851 0248 0093     		str	r3, [sp]
-ARM GAS  /tmp/ccBJkirX.s 			page 16
+ARM GAS  /tmp/ccEhOXv4.s 			page 16
 
 
  852 024a 0E99     		ldr	r1, [sp, #56]
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  906 02b4 A57C     		ldrb	r5, [r4, #18]
  907 02b6 039A     		ldr	r2, [sp, #12]
  908 02b8 6B43     		muls	r3, r5
-ARM GAS  /tmp/ccBJkirX.s 			page 17
+ARM GAS  /tmp/ccEhOXv4.s 			page 17
 
 
  909 02ba 0333     		adds	r3, r3, #3
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  963 0328 9342     		cmp	r3, r2
  964 032a 15D3     		bcc	.L85
  965 032c 079B     		ldr	r3, [sp, #28]
-ARM GAS  /tmp/ccBJkirX.s 			page 18
+ARM GAS  /tmp/ccEhOXv4.s 			page 18
 
 
  966 032e 0133     		adds	r3, r3, #1
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  1020 03a8 099A     		ldr	r2, [sp, #36]
  1021 03aa EB18     		adds	r3, r5, r3
  1022 03ac 1218     		adds	r2, r2, r0
-ARM GAS  /tmp/ccBJkirX.s 			page 19
+ARM GAS  /tmp/ccEhOXv4.s 			page 19
 
 
  1023 03ae 6118     		adds	r1, r4, r1
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  1069 0014 0223     		movs	r3, #2
  1070 0016 1F42     		tst	r7, r3
  1071 0018 02D0     		beq	.L115
-ARM GAS  /tmp/ccBJkirX.s 			page 20
+ARM GAS  /tmp/ccEhOXv4.s 			page 20
 
 
  1072 001a 0278     		ldrb	r2, [r0]
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  1126 0084 B343     		bics	r3, r6
  1127 0086 2370     		strb	r3, [r4]
  1128              	.L122:
-ARM GAS  /tmp/ccBJkirX.s 			page 21
+ARM GAS  /tmp/ccEhOXv4.s 			page 21
 
 
  1129 0088 0020     		movs	r0, #0
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  1183 00f6 0E49     		ldr	r1, .L144+24
  1184 00f8 1343     		orrs	r3, r2
  1185 00fa 2370     		strb	r3, [r4]
-ARM GAS  /tmp/ccBJkirX.s 			page 22
+ARM GAS  /tmp/ccEhOXv4.s 			page 22
 
 
  1186 00fc 074A     		ldr	r2, .L144+4
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  1242 002c DB00     		lsls	r3, r3, #3
  1243 002e 181A     		subs	r0, r3, r0
  1244 0030 3100     		movs	r1, r6
-ARM GAS  /tmp/ccBJkirX.s 			page 23
+ARM GAS  /tmp/ccEhOXv4.s 			page 23
 
 
  1245 0032 FFF7FEFF 		bl	__aeabi_idiv
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  1299              	.L146:
  1300 009e 05B0     		add	sp, sp, #20
  1301              		@ sp needed
-ARM GAS  /tmp/ccBJkirX.s 			page 24
+ARM GAS  /tmp/ccEhOXv4.s 			page 24
 
 
  1302 00a0 F0BD     		pop	{r4, r5, r6, r7, pc}
@@ -1418,50 +1418,50 @@ ARM GAS  /tmp/ccBJkirX.s 			page 1
  1341 000c 0000     		.short	0
  1342 000e 0000     		.short	0
  1343              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccBJkirX.s 			page 25
+ARM GAS  /tmp/ccEhOXv4.s 			page 25
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 rose.c
-     /tmp/ccBJkirX.s:14     .text.ROSE_payload_encrypt.constprop.0:00000000 $t
-     /tmp/ccBJkirX.s:19     .text.ROSE_payload_encrypt.constprop.0:00000000 ROSE_payload_encrypt.constprop.0
-     /tmp/ccBJkirX.s:51     .text.ROSE_rvec_len:00000000 $t
-     /tmp/ccBJkirX.s:57     .text.ROSE_rvec_len:00000000 ROSE_rvec_len
-     /tmp/ccBJkirX.s:72     .text.ROSE_encWL:00000000 $t
-     /tmp/ccBJkirX.s:78     .text.ROSE_encWL:00000000 ROSE_encWL
-     /tmp/ccBJkirX.s:138    .text.ROSE_encWL:00000058 $d
-     /tmp/ccBJkirX.s:145    .text.ROSE_decWL:00000000 $t
-     /tmp/ccBJkirX.s:151    .text.ROSE_decWL:00000000 ROSE_decWL
-     /tmp/ccBJkirX.s:189    .text.ROSE_decWL:0000003c $d
-     /tmp/ccBJkirX.s:1334   .rodata.WLENCP:00000000 WLENCP
-     /tmp/ccBJkirX.s:193    .text.ROSE_cipher:00000000 $t
-     /tmp/ccBJkirX.s:199    .text.ROSE_cipher:00000000 ROSE_cipher
-     /tmp/ccBJkirX.s:277    .text.ROSE_cipher:00000090 $d
-     /tmp/ccBJkirX.s:294    .text.ROSE_init:00000000 $t
-     /tmp/ccBJkirX.s:300    .text.ROSE_init:00000000 ROSE_init
-     /tmp/ccBJkirX.s:382    .text.ROSE_init:000000a0 $d
-     /tmp/ccBJkirX.s:391    .text.ROSE_enable_encryption:00000000 $t
-     /tmp/ccBJkirX.s:397    .text.ROSE_enable_encryption:00000000 ROSE_enable_encryption
-     /tmp/ccBJkirX.s:416    .text.ROSE_getSoff:00000000 $t
-     /tmp/ccBJkirX.s:422    .text.ROSE_getSoff:00000000 ROSE_getSoff
-     /tmp/ccBJkirX.s:435    .text.ROSE_getFree:00000000 $t
-     /tmp/ccBJkirX.s:441    .text.ROSE_getFree:00000000 ROSE_getFree
-     /tmp/ccBJkirX.s:460    .text.ROSE_getFree:0000001c $d
-     /tmp/ccBJkirX.s:463    .text.ROSE_getPending:00000000 $t
-     /tmp/ccBJkirX.s:469    .text.ROSE_getPending:00000000 ROSE_getPending
-     /tmp/ccBJkirX.s:483    .text.ROSE_getStatus:00000000 $t
-     /tmp/ccBJkirX.s:489    .text.ROSE_getStatus:00000000 ROSE_getStatus
-     /tmp/ccBJkirX.s:536    .text.ROSE_getData:00000000 $t
-     /tmp/ccBJkirX.s:542    .text.ROSE_getData:00000000 ROSE_getData
-     /tmp/ccBJkirX.s:971    .text.ROSE_getData:00000334 $d
-     /tmp/ccBJkirX.s:1325   .rodata.CSWTCH.46:00000000 CSWTCH.46
-     /tmp/ccBJkirX.s:981    .text.ROSE_getData:00000358 $t
-     /tmp/ccBJkirX.s:1048   .text.ROSE_processDnFrame:00000000 $t
-     /tmp/ccBJkirX.s:1054   .text.ROSE_processDnFrame:00000000 ROSE_processDnFrame
-     /tmp/ccBJkirX.s:1202   .text.ROSE_processDnFrame:00000118 $d
-     /tmp/ccBJkirX.s:1213   .text.ROSE_addRecord:00000000 $t
-     /tmp/ccBJkirX.s:1219   .text.ROSE_addRecord:00000000 ROSE_addRecord
-     /tmp/ccBJkirX.s:1331   .rodata.WLENCP:00000000 $d
+     /tmp/ccEhOXv4.s:14     .text.ROSE_payload_encrypt.constprop.0:00000000 $t
+     /tmp/ccEhOXv4.s:19     .text.ROSE_payload_encrypt.constprop.0:00000000 ROSE_payload_encrypt.constprop.0
+     /tmp/ccEhOXv4.s:51     .text.ROSE_rvec_len:00000000 $t
+     /tmp/ccEhOXv4.s:57     .text.ROSE_rvec_len:00000000 ROSE_rvec_len
+     /tmp/ccEhOXv4.s:72     .text.ROSE_encWL:00000000 $t
+     /tmp/ccEhOXv4.s:78     .text.ROSE_encWL:00000000 ROSE_encWL
+     /tmp/ccEhOXv4.s:138    .text.ROSE_encWL:00000058 $d
+     /tmp/ccEhOXv4.s:145    .text.ROSE_decWL:00000000 $t
+     /tmp/ccEhOXv4.s:151    .text.ROSE_decWL:00000000 ROSE_decWL
+     /tmp/ccEhOXv4.s:189    .text.ROSE_decWL:0000003c $d
+     /tmp/ccEhOXv4.s:1334   .rodata.WLENCP:00000000 WLENCP
+     /tmp/ccEhOXv4.s:193    .text.ROSE_cipher:00000000 $t
+     /tmp/ccEhOXv4.s:199    .text.ROSE_cipher:00000000 ROSE_cipher
+     /tmp/ccEhOXv4.s:277    .text.ROSE_cipher:00000090 $d
+     /tmp/ccEhOXv4.s:294    .text.ROSE_init:00000000 $t
+     /tmp/ccEhOXv4.s:300    .text.ROSE_init:00000000 ROSE_init
+     /tmp/ccEhOXv4.s:382    .text.ROSE_init:000000a0 $d
+     /tmp/ccEhOXv4.s:391    .text.ROSE_enable_encryption:00000000 $t
+     /tmp/ccEhOXv4.s:397    .text.ROSE_enable_encryption:00000000 ROSE_enable_encryption
+     /tmp/ccEhOXv4.s:416    .text.ROSE_getSoff:00000000 $t
+     /tmp/ccEhOXv4.s:422    .text.ROSE_getSoff:00000000 ROSE_getSoff
+     /tmp/ccEhOXv4.s:435    .text.ROSE_getFree:00000000 $t
+     /tmp/ccEhOXv4.s:441    .text.ROSE_getFree:00000000 ROSE_getFree
+     /tmp/ccEhOXv4.s:460    .text.ROSE_getFree:0000001c $d
+     /tmp/ccEhOXv4.s:463    .text.ROSE_getPending:00000000 $t
+     /tmp/ccEhOXv4.s:469    .text.ROSE_getPending:00000000 ROSE_getPending
+     /tmp/ccEhOXv4.s:483    .text.ROSE_getStatus:00000000 $t
+     /tmp/ccEhOXv4.s:489    .text.ROSE_getStatus:00000000 ROSE_getStatus
+     /tmp/ccEhOXv4.s:536    .text.ROSE_getData:00000000 $t
+     /tmp/ccEhOXv4.s:542    .text.ROSE_getData:00000000 ROSE_getData
+     /tmp/ccEhOXv4.s:971    .text.ROSE_getData:00000334 $d
+     /tmp/ccEhOXv4.s:1325   .rodata.CSWTCH.46:00000000 CSWTCH.46
+     /tmp/ccEhOXv4.s:981    .text.ROSE_getData:00000358 $t
+     /tmp/ccEhOXv4.s:1048   .text.ROSE_processDnFrame:00000000 $t
+     /tmp/ccEhOXv4.s:1054   .text.ROSE_processDnFrame:00000000 ROSE_processDnFrame
+     /tmp/ccEhOXv4.s:1202   .text.ROSE_processDnFrame:00000118 $d
+     /tmp/ccEhOXv4.s:1213   .text.ROSE_addRecord:00000000 $t
+     /tmp/ccEhOXv4.s:1219   .text.ROSE_addRecord:00000000 ROSE_addRecord
+     /tmp/ccEhOXv4.s:1331   .rodata.WLENCP:00000000 $d
 
 UNDEFINED SYMBOLS
 memset

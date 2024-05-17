@@ -63,6 +63,20 @@ build/functions.o: extensions/drivers/bachelor/functions.c \
  bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_usb.h \
  bsp_l0/smtc_hal/smtc_hal_i2c.h \
  bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c.h \
+ lbm/smtc_modem_core/smtc_ralf/src/ralf_lr11xx.h \
+ lbm/smtc_modem_core/smtc_ral/src/ral_lr11xx.h \
+ lbm/smtc_modem_core/smtc_ral/src/ral_defs.h \
+ lbm/smtc_modem_core/smtc_ral/src/lr_fhss_v1_base_types.h \
+ lbm/smtc_modem_core/smtc_ralf/src/ralf.h \
+ lbm/smtc_modem_core/smtc_ral/src/ral.h \
+ lbm/smtc_modem_core/smtc_ral/src/ral_drv.h \
+ lbm/smtc_modem_core/smtc_ralf/src/ralf_defs.h \
+ lbm/smtc_modem_core/smtc_ral/src/ral_defs.h \
+ lbm/smtc_modem_core/smtc_ralf/src/ralf_drv.h \
+ lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_gnss.h \
+ lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_gnss_types.h \
+ lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_system_types.h \
+ lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_types.h \
  bsp_l0/smtc_hal/smtc_hal_dbg_trace.h bsp_l0/smtc_hal/smtc_hal_trace.h \
  bsp_l0/smtc_hal/smtc_hal_mcu.h bsp_l0/smtc_hal/smtc_hal_dbg_trace.h \
  extensions/drivers/common/timer.h
@@ -132,6 +146,20 @@ bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_pcd.h:
 bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_ll_usb.h:
 bsp_l0/smtc_hal/smtc_hal_i2c.h:
 bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_i2c.h:
+lbm/smtc_modem_core/smtc_ralf/src/ralf_lr11xx.h:
+lbm/smtc_modem_core/smtc_ral/src/ral_lr11xx.h:
+lbm/smtc_modem_core/smtc_ral/src/ral_defs.h:
+lbm/smtc_modem_core/smtc_ral/src/lr_fhss_v1_base_types.h:
+lbm/smtc_modem_core/smtc_ralf/src/ralf.h:
+lbm/smtc_modem_core/smtc_ral/src/ral.h:
+lbm/smtc_modem_core/smtc_ral/src/ral_drv.h:
+lbm/smtc_modem_core/smtc_ralf/src/ralf_defs.h:
+lbm/smtc_modem_core/smtc_ral/src/ral_defs.h:
+lbm/smtc_modem_core/smtc_ralf/src/ralf_drv.h:
+lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_gnss.h:
+lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_gnss_types.h:
+lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_system_types.h:
+lbm/smtc_modem_core/radio_drivers/lr11xx_driver/src/lr11xx_types.h:
 bsp_l0/smtc_hal/smtc_hal_dbg_trace.h:
 bsp_l0/smtc_hal/smtc_hal_trace.h:
 bsp_l0/smtc_hal/smtc_hal_mcu.h:

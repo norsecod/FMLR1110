@@ -9,7 +9,13 @@ for a bachelors project "LoRaWAN Båtsensor" at Hiof (Høgskolen i Østfold)*/
 extern float VDR, temp, Voltage, Door, water, hastydata1, hastydata2, prev_water,prev_door, door;
 extern ADC_HandleTypeDef hadc;
 extern TimerEvent_t water_timer, door_timer;
-extern uint16_t axisxyz[3]; 
+extern uint16_t axisxyz[3];
+typedef struct {
+    uint8_t satellite_id;
+    uint8_t cnr;
+    int16_t doppler;
+} parsed_gnss_data_t;
+#define UNIX_GPS_EPOCH_DIFF 315964800
 
 
     hal_gpio_irq_t PC10_cb = {
@@ -39,8 +45,8 @@ void sensor_read(void) {                                    //function that call
     hal_mcu_delay_ms(10);                            //adc measurment
     Voltage = GETvoltage(&hadc);
     hal_mcu_delay_ms(10);
-   // gps_snap(); // Uncomment and implement gps_snap if applicable
-
+    gps_snap(); // Uncomment and implement gps_snap if applicable
+    
 
 }
 
@@ -62,7 +68,7 @@ void sendLoRaWANPacket(const uint8_t *payload, uint8_t payloadSize) //frame func
 
 
 
-void sendData(float temperature, float analogValue, bool digitalValue1, bool digitalValue2)
+void sendData(float temperature, float analogValue, bool digitalValue1, bool digitalValue2, bool digitalValue3)
  {
     cayenne_lpp_t lpp;     //creates and name a structure for CayenneLPP named "lpp" contains buffer and cursor
     cayenne_lpp_reset(&lpp);    //resets the structure lpp so it is empty
@@ -71,11 +77,15 @@ void sendData(float temperature, float analogValue, bool digitalValue1, bool dig
     cayenne_lpp_add_analog_input(&lpp, 2, analogValue); //voltage value on channel 2
     cayenne_lpp_add_digital_input(&lpp, 3, digitalValue1);  //Door magnet on channel 3 (high or low)
     cayenne_lpp_add_digital_input(&lpp, 4, digitalValue2);  //watersensor on channel 4 (high or low)
+    cayenne_lpp_add_digital_input(&lpp, 5, digitalValue3);  //tap on channel 5 (high or low)
 
 
     sendLoRaWANPacket(lpp.buffer, lpp.cursor); //payload in buffer, size is in cursor. is a framefunction for uplink
-    printCayenneLPPBuffer(&lpp); // Used only for debugging
+    //printCayenneLPPBuffer(&lpp); // Used only for debugging
 }
+
+
+
 
 void wateralarm(bool digitalValue)                                  //used for the interrupt routine
 {                                                                   //to send state of water sensor
@@ -97,6 +107,16 @@ void dooralarm(bool digitalValue)                                   //used for t
     printCayenneLPPBuffer(&lpp); // Used only for debugging
 }
 
+void tapalarm(bool digitalValue)
+{
+    cayenne_lpp_t lpp;                                              //look at "sendData for more info"
+    cayenne_lpp_reset(&lpp);
+    cayenne_lpp_add_digital_input(&lpp, 5, digitalValue);
+
+    sendLoRaWANPacket(lpp.buffer, lpp.cursor);
+    printCayenneLPPBuffer(&lpp); // Used only for debugging
+}
+
 float GETtemperature(const uint32_t id) {    //function that calls TC74A0, and reads the temperature
     uint8_t device_address = 0x90;           //adress of TC74A0                    
     uint8_t temperature_raw;                 
@@ -107,12 +127,12 @@ float GETtemperature(const uint32_t id) {    //function that calls TC74A0, and r
         return -128.0f; // Error value                                          if error occurs returns -128 as temperature
     }
 
-    temperature = (float)((int8_t)temperature_raw); //typecasts the int8_t data to float data and stores it in temperature
+    temperature = (int8_t)temperature_raw; //typecasts the int8_t data to float data and stores it in temperature
     return temperature; 
 }
 
 float GETvoltage(ADC_HandleTypeDef *hadc) {         // function that take a ADC measurment
-    float batt = 0.0;                               //stores the battery voltage (adc value)
+    float batt = 0.0;                               //stores the battery voltage
     hal_gpio_set_value(PA_3, 1);                    //turns on the mosfet for the voltage divider
     MX_ADC_Init();                                  //adc init
 
@@ -125,7 +145,7 @@ float GETvoltage(ADC_HandleTypeDef *hadc) {         // function that take a ADC 
     if (HAL_ADC_PollForConversion(hadc, HAL_MAX_DELAY) == HAL_OK) { // Polls the ADC for completion of conversion.  
                                                                     //Once completed, retrieves the ADC value and calculates the corresponding voltage.
         uint32_t adc_value = HAL_ADC_GetValue(hadc);                // Voltage is calculated using the formula: Voltage = (ADC_value * Vref) / Max_ADC_Value.
-        batt = ((3.3f * adc_value) / 4095.0f)*VDR;                        // Here, Vref is assumed to be 3.3 volts and Max_ADC_Value is 4095.
+        batt = ((3.3f * adc_value) / 4095.0f)*VDR;                  // Here, Vref is assumed to be 3.3 volts and Max_ADC_Value is 4095. VDR = voltage divider ratio
     }
 
     HAL_ADC_DeInit(hadc);       
@@ -188,6 +208,13 @@ void GPIO_Init(void) {                  //init for gpio pns called in main
     hal_gpio_init_in( PA_15, BSP_GPIO_PULL_MODE_DOWN, BSP_GPIO_IRQ_MODE_RISING, &PA15_cb ); //EXTI interrupt accelerometer
 }
 
+uint32_t get_current_gnss_time() {
+    uint32_t current_unix_time = hal_rtc_get_time_s();
+    return current_unix_time - UNIX_GPS_EPOCH_DIFF;
+}
+
+
+
 /*=============================functions for ADCL343========================================*/
 
 
@@ -211,11 +238,15 @@ void adxl_init() {
     if (data_rec[0]== 0xE5)
     {
         SMTC_HAL_TRACE_PRINTF("ADXL found\n\r");
- 
+
+        adxl343_reset();
+
         adxl_write(0x2d, 0x00);  // reset all bits
         adxl_write(0x2d, 0x08);  // measure mode
 
         adxl_write(0x31, 0x01);  // +- 4g range
+
+        adxl_tap_config();
 
     }
     else
@@ -239,3 +270,45 @@ void adxl_read_acceleration(uint16_t *axis) {
    
 
 }
+
+void adxl_tap_config() {
+
+    adxl_write (0x2A, 0x01);  // enable tap detection on all axis
+    hal_mcu_delay_ms(10);
+    adxl_write (0x1D, 40);  // set tap threshold 2.5g/.0625
+    hal_mcu_delay_ms(10);
+    adxl_write (0x21, 32);  // set tap duration .02 sec/.000625
+    hal_mcu_delay_ms(10);
+    adxl_write (0x22, 80);  // double tap latency .1sec/.00125
+    hal_mcu_delay_ms(10);
+    adxl_write (0x23, 240);  // double tap window .3sec/.00125
+    hal_mcu_delay_ms(10);
+
+    adxl_write (0x2F, 0x00);  // int map reg 0 means INT1
+    adxl_write (0x2E,0x60);    //enables INT from singel and double tap
+}
+
+void adxl343_reset() {
+    // Array of register addresses to reset
+    uint8_t registers_to_reset[] = {
+        0x1D, 0x1E, 0x1F, 0x20, 0x21, 0x22, 0x23, 0x24,
+        0x25, 0x26, 0x27, 0x28, 0x29, 0x2A, 0x2B, 0x2C,
+        0x2D, 0x2E, 0x2F, 0x30, 0x31, 0x38
+    };
+    
+    for (uint8_t i = 0; i < sizeof(registers_to_reset); i++) {
+        adxl_write(registers_to_reset[i], 0x00);
+    }
+
+    // Special value for BW_RATE (0x2C), reset to 0x0A as default
+    adxl_write(0x2C, 0x0A);
+    adxl_write(0x30, 0b00000010);
+    
+    // Verification (optional)
+    // uint8_t data_rec;
+   // for (uint8_t i = 0; i < sizeof(registers_to_reset); i++) {
+     //   adxl_read(registers_to_reset[i], &data_rec, 1);
+       // SMTC_HAL_TRACE_PRINTF("Register 0x%02X reset to 0x%02X\n\r", registers_to_reset[i], data_rec);
+     //}
+}
+
