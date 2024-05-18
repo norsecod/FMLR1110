@@ -27,7 +27,7 @@
 #include "string.h"
 
 #include "settings.h"
-#include <assert.h>
+
 /*
  * -----------------------------------------------------------------------------
  * --- PRIVATE CONSTANTS -------------------------------------------------------
@@ -272,9 +272,6 @@ int main( void )
 
 void gps_snap(void) {
     SMTC_HAL_TRACE_PRINTF("\n-----------------GPS snap----------------\n\r");
-
-    // Initialize the RTC if not already initialized
-    hal_rtc_init();
 
     // Activate the active antenna
     hal_gpio_set_value(PB_0, 1);
@@ -597,7 +594,7 @@ void PA15Callback(void* context )
        
      hastydata3=1;
     
-    if (tapflag !=prev_tap)
+    if (tapflag != prev_tap)
     {
         tapalarm(tapflag);
         
