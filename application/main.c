@@ -581,15 +581,7 @@ void PA15Callback(void* context )
   {
    SMTC_HAL_TRACE_PRINTF("double tap detected\n\r");
     tapflag = true;
-
-  }
- else if ((data>>6) & 0x01)
-  {
-   SMTC_HAL_TRACE_PRINTF("Single tap detected\n\r");
-   tapflag = true;
-   
-  }
-    if (hastydata3 == 0)
+        if (hastydata3 == 0)
     {
        
      hastydata3=1;
@@ -599,10 +591,38 @@ void PA15Callback(void* context )
         tapalarm(tapflag);
         
         prev_tap = tapflag;
-        tapflag = 0;
+        
     }
         TimerStart(&tap_timer);
+       
     } 
+  }
+ else if ((data>>6) & 0x01)
+  {
+   SMTC_HAL_TRACE_PRINTF("Single tap detected\n\r");
+   tapflag = true;
+    if (hastydata3 == 0)
+    {
+       
+        hastydata3=1;
+    
+        if (tapflag != prev_tap)
+        {
+            tapalarm(tapflag);
+        
+            prev_tap = tapflag;
+        
+        }
+
+        TimerStart(&tap_timer);
+       
+    } 
+  }
+  else {
+        
+    tapflag=false;
+  }
+
 
 }
 
