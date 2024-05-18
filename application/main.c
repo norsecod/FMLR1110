@@ -293,7 +293,7 @@ void gps_snap(void) {
         hal_gpio_set_value(PB_0, 0);
         return;
     }
-
+    /*
     // Set assistance position to Høgskole i Østfold, Fredrikstad, Norway
     lr11xx_gnss_solver_assistance_position_t assistance_position;
     assistance_position.latitude = 59.2184;  // Latitude for Høgskole i Østfold
@@ -304,7 +304,7 @@ void gps_snap(void) {
         hal_gpio_set_value(PB_0, 0);
         return;
     }
-
+    */
     // Start the GNSS autonomous scan with best effort mode
     ret = lr11xx_gnss_scan_autonomous(modem_radio.ral.context, gnss_time, LR11XX_GNSS_OPTION_BEST_EFFORT, 1, 6);
     if (ret != LR11XX_STATUS_OK) {
