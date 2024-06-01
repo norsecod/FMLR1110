@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc3hQV0n.s 			page 1
+ARM GAS  /tmp/ccb86Sm2.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
   44              	is_modem_connected:
   45              		@ args = 0, pretend = 0, frame = 0
   46              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cc3hQV0n.s 			page 2
+ARM GAS  /tmp/ccb86Sm2.s 			page 2
 
 
   47 0000 10B5     		push	{r4, lr}
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  100      4E464F3A 
  100      20557365 
  100      72207261 
-ARM GAS  /tmp/cc3hQV0n.s 			page 3
+ARM GAS  /tmp/ccb86Sm2.s 			page 3
 
 
  101 0030 2041424F 		.ascii	" ABORTED status \012\015\015\000"
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  149              		.syntax unified
  150              		.code	16
  151              		.thumb_func
-ARM GAS  /tmp/cc3hQV0n.s 			page 4
+ARM GAS  /tmp/ccb86Sm2.s 			page 4
 
 
  153              	smtc_modem_send_tx.constprop.0:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  207 0066 0133     		adds	r3, r3, #1
  208 0068 A372     		strb	r3, [r4, #10]
  209 006a 009B     		ldr	r3, [sp]
-ARM GAS  /tmp/cc3hQV0n.s 			page 5
+ARM GAS  /tmp/ccb86Sm2.s 			page 5
 
 
  210 006c E760     		str	r7, [r4, #12]
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  262 001e 6B69     		ldr	r3, [r5, #20]
  263 0020 0121     		movs	r1, #1
  264 0022 2868     		ldr	r0, [r5]
-ARM GAS  /tmp/cc3hQV0n.s 			page 6
+ARM GAS  /tmp/ccb86Sm2.s 			page 6
 
 
  265 0024 9847     		blx	r3
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  320              		.section	.text.smtc_modem_run_engine,"ax",%progbits
  321              		.align	1
  322              		.global	smtc_modem_run_engine
-ARM GAS  /tmp/cc3hQV0n.s 			page 7
+ARM GAS  /tmp/ccb86Sm2.s 			page 7
 
 
  323              		.syntax unified
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  381              		.syntax unified
  382              		.code	16
  383              		.thumb_func
-ARM GAS  /tmp/cc3hQV0n.s 			page 8
+ARM GAS  /tmp/ccb86Sm2.s 			page 8
 
 
  385              	smtc_modem_get_lorawan_version:
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  441              		@ sp needed
  442 002a 3EBD     		pop	{r1, r2, r3, r4, r5, pc}
  444              		.section	.text.smtc_modem_reset,"ax",%progbits
-ARM GAS  /tmp/cc3hQV0n.s 			page 9
+ARM GAS  /tmp/ccb86Sm2.s 			page 9
 
 
  445              		.align	1
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  504 0004 FFF7FEFF 		bl	modem_get_test_mode_status
  505 0008 0400     		movs	r4, r0
  506 000a 0520     		movs	r0, #5
-ARM GAS  /tmp/cc3hQV0n.s 			page 10
+ARM GAS  /tmp/ccb86Sm2.s 			page 10
 
 
  507 000c 002C     		cmp	r4, #0
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  565              		@ sp needed
  566 001e 70BD     		pop	{r4, r5, r6, pc}
  568              		.section	.text.smtc_modem_set_tx_power_offset_db,"ax",%progbits
-ARM GAS  /tmp/cc3hQV0n.s 			page 11
+ARM GAS  /tmp/ccb86Sm2.s 			page 11
 
 
  569              		.align	1
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  626 0028 FFF7FEFF 		bl	clock_sync_set_enabled
  627 002c FFF7FEFF 		bl	get_join_state
  628 0030 0228     		cmp	r0, #2
-ARM GAS  /tmp/cc3hQV0n.s 			page 12
+ARM GAS  /tmp/ccb86Sm2.s 			page 12
 
 
  629 0032 09D1     		bne	.L80
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  685 0038 2C000000 		.word	smtc_modem_services_ctx+44
  686 003c 3C000000 		.word	smtc_modem_services_ctx+60
  688              		.section	.text.smtc_modem_get_time,"ax",%progbits
-ARM GAS  /tmp/cc3hQV0n.s 			page 13
+ARM GAS  /tmp/ccb86Sm2.s 			page 13
 
 
  689              		.align	1
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  746 0004 FFF7FEFF 		bl	modem_get_test_mode_status
  747 0008 0523     		movs	r3, #5
  748 000a 0028     		cmp	r0, #0
-ARM GAS  /tmp/cc3hQV0n.s 			page 14
+ARM GAS  /tmp/ccb86Sm2.s 			page 14
 
 
  749 000c 06D1     		bne	.L103
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  806              		.syntax unified
  807              		.code	16
  808              		.thumb_func
-ARM GAS  /tmp/cc3hQV0n.s 			page 15
+ARM GAS  /tmp/ccb86Sm2.s 			page 15
 
 
  810              	smtc_modem_time_get_alcsync_fport:
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  867              		.align	1
  868              		.global	smtc_modem_time_get_sync_interval_s
  869              		.syntax unified
-ARM GAS  /tmp/cc3hQV0n.s 			page 16
+ARM GAS  /tmp/ccb86Sm2.s 			page 16
 
 
  870              		.code	16
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  927 0020 2C000000 		.word	smtc_modem_services_ctx+44
  929              		.section	.text.smtc_modem_time_get_sync_invalid_delay_s,"ax",%progbits
  930              		.align	1
-ARM GAS  /tmp/cc3hQV0n.s 			page 17
+ARM GAS  /tmp/ccb86Sm2.s 			page 17
 
 
  931              		.global	smtc_modem_time_get_sync_invalid_delay_s
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  989              		.align	1
  990              		.global	smtc_modem_alarm_start_timer
  991              		.syntax unified
-ARM GAS  /tmp/cc3hQV0n.s 			page 18
+ARM GAS  /tmp/ccb86Sm2.s 			page 18
 
 
  992              		.code	16
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1041 0018 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  1042 001c 0548     		ldr	r0, .L160+4
  1043 001e FFF7FEFF 		bl	smtc_modem_hal_print_trace
-ARM GAS  /tmp/cc3hQV0n.s 			page 19
+ARM GAS  /tmp/ccb86Sm2.s 			page 19
 
 
  1044 0022 0320     		movs	r0, #3
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1092              		@ sp needed
  1093 002c 70BD     		pop	{r4, r5, r6, pc}
  1094              	.L164:
-ARM GAS  /tmp/cc3hQV0n.s 			page 20
+ARM GAS  /tmp/ccb86Sm2.s 			page 20
 
 
  1095 002e FFF7FEFF 		bl	modem_get_user_alarm
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1147              		.global	smtc_modem_set_joineui
  1148              		.syntax unified
  1149              		.code	16
-ARM GAS  /tmp/cc3hQV0n.s 			page 21
+ARM GAS  /tmp/ccb86Sm2.s 			page 21
 
 
  1150              		.thumb_func
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1207 000e 013B     		subs	r3, r3, #1
  1208 0010 002C     		cmp	r4, #0
  1209 0012 06D0     		beq	.L184
-ARM GAS  /tmp/cc3hQV0n.s 			page 22
+ARM GAS  /tmp/ccb86Sm2.s 			page 22
 
 
  1210 0014 2000     		movs	r0, r4
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1267              		.section	.text.smtc_modem_set_nwkkey,"ax",%progbits
  1268              		.align	1
  1269              		.global	smtc_modem_set_nwkkey
-ARM GAS  /tmp/cc3hQV0n.s 			page 23
+ARM GAS  /tmp/ccb86Sm2.s 			page 23
 
 
  1270              		.syntax unified
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1327 000c 002C     		cmp	r4, #0
  1328 000e 06D1     		bne	.L205
  1329 0010 0138     		subs	r0, r0, #1
-ARM GAS  /tmp/cc3hQV0n.s 			page 24
+ARM GAS  /tmp/ccb86Sm2.s 			page 24
 
 
  1330 0012 002D     		cmp	r5, #0
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1371 0020 FFF7FEFF 		bl	lorawan_api_class_b_enabled
  1372 0024 2000     		movs	r0, r4
  1373              	.L219:
-ARM GAS  /tmp/cc3hQV0n.s 			page 25
+ARM GAS  /tmp/ccb86Sm2.s 			page 25
 
 
  1374 0026 FFF7FEFF 		bl	lorawan_api_class_c_enabled
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1430 0006 1600     		movs	r6, r2
  1431 0008 FFF7FEFF 		bl	modem_get_test_mode_status
  1432 000c 0300     		movs	r3, r0
-ARM GAS  /tmp/cc3hQV0n.s 			page 26
+ARM GAS  /tmp/ccb86Sm2.s 			page 26
 
 
  1433 000e 0520     		movs	r0, #5
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1489 0022 0620     		movs	r0, #6
  1490 0024 012B     		cmp	r3, #1
  1491 0026 00D1     		bne	.L238
-ARM GAS  /tmp/cc3hQV0n.s 			page 27
+ARM GAS  /tmp/ccb86Sm2.s 			page 27
 
 
  1492              	.L239:
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1550 0004 0E00     		movs	r6, r1
  1551 0006 1400     		movs	r4, r2
  1552 0008 FFF7FEFF 		bl	modem_get_test_mode_status
-ARM GAS  /tmp/cc3hQV0n.s 			page 28
+ARM GAS  /tmp/ccb86Sm2.s 			page 28
 
 
  1553 000c 0300     		movs	r3, r0
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1610              		.global	smtc_modem_multicast_class_c_stop_all_sessions
  1611              		.syntax unified
  1612              		.code	16
-ARM GAS  /tmp/cc3hQV0n.s 			page 29
+ARM GAS  /tmp/ccb86Sm2.s 			page 29
 
 
  1613              		.thumb_func
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1670 003c 0230     		adds	r0, r0, #2
  1671              	.L284:
  1672              		@ sp needed
-ARM GAS  /tmp/cc3hQV0n.s 			page 30
+ARM GAS  /tmp/ccb86Sm2.s 			page 30
 
 
  1673 003e FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1730              		.thumb_func
  1732              	smtc_modem_multicast_class_b_stop_session:
  1733              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/cc3hQV0n.s 			page 31
+ARM GAS  /tmp/ccb86Sm2.s 			page 31
 
 
  1734              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1792 000a 0520     		movs	r0, #5
  1793 000c 002C     		cmp	r4, #0
  1794 000e 06D1     		bne	.L325
-ARM GAS  /tmp/cc3hQV0n.s 			page 32
+ARM GAS  /tmp/ccb86Sm2.s 			page 32
 
 
  1795 0010 0138     		subs	r0, r0, #1
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1847 003c FFF7FEFF 		bl	smtc_modem_hal_print_trace
  1848 0040 0424     		movs	r4, #4
  1849 0042 EFE7     		b	.L331
-ARM GAS  /tmp/cc3hQV0n.s 			page 33
+ARM GAS  /tmp/ccb86Sm2.s 			page 33
 
 
  1850              	.L333:
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1904 000c 0520     		movs	r0, #5
  1905 000e 002C     		cmp	r4, #0
  1906 0010 05D1     		bne	.L339
-ARM GAS  /tmp/cc3hQV0n.s 			page 34
+ARM GAS  /tmp/ccb86Sm2.s 			page 34
 
 
  1907 0012 032D     		cmp	r5, #3
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  1963 000c 002C     		cmp	r4, #0
  1964 000e 06D1     		bne	.L354
  1965 0010 0138     		subs	r0, r0, #1
-ARM GAS  /tmp/cc3hQV0n.s 			page 35
+ARM GAS  /tmp/ccb86Sm2.s 			page 35
 
 
  1966 0012 002D     		cmp	r5, #0
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2020 000a 041E     		subs	r4, r0, #0
  2021 000c 0DD1     		bne	.L362
  2022 000e 2800     		movs	r0, r5
-ARM GAS  /tmp/cc3hQV0n.s 			page 36
+ARM GAS  /tmp/ccb86Sm2.s 			page 36
 
 
  2023 0010 FFF7FEFF 		bl	set_modem_dm_port
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2080 0000 1B5B303B 		.ascii	"\033[0;31mERROR: %s call but interval not valid\012"
  2080      33316D45 
  2080      52524F52 
-ARM GAS  /tmp/cc3hQV0n.s 			page 37
+ARM GAS  /tmp/ccb86Sm2.s 			page 37
 
 
  2080      3A202573 
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2135              		.align	1
  2136              		.global	smtc_modem_dm_get_info_fields
  2137              		.syntax unified
-ARM GAS  /tmp/cc3hQV0n.s 			page 38
+ARM GAS  /tmp/ccb86Sm2.s 			page 38
 
 
  2138              		.code	16
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2195 0026 70BD     		pop	{r4, r5, r6, pc}
  2197              		.section	.text.smtc_modem_dm_request_single_uplink,"ax",%progbits
  2198              		.align	1
-ARM GAS  /tmp/cc3hQV0n.s 			page 39
+ARM GAS  /tmp/ccb86Sm2.s 			page 39
 
 
  2199              		.global	smtc_modem_dm_request_single_uplink
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2256 0014 03D0     		beq	.L400
  2257 0016 2800     		movs	r0, r5
  2258 0018 FFF7FEFF 		bl	set_modem_appstatus
-ARM GAS  /tmp/cc3hQV0n.s 			page 40
+ARM GAS  /tmp/ccb86Sm2.s 			page 40
 
 
  2259 001c 2000     		movs	r0, r4
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2305              		@ args = 0, pretend = 0, frame = 0
  2306              		@ frame_needed = 0, uses_anonymous_args = 0
  2307 0000 10B5     		push	{r4, lr}
-ARM GAS  /tmp/cc3hQV0n.s 			page 41
+ARM GAS  /tmp/ccb86Sm2.s 			page 41
 
 
  2308 0002 FFF7FEFF 		bl	modem_get_test_mode_status
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2362 0078 36000000 		.word	.LC5
  2364              		.section	.text.smtc_modem_leave_network,"ax",%progbits
  2365              		.align	1
-ARM GAS  /tmp/cc3hQV0n.s 			page 42
+ARM GAS  /tmp/ccb86Sm2.s 			page 42
 
 
  2366              		.global	smtc_modem_leave_network
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2418              		@ sp needed
  2419 002a 1800     		movs	r0, r3
  2420 002c 70BD     		pop	{r4, r5, r6, pc}
-ARM GAS  /tmp/cc3hQV0n.s 			page 43
+ARM GAS  /tmp/ccb86Sm2.s 			page 43
 
 
  2421              	.L426:
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2473 003c 00000000 		.word	__func__.3
  2474 0040 00000000 		.word	.LC94
  2475 0044 31000000 		.word	.LC3
-ARM GAS  /tmp/cc3hQV0n.s 			page 44
+ARM GAS  /tmp/ccb86Sm2.s 			page 44
 
 
  2477              		.section	.text.smtc_modem_request_uplink,"ax",%progbits
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2536              		@ args = 0, pretend = 0, frame = 0
  2537              		@ frame_needed = 0, uses_anonymous_args = 0
  2538 0000 10B5     		push	{r4, lr}
-ARM GAS  /tmp/cc3hQV0n.s 			page 45
+ARM GAS  /tmp/ccb86Sm2.s 			page 45
 
 
  2539 0002 FFF7FEFF 		bl	modem_get_test_mode_status
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2597 0010 0520     		movs	r0, #5
  2598 0012 002B     		cmp	r3, #0
  2599 0014 04D1     		bne	.L445
-ARM GAS  /tmp/cc3hQV0n.s 			page 46
+ARM GAS  /tmp/ccb86Sm2.s 			page 46
 
 
  2600 0016 FFF7FEFF 		bl	is_modem_connected
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2654 007c 00000000 		.word	__func__.1
  2655 0080 00000000 		.word	.LC15
  2656 0084 31000000 		.word	.LC3
-ARM GAS  /tmp/cc3hQV0n.s 			page 47
+ARM GAS  /tmp/ccb86Sm2.s 			page 47
 
 
  2658              		.section	.rodata.smtc_modem_file_upload_init.str1.1,"aMS",%progbits,1
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2686 0004 0593     		str	r3, [sp, #20]
  2687 0006 0EAB     		add	r3, sp, #56
  2688 0008 1400     		movs	r4, r2
-ARM GAS  /tmp/cc3hQV0n.s 			page 48
+ARM GAS  /tmp/ccb86Sm2.s 			page 48
 
 
  2689 000a 1E88     		ldrh	r6, [r3]
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2743 0074 9BB2     		uxth	r3, r3
  2744 0076 0194     		str	r4, [sp, #4]
  2745 0078 FFF7FEFF 		bl	file_upload_init
-ARM GAS  /tmp/cc3hQV0n.s 			page 49
+ARM GAS  /tmp/ccb86Sm2.s 			page 49
 
 
  2746 007c 051E     		subs	r5, r0, #0
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2793 0002 FFF7FEFF 		bl	modem_get_test_mode_status
  2794 0006 041E     		subs	r4, r0, #0
  2795 0008 0ED1     		bne	.L476
-ARM GAS  /tmp/cc3hQV0n.s 			page 50
+ARM GAS  /tmp/ccb86Sm2.s 			page 50
 
 
  2796 000a FFF7FEFF 		bl	is_modem_connected
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2847      2066696C 
  2848 0030 0A0D0D00 		.ascii	"\012\015\015\000"
  2849              	.LC122:
-ARM GAS  /tmp/cc3hQV0n.s 			page 51
+ARM GAS  /tmp/ccb86Sm2.s 			page 51
 
 
  2850 0034 1B5B303B 		.ascii	"\033[0;33mWARN: File Upload Cancel and session rese"
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2900 0054 34000000 		.word	.LC122
  2902              		.section	.rodata.smtc_modem_stream_init.str1.1,"aMS",%progbits,1
  2903              	.LC124:
-ARM GAS  /tmp/cc3hQV0n.s 			page 52
+ARM GAS  /tmp/ccb86Sm2.s 			page 52
 
 
  2904 0000 1B5B303B 		.ascii	"\033[0;31mERROR: STREAM_INIT fport invalid\012\015\015"
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2937 0014 DF2C     		cmp	r4, #223
  2938 0016 02D8     		bhi	.L506
  2939 0018 012E     		cmp	r6, #1
-ARM GAS  /tmp/cc3hQV0n.s 			page 53
+ARM GAS  /tmp/ccb86Sm2.s 			page 53
 
 
  2940 001a 08D9     		bls	.L497
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  2994 0092 2000     		movs	r0, r4
  2995 0094 FFF7FEFF 		bl	modem_set_stream_state
  2996 0098 C7E7     		b	.L494
-ARM GAS  /tmp/cc3hQV0n.s 			page 54
+ARM GAS  /tmp/ccb86Sm2.s 			page 54
 
 
  2997              	.L509:
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3031              	smtc_modem_stream_add_data:
  3032              		@ args = 0, pretend = 0, frame = 8
  3033              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cc3hQV0n.s 			page 55
+ARM GAS  /tmp/ccb86Sm2.s 			page 55
 
 
  3034 0000 F7B5     		push	{r0, r1, r2, r4, r5, r6, r7, lr}
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3088 0078 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  3089              	.L511:
  3090 007c 0526     		movs	r6, #5
-ARM GAS  /tmp/cc3hQV0n.s 			page 56
+ARM GAS  /tmp/ccb86Sm2.s 			page 56
 
 
  3091 007e E2E7     		b	.L515
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3147 0028 0248     		ldr	r0, .L536
  3148 002a FFF7FEFF 		bl	stream_status
  3149 002e 2300     		movs	r3, r4
-ARM GAS  /tmp/cc3hQV0n.s 			page 57
+ARM GAS  /tmp/ccb86Sm2.s 			page 57
 
 
  3150              	.L531:
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3208 0010 0023     		movs	r3, #0
  3209              	.L544:
  3210              		@ sp needed
-ARM GAS  /tmp/cc3hQV0n.s 			page 58
+ARM GAS  /tmp/ccb86Sm2.s 			page 58
 
 
  3211 0012 1800     		movs	r0, r3
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3270              		.section	.text.smtc_modem_connection_timeout_get_thresholds,"ax",%progbits
  3271              		.align	1
  3272              		.global	smtc_modem_connection_timeout_get_thresholds
-ARM GAS  /tmp/cc3hQV0n.s 			page 59
+ARM GAS  /tmp/ccb86Sm2.s 			page 59
 
 
  3273              		.syntax unified
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3330              	.L559:
  3331              		@ sp needed
  3332 002a 70BD     		pop	{r4, r5, r6, pc}
-ARM GAS  /tmp/cc3hQV0n.s 			page 60
+ARM GAS  /tmp/ccb86Sm2.s 			page 60
 
 
  3334              		.section	.text.smtc_modem_lorawan_get_lost_connection_counter,"ax",%progbits
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3392              		.syntax unified
  3393              		.code	16
  3394              		.thumb_func
-ARM GAS  /tmp/cc3hQV0n.s 			page 61
+ARM GAS  /tmp/ccb86Sm2.s 			page 61
 
 
  3396              	smtc_modem_rp_abort_user_radio_access_task:
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3452 0018 FFF7FEFF 		bl	memset
  3453 001c 237B     		ldrb	r3, [r4, #12]
  3454 001e 012B     		cmp	r3, #1
-ARM GAS  /tmp/cc3hQV0n.s 			page 62
+ARM GAS  /tmp/ccb86Sm2.s 			page 62
 
 
  3455 0020 26D0     		beq	.L583
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3509              		.align	2
  3510              	.L589:
  3511 0084 00000000 		.word	user_end_task_callback_0
-ARM GAS  /tmp/cc3hQV0n.s 			page 63
+ARM GAS  /tmp/ccb86Sm2.s 			page 63
 
 
  3512 0088 00000000 		.word	modem_radio_planner
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3561              		.thumb_func
  3563              	smtc_modem_resume_after_user_radio_access:
  3564              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/cc3hQV0n.s 			page 64
+ARM GAS  /tmp/ccb86Sm2.s 			page 64
 
 
  3565              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3621 002c 2370     		strb	r3, [r4]
  3622 002e F6E7     		b	.L606
  3624              		.section	.text.smtc_modem_set_network_type,"ax",%progbits
-ARM GAS  /tmp/cc3hQV0n.s 			page 65
+ARM GAS  /tmp/ccb86Sm2.s 			page 65
 
 
  3625              		.align	1
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3679              		.align	1
  3680              		.global	smtc_modem_lbt_set_parameters
  3681              		.syntax unified
-ARM GAS  /tmp/cc3hQV0n.s 			page 66
+ARM GAS  /tmp/ccb86Sm2.s 			page 66
 
 
  3682              		.code	16
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3739 0016 002D     		cmp	r5, #0
  3740 0018 09D0     		beq	.L623
  3741 001a 002E     		cmp	r6, #0
-ARM GAS  /tmp/cc3hQV0n.s 			page 67
+ARM GAS  /tmp/ccb86Sm2.s 			page 67
 
 
  3742 001c 07D0     		beq	.L623
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3790              	.L630:
  3791 002e 2000     		movs	r0, r4
  3792              	.L634:
-ARM GAS  /tmp/cc3hQV0n.s 			page 68
+ARM GAS  /tmp/ccb86Sm2.s 			page 68
 
 
  3793 0030 FFF7FEFF 		bl	lorawan_api_lbt_set_state
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3851 001a 8000     		lsls	r0, r0, #2
  3852              	.L642:
  3853              		@ sp needed
-ARM GAS  /tmp/cc3hQV0n.s 			page 69
+ARM GAS  /tmp/ccb86Sm2.s 			page 69
 
 
  3854 001c 10BD     		pop	{r4, pc}
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3914              	smtc_modem_get_crystal_error_ppm:
  3915              		@ args = 0, pretend = 0, frame = 0
  3916              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cc3hQV0n.s 			page 70
+ARM GAS  /tmp/ccb86Sm2.s 			page 70
 
 
  3917 0000 70B5     		push	{r4, r5, r6, lr}
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  3975 000a 08D1     		bne	.L661
  3976 000c FFF7FEFF 		bl	is_modem_connected
  3977 0010 0623     		movs	r3, #6
-ARM GAS  /tmp/cc3hQV0n.s 			page 71
+ARM GAS  /tmp/ccb86Sm2.s 			page 71
 
 
  3978 0012 0028     		cmp	r0, #0
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4036 001c 2000     		movs	r0, r4
  4037              	.L669:
  4038              		@ sp needed
-ARM GAS  /tmp/cc3hQV0n.s 			page 72
+ARM GAS  /tmp/ccb86Sm2.s 			page 72
 
 
  4039 001e 70BD     		pop	{r4, r5, r6, pc}
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4100              		.global	smtc_modem_set_adr_ack_limit_delay
  4101              		.syntax unified
  4102              		.code	16
-ARM GAS  /tmp/cc3hQV0n.s 			page 73
+ARM GAS  /tmp/ccb86Sm2.s 			page 73
 
 
  4103              		.thumb_func
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4161              		.code	16
  4162              		.thumb_func
  4164              	smtc_modem_get_pin:
-ARM GAS  /tmp/cc3hQV0n.s 			page 74
+ARM GAS  /tmp/ccb86Sm2.s 			page 74
 
 
  4165              		@ args = 0, pretend = 0, frame = 0
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4224              		.thumb_func
  4226              	convert_rp_to_user_radio_access_status:
  4227              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/cc3hQV0n.s 			page 75
+ARM GAS  /tmp/ccb86Sm2.s 			page 75
 
 
  4228              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4276 0026 4C4C     		ldr	r4, .L724
  4277 0028 2000     		movs	r0, r4
  4278 002a FFF7FEFF 		bl	smtc_modem_hal_store_crashlog
-ARM GAS  /tmp/cc3hQV0n.s 			page 76
+ARM GAS  /tmp/ccb86Sm2.s 			page 76
 
 
  4279 002e 0120     		movs	r0, #1
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4333 008f 66       		.byte	(.L706-.L704)/2
  4334 0090 68       		.byte	(.L705-.L704)/2
  4335 0091 10       		.byte	(.L702-.L704)/2
-ARM GAS  /tmp/cc3hQV0n.s 			page 77
+ARM GAS  /tmp/ccb86Sm2.s 			page 77
 
 
  4336 0092 47       		.byte	(.L703-.L704)/2
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4390 00fc CEE7     		b	.L702
  4391              	.L717:
  4392 00fe 7F22     		movs	r2, #127
-ARM GAS  /tmp/cc3hQV0n.s 			page 78
+ARM GAS  /tmp/ccb86Sm2.s 			page 78
 
 
  4393 0100 3F2B     		cmp	r3, #63
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4447              	.L724:
  4448 0158 00000000 		.word	__func__.14
  4449 015c 00000000 		.word	.LC169
-ARM GAS  /tmp/cc3hQV0n.s 			page 79
+ARM GAS  /tmp/ccb86Sm2.s 			page 79
 
 
  4450 0160 31000000 		.word	.LC3
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4508 0028 6B46     		mov	r3, sp
  4509 002a 0121     		movs	r1, #1
  4510 002c 9A1C     		adds	r2, r3, #2
-ARM GAS  /tmp/cc3hQV0n.s 			page 80
+ARM GAS  /tmp/ccb86Sm2.s 			page 80
 
 
  4511 002e 2800     		movs	r0, r5
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4567 002c 2800     		movs	r0, r5
  4568 002e FFF7FEFF 		bl	rp_get_and_clear_raw_radio_irq
  4569 0032 0123     		movs	r3, #1
-ARM GAS  /tmp/cc3hQV0n.s 			page 81
+ARM GAS  /tmp/ccb86Sm2.s 			page 81
 
 
  4570 0034 2370     		strb	r3, [r4]
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4626 0034 2370     		strb	r3, [r4]
  4627 0036 019B     		ldr	r3, [sp, #4]
  4628 0038 3078     		ldrb	r0, [r6]
-ARM GAS  /tmp/cc3hQV0n.s 			page 82
+ARM GAS  /tmp/ccb86Sm2.s 			page 82
 
 
  4629 003a 0393     		str	r3, [sp, #12]
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4680              		.section	.rodata.__func__.3,"a"
  4683              	__func__.3:
  4684 0000 736D7463 		.ascii	"smtc_modem_get_next_tx_max_payload\000"
-ARM GAS  /tmp/cc3hQV0n.s 			page 83
+ARM GAS  /tmp/ccb86Sm2.s 			page 83
 
 
  4684      5F6D6F64 
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4723              	__func__.11:
  4724 0000 736D7463 		.ascii	"smtc_modem_set_deveui\000"
  4724      5F6D6F64 
-ARM GAS  /tmp/cc3hQV0n.s 			page 84
+ARM GAS  /tmp/ccb86Sm2.s 			page 84
 
 
  4724      656D5F73 
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4780      00000000 
  4781              		.section	.bss.modem_radio_planner,"aw",%nobits
  4782              		.align	2
-ARM GAS  /tmp/cc3hQV0n.s 			page 85
+ARM GAS  /tmp/ccb86Sm2.s 			page 85
 
 
  4785              	modem_radio_planner:
@@ -5056,342 +5056,342 @@ ARM GAS  /tmp/cc3hQV0n.s 			page 1
  4792      00000000 
  4792      00000000 
  4793              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc3hQV0n.s 			page 86
+ARM GAS  /tmp/ccb86Sm2.s 			page 86
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_modem.c
-     /tmp/cc3hQV0n.s:14     .text.empty_callback:00000000 $t
-     /tmp/cc3hQV0n.s:20     .text.empty_callback:00000000 empty_callback
-     /tmp/cc3hQV0n.s:39     .text.is_modem_connected:00000000 $t
-     /tmp/cc3hQV0n.s:44     .text.is_modem_connected:00000000 is_modem_connected
-     /tmp/cc3hQV0n.s:92     .text.is_modem_connected:00000058 $d
-     /tmp/cc3hQV0n.s:4733   .rodata.__func__.13:00000000 __func__.13
-     /tmp/cc3hQV0n.s:103    .text.user_radio_access_callback:00000000 $t
-     /tmp/cc3hQV0n.s:109    .text.user_radio_access_callback:00000000 user_radio_access_callback
-     /tmp/cc3hQV0n.s:137    .text.user_radio_access_callback:00000030 $d
-     /tmp/cc3hQV0n.s:4767   .bss.user_radio_irq_status:00000000 user_radio_irq_status
-     /tmp/cc3hQV0n.s:4762   .bss.user_radio_irq_timestamp:00000000 user_radio_irq_timestamp
-     /tmp/cc3hQV0n.s:148    .text.smtc_modem_send_tx.constprop.0:00000000 $t
-     /tmp/cc3hQV0n.s:153    .text.smtc_modem_send_tx.constprop.0:00000000 smtc_modem_send_tx.constprop.0
-     /tmp/cc3hQV0n.s:230    .text.smtc_modem_send_tx.constprop.0:00000090 $d
-     /tmp/cc3hQV0n.s:4678   .rodata.__func__.2:00000000 __func__.2
-     /tmp/cc3hQV0n.s:4791   .bss.modem_buffer:00000000 modem_buffer
-     /tmp/cc3hQV0n.s:239    .text.smtc_modem_init:00000000 $t
-     /tmp/cc3hQV0n.s:245    .text.smtc_modem_init:00000000 smtc_modem_init
-     /tmp/cc3hQV0n.s:309    .text.smtc_modem_init:0000008c $d
-     /tmp/cc3hQV0n.s:4785   .bss.modem_radio_planner:00000000 modem_radio_planner
-     /tmp/cc3hQV0n.s:4487   .text.callback_rp_user_radio_access_0:00000000 callback_rp_user_radio_access_0
-     /tmp/cc3hQV0n.s:4544   .text.callback_rp_user_radio_access_1:00000000 callback_rp_user_radio_access_1
-     /tmp/cc3hQV0n.s:4600   .text.callback_rp_user_radio_access_2:00000000 callback_rp_user_radio_access_2
-     /tmp/cc3hQV0n.s:4779   .bss.smtc_modem_services_ctx:00000000 smtc_modem_services_ctx
-     /tmp/cc3hQV0n.s:321    .text.smtc_modem_run_engine:00000000 $t
-     /tmp/cc3hQV0n.s:327    .text.smtc_modem_run_engine:00000000 smtc_modem_run_engine
-     /tmp/cc3hQV0n.s:349    .text.smtc_modem_get_modem_version:00000000 $t
-     /tmp/cc3hQV0n.s:355    .text.smtc_modem_get_modem_version:00000000 smtc_modem_get_modem_version
-     /tmp/cc3hQV0n.s:379    .text.smtc_modem_get_lorawan_version:00000000 $t
-     /tmp/cc3hQV0n.s:385    .text.smtc_modem_get_lorawan_version:00000000 smtc_modem_get_lorawan_version
-     /tmp/cc3hQV0n.s:412    .text.smtc_modem_get_regional_params_version:00000000 $t
-     /tmp/cc3hQV0n.s:418    .text.smtc_modem_get_regional_params_version:00000000 smtc_modem_get_regional_params_version
-     /tmp/cc3hQV0n.s:445    .text.smtc_modem_reset:00000000 $t
-     /tmp/cc3hQV0n.s:451    .text.smtc_modem_reset:00000000 smtc_modem_reset
-     /tmp/cc3hQV0n.s:468    .text.smtc_modem_factory_reset:00000000 $t
-     /tmp/cc3hQV0n.s:474    .text.smtc_modem_factory_reset:00000000 smtc_modem_factory_reset
-     /tmp/cc3hQV0n.s:493    .text.smtc_modem_get_charge:00000000 $t
-     /tmp/cc3hQV0n.s:499    .text.smtc_modem_get_charge:00000000 smtc_modem_get_charge
-     /tmp/cc3hQV0n.s:520    .text.smtc_modem_reset_charge:00000000 $t
-     /tmp/cc3hQV0n.s:526    .text.smtc_modem_reset_charge:00000000 smtc_modem_reset_charge
-     /tmp/cc3hQV0n.s:542    .text.smtc_modem_get_tx_power_offset_db:00000000 $t
-     /tmp/cc3hQV0n.s:548    .text.smtc_modem_get_tx_power_offset_db:00000000 smtc_modem_get_tx_power_offset_db
-     /tmp/cc3hQV0n.s:569    .text.smtc_modem_set_tx_power_offset_db:00000000 $t
-     /tmp/cc3hQV0n.s:575    .text.smtc_modem_set_tx_power_offset_db:00000000 smtc_modem_set_tx_power_offset_db
-     /tmp/cc3hQV0n.s:599    .text.smtc_modem_time_start_sync_service:00000000 $t
-     /tmp/cc3hQV0n.s:605    .text.smtc_modem_time_start_sync_service:00000000 smtc_modem_time_start_sync_service
-     /tmp/cc3hQV0n.s:646    .text.smtc_modem_time_start_sync_service:00000050 $d
-     /tmp/cc3hQV0n.s:649    .text.smtc_modem_time_stop_sync_service:00000000 $t
-     /tmp/cc3hQV0n.s:655    .text.smtc_modem_time_stop_sync_service:00000000 smtc_modem_time_stop_sync_service
-     /tmp/cc3hQV0n.s:685    .text.smtc_modem_time_stop_sync_service:00000038 $d
-     /tmp/cc3hQV0n.s:689    .text.smtc_modem_get_time:00000000 $t
-     /tmp/cc3hQV0n.s:695    .text.smtc_modem_get_time:00000000 smtc_modem_get_time
-     /tmp/cc3hQV0n.s:732    .text.smtc_modem_get_time:00000040 $d
-     /tmp/cc3hQV0n.s:735    .text.smtc_modem_time_set_alcsync_fport:00000000 $t
-     /tmp/cc3hQV0n.s:741    .text.smtc_modem_time_set_alcsync_fport:00000000 smtc_modem_time_set_alcsync_fport
-ARM GAS  /tmp/cc3hQV0n.s 			page 87
+     /tmp/ccb86Sm2.s:14     .text.empty_callback:00000000 $t
+     /tmp/ccb86Sm2.s:20     .text.empty_callback:00000000 empty_callback
+     /tmp/ccb86Sm2.s:39     .text.is_modem_connected:00000000 $t
+     /tmp/ccb86Sm2.s:44     .text.is_modem_connected:00000000 is_modem_connected
+     /tmp/ccb86Sm2.s:92     .text.is_modem_connected:00000058 $d
+     /tmp/ccb86Sm2.s:4733   .rodata.__func__.13:00000000 __func__.13
+     /tmp/ccb86Sm2.s:103    .text.user_radio_access_callback:00000000 $t
+     /tmp/ccb86Sm2.s:109    .text.user_radio_access_callback:00000000 user_radio_access_callback
+     /tmp/ccb86Sm2.s:137    .text.user_radio_access_callback:00000030 $d
+     /tmp/ccb86Sm2.s:4767   .bss.user_radio_irq_status:00000000 user_radio_irq_status
+     /tmp/ccb86Sm2.s:4762   .bss.user_radio_irq_timestamp:00000000 user_radio_irq_timestamp
+     /tmp/ccb86Sm2.s:148    .text.smtc_modem_send_tx.constprop.0:00000000 $t
+     /tmp/ccb86Sm2.s:153    .text.smtc_modem_send_tx.constprop.0:00000000 smtc_modem_send_tx.constprop.0
+     /tmp/ccb86Sm2.s:230    .text.smtc_modem_send_tx.constprop.0:00000090 $d
+     /tmp/ccb86Sm2.s:4678   .rodata.__func__.2:00000000 __func__.2
+     /tmp/ccb86Sm2.s:4791   .bss.modem_buffer:00000000 modem_buffer
+     /tmp/ccb86Sm2.s:239    .text.smtc_modem_init:00000000 $t
+     /tmp/ccb86Sm2.s:245    .text.smtc_modem_init:00000000 smtc_modem_init
+     /tmp/ccb86Sm2.s:309    .text.smtc_modem_init:0000008c $d
+     /tmp/ccb86Sm2.s:4785   .bss.modem_radio_planner:00000000 modem_radio_planner
+     /tmp/ccb86Sm2.s:4487   .text.callback_rp_user_radio_access_0:00000000 callback_rp_user_radio_access_0
+     /tmp/ccb86Sm2.s:4544   .text.callback_rp_user_radio_access_1:00000000 callback_rp_user_radio_access_1
+     /tmp/ccb86Sm2.s:4600   .text.callback_rp_user_radio_access_2:00000000 callback_rp_user_radio_access_2
+     /tmp/ccb86Sm2.s:4779   .bss.smtc_modem_services_ctx:00000000 smtc_modem_services_ctx
+     /tmp/ccb86Sm2.s:321    .text.smtc_modem_run_engine:00000000 $t
+     /tmp/ccb86Sm2.s:327    .text.smtc_modem_run_engine:00000000 smtc_modem_run_engine
+     /tmp/ccb86Sm2.s:349    .text.smtc_modem_get_modem_version:00000000 $t
+     /tmp/ccb86Sm2.s:355    .text.smtc_modem_get_modem_version:00000000 smtc_modem_get_modem_version
+     /tmp/ccb86Sm2.s:379    .text.smtc_modem_get_lorawan_version:00000000 $t
+     /tmp/ccb86Sm2.s:385    .text.smtc_modem_get_lorawan_version:00000000 smtc_modem_get_lorawan_version
+     /tmp/ccb86Sm2.s:412    .text.smtc_modem_get_regional_params_version:00000000 $t
+     /tmp/ccb86Sm2.s:418    .text.smtc_modem_get_regional_params_version:00000000 smtc_modem_get_regional_params_version
+     /tmp/ccb86Sm2.s:445    .text.smtc_modem_reset:00000000 $t
+     /tmp/ccb86Sm2.s:451    .text.smtc_modem_reset:00000000 smtc_modem_reset
+     /tmp/ccb86Sm2.s:468    .text.smtc_modem_factory_reset:00000000 $t
+     /tmp/ccb86Sm2.s:474    .text.smtc_modem_factory_reset:00000000 smtc_modem_factory_reset
+     /tmp/ccb86Sm2.s:493    .text.smtc_modem_get_charge:00000000 $t
+     /tmp/ccb86Sm2.s:499    .text.smtc_modem_get_charge:00000000 smtc_modem_get_charge
+     /tmp/ccb86Sm2.s:520    .text.smtc_modem_reset_charge:00000000 $t
+     /tmp/ccb86Sm2.s:526    .text.smtc_modem_reset_charge:00000000 smtc_modem_reset_charge
+     /tmp/ccb86Sm2.s:542    .text.smtc_modem_get_tx_power_offset_db:00000000 $t
+     /tmp/ccb86Sm2.s:548    .text.smtc_modem_get_tx_power_offset_db:00000000 smtc_modem_get_tx_power_offset_db
+     /tmp/ccb86Sm2.s:569    .text.smtc_modem_set_tx_power_offset_db:00000000 $t
+     /tmp/ccb86Sm2.s:575    .text.smtc_modem_set_tx_power_offset_db:00000000 smtc_modem_set_tx_power_offset_db
+     /tmp/ccb86Sm2.s:599    .text.smtc_modem_time_start_sync_service:00000000 $t
+     /tmp/ccb86Sm2.s:605    .text.smtc_modem_time_start_sync_service:00000000 smtc_modem_time_start_sync_service
+     /tmp/ccb86Sm2.s:646    .text.smtc_modem_time_start_sync_service:00000050 $d
+     /tmp/ccb86Sm2.s:649    .text.smtc_modem_time_stop_sync_service:00000000 $t
+     /tmp/ccb86Sm2.s:655    .text.smtc_modem_time_stop_sync_service:00000000 smtc_modem_time_stop_sync_service
+     /tmp/ccb86Sm2.s:685    .text.smtc_modem_time_stop_sync_service:00000038 $d
+     /tmp/ccb86Sm2.s:689    .text.smtc_modem_get_time:00000000 $t
+     /tmp/ccb86Sm2.s:695    .text.smtc_modem_get_time:00000000 smtc_modem_get_time
+     /tmp/ccb86Sm2.s:732    .text.smtc_modem_get_time:00000040 $d
+     /tmp/ccb86Sm2.s:735    .text.smtc_modem_time_set_alcsync_fport:00000000 $t
+     /tmp/ccb86Sm2.s:741    .text.smtc_modem_time_set_alcsync_fport:00000000 smtc_modem_time_set_alcsync_fport
+ARM GAS  /tmp/ccb86Sm2.s 			page 87
 
 
-     /tmp/cc3hQV0n.s:763    .text.smtc_modem_time_set_alcsync_fport:00000020 $d
-     /tmp/cc3hQV0n.s:766    .text.smtc_modem_time_trigger_sync_request:00000000 $t
-     /tmp/cc3hQV0n.s:772    .text.smtc_modem_time_trigger_sync_request:00000000 smtc_modem_time_trigger_sync_request
-     /tmp/cc3hQV0n.s:801    .text.smtc_modem_time_trigger_sync_request:00000030 $d
-     /tmp/cc3hQV0n.s:804    .text.smtc_modem_time_get_alcsync_fport:00000000 $t
-     /tmp/cc3hQV0n.s:810    .text.smtc_modem_time_get_alcsync_fport:00000000 smtc_modem_time_get_alcsync_fport
-     /tmp/cc3hQV0n.s:833    .text.smtc_modem_time_get_alcsync_fport:00000024 $d
-     /tmp/cc3hQV0n.s:836    .text.smtc_modem_time_set_sync_interval_s:00000000 $t
-     /tmp/cc3hQV0n.s:842    .text.smtc_modem_time_set_sync_interval_s:00000000 smtc_modem_time_set_sync_interval_s
-     /tmp/cc3hQV0n.s:864    .text.smtc_modem_time_set_sync_interval_s:00000020 $d
-     /tmp/cc3hQV0n.s:867    .text.smtc_modem_time_get_sync_interval_s:00000000 $t
-     /tmp/cc3hQV0n.s:873    .text.smtc_modem_time_get_sync_interval_s:00000000 smtc_modem_time_get_sync_interval_s
-     /tmp/cc3hQV0n.s:896    .text.smtc_modem_time_get_sync_interval_s:00000024 $d
-     /tmp/cc3hQV0n.s:899    .text.smtc_modem_time_set_sync_invalid_delay_s:00000000 $t
-     /tmp/cc3hQV0n.s:905    .text.smtc_modem_time_set_sync_invalid_delay_s:00000000 smtc_modem_time_set_sync_invalid_delay_s
-     /tmp/cc3hQV0n.s:927    .text.smtc_modem_time_set_sync_invalid_delay_s:00000020 $d
-     /tmp/cc3hQV0n.s:930    .text.smtc_modem_time_get_sync_invalid_delay_s:00000000 $t
-     /tmp/cc3hQV0n.s:936    .text.smtc_modem_time_get_sync_invalid_delay_s:00000000 smtc_modem_time_get_sync_invalid_delay_s
-     /tmp/cc3hQV0n.s:959    .text.smtc_modem_time_get_sync_invalid_delay_s:00000024 $d
-     /tmp/cc3hQV0n.s:962    .text.smtc_modem_get_status:00000000 $t
-     /tmp/cc3hQV0n.s:968    .text.smtc_modem_get_status:00000000 smtc_modem_get_status
-     /tmp/cc3hQV0n.s:989    .text.smtc_modem_alarm_start_timer:00000000 $t
-     /tmp/cc3hQV0n.s:995    .text.smtc_modem_alarm_start_timer:00000000 smtc_modem_alarm_start_timer
-     /tmp/cc3hQV0n.s:1022   .text.smtc_modem_alarm_clear_timer:00000000 $t
-     /tmp/cc3hQV0n.s:1028   .text.smtc_modem_alarm_clear_timer:00000000 smtc_modem_alarm_clear_timer
-     /tmp/cc3hQV0n.s:1056   .text.smtc_modem_alarm_clear_timer:00000030 $d
-     /tmp/cc3hQV0n.s:1064   .text.smtc_modem_alarm_get_remaining_time:00000000 $t
-     /tmp/cc3hQV0n.s:1070   .text.smtc_modem_alarm_get_remaining_time:00000000 smtc_modem_alarm_get_remaining_time
-     /tmp/cc3hQV0n.s:1108   .text.smtc_modem_alarm_get_remaining_time:00000048 $d
-     /tmp/cc3hQV0n.s:1112   .text.smtc_modem_get_joineui:00000000 $t
-     /tmp/cc3hQV0n.s:1118   .text.smtc_modem_get_joineui:00000000 smtc_modem_get_joineui
-     /tmp/cc3hQV0n.s:1146   .text.smtc_modem_set_joineui:00000000 $t
-     /tmp/cc3hQV0n.s:1152   .text.smtc_modem_set_joineui:00000000 smtc_modem_set_joineui
-     /tmp/cc3hQV0n.s:1187   .text.smtc_modem_set_joineui:0000003c $d
-     /tmp/cc3hQV0n.s:4728   .rodata.__func__.12:00000000 __func__.12
-     /tmp/cc3hQV0n.s:1192   .text.smtc_modem_get_deveui:00000000 $t
-     /tmp/cc3hQV0n.s:1198   .text.smtc_modem_get_deveui:00000000 smtc_modem_get_deveui
-     /tmp/cc3hQV0n.s:1222   .text.smtc_modem_set_deveui:00000000 $t
-     /tmp/cc3hQV0n.s:1228   .text.smtc_modem_set_deveui:00000000 smtc_modem_set_deveui
-     /tmp/cc3hQV0n.s:1263   .text.smtc_modem_set_deveui:0000003c $d
-     /tmp/cc3hQV0n.s:4723   .rodata.__func__.11:00000000 __func__.11
-     /tmp/cc3hQV0n.s:1268   .text.smtc_modem_set_nwkkey:00000000 $t
-     /tmp/cc3hQV0n.s:1274   .text.smtc_modem_set_nwkkey:00000000 smtc_modem_set_nwkkey
-     /tmp/cc3hQV0n.s:1308   .text.smtc_modem_set_nwkkey:0000003c $d
-     /tmp/cc3hQV0n.s:4718   .rodata.__func__.10:00000000 __func__.10
-     /tmp/cc3hQV0n.s:1313   .text.smtc_modem_get_class:00000000 $t
-     /tmp/cc3hQV0n.s:1319   .text.smtc_modem_get_class:00000000 smtc_modem_get_class
-     /tmp/cc3hQV0n.s:1347   .text.smtc_modem_set_class:00000000 $t
-     /tmp/cc3hQV0n.s:1353   .text.smtc_modem_set_class:00000000 smtc_modem_set_class
-     /tmp/cc3hQV0n.s:1412   .text.smtc_modem_set_class:00000070 $d
-     /tmp/cc3hQV0n.s:1418   .text.smtc_modem_multicast_set_grp_config:00000000 $t
-     /tmp/cc3hQV0n.s:1424   .text.smtc_modem_multicast_set_grp_config:00000000 smtc_modem_multicast_set_grp_config
-     /tmp/cc3hQV0n.s:1465   .text.smtc_modem_multicast_get_grp_config:00000000 $t
-     /tmp/cc3hQV0n.s:1471   .text.smtc_modem_multicast_get_grp_config:00000000 smtc_modem_multicast_get_grp_config
-     /tmp/cc3hQV0n.s:1499   .text.smtc_modem_multicast_class_c_start_session:00000000 $t
-     /tmp/cc3hQV0n.s:1505   .text.smtc_modem_multicast_class_c_start_session:00000000 smtc_modem_multicast_class_c_start_session
-     /tmp/cc3hQV0n.s:1539   .text.smtc_modem_multicast_class_c_get_session_status:00000000 $t
-ARM GAS  /tmp/cc3hQV0n.s 			page 88
+     /tmp/ccb86Sm2.s:763    .text.smtc_modem_time_set_alcsync_fport:00000020 $d
+     /tmp/ccb86Sm2.s:766    .text.smtc_modem_time_trigger_sync_request:00000000 $t
+     /tmp/ccb86Sm2.s:772    .text.smtc_modem_time_trigger_sync_request:00000000 smtc_modem_time_trigger_sync_request
+     /tmp/ccb86Sm2.s:801    .text.smtc_modem_time_trigger_sync_request:00000030 $d
+     /tmp/ccb86Sm2.s:804    .text.smtc_modem_time_get_alcsync_fport:00000000 $t
+     /tmp/ccb86Sm2.s:810    .text.smtc_modem_time_get_alcsync_fport:00000000 smtc_modem_time_get_alcsync_fport
+     /tmp/ccb86Sm2.s:833    .text.smtc_modem_time_get_alcsync_fport:00000024 $d
+     /tmp/ccb86Sm2.s:836    .text.smtc_modem_time_set_sync_interval_s:00000000 $t
+     /tmp/ccb86Sm2.s:842    .text.smtc_modem_time_set_sync_interval_s:00000000 smtc_modem_time_set_sync_interval_s
+     /tmp/ccb86Sm2.s:864    .text.smtc_modem_time_set_sync_interval_s:00000020 $d
+     /tmp/ccb86Sm2.s:867    .text.smtc_modem_time_get_sync_interval_s:00000000 $t
+     /tmp/ccb86Sm2.s:873    .text.smtc_modem_time_get_sync_interval_s:00000000 smtc_modem_time_get_sync_interval_s
+     /tmp/ccb86Sm2.s:896    .text.smtc_modem_time_get_sync_interval_s:00000024 $d
+     /tmp/ccb86Sm2.s:899    .text.smtc_modem_time_set_sync_invalid_delay_s:00000000 $t
+     /tmp/ccb86Sm2.s:905    .text.smtc_modem_time_set_sync_invalid_delay_s:00000000 smtc_modem_time_set_sync_invalid_delay_s
+     /tmp/ccb86Sm2.s:927    .text.smtc_modem_time_set_sync_invalid_delay_s:00000020 $d
+     /tmp/ccb86Sm2.s:930    .text.smtc_modem_time_get_sync_invalid_delay_s:00000000 $t
+     /tmp/ccb86Sm2.s:936    .text.smtc_modem_time_get_sync_invalid_delay_s:00000000 smtc_modem_time_get_sync_invalid_delay_s
+     /tmp/ccb86Sm2.s:959    .text.smtc_modem_time_get_sync_invalid_delay_s:00000024 $d
+     /tmp/ccb86Sm2.s:962    .text.smtc_modem_get_status:00000000 $t
+     /tmp/ccb86Sm2.s:968    .text.smtc_modem_get_status:00000000 smtc_modem_get_status
+     /tmp/ccb86Sm2.s:989    .text.smtc_modem_alarm_start_timer:00000000 $t
+     /tmp/ccb86Sm2.s:995    .text.smtc_modem_alarm_start_timer:00000000 smtc_modem_alarm_start_timer
+     /tmp/ccb86Sm2.s:1022   .text.smtc_modem_alarm_clear_timer:00000000 $t
+     /tmp/ccb86Sm2.s:1028   .text.smtc_modem_alarm_clear_timer:00000000 smtc_modem_alarm_clear_timer
+     /tmp/ccb86Sm2.s:1056   .text.smtc_modem_alarm_clear_timer:00000030 $d
+     /tmp/ccb86Sm2.s:1064   .text.smtc_modem_alarm_get_remaining_time:00000000 $t
+     /tmp/ccb86Sm2.s:1070   .text.smtc_modem_alarm_get_remaining_time:00000000 smtc_modem_alarm_get_remaining_time
+     /tmp/ccb86Sm2.s:1108   .text.smtc_modem_alarm_get_remaining_time:00000048 $d
+     /tmp/ccb86Sm2.s:1112   .text.smtc_modem_get_joineui:00000000 $t
+     /tmp/ccb86Sm2.s:1118   .text.smtc_modem_get_joineui:00000000 smtc_modem_get_joineui
+     /tmp/ccb86Sm2.s:1146   .text.smtc_modem_set_joineui:00000000 $t
+     /tmp/ccb86Sm2.s:1152   .text.smtc_modem_set_joineui:00000000 smtc_modem_set_joineui
+     /tmp/ccb86Sm2.s:1187   .text.smtc_modem_set_joineui:0000003c $d
+     /tmp/ccb86Sm2.s:4728   .rodata.__func__.12:00000000 __func__.12
+     /tmp/ccb86Sm2.s:1192   .text.smtc_modem_get_deveui:00000000 $t
+     /tmp/ccb86Sm2.s:1198   .text.smtc_modem_get_deveui:00000000 smtc_modem_get_deveui
+     /tmp/ccb86Sm2.s:1222   .text.smtc_modem_set_deveui:00000000 $t
+     /tmp/ccb86Sm2.s:1228   .text.smtc_modem_set_deveui:00000000 smtc_modem_set_deveui
+     /tmp/ccb86Sm2.s:1263   .text.smtc_modem_set_deveui:0000003c $d
+     /tmp/ccb86Sm2.s:4723   .rodata.__func__.11:00000000 __func__.11
+     /tmp/ccb86Sm2.s:1268   .text.smtc_modem_set_nwkkey:00000000 $t
+     /tmp/ccb86Sm2.s:1274   .text.smtc_modem_set_nwkkey:00000000 smtc_modem_set_nwkkey
+     /tmp/ccb86Sm2.s:1308   .text.smtc_modem_set_nwkkey:0000003c $d
+     /tmp/ccb86Sm2.s:4718   .rodata.__func__.10:00000000 __func__.10
+     /tmp/ccb86Sm2.s:1313   .text.smtc_modem_get_class:00000000 $t
+     /tmp/ccb86Sm2.s:1319   .text.smtc_modem_get_class:00000000 smtc_modem_get_class
+     /tmp/ccb86Sm2.s:1347   .text.smtc_modem_set_class:00000000 $t
+     /tmp/ccb86Sm2.s:1353   .text.smtc_modem_set_class:00000000 smtc_modem_set_class
+     /tmp/ccb86Sm2.s:1412   .text.smtc_modem_set_class:00000070 $d
+     /tmp/ccb86Sm2.s:1418   .text.smtc_modem_multicast_set_grp_config:00000000 $t
+     /tmp/ccb86Sm2.s:1424   .text.smtc_modem_multicast_set_grp_config:00000000 smtc_modem_multicast_set_grp_config
+     /tmp/ccb86Sm2.s:1465   .text.smtc_modem_multicast_get_grp_config:00000000 $t
+     /tmp/ccb86Sm2.s:1471   .text.smtc_modem_multicast_get_grp_config:00000000 smtc_modem_multicast_get_grp_config
+     /tmp/ccb86Sm2.s:1499   .text.smtc_modem_multicast_class_c_start_session:00000000 $t
+     /tmp/ccb86Sm2.s:1505   .text.smtc_modem_multicast_class_c_start_session:00000000 smtc_modem_multicast_class_c_start_session
+     /tmp/ccb86Sm2.s:1539   .text.smtc_modem_multicast_class_c_get_session_status:00000000 $t
+ARM GAS  /tmp/ccb86Sm2.s 			page 88
 
 
-     /tmp/cc3hQV0n.s:1545   .text.smtc_modem_multicast_class_c_get_session_status:00000000 smtc_modem_multicast_class_c_get_session_status
-     /tmp/cc3hQV0n.s:1580   .text.smtc_modem_multicast_class_c_stop_session:00000000 $t
-     /tmp/cc3hQV0n.s:1586   .text.smtc_modem_multicast_class_c_stop_session:00000000 smtc_modem_multicast_class_c_stop_session
-     /tmp/cc3hQV0n.s:1609   .text.smtc_modem_multicast_class_c_stop_all_sessions:00000000 $t
-     /tmp/cc3hQV0n.s:1615   .text.smtc_modem_multicast_class_c_stop_all_sessions:00000000 smtc_modem_multicast_class_c_stop_all_sessions
-     /tmp/cc3hQV0n.s:1633   .text.smtc_modem_multicast_class_b_start_session:00000000 $t
-     /tmp/cc3hQV0n.s:1639   .text.smtc_modem_multicast_class_b_start_session:00000000 smtc_modem_multicast_class_b_start_session
-     /tmp/cc3hQV0n.s:1676   .text.smtc_modem_multicast_class_b_get_session_status:00000000 $t
-     /tmp/cc3hQV0n.s:1682   .text.smtc_modem_multicast_class_b_get_session_status:00000000 smtc_modem_multicast_class_b_get_session_status
-     /tmp/cc3hQV0n.s:1726   .text.smtc_modem_multicast_class_b_stop_session:00000000 $t
-     /tmp/cc3hQV0n.s:1732   .text.smtc_modem_multicast_class_b_stop_session:00000000 smtc_modem_multicast_class_b_stop_session
-     /tmp/cc3hQV0n.s:1755   .text.smtc_modem_multicast_class_b_stop_all_sessions:00000000 $t
-     /tmp/cc3hQV0n.s:1761   .text.smtc_modem_multicast_class_b_stop_all_sessions:00000000 smtc_modem_multicast_class_b_stop_all_sessions
-     /tmp/cc3hQV0n.s:1779   .text.smtc_modem_get_region:00000000 $t
-     /tmp/cc3hQV0n.s:1785   .text.smtc_modem_get_region:00000000 smtc_modem_get_region
-     /tmp/cc3hQV0n.s:1810   .text.smtc_modem_set_region:00000000 $t
-     /tmp/cc3hQV0n.s:1816   .text.smtc_modem_set_region:00000000 smtc_modem_set_region
-     /tmp/cc3hQV0n.s:1853   .text.smtc_modem_set_region:00000044 $d
-     /tmp/cc3hQV0n.s:4713   .rodata.__func__.9:00000000 __func__.9
-     /tmp/cc3hQV0n.s:1859   .text.smtc_modem_adr_get_profile:00000000 $t
-     /tmp/cc3hQV0n.s:1865   .text.smtc_modem_adr_get_profile:00000000 smtc_modem_adr_get_profile
-     /tmp/cc3hQV0n.s:1890   .text.smtc_modem_adr_set_profile:00000000 $t
-     /tmp/cc3hQV0n.s:1896   .text.smtc_modem_adr_set_profile:00000000 smtc_modem_adr_set_profile
-     /tmp/cc3hQV0n.s:1944   .text.smtc_modem_adr_set_profile:00000050 $d
-     /tmp/cc3hQV0n.s:4708   .rodata.__func__.8:00000000 __func__.8
-     /tmp/cc3hQV0n.s:1949   .text.smtc_modem_get_available_datarates:00000000 $t
-     /tmp/cc3hQV0n.s:1955   .text.smtc_modem_get_available_datarates:00000000 smtc_modem_get_available_datarates
-     /tmp/cc3hQV0n.s:1976   .text.smtc_modem_dm_get_fport:00000000 $t
-     /tmp/cc3hQV0n.s:1982   .text.smtc_modem_dm_get_fport:00000000 smtc_modem_dm_get_fport
-     /tmp/cc3hQV0n.s:2007   .text.smtc_modem_dm_set_fport:00000000 $t
-     /tmp/cc3hQV0n.s:2013   .text.smtc_modem_dm_set_fport:00000000 smtc_modem_dm_set_fport
-     /tmp/cc3hQV0n.s:2040   .text.smtc_modem_dm_set_fport:00000030 $d
-     /tmp/cc3hQV0n.s:4703   .rodata.__func__.7:00000000 __func__.7
-     /tmp/cc3hQV0n.s:2045   .text.smtc_modem_dm_get_info_interval:00000000 $t
-     /tmp/cc3hQV0n.s:2051   .text.smtc_modem_dm_get_info_interval:00000000 smtc_modem_dm_get_info_interval
-     /tmp/cc3hQV0n.s:2083   .text.smtc_modem_dm_set_info_interval:00000000 $t
-     /tmp/cc3hQV0n.s:2089   .text.smtc_modem_dm_set_info_interval:00000000 smtc_modem_dm_set_info_interval
-     /tmp/cc3hQV0n.s:2130   .text.smtc_modem_dm_set_info_interval:00000048 $d
-     /tmp/cc3hQV0n.s:4698   .rodata.__func__.6:00000000 __func__.6
-     /tmp/cc3hQV0n.s:2135   .text.smtc_modem_dm_get_info_fields:00000000 $t
-     /tmp/cc3hQV0n.s:2141   .text.smtc_modem_dm_get_info_fields:00000000 smtc_modem_dm_get_info_fields
-     /tmp/cc3hQV0n.s:2167   .text.smtc_modem_dm_set_info_fields:00000000 $t
-     /tmp/cc3hQV0n.s:2173   .text.smtc_modem_dm_set_info_fields:00000000 smtc_modem_dm_set_info_fields
-     /tmp/cc3hQV0n.s:2198   .text.smtc_modem_dm_request_single_uplink:00000000 $t
-     /tmp/cc3hQV0n.s:2204   .text.smtc_modem_dm_request_single_uplink:00000000 smtc_modem_dm_request_single_uplink
-     /tmp/cc3hQV0n.s:2238   .text.smtc_modem_dm_set_user_data:00000000 $t
-     /tmp/cc3hQV0n.s:2244   .text.smtc_modem_dm_set_user_data:00000000 smtc_modem_dm_set_user_data
-     /tmp/cc3hQV0n.s:2265   .text.smtc_modem_dm_get_user_data:00000000 $t
-     /tmp/cc3hQV0n.s:2271   .text.smtc_modem_dm_get_user_data:00000000 smtc_modem_dm_get_user_data
-     /tmp/cc3hQV0n.s:2298   .text.smtc_modem_join_network:00000000 $t
-     /tmp/cc3hQV0n.s:2304   .text.smtc_modem_join_network:00000000 smtc_modem_join_network
-     /tmp/cc3hQV0n.s:2357   .text.smtc_modem_join_network:00000064 $d
-     /tmp/cc3hQV0n.s:4693   .rodata.__func__.5:00000000 __func__.5
-     /tmp/cc3hQV0n.s:2365   .text.smtc_modem_leave_network:00000000 $t
-     /tmp/cc3hQV0n.s:2371   .text.smtc_modem_leave_network:00000000 smtc_modem_leave_network
-     /tmp/cc3hQV0n.s:2391   .text.smtc_modem_suspend_radio_communications:00000000 $t
-     /tmp/cc3hQV0n.s:2397   .text.smtc_modem_suspend_radio_communications:00000000 smtc_modem_suspend_radio_communications
-ARM GAS  /tmp/cc3hQV0n.s 			page 89
+     /tmp/ccb86Sm2.s:1545   .text.smtc_modem_multicast_class_c_get_session_status:00000000 smtc_modem_multicast_class_c_get_session_status
+     /tmp/ccb86Sm2.s:1580   .text.smtc_modem_multicast_class_c_stop_session:00000000 $t
+     /tmp/ccb86Sm2.s:1586   .text.smtc_modem_multicast_class_c_stop_session:00000000 smtc_modem_multicast_class_c_stop_session
+     /tmp/ccb86Sm2.s:1609   .text.smtc_modem_multicast_class_c_stop_all_sessions:00000000 $t
+     /tmp/ccb86Sm2.s:1615   .text.smtc_modem_multicast_class_c_stop_all_sessions:00000000 smtc_modem_multicast_class_c_stop_all_sessions
+     /tmp/ccb86Sm2.s:1633   .text.smtc_modem_multicast_class_b_start_session:00000000 $t
+     /tmp/ccb86Sm2.s:1639   .text.smtc_modem_multicast_class_b_start_session:00000000 smtc_modem_multicast_class_b_start_session
+     /tmp/ccb86Sm2.s:1676   .text.smtc_modem_multicast_class_b_get_session_status:00000000 $t
+     /tmp/ccb86Sm2.s:1682   .text.smtc_modem_multicast_class_b_get_session_status:00000000 smtc_modem_multicast_class_b_get_session_status
+     /tmp/ccb86Sm2.s:1726   .text.smtc_modem_multicast_class_b_stop_session:00000000 $t
+     /tmp/ccb86Sm2.s:1732   .text.smtc_modem_multicast_class_b_stop_session:00000000 smtc_modem_multicast_class_b_stop_session
+     /tmp/ccb86Sm2.s:1755   .text.smtc_modem_multicast_class_b_stop_all_sessions:00000000 $t
+     /tmp/ccb86Sm2.s:1761   .text.smtc_modem_multicast_class_b_stop_all_sessions:00000000 smtc_modem_multicast_class_b_stop_all_sessions
+     /tmp/ccb86Sm2.s:1779   .text.smtc_modem_get_region:00000000 $t
+     /tmp/ccb86Sm2.s:1785   .text.smtc_modem_get_region:00000000 smtc_modem_get_region
+     /tmp/ccb86Sm2.s:1810   .text.smtc_modem_set_region:00000000 $t
+     /tmp/ccb86Sm2.s:1816   .text.smtc_modem_set_region:00000000 smtc_modem_set_region
+     /tmp/ccb86Sm2.s:1853   .text.smtc_modem_set_region:00000044 $d
+     /tmp/ccb86Sm2.s:4713   .rodata.__func__.9:00000000 __func__.9
+     /tmp/ccb86Sm2.s:1859   .text.smtc_modem_adr_get_profile:00000000 $t
+     /tmp/ccb86Sm2.s:1865   .text.smtc_modem_adr_get_profile:00000000 smtc_modem_adr_get_profile
+     /tmp/ccb86Sm2.s:1890   .text.smtc_modem_adr_set_profile:00000000 $t
+     /tmp/ccb86Sm2.s:1896   .text.smtc_modem_adr_set_profile:00000000 smtc_modem_adr_set_profile
+     /tmp/ccb86Sm2.s:1944   .text.smtc_modem_adr_set_profile:00000050 $d
+     /tmp/ccb86Sm2.s:4708   .rodata.__func__.8:00000000 __func__.8
+     /tmp/ccb86Sm2.s:1949   .text.smtc_modem_get_available_datarates:00000000 $t
+     /tmp/ccb86Sm2.s:1955   .text.smtc_modem_get_available_datarates:00000000 smtc_modem_get_available_datarates
+     /tmp/ccb86Sm2.s:1976   .text.smtc_modem_dm_get_fport:00000000 $t
+     /tmp/ccb86Sm2.s:1982   .text.smtc_modem_dm_get_fport:00000000 smtc_modem_dm_get_fport
+     /tmp/ccb86Sm2.s:2007   .text.smtc_modem_dm_set_fport:00000000 $t
+     /tmp/ccb86Sm2.s:2013   .text.smtc_modem_dm_set_fport:00000000 smtc_modem_dm_set_fport
+     /tmp/ccb86Sm2.s:2040   .text.smtc_modem_dm_set_fport:00000030 $d
+     /tmp/ccb86Sm2.s:4703   .rodata.__func__.7:00000000 __func__.7
+     /tmp/ccb86Sm2.s:2045   .text.smtc_modem_dm_get_info_interval:00000000 $t
+     /tmp/ccb86Sm2.s:2051   .text.smtc_modem_dm_get_info_interval:00000000 smtc_modem_dm_get_info_interval
+     /tmp/ccb86Sm2.s:2083   .text.smtc_modem_dm_set_info_interval:00000000 $t
+     /tmp/ccb86Sm2.s:2089   .text.smtc_modem_dm_set_info_interval:00000000 smtc_modem_dm_set_info_interval
+     /tmp/ccb86Sm2.s:2130   .text.smtc_modem_dm_set_info_interval:00000048 $d
+     /tmp/ccb86Sm2.s:4698   .rodata.__func__.6:00000000 __func__.6
+     /tmp/ccb86Sm2.s:2135   .text.smtc_modem_dm_get_info_fields:00000000 $t
+     /tmp/ccb86Sm2.s:2141   .text.smtc_modem_dm_get_info_fields:00000000 smtc_modem_dm_get_info_fields
+     /tmp/ccb86Sm2.s:2167   .text.smtc_modem_dm_set_info_fields:00000000 $t
+     /tmp/ccb86Sm2.s:2173   .text.smtc_modem_dm_set_info_fields:00000000 smtc_modem_dm_set_info_fields
+     /tmp/ccb86Sm2.s:2198   .text.smtc_modem_dm_request_single_uplink:00000000 $t
+     /tmp/ccb86Sm2.s:2204   .text.smtc_modem_dm_request_single_uplink:00000000 smtc_modem_dm_request_single_uplink
+     /tmp/ccb86Sm2.s:2238   .text.smtc_modem_dm_set_user_data:00000000 $t
+     /tmp/ccb86Sm2.s:2244   .text.smtc_modem_dm_set_user_data:00000000 smtc_modem_dm_set_user_data
+     /tmp/ccb86Sm2.s:2265   .text.smtc_modem_dm_get_user_data:00000000 $t
+     /tmp/ccb86Sm2.s:2271   .text.smtc_modem_dm_get_user_data:00000000 smtc_modem_dm_get_user_data
+     /tmp/ccb86Sm2.s:2298   .text.smtc_modem_join_network:00000000 $t
+     /tmp/ccb86Sm2.s:2304   .text.smtc_modem_join_network:00000000 smtc_modem_join_network
+     /tmp/ccb86Sm2.s:2357   .text.smtc_modem_join_network:00000064 $d
+     /tmp/ccb86Sm2.s:4693   .rodata.__func__.5:00000000 __func__.5
+     /tmp/ccb86Sm2.s:2365   .text.smtc_modem_leave_network:00000000 $t
+     /tmp/ccb86Sm2.s:2371   .text.smtc_modem_leave_network:00000000 smtc_modem_leave_network
+     /tmp/ccb86Sm2.s:2391   .text.smtc_modem_suspend_radio_communications:00000000 $t
+     /tmp/ccb86Sm2.s:2397   .text.smtc_modem_suspend_radio_communications:00000000 smtc_modem_suspend_radio_communications
+ARM GAS  /tmp/ccb86Sm2.s 			page 89
 
 
-     /tmp/cc3hQV0n.s:2424   .text.smtc_modem_suspend_radio_communications:00000030 $d
-     /tmp/cc3hQV0n.s:4688   .rodata.__func__.4:00000000 __func__.4
-     /tmp/cc3hQV0n.s:2433   .text.smtc_modem_get_next_tx_max_payload:00000000 $t
-     /tmp/cc3hQV0n.s:2439   .text.smtc_modem_get_next_tx_max_payload:00000000 smtc_modem_get_next_tx_max_payload
-     /tmp/cc3hQV0n.s:2473   .text.smtc_modem_get_next_tx_max_payload:0000003c $d
-     /tmp/cc3hQV0n.s:4683   .rodata.__func__.3:00000000 __func__.3
-     /tmp/cc3hQV0n.s:2478   .text.smtc_modem_request_uplink:00000000 $t
-     /tmp/cc3hQV0n.s:2484   .text.smtc_modem_request_uplink:00000000 smtc_modem_request_uplink
-     /tmp/cc3hQV0n.s:2512   .text.smtc_modem_request_extended_uplink:00000000 $t
-     /tmp/cc3hQV0n.s:2518   .text.smtc_modem_request_extended_uplink:00000000 smtc_modem_request_extended_uplink
-     /tmp/cc3hQV0n.s:2529   .text.smtc_modem_abort_extended_uplink:00000000 $t
-     /tmp/cc3hQV0n.s:2535   .text.smtc_modem_abort_extended_uplink:00000000 smtc_modem_abort_extended_uplink
-     /tmp/cc3hQV0n.s:2546   .text.smtc_modem_request_emergency_uplink:00000000 $t
-     /tmp/cc3hQV0n.s:2552   .text.smtc_modem_request_emergency_uplink:00000000 smtc_modem_request_emergency_uplink
-     /tmp/cc3hQV0n.s:2581   .text.smtc_modem_request_empty_uplink:00000000 $t
-     /tmp/cc3hQV0n.s:2587   .text.smtc_modem_request_empty_uplink:00000000 smtc_modem_request_empty_uplink
-     /tmp/cc3hQV0n.s:2654   .text.smtc_modem_request_empty_uplink:0000007c $d
-     /tmp/cc3hQV0n.s:4673   .rodata.__func__.1:00000000 __func__.1
-     /tmp/cc3hQV0n.s:2675   .text.smtc_modem_file_upload_init:00000000 $t
-     /tmp/cc3hQV0n.s:2681   .text.smtc_modem_file_upload_init:00000000 smtc_modem_file_upload_init
-     /tmp/cc3hQV0n.s:2766   .text.smtc_modem_file_upload_init:000000a4 $d
-     /tmp/cc3hQV0n.s:4668   .rodata.__func__.0:00000000 __func__.0
-     /tmp/cc3hQV0n.s:2783   .text.smtc_modem_file_upload_start:00000000 $t
-     /tmp/cc3hQV0n.s:2789   .text.smtc_modem_file_upload_start:00000000 smtc_modem_file_upload_start
-     /tmp/cc3hQV0n.s:2840   .text.smtc_modem_file_upload_start:0000006c $d
-     /tmp/cc3hQV0n.s:2853   .text.smtc_modem_file_upload_reset:00000000 $t
-     /tmp/cc3hQV0n.s:2859   .text.smtc_modem_file_upload_reset:00000000 smtc_modem_file_upload_reset
-     /tmp/cc3hQV0n.s:2898   .text.smtc_modem_file_upload_reset:0000004c $d
-     /tmp/cc3hQV0n.s:2919   .text.smtc_modem_stream_init:00000000 $t
-     /tmp/cc3hQV0n.s:2925   .text.smtc_modem_stream_init:00000000 smtc_modem_stream_init
-     /tmp/cc3hQV0n.s:3000   .text.smtc_modem_stream_init:0000009c $d
-     /tmp/cc3hQV0n.s:3025   .text.smtc_modem_stream_add_data:00000000 $t
-     /tmp/cc3hQV0n.s:3031   .text.smtc_modem_stream_add_data:00000000 smtc_modem_stream_add_data
-     /tmp/cc3hQV0n.s:3111   .text.smtc_modem_stream_add_data:000000a4 $d
-     /tmp/cc3hQV0n.s:3120   .text.smtc_modem_stream_status:00000000 $t
-     /tmp/cc3hQV0n.s:3126   .text.smtc_modem_stream_status:00000000 smtc_modem_stream_status
-     /tmp/cc3hQV0n.s:3157   .text.smtc_modem_stream_status:00000034 $d
-     /tmp/cc3hQV0n.s:3160   .text.smtc_modem_set_certification_mode:00000000 $t
-     /tmp/cc3hQV0n.s:3166   .text.smtc_modem_set_certification_mode:00000000 smtc_modem_set_certification_mode
-     /tmp/cc3hQV0n.s:3192   .text.smtc_modem_increment_event_middleware:00000000 $t
-     /tmp/cc3hQV0n.s:3198   .text.smtc_modem_increment_event_middleware:00000000 smtc_modem_increment_event_middleware
-     /tmp/cc3hQV0n.s:3215   .text.smtc_modem_get_certification_mode:00000000 $t
-     /tmp/cc3hQV0n.s:3221   .text.smtc_modem_get_certification_mode:00000000 smtc_modem_get_certification_mode
-     /tmp/cc3hQV0n.s:3244   .text.smtc_modem_connection_timeout_set_thresholds:00000000 $t
-     /tmp/cc3hQV0n.s:3250   .text.smtc_modem_connection_timeout_set_thresholds:00000000 smtc_modem_connection_timeout_set_thresholds
-     /tmp/cc3hQV0n.s:3271   .text.smtc_modem_connection_timeout_get_thresholds:00000000 $t
-     /tmp/cc3hQV0n.s:3277   .text.smtc_modem_connection_timeout_get_thresholds:00000000 smtc_modem_connection_timeout_get_thresholds
-     /tmp/cc3hQV0n.s:3303   .text.smtc_modem_connection_timeout_get_current_values:00000000 $t
-     /tmp/cc3hQV0n.s:3309   .text.smtc_modem_connection_timeout_get_current_values:00000000 smtc_modem_connection_timeout_get_current_values
-     /tmp/cc3hQV0n.s:3335   .text.smtc_modem_lorawan_get_lost_connection_counter:00000000 $t
-     /tmp/cc3hQV0n.s:3341   .text.smtc_modem_lorawan_get_lost_connection_counter:00000000 smtc_modem_lorawan_get_lost_connection_counter
-     /tmp/cc3hQV0n.s:3362   .text.smtc_modem_get_duty_cycle_status:00000000 $t
-     /tmp/cc3hQV0n.s:3368   .text.smtc_modem_get_duty_cycle_status:00000000 smtc_modem_get_duty_cycle_status
-     /tmp/cc3hQV0n.s:3390   .text.smtc_modem_rp_abort_user_radio_access_task:00000000 $t
-     /tmp/cc3hQV0n.s:3396   .text.smtc_modem_rp_abort_user_radio_access_task:00000000 smtc_modem_rp_abort_user_radio_access_task
-     /tmp/cc3hQV0n.s:3429   .text.smtc_modem_rp_abort_user_radio_access_task:00000030 $d
-     /tmp/cc3hQV0n.s:3432   .text.smtc_modem_rp_add_user_radio_access_task:00000000 $t
-ARM GAS  /tmp/cc3hQV0n.s 			page 90
+     /tmp/ccb86Sm2.s:2424   .text.smtc_modem_suspend_radio_communications:00000030 $d
+     /tmp/ccb86Sm2.s:4688   .rodata.__func__.4:00000000 __func__.4
+     /tmp/ccb86Sm2.s:2433   .text.smtc_modem_get_next_tx_max_payload:00000000 $t
+     /tmp/ccb86Sm2.s:2439   .text.smtc_modem_get_next_tx_max_payload:00000000 smtc_modem_get_next_tx_max_payload
+     /tmp/ccb86Sm2.s:2473   .text.smtc_modem_get_next_tx_max_payload:0000003c $d
+     /tmp/ccb86Sm2.s:4683   .rodata.__func__.3:00000000 __func__.3
+     /tmp/ccb86Sm2.s:2478   .text.smtc_modem_request_uplink:00000000 $t
+     /tmp/ccb86Sm2.s:2484   .text.smtc_modem_request_uplink:00000000 smtc_modem_request_uplink
+     /tmp/ccb86Sm2.s:2512   .text.smtc_modem_request_extended_uplink:00000000 $t
+     /tmp/ccb86Sm2.s:2518   .text.smtc_modem_request_extended_uplink:00000000 smtc_modem_request_extended_uplink
+     /tmp/ccb86Sm2.s:2529   .text.smtc_modem_abort_extended_uplink:00000000 $t
+     /tmp/ccb86Sm2.s:2535   .text.smtc_modem_abort_extended_uplink:00000000 smtc_modem_abort_extended_uplink
+     /tmp/ccb86Sm2.s:2546   .text.smtc_modem_request_emergency_uplink:00000000 $t
+     /tmp/ccb86Sm2.s:2552   .text.smtc_modem_request_emergency_uplink:00000000 smtc_modem_request_emergency_uplink
+     /tmp/ccb86Sm2.s:2581   .text.smtc_modem_request_empty_uplink:00000000 $t
+     /tmp/ccb86Sm2.s:2587   .text.smtc_modem_request_empty_uplink:00000000 smtc_modem_request_empty_uplink
+     /tmp/ccb86Sm2.s:2654   .text.smtc_modem_request_empty_uplink:0000007c $d
+     /tmp/ccb86Sm2.s:4673   .rodata.__func__.1:00000000 __func__.1
+     /tmp/ccb86Sm2.s:2675   .text.smtc_modem_file_upload_init:00000000 $t
+     /tmp/ccb86Sm2.s:2681   .text.smtc_modem_file_upload_init:00000000 smtc_modem_file_upload_init
+     /tmp/ccb86Sm2.s:2766   .text.smtc_modem_file_upload_init:000000a4 $d
+     /tmp/ccb86Sm2.s:4668   .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccb86Sm2.s:2783   .text.smtc_modem_file_upload_start:00000000 $t
+     /tmp/ccb86Sm2.s:2789   .text.smtc_modem_file_upload_start:00000000 smtc_modem_file_upload_start
+     /tmp/ccb86Sm2.s:2840   .text.smtc_modem_file_upload_start:0000006c $d
+     /tmp/ccb86Sm2.s:2853   .text.smtc_modem_file_upload_reset:00000000 $t
+     /tmp/ccb86Sm2.s:2859   .text.smtc_modem_file_upload_reset:00000000 smtc_modem_file_upload_reset
+     /tmp/ccb86Sm2.s:2898   .text.smtc_modem_file_upload_reset:0000004c $d
+     /tmp/ccb86Sm2.s:2919   .text.smtc_modem_stream_init:00000000 $t
+     /tmp/ccb86Sm2.s:2925   .text.smtc_modem_stream_init:00000000 smtc_modem_stream_init
+     /tmp/ccb86Sm2.s:3000   .text.smtc_modem_stream_init:0000009c $d
+     /tmp/ccb86Sm2.s:3025   .text.smtc_modem_stream_add_data:00000000 $t
+     /tmp/ccb86Sm2.s:3031   .text.smtc_modem_stream_add_data:00000000 smtc_modem_stream_add_data
+     /tmp/ccb86Sm2.s:3111   .text.smtc_modem_stream_add_data:000000a4 $d
+     /tmp/ccb86Sm2.s:3120   .text.smtc_modem_stream_status:00000000 $t
+     /tmp/ccb86Sm2.s:3126   .text.smtc_modem_stream_status:00000000 smtc_modem_stream_status
+     /tmp/ccb86Sm2.s:3157   .text.smtc_modem_stream_status:00000034 $d
+     /tmp/ccb86Sm2.s:3160   .text.smtc_modem_set_certification_mode:00000000 $t
+     /tmp/ccb86Sm2.s:3166   .text.smtc_modem_set_certification_mode:00000000 smtc_modem_set_certification_mode
+     /tmp/ccb86Sm2.s:3192   .text.smtc_modem_increment_event_middleware:00000000 $t
+     /tmp/ccb86Sm2.s:3198   .text.smtc_modem_increment_event_middleware:00000000 smtc_modem_increment_event_middleware
+     /tmp/ccb86Sm2.s:3215   .text.smtc_modem_get_certification_mode:00000000 $t
+     /tmp/ccb86Sm2.s:3221   .text.smtc_modem_get_certification_mode:00000000 smtc_modem_get_certification_mode
+     /tmp/ccb86Sm2.s:3244   .text.smtc_modem_connection_timeout_set_thresholds:00000000 $t
+     /tmp/ccb86Sm2.s:3250   .text.smtc_modem_connection_timeout_set_thresholds:00000000 smtc_modem_connection_timeout_set_thresholds
+     /tmp/ccb86Sm2.s:3271   .text.smtc_modem_connection_timeout_get_thresholds:00000000 $t
+     /tmp/ccb86Sm2.s:3277   .text.smtc_modem_connection_timeout_get_thresholds:00000000 smtc_modem_connection_timeout_get_thresholds
+     /tmp/ccb86Sm2.s:3303   .text.smtc_modem_connection_timeout_get_current_values:00000000 $t
+     /tmp/ccb86Sm2.s:3309   .text.smtc_modem_connection_timeout_get_current_values:00000000 smtc_modem_connection_timeout_get_current_values
+     /tmp/ccb86Sm2.s:3335   .text.smtc_modem_lorawan_get_lost_connection_counter:00000000 $t
+     /tmp/ccb86Sm2.s:3341   .text.smtc_modem_lorawan_get_lost_connection_counter:00000000 smtc_modem_lorawan_get_lost_connection_counter
+     /tmp/ccb86Sm2.s:3362   .text.smtc_modem_get_duty_cycle_status:00000000 $t
+     /tmp/ccb86Sm2.s:3368   .text.smtc_modem_get_duty_cycle_status:00000000 smtc_modem_get_duty_cycle_status
+     /tmp/ccb86Sm2.s:3390   .text.smtc_modem_rp_abort_user_radio_access_task:00000000 $t
+     /tmp/ccb86Sm2.s:3396   .text.smtc_modem_rp_abort_user_radio_access_task:00000000 smtc_modem_rp_abort_user_radio_access_task
+     /tmp/ccb86Sm2.s:3429   .text.smtc_modem_rp_abort_user_radio_access_task:00000030 $d
+     /tmp/ccb86Sm2.s:3432   .text.smtc_modem_rp_add_user_radio_access_task:00000000 $t
+ARM GAS  /tmp/ccb86Sm2.s 			page 90
 
 
-     /tmp/cc3hQV0n.s:3438   .text.smtc_modem_rp_add_user_radio_access_task:00000000 smtc_modem_rp_add_user_radio_access_task
-     /tmp/cc3hQV0n.s:3511   .text.smtc_modem_rp_add_user_radio_access_task:00000084 $d
-     /tmp/cc3hQV0n.s:4756   .bss.user_end_task_callback_0:00000000 user_end_task_callback_0
-     /tmp/cc3hQV0n.s:4750   .bss.user_end_task_callback_1:00000000 user_end_task_callback_1
-     /tmp/cc3hQV0n.s:4744   .bss.user_end_task_callback_2:00000000 user_end_task_callback_2
-     /tmp/cc3hQV0n.s:3520   .text.smtc_modem_suspend_before_user_radio_access:00000000 $t
-     /tmp/cc3hQV0n.s:3526   .text.smtc_modem_suspend_before_user_radio_access:00000000 smtc_modem_suspend_before_user_radio_access
-     /tmp/cc3hQV0n.s:3551   .text.smtc_modem_suspend_before_user_radio_access:0000002c $d
-     /tmp/cc3hQV0n.s:3557   .text.smtc_modem_resume_after_user_radio_access:00000000 $t
-     /tmp/cc3hQV0n.s:3563   .text.smtc_modem_resume_after_user_radio_access:00000000 smtc_modem_resume_after_user_radio_access
-     /tmp/cc3hQV0n.s:3584   .text.smtc_modem_resume_after_user_radio_access:00000024 $d
-     /tmp/cc3hQV0n.s:3587   .text.smtc_modem_get_stack_state:00000000 $t
-     /tmp/cc3hQV0n.s:3593   .text.smtc_modem_get_stack_state:00000000 smtc_modem_get_stack_state
-     /tmp/cc3hQV0n.s:3625   .text.smtc_modem_set_network_type:00000000 $t
-     /tmp/cc3hQV0n.s:3631   .text.smtc_modem_set_network_type:00000000 smtc_modem_set_network_type
-     /tmp/cc3hQV0n.s:3649   .text.smtc_modem_get_network_type:00000000 $t
-     /tmp/cc3hQV0n.s:3655   .text.smtc_modem_get_network_type:00000000 smtc_modem_get_network_type
-     /tmp/cc3hQV0n.s:3679   .text.smtc_modem_lbt_set_parameters:00000000 $t
-     /tmp/cc3hQV0n.s:3685   .text.smtc_modem_lbt_set_parameters:00000000 smtc_modem_lbt_set_parameters
-     /tmp/cc3hQV0n.s:3716   .text.smtc_modem_lbt_set_parameters:00000034 $d
-     /tmp/cc3hQV0n.s:4772   .bss.lbt_config_available:00000000 lbt_config_available
-     /tmp/cc3hQV0n.s:3720   .text.smtc_modem_lbt_get_parameters:00000000 $t
-     /tmp/cc3hQV0n.s:3726   .text.smtc_modem_lbt_get_parameters:00000000 smtc_modem_lbt_get_parameters
-     /tmp/cc3hQV0n.s:3759   .text.smtc_modem_lbt_set_state:00000000 $t
-     /tmp/cc3hQV0n.s:3765   .text.smtc_modem_lbt_set_state:00000000 smtc_modem_lbt_set_state
-     /tmp/cc3hQV0n.s:3799   .text.smtc_modem_lbt_set_state:00000038 $d
-     /tmp/cc3hQV0n.s:3804   .text.smtc_modem_lbt_get_state:00000000 $t
-     /tmp/cc3hQV0n.s:3810   .text.smtc_modem_lbt_get_state:00000000 smtc_modem_lbt_get_state
-     /tmp/cc3hQV0n.s:3831   .text.smtc_modem_set_nb_trans:00000000 $t
-     /tmp/cc3hQV0n.s:3837   .text.smtc_modem_set_nb_trans:00000000 smtc_modem_set_nb_trans
-     /tmp/cc3hQV0n.s:3857   .text.smtc_modem_get_nb_trans:00000000 $t
-     /tmp/cc3hQV0n.s:3863   .text.smtc_modem_get_nb_trans:00000000 smtc_modem_get_nb_trans
-     /tmp/cc3hQV0n.s:3884   .text.smtc_modem_set_crystal_error_ppm:00000000 $t
-     /tmp/cc3hQV0n.s:3890   .text.smtc_modem_set_crystal_error_ppm:00000000 smtc_modem_set_crystal_error_ppm
-     /tmp/cc3hQV0n.s:3908   .text.smtc_modem_get_crystal_error_ppm:00000000 $t
-     /tmp/cc3hQV0n.s:3914   .text.smtc_modem_get_crystal_error_ppm:00000000 smtc_modem_get_crystal_error_ppm
-     /tmp/cc3hQV0n.s:3935   .text.smtc_modem_lorawan_request_link_check:00000000 $t
-     /tmp/cc3hQV0n.s:3941   .text.smtc_modem_lorawan_request_link_check:00000000 smtc_modem_lorawan_request_link_check
-     /tmp/cc3hQV0n.s:3962   .text.smtc_modem_lorawan_class_b_request_ping_slot_info:00000000 $t
-     /tmp/cc3hQV0n.s:3968   .text.smtc_modem_lorawan_class_b_request_ping_slot_info:00000000 smtc_modem_lorawan_class_b_request_ping_slot_info
-     /tmp/cc3hQV0n.s:3989   .text.smtc_modem_class_b_set_ping_slot_periodicity:00000000 $t
-     /tmp/cc3hQV0n.s:3995   .text.smtc_modem_class_b_set_ping_slot_periodicity:00000000 smtc_modem_class_b_set_ping_slot_periodicity
-     /tmp/cc3hQV0n.s:4015   .text.smtc_modem_class_b_get_ping_slot_periodicity:00000000 $t
-     /tmp/cc3hQV0n.s:4021   .text.smtc_modem_class_b_get_ping_slot_periodicity:00000000 smtc_modem_class_b_get_ping_slot_periodicity
-     /tmp/cc3hQV0n.s:4042   .text.smtc_modem_d2d_class_b_request_uplink:00000000 $t
-     /tmp/cc3hQV0n.s:4048   .text.smtc_modem_d2d_class_b_request_uplink:00000000 smtc_modem_d2d_class_b_request_uplink
-     /tmp/cc3hQV0n.s:4057   .text.smtc_modem_d2d_class_b_get_tx_max_payload:00000000 $t
-     /tmp/cc3hQV0n.s:4063   .text.smtc_modem_d2d_class_b_get_tx_max_payload:00000000 smtc_modem_d2d_class_b_get_tx_max_payload
-     /tmp/cc3hQV0n.s:4072   .text.smtc_modem_get_network_frame_pending_status:00000000 $t
-     /tmp/cc3hQV0n.s:4078   .text.smtc_modem_get_network_frame_pending_status:00000000 smtc_modem_get_network_frame_pending_status
-     /tmp/cc3hQV0n.s:4099   .text.smtc_modem_set_adr_ack_limit_delay:00000000 $t
-     /tmp/cc3hQV0n.s:4105   .text.smtc_modem_set_adr_ack_limit_delay:00000000 smtc_modem_set_adr_ack_limit_delay
-     /tmp/cc3hQV0n.s:4127   .text.smtc_modem_get_adr_ack_limit_delay:00000000 $t
-     /tmp/cc3hQV0n.s:4133   .text.smtc_modem_get_adr_ack_limit_delay:00000000 smtc_modem_get_adr_ack_limit_delay
-     /tmp/cc3hQV0n.s:4158   .text.smtc_modem_get_pin:00000000 $t
-     /tmp/cc3hQV0n.s:4164   .text.smtc_modem_get_pin:00000000 smtc_modem_get_pin
-     /tmp/cc3hQV0n.s:4176   .text.smtc_modem_get_chip_eui:00000000 $t
-ARM GAS  /tmp/cc3hQV0n.s 			page 91
+     /tmp/ccb86Sm2.s:3438   .text.smtc_modem_rp_add_user_radio_access_task:00000000 smtc_modem_rp_add_user_radio_access_task
+     /tmp/ccb86Sm2.s:3511   .text.smtc_modem_rp_add_user_radio_access_task:00000084 $d
+     /tmp/ccb86Sm2.s:4756   .bss.user_end_task_callback_0:00000000 user_end_task_callback_0
+     /tmp/ccb86Sm2.s:4750   .bss.user_end_task_callback_1:00000000 user_end_task_callback_1
+     /tmp/ccb86Sm2.s:4744   .bss.user_end_task_callback_2:00000000 user_end_task_callback_2
+     /tmp/ccb86Sm2.s:3520   .text.smtc_modem_suspend_before_user_radio_access:00000000 $t
+     /tmp/ccb86Sm2.s:3526   .text.smtc_modem_suspend_before_user_radio_access:00000000 smtc_modem_suspend_before_user_radio_access
+     /tmp/ccb86Sm2.s:3551   .text.smtc_modem_suspend_before_user_radio_access:0000002c $d
+     /tmp/ccb86Sm2.s:3557   .text.smtc_modem_resume_after_user_radio_access:00000000 $t
+     /tmp/ccb86Sm2.s:3563   .text.smtc_modem_resume_after_user_radio_access:00000000 smtc_modem_resume_after_user_radio_access
+     /tmp/ccb86Sm2.s:3584   .text.smtc_modem_resume_after_user_radio_access:00000024 $d
+     /tmp/ccb86Sm2.s:3587   .text.smtc_modem_get_stack_state:00000000 $t
+     /tmp/ccb86Sm2.s:3593   .text.smtc_modem_get_stack_state:00000000 smtc_modem_get_stack_state
+     /tmp/ccb86Sm2.s:3625   .text.smtc_modem_set_network_type:00000000 $t
+     /tmp/ccb86Sm2.s:3631   .text.smtc_modem_set_network_type:00000000 smtc_modem_set_network_type
+     /tmp/ccb86Sm2.s:3649   .text.smtc_modem_get_network_type:00000000 $t
+     /tmp/ccb86Sm2.s:3655   .text.smtc_modem_get_network_type:00000000 smtc_modem_get_network_type
+     /tmp/ccb86Sm2.s:3679   .text.smtc_modem_lbt_set_parameters:00000000 $t
+     /tmp/ccb86Sm2.s:3685   .text.smtc_modem_lbt_set_parameters:00000000 smtc_modem_lbt_set_parameters
+     /tmp/ccb86Sm2.s:3716   .text.smtc_modem_lbt_set_parameters:00000034 $d
+     /tmp/ccb86Sm2.s:4772   .bss.lbt_config_available:00000000 lbt_config_available
+     /tmp/ccb86Sm2.s:3720   .text.smtc_modem_lbt_get_parameters:00000000 $t
+     /tmp/ccb86Sm2.s:3726   .text.smtc_modem_lbt_get_parameters:00000000 smtc_modem_lbt_get_parameters
+     /tmp/ccb86Sm2.s:3759   .text.smtc_modem_lbt_set_state:00000000 $t
+     /tmp/ccb86Sm2.s:3765   .text.smtc_modem_lbt_set_state:00000000 smtc_modem_lbt_set_state
+     /tmp/ccb86Sm2.s:3799   .text.smtc_modem_lbt_set_state:00000038 $d
+     /tmp/ccb86Sm2.s:3804   .text.smtc_modem_lbt_get_state:00000000 $t
+     /tmp/ccb86Sm2.s:3810   .text.smtc_modem_lbt_get_state:00000000 smtc_modem_lbt_get_state
+     /tmp/ccb86Sm2.s:3831   .text.smtc_modem_set_nb_trans:00000000 $t
+     /tmp/ccb86Sm2.s:3837   .text.smtc_modem_set_nb_trans:00000000 smtc_modem_set_nb_trans
+     /tmp/ccb86Sm2.s:3857   .text.smtc_modem_get_nb_trans:00000000 $t
+     /tmp/ccb86Sm2.s:3863   .text.smtc_modem_get_nb_trans:00000000 smtc_modem_get_nb_trans
+     /tmp/ccb86Sm2.s:3884   .text.smtc_modem_set_crystal_error_ppm:00000000 $t
+     /tmp/ccb86Sm2.s:3890   .text.smtc_modem_set_crystal_error_ppm:00000000 smtc_modem_set_crystal_error_ppm
+     /tmp/ccb86Sm2.s:3908   .text.smtc_modem_get_crystal_error_ppm:00000000 $t
+     /tmp/ccb86Sm2.s:3914   .text.smtc_modem_get_crystal_error_ppm:00000000 smtc_modem_get_crystal_error_ppm
+     /tmp/ccb86Sm2.s:3935   .text.smtc_modem_lorawan_request_link_check:00000000 $t
+     /tmp/ccb86Sm2.s:3941   .text.smtc_modem_lorawan_request_link_check:00000000 smtc_modem_lorawan_request_link_check
+     /tmp/ccb86Sm2.s:3962   .text.smtc_modem_lorawan_class_b_request_ping_slot_info:00000000 $t
+     /tmp/ccb86Sm2.s:3968   .text.smtc_modem_lorawan_class_b_request_ping_slot_info:00000000 smtc_modem_lorawan_class_b_request_ping_slot_info
+     /tmp/ccb86Sm2.s:3989   .text.smtc_modem_class_b_set_ping_slot_periodicity:00000000 $t
+     /tmp/ccb86Sm2.s:3995   .text.smtc_modem_class_b_set_ping_slot_periodicity:00000000 smtc_modem_class_b_set_ping_slot_periodicity
+     /tmp/ccb86Sm2.s:4015   .text.smtc_modem_class_b_get_ping_slot_periodicity:00000000 $t
+     /tmp/ccb86Sm2.s:4021   .text.smtc_modem_class_b_get_ping_slot_periodicity:00000000 smtc_modem_class_b_get_ping_slot_periodicity
+     /tmp/ccb86Sm2.s:4042   .text.smtc_modem_d2d_class_b_request_uplink:00000000 $t
+     /tmp/ccb86Sm2.s:4048   .text.smtc_modem_d2d_class_b_request_uplink:00000000 smtc_modem_d2d_class_b_request_uplink
+     /tmp/ccb86Sm2.s:4057   .text.smtc_modem_d2d_class_b_get_tx_max_payload:00000000 $t
+     /tmp/ccb86Sm2.s:4063   .text.smtc_modem_d2d_class_b_get_tx_max_payload:00000000 smtc_modem_d2d_class_b_get_tx_max_payload
+     /tmp/ccb86Sm2.s:4072   .text.smtc_modem_get_network_frame_pending_status:00000000 $t
+     /tmp/ccb86Sm2.s:4078   .text.smtc_modem_get_network_frame_pending_status:00000000 smtc_modem_get_network_frame_pending_status
+     /tmp/ccb86Sm2.s:4099   .text.smtc_modem_set_adr_ack_limit_delay:00000000 $t
+     /tmp/ccb86Sm2.s:4105   .text.smtc_modem_set_adr_ack_limit_delay:00000000 smtc_modem_set_adr_ack_limit_delay
+     /tmp/ccb86Sm2.s:4127   .text.smtc_modem_get_adr_ack_limit_delay:00000000 $t
+     /tmp/ccb86Sm2.s:4133   .text.smtc_modem_get_adr_ack_limit_delay:00000000 smtc_modem_get_adr_ack_limit_delay
+     /tmp/ccb86Sm2.s:4158   .text.smtc_modem_get_pin:00000000 $t
+     /tmp/ccb86Sm2.s:4164   .text.smtc_modem_get_pin:00000000 smtc_modem_get_pin
+     /tmp/ccb86Sm2.s:4176   .text.smtc_modem_get_chip_eui:00000000 $t
+ARM GAS  /tmp/ccb86Sm2.s 			page 91
 
 
-     /tmp/cc3hQV0n.s:4182   .text.smtc_modem_get_chip_eui:00000000 smtc_modem_get_chip_eui
-     /tmp/cc3hQV0n.s:4194   .text.smtc_modem_derive_keys:00000000 $t
-     /tmp/cc3hQV0n.s:4200   .text.smtc_modem_derive_keys:00000000 smtc_modem_derive_keys
-     /tmp/cc3hQV0n.s:4220   .text.convert_rp_to_user_radio_access_status:00000000 $t
-     /tmp/cc3hQV0n.s:4226   .text.convert_rp_to_user_radio_access_status:00000000 convert_rp_to_user_radio_access_status
-     /tmp/cc3hQV0n.s:4242   .text.convert_rp_to_user_radio_access_status:00000010 $d
-     /tmp/cc3hQV0n.s:4652   .rodata.CSWTCH.144:00000000 CSWTCH.144
-     /tmp/cc3hQV0n.s:4250   .text.smtc_modem_get_event:00000000 $t
-     /tmp/cc3hQV0n.s:4256   .text.smtc_modem_get_event:00000000 smtc_modem_get_event
-     /tmp/cc3hQV0n.s:4314   .text.smtc_modem_get_event:0000007c $d
-     /tmp/cc3hQV0n.s:4448   .text.smtc_modem_get_event:00000158 $d
-     /tmp/cc3hQV0n.s:4738   .rodata.__func__.14:00000000 __func__.14
-     /tmp/cc3hQV0n.s:4456   .text.convert_rp_to_user_radio_access_rp_status:00000000 $t
-     /tmp/cc3hQV0n.s:4462   .text.convert_rp_to_user_radio_access_rp_status:00000000 convert_rp_to_user_radio_access_rp_status
-     /tmp/cc3hQV0n.s:4478   .text.convert_rp_to_user_radio_access_rp_status:00000010 $d
-     /tmp/cc3hQV0n.s:4652   .rodata.CSWTCH.144:00000000 CSWTCH.147
-     /tmp/cc3hQV0n.s:4481   .text.callback_rp_user_radio_access_0:00000000 $t
-     /tmp/cc3hQV0n.s:4535   .text.callback_rp_user_radio_access_0:00000058 $d
-     /tmp/cc3hQV0n.s:4538   .text.callback_rp_user_radio_access_1:00000000 $t
-     /tmp/cc3hQV0n.s:4591   .text.callback_rp_user_radio_access_1:00000058 $d
-     /tmp/cc3hQV0n.s:4594   .text.callback_rp_user_radio_access_2:00000000 $t
-     /tmp/cc3hQV0n.s:4647   .text.callback_rp_user_radio_access_2:00000058 $d
-     /tmp/cc3hQV0n.s:4741   .bss.user_end_task_callback_2:00000000 $d
-     /tmp/cc3hQV0n.s:4747   .bss.user_end_task_callback_1:00000000 $d
-     /tmp/cc3hQV0n.s:4753   .bss.user_end_task_callback_0:00000000 $d
-     /tmp/cc3hQV0n.s:4759   .bss.user_radio_irq_timestamp:00000000 $d
-     /tmp/cc3hQV0n.s:4768   .bss.user_radio_irq_status:00000000 $d
-     /tmp/cc3hQV0n.s:4773   .bss.lbt_config_available:00000000 $d
-     /tmp/cc3hQV0n.s:4776   .bss.smtc_modem_services_ctx:00000000 $d
-     /tmp/cc3hQV0n.s:4782   .bss.modem_radio_planner:00000000 $d
-     /tmp/cc3hQV0n.s:4788   .bss.modem_buffer:00000000 $d
-     /tmp/cc3hQV0n.s:4339   .text.smtc_modem_get_event:00000095 $d
-     /tmp/cc3hQV0n.s:4339   .text.smtc_modem_get_event:00000096 $t
+     /tmp/ccb86Sm2.s:4182   .text.smtc_modem_get_chip_eui:00000000 smtc_modem_get_chip_eui
+     /tmp/ccb86Sm2.s:4194   .text.smtc_modem_derive_keys:00000000 $t
+     /tmp/ccb86Sm2.s:4200   .text.smtc_modem_derive_keys:00000000 smtc_modem_derive_keys
+     /tmp/ccb86Sm2.s:4220   .text.convert_rp_to_user_radio_access_status:00000000 $t
+     /tmp/ccb86Sm2.s:4226   .text.convert_rp_to_user_radio_access_status:00000000 convert_rp_to_user_radio_access_status
+     /tmp/ccb86Sm2.s:4242   .text.convert_rp_to_user_radio_access_status:00000010 $d
+     /tmp/ccb86Sm2.s:4652   .rodata.CSWTCH.144:00000000 CSWTCH.144
+     /tmp/ccb86Sm2.s:4250   .text.smtc_modem_get_event:00000000 $t
+     /tmp/ccb86Sm2.s:4256   .text.smtc_modem_get_event:00000000 smtc_modem_get_event
+     /tmp/ccb86Sm2.s:4314   .text.smtc_modem_get_event:0000007c $d
+     /tmp/ccb86Sm2.s:4448   .text.smtc_modem_get_event:00000158 $d
+     /tmp/ccb86Sm2.s:4738   .rodata.__func__.14:00000000 __func__.14
+     /tmp/ccb86Sm2.s:4456   .text.convert_rp_to_user_radio_access_rp_status:00000000 $t
+     /tmp/ccb86Sm2.s:4462   .text.convert_rp_to_user_radio_access_rp_status:00000000 convert_rp_to_user_radio_access_rp_status
+     /tmp/ccb86Sm2.s:4478   .text.convert_rp_to_user_radio_access_rp_status:00000010 $d
+     /tmp/ccb86Sm2.s:4652   .rodata.CSWTCH.144:00000000 CSWTCH.147
+     /tmp/ccb86Sm2.s:4481   .text.callback_rp_user_radio_access_0:00000000 $t
+     /tmp/ccb86Sm2.s:4535   .text.callback_rp_user_radio_access_0:00000058 $d
+     /tmp/ccb86Sm2.s:4538   .text.callback_rp_user_radio_access_1:00000000 $t
+     /tmp/ccb86Sm2.s:4591   .text.callback_rp_user_radio_access_1:00000058 $d
+     /tmp/ccb86Sm2.s:4594   .text.callback_rp_user_radio_access_2:00000000 $t
+     /tmp/ccb86Sm2.s:4647   .text.callback_rp_user_radio_access_2:00000058 $d
+     /tmp/ccb86Sm2.s:4741   .bss.user_end_task_callback_2:00000000 $d
+     /tmp/ccb86Sm2.s:4747   .bss.user_end_task_callback_1:00000000 $d
+     /tmp/ccb86Sm2.s:4753   .bss.user_end_task_callback_0:00000000 $d
+     /tmp/ccb86Sm2.s:4759   .bss.user_radio_irq_timestamp:00000000 $d
+     /tmp/ccb86Sm2.s:4768   .bss.user_radio_irq_status:00000000 $d
+     /tmp/ccb86Sm2.s:4773   .bss.lbt_config_available:00000000 $d
+     /tmp/ccb86Sm2.s:4776   .bss.smtc_modem_services_ctx:00000000 $d
+     /tmp/ccb86Sm2.s:4782   .bss.modem_radio_planner:00000000 $d
+     /tmp/ccb86Sm2.s:4788   .bss.modem_buffer:00000000 $d
+     /tmp/ccb86Sm2.s:4339   .text.smtc_modem_get_event:00000095 $d
+     /tmp/ccb86Sm2.s:4339   .text.smtc_modem_get_event:00000096 $t
 
 UNDEFINED SYMBOLS
 get_modem_muted
@@ -5416,7 +5416,7 @@ modem_supervisor_init
 smtc_secure_element_init
 rp_radio_irq_callback
 lorawan_api_get_fifo_obj
-ARM GAS  /tmp/cc3hQV0n.s 			page 92
+ARM GAS  /tmp/ccb86Sm2.s 			page 92
 
 
 fifo_ctrl_get_nb_elt
@@ -5476,7 +5476,7 @@ set_modem_adr_profile
 lorawan_api_reset_no_rx_packet_in_mobile_mode_cnt
 lorawan_api_mask_tx_dr_channel_up_dwell_time_check
 set_modem_dm_port
-ARM GAS  /tmp/cc3hQV0n.s 			page 93
+ARM GAS  /tmp/ccb86Sm2.s 			page 93
 
 
 get_modem_dm_interval
@@ -5536,7 +5536,7 @@ lorawan_api_lbt_set_parameters
 lorawan_api_lbt_get_parameters
 lorawan_api_lbt_set_state
 lorawan_api_lbt_get_state
-ARM GAS  /tmp/cc3hQV0n.s 			page 94
+ARM GAS  /tmp/ccb86Sm2.s 			page 94
 
 
 lorawan_api_nb_trans_set

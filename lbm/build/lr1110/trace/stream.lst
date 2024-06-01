@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccboY7Fk.s 			page 1
+ARM GAS  /tmp/ccbxS5i9.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccboY7Fk.s 			page 1
   59              		.align	1
   60              		.global	stream_data_pending
   61              		.syntax unified
-ARM GAS  /tmp/ccboY7Fk.s 			page 2
+ARM GAS  /tmp/ccbxS5i9.s 			page 2
 
 
   62              		.code	16
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccboY7Fk.s 			page 1
  121              		@ frame_needed = 0, uses_anonymous_args = 0
  122 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
  123 0002 0600     		movs	r6, r0
-ARM GAS  /tmp/ccboY7Fk.s 			page 3
+ARM GAS  /tmp/ccbxS5i9.s 			page 3
 
 
  124 0004 0C00     		movs	r4, r1
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccboY7Fk.s 			page 1
  180 0018 FFF7FEFF 		bl	ROSE_getFree
  181 001c 2080     		strh	r0, [r4]
  182              	.L30:
-ARM GAS  /tmp/ccboY7Fk.s 			page 4
+ARM GAS  /tmp/ccbxS5i9.s 			page 4
 
 
  183              		@ sp needed
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccboY7Fk.s 			page 1
  244              		.code	16
  245              		.thumb_func
  247              	stream_reset:
-ARM GAS  /tmp/ccboY7Fk.s 			page 5
+ARM GAS  /tmp/ccbxS5i9.s 			page 5
 
 
  248              		@ args = 0, pretend = 0, frame = 0
@@ -255,32 +255,32 @@ ARM GAS  /tmp/ccboY7Fk.s 			page 1
  259              	.L47:
  260 0010 54040000 		.word	1108
  262              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccboY7Fk.s 			page 6
+ARM GAS  /tmp/ccbxS5i9.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stream.c
-     /tmp/ccboY7Fk.s:14     .text.stream_init:00000000 $t
-     /tmp/ccboY7Fk.s:20     .text.stream_init:00000000 stream_init
-     /tmp/ccboY7Fk.s:38     .text.stream_enable_encryption:00000000 $t
-     /tmp/ccboY7Fk.s:44     .text.stream_enable_encryption:00000000 stream_enable_encryption
-     /tmp/ccboY7Fk.s:59     .text.stream_data_pending:00000000 $t
-     /tmp/ccboY7Fk.s:65     .text.stream_data_pending:00000000 stream_data_pending
-     /tmp/ccboY7Fk.s:78     .text.stream_add_data:00000000 $t
-     /tmp/ccboY7Fk.s:84     .text.stream_add_data:00000000 stream_add_data
-     /tmp/ccboY7Fk.s:113    .text.stream_get_fragment:00000000 $t
-     /tmp/ccboY7Fk.s:119    .text.stream_get_fragment:00000000 stream_get_fragment
-     /tmp/ccboY7Fk.s:159    .text.stream_status:00000000 $t
-     /tmp/ccboY7Fk.s:165    .text.stream_status:00000000 stream_status
-     /tmp/ccboY7Fk.s:187    .text.stream_process_dn_frame:00000000 $t
-     /tmp/ccboY7Fk.s:193    .text.stream_process_dn_frame:00000000 stream_process_dn_frame
-     /tmp/ccboY7Fk.s:211    .text.stream_get_rr:00000000 $t
-     /tmp/ccboY7Fk.s:217    .text.stream_get_rr:00000000 stream_get_rr
-     /tmp/ccboY7Fk.s:226    .text.stream_set_rr:00000000 $t
-     /tmp/ccboY7Fk.s:232    .text.stream_set_rr:00000000 stream_set_rr
-     /tmp/ccboY7Fk.s:241    .text.stream_reset:00000000 $t
-     /tmp/ccboY7Fk.s:247    .text.stream_reset:00000000 stream_reset
-     /tmp/ccboY7Fk.s:260    .text.stream_reset:00000010 $d
+     /tmp/ccbxS5i9.s:14     .text.stream_init:00000000 $t
+     /tmp/ccbxS5i9.s:20     .text.stream_init:00000000 stream_init
+     /tmp/ccbxS5i9.s:38     .text.stream_enable_encryption:00000000 $t
+     /tmp/ccbxS5i9.s:44     .text.stream_enable_encryption:00000000 stream_enable_encryption
+     /tmp/ccbxS5i9.s:59     .text.stream_data_pending:00000000 $t
+     /tmp/ccbxS5i9.s:65     .text.stream_data_pending:00000000 stream_data_pending
+     /tmp/ccbxS5i9.s:78     .text.stream_add_data:00000000 $t
+     /tmp/ccbxS5i9.s:84     .text.stream_add_data:00000000 stream_add_data
+     /tmp/ccbxS5i9.s:113    .text.stream_get_fragment:00000000 $t
+     /tmp/ccbxS5i9.s:119    .text.stream_get_fragment:00000000 stream_get_fragment
+     /tmp/ccbxS5i9.s:159    .text.stream_status:00000000 $t
+     /tmp/ccbxS5i9.s:165    .text.stream_status:00000000 stream_status
+     /tmp/ccbxS5i9.s:187    .text.stream_process_dn_frame:00000000 $t
+     /tmp/ccbxS5i9.s:193    .text.stream_process_dn_frame:00000000 stream_process_dn_frame
+     /tmp/ccbxS5i9.s:211    .text.stream_get_rr:00000000 $t
+     /tmp/ccbxS5i9.s:217    .text.stream_get_rr:00000000 stream_get_rr
+     /tmp/ccbxS5i9.s:226    .text.stream_set_rr:00000000 $t
+     /tmp/ccbxS5i9.s:232    .text.stream_set_rr:00000000 stream_set_rr
+     /tmp/ccbxS5i9.s:241    .text.stream_reset:00000000 $t
+     /tmp/ccbxS5i9.s:247    .text.stream_reset:00000000 stream_reset
+     /tmp/ccbxS5i9.s:260    .text.stream_reset:00000010 $d
 
 UNDEFINED SYMBOLS
 ROSE_init

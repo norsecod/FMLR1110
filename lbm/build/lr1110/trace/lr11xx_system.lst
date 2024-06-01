@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc6XbagK.s 			page 1
+ARM GAS  /tmp/cc3cYkpO.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
   58 0028 09D0     		beq	.L6
   59 002a 6B46     		mov	r3, sp
   60 002c 0122     		movs	r2, #1
-ARM GAS  /tmp/cc6XbagK.s 			page 2
+ARM GAS  /tmp/cc3cYkpO.s 			page 2
 
 
   61 002e 5B78     		ldrb	r3, [r3, #1]
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  119 0008 02A9     		add	r1, sp, #8
  120 000a 0B80     		strh	r3, [r1]
  121 000c 0023     		movs	r3, #0
-ARM GAS  /tmp/cc6XbagK.s 			page 3
+ARM GAS  /tmp/cc3cYkpO.s 			page 3
 
 
  122 000e 0393     		str	r3, [sp, #12]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  179              		.section	.text.lr11xx_system_clear_errors,"ax",%progbits
  180              		.align	1
  181              		.global	lr11xx_system_clear_errors
-ARM GAS  /tmp/cc6XbagK.s 			page 4
+ARM GAS  /tmp/cc3cYkpO.s 			page 4
 
 
  182              		.syntax unified
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  241              		@ args = 0, pretend = 0, frame = 8
  242              		@ frame_needed = 0, uses_anonymous_args = 0
  243 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
-ARM GAS  /tmp/cc6XbagK.s 			page 5
+ARM GAS  /tmp/cc3cYkpO.s 			page 5
 
 
  244 0002 6A46     		mov	r2, sp
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  302 0004 9210     		asrs	r2, r2, #2
  303 0006 8908     		lsrs	r1, r1, #2
  304 0008 D2B2     		uxtb	r2, r2
-ARM GAS  /tmp/cc6XbagK.s 			page 6
+ARM GAS  /tmp/cc3cYkpO.s 			page 6
 
 
  305 000a C9B2     		uxtb	r1, r1
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  363 0000 0B00     		movs	r3, r1
  364 0002 10B5     		push	{r4, lr}
  365 0004 0B4C     		ldr	r4, .L41
-ARM GAS  /tmp/cc6XbagK.s 			page 7
+ARM GAS  /tmp/cc3cYkpO.s 			page 7
 
 
  366 0006 86B0     		sub	sp, sp, #24
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  422              		.align	2
  423              	.L44:
  424 0024 01140000 		.word	5121
-ARM GAS  /tmp/cc6XbagK.s 			page 8
+ARM GAS  /tmp/cc3cYkpO.s 			page 8
 
 
  426              		.section	.text.lr11xx_system_get_and_clear_irq_status,"ax",%progbits
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  483 000a 0023     		movs	r3, #0
  484 000c 1143     		orrs	r1, r2
  485 000e A173     		strb	r1, [r4, #14]
-ARM GAS  /tmp/cc6XbagK.s 			page 9
+ARM GAS  /tmp/cc3cYkpO.s 			page 9
 
 
  486 0010 0322     		movs	r2, #3
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  544 0008 0023     		movs	r3, #0
  545 000a 1A00     		movs	r2, r3
  546 000c 9942     		cmp	r1, r3
-ARM GAS  /tmp/cc6XbagK.s 			page 10
+ARM GAS  /tmp/cc3cYkpO.s 			page 10
 
 
  547 000e 00D0     		beq	.L62
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  605 0006 02A9     		add	r1, sp, #8
  606 0008 6A46     		mov	r2, sp
  607 000a 0B80     		strh	r3, [r1]
-ARM GAS  /tmp/cc6XbagK.s 			page 11
+ARM GAS  /tmp/cc3cYkpO.s 			page 11
 
 
  608 000c 0023     		movs	r3, #0
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  664              	.L76:
  665 0032 C046     		.align	2
  666              	.L75:
-ARM GAS  /tmp/cc6XbagK.s 			page 12
+ARM GAS  /tmp/cc3cYkpO.s 			page 12
 
 
  667 0034 011B0000 		.word	6913
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  727 000a 0222     		movs	r2, #2
  728 000c 0093     		str	r3, [sp]
  729 000e FFF7FEFF 		bl	lr11xx_hal_write
-ARM GAS  /tmp/cc6XbagK.s 			page 13
+ARM GAS  /tmp/cc3cYkpO.s 			page 13
 
 
  730 0012 05B0     		add	sp, sp, #20
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  788 0018 2A71     		strb	r2, [r5, #4]
  789 001a 5F18     		adds	r7, r3, r1
  790 001c 04AA     		add	r2, sp, #16
-ARM GAS  /tmp/cc6XbagK.s 			page 14
+ARM GAS  /tmp/cc3cYkpO.s 			page 14
 
 
  791              	.L88:
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  847 0028 0028     		cmp	r0, #0
  848 002a 0DD0     		beq	.L94
  849              	.L96:
-ARM GAS  /tmp/cc6XbagK.s 			page 15
+ARM GAS  /tmp/cc3cYkpO.s 			page 15
 
 
  850 002c 04B0     		add	sp, sp, #16
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  907              		.thumb_func
  909              	lr11xx_system_read_join_eui:
  910              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  /tmp/cc6XbagK.s 			page 16
+ARM GAS  /tmp/cc3cYkpO.s 			page 16
 
 
  911              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  969 0006 164D     		ldr	r5, .L109
  970 0008 03A9     		add	r1, sp, #12
  971 000a 0D80     		strh	r5, [r1]
-ARM GAS  /tmp/cc6XbagK.s 			page 17
+ARM GAS  /tmp/cc3cYkpO.s 			page 17
 
 
  972 000c 2578     		ldrb	r5, [r4]
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  1028 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
  1029 0002 054A     		ldr	r2, .L112
  1030 0004 0B00     		movs	r3, r1
-ARM GAS  /tmp/cc6XbagK.s 			page 18
+ARM GAS  /tmp/cc3cYkpO.s 			page 18
 
 
  1031 0006 03A9     		add	r1, sp, #12
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  1089 000c 0322     		movs	r2, #3
  1090 000e 0093     		str	r3, [sp]
  1091 0010 03A9     		add	r1, sp, #12
-ARM GAS  /tmp/cc6XbagK.s 			page 19
+ARM GAS  /tmp/cc3cYkpO.s 			page 19
 
 
  1092 0012 FFF7FEFF 		bl	lr11xx_hal_write
@@ -1090,106 +1090,106 @@ ARM GAS  /tmp/cc6XbagK.s 			page 1
  1098              	.L118:
  1099 001c 012A0000 		.word	10753
  1101              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc6XbagK.s 			page 20
+ARM GAS  /tmp/cc3cYkpO.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lr11xx_system.c
-     /tmp/cc6XbagK.s:14     .text.lr11xx_system_reset:00000000 $t
-     /tmp/cc6XbagK.s:20     .text.lr11xx_system_reset:00000000 lr11xx_system_reset
-     /tmp/cc6XbagK.s:29     .text.lr11xx_system_get_status:00000000 $t
-     /tmp/cc6XbagK.s:35     .text.lr11xx_system_get_status:00000000 lr11xx_system_get_status
-     /tmp/cc6XbagK.s:84     .text.lr11xx_system_clear_reset_status_info:00000000 $t
-     /tmp/cc6XbagK.s:90     .text.lr11xx_system_clear_reset_status_info:00000000 lr11xx_system_clear_reset_status_info
-     /tmp/cc6XbagK.s:106    .text.lr11xx_system_get_version:00000000 $t
-     /tmp/cc6XbagK.s:112    .text.lr11xx_system_get_version:00000000 lr11xx_system_get_version
-     /tmp/cc6XbagK.s:143    .text.lr11xx_system_get_errors:00000000 $t
-     /tmp/cc6XbagK.s:149    .text.lr11xx_system_get_errors:00000000 lr11xx_system_get_errors
-     /tmp/cc6XbagK.s:177    .text.lr11xx_system_get_errors:0000002c $d
-     /tmp/cc6XbagK.s:180    .text.lr11xx_system_clear_errors:00000000 $t
-     /tmp/cc6XbagK.s:186    .text.lr11xx_system_clear_errors:00000000 lr11xx_system_clear_errors
-     /tmp/cc6XbagK.s:203    .text.lr11xx_system_clear_errors:00000018 $d
-     /tmp/cc6XbagK.s:206    .text.lr11xx_system_calibrate:00000000 $t
-     /tmp/cc6XbagK.s:212    .text.lr11xx_system_calibrate:00000000 lr11xx_system_calibrate
-     /tmp/cc6XbagK.s:231    .text.lr11xx_system_calibrate:0000001c $d
-     /tmp/cc6XbagK.s:234    .text.lr11xx_system_set_reg_mode:00000000 $t
-     /tmp/cc6XbagK.s:240    .text.lr11xx_system_set_reg_mode:00000000 lr11xx_system_set_reg_mode
-     /tmp/cc6XbagK.s:259    .text.lr11xx_system_set_reg_mode:0000001c $d
-     /tmp/cc6XbagK.s:262    .text.lr11xx_system_calibrate_image:00000000 $t
-     /tmp/cc6XbagK.s:268    .text.lr11xx_system_calibrate_image:00000000 lr11xx_system_calibrate_image
-     /tmp/cc6XbagK.s:288    .text.lr11xx_system_calibrate_image:0000001c $d
-     /tmp/cc6XbagK.s:291    .text.lr11xx_system_calibrate_image_in_mhz:00000000 $t
-     /tmp/cc6XbagK.s:297    .text.lr11xx_system_calibrate_image_in_mhz:00000000 lr11xx_system_calibrate_image_in_mhz
-     /tmp/cc6XbagK.s:311    .text.lr11xx_system_set_dio_as_rf_switch:00000000 $t
-     /tmp/cc6XbagK.s:317    .text.lr11xx_system_set_dio_as_rf_switch:00000000 lr11xx_system_set_dio_as_rf_switch
-     /tmp/cc6XbagK.s:351    .text.lr11xx_system_set_dio_as_rf_switch:00000038 $d
-     /tmp/cc6XbagK.s:354    .text.lr11xx_system_set_dio_irq_params:00000000 $t
-     /tmp/cc6XbagK.s:360    .text.lr11xx_system_set_dio_irq_params:00000000 lr11xx_system_set_dio_irq_params
-     /tmp/cc6XbagK.s:391    .text.lr11xx_system_set_dio_irq_params:00000034 $d
-     /tmp/cc6XbagK.s:394    .text.lr11xx_system_clear_irq_status:00000000 $t
-     /tmp/cc6XbagK.s:400    .text.lr11xx_system_clear_irq_status:00000000 lr11xx_system_clear_irq_status
-     /tmp/cc6XbagK.s:424    .text.lr11xx_system_clear_irq_status:00000024 $d
-     /tmp/cc6XbagK.s:427    .text.lr11xx_system_get_and_clear_irq_status:00000000 $t
-     /tmp/cc6XbagK.s:433    .text.lr11xx_system_get_and_clear_irq_status:00000000 lr11xx_system_get_and_clear_irq_status
-     /tmp/cc6XbagK.s:469    .text.lr11xx_system_cfg_lfclk:00000000 $t
-     /tmp/cc6XbagK.s:475    .text.lr11xx_system_cfg_lfclk:00000000 lr11xx_system_cfg_lfclk
-     /tmp/cc6XbagK.s:496    .text.lr11xx_system_cfg_lfclk:00000020 $d
-     /tmp/cc6XbagK.s:499    .text.lr11xx_system_set_tcxo_mode:00000000 $t
-     /tmp/cc6XbagK.s:505    .text.lr11xx_system_set_tcxo_mode:00000000 lr11xx_system_set_tcxo_mode
-     /tmp/cc6XbagK.s:528    .text.lr11xx_system_set_tcxo_mode:00000024 $d
-     /tmp/cc6XbagK.s:531    .text.lr11xx_system_reboot:00000000 $t
-     /tmp/cc6XbagK.s:537    .text.lr11xx_system_reboot:00000000 lr11xx_system_reboot
-     /tmp/cc6XbagK.s:563    .text.lr11xx_system_reboot:00000028 $d
-     /tmp/cc6XbagK.s:566    .text.lr11xx_system_get_vbat:00000000 $t
-     /tmp/cc6XbagK.s:572    .text.lr11xx_system_get_vbat:00000000 lr11xx_system_get_vbat
-     /tmp/cc6XbagK.s:590    .text.lr11xx_system_get_vbat:00000018 $d
-     /tmp/cc6XbagK.s:593    .text.lr11xx_system_get_temp:00000000 $t
-     /tmp/cc6XbagK.s:599    .text.lr11xx_system_get_temp:00000000 lr11xx_system_get_temp
-     /tmp/cc6XbagK.s:627    .text.lr11xx_system_get_temp:0000002c $d
-     /tmp/cc6XbagK.s:630    .text.lr11xx_system_set_sleep:00000000 $t
-     /tmp/cc6XbagK.s:636    .text.lr11xx_system_set_sleep:00000000 lr11xx_system_set_sleep
-     /tmp/cc6XbagK.s:667    .text.lr11xx_system_set_sleep:00000034 $d
-     /tmp/cc6XbagK.s:670    .text.lr11xx_system_set_standby:00000000 $t
-ARM GAS  /tmp/cc6XbagK.s 			page 21
+     /tmp/cc3cYkpO.s:14     .text.lr11xx_system_reset:00000000 $t
+     /tmp/cc3cYkpO.s:20     .text.lr11xx_system_reset:00000000 lr11xx_system_reset
+     /tmp/cc3cYkpO.s:29     .text.lr11xx_system_get_status:00000000 $t
+     /tmp/cc3cYkpO.s:35     .text.lr11xx_system_get_status:00000000 lr11xx_system_get_status
+     /tmp/cc3cYkpO.s:84     .text.lr11xx_system_clear_reset_status_info:00000000 $t
+     /tmp/cc3cYkpO.s:90     .text.lr11xx_system_clear_reset_status_info:00000000 lr11xx_system_clear_reset_status_info
+     /tmp/cc3cYkpO.s:106    .text.lr11xx_system_get_version:00000000 $t
+     /tmp/cc3cYkpO.s:112    .text.lr11xx_system_get_version:00000000 lr11xx_system_get_version
+     /tmp/cc3cYkpO.s:143    .text.lr11xx_system_get_errors:00000000 $t
+     /tmp/cc3cYkpO.s:149    .text.lr11xx_system_get_errors:00000000 lr11xx_system_get_errors
+     /tmp/cc3cYkpO.s:177    .text.lr11xx_system_get_errors:0000002c $d
+     /tmp/cc3cYkpO.s:180    .text.lr11xx_system_clear_errors:00000000 $t
+     /tmp/cc3cYkpO.s:186    .text.lr11xx_system_clear_errors:00000000 lr11xx_system_clear_errors
+     /tmp/cc3cYkpO.s:203    .text.lr11xx_system_clear_errors:00000018 $d
+     /tmp/cc3cYkpO.s:206    .text.lr11xx_system_calibrate:00000000 $t
+     /tmp/cc3cYkpO.s:212    .text.lr11xx_system_calibrate:00000000 lr11xx_system_calibrate
+     /tmp/cc3cYkpO.s:231    .text.lr11xx_system_calibrate:0000001c $d
+     /tmp/cc3cYkpO.s:234    .text.lr11xx_system_set_reg_mode:00000000 $t
+     /tmp/cc3cYkpO.s:240    .text.lr11xx_system_set_reg_mode:00000000 lr11xx_system_set_reg_mode
+     /tmp/cc3cYkpO.s:259    .text.lr11xx_system_set_reg_mode:0000001c $d
+     /tmp/cc3cYkpO.s:262    .text.lr11xx_system_calibrate_image:00000000 $t
+     /tmp/cc3cYkpO.s:268    .text.lr11xx_system_calibrate_image:00000000 lr11xx_system_calibrate_image
+     /tmp/cc3cYkpO.s:288    .text.lr11xx_system_calibrate_image:0000001c $d
+     /tmp/cc3cYkpO.s:291    .text.lr11xx_system_calibrate_image_in_mhz:00000000 $t
+     /tmp/cc3cYkpO.s:297    .text.lr11xx_system_calibrate_image_in_mhz:00000000 lr11xx_system_calibrate_image_in_mhz
+     /tmp/cc3cYkpO.s:311    .text.lr11xx_system_set_dio_as_rf_switch:00000000 $t
+     /tmp/cc3cYkpO.s:317    .text.lr11xx_system_set_dio_as_rf_switch:00000000 lr11xx_system_set_dio_as_rf_switch
+     /tmp/cc3cYkpO.s:351    .text.lr11xx_system_set_dio_as_rf_switch:00000038 $d
+     /tmp/cc3cYkpO.s:354    .text.lr11xx_system_set_dio_irq_params:00000000 $t
+     /tmp/cc3cYkpO.s:360    .text.lr11xx_system_set_dio_irq_params:00000000 lr11xx_system_set_dio_irq_params
+     /tmp/cc3cYkpO.s:391    .text.lr11xx_system_set_dio_irq_params:00000034 $d
+     /tmp/cc3cYkpO.s:394    .text.lr11xx_system_clear_irq_status:00000000 $t
+     /tmp/cc3cYkpO.s:400    .text.lr11xx_system_clear_irq_status:00000000 lr11xx_system_clear_irq_status
+     /tmp/cc3cYkpO.s:424    .text.lr11xx_system_clear_irq_status:00000024 $d
+     /tmp/cc3cYkpO.s:427    .text.lr11xx_system_get_and_clear_irq_status:00000000 $t
+     /tmp/cc3cYkpO.s:433    .text.lr11xx_system_get_and_clear_irq_status:00000000 lr11xx_system_get_and_clear_irq_status
+     /tmp/cc3cYkpO.s:469    .text.lr11xx_system_cfg_lfclk:00000000 $t
+     /tmp/cc3cYkpO.s:475    .text.lr11xx_system_cfg_lfclk:00000000 lr11xx_system_cfg_lfclk
+     /tmp/cc3cYkpO.s:496    .text.lr11xx_system_cfg_lfclk:00000020 $d
+     /tmp/cc3cYkpO.s:499    .text.lr11xx_system_set_tcxo_mode:00000000 $t
+     /tmp/cc3cYkpO.s:505    .text.lr11xx_system_set_tcxo_mode:00000000 lr11xx_system_set_tcxo_mode
+     /tmp/cc3cYkpO.s:528    .text.lr11xx_system_set_tcxo_mode:00000024 $d
+     /tmp/cc3cYkpO.s:531    .text.lr11xx_system_reboot:00000000 $t
+     /tmp/cc3cYkpO.s:537    .text.lr11xx_system_reboot:00000000 lr11xx_system_reboot
+     /tmp/cc3cYkpO.s:563    .text.lr11xx_system_reboot:00000028 $d
+     /tmp/cc3cYkpO.s:566    .text.lr11xx_system_get_vbat:00000000 $t
+     /tmp/cc3cYkpO.s:572    .text.lr11xx_system_get_vbat:00000000 lr11xx_system_get_vbat
+     /tmp/cc3cYkpO.s:590    .text.lr11xx_system_get_vbat:00000018 $d
+     /tmp/cc3cYkpO.s:593    .text.lr11xx_system_get_temp:00000000 $t
+     /tmp/cc3cYkpO.s:599    .text.lr11xx_system_get_temp:00000000 lr11xx_system_get_temp
+     /tmp/cc3cYkpO.s:627    .text.lr11xx_system_get_temp:0000002c $d
+     /tmp/cc3cYkpO.s:630    .text.lr11xx_system_set_sleep:00000000 $t
+     /tmp/cc3cYkpO.s:636    .text.lr11xx_system_set_sleep:00000000 lr11xx_system_set_sleep
+     /tmp/cc3cYkpO.s:667    .text.lr11xx_system_set_sleep:00000034 $d
+     /tmp/cc3cYkpO.s:670    .text.lr11xx_system_set_standby:00000000 $t
+ARM GAS  /tmp/cc3cYkpO.s 			page 21
 
 
-     /tmp/cc6XbagK.s:676    .text.lr11xx_system_set_standby:00000000 lr11xx_system_set_standby
-     /tmp/cc6XbagK.s:695    .text.lr11xx_system_set_standby:0000001c $d
-     /tmp/cc6XbagK.s:698    .text.lr11xx_system_wakeup:00000000 $t
-     /tmp/cc6XbagK.s:704    .text.lr11xx_system_wakeup:00000000 lr11xx_system_wakeup
-     /tmp/cc6XbagK.s:713    .text.lr11xx_system_set_fs:00000000 $t
-     /tmp/cc6XbagK.s:719    .text.lr11xx_system_set_fs:00000000 lr11xx_system_set_fs
-     /tmp/cc6XbagK.s:736    .text.lr11xx_system_set_fs:00000018 $d
-     /tmp/cc6XbagK.s:739    .text.lr11xx_system_erase_infopage:00000000 $t
-     /tmp/cc6XbagK.s:745    .text.lr11xx_system_erase_infopage:00000000 lr11xx_system_erase_infopage
-     /tmp/cc6XbagK.s:764    .text.lr11xx_system_erase_infopage:0000001c $d
-     /tmp/cc6XbagK.s:767    .text.lr11xx_system_write_infopage:00000000 $t
-     /tmp/cc6XbagK.s:773    .text.lr11xx_system_write_infopage:00000000 lr11xx_system_write_infopage
-     /tmp/cc6XbagK.s:816    .text.lr11xx_system_write_infopage:00000048 $d
-     /tmp/cc6XbagK.s:819    .text.lr11xx_system_read_infopage:00000000 $t
-     /tmp/cc6XbagK.s:825    .text.lr11xx_system_read_infopage:00000000 lr11xx_system_read_infopage
-     /tmp/cc6XbagK.s:873    .text.lr11xx_system_read_infopage:00000050 $d
-     /tmp/cc6XbagK.s:876    .text.lr11xx_system_read_uid:00000000 $t
-     /tmp/cc6XbagK.s:882    .text.lr11xx_system_read_uid:00000000 lr11xx_system_read_uid
-     /tmp/cc6XbagK.s:900    .text.lr11xx_system_read_uid:00000018 $d
-     /tmp/cc6XbagK.s:903    .text.lr11xx_system_read_join_eui:00000000 $t
-     /tmp/cc6XbagK.s:909    .text.lr11xx_system_read_join_eui:00000000 lr11xx_system_read_join_eui
-     /tmp/cc6XbagK.s:927    .text.lr11xx_system_read_join_eui:00000018 $d
-     /tmp/cc6XbagK.s:930    .text.lr11xx_system_read_pin:00000000 $t
-     /tmp/cc6XbagK.s:936    .text.lr11xx_system_read_pin:00000000 lr11xx_system_read_pin
-     /tmp/cc6XbagK.s:954    .text.lr11xx_system_read_pin:00000018 $d
-     /tmp/cc6XbagK.s:957    .text.lr11xx_system_read_pin_custom_eui:00000000 $t
-     /tmp/cc6XbagK.s:963    .text.lr11xx_system_read_pin_custom_eui:00000000 lr11xx_system_read_pin_custom_eui
-     /tmp/cc6XbagK.s:1016   .text.lr11xx_system_read_pin_custom_eui:00000060 $d
-     /tmp/cc6XbagK.s:1019   .text.lr11xx_system_get_random_number:00000000 $t
-     /tmp/cc6XbagK.s:1025   .text.lr11xx_system_get_random_number:00000000 lr11xx_system_get_random_number
-     /tmp/cc6XbagK.s:1043   .text.lr11xx_system_get_random_number:00000018 $d
-     /tmp/cc6XbagK.s:1046   .text.lr11xx_system_enable_spi_crc:00000000 $t
-     /tmp/cc6XbagK.s:1052   .text.lr11xx_system_enable_spi_crc:00000000 lr11xx_system_enable_spi_crc
-     /tmp/cc6XbagK.s:1071   .text.lr11xx_system_enable_spi_crc:0000001c $d
-     /tmp/cc6XbagK.s:1074   .text.lr11xx_system_drive_dio_in_sleep_mode:00000000 $t
-     /tmp/cc6XbagK.s:1080   .text.lr11xx_system_drive_dio_in_sleep_mode:00000000 lr11xx_system_drive_dio_in_sleep_mode
-     /tmp/cc6XbagK.s:1099   .text.lr11xx_system_drive_dio_in_sleep_mode:0000001c $d
+     /tmp/cc3cYkpO.s:676    .text.lr11xx_system_set_standby:00000000 lr11xx_system_set_standby
+     /tmp/cc3cYkpO.s:695    .text.lr11xx_system_set_standby:0000001c $d
+     /tmp/cc3cYkpO.s:698    .text.lr11xx_system_wakeup:00000000 $t
+     /tmp/cc3cYkpO.s:704    .text.lr11xx_system_wakeup:00000000 lr11xx_system_wakeup
+     /tmp/cc3cYkpO.s:713    .text.lr11xx_system_set_fs:00000000 $t
+     /tmp/cc3cYkpO.s:719    .text.lr11xx_system_set_fs:00000000 lr11xx_system_set_fs
+     /tmp/cc3cYkpO.s:736    .text.lr11xx_system_set_fs:00000018 $d
+     /tmp/cc3cYkpO.s:739    .text.lr11xx_system_erase_infopage:00000000 $t
+     /tmp/cc3cYkpO.s:745    .text.lr11xx_system_erase_infopage:00000000 lr11xx_system_erase_infopage
+     /tmp/cc3cYkpO.s:764    .text.lr11xx_system_erase_infopage:0000001c $d
+     /tmp/cc3cYkpO.s:767    .text.lr11xx_system_write_infopage:00000000 $t
+     /tmp/cc3cYkpO.s:773    .text.lr11xx_system_write_infopage:00000000 lr11xx_system_write_infopage
+     /tmp/cc3cYkpO.s:816    .text.lr11xx_system_write_infopage:00000048 $d
+     /tmp/cc3cYkpO.s:819    .text.lr11xx_system_read_infopage:00000000 $t
+     /tmp/cc3cYkpO.s:825    .text.lr11xx_system_read_infopage:00000000 lr11xx_system_read_infopage
+     /tmp/cc3cYkpO.s:873    .text.lr11xx_system_read_infopage:00000050 $d
+     /tmp/cc3cYkpO.s:876    .text.lr11xx_system_read_uid:00000000 $t
+     /tmp/cc3cYkpO.s:882    .text.lr11xx_system_read_uid:00000000 lr11xx_system_read_uid
+     /tmp/cc3cYkpO.s:900    .text.lr11xx_system_read_uid:00000018 $d
+     /tmp/cc3cYkpO.s:903    .text.lr11xx_system_read_join_eui:00000000 $t
+     /tmp/cc3cYkpO.s:909    .text.lr11xx_system_read_join_eui:00000000 lr11xx_system_read_join_eui
+     /tmp/cc3cYkpO.s:927    .text.lr11xx_system_read_join_eui:00000018 $d
+     /tmp/cc3cYkpO.s:930    .text.lr11xx_system_read_pin:00000000 $t
+     /tmp/cc3cYkpO.s:936    .text.lr11xx_system_read_pin:00000000 lr11xx_system_read_pin
+     /tmp/cc3cYkpO.s:954    .text.lr11xx_system_read_pin:00000018 $d
+     /tmp/cc3cYkpO.s:957    .text.lr11xx_system_read_pin_custom_eui:00000000 $t
+     /tmp/cc3cYkpO.s:963    .text.lr11xx_system_read_pin_custom_eui:00000000 lr11xx_system_read_pin_custom_eui
+     /tmp/cc3cYkpO.s:1016   .text.lr11xx_system_read_pin_custom_eui:00000060 $d
+     /tmp/cc3cYkpO.s:1019   .text.lr11xx_system_get_random_number:00000000 $t
+     /tmp/cc3cYkpO.s:1025   .text.lr11xx_system_get_random_number:00000000 lr11xx_system_get_random_number
+     /tmp/cc3cYkpO.s:1043   .text.lr11xx_system_get_random_number:00000018 $d
+     /tmp/cc3cYkpO.s:1046   .text.lr11xx_system_enable_spi_crc:00000000 $t
+     /tmp/cc3cYkpO.s:1052   .text.lr11xx_system_enable_spi_crc:00000000 lr11xx_system_enable_spi_crc
+     /tmp/cc3cYkpO.s:1071   .text.lr11xx_system_enable_spi_crc:0000001c $d
+     /tmp/cc3cYkpO.s:1074   .text.lr11xx_system_drive_dio_in_sleep_mode:00000000 $t
+     /tmp/cc3cYkpO.s:1080   .text.lr11xx_system_drive_dio_in_sleep_mode:00000000 lr11xx_system_drive_dio_in_sleep_mode
+     /tmp/cc3cYkpO.s:1099   .text.lr11xx_system_drive_dio_in_sleep_mode:0000001c $d
 
 UNDEFINED SYMBOLS
 lr11xx_hal_reset

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccGkTA3p.s 			page 1
+ARM GAS  /tmp/ccY5Uq0n.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccGkTA3p.s 			page 1
   58 0008 0B43     		orrs	r3, r1
   59 000a 1360     		str	r3, [r2]
   60 000c 7047     		bx	lr
-ARM GAS  /tmp/ccGkTA3p.s 			page 2
+ARM GAS  /tmp/ccY5Uq0n.s 			page 2
 
 
   61              	.L6:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccGkTA3p.s 			page 1
  119 0024 9968     		ldr	r1, [r3, #8]
  120 0026 0A40     		ands	r2, r1
  121 0028 8021     		movs	r1, #128
-ARM GAS  /tmp/ccGkTA3p.s 			page 3
+ARM GAS  /tmp/ccY5Uq0n.s 			page 3
 
 
  122 002a 9A60     		str	r2, [r3, #8]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccGkTA3p.s 			page 1
  178 0004 1168     		ldr	r1, [r2]
  179 0006 0B43     		orrs	r3, r1
  180 0008 1360     		str	r3, [r2]
-ARM GAS  /tmp/ccGkTA3p.s 			page 4
+ARM GAS  /tmp/ccY5Uq0n.s 			page 4
 
 
  181 000a 7047     		bx	lr
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccGkTA3p.s 			page 1
  241              		@ frame_needed = 0, uses_anonymous_args = 0
  242              		@ link register save eliminated.
  243 0000 024A     		ldr	r2, .L42
-ARM GAS  /tmp/ccGkTA3p.s 			page 5
+ARM GAS  /tmp/ccY5Uq0n.s 			page 5
 
 
  244              		@ sp needed
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccGkTA3p.s 			page 1
  300              	@ 0 "" 2
  301              		.thumb
  302              		.syntax unified
-ARM GAS  /tmp/ccGkTA3p.s 			page 6
+ARM GAS  /tmp/ccY5Uq0n.s 			page 6
 
 
  303              	.L47:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccGkTA3p.s 			page 1
  359 000a 3400     		movs	r4, r6
  360 000c 0127     		movs	r7, #1
  361 000e 174A     		ldr	r2, .L80+4
-ARM GAS  /tmp/ccGkTA3p.s 			page 7
+ARM GAS  /tmp/ccY5Uq0n.s 			page 7
 
 
  362 0010 8000     		lsls	r0, r0, #2
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccGkTA3p.s 			page 1
  416 0060 20BF     		wfe
  417              	@ 0 "" 2
  418              	@ 590 "bsp_l0/mcu_drivers/STM32L0xx_HAL_Driver/Src/stm32l0xx_hal_pwr.c" 1
-ARM GAS  /tmp/ccGkTA3p.s 			page 8
+ARM GAS  /tmp/ccY5Uq0n.s 			page 8
 
 
  419 0062 20BF     		wfe
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccGkTA3p.s 			page 1
  477              		@ link register save eliminated.
  478 0000 0223     		movs	r3, #2
  479              		@ sp needed
-ARM GAS  /tmp/ccGkTA3p.s 			page 9
+ARM GAS  /tmp/ccY5Uq0n.s 			page 9
 
 
  480 0002 024A     		ldr	r2, .L86
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccGkTA3p.s 			page 1
  539              		.syntax unified
  540              		.code	16
  541              		.thumb_func
-ARM GAS  /tmp/ccGkTA3p.s 			page 10
+ARM GAS  /tmp/ccY5Uq0n.s 			page 10
 
 
  543              	HAL_PWR_DisableSEVOnPend:
@@ -594,60 +594,60 @@ ARM GAS  /tmp/ccGkTA3p.s 			page 1
  597              	.L103:
  598 0018 00040140 		.word	1073808384
  600              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccGkTA3p.s 			page 11
+ARM GAS  /tmp/ccY5Uq0n.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32l0xx_hal_pwr.c
-     /tmp/ccGkTA3p.s:14     .text.HAL_PWR_DeInit:00000000 $t
-     /tmp/ccGkTA3p.s:20     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
-     /tmp/ccGkTA3p.s:39     .text.HAL_PWR_DeInit:00000018 $d
-     /tmp/ccGkTA3p.s:43     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
-     /tmp/ccGkTA3p.s:49     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
-     /tmp/ccGkTA3p.s:64     .text.HAL_PWR_EnableBkUpAccess:00000010 $d
-     /tmp/ccGkTA3p.s:67     .text.HAL_PWR_DisableBkUpAccess:00000000 $t
-     /tmp/ccGkTA3p.s:73     .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
-     /tmp/ccGkTA3p.s:87     .text.HAL_PWR_DisableBkUpAccess:0000000c $d
-     /tmp/ccGkTA3p.s:91     .text.HAL_PWR_ConfigPVD:00000000 $t
-     /tmp/ccGkTA3p.s:97     .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
-     /tmp/ccGkTA3p.s:160    .text.HAL_PWR_ConfigPVD:00000068 $d
-     /tmp/ccGkTA3p.s:165    .text.HAL_PWR_EnablePVD:00000000 $t
-     /tmp/ccGkTA3p.s:171    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
-     /tmp/ccGkTA3p.s:185    .text.HAL_PWR_EnablePVD:0000000c $d
-     /tmp/ccGkTA3p.s:188    .text.HAL_PWR_DisablePVD:00000000 $t
-     /tmp/ccGkTA3p.s:194    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
-     /tmp/ccGkTA3p.s:208    .text.HAL_PWR_DisablePVD:0000000c $d
-     /tmp/ccGkTA3p.s:211    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
-     /tmp/ccGkTA3p.s:217    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
-     /tmp/ccGkTA3p.s:230    .text.HAL_PWR_EnableWakeUpPin:0000000c $d
-     /tmp/ccGkTA3p.s:233    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
-     /tmp/ccGkTA3p.s:239    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
-     /tmp/ccGkTA3p.s:252    .text.HAL_PWR_DisableWakeUpPin:0000000c $d
-     /tmp/ccGkTA3p.s:255    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
-     /tmp/ccGkTA3p.s:261    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
-     /tmp/ccGkTA3p.s:339    .text.HAL_PWR_EnterSLEEPMode:00000060 $d
-     /tmp/ccGkTA3p.s:345    .text.HAL_PWR_EnterSTOPMode:00000000 $t
-     /tmp/ccGkTA3p.s:351    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
-     /tmp/ccGkTA3p.s:427    .text.HAL_PWR_EnterSTOPMode:00000068 $d
-     /tmp/ccGkTA3p.s:433    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
-     /tmp/ccGkTA3p.s:439    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
-     /tmp/ccGkTA3p.s:464    .text.HAL_PWR_EnterSTANDBYMode:00000018 $d
-     /tmp/ccGkTA3p.s:468    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
-     /tmp/ccGkTA3p.s:474    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
-     /tmp/ccGkTA3p.s:488    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
-     /tmp/ccGkTA3p.s:491    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
-     /tmp/ccGkTA3p.s:497    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
-     /tmp/ccGkTA3p.s:511    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
-     /tmp/ccGkTA3p.s:514    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
-     /tmp/ccGkTA3p.s:520    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
-     /tmp/ccGkTA3p.s:534    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
-     /tmp/ccGkTA3p.s:537    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
-     /tmp/ccGkTA3p.s:543    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
-     /tmp/ccGkTA3p.s:557    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
-     /tmp/ccGkTA3p.s:560    .text.HAL_PWR_PVDCallback:00000000 $t
-     /tmp/ccGkTA3p.s:566    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
-     /tmp/ccGkTA3p.s:574    .text.HAL_PWR_PVD_IRQHandler:00000000 $t
-     /tmp/ccGkTA3p.s:580    .text.HAL_PWR_PVD_IRQHandler:00000000 HAL_PWR_PVD_IRQHandler
-     /tmp/ccGkTA3p.s:598    .text.HAL_PWR_PVD_IRQHandler:00000018 $d
+     /tmp/ccY5Uq0n.s:14     .text.HAL_PWR_DeInit:00000000 $t
+     /tmp/ccY5Uq0n.s:20     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
+     /tmp/ccY5Uq0n.s:39     .text.HAL_PWR_DeInit:00000018 $d
+     /tmp/ccY5Uq0n.s:43     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
+     /tmp/ccY5Uq0n.s:49     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
+     /tmp/ccY5Uq0n.s:64     .text.HAL_PWR_EnableBkUpAccess:00000010 $d
+     /tmp/ccY5Uq0n.s:67     .text.HAL_PWR_DisableBkUpAccess:00000000 $t
+     /tmp/ccY5Uq0n.s:73     .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
+     /tmp/ccY5Uq0n.s:87     .text.HAL_PWR_DisableBkUpAccess:0000000c $d
+     /tmp/ccY5Uq0n.s:91     .text.HAL_PWR_ConfigPVD:00000000 $t
+     /tmp/ccY5Uq0n.s:97     .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
+     /tmp/ccY5Uq0n.s:160    .text.HAL_PWR_ConfigPVD:00000068 $d
+     /tmp/ccY5Uq0n.s:165    .text.HAL_PWR_EnablePVD:00000000 $t
+     /tmp/ccY5Uq0n.s:171    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
+     /tmp/ccY5Uq0n.s:185    .text.HAL_PWR_EnablePVD:0000000c $d
+     /tmp/ccY5Uq0n.s:188    .text.HAL_PWR_DisablePVD:00000000 $t
+     /tmp/ccY5Uq0n.s:194    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
+     /tmp/ccY5Uq0n.s:208    .text.HAL_PWR_DisablePVD:0000000c $d
+     /tmp/ccY5Uq0n.s:211    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
+     /tmp/ccY5Uq0n.s:217    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
+     /tmp/ccY5Uq0n.s:230    .text.HAL_PWR_EnableWakeUpPin:0000000c $d
+     /tmp/ccY5Uq0n.s:233    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
+     /tmp/ccY5Uq0n.s:239    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
+     /tmp/ccY5Uq0n.s:252    .text.HAL_PWR_DisableWakeUpPin:0000000c $d
+     /tmp/ccY5Uq0n.s:255    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
+     /tmp/ccY5Uq0n.s:261    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
+     /tmp/ccY5Uq0n.s:339    .text.HAL_PWR_EnterSLEEPMode:00000060 $d
+     /tmp/ccY5Uq0n.s:345    .text.HAL_PWR_EnterSTOPMode:00000000 $t
+     /tmp/ccY5Uq0n.s:351    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
+     /tmp/ccY5Uq0n.s:427    .text.HAL_PWR_EnterSTOPMode:00000068 $d
+     /tmp/ccY5Uq0n.s:433    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
+     /tmp/ccY5Uq0n.s:439    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
+     /tmp/ccY5Uq0n.s:464    .text.HAL_PWR_EnterSTANDBYMode:00000018 $d
+     /tmp/ccY5Uq0n.s:468    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
+     /tmp/ccY5Uq0n.s:474    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
+     /tmp/ccY5Uq0n.s:488    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
+     /tmp/ccY5Uq0n.s:491    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
+     /tmp/ccY5Uq0n.s:497    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
+     /tmp/ccY5Uq0n.s:511    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
+     /tmp/ccY5Uq0n.s:514    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
+     /tmp/ccY5Uq0n.s:520    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
+     /tmp/ccY5Uq0n.s:534    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
+     /tmp/ccY5Uq0n.s:537    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
+     /tmp/ccY5Uq0n.s:543    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
+     /tmp/ccY5Uq0n.s:557    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
+     /tmp/ccY5Uq0n.s:560    .text.HAL_PWR_PVDCallback:00000000 $t
+     /tmp/ccY5Uq0n.s:566    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
+     /tmp/ccY5Uq0n.s:574    .text.HAL_PWR_PVD_IRQHandler:00000000 $t
+     /tmp/ccY5Uq0n.s:580    .text.HAL_PWR_PVD_IRQHandler:00000000 HAL_PWR_PVD_IRQHandler
+     /tmp/ccY5Uq0n.s:598    .text.HAL_PWR_PVD_IRQHandler:00000018 $d
 
 NO UNDEFINED SYMBOLS

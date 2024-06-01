@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccP19rLi.s 			page 1
+ARM GAS  /tmp/ccn4InAK.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
   59              		.global	lorawan_certification_get_enabled
   60              		.syntax unified
   61              		.code	16
-ARM GAS  /tmp/ccP19rLi.s 			page 2
+ARM GAS  /tmp/ccn4InAK.s 			page 2
 
 
   62              		.thumb_func
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  124              		.align	1
  125              		.global	lorawan_certification_is_cw_running
  126              		.syntax unified
-ARM GAS  /tmp/ccP19rLi.s 			page 3
+ARM GAS  /tmp/ccn4InAK.s 			page 3
 
 
  127              		.code	16
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  186      656D5F63 
  186      6F72652F 
  187 0033 6174696F 		.ascii	"ation.c\000"
-ARM GAS  /tmp/ccP19rLi.s 			page 4
+ARM GAS  /tmp/ccn4InAK.s 			page 4
 
 
  187      6E2E6300 
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  230              	.LCB181:
  231 0028 0B78     		ldrb	r3, [r1]
  232 002a 0193     		str	r3, [sp, #4]
-ARM GAS  /tmp/ccP19rLi.s 			page 5
+ARM GAS  /tmp/ccn4InAK.s 			page 5
 
 
  233 002c 222B     		cmp	r3, #34
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  287 0090 B7E1     		b	.L39	@long jump
  288              	.LCB201:
  289 0092 402B     		cmp	r3, #64
-ARM GAS  /tmp/ccP19rLi.s 			page 6
+ARM GAS  /tmp/ccn4InAK.s 			page 6
 
 
  290 0094 00D1     		bne	.LCB203
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  344 0102 5A1C     		adds	r2, r3, #1
  345 0104 2270     		strb	r2, [r4]
  346 0106 02AA     		add	r2, sp, #8
-ARM GAS  /tmp/ccP19rLi.s 			page 7
+ARM GAS  /tmp/ccn4InAK.s 			page 7
 
 
  347 0108 9278     		ldrb	r2, [r2, #2]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  401 0172 0022     		movs	r2, #0
  402 0174 F254     		strb	r2, [r6, r3]
  403 0176 2378     		ldrb	r3, [r4]
-ARM GAS  /tmp/ccP19rLi.s 			page 8
+ARM GAS  /tmp/ccn4InAK.s 			page 8
 
 
  404 0178 5A1C     		adds	r2, r3, #1
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  458 01dc 7349     		ldr	r1, .L84+4
  459 01de 7548     		ldr	r0, .L84+12
  460 01e0 DBE7     		b	.L75
-ARM GAS  /tmp/ccP19rLi.s 			page 9
+ARM GAS  /tmp/ccn4InAK.s 			page 9
 
 
  461              	.L32:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  515 023e 08D1     		bne	.L53
  516 0240 009B     		ldr	r3, [sp]
  517 0242 5878     		ldrb	r0, [r3, #1]
-ARM GAS  /tmp/ccP19rLi.s 			page 10
+ARM GAS  /tmp/ccn4InAK.s 			page 10
 
 
  518 0244 0028     		cmp	r0, #0
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  572 029e 4349     		ldr	r1, .L84+4
  573 02a0 4448     		ldr	r0, .L84+12
  574 02a2 DAE7     		b	.L82
-ARM GAS  /tmp/ccP19rLi.s 			page 11
+ARM GAS  /tmp/ccn4InAK.s 			page 11
 
 
  575              	.L27:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  629 0308 591C     		adds	r1, r3, #1
  630 030a 2170     		strb	r1, [r4]
  631 030c F254     		strb	r2, [r6, r3]
-ARM GAS  /tmp/ccP19rLi.s 			page 12
+ARM GAS  /tmp/ccn4InAK.s 			page 12
 
 
  632 030e 7B88     		ldrh	r3, [r7, #2]
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  686 036c 022A     		cmp	r2, #2
  687 036e 08D1     		bne	.L67
  688 0370 009B     		ldr	r3, [sp]
-ARM GAS  /tmp/ccP19rLi.s 			page 13
+ARM GAS  /tmp/ccn4InAK.s 			page 13
 
 
  689 0372 5878     		ldrb	r0, [r3, #1]
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  743 03e8 511C     		adds	r1, r2, #1
  744 03ea 1B0A     		lsrs	r3, r3, #8
  745 03ec 2170     		strb	r1, [r4]
-ARM GAS  /tmp/ccP19rLi.s 			page 14
+ARM GAS  /tmp/ccn4InAK.s 			page 14
 
 
  746 03ee B354     		strb	r3, [r6, r2]
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  800 0450 0A4A     		ldr	r2, .L86
  801 0452 0B49     		ldr	r1, .L86+4
  802 0454 0B48     		ldr	r0, .L86+8
-ARM GAS  /tmp/ccP19rLi.s 			page 15
+ARM GAS  /tmp/ccn4InAK.s 			page 15
 
 
  803 0456 65E7     		b	.L83
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  859 0020 1B78     		ldrb	r3, [r3]
  860 0022 0393     		str	r3, [sp, #12]
  861 0024 FFF7FEFF 		bl	lorawan_api_beacon_get_metadata
-ARM GAS  /tmp/ccP19rLi.s 			page 16
+ARM GAS  /tmp/ccn4InAK.s 			page 16
 
 
  862 0028 0A9B     		ldr	r3, [sp, #40]
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  916 009c 020A     		lsrs	r2, r0, #8
  917 009e EA54     		strb	r2, [r5, r3]
  918 00a0 2378     		ldrb	r3, [r4]
-ARM GAS  /tmp/ccP19rLi.s 			page 17
+ARM GAS  /tmp/ccn4InAK.s 			page 17
 
 
  919 00a2 000C     		lsrs	r0, r0, #16
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  973 010e FFF7FEFF 		bl	smtc_decode_beacon_gw_specific
  974 0112 2378     		ldrb	r3, [r4]
  975 0114 0733     		adds	r3, r3, #7
-ARM GAS  /tmp/ccP19rLi.s 			page 18
+ARM GAS  /tmp/ccn4InAK.s 			page 18
 
 
  976 0116 2370     		strb	r3, [r4]
@@ -1047,43 +1047,43 @@ ARM GAS  /tmp/ccP19rLi.s 			page 1
  1000 0012 F000     		.short	240
  1001 0014 E001     		.short	480
  1002              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccP19rLi.s 			page 19
+ARM GAS  /tmp/ccn4InAK.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lorawan_certification.c
-     /tmp/ccP19rLi.s:14     .text.lorawan_certification_init:00000000 $t
-     /tmp/ccP19rLi.s:20     .text.lorawan_certification_init:00000000 lorawan_certification_init
-     /tmp/ccP19rLi.s:34     .text.lorawan_certification_set_enabled:00000000 $t
-     /tmp/ccP19rLi.s:40     .text.lorawan_certification_set_enabled:00000000 lorawan_certification_set_enabled
-     /tmp/ccP19rLi.s:58     .text.lorawan_certification_get_enabled:00000000 $t
-     /tmp/ccP19rLi.s:64     .text.lorawan_certification_get_enabled:00000000 lorawan_certification_get_enabled
-     /tmp/ccP19rLi.s:73     .text.lorawan_certification_get_ul_periodicity:00000000 $t
-     /tmp/ccP19rLi.s:79     .text.lorawan_certification_get_ul_periodicity:00000000 lorawan_certification_get_ul_periodicity
-     /tmp/ccP19rLi.s:88     .text.lorawan_certification_get_frame_type:00000000 $t
-     /tmp/ccP19rLi.s:94     .text.lorawan_certification_get_frame_type:00000000 lorawan_certification_get_frame_type
-     /tmp/ccP19rLi.s:103    .text.lorawan_certification_get_cw_config:00000000 $t
-     /tmp/ccP19rLi.s:109    .text.lorawan_certification_get_cw_config:00000000 lorawan_certification_get_cw_config
-     /tmp/ccP19rLi.s:124    .text.lorawan_certification_is_cw_running:00000000 $t
-     /tmp/ccP19rLi.s:130    .text.lorawan_certification_is_cw_running:00000000 lorawan_certification_is_cw_running
-     /tmp/ccP19rLi.s:139    .text.lorawan_certification_cw_set_as_stopped:00000000 $t
-     /tmp/ccP19rLi.s:145    .text.lorawan_certification_cw_set_as_stopped:00000000 lorawan_certification_cw_set_as_stopped
-     /tmp/ccP19rLi.s:155    .text.lorawan_certification_get_beacon_rx_status_ind_ctrl:00000000 $t
-     /tmp/ccP19rLi.s:161    .text.lorawan_certification_get_beacon_rx_status_ind_ctrl:00000000 lorawan_certification_get_beacon_rx_status_ind_ctrl
-     /tmp/ccP19rLi.s:170    .text.lorawan_certification_get_requested_class:00000000 $t
-     /tmp/ccP19rLi.s:176    .text.lorawan_certification_get_requested_class:00000000 lorawan_certification_get_requested_class
-     /tmp/ccP19rLi.s:200    .text.lorawan_certification_parser:00000000 $t
-     /tmp/ccP19rLi.s:206    .text.lorawan_certification_parser:00000000 lorawan_certification_parser
-     /tmp/ccP19rLi.s:238    .text.lorawan_certification_parser:00000036 $d
-     /tmp/ccP19rLi.s:273    .text.lorawan_certification_parser:0000007c $t
-     /tmp/ccP19rLi.s:719    .text.lorawan_certification_parser:000003a8 $d
-     /tmp/ccP19rLi.s:984    .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccP19rLi.s:990    .rodata.lorawan_certification_periodicity_table:00000000 lorawan_certification_periodicity_table
-     /tmp/ccP19rLi.s:729    .text.lorawan_certification_parser:000003cc $t
-     /tmp/ccP19rLi.s:827    .text.lorawan_certification_parser:0000047c $d
-     /tmp/ccP19rLi.s:834    .text.lorawan_certification_build_beacon_rx_status_ind:00000000 $t
-     /tmp/ccP19rLi.s:840    .text.lorawan_certification_build_beacon_rx_status_ind:00000000 lorawan_certification_build_beacon_rx_status_ind
-     /tmp/ccP19rLi.s:987    .rodata.lorawan_certification_periodicity_table:00000000 $d
+     /tmp/ccn4InAK.s:14     .text.lorawan_certification_init:00000000 $t
+     /tmp/ccn4InAK.s:20     .text.lorawan_certification_init:00000000 lorawan_certification_init
+     /tmp/ccn4InAK.s:34     .text.lorawan_certification_set_enabled:00000000 $t
+     /tmp/ccn4InAK.s:40     .text.lorawan_certification_set_enabled:00000000 lorawan_certification_set_enabled
+     /tmp/ccn4InAK.s:58     .text.lorawan_certification_get_enabled:00000000 $t
+     /tmp/ccn4InAK.s:64     .text.lorawan_certification_get_enabled:00000000 lorawan_certification_get_enabled
+     /tmp/ccn4InAK.s:73     .text.lorawan_certification_get_ul_periodicity:00000000 $t
+     /tmp/ccn4InAK.s:79     .text.lorawan_certification_get_ul_periodicity:00000000 lorawan_certification_get_ul_periodicity
+     /tmp/ccn4InAK.s:88     .text.lorawan_certification_get_frame_type:00000000 $t
+     /tmp/ccn4InAK.s:94     .text.lorawan_certification_get_frame_type:00000000 lorawan_certification_get_frame_type
+     /tmp/ccn4InAK.s:103    .text.lorawan_certification_get_cw_config:00000000 $t
+     /tmp/ccn4InAK.s:109    .text.lorawan_certification_get_cw_config:00000000 lorawan_certification_get_cw_config
+     /tmp/ccn4InAK.s:124    .text.lorawan_certification_is_cw_running:00000000 $t
+     /tmp/ccn4InAK.s:130    .text.lorawan_certification_is_cw_running:00000000 lorawan_certification_is_cw_running
+     /tmp/ccn4InAK.s:139    .text.lorawan_certification_cw_set_as_stopped:00000000 $t
+     /tmp/ccn4InAK.s:145    .text.lorawan_certification_cw_set_as_stopped:00000000 lorawan_certification_cw_set_as_stopped
+     /tmp/ccn4InAK.s:155    .text.lorawan_certification_get_beacon_rx_status_ind_ctrl:00000000 $t
+     /tmp/ccn4InAK.s:161    .text.lorawan_certification_get_beacon_rx_status_ind_ctrl:00000000 lorawan_certification_get_beacon_rx_status_ind_ctrl
+     /tmp/ccn4InAK.s:170    .text.lorawan_certification_get_requested_class:00000000 $t
+     /tmp/ccn4InAK.s:176    .text.lorawan_certification_get_requested_class:00000000 lorawan_certification_get_requested_class
+     /tmp/ccn4InAK.s:200    .text.lorawan_certification_parser:00000000 $t
+     /tmp/ccn4InAK.s:206    .text.lorawan_certification_parser:00000000 lorawan_certification_parser
+     /tmp/ccn4InAK.s:238    .text.lorawan_certification_parser:00000036 $d
+     /tmp/ccn4InAK.s:273    .text.lorawan_certification_parser:0000007c $t
+     /tmp/ccn4InAK.s:719    .text.lorawan_certification_parser:000003a8 $d
+     /tmp/ccn4InAK.s:984    .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccn4InAK.s:990    .rodata.lorawan_certification_periodicity_table:00000000 lorawan_certification_periodicity_table
+     /tmp/ccn4InAK.s:729    .text.lorawan_certification_parser:000003cc $t
+     /tmp/ccn4InAK.s:827    .text.lorawan_certification_parser:0000047c $d
+     /tmp/ccn4InAK.s:834    .text.lorawan_certification_build_beacon_rx_status_ind:00000000 $t
+     /tmp/ccn4InAK.s:840    .text.lorawan_certification_build_beacon_rx_status_ind:00000000 lorawan_certification_build_beacon_rx_status_ind
+     /tmp/ccn4InAK.s:987    .rodata.lorawan_certification_periodicity_table:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
@@ -1107,7 +1107,7 @@ modem_supervisor_add_task_device_time_req
 lorawan_api_set_ping_slot_periodicity
 modem_supervisor_add_task_ping_slot_info_req
 lorawan_api_modem_certification_set
-ARM GAS  /tmp/ccP19rLi.s 			page 20
+ARM GAS  /tmp/ccn4InAK.s 			page 20
 
 
 __aeabi_uidiv

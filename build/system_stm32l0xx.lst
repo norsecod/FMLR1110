@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccFagmuD.s 			page 1
+ARM GAS  /tmp/ccblWzld.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccFagmuD.s 			page 1
   58              		@ sp needed
   59 0024 E368     		ldr	r3, [r4, #12]
   60 0026 164A     		ldr	r2, .L11+4
-ARM GAS  /tmp/ccFagmuD.s 			page 2
+ARM GAS  /tmp/ccblWzld.s 			page 2
 
 
   61 0028 1B06     		lsls	r3, r3, #24
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccFagmuD.s 			page 1
  115 0090 00000000 		.word	PLLMulTable
  116 0094 00093D00 		.word	4000000
  117 0098 00127A00 		.word	8000000
-ARM GAS  /tmp/ccFagmuD.s 			page 3
+ARM GAS  /tmp/ccblWzld.s 			page 3
 
 
  119              		.global	PLLMulTable
@@ -149,24 +149,24 @@ ARM GAS  /tmp/ccFagmuD.s 			page 1
  146              	SystemCoreClock:
  147 0000 00002000 		.word	2097152
  148              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccFagmuD.s 			page 4
+ARM GAS  /tmp/ccblWzld.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_stm32l0xx.c
-     /tmp/ccFagmuD.s:14     .text.SystemInit:00000000 $t
-     /tmp/ccFagmuD.s:20     .text.SystemInit:00000000 SystemInit
-     /tmp/ccFagmuD.s:30     .text.SystemCoreClockUpdate:00000000 $t
-     /tmp/ccFagmuD.s:36     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
-     /tmp/ccFagmuD.s:110    .text.SystemCoreClockUpdate:0000007c $d
-     /tmp/ccFagmuD.s:138    .rodata.AHBPrescTable:00000000 AHBPrescTable
-     /tmp/ccFagmuD.s:146    .data.SystemCoreClock:00000000 SystemCoreClock
-     /tmp/ccFagmuD.s:124    .rodata.PLLMulTable:00000000 PLLMulTable
-     /tmp/ccFagmuD.s:121    .rodata.PLLMulTable:00000000 $d
-     /tmp/ccFagmuD.s:131    .rodata.APBPrescTable:00000000 APBPrescTable
-     /tmp/ccFagmuD.s:128    .rodata.APBPrescTable:00000000 $d
-     /tmp/ccFagmuD.s:135    .rodata.AHBPrescTable:00000000 $d
-     /tmp/ccFagmuD.s:143    .data.SystemCoreClock:00000000 $d
+     /tmp/ccblWzld.s:14     .text.SystemInit:00000000 $t
+     /tmp/ccblWzld.s:20     .text.SystemInit:00000000 SystemInit
+     /tmp/ccblWzld.s:30     .text.SystemCoreClockUpdate:00000000 $t
+     /tmp/ccblWzld.s:36     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+     /tmp/ccblWzld.s:110    .text.SystemCoreClockUpdate:0000007c $d
+     /tmp/ccblWzld.s:138    .rodata.AHBPrescTable:00000000 AHBPrescTable
+     /tmp/ccblWzld.s:146    .data.SystemCoreClock:00000000 SystemCoreClock
+     /tmp/ccblWzld.s:124    .rodata.PLLMulTable:00000000 PLLMulTable
+     /tmp/ccblWzld.s:121    .rodata.PLLMulTable:00000000 $d
+     /tmp/ccblWzld.s:131    .rodata.APBPrescTable:00000000 APBPrescTable
+     /tmp/ccblWzld.s:128    .rodata.APBPrescTable:00000000 $d
+     /tmp/ccblWzld.s:135    .rodata.AHBPrescTable:00000000 $d
+     /tmp/ccblWzld.s:143    .data.SystemCoreClock:00000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_uidiv

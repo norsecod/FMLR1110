@@ -35,7 +35,8 @@
         "almanac_update.h": "c",
         "smtc_basic_modem_lr11xx_api_extension.h": "c",
         "time.h": "c",
-        "stddef.h": "c"
+        "stddef.h": "c",
+        "settings.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled",
  

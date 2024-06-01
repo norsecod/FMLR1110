@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccV7b15a.s 			page 1
+ARM GAS  /tmp/ccHTTdmI.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
   58 0028 324B     		ldr	r3, .L3+32
   59 002a 1A80     		strh	r2, [r3]
   60 002c 9C70     		strb	r4, [r3, #2]
-ARM GAS  /tmp/ccV7b15a.s 			page 2
+ARM GAS  /tmp/ccHTTdmI.s 			page 2
 
 
   61 002e 324B     		ldr	r3, .L3+36
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  115 009e 2100     		movs	r1, r4
  116 00a0 2D48     		ldr	r0, .L3+132
  117 00a2 FFF7FEFF 		bl	memset
-ARM GAS  /tmp/ccV7b15a.s 			page 3
+ARM GAS  /tmp/ccHTTdmI.s 			page 3
 
 
  118 00a6 1922     		movs	r2, #25
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  172 0158 00000000 		.word	modem_event_count
  173 015c 00000000 		.word	modem_event_status
  174 0160 00000000 		.word	asynch_msg
-ARM GAS  /tmp/ccV7b15a.s 			page 4
+ARM GAS  /tmp/ccHTTdmI.s 			page 4
 
 
  175 0164 00000000 		.word	modem_dwn_pkt
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  222              	.L7:
  223 003c 00000000 		.word	__func__.2
  224 0040 00000000 		.word	.LC39
-ARM GAS  /tmp/ccV7b15a.s 			page 5
+ARM GAS  /tmp/ccHTTdmI.s 			page 5
 
 
  225 0044 1E000000 		.word	.LC41
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  283              		@ link register save eliminated.
  284 0000 1828     		cmp	r0, #24
  285 0002 03D8     		bhi	.L13
-ARM GAS  /tmp/ccV7b15a.s 			page 6
+ARM GAS  /tmp/ccHTTdmI.s 			page 6
 
 
  286 0004 024B     		ldr	r3, .L15
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  344              	.L20:
  345              		@ sp needed
  346 0014 7047     		bx	lr
-ARM GAS  /tmp/ccV7b15a.s 			page 7
+ARM GAS  /tmp/ccHTTdmI.s 			page 7
 
 
  347              	.L27:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  402 0030 6E636820 		.ascii	"nch message\012\015\000"
  402      6D657373 
  402      6167650A 
-ARM GAS  /tmp/ccV7b15a.s 			page 8
+ARM GAS  /tmp/ccHTTdmI.s 			page 8
 
 
  402      0D00
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  459              		@ frame_needed = 0, uses_anonymous_args = 0
  460              		@ link register save eliminated.
  461 0000 024A     		ldr	r2, .L45
-ARM GAS  /tmp/ccV7b15a.s 			page 9
+ARM GAS  /tmp/ccHTTdmI.s 			page 9
 
 
  462 0002 034B     		ldr	r3, .L45+4
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  520 0014 00000000 		.word	start_time_was_set
  521 0018 00000000 		.word	modem_start_time
  523              		.section	.text.set_modem_dm_interval,"ax",%progbits
-ARM GAS  /tmp/ccV7b15a.s 			page 10
+ARM GAS  /tmp/ccHTTdmI.s 			page 10
 
 
  524              		.align	1
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  583 0008 08D0     		beq	.L62
  584 000a 032B     		cmp	r3, #3
  585 000c 0BD0     		beq	.L63
-ARM GAS  /tmp/ccV7b15a.s 			page 11
+ARM GAS  /tmp/ccHTTdmI.s 			page 11
 
 
  586 000e 012B     		cmp	r3, #1
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  644 0000 014B     		ldr	r3, .L73
  645              		@ sp needed
  646 0002 1878     		ldrb	r0, [r3]
-ARM GAS  /tmp/ccV7b15a.s 			page 12
+ARM GAS  /tmp/ccHTTdmI.s 			page 12
 
 
  647 0004 7047     		bx	lr
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  708              		.section	.text.set_modem_region,"ax",%progbits
  709              		.align	1
  710              		.global	set_modem_region
-ARM GAS  /tmp/ccV7b15a.s 			page 13
+ARM GAS  /tmp/ccHTTdmI.s 			page 13
 
 
  711              		.syntax unified
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  771              		.align	1
  772              		.global	modem_supervisor_add_task_dm_status_now
  773              		.syntax unified
-ARM GAS  /tmp/ccV7b15a.s 			page 14
+ARM GAS  /tmp/ccHTTdmI.s 			page 14
 
 
  774              		.code	16
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  831 002e 07B0     		add	sp, sp, #28
  832              		@ sp needed
  833 0030 F0BD     		pop	{r4, r5, r6, r7, pc}
-ARM GAS  /tmp/ccV7b15a.s 			page 15
+ARM GAS  /tmp/ccHTTdmI.s 			page 15
 
 
  835              		.section	.text.modem_supervisor_add_task_clock_sync_time_req,"ax",%progbits
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  893              		.align	1
  894              		.global	modem_supervisor_is_clock_sync_running
  895              		.syntax unified
-ARM GAS  /tmp/ccV7b15a.s 			page 16
+ARM GAS  /tmp/ccHTTdmI.s 			page 16
 
 
  896              		.code	16
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  955 0006 0423     		movs	r3, #4
  956 0008 1371     		strb	r3, [r2, #4]
  957 000a 033B     		subs	r3, r3, #3
-ARM GAS  /tmp/ccV7b15a.s 			page 17
+ARM GAS  /tmp/ccHTTdmI.s 			page 17
 
 
  958 000c 0400     		movs	r4, r0
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1016 0012 0A43     		orrs	r2, r1
  1017              	.L111:
  1018 0014 1A70     		strb	r2, [r3]
-ARM GAS  /tmp/ccV7b15a.s 			page 18
+ARM GAS  /tmp/ccHTTdmI.s 			page 18
 
 
  1019              		@ sp needed
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1077              		@ sp needed
  1078 0016 10BD     		pop	{r4, pc}
  1079              	.L123:
-ARM GAS  /tmp/ccV7b15a.s 			page 19
+ARM GAS  /tmp/ccHTTdmI.s 			page 19
 
 
  1080              		.align	2
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1138              		.align	2
  1139              	.L132:
  1140 0018 00000000 		.word	modem_status
-ARM GAS  /tmp/ccV7b15a.s 			page 20
+ARM GAS  /tmp/ccHTTdmI.s 			page 20
 
 
  1142              		.section	.text.set_modem_status_file_upload,"ax",%progbits
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1200              		.section	.rodata.modem_supervisor_add_task_join.str1.1,"aMS",%progbits,1
  1201              	.LC84:
  1202 0000 20537461 		.ascii	" Start a new join sequence now \012\015\000"
-ARM GAS  /tmp/ccV7b15a.s 			page 21
+ARM GAS  /tmp/ccHTTdmI.s 			page 21
 
 
  1202      72742061 
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1250 004c 0248     		ldr	r0, .L148+4
  1251 004e FFF7FEFF 		bl	smtc_modem_hal_print_trace
  1252 0052 F3E7     		b	.L147
-ARM GAS  /tmp/ccV7b15a.s 			page 22
+ARM GAS  /tmp/ccHTTdmI.s 			page 22
 
 
  1253              	.L149:
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1311 001c 0125     		movs	r5, #1
  1312 001e 064B     		ldr	r3, .L156
  1313 0020 2000     		movs	r0, r4
-ARM GAS  /tmp/ccV7b15a.s 			page 23
+ARM GAS  /tmp/ccHTTdmI.s 			page 23
 
 
  1314 0022 1B78     		ldrb	r3, [r3]
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1373              		.section	.text.get_modem_status_joining,"ax",%progbits
  1374              		.align	1
  1375              		.global	get_modem_status_joining
-ARM GAS  /tmp/ccV7b15a.s 			page 24
+ARM GAS  /tmp/ccHTTdmI.s 			page 24
 
 
  1376              		.syntax unified
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1435 000a 0500     		movs	r5, r0
  1436 000c 2370     		strb	r3, [r4]
  1437 000e 2272     		strb	r2, [r4, #8]
-ARM GAS  /tmp/ccV7b15a.s 			page 25
+ARM GAS  /tmp/ccHTTdmI.s 			page 25
 
 
  1438 0010 6374     		strb	r3, [r4, #17]
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1496 0002 30B5     		push	{r4, r5, lr}
  1497 0004 87B0     		sub	sp, sp, #28
  1498 0006 01AC     		add	r4, sp, #4
-ARM GAS  /tmp/ccV7b15a.s 			page 26
+ARM GAS  /tmp/ccHTTdmI.s 			page 26
 
 
  1499 0008 2370     		strb	r3, [r4]
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1556              		.code	16
  1557              		.thumb_func
  1559              	modem_supervisor_add_task_frag:
-ARM GAS  /tmp/ccV7b15a.s 			page 27
+ARM GAS  /tmp/ccHTTdmI.s 			page 27
 
 
  1560              		@ args = 0, pretend = 0, frame = 24
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1616 002c 30BD     		pop	{r4, r5, pc}
  1618              		.section	.text.modem_supervisor_add_task_device_time_req,"ax",%progbits
  1619              		.align	1
-ARM GAS  /tmp/ccV7b15a.s 			page 28
+ARM GAS  /tmp/ccHTTdmI.s 			page 28
 
 
  1620              		.global	modem_supervisor_add_task_device_time_req
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1677 0024 2000     		movs	r0, r4
  1678 0026 FFF7FEFF 		bl	modem_supervisor_add_task
  1679              	.L184:
-ARM GAS  /tmp/ccV7b15a.s 			page 29
+ARM GAS  /tmp/ccHTTdmI.s 			page 29
 
 
  1680 002a 07B0     		add	sp, sp, #28
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1740              		@ frame_needed = 0, uses_anonymous_args = 0
  1741 0000 C422     		movs	r2, #196
  1742 0002 054B     		ldr	r3, .L197
-ARM GAS  /tmp/ccV7b15a.s 			page 30
+ARM GAS  /tmp/ccHTTdmI.s 			page 30
 
 
  1743 0004 10B5     		push	{r4, lr}
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1800              		.syntax unified
  1801              		.code	16
  1802              		.thumb_func
-ARM GAS  /tmp/ccV7b15a.s 			page 31
+ARM GAS  /tmp/ccHTTdmI.s 			page 31
 
 
  1804              	get_modem_charge_ma_h:
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1864              		@ frame_needed = 0, uses_anonymous_args = 0
  1865              		@ link register save eliminated.
  1866 0000 0022     		movs	r2, #0
-ARM GAS  /tmp/ccV7b15a.s 			page 32
+ARM GAS  /tmp/ccHTTdmI.s 			page 32
 
 
  1867              		@ sp needed
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1927 0000 10B5     		push	{r4, lr}
  1928 0002 FFF7FEFF 		bl	smtc_modem_hal_get_voltage
  1929              		@ sp needed
-ARM GAS  /tmp/ccV7b15a.s 			page 33
+ARM GAS  /tmp/ccHTTdmI.s 			page 33
 
 
  1930 0006 10BD     		pop	{r4, pc}
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  1980 0020 0348     		ldr	r0, .L226+12
  1981 0022 F1E7     		b	.L225
  1982              	.L227:
-ARM GAS  /tmp/ccV7b15a.s 			page 34
+ARM GAS  /tmp/ccHTTdmI.s 			page 34
 
 
  1983              		.align	2
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2039 0040 0822     		movs	r2, #8
  2040 0042 2100     		movs	r1, r4
  2041 0044 FFF7FEFF 		bl	memcpy1_r
-ARM GAS  /tmp/ccV7b15a.s 			page 35
+ARM GAS  /tmp/ccHTTdmI.s 			page 35
 
 
  2042 0048 6846     		mov	r0, sp
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2100              		@ sp needed
  2101 0002 1878     		ldrb	r0, [r3]
  2102 0004 7047     		bx	lr
-ARM GAS  /tmp/ccV7b15a.s 			page 36
+ARM GAS  /tmp/ccHTTdmI.s 			page 36
 
 
  2103              	.L254:
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2157 0002 0A4B     		ldr	r3, .L271
  2158 0004 0129     		cmp	r1, #1
  2159 0006 00D0     		beq	.L270
-ARM GAS  /tmp/ccV7b15a.s 			page 37
+ARM GAS  /tmp/ccHTTdmI.s 			page 37
 
 
  2160 0008 094B     		ldr	r3, .L271+4
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2212 0014 04D1     		bne	.L277
  2213 0016 012D     		cmp	r5, #1
  2214 0018 1DD0     		beq	.L278
-ARM GAS  /tmp/ccV7b15a.s 			page 38
+ARM GAS  /tmp/ccHTTdmI.s 			page 38
 
 
  2215              	.L284:
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2269              	.L285:
  2270 0076 0136     		adds	r6, r6, #1
  2271              	.L283:
-ARM GAS  /tmp/ccV7b15a.s 			page 39
+ARM GAS  /tmp/ccHTTdmI.s 			page 39
 
 
  2272 0078 009A     		ldr	r2, [sp]
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2329              		.global	get_modem_suspend
  2330              		.syntax unified
  2331              		.code	16
-ARM GAS  /tmp/ccV7b15a.s 			page 40
+ARM GAS  /tmp/ccHTTdmI.s 			page 40
 
 
  2332              		.thumb_func
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2373 0004 0328     		cmp	r0, #3
  2374 0006 19D8     		bhi	.L306
  2375 0008 16D1     		bne	.L307
-ARM GAS  /tmp/ccV7b15a.s 			page 41
+ARM GAS  /tmp/ccHTTdmI.s 			page 41
 
 
  2376 000a 102A     		cmp	r2, #16
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2430 006e 0341     		asrs	r3, r3, r0
  2431 0070 3342     		tst	r3, r6
  2432 0072 13D0     		beq	.L317
-ARM GAS  /tmp/ccV7b15a.s 			page 42
+ARM GAS  /tmp/ccHTTdmI.s 			page 42
 
 
  2433 0074 0B28     		cmp	r0, #11
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2487 00c6 1B04     		lsls	r3, r3, #16
  2488 00c8 0340     		ands	r3, r0
  2489 00ca DB19     		adds	r3, r3, r7
-ARM GAS  /tmp/ccV7b15a.s 			page 43
+ARM GAS  /tmp/ccHTTdmI.s 			page 43
 
 
  2490 00cc 5F1E     		subs	r7, r3, #1
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2544              	.L323:
  2545 012e 0198     		ldr	r0, [sp, #4]
  2546 0130 030F     		lsrs	r3, r0, #28
-ARM GAS  /tmp/ccV7b15a.s 			page 44
+ARM GAS  /tmp/ccHTTdmI.s 			page 44
 
 
  2547 0132 0F3B     		subs	r3, r3, #15
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2601 0198 77000000 		.word	.LC132
  2602 019c 000010FF 		.word	-15728640
  2603 01a0 0000F1FF 		.word	-983040
-ARM GAS  /tmp/ccV7b15a.s 			page 45
+ARM GAS  /tmp/ccHTTdmI.s 			page 45
 
 
  2604 01a4 0010FFFF 		.word	-61440
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2637 0006 1500     		movs	r5, r2
  2638 0008 0A00     		movs	r2, r1
  2639 000a 0100     		movs	r1, r0
-ARM GAS  /tmp/ccV7b15a.s 			page 46
+ARM GAS  /tmp/ccHTTdmI.s 			page 46
 
 
  2640 000c 3000     		movs	r0, r6
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2694 007c F633     		adds	r3, r3, #246
  2695 007e 0021     		movs	r1, #0
  2696 0080 595E     		ldrsh	r1, [r3, r1]
-ARM GAS  /tmp/ccV7b15a.s 			page 47
+ARM GAS  /tmp/ccHTTdmI.s 			page 47
 
 
  2697 0082 1548     		ldr	r0, .L353+28
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2753 000a 10B5     		push	{r4, lr}
  2754 000c 1160     		str	r1, [r2]
  2755 000e 1A00     		movs	r2, r3
-ARM GAS  /tmp/ccV7b15a.s 			page 48
+ARM GAS  /tmp/ccHTTdmI.s 			page 48
 
 
  2756              		@ sp needed
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2799      65636B5F 
  2800              	.LC180:
  2801 007a 1B5B303B 		.ascii	"\033[0;31mERROR: Construct DM payload report, unkno"
-ARM GAS  /tmp/ccV7b15a.s 			page 49
+ARM GAS  /tmp/ccHTTdmI.s 			page 49
 
 
  2801      33316D45 
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2849 004a FFF7FEFF 		bl	smtc_modem_hal_print_trace
  2850 004e 2000     		movs	r0, r4
  2851              	.L362:
-ARM GAS  /tmp/ccV7b15a.s 			page 50
+ARM GAS  /tmp/ccHTTdmI.s 			page 50
 
 
  2852 0050 47B0     		add	sp, sp, #284
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2906 00a3 69       		.byte	(.L379-.L369)/2
  2907 00a4 72       		.byte	(.L378-.L369)/2
  2908 00a5 74       		.byte	(.L377-.L369)/2
-ARM GAS  /tmp/ccV7b15a.s 			page 51
+ARM GAS  /tmp/ccHTTdmI.s 			page 51
 
 
  2909 00a6 10       		.byte	(.L374-.L369)/2
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  2963 00f4 FFF7FEFF 		bl	smtc_modem_hal_get_temperature
  2964 00f8 DEE7     		b	.L404
  2965              	.L384:
-ARM GAS  /tmp/ccV7b15a.s 			page 52
+ARM GAS  /tmp/ccHTTdmI.s 			page 52
 
 
  2966 00fa FFF7FEFF 		bl	lorawan_api_last_rssi_get
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3020 0166 1B78     		ldrb	r3, [r3]
  3021 0168 6370     		strb	r3, [r4, #1]
  3022 016a A6E7     		b	.L374
-ARM GAS  /tmp/ccV7b15a.s 			page 53
+ARM GAS  /tmp/ccHTTdmI.s 			page 53
 
 
  3023              	.L379:
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3077 01d8 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  3078 01dc 6DE7     		b	.L374
  3079              	.L396:
-ARM GAS  /tmp/ccV7b15a.s 			page 54
+ARM GAS  /tmp/ccHTTdmI.s 			page 54
 
 
  3080 01de 0120     		movs	r0, #1
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3138              		@ sp needed
  3139 0002 1A78     		ldrb	r2, [r3]
  3140 0004 0270     		strb	r2, [r0]
-ARM GAS  /tmp/ccV7b15a.s 			page 55
+ARM GAS  /tmp/ccHTTdmI.s 			page 55
 
 
  3141 0006 5B78     		ldrb	r3, [r3, #1]
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3195 0010 0124     		movs	r4, #1
  3196 0012 C723     		movs	r3, #199
  3197 0014 6A46     		mov	r2, sp
-ARM GAS  /tmp/ccV7b15a.s 			page 56
+ARM GAS  /tmp/ccHTTdmI.s 			page 56
 
 
  3198 0016 1821     		movs	r1, #24
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3237              		.align	1
  3238              		.global	modem_load_context
  3239              		.syntax unified
-ARM GAS  /tmp/ccV7b15a.s 			page 57
+ARM GAS  /tmp/ccHTTdmI.s 			page 57
 
 
  3240              		.code	16
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3295 0070 33000000 		.word	.LC197
  3296 0074 1E000000 		.word	.LC41
  3298              		.section	.text.modem_store_context,"ax",%progbits
-ARM GAS  /tmp/ccV7b15a.s 			page 58
+ARM GAS  /tmp/ccHTTdmI.s 			page 58
 
 
  3299              		.align	1
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3351              		.code	16
  3352              		.thumb_func
  3354              	set_modem_dm_port:
-ARM GAS  /tmp/ccV7b15a.s 			page 59
+ARM GAS  /tmp/ccHTTdmI.s 			page 59
 
 
  3355              		@ args = 0, pretend = 0, frame = 0
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3412              		.align	1
  3413              		.global	modem_get_upload_state
  3414              		.syntax unified
-ARM GAS  /tmp/ccV7b15a.s 			page 60
+ARM GAS  /tmp/ccHTTdmI.s 			page 60
 
 
  3415              		.code	16
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3475              		.code	16
  3476              		.thumb_func
  3478              	modem_get_stream_port:
-ARM GAS  /tmp/ccV7b15a.s 			page 61
+ARM GAS  /tmp/ccHTTdmI.s 			page 61
 
 
  3479              		@ args = 0, pretend = 0, frame = 0
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3539              		@ args = 0, pretend = 0, frame = 0
  3540              		@ frame_needed = 0, uses_anonymous_args = 0
  3541              		@ link register save eliminated.
-ARM GAS  /tmp/ccV7b15a.s 			page 62
+ARM GAS  /tmp/ccHTTdmI.s 			page 62
 
 
  3542 0000 014B     		ldr	r3, .L466
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3602              	modem_context_reset_dm_tag_number:
  3603              		@ args = 0, pretend = 0, frame = 0
  3604              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccV7b15a.s 			page 63
+ARM GAS  /tmp/ccHTTdmI.s 			page 63
 
 
  3605              		@ link register save eliminated.
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3665              		@ frame_needed = 0, uses_anonymous_args = 0
  3666              		@ link register save eliminated.
  3667 0000 014B     		ldr	r3, .L485
-ARM GAS  /tmp/ccV7b15a.s 			page 64
+ARM GAS  /tmp/ccHTTdmI.s 			page 64
 
 
  3668              		@ sp needed
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3728              		@ sp needed
  3729 0002 1878     		ldrb	r0, [r3]
  3730 0004 7047     		bx	lr
-ARM GAS  /tmp/ccV7b15a.s 			page 65
+ARM GAS  /tmp/ccHTTdmI.s 			page 65
 
 
  3731              	.L495:
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3791              		@ frame_needed = 0, uses_anonymous_args = 0
  3792              		@ link register save eliminated.
  3793 0000 014B     		ldr	r3, .L505
-ARM GAS  /tmp/ccV7b15a.s 			page 66
+ARM GAS  /tmp/ccHTTdmI.s 			page 66
 
 
  3794              		@ sp needed
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3854              		@ sp needed
  3855 0006 10BD     		pop	{r4, pc}
  3857              		.section	.text.modem_set_test_mode_status,"ax",%progbits
-ARM GAS  /tmp/ccV7b15a.s 			page 67
+ARM GAS  /tmp/ccHTTdmI.s 			page 67
 
 
  3858              		.align	1
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3918              		.align	1
  3919              		.global	modem_context_get_rx_pathloss_db
  3920              		.syntax unified
-ARM GAS  /tmp/ccV7b15a.s 			page 68
+ARM GAS  /tmp/ccHTTdmI.s 			page 68
 
 
  3921              		.code	16
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  3981              		.global	modem_context_get_modem_rp
  3982              		.syntax unified
  3983              		.code	16
-ARM GAS  /tmp/ccV7b15a.s 			page 69
+ARM GAS  /tmp/ccHTTdmI.s 			page 69
 
 
  3984              		.thumb_func
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4043 0020 6670     		strb	r6, [r4, #1]
  4044 0022 0393     		str	r3, [sp, #12]
  4045 0024 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_ms
-ARM GAS  /tmp/ccV7b15a.s 			page 70
+ARM GAS  /tmp/ccHTTdmI.s 			page 70
 
 
  4046 0028 094B     		ldr	r3, .L539+4
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4098 0020 1800     		movs	r0, r3
  4099 0022 10BD     		pop	{r4, pc}
  4100              	.L546:
-ARM GAS  /tmp/ccV7b15a.s 			page 71
+ARM GAS  /tmp/ccHTTdmI.s 			page 71
 
 
  4101              		.align	2
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4157              	.L548:
  4158 0054 00000000 		.word	modem_context_empty_callback
  4159 0058 204E0000 		.word	20000
-ARM GAS  /tmp/ccV7b15a.s 			page 72
+ARM GAS  /tmp/ccHTTdmI.s 			page 72
 
 
  4160 005c 00000000 		.word	modem_rp
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4218 0012 C178     		ldrb	r1, [r0, #3]
  4219 0014 D970     		strb	r1, [r3, #3]
  4220 0016 0179     		ldrb	r1, [r0, #4]
-ARM GAS  /tmp/ccV7b15a.s 			page 73
+ARM GAS  /tmp/ccHTTdmI.s 			page 73
 
 
  4221 0018 0530     		adds	r0, r0, #5
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4281 0002 10B5     		push	{r4, lr}
  4282 0004 024B     		ldr	r3, .L566
  4283              		@ sp needed
-ARM GAS  /tmp/ccV7b15a.s 			page 74
+ARM GAS  /tmp/ccHTTdmI.s 			page 74
 
 
  4284 0006 1A80     		strh	r2, [r3]
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4345              		.syntax unified
  4346              		.code	16
  4347              		.thumb_func
-ARM GAS  /tmp/ccV7b15a.s 			page 75
+ARM GAS  /tmp/ccHTTdmI.s 			page 75
 
 
  4349              	modem_context_set_modem_radio_ctx:
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4407              	.L582:
  4408              		@ sp needed
  4409 000a 7047     		bx	lr
-ARM GAS  /tmp/ccV7b15a.s 			page 76
+ARM GAS  /tmp/ccHTTdmI.s 			page 76
 
 
  4410              	.L583:
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4465              		.section	.rodata.__func__.2,"a"
  4468              	__func__.2:
  4469 0000 6765745F 		.ascii	"get_modem_event_count\000"
-ARM GAS  /tmp/ccV7b15a.s 			page 77
+ARM GAS  /tmp/ccHTTdmI.s 			page 77
 
 
  4469      6D6F6465 
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4532 0000 00       		.space	1
  4533              		.section	.bss.duty_cycle_disabled_by_host,"aw",%nobits
  4536              	duty_cycle_disabled_by_host:
-ARM GAS  /tmp/ccV7b15a.s 			page 78
+ARM GAS  /tmp/ccHTTdmI.s 			page 78
 
 
  4537 0000 00       		.space	1
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4597              	asynchronous_msgnumber:
  4598 0000 00       		.space	1
  4599              		.section	.data.user_alarm,"aw"
-ARM GAS  /tmp/ccV7b15a.s 			page 79
+ARM GAS  /tmp/ccHTTdmI.s 			page 79
 
 
  4600              		.align	2
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4683              		.section	.data.modem_dm_interval,"aw"
  4686              	modem_dm_interval:
  4687 0000 81       		.byte	-127
-ARM GAS  /tmp/ccV7b15a.s 			page 80
+ARM GAS  /tmp/ccHTTdmI.s 			page 80
 
 
  4688              		.section	.bss.modem_status,"aw",%nobits
@@ -4753,496 +4753,496 @@ ARM GAS  /tmp/ccV7b15a.s 			page 1
  4703              	modem_appkey_status:
  4704 0000 0100     		.short	1
  4705              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccV7b15a.s 			page 81
+ARM GAS  /tmp/ccHTTdmI.s 			page 81
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 modem_context.c
-     /tmp/ccV7b15a.s:14     .text.modem_context_empty_callback:00000000 $t
-     /tmp/ccV7b15a.s:20     .text.modem_context_empty_callback:00000000 modem_context_empty_callback
-     /tmp/ccV7b15a.s:28     .text.modem_context_init:00000000 $t
-     /tmp/ccV7b15a.s:34     .text.modem_context_init:00000000 modem_context_init
-     /tmp/ccV7b15a.s:139    .text.modem_context_init:000000d4 $d
-     /tmp/ccV7b15a.s:4691   .bss.modem_status:00000000 modem_status
-     /tmp/ccV7b15a.s:4686   .data.modem_dm_interval:00000000 modem_dm_interval
-     /tmp/ccV7b15a.s:4681   .data.modem_dm_port:00000000 modem_dm_port
-     /tmp/ccV7b15a.s:4670   .bss.modem_dm_class:00000000 modem_dm_class
-     /tmp/ccV7b15a.s:4665   .bss.is_modem_suspend:00000000 is_modem_suspend
-     /tmp/ccV7b15a.s:4660   .bss.modem_start_time:00000000 modem_start_time
-     /tmp/ccV7b15a.s:4654   .bss.modem_dm_upload_sctr:00000000 modem_dm_upload_sctr
-     /tmp/ccV7b15a.s:4649   .bss.modem_upload_state:00000000 modem_upload_state
-     /tmp/ccV7b15a.s:4642   .data.modem_stream_state:00000000 modem_stream_state
-     /tmp/ccV7b15a.s:4636   .data.dm_info_bitfield_periodic:00000000 dm_info_bitfield_periodic
-     /tmp/ccV7b15a.s:4630   .bss.dm_info_bitfield_now:00000000 dm_info_bitfield_now
-     /tmp/ccV7b15a.s:4624   .bss.tag_number:00000000 tag_number
-     /tmp/ccV7b15a.s:4619   .bss.tag_number_now:00000000 tag_number_now
-     /tmp/ccV7b15a.s:4614   .bss.number_of_muted_day:00000000 number_of_muted_day
-     /tmp/ccV7b15a.s:4609   .bss.dm_pending_dl:00000000 dm_pending_dl
-     /tmp/ccV7b15a.s:4603   .data.user_alarm:00000000 user_alarm
-     /tmp/ccV7b15a.s:4597   .bss.asynchronous_msgnumber:00000000 asynchronous_msgnumber
-     /tmp/ccV7b15a.s:4568   .bss.is_modem_reset_requested:00000000 is_modem_reset_requested
-     /tmp/ccV7b15a.s:4563   .bss.modem_charge_offset:00000000 modem_charge_offset
-     /tmp/ccV7b15a.s:4557   .bss.start_time_was_set:00000000 start_time_was_set
-     /tmp/ccV7b15a.s:4552   .bss.user_define_charge_counter:00000000 user_define_charge_counter
-     /tmp/ccV7b15a.s:4546   .bss.charge_counter_to_send:00000000 charge_counter_to_send
-     /tmp/ccV7b15a.s:4541   .bss.modem_rf_output:00000000 modem_rf_output
-     /tmp/ccV7b15a.s:4536   .bss.duty_cycle_disabled_by_host:00000000 duty_cycle_disabled_by_host
-     /tmp/ccV7b15a.s:4531   .bss.modem_adr_profile:00000000 modem_adr_profile
-     /tmp/ccV7b15a.s:4526   .bss.nb_adr_mobile_timeout:00000000 nb_adr_mobile_timeout
-     /tmp/ccV7b15a.s:4676   .bss.modem_appstatus:00000000 modem_appstatus
-     /tmp/ccV7b15a.s:4520   .bss.is_modem_in_test_mode:00000000 is_modem_in_test_mode
-     /tmp/ccV7b15a.s:4515   .bss.rx_pathloss_db:00000000 rx_pathloss_db
-     /tmp/ccV7b15a.s:4510   .bss.tx_power_offset_db:00000000 tx_power_offset_db
-     /tmp/ccV7b15a.s:4505   .bss.modem_rp:00000000 modem_rp
-     /tmp/ccV7b15a.s:4703   .data.modem_appkey_status:00000000 modem_appkey_status
-     /tmp/ccV7b15a.s:4697   .bss.modem_appkey_crc:00000000 modem_appkey_crc
-     /tmp/ccV7b15a.s:4592   .bss.modem_event_count:00000000 modem_event_count
-     /tmp/ccV7b15a.s:4586   .bss.modem_event_status:00000000 modem_event_status
-     /tmp/ccV7b15a.s:4580   .bss.asynch_msg:00000000 asynch_msg
-     /tmp/ccV7b15a.s:4574   .bss.modem_dwn_pkt:00000000 modem_dwn_pkt
-     /tmp/ccV7b15a.s:4499   .bss.power_config_lut:00000000 power_config_lut
-     /tmp/ccV7b15a.s:186    .text.get_modem_event_count:00000000 $t
-     /tmp/ccV7b15a.s:192    .text.get_modem_event_count:00000000 get_modem_event_count
-     /tmp/ccV7b15a.s:223    .text.get_modem_event_count:0000003c $d
-     /tmp/ccV7b15a.s:4468   .rodata.__func__.2:00000000 __func__.2
-     /tmp/ccV7b15a.s:230    .text.get_modem_event_status:00000000 $t
-     /tmp/ccV7b15a.s:236    .text.get_modem_event_status:00000000 get_modem_event_status
-     /tmp/ccV7b15a.s:267    .text.get_modem_event_status:0000003c $d
-     /tmp/ccV7b15a.s:4463   .rodata.__func__.1:00000000 __func__.1
-     /tmp/ccV7b15a.s:274    .text.set_modem_event_count_and_status:00000000 $t
-     /tmp/ccV7b15a.s:280    .text.set_modem_event_count_and_status:00000000 set_modem_event_count_and_status
-     /tmp/ccV7b15a.s:296    .text.set_modem_event_count_and_status:00000010 $d
-     /tmp/ccV7b15a.s:300    .text.modem_event_init:00000000 $t
-ARM GAS  /tmp/ccV7b15a.s 			page 82
+     /tmp/ccHTTdmI.s:14     .text.modem_context_empty_callback:00000000 $t
+     /tmp/ccHTTdmI.s:20     .text.modem_context_empty_callback:00000000 modem_context_empty_callback
+     /tmp/ccHTTdmI.s:28     .text.modem_context_init:00000000 $t
+     /tmp/ccHTTdmI.s:34     .text.modem_context_init:00000000 modem_context_init
+     /tmp/ccHTTdmI.s:139    .text.modem_context_init:000000d4 $d
+     /tmp/ccHTTdmI.s:4691   .bss.modem_status:00000000 modem_status
+     /tmp/ccHTTdmI.s:4686   .data.modem_dm_interval:00000000 modem_dm_interval
+     /tmp/ccHTTdmI.s:4681   .data.modem_dm_port:00000000 modem_dm_port
+     /tmp/ccHTTdmI.s:4670   .bss.modem_dm_class:00000000 modem_dm_class
+     /tmp/ccHTTdmI.s:4665   .bss.is_modem_suspend:00000000 is_modem_suspend
+     /tmp/ccHTTdmI.s:4660   .bss.modem_start_time:00000000 modem_start_time
+     /tmp/ccHTTdmI.s:4654   .bss.modem_dm_upload_sctr:00000000 modem_dm_upload_sctr
+     /tmp/ccHTTdmI.s:4649   .bss.modem_upload_state:00000000 modem_upload_state
+     /tmp/ccHTTdmI.s:4642   .data.modem_stream_state:00000000 modem_stream_state
+     /tmp/ccHTTdmI.s:4636   .data.dm_info_bitfield_periodic:00000000 dm_info_bitfield_periodic
+     /tmp/ccHTTdmI.s:4630   .bss.dm_info_bitfield_now:00000000 dm_info_bitfield_now
+     /tmp/ccHTTdmI.s:4624   .bss.tag_number:00000000 tag_number
+     /tmp/ccHTTdmI.s:4619   .bss.tag_number_now:00000000 tag_number_now
+     /tmp/ccHTTdmI.s:4614   .bss.number_of_muted_day:00000000 number_of_muted_day
+     /tmp/ccHTTdmI.s:4609   .bss.dm_pending_dl:00000000 dm_pending_dl
+     /tmp/ccHTTdmI.s:4603   .data.user_alarm:00000000 user_alarm
+     /tmp/ccHTTdmI.s:4597   .bss.asynchronous_msgnumber:00000000 asynchronous_msgnumber
+     /tmp/ccHTTdmI.s:4568   .bss.is_modem_reset_requested:00000000 is_modem_reset_requested
+     /tmp/ccHTTdmI.s:4563   .bss.modem_charge_offset:00000000 modem_charge_offset
+     /tmp/ccHTTdmI.s:4557   .bss.start_time_was_set:00000000 start_time_was_set
+     /tmp/ccHTTdmI.s:4552   .bss.user_define_charge_counter:00000000 user_define_charge_counter
+     /tmp/ccHTTdmI.s:4546   .bss.charge_counter_to_send:00000000 charge_counter_to_send
+     /tmp/ccHTTdmI.s:4541   .bss.modem_rf_output:00000000 modem_rf_output
+     /tmp/ccHTTdmI.s:4536   .bss.duty_cycle_disabled_by_host:00000000 duty_cycle_disabled_by_host
+     /tmp/ccHTTdmI.s:4531   .bss.modem_adr_profile:00000000 modem_adr_profile
+     /tmp/ccHTTdmI.s:4526   .bss.nb_adr_mobile_timeout:00000000 nb_adr_mobile_timeout
+     /tmp/ccHTTdmI.s:4676   .bss.modem_appstatus:00000000 modem_appstatus
+     /tmp/ccHTTdmI.s:4520   .bss.is_modem_in_test_mode:00000000 is_modem_in_test_mode
+     /tmp/ccHTTdmI.s:4515   .bss.rx_pathloss_db:00000000 rx_pathloss_db
+     /tmp/ccHTTdmI.s:4510   .bss.tx_power_offset_db:00000000 tx_power_offset_db
+     /tmp/ccHTTdmI.s:4505   .bss.modem_rp:00000000 modem_rp
+     /tmp/ccHTTdmI.s:4703   .data.modem_appkey_status:00000000 modem_appkey_status
+     /tmp/ccHTTdmI.s:4697   .bss.modem_appkey_crc:00000000 modem_appkey_crc
+     /tmp/ccHTTdmI.s:4592   .bss.modem_event_count:00000000 modem_event_count
+     /tmp/ccHTTdmI.s:4586   .bss.modem_event_status:00000000 modem_event_status
+     /tmp/ccHTTdmI.s:4580   .bss.asynch_msg:00000000 asynch_msg
+     /tmp/ccHTTdmI.s:4574   .bss.modem_dwn_pkt:00000000 modem_dwn_pkt
+     /tmp/ccHTTdmI.s:4499   .bss.power_config_lut:00000000 power_config_lut
+     /tmp/ccHTTdmI.s:186    .text.get_modem_event_count:00000000 $t
+     /tmp/ccHTTdmI.s:192    .text.get_modem_event_count:00000000 get_modem_event_count
+     /tmp/ccHTTdmI.s:223    .text.get_modem_event_count:0000003c $d
+     /tmp/ccHTTdmI.s:4468   .rodata.__func__.2:00000000 __func__.2
+     /tmp/ccHTTdmI.s:230    .text.get_modem_event_status:00000000 $t
+     /tmp/ccHTTdmI.s:236    .text.get_modem_event_status:00000000 get_modem_event_status
+     /tmp/ccHTTdmI.s:267    .text.get_modem_event_status:0000003c $d
+     /tmp/ccHTTdmI.s:4463   .rodata.__func__.1:00000000 __func__.1
+     /tmp/ccHTTdmI.s:274    .text.set_modem_event_count_and_status:00000000 $t
+     /tmp/ccHTTdmI.s:280    .text.set_modem_event_count_and_status:00000000 set_modem_event_count_and_status
+     /tmp/ccHTTdmI.s:296    .text.set_modem_event_count_and_status:00000010 $d
+     /tmp/ccHTTdmI.s:300    .text.modem_event_init:00000000 $t
+ARM GAS  /tmp/ccHTTdmI.s 			page 82
 
 
-     /tmp/ccV7b15a.s:306    .text.modem_event_init:00000000 modem_event_init
-     /tmp/ccV7b15a.s:323    .text.increment_modem_event_count_and_status:00000000 $t
-     /tmp/ccV7b15a.s:329    .text.increment_modem_event_count_and_status:00000000 increment_modem_event_count_and_status
-     /tmp/ccV7b15a.s:350    .text.increment_modem_event_count_and_status:00000018 $d
-     /tmp/ccV7b15a.s:354    .text.decrement_asynchronous_msgnumber:00000000 $t
-     /tmp/ccV7b15a.s:360    .text.decrement_asynchronous_msgnumber:00000000 decrement_asynchronous_msgnumber
-     /tmp/ccV7b15a.s:377    .text.decrement_asynchronous_msgnumber:00000010 $d
-     /tmp/ccV7b15a.s:380    .text.get_asynchronous_msgnumber:00000000 $t
-     /tmp/ccV7b15a.s:386    .text.get_asynchronous_msgnumber:00000000 get_asynchronous_msgnumber
-     /tmp/ccV7b15a.s:397    .text.get_asynchronous_msgnumber:00000008 $d
-     /tmp/ccV7b15a.s:404    .text.increment_asynchronous_msgnumber:00000000 $t
-     /tmp/ccV7b15a.s:410    .text.increment_asynchronous_msgnumber:00000000 increment_asynchronous_msgnumber
-     /tmp/ccV7b15a.s:445    .text.increment_asynchronous_msgnumber:0000003c $d
-     /tmp/ccV7b15a.s:451    .text.get_last_msg_event:00000000 $t
-     /tmp/ccV7b15a.s:457    .text.get_last_msg_event:00000000 get_last_msg_event
-     /tmp/ccV7b15a.s:470    .text.get_last_msg_event:0000000c $d
-     /tmp/ccV7b15a.s:474    .text.get_modem_uptime_s:00000000 $t
-     /tmp/ccV7b15a.s:480    .text.get_modem_uptime_s:00000000 get_modem_uptime_s
-     /tmp/ccV7b15a.s:493    .text.get_modem_uptime_s:00000010 $d
-     /tmp/ccV7b15a.s:496    .text.set_modem_start_time_s:00000000 $t
-     /tmp/ccV7b15a.s:502    .text.set_modem_start_time_s:00000000 set_modem_start_time_s
-     /tmp/ccV7b15a.s:520    .text.set_modem_start_time_s:00000014 $d
-     /tmp/ccV7b15a.s:524    .text.set_modem_dm_interval:00000000 $t
-     /tmp/ccV7b15a.s:530    .text.set_modem_dm_interval:00000000 set_modem_dm_interval
-     /tmp/ccV7b15a.s:546    .text.set_modem_dm_interval:00000010 $d
-     /tmp/ccV7b15a.s:549    .text.get_modem_dm_interval:00000000 $t
-     /tmp/ccV7b15a.s:555    .text.get_modem_dm_interval:00000000 get_modem_dm_interval
-     /tmp/ccV7b15a.s:566    .text.get_modem_dm_interval:00000008 $d
-     /tmp/ccV7b15a.s:569    .text.get_modem_dm_interval_second:00000000 $t
-     /tmp/ccV7b15a.s:575    .text.get_modem_dm_interval_second:00000000 get_modem_dm_interval_second
-     /tmp/ccV7b15a.s:610    .text.get_modem_dm_interval_second:00000030 $d
-     /tmp/ccV7b15a.s:614    .text.set_modem_class:00000000 $t
-     /tmp/ccV7b15a.s:620    .text.set_modem_class:00000000 set_modem_class
-     /tmp/ccV7b15a.s:631    .text.set_modem_class:00000008 $d
-     /tmp/ccV7b15a.s:634    .text.get_modem_class:00000000 $t
-     /tmp/ccV7b15a.s:640    .text.get_modem_class:00000000 get_modem_class
-     /tmp/ccV7b15a.s:651    .text.get_modem_class:00000008 $d
-     /tmp/ccV7b15a.s:654    .text.get_modem_dm_port:00000000 $t
-     /tmp/ccV7b15a.s:660    .text.get_modem_dm_port:00000000 get_modem_dm_port
-     /tmp/ccV7b15a.s:671    .text.get_modem_dm_port:00000008 $d
-     /tmp/ccV7b15a.s:674    .text.get_modem_adr_profile:00000000 $t
-     /tmp/ccV7b15a.s:680    .text.get_modem_adr_profile:00000000 get_modem_adr_profile
-     /tmp/ccV7b15a.s:691    .text.get_modem_adr_profile:00000008 $d
-     /tmp/ccV7b15a.s:694    .text.get_modem_region:00000000 $t
-     /tmp/ccV7b15a.s:700    .text.get_modem_region:00000000 get_modem_region
-     /tmp/ccV7b15a.s:709    .text.set_modem_region:00000000 $t
-     /tmp/ccV7b15a.s:715    .text.set_modem_region:00000000 set_modem_region
-     /tmp/ccV7b15a.s:727    .text.set_modem_appstatus:00000000 $t
-     /tmp/ccV7b15a.s:733    .text.set_modem_appstatus:00000000 set_modem_appstatus
-     /tmp/ccV7b15a.s:747    .text.set_modem_appstatus:00000010 $d
-     /tmp/ccV7b15a.s:750    .text.get_modem_appstatus:00000000 $t
-     /tmp/ccV7b15a.s:756    .text.get_modem_appstatus:00000000 get_modem_appstatus
-     /tmp/ccV7b15a.s:768    .text.get_modem_appstatus:0000000c $d
-     /tmp/ccV7b15a.s:771    .text.modem_supervisor_add_task_dm_status_now:00000000 $t
-     /tmp/ccV7b15a.s:777    .text.modem_supervisor_add_task_dm_status_now:00000000 modem_supervisor_add_task_dm_status_now
-     /tmp/ccV7b15a.s:802    .text.modem_supervisor_add_task_crash_log:00000000 $t
-     /tmp/ccV7b15a.s:808    .text.modem_supervisor_add_task_crash_log:00000000 modem_supervisor_add_task_crash_log
-ARM GAS  /tmp/ccV7b15a.s 			page 83
+     /tmp/ccHTTdmI.s:306    .text.modem_event_init:00000000 modem_event_init
+     /tmp/ccHTTdmI.s:323    .text.increment_modem_event_count_and_status:00000000 $t
+     /tmp/ccHTTdmI.s:329    .text.increment_modem_event_count_and_status:00000000 increment_modem_event_count_and_status
+     /tmp/ccHTTdmI.s:350    .text.increment_modem_event_count_and_status:00000018 $d
+     /tmp/ccHTTdmI.s:354    .text.decrement_asynchronous_msgnumber:00000000 $t
+     /tmp/ccHTTdmI.s:360    .text.decrement_asynchronous_msgnumber:00000000 decrement_asynchronous_msgnumber
+     /tmp/ccHTTdmI.s:377    .text.decrement_asynchronous_msgnumber:00000010 $d
+     /tmp/ccHTTdmI.s:380    .text.get_asynchronous_msgnumber:00000000 $t
+     /tmp/ccHTTdmI.s:386    .text.get_asynchronous_msgnumber:00000000 get_asynchronous_msgnumber
+     /tmp/ccHTTdmI.s:397    .text.get_asynchronous_msgnumber:00000008 $d
+     /tmp/ccHTTdmI.s:404    .text.increment_asynchronous_msgnumber:00000000 $t
+     /tmp/ccHTTdmI.s:410    .text.increment_asynchronous_msgnumber:00000000 increment_asynchronous_msgnumber
+     /tmp/ccHTTdmI.s:445    .text.increment_asynchronous_msgnumber:0000003c $d
+     /tmp/ccHTTdmI.s:451    .text.get_last_msg_event:00000000 $t
+     /tmp/ccHTTdmI.s:457    .text.get_last_msg_event:00000000 get_last_msg_event
+     /tmp/ccHTTdmI.s:470    .text.get_last_msg_event:0000000c $d
+     /tmp/ccHTTdmI.s:474    .text.get_modem_uptime_s:00000000 $t
+     /tmp/ccHTTdmI.s:480    .text.get_modem_uptime_s:00000000 get_modem_uptime_s
+     /tmp/ccHTTdmI.s:493    .text.get_modem_uptime_s:00000010 $d
+     /tmp/ccHTTdmI.s:496    .text.set_modem_start_time_s:00000000 $t
+     /tmp/ccHTTdmI.s:502    .text.set_modem_start_time_s:00000000 set_modem_start_time_s
+     /tmp/ccHTTdmI.s:520    .text.set_modem_start_time_s:00000014 $d
+     /tmp/ccHTTdmI.s:524    .text.set_modem_dm_interval:00000000 $t
+     /tmp/ccHTTdmI.s:530    .text.set_modem_dm_interval:00000000 set_modem_dm_interval
+     /tmp/ccHTTdmI.s:546    .text.set_modem_dm_interval:00000010 $d
+     /tmp/ccHTTdmI.s:549    .text.get_modem_dm_interval:00000000 $t
+     /tmp/ccHTTdmI.s:555    .text.get_modem_dm_interval:00000000 get_modem_dm_interval
+     /tmp/ccHTTdmI.s:566    .text.get_modem_dm_interval:00000008 $d
+     /tmp/ccHTTdmI.s:569    .text.get_modem_dm_interval_second:00000000 $t
+     /tmp/ccHTTdmI.s:575    .text.get_modem_dm_interval_second:00000000 get_modem_dm_interval_second
+     /tmp/ccHTTdmI.s:610    .text.get_modem_dm_interval_second:00000030 $d
+     /tmp/ccHTTdmI.s:614    .text.set_modem_class:00000000 $t
+     /tmp/ccHTTdmI.s:620    .text.set_modem_class:00000000 set_modem_class
+     /tmp/ccHTTdmI.s:631    .text.set_modem_class:00000008 $d
+     /tmp/ccHTTdmI.s:634    .text.get_modem_class:00000000 $t
+     /tmp/ccHTTdmI.s:640    .text.get_modem_class:00000000 get_modem_class
+     /tmp/ccHTTdmI.s:651    .text.get_modem_class:00000008 $d
+     /tmp/ccHTTdmI.s:654    .text.get_modem_dm_port:00000000 $t
+     /tmp/ccHTTdmI.s:660    .text.get_modem_dm_port:00000000 get_modem_dm_port
+     /tmp/ccHTTdmI.s:671    .text.get_modem_dm_port:00000008 $d
+     /tmp/ccHTTdmI.s:674    .text.get_modem_adr_profile:00000000 $t
+     /tmp/ccHTTdmI.s:680    .text.get_modem_adr_profile:00000000 get_modem_adr_profile
+     /tmp/ccHTTdmI.s:691    .text.get_modem_adr_profile:00000008 $d
+     /tmp/ccHTTdmI.s:694    .text.get_modem_region:00000000 $t
+     /tmp/ccHTTdmI.s:700    .text.get_modem_region:00000000 get_modem_region
+     /tmp/ccHTTdmI.s:709    .text.set_modem_region:00000000 $t
+     /tmp/ccHTTdmI.s:715    .text.set_modem_region:00000000 set_modem_region
+     /tmp/ccHTTdmI.s:727    .text.set_modem_appstatus:00000000 $t
+     /tmp/ccHTTdmI.s:733    .text.set_modem_appstatus:00000000 set_modem_appstatus
+     /tmp/ccHTTdmI.s:747    .text.set_modem_appstatus:00000010 $d
+     /tmp/ccHTTdmI.s:750    .text.get_modem_appstatus:00000000 $t
+     /tmp/ccHTTdmI.s:756    .text.get_modem_appstatus:00000000 get_modem_appstatus
+     /tmp/ccHTTdmI.s:768    .text.get_modem_appstatus:0000000c $d
+     /tmp/ccHTTdmI.s:771    .text.modem_supervisor_add_task_dm_status_now:00000000 $t
+     /tmp/ccHTTdmI.s:777    .text.modem_supervisor_add_task_dm_status_now:00000000 modem_supervisor_add_task_dm_status_now
+     /tmp/ccHTTdmI.s:802    .text.modem_supervisor_add_task_crash_log:00000000 $t
+     /tmp/ccHTTdmI.s:808    .text.modem_supervisor_add_task_crash_log:00000000 modem_supervisor_add_task_crash_log
+ARM GAS  /tmp/ccHTTdmI.s 			page 83
 
 
-     /tmp/ccV7b15a.s:836    .text.modem_supervisor_add_task_clock_sync_time_req:00000000 $t
-     /tmp/ccV7b15a.s:842    .text.modem_supervisor_add_task_clock_sync_time_req:00000000 modem_supervisor_add_task_clock_sync_time_req
-     /tmp/ccV7b15a.s:865    .text.modem_supervisor_remove_task_clock_sync:00000000 $t
-     /tmp/ccV7b15a.s:871    .text.modem_supervisor_remove_task_clock_sync:00000000 modem_supervisor_remove_task_clock_sync
-     /tmp/ccV7b15a.s:893    .text.modem_supervisor_is_clock_sync_running:00000000 $t
-     /tmp/ccV7b15a.s:899    .text.modem_supervisor_is_clock_sync_running:00000000 modem_supervisor_is_clock_sync_running
-     /tmp/ccV7b15a.s:913    .text.modem_supervisor_add_task_modem_mute:00000000 $t
-     /tmp/ccV7b15a.s:919    .text.modem_supervisor_add_task_modem_mute:00000000 modem_supervisor_add_task_modem_mute
-     /tmp/ccV7b15a.s:940    .text.modem_supervisor_add_task_modem_mute:00000020 $d
-     /tmp/ccV7b15a.s:943    .text.modem_supervisor_add_task_file_upload:00000000 $t
-     /tmp/ccV7b15a.s:949    .text.modem_supervisor_add_task_file_upload:00000000 modem_supervisor_add_task_file_upload
-     /tmp/ccV7b15a.s:970    .text.get_modem_gnss_status:00000000 $t
-     /tmp/ccV7b15a.s:976    .text.get_modem_gnss_status:00000000 get_modem_gnss_status
-     /tmp/ccV7b15a.s:995    .text.get_modem_gnss_status:0000001c $d
-     /tmp/ccV7b15a.s:4482   .bss.modem_radio_ctx:00000000 modem_radio_ctx
-     /tmp/ccV7b15a.s:998    .text.set_modem_status_reset_after_brownout:00000000 $t
-     /tmp/ccV7b15a.s:1004   .text.set_modem_status_reset_after_brownout:00000000 set_modem_status_reset_after_brownout
-     /tmp/ccV7b15a.s:1024   .text.set_modem_status_reset_after_brownout:00000018 $d
-     /tmp/ccV7b15a.s:1027   .text.set_modem_status_reset_after_crash:00000000 $t
-     /tmp/ccV7b15a.s:1033   .text.set_modem_status_reset_after_crash:00000000 set_modem_status_reset_after_crash
-     /tmp/ccV7b15a.s:1053   .text.set_modem_status_reset_after_crash:00000018 $d
-     /tmp/ccV7b15a.s:1056   .text.set_modem_status_modem_mute:00000000 $t
-     /tmp/ccV7b15a.s:1062   .text.set_modem_status_modem_mute:00000000 set_modem_status_modem_mute
-     /tmp/ccV7b15a.s:1082   .text.set_modem_status_modem_mute:00000018 $d
-     /tmp/ccV7b15a.s:1085   .text.set_modem_status_modem_joined:00000000 $t
-     /tmp/ccV7b15a.s:1091   .text.set_modem_status_modem_joined:00000000 set_modem_status_modem_joined
-     /tmp/ccV7b15a.s:1111   .text.set_modem_status_modem_joined:00000018 $d
-     /tmp/ccV7b15a.s:1114   .text.set_modem_status_radio_suspend:00000000 $t
-     /tmp/ccV7b15a.s:1120   .text.set_modem_status_radio_suspend:00000000 set_modem_status_radio_suspend
-     /tmp/ccV7b15a.s:1140   .text.set_modem_status_radio_suspend:00000018 $d
-     /tmp/ccV7b15a.s:1143   .text.set_modem_status_file_upload:00000000 $t
-     /tmp/ccV7b15a.s:1149   .text.set_modem_status_file_upload:00000000 set_modem_status_file_upload
-     /tmp/ccV7b15a.s:1169   .text.set_modem_status_file_upload:00000018 $d
-     /tmp/ccV7b15a.s:1172   .text.set_modem_status_joining:00000000 $t
-     /tmp/ccV7b15a.s:1178   .text.set_modem_status_joining:00000000 set_modem_status_joining
-     /tmp/ccV7b15a.s:1198   .text.set_modem_status_joining:00000018 $d
-     /tmp/ccV7b15a.s:1206   .text.modem_supervisor_add_task_join:00000000 $t
-     /tmp/ccV7b15a.s:1212   .text.modem_supervisor_add_task_join:00000000 modem_supervisor_add_task_join
-     /tmp/ccV7b15a.s:1256   .text.modem_supervisor_add_task_join:00000054 $d
-     /tmp/ccV7b15a.s:1260   .text.set_modem_status_streaming:00000000 $t
-     /tmp/ccV7b15a.s:1266   .text.set_modem_status_streaming:00000000 set_modem_status_streaming
-     /tmp/ccV7b15a.s:1287   .text.set_modem_status_streaming:00000018 $d
-     /tmp/ccV7b15a.s:1290   .text.modem_supervisor_add_task_stream:00000000 $t
-     /tmp/ccV7b15a.s:1296   .text.modem_supervisor_add_task_stream:00000000 modem_supervisor_add_task_stream
-     /tmp/ccV7b15a.s:1327   .text.modem_supervisor_add_task_stream:00000038 $d
-     /tmp/ccV7b15a.s:1330   .text.get_modem_status_reset_after_crash:00000000 $t
-     /tmp/ccV7b15a.s:1336   .text.get_modem_status_reset_after_crash:00000000 get_modem_status_reset_after_crash
-     /tmp/ccV7b15a.s:1349   .text.get_modem_status_reset_after_crash:0000000c $d
-     /tmp/ccV7b15a.s:1352   .text.get_modem_status_file_upload:00000000 $t
-     /tmp/ccV7b15a.s:1358   .text.get_modem_status_file_upload:00000000 get_modem_status_file_upload
-     /tmp/ccV7b15a.s:1371   .text.get_modem_status_file_upload:0000000c $d
-     /tmp/ccV7b15a.s:1374   .text.get_modem_status_joining:00000000 $t
-     /tmp/ccV7b15a.s:1380   .text.get_modem_status_joining:00000000 get_modem_status_joining
-     /tmp/ccV7b15a.s:1393   .text.get_modem_status_joining:0000000c $d
-     /tmp/ccV7b15a.s:1396   .text.get_join_state:00000000 $t
-     /tmp/ccV7b15a.s:1402   .text.get_join_state:00000000 get_join_state
-     /tmp/ccV7b15a.s:1421   .text.modem_supervisor_add_task_dm_status:00000000 $t
-ARM GAS  /tmp/ccV7b15a.s 			page 84
+     /tmp/ccHTTdmI.s:836    .text.modem_supervisor_add_task_clock_sync_time_req:00000000 $t
+     /tmp/ccHTTdmI.s:842    .text.modem_supervisor_add_task_clock_sync_time_req:00000000 modem_supervisor_add_task_clock_sync_time_req
+     /tmp/ccHTTdmI.s:865    .text.modem_supervisor_remove_task_clock_sync:00000000 $t
+     /tmp/ccHTTdmI.s:871    .text.modem_supervisor_remove_task_clock_sync:00000000 modem_supervisor_remove_task_clock_sync
+     /tmp/ccHTTdmI.s:893    .text.modem_supervisor_is_clock_sync_running:00000000 $t
+     /tmp/ccHTTdmI.s:899    .text.modem_supervisor_is_clock_sync_running:00000000 modem_supervisor_is_clock_sync_running
+     /tmp/ccHTTdmI.s:913    .text.modem_supervisor_add_task_modem_mute:00000000 $t
+     /tmp/ccHTTdmI.s:919    .text.modem_supervisor_add_task_modem_mute:00000000 modem_supervisor_add_task_modem_mute
+     /tmp/ccHTTdmI.s:940    .text.modem_supervisor_add_task_modem_mute:00000020 $d
+     /tmp/ccHTTdmI.s:943    .text.modem_supervisor_add_task_file_upload:00000000 $t
+     /tmp/ccHTTdmI.s:949    .text.modem_supervisor_add_task_file_upload:00000000 modem_supervisor_add_task_file_upload
+     /tmp/ccHTTdmI.s:970    .text.get_modem_gnss_status:00000000 $t
+     /tmp/ccHTTdmI.s:976    .text.get_modem_gnss_status:00000000 get_modem_gnss_status
+     /tmp/ccHTTdmI.s:995    .text.get_modem_gnss_status:0000001c $d
+     /tmp/ccHTTdmI.s:4482   .bss.modem_radio_ctx:00000000 modem_radio_ctx
+     /tmp/ccHTTdmI.s:998    .text.set_modem_status_reset_after_brownout:00000000 $t
+     /tmp/ccHTTdmI.s:1004   .text.set_modem_status_reset_after_brownout:00000000 set_modem_status_reset_after_brownout
+     /tmp/ccHTTdmI.s:1024   .text.set_modem_status_reset_after_brownout:00000018 $d
+     /tmp/ccHTTdmI.s:1027   .text.set_modem_status_reset_after_crash:00000000 $t
+     /tmp/ccHTTdmI.s:1033   .text.set_modem_status_reset_after_crash:00000000 set_modem_status_reset_after_crash
+     /tmp/ccHTTdmI.s:1053   .text.set_modem_status_reset_after_crash:00000018 $d
+     /tmp/ccHTTdmI.s:1056   .text.set_modem_status_modem_mute:00000000 $t
+     /tmp/ccHTTdmI.s:1062   .text.set_modem_status_modem_mute:00000000 set_modem_status_modem_mute
+     /tmp/ccHTTdmI.s:1082   .text.set_modem_status_modem_mute:00000018 $d
+     /tmp/ccHTTdmI.s:1085   .text.set_modem_status_modem_joined:00000000 $t
+     /tmp/ccHTTdmI.s:1091   .text.set_modem_status_modem_joined:00000000 set_modem_status_modem_joined
+     /tmp/ccHTTdmI.s:1111   .text.set_modem_status_modem_joined:00000018 $d
+     /tmp/ccHTTdmI.s:1114   .text.set_modem_status_radio_suspend:00000000 $t
+     /tmp/ccHTTdmI.s:1120   .text.set_modem_status_radio_suspend:00000000 set_modem_status_radio_suspend
+     /tmp/ccHTTdmI.s:1140   .text.set_modem_status_radio_suspend:00000018 $d
+     /tmp/ccHTTdmI.s:1143   .text.set_modem_status_file_upload:00000000 $t
+     /tmp/ccHTTdmI.s:1149   .text.set_modem_status_file_upload:00000000 set_modem_status_file_upload
+     /tmp/ccHTTdmI.s:1169   .text.set_modem_status_file_upload:00000018 $d
+     /tmp/ccHTTdmI.s:1172   .text.set_modem_status_joining:00000000 $t
+     /tmp/ccHTTdmI.s:1178   .text.set_modem_status_joining:00000000 set_modem_status_joining
+     /tmp/ccHTTdmI.s:1198   .text.set_modem_status_joining:00000018 $d
+     /tmp/ccHTTdmI.s:1206   .text.modem_supervisor_add_task_join:00000000 $t
+     /tmp/ccHTTdmI.s:1212   .text.modem_supervisor_add_task_join:00000000 modem_supervisor_add_task_join
+     /tmp/ccHTTdmI.s:1256   .text.modem_supervisor_add_task_join:00000054 $d
+     /tmp/ccHTTdmI.s:1260   .text.set_modem_status_streaming:00000000 $t
+     /tmp/ccHTTdmI.s:1266   .text.set_modem_status_streaming:00000000 set_modem_status_streaming
+     /tmp/ccHTTdmI.s:1287   .text.set_modem_status_streaming:00000018 $d
+     /tmp/ccHTTdmI.s:1290   .text.modem_supervisor_add_task_stream:00000000 $t
+     /tmp/ccHTTdmI.s:1296   .text.modem_supervisor_add_task_stream:00000000 modem_supervisor_add_task_stream
+     /tmp/ccHTTdmI.s:1327   .text.modem_supervisor_add_task_stream:00000038 $d
+     /tmp/ccHTTdmI.s:1330   .text.get_modem_status_reset_after_crash:00000000 $t
+     /tmp/ccHTTdmI.s:1336   .text.get_modem_status_reset_after_crash:00000000 get_modem_status_reset_after_crash
+     /tmp/ccHTTdmI.s:1349   .text.get_modem_status_reset_after_crash:0000000c $d
+     /tmp/ccHTTdmI.s:1352   .text.get_modem_status_file_upload:00000000 $t
+     /tmp/ccHTTdmI.s:1358   .text.get_modem_status_file_upload:00000000 get_modem_status_file_upload
+     /tmp/ccHTTdmI.s:1371   .text.get_modem_status_file_upload:0000000c $d
+     /tmp/ccHTTdmI.s:1374   .text.get_modem_status_joining:00000000 $t
+     /tmp/ccHTTdmI.s:1380   .text.get_modem_status_joining:00000000 get_modem_status_joining
+     /tmp/ccHTTdmI.s:1393   .text.get_modem_status_joining:0000000c $d
+     /tmp/ccHTTdmI.s:1396   .text.get_join_state:00000000 $t
+     /tmp/ccHTTdmI.s:1402   .text.get_join_state:00000000 get_join_state
+     /tmp/ccHTTdmI.s:1421   .text.modem_supervisor_add_task_dm_status:00000000 $t
+ARM GAS  /tmp/ccHTTdmI.s 			page 84
 
 
-     /tmp/ccV7b15a.s:1427   .text.modem_supervisor_add_task_dm_status:00000000 modem_supervisor_add_task_dm_status
-     /tmp/ccV7b15a.s:1453   .text.modem_supervisor_add_task_alc_sync_ans:00000000 $t
-     /tmp/ccV7b15a.s:1459   .text.modem_supervisor_add_task_alc_sync_ans:00000000 modem_supervisor_add_task_alc_sync_ans
-     /tmp/ccV7b15a.s:1486   .text.modem_supervisor_add_task_alm_dbg_ans:00000000 $t
-     /tmp/ccV7b15a.s:1492   .text.modem_supervisor_add_task_alm_dbg_ans:00000000 modem_supervisor_add_task_alm_dbg_ans
-     /tmp/ccV7b15a.s:1519   .text.modem_supervisor_add_task_retrieve_dl:00000000 $t
-     /tmp/ccV7b15a.s:1525   .text.modem_supervisor_add_task_retrieve_dl:00000000 modem_supervisor_add_task_retrieve_dl
-     /tmp/ccV7b15a.s:1553   .text.modem_supervisor_add_task_frag:00000000 $t
-     /tmp/ccV7b15a.s:1559   .text.modem_supervisor_add_task_frag:00000000 modem_supervisor_add_task_frag
-     /tmp/ccV7b15a.s:1586   .text.modem_supervisor_add_task_link_check_req:00000000 $t
-     /tmp/ccV7b15a.s:1592   .text.modem_supervisor_add_task_link_check_req:00000000 modem_supervisor_add_task_link_check_req
-     /tmp/ccV7b15a.s:1619   .text.modem_supervisor_add_task_device_time_req:00000000 $t
-     /tmp/ccV7b15a.s:1625   .text.modem_supervisor_add_task_device_time_req:00000000 modem_supervisor_add_task_device_time_req
-     /tmp/ccV7b15a.s:1652   .text.modem_supervisor_add_task_ping_slot_info_req:00000000 $t
-     /tmp/ccV7b15a.s:1658   .text.modem_supervisor_add_task_ping_slot_info_req:00000000 modem_supervisor_add_task_ping_slot_info_req
-     /tmp/ccV7b15a.s:1685   .text.get_modem_status:00000000 $t
-     /tmp/ccV7b15a.s:1691   .text.get_modem_status:00000000 get_modem_status
-     /tmp/ccV7b15a.s:1708   .text.get_modem_status:00000018 $d
-     /tmp/ccV7b15a.s:1711   .text.get_modem_status_streaming:00000000 $t
-     /tmp/ccV7b15a.s:1717   .text.get_modem_status_streaming:00000000 get_modem_status_streaming
-     /tmp/ccV7b15a.s:1729   .text.get_modem_status_streaming:00000008 $d
-     /tmp/ccV7b15a.s:1732   .text.reset_modem_charge:00000000 $t
-     /tmp/ccV7b15a.s:1738   .text.reset_modem_charge:00000000 reset_modem_charge
-     /tmp/ccV7b15a.s:1755   .text.reset_modem_charge:00000018 $d
-     /tmp/ccV7b15a.s:1760   .text.get_modem_charge_ma_s:00000000 $t
-     /tmp/ccV7b15a.s:1766   .text.get_modem_charge_ma_s:00000000 get_modem_charge_ma_s
-     /tmp/ccV7b15a.s:1791   .text.get_modem_charge_ma_s:00000028 $d
-     /tmp/ccV7b15a.s:1798   .text.get_modem_charge_ma_h:00000000 $t
-     /tmp/ccV7b15a.s:1804   .text.get_modem_charge_ma_h:00000000 get_modem_charge_ma_h
-     /tmp/ccV7b15a.s:1816   .text.get_modem_user_define_charge_ma_h:00000000 $t
-     /tmp/ccV7b15a.s:1822   .text.get_modem_user_define_charge_ma_h:00000000 get_modem_user_define_charge_ma_h
-     /tmp/ccV7b15a.s:1833   .text.get_modem_user_define_charge_ma_h:00000008 $d
-     /tmp/ccV7b15a.s:1836   .text.set_modem_user_define_charge_ma_h:00000000 $t
-     /tmp/ccV7b15a.s:1842   .text.set_modem_user_define_charge_ma_h:00000000 set_modem_user_define_charge_ma_h
-     /tmp/ccV7b15a.s:1853   .text.set_modem_user_define_charge_ma_h:00000008 $d
-     /tmp/ccV7b15a.s:1856   .text.choose_modem_charge_counter:00000000 $t
-     /tmp/ccV7b15a.s:1862   .text.choose_modem_charge_counter:00000000 choose_modem_charge_counter
-     /tmp/ccV7b15a.s:1874   .text.choose_modem_charge_counter:00000008 $d
-     /tmp/ccV7b15a.s:1877   .text.choose_user_define_charge_counter:00000000 $t
-     /tmp/ccV7b15a.s:1883   .text.choose_user_define_charge_counter:00000000 choose_user_define_charge_counter
-     /tmp/ccV7b15a.s:1895   .text.choose_user_define_charge_counter:00000008 $d
-     /tmp/ccV7b15a.s:1898   .text.get_charge_counter_to_send:00000000 $t
-     /tmp/ccV7b15a.s:1904   .text.get_charge_counter_to_send:00000000 get_charge_counter_to_send
-     /tmp/ccV7b15a.s:1915   .text.get_charge_counter_to_send:00000008 $d
-     /tmp/ccV7b15a.s:1918   .text.get_modem_voltage:00000000 $t
-     /tmp/ccV7b15a.s:1924   .text.get_modem_voltage:00000000 get_modem_voltage
-     /tmp/ccV7b15a.s:1933   .text.get_modem_temp:00000000 $t
-     /tmp/ccV7b15a.s:1939   .text.get_modem_temp:00000000 get_modem_temp
-     /tmp/ccV7b15a.s:1953   .text.dm_check_dminfo_size:00000000 $t
-     /tmp/ccV7b15a.s:1959   .text.dm_check_dminfo_size:00000000 dm_check_dminfo_size
-     /tmp/ccV7b15a.s:1985   .text.dm_check_dminfo_size:00000024 $d
-     /tmp/ccV7b15a.s:4474   .rodata.dm_info_field_sz:00000000 dm_info_field_sz
-     /tmp/ccV7b15a.s:1991   .text.dm_set_conf:00000000 $t
-     /tmp/ccV7b15a.s:1997   .text.dm_set_conf:00000000 dm_set_conf
-     /tmp/ccV7b15a.s:2019   .text.dm_set_conf:00000020 $d
-     /tmp/ccV7b15a.s:2023   .text.dm_set_conf:00000024 $t
-     /tmp/ccV7b15a.s:2060   .text.dm_set_conf:00000070 $d
-ARM GAS  /tmp/ccV7b15a.s 			page 85
+     /tmp/ccHTTdmI.s:1427   .text.modem_supervisor_add_task_dm_status:00000000 modem_supervisor_add_task_dm_status
+     /tmp/ccHTTdmI.s:1453   .text.modem_supervisor_add_task_alc_sync_ans:00000000 $t
+     /tmp/ccHTTdmI.s:1459   .text.modem_supervisor_add_task_alc_sync_ans:00000000 modem_supervisor_add_task_alc_sync_ans
+     /tmp/ccHTTdmI.s:1486   .text.modem_supervisor_add_task_alm_dbg_ans:00000000 $t
+     /tmp/ccHTTdmI.s:1492   .text.modem_supervisor_add_task_alm_dbg_ans:00000000 modem_supervisor_add_task_alm_dbg_ans
+     /tmp/ccHTTdmI.s:1519   .text.modem_supervisor_add_task_retrieve_dl:00000000 $t
+     /tmp/ccHTTdmI.s:1525   .text.modem_supervisor_add_task_retrieve_dl:00000000 modem_supervisor_add_task_retrieve_dl
+     /tmp/ccHTTdmI.s:1553   .text.modem_supervisor_add_task_frag:00000000 $t
+     /tmp/ccHTTdmI.s:1559   .text.modem_supervisor_add_task_frag:00000000 modem_supervisor_add_task_frag
+     /tmp/ccHTTdmI.s:1586   .text.modem_supervisor_add_task_link_check_req:00000000 $t
+     /tmp/ccHTTdmI.s:1592   .text.modem_supervisor_add_task_link_check_req:00000000 modem_supervisor_add_task_link_check_req
+     /tmp/ccHTTdmI.s:1619   .text.modem_supervisor_add_task_device_time_req:00000000 $t
+     /tmp/ccHTTdmI.s:1625   .text.modem_supervisor_add_task_device_time_req:00000000 modem_supervisor_add_task_device_time_req
+     /tmp/ccHTTdmI.s:1652   .text.modem_supervisor_add_task_ping_slot_info_req:00000000 $t
+     /tmp/ccHTTdmI.s:1658   .text.modem_supervisor_add_task_ping_slot_info_req:00000000 modem_supervisor_add_task_ping_slot_info_req
+     /tmp/ccHTTdmI.s:1685   .text.get_modem_status:00000000 $t
+     /tmp/ccHTTdmI.s:1691   .text.get_modem_status:00000000 get_modem_status
+     /tmp/ccHTTdmI.s:1708   .text.get_modem_status:00000018 $d
+     /tmp/ccHTTdmI.s:1711   .text.get_modem_status_streaming:00000000 $t
+     /tmp/ccHTTdmI.s:1717   .text.get_modem_status_streaming:00000000 get_modem_status_streaming
+     /tmp/ccHTTdmI.s:1729   .text.get_modem_status_streaming:00000008 $d
+     /tmp/ccHTTdmI.s:1732   .text.reset_modem_charge:00000000 $t
+     /tmp/ccHTTdmI.s:1738   .text.reset_modem_charge:00000000 reset_modem_charge
+     /tmp/ccHTTdmI.s:1755   .text.reset_modem_charge:00000018 $d
+     /tmp/ccHTTdmI.s:1760   .text.get_modem_charge_ma_s:00000000 $t
+     /tmp/ccHTTdmI.s:1766   .text.get_modem_charge_ma_s:00000000 get_modem_charge_ma_s
+     /tmp/ccHTTdmI.s:1791   .text.get_modem_charge_ma_s:00000028 $d
+     /tmp/ccHTTdmI.s:1798   .text.get_modem_charge_ma_h:00000000 $t
+     /tmp/ccHTTdmI.s:1804   .text.get_modem_charge_ma_h:00000000 get_modem_charge_ma_h
+     /tmp/ccHTTdmI.s:1816   .text.get_modem_user_define_charge_ma_h:00000000 $t
+     /tmp/ccHTTdmI.s:1822   .text.get_modem_user_define_charge_ma_h:00000000 get_modem_user_define_charge_ma_h
+     /tmp/ccHTTdmI.s:1833   .text.get_modem_user_define_charge_ma_h:00000008 $d
+     /tmp/ccHTTdmI.s:1836   .text.set_modem_user_define_charge_ma_h:00000000 $t
+     /tmp/ccHTTdmI.s:1842   .text.set_modem_user_define_charge_ma_h:00000000 set_modem_user_define_charge_ma_h
+     /tmp/ccHTTdmI.s:1853   .text.set_modem_user_define_charge_ma_h:00000008 $d
+     /tmp/ccHTTdmI.s:1856   .text.choose_modem_charge_counter:00000000 $t
+     /tmp/ccHTTdmI.s:1862   .text.choose_modem_charge_counter:00000000 choose_modem_charge_counter
+     /tmp/ccHTTdmI.s:1874   .text.choose_modem_charge_counter:00000008 $d
+     /tmp/ccHTTdmI.s:1877   .text.choose_user_define_charge_counter:00000000 $t
+     /tmp/ccHTTdmI.s:1883   .text.choose_user_define_charge_counter:00000000 choose_user_define_charge_counter
+     /tmp/ccHTTdmI.s:1895   .text.choose_user_define_charge_counter:00000008 $d
+     /tmp/ccHTTdmI.s:1898   .text.get_charge_counter_to_send:00000000 $t
+     /tmp/ccHTTdmI.s:1904   .text.get_charge_counter_to_send:00000000 get_charge_counter_to_send
+     /tmp/ccHTTdmI.s:1915   .text.get_charge_counter_to_send:00000008 $d
+     /tmp/ccHTTdmI.s:1918   .text.get_modem_voltage:00000000 $t
+     /tmp/ccHTTdmI.s:1924   .text.get_modem_voltage:00000000 get_modem_voltage
+     /tmp/ccHTTdmI.s:1933   .text.get_modem_temp:00000000 $t
+     /tmp/ccHTTdmI.s:1939   .text.get_modem_temp:00000000 get_modem_temp
+     /tmp/ccHTTdmI.s:1953   .text.dm_check_dminfo_size:00000000 $t
+     /tmp/ccHTTdmI.s:1959   .text.dm_check_dminfo_size:00000000 dm_check_dminfo_size
+     /tmp/ccHTTdmI.s:1985   .text.dm_check_dminfo_size:00000024 $d
+     /tmp/ccHTTdmI.s:4474   .rodata.dm_info_field_sz:00000000 dm_info_field_sz
+     /tmp/ccHTTdmI.s:1991   .text.dm_set_conf:00000000 $t
+     /tmp/ccHTTdmI.s:1997   .text.dm_set_conf:00000000 dm_set_conf
+     /tmp/ccHTTdmI.s:2019   .text.dm_set_conf:00000020 $d
+     /tmp/ccHTTdmI.s:2023   .text.dm_set_conf:00000024 $t
+     /tmp/ccHTTdmI.s:2060   .text.dm_set_conf:00000070 $d
+ARM GAS  /tmp/ccHTTdmI.s 			page 85
 
 
-     /tmp/ccV7b15a.s:2063   .text.get_modem_muted:00000000 $t
-     /tmp/ccV7b15a.s:2069   .text.get_modem_muted:00000000 get_modem_muted
-     /tmp/ccV7b15a.s:2086   .text.get_modem_muted:00000010 $d
-     /tmp/ccV7b15a.s:2089   .text.dm_get_number_of_days_mute:00000000 $t
-     /tmp/ccV7b15a.s:2095   .text.dm_get_number_of_days_mute:00000000 dm_get_number_of_days_mute
-     /tmp/ccV7b15a.s:2106   .text.dm_get_number_of_days_mute:00000008 $d
-     /tmp/ccV7b15a.s:2112   .text.dm_set_number_of_days_mute:00000000 $t
-     /tmp/ccV7b15a.s:2118   .text.dm_set_number_of_days_mute:00000000 dm_set_number_of_days_mute
-     /tmp/ccV7b15a.s:2143   .text.dm_set_number_of_days_mute:00000024 $d
-     /tmp/ccV7b15a.s:2147   .text.get_dm_info_tag_list:00000000 $t
-     /tmp/ccV7b15a.s:2153   .text.get_dm_info_tag_list:00000000 get_dm_info_tag_list
-     /tmp/ccV7b15a.s:2184   .text.get_dm_info_tag_list:0000002c $d
-     /tmp/ccV7b15a.s:2192   .text.set_dm_info:00000000 $t
-     /tmp/ccV7b15a.s:2198   .text.set_dm_info:00000000 set_dm_info
-     /tmp/ccV7b15a.s:2296   .text.set_dm_info:000000a0 $d
-     /tmp/ccV7b15a.s:2305   .text.set_modem_suspend:00000000 $t
-     /tmp/ccV7b15a.s:2311   .text.set_modem_suspend:00000000 set_modem_suspend
-     /tmp/ccV7b15a.s:2325   .text.set_modem_suspend:00000010 $d
-     /tmp/ccV7b15a.s:2328   .text.get_modem_suspend:00000000 $t
-     /tmp/ccV7b15a.s:2334   .text.get_modem_suspend:00000000 get_modem_suspend
-     /tmp/ccV7b15a.s:2349   .text.get_modem_suspend:00000010 $d
-     /tmp/ccV7b15a.s:2362   .text.set_modem_adr_profile:00000000 $t
-     /tmp/ccV7b15a.s:2368   .text.set_modem_adr_profile:00000000 set_modem_adr_profile
-     /tmp/ccV7b15a.s:2437   .text.set_modem_adr_profile:0000007c $d
-     /tmp/ccV7b15a.s:2449   .text.set_modem_adr_profile:00000088 $t
-     /tmp/ccV7b15a.s:2597   .text.set_modem_adr_profile:00000188 $d
-     /tmp/ccV7b15a.s:2625   .text.set_modem_downlink_frame:00000000 $t
-     /tmp/ccV7b15a.s:2631   .text.set_modem_downlink_frame:00000000 set_modem_downlink_frame
-     /tmp/ccV7b15a.s:2726   .text.set_modem_downlink_frame:000000bc $d
-     /tmp/ccV7b15a.s:2739   .text.get_modem_downlink_frame:00000000 $t
-     /tmp/ccV7b15a.s:2745   .text.get_modem_downlink_frame:00000000 get_modem_downlink_frame
-     /tmp/ccV7b15a.s:2790   .text.get_modem_downlink_frame:00000050 $d
-     /tmp/ccV7b15a.s:2804   .text.dm_status_payload:00000000 $t
-     /tmp/ccV7b15a.s:2810   .text.dm_status_payload:00000000 dm_status_payload
-     /tmp/ccV7b15a.s:2897   .text.dm_status_payload:0000009a $d
-     /tmp/ccV7b15a.s:3085   .text.dm_status_payload:000001e4 $d
-     /tmp/ccV7b15a.s:3101   .text.set_dm_retrieve_pending_dl:00000000 $t
-     /tmp/ccV7b15a.s:3107   .text.set_dm_retrieve_pending_dl:00000000 set_dm_retrieve_pending_dl
-     /tmp/ccV7b15a.s:3124   .text.set_dm_retrieve_pending_dl:00000010 $d
-     /tmp/ccV7b15a.s:3127   .text.get_dm_retrieve_pending_dl:00000000 $t
-     /tmp/ccV7b15a.s:3133   .text.get_dm_retrieve_pending_dl:00000000 get_dm_retrieve_pending_dl
-     /tmp/ccV7b15a.s:3147   .text.get_dm_retrieve_pending_dl:0000000c $d
-     /tmp/ccV7b15a.s:3150   .text.decrement_dm_retrieve_pending_dl:00000000 $t
-     /tmp/ccV7b15a.s:3156   .text.decrement_dm_retrieve_pending_dl:00000000 decrement_dm_retrieve_pending_dl
-     /tmp/ccV7b15a.s:3172   .text.decrement_dm_retrieve_pending_dl:00000010 $d
-     /tmp/ccV7b15a.s:3179   .text.modem_context_factory_reset:00000000 $t
-     /tmp/ccV7b15a.s:3185   .text.modem_context_factory_reset:00000000 modem_context_factory_reset
-     /tmp/ccV7b15a.s:3224   .text.modem_context_factory_reset:0000004c $d
-     /tmp/ccV7b15a.s:3237   .text.modem_load_context:00000000 $t
-     /tmp/ccV7b15a.s:3243   .text.modem_load_context:00000000 modem_load_context
-     /tmp/ccV7b15a.s:3289   .text.modem_load_context:00000058 $d
-     /tmp/ccV7b15a.s:3299   .text.modem_store_context:00000000 $t
-     /tmp/ccV7b15a.s:3305   .text.modem_store_context:00000000 modem_store_context
-     /tmp/ccV7b15a.s:3340   .text.modem_store_context:00000040 $d
-     /tmp/ccV7b15a.s:3348   .text.set_modem_dm_port:00000000 $t
-     /tmp/ccV7b15a.s:3354   .text.set_modem_dm_port:00000000 set_modem_dm_port
-     /tmp/ccV7b15a.s:3383   .text.set_modem_dm_port:0000002c $d
-ARM GAS  /tmp/ccV7b15a.s 			page 86
+     /tmp/ccHTTdmI.s:2063   .text.get_modem_muted:00000000 $t
+     /tmp/ccHTTdmI.s:2069   .text.get_modem_muted:00000000 get_modem_muted
+     /tmp/ccHTTdmI.s:2086   .text.get_modem_muted:00000010 $d
+     /tmp/ccHTTdmI.s:2089   .text.dm_get_number_of_days_mute:00000000 $t
+     /tmp/ccHTTdmI.s:2095   .text.dm_get_number_of_days_mute:00000000 dm_get_number_of_days_mute
+     /tmp/ccHTTdmI.s:2106   .text.dm_get_number_of_days_mute:00000008 $d
+     /tmp/ccHTTdmI.s:2112   .text.dm_set_number_of_days_mute:00000000 $t
+     /tmp/ccHTTdmI.s:2118   .text.dm_set_number_of_days_mute:00000000 dm_set_number_of_days_mute
+     /tmp/ccHTTdmI.s:2143   .text.dm_set_number_of_days_mute:00000024 $d
+     /tmp/ccHTTdmI.s:2147   .text.get_dm_info_tag_list:00000000 $t
+     /tmp/ccHTTdmI.s:2153   .text.get_dm_info_tag_list:00000000 get_dm_info_tag_list
+     /tmp/ccHTTdmI.s:2184   .text.get_dm_info_tag_list:0000002c $d
+     /tmp/ccHTTdmI.s:2192   .text.set_dm_info:00000000 $t
+     /tmp/ccHTTdmI.s:2198   .text.set_dm_info:00000000 set_dm_info
+     /tmp/ccHTTdmI.s:2296   .text.set_dm_info:000000a0 $d
+     /tmp/ccHTTdmI.s:2305   .text.set_modem_suspend:00000000 $t
+     /tmp/ccHTTdmI.s:2311   .text.set_modem_suspend:00000000 set_modem_suspend
+     /tmp/ccHTTdmI.s:2325   .text.set_modem_suspend:00000010 $d
+     /tmp/ccHTTdmI.s:2328   .text.get_modem_suspend:00000000 $t
+     /tmp/ccHTTdmI.s:2334   .text.get_modem_suspend:00000000 get_modem_suspend
+     /tmp/ccHTTdmI.s:2349   .text.get_modem_suspend:00000010 $d
+     /tmp/ccHTTdmI.s:2362   .text.set_modem_adr_profile:00000000 $t
+     /tmp/ccHTTdmI.s:2368   .text.set_modem_adr_profile:00000000 set_modem_adr_profile
+     /tmp/ccHTTdmI.s:2437   .text.set_modem_adr_profile:0000007c $d
+     /tmp/ccHTTdmI.s:2449   .text.set_modem_adr_profile:00000088 $t
+     /tmp/ccHTTdmI.s:2597   .text.set_modem_adr_profile:00000188 $d
+     /tmp/ccHTTdmI.s:2625   .text.set_modem_downlink_frame:00000000 $t
+     /tmp/ccHTTdmI.s:2631   .text.set_modem_downlink_frame:00000000 set_modem_downlink_frame
+     /tmp/ccHTTdmI.s:2726   .text.set_modem_downlink_frame:000000bc $d
+     /tmp/ccHTTdmI.s:2739   .text.get_modem_downlink_frame:00000000 $t
+     /tmp/ccHTTdmI.s:2745   .text.get_modem_downlink_frame:00000000 get_modem_downlink_frame
+     /tmp/ccHTTdmI.s:2790   .text.get_modem_downlink_frame:00000050 $d
+     /tmp/ccHTTdmI.s:2804   .text.dm_status_payload:00000000 $t
+     /tmp/ccHTTdmI.s:2810   .text.dm_status_payload:00000000 dm_status_payload
+     /tmp/ccHTTdmI.s:2897   .text.dm_status_payload:0000009a $d
+     /tmp/ccHTTdmI.s:3085   .text.dm_status_payload:000001e4 $d
+     /tmp/ccHTTdmI.s:3101   .text.set_dm_retrieve_pending_dl:00000000 $t
+     /tmp/ccHTTdmI.s:3107   .text.set_dm_retrieve_pending_dl:00000000 set_dm_retrieve_pending_dl
+     /tmp/ccHTTdmI.s:3124   .text.set_dm_retrieve_pending_dl:00000010 $d
+     /tmp/ccHTTdmI.s:3127   .text.get_dm_retrieve_pending_dl:00000000 $t
+     /tmp/ccHTTdmI.s:3133   .text.get_dm_retrieve_pending_dl:00000000 get_dm_retrieve_pending_dl
+     /tmp/ccHTTdmI.s:3147   .text.get_dm_retrieve_pending_dl:0000000c $d
+     /tmp/ccHTTdmI.s:3150   .text.decrement_dm_retrieve_pending_dl:00000000 $t
+     /tmp/ccHTTdmI.s:3156   .text.decrement_dm_retrieve_pending_dl:00000000 decrement_dm_retrieve_pending_dl
+     /tmp/ccHTTdmI.s:3172   .text.decrement_dm_retrieve_pending_dl:00000010 $d
+     /tmp/ccHTTdmI.s:3179   .text.modem_context_factory_reset:00000000 $t
+     /tmp/ccHTTdmI.s:3185   .text.modem_context_factory_reset:00000000 modem_context_factory_reset
+     /tmp/ccHTTdmI.s:3224   .text.modem_context_factory_reset:0000004c $d
+     /tmp/ccHTTdmI.s:3237   .text.modem_load_context:00000000 $t
+     /tmp/ccHTTdmI.s:3243   .text.modem_load_context:00000000 modem_load_context
+     /tmp/ccHTTdmI.s:3289   .text.modem_load_context:00000058 $d
+     /tmp/ccHTTdmI.s:3299   .text.modem_store_context:00000000 $t
+     /tmp/ccHTTdmI.s:3305   .text.modem_store_context:00000000 modem_store_context
+     /tmp/ccHTTdmI.s:3340   .text.modem_store_context:00000040 $d
+     /tmp/ccHTTdmI.s:3348   .text.set_modem_dm_port:00000000 $t
+     /tmp/ccHTTdmI.s:3354   .text.set_modem_dm_port:00000000 set_modem_dm_port
+     /tmp/ccHTTdmI.s:3383   .text.set_modem_dm_port:0000002c $d
+ARM GAS  /tmp/ccHTTdmI.s 			page 86
 
 
-     /tmp/ccV7b15a.s:3388   .text.modem_context_compute_and_get_next_dm_upload_sctr:00000000 $t
-     /tmp/ccV7b15a.s:3394   .text.modem_context_compute_and_get_next_dm_upload_sctr:00000000 modem_context_compute_and_get_next_dm_upload_sctr
-     /tmp/ccV7b15a.s:3409   .text.modem_context_compute_and_get_next_dm_upload_sctr:00000010 $d
-     /tmp/ccV7b15a.s:3412   .text.modem_get_upload_state:00000000 $t
-     /tmp/ccV7b15a.s:3418   .text.modem_get_upload_state:00000000 modem_get_upload_state
-     /tmp/ccV7b15a.s:3429   .text.modem_get_upload_state:00000008 $d
-     /tmp/ccV7b15a.s:3432   .text.modem_set_upload_state:00000000 $t
-     /tmp/ccV7b15a.s:3438   .text.modem_set_upload_state:00000000 modem_set_upload_state
-     /tmp/ccV7b15a.s:3449   .text.modem_set_upload_state:00000008 $d
-     /tmp/ccV7b15a.s:3452   .text.modem_get_stream_state:00000000 $t
-     /tmp/ccV7b15a.s:3458   .text.modem_get_stream_state:00000000 modem_get_stream_state
-     /tmp/ccV7b15a.s:3469   .text.modem_get_stream_state:00000008 $d
-     /tmp/ccV7b15a.s:3472   .text.modem_get_stream_port:00000000 $t
-     /tmp/ccV7b15a.s:3478   .text.modem_get_stream_port:00000000 modem_get_stream_port
-     /tmp/ccV7b15a.s:3489   .text.modem_get_stream_port:00000008 $d
-     /tmp/ccV7b15a.s:3492   .text.modem_get_stream_encryption:00000000 $t
-     /tmp/ccV7b15a.s:3498   .text.modem_get_stream_encryption:00000000 modem_get_stream_encryption
-     /tmp/ccV7b15a.s:3509   .text.modem_get_stream_encryption:00000008 $d
-     /tmp/ccV7b15a.s:3512   .text.modem_set_stream_state:00000000 $t
-     /tmp/ccV7b15a.s:3518   .text.modem_set_stream_state:00000000 modem_set_stream_state
-     /tmp/ccV7b15a.s:3529   .text.modem_set_stream_state:00000008 $d
-     /tmp/ccV7b15a.s:3532   .text.modem_set_stream_port:00000000 $t
-     /tmp/ccV7b15a.s:3538   .text.modem_set_stream_port:00000000 modem_set_stream_port
-     /tmp/ccV7b15a.s:3549   .text.modem_set_stream_port:00000008 $d
-     /tmp/ccV7b15a.s:3552   .text.modem_set_stream_encryption:00000000 $t
-     /tmp/ccV7b15a.s:3558   .text.modem_set_stream_encryption:00000000 modem_set_stream_encryption
-     /tmp/ccV7b15a.s:3569   .text.modem_set_stream_encryption:00000008 $d
-     /tmp/ccV7b15a.s:3572   .text.modem_set_dm_info_bitfield_periodic:00000000 $t
-     /tmp/ccV7b15a.s:3578   .text.modem_set_dm_info_bitfield_periodic:00000000 modem_set_dm_info_bitfield_periodic
-     /tmp/ccV7b15a.s:3593   .text.modem_set_dm_info_bitfield_periodic:0000000c $d
-     /tmp/ccV7b15a.s:3596   .text.modem_context_reset_dm_tag_number:00000000 $t
-     /tmp/ccV7b15a.s:3602   .text.modem_context_reset_dm_tag_number:00000000 modem_context_reset_dm_tag_number
-     /tmp/ccV7b15a.s:3614   .text.modem_context_reset_dm_tag_number:00000008 $d
-     /tmp/ccV7b15a.s:3617   .text.modem_get_dm_info_bitfield_periodic:00000000 $t
-     /tmp/ccV7b15a.s:3623   .text.modem_get_dm_info_bitfield_periodic:00000000 modem_get_dm_info_bitfield_periodic
-     /tmp/ccV7b15a.s:3634   .text.modem_get_dm_info_bitfield_periodic:00000008 $d
-     /tmp/ccV7b15a.s:3637   .text.modem_get_user_alarm:00000000 $t
-     /tmp/ccV7b15a.s:3643   .text.modem_get_user_alarm:00000000 modem_get_user_alarm
-     /tmp/ccV7b15a.s:3654   .text.modem_get_user_alarm:00000008 $d
-     /tmp/ccV7b15a.s:3657   .text.modem_set_user_alarm:00000000 $t
-     /tmp/ccV7b15a.s:3663   .text.modem_set_user_alarm:00000000 modem_set_user_alarm
-     /tmp/ccV7b15a.s:3674   .text.modem_set_user_alarm:00000008 $d
-     /tmp/ccV7b15a.s:3677   .text.get_modem_reset_requested:00000000 $t
-     /tmp/ccV7b15a.s:3683   .text.get_modem_reset_requested:00000000 get_modem_reset_requested
-     /tmp/ccV7b15a.s:3694   .text.get_modem_reset_requested:00000008 $d
-     /tmp/ccV7b15a.s:3697   .text.set_modem_reset_requested:00000000 $t
-     /tmp/ccV7b15a.s:3703   .text.set_modem_reset_requested:00000000 set_modem_reset_requested
-     /tmp/ccV7b15a.s:3714   .text.set_modem_reset_requested:00000008 $d
-     /tmp/ccV7b15a.s:3717   .text.modem_get_rfo_pa:00000000 $t
-     /tmp/ccV7b15a.s:3723   .text.modem_get_rfo_pa:00000000 modem_get_rfo_pa
-     /tmp/ccV7b15a.s:3734   .text.modem_get_rfo_pa:00000008 $d
-     /tmp/ccV7b15a.s:3737   .text.modem_set_rfo_pa:00000000 $t
-     /tmp/ccV7b15a.s:3743   .text.modem_set_rfo_pa:00000000 modem_set_rfo_pa
-     /tmp/ccV7b15a.s:3760   .text.modem_set_rfo_pa:00000010 $d
-     /tmp/ccV7b15a.s:3763   .text.modem_set_duty_cycle_disabled_by_host:00000000 $t
-     /tmp/ccV7b15a.s:3769   .text.modem_set_duty_cycle_disabled_by_host:00000000 modem_set_duty_cycle_disabled_by_host
-     /tmp/ccV7b15a.s:3780   .text.modem_set_duty_cycle_disabled_by_host:00000008 $d
-ARM GAS  /tmp/ccV7b15a.s 			page 87
+     /tmp/ccHTTdmI.s:3388   .text.modem_context_compute_and_get_next_dm_upload_sctr:00000000 $t
+     /tmp/ccHTTdmI.s:3394   .text.modem_context_compute_and_get_next_dm_upload_sctr:00000000 modem_context_compute_and_get_next_dm_upload_sctr
+     /tmp/ccHTTdmI.s:3409   .text.modem_context_compute_and_get_next_dm_upload_sctr:00000010 $d
+     /tmp/ccHTTdmI.s:3412   .text.modem_get_upload_state:00000000 $t
+     /tmp/ccHTTdmI.s:3418   .text.modem_get_upload_state:00000000 modem_get_upload_state
+     /tmp/ccHTTdmI.s:3429   .text.modem_get_upload_state:00000008 $d
+     /tmp/ccHTTdmI.s:3432   .text.modem_set_upload_state:00000000 $t
+     /tmp/ccHTTdmI.s:3438   .text.modem_set_upload_state:00000000 modem_set_upload_state
+     /tmp/ccHTTdmI.s:3449   .text.modem_set_upload_state:00000008 $d
+     /tmp/ccHTTdmI.s:3452   .text.modem_get_stream_state:00000000 $t
+     /tmp/ccHTTdmI.s:3458   .text.modem_get_stream_state:00000000 modem_get_stream_state
+     /tmp/ccHTTdmI.s:3469   .text.modem_get_stream_state:00000008 $d
+     /tmp/ccHTTdmI.s:3472   .text.modem_get_stream_port:00000000 $t
+     /tmp/ccHTTdmI.s:3478   .text.modem_get_stream_port:00000000 modem_get_stream_port
+     /tmp/ccHTTdmI.s:3489   .text.modem_get_stream_port:00000008 $d
+     /tmp/ccHTTdmI.s:3492   .text.modem_get_stream_encryption:00000000 $t
+     /tmp/ccHTTdmI.s:3498   .text.modem_get_stream_encryption:00000000 modem_get_stream_encryption
+     /tmp/ccHTTdmI.s:3509   .text.modem_get_stream_encryption:00000008 $d
+     /tmp/ccHTTdmI.s:3512   .text.modem_set_stream_state:00000000 $t
+     /tmp/ccHTTdmI.s:3518   .text.modem_set_stream_state:00000000 modem_set_stream_state
+     /tmp/ccHTTdmI.s:3529   .text.modem_set_stream_state:00000008 $d
+     /tmp/ccHTTdmI.s:3532   .text.modem_set_stream_port:00000000 $t
+     /tmp/ccHTTdmI.s:3538   .text.modem_set_stream_port:00000000 modem_set_stream_port
+     /tmp/ccHTTdmI.s:3549   .text.modem_set_stream_port:00000008 $d
+     /tmp/ccHTTdmI.s:3552   .text.modem_set_stream_encryption:00000000 $t
+     /tmp/ccHTTdmI.s:3558   .text.modem_set_stream_encryption:00000000 modem_set_stream_encryption
+     /tmp/ccHTTdmI.s:3569   .text.modem_set_stream_encryption:00000008 $d
+     /tmp/ccHTTdmI.s:3572   .text.modem_set_dm_info_bitfield_periodic:00000000 $t
+     /tmp/ccHTTdmI.s:3578   .text.modem_set_dm_info_bitfield_periodic:00000000 modem_set_dm_info_bitfield_periodic
+     /tmp/ccHTTdmI.s:3593   .text.modem_set_dm_info_bitfield_periodic:0000000c $d
+     /tmp/ccHTTdmI.s:3596   .text.modem_context_reset_dm_tag_number:00000000 $t
+     /tmp/ccHTTdmI.s:3602   .text.modem_context_reset_dm_tag_number:00000000 modem_context_reset_dm_tag_number
+     /tmp/ccHTTdmI.s:3614   .text.modem_context_reset_dm_tag_number:00000008 $d
+     /tmp/ccHTTdmI.s:3617   .text.modem_get_dm_info_bitfield_periodic:00000000 $t
+     /tmp/ccHTTdmI.s:3623   .text.modem_get_dm_info_bitfield_periodic:00000000 modem_get_dm_info_bitfield_periodic
+     /tmp/ccHTTdmI.s:3634   .text.modem_get_dm_info_bitfield_periodic:00000008 $d
+     /tmp/ccHTTdmI.s:3637   .text.modem_get_user_alarm:00000000 $t
+     /tmp/ccHTTdmI.s:3643   .text.modem_get_user_alarm:00000000 modem_get_user_alarm
+     /tmp/ccHTTdmI.s:3654   .text.modem_get_user_alarm:00000008 $d
+     /tmp/ccHTTdmI.s:3657   .text.modem_set_user_alarm:00000000 $t
+     /tmp/ccHTTdmI.s:3663   .text.modem_set_user_alarm:00000000 modem_set_user_alarm
+     /tmp/ccHTTdmI.s:3674   .text.modem_set_user_alarm:00000008 $d
+     /tmp/ccHTTdmI.s:3677   .text.get_modem_reset_requested:00000000 $t
+     /tmp/ccHTTdmI.s:3683   .text.get_modem_reset_requested:00000000 get_modem_reset_requested
+     /tmp/ccHTTdmI.s:3694   .text.get_modem_reset_requested:00000008 $d
+     /tmp/ccHTTdmI.s:3697   .text.set_modem_reset_requested:00000000 $t
+     /tmp/ccHTTdmI.s:3703   .text.set_modem_reset_requested:00000000 set_modem_reset_requested
+     /tmp/ccHTTdmI.s:3714   .text.set_modem_reset_requested:00000008 $d
+     /tmp/ccHTTdmI.s:3717   .text.modem_get_rfo_pa:00000000 $t
+     /tmp/ccHTTdmI.s:3723   .text.modem_get_rfo_pa:00000000 modem_get_rfo_pa
+     /tmp/ccHTTdmI.s:3734   .text.modem_get_rfo_pa:00000008 $d
+     /tmp/ccHTTdmI.s:3737   .text.modem_set_rfo_pa:00000000 $t
+     /tmp/ccHTTdmI.s:3743   .text.modem_set_rfo_pa:00000000 modem_set_rfo_pa
+     /tmp/ccHTTdmI.s:3760   .text.modem_set_rfo_pa:00000010 $d
+     /tmp/ccHTTdmI.s:3763   .text.modem_set_duty_cycle_disabled_by_host:00000000 $t
+     /tmp/ccHTTdmI.s:3769   .text.modem_set_duty_cycle_disabled_by_host:00000000 modem_set_duty_cycle_disabled_by_host
+     /tmp/ccHTTdmI.s:3780   .text.modem_set_duty_cycle_disabled_by_host:00000008 $d
+ARM GAS  /tmp/ccHTTdmI.s 			page 87
 
 
-     /tmp/ccV7b15a.s:3783   .text.modem_get_duty_cycle_disabled_by_host:00000000 $t
-     /tmp/ccV7b15a.s:3789   .text.modem_get_duty_cycle_disabled_by_host:00000000 modem_get_duty_cycle_disabled_by_host
-     /tmp/ccV7b15a.s:3800   .text.modem_get_duty_cycle_disabled_by_host:00000008 $d
-     /tmp/ccV7b15a.s:3803   .text.modem_set_adr_mobile_timeout_config:00000000 $t
-     /tmp/ccV7b15a.s:3809   .text.modem_set_adr_mobile_timeout_config:00000000 modem_set_adr_mobile_timeout_config
-     /tmp/ccV7b15a.s:3820   .text.modem_set_adr_mobile_timeout_config:00000008 $d
-     /tmp/ccV7b15a.s:3823   .text.modem_get_adr_mobile_timeout_config:00000000 $t
-     /tmp/ccV7b15a.s:3829   .text.modem_get_adr_mobile_timeout_config:00000000 modem_get_adr_mobile_timeout_config
-     /tmp/ccV7b15a.s:3840   .text.modem_get_adr_mobile_timeout_config:00000008 $d
-     /tmp/ccV7b15a.s:3843   .text.modem_available_new_link_adr_request:00000000 $t
-     /tmp/ccV7b15a.s:3849   .text.modem_available_new_link_adr_request:00000000 modem_available_new_link_adr_request
-     /tmp/ccV7b15a.s:3858   .text.modem_set_test_mode_status:00000000 $t
-     /tmp/ccV7b15a.s:3864   .text.modem_set_test_mode_status:00000000 modem_set_test_mode_status
-     /tmp/ccV7b15a.s:3875   .text.modem_set_test_mode_status:00000008 $d
-     /tmp/ccV7b15a.s:3878   .text.modem_get_test_mode_status:00000000 $t
-     /tmp/ccV7b15a.s:3884   .text.modem_get_test_mode_status:00000000 modem_get_test_mode_status
-     /tmp/ccV7b15a.s:3895   .text.modem_get_test_mode_status:00000008 $d
-     /tmp/ccV7b15a.s:3898   .text.modem_context_set_rx_pathloss_db:00000000 $t
-     /tmp/ccV7b15a.s:3904   .text.modem_context_set_rx_pathloss_db:00000000 modem_context_set_rx_pathloss_db
-     /tmp/ccV7b15a.s:3915   .text.modem_context_set_rx_pathloss_db:00000008 $d
-     /tmp/ccV7b15a.s:3918   .text.modem_context_get_rx_pathloss_db:00000000 $t
-     /tmp/ccV7b15a.s:3924   .text.modem_context_get_rx_pathloss_db:00000000 modem_context_get_rx_pathloss_db
-     /tmp/ccV7b15a.s:3936   .text.modem_context_get_rx_pathloss_db:00000008 $d
-     /tmp/ccV7b15a.s:3939   .text.modem_context_set_tx_power_offset_db:00000000 $t
-     /tmp/ccV7b15a.s:3945   .text.modem_context_set_tx_power_offset_db:00000000 modem_context_set_tx_power_offset_db
-     /tmp/ccV7b15a.s:3956   .text.modem_context_set_tx_power_offset_db:00000008 $d
-     /tmp/ccV7b15a.s:3959   .text.modem_context_get_tx_power_offset_db:00000000 $t
-     /tmp/ccV7b15a.s:3965   .text.modem_context_get_tx_power_offset_db:00000000 modem_context_get_tx_power_offset_db
-     /tmp/ccV7b15a.s:3977   .text.modem_context_get_tx_power_offset_db:00000008 $d
-     /tmp/ccV7b15a.s:3980   .text.modem_context_get_modem_rp:00000000 $t
-     /tmp/ccV7b15a.s:3986   .text.modem_context_get_modem_rp:00000000 modem_context_get_modem_rp
-     /tmp/ccV7b15a.s:3997   .text.modem_context_get_modem_rp:00000008 $d
-     /tmp/ccV7b15a.s:4000   .text.modem_context_set_modem_rp:00000000 $t
-     /tmp/ccV7b15a.s:4006   .text.modem_context_set_modem_rp:00000000 modem_context_set_modem_rp
-     /tmp/ccV7b15a.s:4017   .text.modem_context_set_modem_rp:00000008 $d
-     /tmp/ccV7b15a.s:4020   .text.modem_context_suspend_user_radio_access:00000000 $t
-     /tmp/ccV7b15a.s:4026   .text.modem_context_suspend_user_radio_access:00000000 modem_context_suspend_user_radio_access
-     /tmp/ccV7b15a.s:4066   .text.modem_context_suspend_user_radio_access:0000004c $d
-     /tmp/ccV7b15a.s:4074   .text.modem_context_resume_user_radio_access:00000000 $t
-     /tmp/ccV7b15a.s:4080   .text.modem_context_resume_user_radio_access:00000000 modem_context_resume_user_radio_access
-     /tmp/ccV7b15a.s:4103   .text.modem_context_resume_user_radio_access:00000024 $d
-     /tmp/ccV7b15a.s:4108   .text.modem_context_suspend_radio_access:00000000 $t
-     /tmp/ccV7b15a.s:4114   .text.modem_context_suspend_radio_access:00000000 modem_context_suspend_radio_access
-     /tmp/ccV7b15a.s:4158   .text.modem_context_suspend_radio_access:00000054 $d
-     /tmp/ccV7b15a.s:4163   .text.modem_context_resume_radio_access:00000000 $t
-     /tmp/ccV7b15a.s:4169   .text.modem_context_resume_radio_access:00000000 modem_context_resume_radio_access
-     /tmp/ccV7b15a.s:4193   .text.modem_context_resume_radio_access:00000028 $d
-     /tmp/ccV7b15a.s:4198   .text.modem_context_set_power_config_lut:00000000 $t
-     /tmp/ccV7b15a.s:4204   .text.modem_context_set_power_config_lut:00000000 modem_context_set_power_config_lut
-     /tmp/ccV7b15a.s:4231   .text.modem_context_set_power_config_lut:00000024 $d
-     /tmp/ccV7b15a.s:4234   .text.modem_context_get_power_config_lut:00000000 $t
-     /tmp/ccV7b15a.s:4240   .text.modem_context_get_power_config_lut:00000000 modem_context_get_power_config_lut
-     /tmp/ccV7b15a.s:4250   .text.modem_context_get_power_config_lut:00000004 $d
-     /tmp/ccV7b15a.s:4253   .text.modem_context_set_appkey:00000000 $t
-     /tmp/ccV7b15a.s:4259   .text.modem_context_set_appkey:00000000 modem_context_set_appkey
-     /tmp/ccV7b15a.s:4271   .text.modem_context_appkey_is_derived:00000000 $t
-     /tmp/ccV7b15a.s:4277   .text.modem_context_appkey_is_derived:00000000 modem_context_appkey_is_derived
-ARM GAS  /tmp/ccV7b15a.s 			page 88
+     /tmp/ccHTTdmI.s:3783   .text.modem_get_duty_cycle_disabled_by_host:00000000 $t
+     /tmp/ccHTTdmI.s:3789   .text.modem_get_duty_cycle_disabled_by_host:00000000 modem_get_duty_cycle_disabled_by_host
+     /tmp/ccHTTdmI.s:3800   .text.modem_get_duty_cycle_disabled_by_host:00000008 $d
+     /tmp/ccHTTdmI.s:3803   .text.modem_set_adr_mobile_timeout_config:00000000 $t
+     /tmp/ccHTTdmI.s:3809   .text.modem_set_adr_mobile_timeout_config:00000000 modem_set_adr_mobile_timeout_config
+     /tmp/ccHTTdmI.s:3820   .text.modem_set_adr_mobile_timeout_config:00000008 $d
+     /tmp/ccHTTdmI.s:3823   .text.modem_get_adr_mobile_timeout_config:00000000 $t
+     /tmp/ccHTTdmI.s:3829   .text.modem_get_adr_mobile_timeout_config:00000000 modem_get_adr_mobile_timeout_config
+     /tmp/ccHTTdmI.s:3840   .text.modem_get_adr_mobile_timeout_config:00000008 $d
+     /tmp/ccHTTdmI.s:3843   .text.modem_available_new_link_adr_request:00000000 $t
+     /tmp/ccHTTdmI.s:3849   .text.modem_available_new_link_adr_request:00000000 modem_available_new_link_adr_request
+     /tmp/ccHTTdmI.s:3858   .text.modem_set_test_mode_status:00000000 $t
+     /tmp/ccHTTdmI.s:3864   .text.modem_set_test_mode_status:00000000 modem_set_test_mode_status
+     /tmp/ccHTTdmI.s:3875   .text.modem_set_test_mode_status:00000008 $d
+     /tmp/ccHTTdmI.s:3878   .text.modem_get_test_mode_status:00000000 $t
+     /tmp/ccHTTdmI.s:3884   .text.modem_get_test_mode_status:00000000 modem_get_test_mode_status
+     /tmp/ccHTTdmI.s:3895   .text.modem_get_test_mode_status:00000008 $d
+     /tmp/ccHTTdmI.s:3898   .text.modem_context_set_rx_pathloss_db:00000000 $t
+     /tmp/ccHTTdmI.s:3904   .text.modem_context_set_rx_pathloss_db:00000000 modem_context_set_rx_pathloss_db
+     /tmp/ccHTTdmI.s:3915   .text.modem_context_set_rx_pathloss_db:00000008 $d
+     /tmp/ccHTTdmI.s:3918   .text.modem_context_get_rx_pathloss_db:00000000 $t
+     /tmp/ccHTTdmI.s:3924   .text.modem_context_get_rx_pathloss_db:00000000 modem_context_get_rx_pathloss_db
+     /tmp/ccHTTdmI.s:3936   .text.modem_context_get_rx_pathloss_db:00000008 $d
+     /tmp/ccHTTdmI.s:3939   .text.modem_context_set_tx_power_offset_db:00000000 $t
+     /tmp/ccHTTdmI.s:3945   .text.modem_context_set_tx_power_offset_db:00000000 modem_context_set_tx_power_offset_db
+     /tmp/ccHTTdmI.s:3956   .text.modem_context_set_tx_power_offset_db:00000008 $d
+     /tmp/ccHTTdmI.s:3959   .text.modem_context_get_tx_power_offset_db:00000000 $t
+     /tmp/ccHTTdmI.s:3965   .text.modem_context_get_tx_power_offset_db:00000000 modem_context_get_tx_power_offset_db
+     /tmp/ccHTTdmI.s:3977   .text.modem_context_get_tx_power_offset_db:00000008 $d
+     /tmp/ccHTTdmI.s:3980   .text.modem_context_get_modem_rp:00000000 $t
+     /tmp/ccHTTdmI.s:3986   .text.modem_context_get_modem_rp:00000000 modem_context_get_modem_rp
+     /tmp/ccHTTdmI.s:3997   .text.modem_context_get_modem_rp:00000008 $d
+     /tmp/ccHTTdmI.s:4000   .text.modem_context_set_modem_rp:00000000 $t
+     /tmp/ccHTTdmI.s:4006   .text.modem_context_set_modem_rp:00000000 modem_context_set_modem_rp
+     /tmp/ccHTTdmI.s:4017   .text.modem_context_set_modem_rp:00000008 $d
+     /tmp/ccHTTdmI.s:4020   .text.modem_context_suspend_user_radio_access:00000000 $t
+     /tmp/ccHTTdmI.s:4026   .text.modem_context_suspend_user_radio_access:00000000 modem_context_suspend_user_radio_access
+     /tmp/ccHTTdmI.s:4066   .text.modem_context_suspend_user_radio_access:0000004c $d
+     /tmp/ccHTTdmI.s:4074   .text.modem_context_resume_user_radio_access:00000000 $t
+     /tmp/ccHTTdmI.s:4080   .text.modem_context_resume_user_radio_access:00000000 modem_context_resume_user_radio_access
+     /tmp/ccHTTdmI.s:4103   .text.modem_context_resume_user_radio_access:00000024 $d
+     /tmp/ccHTTdmI.s:4108   .text.modem_context_suspend_radio_access:00000000 $t
+     /tmp/ccHTTdmI.s:4114   .text.modem_context_suspend_radio_access:00000000 modem_context_suspend_radio_access
+     /tmp/ccHTTdmI.s:4158   .text.modem_context_suspend_radio_access:00000054 $d
+     /tmp/ccHTTdmI.s:4163   .text.modem_context_resume_radio_access:00000000 $t
+     /tmp/ccHTTdmI.s:4169   .text.modem_context_resume_radio_access:00000000 modem_context_resume_radio_access
+     /tmp/ccHTTdmI.s:4193   .text.modem_context_resume_radio_access:00000028 $d
+     /tmp/ccHTTdmI.s:4198   .text.modem_context_set_power_config_lut:00000000 $t
+     /tmp/ccHTTdmI.s:4204   .text.modem_context_set_power_config_lut:00000000 modem_context_set_power_config_lut
+     /tmp/ccHTTdmI.s:4231   .text.modem_context_set_power_config_lut:00000024 $d
+     /tmp/ccHTTdmI.s:4234   .text.modem_context_get_power_config_lut:00000000 $t
+     /tmp/ccHTTdmI.s:4240   .text.modem_context_get_power_config_lut:00000000 modem_context_get_power_config_lut
+     /tmp/ccHTTdmI.s:4250   .text.modem_context_get_power_config_lut:00000004 $d
+     /tmp/ccHTTdmI.s:4253   .text.modem_context_set_appkey:00000000 $t
+     /tmp/ccHTTdmI.s:4259   .text.modem_context_set_appkey:00000000 modem_context_set_appkey
+     /tmp/ccHTTdmI.s:4271   .text.modem_context_appkey_is_derived:00000000 $t
+     /tmp/ccHTTdmI.s:4277   .text.modem_context_appkey_is_derived:00000000 modem_context_appkey_is_derived
+ARM GAS  /tmp/ccHTTdmI.s 			page 88
 
 
-     /tmp/ccV7b15a.s:4290   .text.modem_context_appkey_is_derived:00000010 $d
-     /tmp/ccV7b15a.s:4293   .text.modem_context_get_network_type:00000000 $t
-     /tmp/ccV7b15a.s:4299   .text.modem_context_get_network_type:00000000 modem_context_get_network_type
-     /tmp/ccV7b15a.s:4308   .text.modem_context_set_network_type:00000000 $t
-     /tmp/ccV7b15a.s:4314   .text.modem_context_set_network_type:00000000 modem_context_set_network_type
-     /tmp/ccV7b15a.s:4323   .text.modem_context_get_modem_radio_ctx:00000000 $t
-     /tmp/ccV7b15a.s:4329   .text.modem_context_get_modem_radio_ctx:00000000 modem_context_get_modem_radio_ctx
-     /tmp/ccV7b15a.s:4340   .text.modem_context_get_modem_radio_ctx:00000008 $d
-     /tmp/ccV7b15a.s:4343   .text.modem_context_set_modem_radio_ctx:00000000 $t
-     /tmp/ccV7b15a.s:4349   .text.modem_context_set_modem_radio_ctx:00000000 modem_context_set_modem_radio_ctx
-     /tmp/ccV7b15a.s:4360   .text.modem_context_set_modem_radio_ctx:00000008 $d
-     /tmp/ccV7b15a.s:4363   .text.modem_set_extended_callback:00000000 $t
-     /tmp/ccV7b15a.s:4369   .text.modem_set_extended_callback:00000000 modem_set_extended_callback
-     /tmp/ccV7b15a.s:4387   .text.modem_set_extended_callback:00000010 $d
-     /tmp/ccV7b15a.s:4494   .bss.modem_lbm_notification_extended_1_callback:00000000 modem_lbm_notification_extended_1_callback
-     /tmp/ccV7b15a.s:4488   .bss.modem_lbm_notification_extended_2_callback:00000000 modem_lbm_notification_extended_2_callback
-     /tmp/ccV7b15a.s:4391   .text.modem_get_extended_callback:00000000 $t
-     /tmp/ccV7b15a.s:4397   .text.modem_get_extended_callback:00000000 modem_get_extended_callback
-     /tmp/ccV7b15a.s:4419   .text.modem_get_extended_callback:00000018 $d
-     /tmp/ccV7b15a.s:4423   .text.modem_leave:00000000 $t
-     /tmp/ccV7b15a.s:4429   .text.modem_leave:00000000 modem_leave
-     /tmp/ccV7b15a.s:4457   .text.modem_leave:0000003c $d
-     /tmp/ccV7b15a.s:4471   .rodata.dm_info_field_sz:00000000 $d
-     /tmp/ccV7b15a.s:4479   .bss.modem_radio_ctx:00000000 $d
-     /tmp/ccV7b15a.s:4485   .bss.modem_lbm_notification_extended_2_callback:00000000 $d
-     /tmp/ccV7b15a.s:4491   .bss.modem_lbm_notification_extended_1_callback:00000000 $d
-     /tmp/ccV7b15a.s:4500   .bss.power_config_lut:00000000 $d
-     /tmp/ccV7b15a.s:4502   .bss.modem_rp:00000000 $d
-     /tmp/ccV7b15a.s:4511   .bss.tx_power_offset_db:00000000 $d
-     /tmp/ccV7b15a.s:4516   .bss.rx_pathloss_db:00000000 $d
-     /tmp/ccV7b15a.s:4521   .bss.is_modem_in_test_mode:00000000 $d
-     /tmp/ccV7b15a.s:4523   .bss.nb_adr_mobile_timeout:00000000 $d
-     /tmp/ccV7b15a.s:4532   .bss.modem_adr_profile:00000000 $d
-     /tmp/ccV7b15a.s:4537   .bss.duty_cycle_disabled_by_host:00000000 $d
-     /tmp/ccV7b15a.s:4542   .bss.modem_rf_output:00000000 $d
-     /tmp/ccV7b15a.s:4547   .bss.charge_counter_to_send:00000000 $d
-     /tmp/ccV7b15a.s:4549   .bss.user_define_charge_counter:00000000 $d
-     /tmp/ccV7b15a.s:4558   .bss.start_time_was_set:00000000 $d
-     /tmp/ccV7b15a.s:4560   .bss.modem_charge_offset:00000000 $d
-     /tmp/ccV7b15a.s:4569   .bss.is_modem_reset_requested:00000000 $d
-     /tmp/ccV7b15a.s:4571   .bss.modem_dwn_pkt:00000000 $d
-     /tmp/ccV7b15a.s:4577   .bss.asynch_msg:00000000 $d
-     /tmp/ccV7b15a.s:4583   .bss.modem_event_status:00000000 $d
-     /tmp/ccV7b15a.s:4589   .bss.modem_event_count:00000000 $d
-     /tmp/ccV7b15a.s:4598   .bss.asynchronous_msgnumber:00000000 $d
-     /tmp/ccV7b15a.s:4600   .data.user_alarm:00000000 $d
-     /tmp/ccV7b15a.s:4606   .bss.dm_pending_dl:00000000 $d
-     /tmp/ccV7b15a.s:4615   .bss.number_of_muted_day:00000000 $d
-     /tmp/ccV7b15a.s:4620   .bss.tag_number_now:00000000 $d
-     /tmp/ccV7b15a.s:4625   .bss.tag_number:00000000 $d
-     /tmp/ccV7b15a.s:4627   .bss.dm_info_bitfield_now:00000000 $d
-     /tmp/ccV7b15a.s:4633   .data.dm_info_bitfield_periodic:00000000 $d
-     /tmp/ccV7b15a.s:4639   .data.modem_stream_state:00000000 $d
-     /tmp/ccV7b15a.s:4650   .bss.modem_upload_state:00000000 $d
-     /tmp/ccV7b15a.s:4655   .bss.modem_dm_upload_sctr:00000000 $d
-     /tmp/ccV7b15a.s:4657   .bss.modem_start_time:00000000 $d
-     /tmp/ccV7b15a.s:4666   .bss.is_modem_suspend:00000000 $d
-ARM GAS  /tmp/ccV7b15a.s 			page 89
+     /tmp/ccHTTdmI.s:4290   .text.modem_context_appkey_is_derived:00000010 $d
+     /tmp/ccHTTdmI.s:4293   .text.modem_context_get_network_type:00000000 $t
+     /tmp/ccHTTdmI.s:4299   .text.modem_context_get_network_type:00000000 modem_context_get_network_type
+     /tmp/ccHTTdmI.s:4308   .text.modem_context_set_network_type:00000000 $t
+     /tmp/ccHTTdmI.s:4314   .text.modem_context_set_network_type:00000000 modem_context_set_network_type
+     /tmp/ccHTTdmI.s:4323   .text.modem_context_get_modem_radio_ctx:00000000 $t
+     /tmp/ccHTTdmI.s:4329   .text.modem_context_get_modem_radio_ctx:00000000 modem_context_get_modem_radio_ctx
+     /tmp/ccHTTdmI.s:4340   .text.modem_context_get_modem_radio_ctx:00000008 $d
+     /tmp/ccHTTdmI.s:4343   .text.modem_context_set_modem_radio_ctx:00000000 $t
+     /tmp/ccHTTdmI.s:4349   .text.modem_context_set_modem_radio_ctx:00000000 modem_context_set_modem_radio_ctx
+     /tmp/ccHTTdmI.s:4360   .text.modem_context_set_modem_radio_ctx:00000008 $d
+     /tmp/ccHTTdmI.s:4363   .text.modem_set_extended_callback:00000000 $t
+     /tmp/ccHTTdmI.s:4369   .text.modem_set_extended_callback:00000000 modem_set_extended_callback
+     /tmp/ccHTTdmI.s:4387   .text.modem_set_extended_callback:00000010 $d
+     /tmp/ccHTTdmI.s:4494   .bss.modem_lbm_notification_extended_1_callback:00000000 modem_lbm_notification_extended_1_callback
+     /tmp/ccHTTdmI.s:4488   .bss.modem_lbm_notification_extended_2_callback:00000000 modem_lbm_notification_extended_2_callback
+     /tmp/ccHTTdmI.s:4391   .text.modem_get_extended_callback:00000000 $t
+     /tmp/ccHTTdmI.s:4397   .text.modem_get_extended_callback:00000000 modem_get_extended_callback
+     /tmp/ccHTTdmI.s:4419   .text.modem_get_extended_callback:00000018 $d
+     /tmp/ccHTTdmI.s:4423   .text.modem_leave:00000000 $t
+     /tmp/ccHTTdmI.s:4429   .text.modem_leave:00000000 modem_leave
+     /tmp/ccHTTdmI.s:4457   .text.modem_leave:0000003c $d
+     /tmp/ccHTTdmI.s:4471   .rodata.dm_info_field_sz:00000000 $d
+     /tmp/ccHTTdmI.s:4479   .bss.modem_radio_ctx:00000000 $d
+     /tmp/ccHTTdmI.s:4485   .bss.modem_lbm_notification_extended_2_callback:00000000 $d
+     /tmp/ccHTTdmI.s:4491   .bss.modem_lbm_notification_extended_1_callback:00000000 $d
+     /tmp/ccHTTdmI.s:4500   .bss.power_config_lut:00000000 $d
+     /tmp/ccHTTdmI.s:4502   .bss.modem_rp:00000000 $d
+     /tmp/ccHTTdmI.s:4511   .bss.tx_power_offset_db:00000000 $d
+     /tmp/ccHTTdmI.s:4516   .bss.rx_pathloss_db:00000000 $d
+     /tmp/ccHTTdmI.s:4521   .bss.is_modem_in_test_mode:00000000 $d
+     /tmp/ccHTTdmI.s:4523   .bss.nb_adr_mobile_timeout:00000000 $d
+     /tmp/ccHTTdmI.s:4532   .bss.modem_adr_profile:00000000 $d
+     /tmp/ccHTTdmI.s:4537   .bss.duty_cycle_disabled_by_host:00000000 $d
+     /tmp/ccHTTdmI.s:4542   .bss.modem_rf_output:00000000 $d
+     /tmp/ccHTTdmI.s:4547   .bss.charge_counter_to_send:00000000 $d
+     /tmp/ccHTTdmI.s:4549   .bss.user_define_charge_counter:00000000 $d
+     /tmp/ccHTTdmI.s:4558   .bss.start_time_was_set:00000000 $d
+     /tmp/ccHTTdmI.s:4560   .bss.modem_charge_offset:00000000 $d
+     /tmp/ccHTTdmI.s:4569   .bss.is_modem_reset_requested:00000000 $d
+     /tmp/ccHTTdmI.s:4571   .bss.modem_dwn_pkt:00000000 $d
+     /tmp/ccHTTdmI.s:4577   .bss.asynch_msg:00000000 $d
+     /tmp/ccHTTdmI.s:4583   .bss.modem_event_status:00000000 $d
+     /tmp/ccHTTdmI.s:4589   .bss.modem_event_count:00000000 $d
+     /tmp/ccHTTdmI.s:4598   .bss.asynchronous_msgnumber:00000000 $d
+     /tmp/ccHTTdmI.s:4600   .data.user_alarm:00000000 $d
+     /tmp/ccHTTdmI.s:4606   .bss.dm_pending_dl:00000000 $d
+     /tmp/ccHTTdmI.s:4615   .bss.number_of_muted_day:00000000 $d
+     /tmp/ccHTTdmI.s:4620   .bss.tag_number_now:00000000 $d
+     /tmp/ccHTTdmI.s:4625   .bss.tag_number:00000000 $d
+     /tmp/ccHTTdmI.s:4627   .bss.dm_info_bitfield_now:00000000 $d
+     /tmp/ccHTTdmI.s:4633   .data.dm_info_bitfield_periodic:00000000 $d
+     /tmp/ccHTTdmI.s:4639   .data.modem_stream_state:00000000 $d
+     /tmp/ccHTTdmI.s:4650   .bss.modem_upload_state:00000000 $d
+     /tmp/ccHTTdmI.s:4655   .bss.modem_dm_upload_sctr:00000000 $d
+     /tmp/ccHTTdmI.s:4657   .bss.modem_start_time:00000000 $d
+     /tmp/ccHTTdmI.s:4666   .bss.is_modem_suspend:00000000 $d
+ARM GAS  /tmp/ccHTTdmI.s 			page 89
 
 
-     /tmp/ccV7b15a.s:4671   .bss.modem_dm_class:00000000 $d
-     /tmp/ccV7b15a.s:4673   .bss.modem_appstatus:00000000 $d
-     /tmp/ccV7b15a.s:4692   .bss.modem_status:00000000 $d
-     /tmp/ccV7b15a.s:4694   .bss.modem_appkey_crc:00000000 $d
-     /tmp/ccV7b15a.s:4700   .data.modem_appkey_status:00000000 $d
-     /tmp/ccV7b15a.s:2922   .text.dm_status_payload:000000b3 $d
-     /tmp/ccV7b15a.s:2922   .text.dm_status_payload:000000b4 $t
+     /tmp/ccHTTdmI.s:4671   .bss.modem_dm_class:00000000 $d
+     /tmp/ccHTTdmI.s:4673   .bss.modem_appstatus:00000000 $d
+     /tmp/ccHTTdmI.s:4692   .bss.modem_status:00000000 $d
+     /tmp/ccHTTdmI.s:4694   .bss.modem_appkey_crc:00000000 $d
+     /tmp/ccHTTdmI.s:4700   .data.modem_appkey_status:00000000 $d
+     /tmp/ccHTTdmI.s:2922   .text.dm_status_payload:000000b3 $d
+     /tmp/ccHTTdmI.s:2922   .text.dm_status_payload:000000b4 $t
 
 UNDEFINED SYMBOLS
 compute_crc_fw
@@ -5293,7 +5293,7 @@ lorawan_api_get_network_type
 lorawan_api_set_network_type
 lorawan_api_join_status_clear
 lorawan_api_class_b_enabled
-ARM GAS  /tmp/ccV7b15a.s 			page 90
+ARM GAS  /tmp/ccHTTdmI.s 			page 90
 
 
 lorawan_api_class_c_enabled

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccfd09Wz.s 			page 1
+ARM GAS  /tmp/ccrjjvry.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
   32      6E206661 
   33              	.LC20:
   34 009f 43657274 		.ascii	"Certif enable classB\012\015\000"
-ARM GAS  /tmp/ccfd09Wz.s 			page 2
+ARM GAS  /tmp/ccrjjvry.s 			page 2
 
 
   34      69662065 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
   70 0028 BE4E     		ldr	r6, .L78+8
   71 002a 3000     		movs	r0, r6
   72 002c FFF7FEFF 		bl	smtc_modem_hal_print_trace
-ARM GAS  /tmp/ccfd09Wz.s 			page 3
+ARM GAS  /tmp/ccrjjvry.s 			page 3
 
 
   73 0030 6978     		ldrb	r1, [r5, #1]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  127 0086 0095     		str	r5, [sp]
  128 0088 0AA8     		add	r0, sp, #40
  129 008a FFF7FEFF 		bl	lorawan_api_certification
-ARM GAS  /tmp/ccfd09Wz.s 			page 4
+ARM GAS  /tmp/ccrjjvry.s 			page 4
 
 
  130 008e 0790     		str	r0, [sp, #28]
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  184 0108 012B     		cmp	r3, #1
  185 010a 06D0     		beq	.L16
  186 010c 022B     		cmp	r3, #2
-ARM GAS  /tmp/ccfd09Wz.s 			page 5
+ARM GAS  /tmp/ccrjjvry.s 			page 5
 
 
  187 010e 2CD0     		beq	.L77
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  241 0178 0F23     		movs	r3, #15
  242 017a 1E42     		tst	r6, r3
  243 017c 04D1     		bne	.L20
-ARM GAS  /tmp/ccfd09Wz.s 			page 6
+ARM GAS  /tmp/ccrjjvry.s 			page 6
 
 
  244 017e 002E     		cmp	r6, #0
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  298              	.LCB255:
  299 01f6 0220     		movs	r0, #2
  300 01f8 FFF7FEFF 		bl	modem_supervisor_add_task_ping_slot_info_req
-ARM GAS  /tmp/ccfd09Wz.s 			page 7
+ARM GAS  /tmp/ccrjjvry.s 			page 7
 
 
  301 01fc 32E7     		b	.L12
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  355 026c 9B18     		adds	r3, r3, r2
  356 026e 5B79     		ldrb	r3, [r3, #5]
  357 0270 2D4F     		ldr	r7, .L78+12
-ARM GAS  /tmp/ccfd09Wz.s 			page 8
+ARM GAS  /tmp/ccrjjvry.s 			page 8
 
 
  358 0272 0293     		str	r3, [sp, #8]
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  412 02e4 0128     		cmp	r0, #1
  413 02e6 12D1     		bne	.L33
  414 02e8 0020     		movs	r0, #0
-ARM GAS  /tmp/ccfd09Wz.s 			page 9
+ARM GAS  /tmp/ccrjjvry.s 			page 9
 
 
  415 02ea FFF7FEFF 		bl	lorawan_api_class_c_enabled
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  469              	.L49:
  470 0384 0027     		movs	r7, #0
  471 0386 56E7     		b	.L30
-ARM GAS  /tmp/ccfd09Wz.s 			page 10
+ARM GAS  /tmp/ccrjjvry.s 			page 10
 
 
  472              	.L41:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  528              		@ frame_needed = 0, uses_anonymous_args = 0
  529              		@ link register save eliminated.
  530 0000 074B     		ldr	r3, .L85
-ARM GAS  /tmp/ccfd09Wz.s 			page 11
+ARM GAS  /tmp/ccrjjvry.s 			page 11
 
 
  531 0002 0022     		movs	r2, #0
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  587 0032 264B     		ldr	r3, .L90+32
  588 0034 C900     		lsls	r1, r1, #3
  589 0036 5218     		adds	r2, r2, r1
-ARM GAS  /tmp/ccfd09Wz.s 			page 12
+ARM GAS  /tmp/ccrjjvry.s 			page 12
 
 
  590 0038 1A60     		str	r2, [r3]
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  644 00cc 00000000 		.word	file_upload_context
  645 00d0 00000000 		.word	user_payload_length
  646 00d4 00000000 		.word	user_payload
-ARM GAS  /tmp/ccfd09Wz.s 			page 13
+ARM GAS  /tmp/ccrjjvry.s 			page 13
 
 
  647 00d8 00000000 		.word	user_port
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  698 000a 4243     		muls	r2, r0
  699 000c 064B     		ldr	r3, .L100
  700 000e 0020     		movs	r0, #0
-ARM GAS  /tmp/ccfd09Wz.s 			page 14
+ARM GAS  /tmp/ccrjjvry.s 			page 14
 
 
  701 0010 9B18     		adds	r3, r3, r2
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  751 0020 9472     		strb	r4, [r2, #10]
  752 0022 C468     		ldr	r4, [r0, #12]
  753 0024 D460     		str	r4, [r2, #12]
-ARM GAS  /tmp/ccfd09Wz.s 			page 15
+ARM GAS  /tmp/ccrjjvry.s 			page 15
 
 
  754 0026 028A     		ldrh	r2, [r0, #16]
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  788      74206669 
  788      656C6420 
  788      3D202578 
-ARM GAS  /tmp/ccfd09Wz.s 			page 16
+ARM GAS  /tmp/ccrjjvry.s 			page 16
 
 
  789              	.LC74:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  810      52524F52 
  810      3A204445 
  810      56494345 
-ARM GAS  /tmp/ccfd09Wz.s 			page 17
+ARM GAS  /tmp/ccrjjvry.s 			page 17
 
 
  811              	.LC99:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  850 0028 2300     		.2byte	(.L108-.L110)/2
  851 002a A101     		.2byte	(.L114-.L110)/2
  852 002c E602     		.2byte	(.L113-.L110)/2
-ARM GAS  /tmp/ccfd09Wz.s 			page 18
+ARM GAS  /tmp/ccrjjvry.s 			page 18
 
 
  853 002e EA02     		.2byte	(.L112-.L110)/2
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  907 009c 0190     		str	r0, [sp, #4]
  908 009e 079A     		ldr	r2, [sp, #28]
  909 00a0 3000     		movs	r0, r6
-ARM GAS  /tmp/ccfd09Wz.s 			page 19
+ARM GAS  /tmp/ccrjjvry.s 			page 19
 
 
  910 00a2 0095     		str	r5, [sp]
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  964 0114 71D0     		beq	.L133
  965 0116 824B     		ldr	r3, .L216+36
  966 0118 0693     		str	r3, [sp, #24]
-ARM GAS  /tmp/ccfd09Wz.s 			page 20
+ARM GAS  /tmp/ccrjjvry.s 			page 20
 
 
  967 011a 1B78     		ldrb	r3, [r3]
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1021 0196 011E     		subs	r1, r0, #0
  1022 0198 2DD1     		bne	.L134
  1023 019a 069B     		ldr	r3, [sp, #24]
-ARM GAS  /tmp/ccfd09Wz.s 			page 21
+ARM GAS  /tmp/ccrjjvry.s 			page 21
 
 
  1024 019c 1B78     		ldrb	r3, [r3]
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1078 020a 00D1     		bne	.LCB1052
  1079 020c 22E7     		b	.L108	@long jump
  1080              	.LCB1052:
-ARM GAS  /tmp/ccfd09Wz.s 			page 22
+ARM GAS  /tmp/ccrjjvry.s 			page 22
 
 
  1081 020e 1325     		movs	r5, #19
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1135 0282 0228     		cmp	r0, #2
  1136 0284 00D0     		beq	.LCB1118
  1137 0286 E5E6     		b	.L108	@long jump
-ARM GAS  /tmp/ccfd09Wz.s 			page 23
+ARM GAS  /tmp/ccrjjvry.s 			page 23
 
 
  1138              	.LCB1118:
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1192 02fa F0E6     		b	.L214
  1193              	.L217:
  1194              		.align	2
-ARM GAS  /tmp/ccfd09Wz.s 			page 24
+ARM GAS  /tmp/ccrjjvry.s 			page 24
 
 
  1195              	.L216:
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1249 0390 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  1250 0394 212C     		cmp	r4, #33
  1251 0396 EED1     		bne	.L150
-ARM GAS  /tmp/ccfd09Wz.s 			page 25
+ARM GAS  /tmp/ccrjjvry.s 			page 25
 
 
  1252 0398 A548     		ldr	r0, .L218+8
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1306 0410 642C     		cmp	r4, #100
  1307 0412 00D9     		bls	.L155
  1308 0414 6422     		movs	r2, #100
-ARM GAS  /tmp/ccfd09Wz.s 			page 26
+ARM GAS  /tmp/ccrjjvry.s 			page 26
 
 
  1309              	.L155:
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1363 048e 1B18     		adds	r3, r3, r0
  1364 0490 2919     		adds	r1, r5, r4
  1365 0492 3068     		ldr	r0, [r6]
-ARM GAS  /tmp/ccfd09Wz.s 			page 27
+ARM GAS  /tmp/ccrjjvry.s 			page 27
 
 
  1366 0494 FFF7FEFF 		bl	stream_get_fragment
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1420 0502 C830     		adds	r0, r0, #200
  1421 0504 0190     		str	r0, [sp, #4]
  1422 0506 1A00     		movs	r2, r3
-ARM GAS  /tmp/ccfd09Wz.s 			page 28
+ARM GAS  /tmp/ccrjjvry.s 			page 28
 
 
  1423 0508 1900     		movs	r1, r3
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1477 057c E919     		adds	r1, r5, r7
  1478 057e 1325     		movs	r5, #19
  1479 0580 06AB     		add	r3, sp, #24
-ARM GAS  /tmp/ccfd09Wz.s 			page 29
+ARM GAS  /tmp/ccrjjvry.s 			page 29
 
 
  1480 0582 ED18     		adds	r5, r5, r3
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1534 05ee 0D20     		movs	r0, #13
  1535 05f0 F4E7     		b	.L212
  1536              	.L111:
-ARM GAS  /tmp/ccfd09Wz.s 			page 30
+ARM GAS  /tmp/ccrjjvry.s 			page 30
 
 
  1537 05f2 1D48     		ldr	r0, .L218+64
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1586      6F6E200A 
  1586      0D00
  1587              	.LC124:
-ARM GAS  /tmp/ccfd09Wz.s 			page 31
+ARM GAS  /tmp/ccrjjvry.s 			page 31
 
 
  1588 003e 1B5B303B 		.ascii	"\033[0;33mWARN: Streaming DONE\012\015\000"
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1639 0054 1C70     		strb	r4, [r3]
  1640 0056 8C4B     		ldr	r3, .L287+4
  1641 0058 1C70     		strb	r4, [r3]
-ARM GAS  /tmp/ccfd09Wz.s 			page 32
+ARM GAS  /tmp/ccrjjvry.s 			page 32
 
 
  1642 005a FFF7FEFF 		bl	modem_supervisor_add_task_dm_status
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1696 00de FFF7FEFF 		bl	lorawan_api_join_status_clear
  1697 00e2 DFE7     		b	.L241
  1698              	.L235:
-ARM GAS  /tmp/ccfd09Wz.s 			page 33
+ARM GAS  /tmp/ccrjjvry.s 			page 33
 
 
  1699 00e4 FFF7FEFF 		bl	get_modem_dm_interval_second
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1753 014c F9E7     		b	.L285
  1754              	.L233:
  1755 014e FFF7FEFF 		bl	modem_get_upload_state
-ARM GAS  /tmp/ccfd09Wz.s 			page 34
+ARM GAS  /tmp/ccrjjvry.s 			page 34
 
 
  1756 0152 0228     		cmp	r0, #2
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1810 01d4 1B79     		ldrb	r3, [r3, #4]
  1811 01d6 002B     		cmp	r3, #0
  1812 01d8 00D1     		bne	.LCB1885
-ARM GAS  /tmp/ccfd09Wz.s 			page 35
+ARM GAS  /tmp/ccrjjvry.s 			page 35
 
 
  1813 01da 91E7     		b	.L220	@long jump
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1867 0246 6B46     		mov	r3, sp
  1868 0248 01A9     		add	r1, sp, #4
  1869 024a D81C     		adds	r0, r3, #3
-ARM GAS  /tmp/ccfd09Wz.s 			page 36
+ARM GAS  /tmp/ccrjjvry.s 			page 36
 
 
  1870 024c FFF7FEFF 		bl	lorawan_api_get_link_check_ans
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1926 0008 0190     		str	r0, [sp, #4]
  1927 000a 0028     		cmp	r0, #0
  1928 000c 57D1     		bne	.L302
-ARM GAS  /tmp/ccfd09Wz.s 			page 37
+ARM GAS  /tmp/ccrjjvry.s 			page 37
 
 
  1929 000e 9227     		movs	r7, #146
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  1983 0076 FFF7FEFF 		bl	smtc_modem_hal_get_time_in_s
  1984 007a 361A     		subs	r6, r6, r0
  1985 007c AE42     		cmp	r6, r5
-ARM GAS  /tmp/ccfd09Wz.s 			page 38
+ARM GAS  /tmp/ccrjjvry.s 			page 38
 
 
  1986 007e 02DA     		bge	.L299
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  2037              		.align	1
  2038              		.global	modem_supervisor_engine
  2039              		.syntax unified
-ARM GAS  /tmp/ccfd09Wz.s 			page 39
+ARM GAS  /tmp/ccrjjvry.s 			page 39
 
 
  2040              		.code	16
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  2095 006e 08D1     		bne	.L325
  2096              	.L329:
  2097 0070 FFF7FEFF 		bl	modem_available_new_link_adr_request
-ARM GAS  /tmp/ccfd09Wz.s 			page 40
+ARM GAS  /tmp/ccrjjvry.s 			page 40
 
 
  2098 0074 0028     		cmp	r0, #0
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  2152 00e8 0028     		cmp	r0, #0
  2153 00ea 05D0     		beq	.L336
  2154 00ec FFF7FEFF 		bl	lorawan_api_modem_certification_is_enabled
-ARM GAS  /tmp/ccfd09Wz.s 			page 41
+ARM GAS  /tmp/ccrjjvry.s 			page 41
 
 
  2155 00f0 0128     		cmp	r0, #1
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  2209 0160 01D0     		beq	.L342
  2210              	.L343:
  2211 0162 0B4D     		ldr	r5, .L381+24
-ARM GAS  /tmp/ccfd09Wz.s 			page 42
+ARM GAS  /tmp/ccrjjvry.s 			page 42
 
 
  2212 0164 DAE7     		b	.L341
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  2268 003c 6B7A     		ldrb	r3, [r5, #9]
  2269 003e 0D2B     		cmp	r3, #13
  2270 0040 02D1     		bne	.L386
-ARM GAS  /tmp/ccfd09Wz.s 			page 43
+ARM GAS  /tmp/ccrjjvry.s 			page 43
 
 
  2271              	.L389:
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  2325 00ac 2068     		ldr	r0, [r4]
  2326 00ae FFF7FEFF 		bl	clock_sync_is_enabled
  2327 00b2 0028     		cmp	r0, #0
-ARM GAS  /tmp/ccfd09Wz.s 			page 44
+ARM GAS  /tmp/ccrjjvry.s 			page 44
 
 
  2328 00b4 1AD0     		beq	.L393
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  2382 0128 0028     		cmp	r0, #0
  2383 012a 02DA     		bge	.L405
  2384 012c 4342     		rsbs	r3, r0, #0
-ARM GAS  /tmp/ccfd09Wz.s 			page 45
+ARM GAS  /tmp/ccrjjvry.s 			page 45
 
 
  2385 012e A342     		cmp	r3, r4
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  2452              		.section	.bss.alc_sync_context,"aw",%nobits
  2453              		.align	2
  2456              	alc_sync_context:
-ARM GAS  /tmp/ccfd09Wz.s 			page 46
+ARM GAS  /tmp/ccrjjvry.s 			page 46
 
 
  2457 0000 00000000 		.space	4
@@ -2727,86 +2727,86 @@ ARM GAS  /tmp/ccfd09Wz.s 			page 1
  2489      00000000 
  2489      00000000 
  2490              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccfd09Wz.s 			page 47
+ARM GAS  /tmp/ccrjjvry.s 			page 47
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 modem_supervisor.c
-     /tmp/ccfd09Wz.s:44     .text.certification_event_handler:00000000 $t
-     /tmp/ccfd09Wz.s:49     .text.certification_event_handler:00000000 certification_event_handler
-     /tmp/ccfd09Wz.s:81     .text.certification_event_handler:0000003e $d
-     /tmp/ccfd09Wz.s:101    .text.certification_event_handler:00000052 $t
-     /tmp/ccfd09Wz.s:142    .text.certification_event_handler:000000a6 $d
-     /tmp/ccfd09Wz.s:148    .text.certification_event_handler:000000b2 $t
-     /tmp/ccfd09Wz.s:439    .text.certification_event_handler:0000031c $d
-     /tmp/ccfd09Wz.s:2427   .bss.user_payload:00000000 user_payload
-     /tmp/ccfd09Wz.s:2432   .data.user_payload_length:00000000 user_payload_length
-     /tmp/ccfd09Wz.s:2421   .data.user_port:00000000 user_port
-     /tmp/ccfd09Wz.s:2450   .bss.clock_sync_context:00000000 clock_sync_context
-     /tmp/ccfd09Wz.s:2416   .bss.certification_data_is_pending:00000000 certification_data_is_pending
-     /tmp/ccfd09Wz.s:462    .text.certification_event_handler:00000374 $t
-     /tmp/ccfd09Wz.s:512    .text.certification_event_handler:000003cc $d
-     /tmp/ccfd09Wz.s:520    .text.modem_supervisor_init_task:00000000 $t
-     /tmp/ccfd09Wz.s:526    .text.modem_supervisor_init_task:00000000 modem_supervisor_init_task
-     /tmp/ccfd09Wz.s:550    .text.modem_supervisor_init_task:00000020 $d
-     /tmp/ccfd09Wz.s:2488   .bss.task_manager:00000000 task_manager
-     /tmp/ccfd09Wz.s:553    .text.modem_supervisor_init:00000000 $t
-     /tmp/ccfd09Wz.s:559    .text.modem_supervisor_init:00000000 modem_supervisor_init
-     /tmp/ccfd09Wz.s:636    .text.modem_supervisor_init:000000ac $d
-     /tmp/ccfd09Wz.s:2482   .bss.is_pending_dm_status_payload_periodic:00000000 is_pending_dm_status_payload_periodic
-     /tmp/ccfd09Wz.s:2477   .bss.is_pending_dm_status_payload_now:00000000 is_pending_dm_status_payload_now
-     /tmp/ccfd09Wz.s:2472   .data.is_first_dm_after_join:00000000 is_first_dm_after_join
-     /tmp/ccfd09Wz.s:2467   .bss.send_task_update_needed:00000000 send_task_update_needed
-     /tmp/ccfd09Wz.s:2462   .bss.app_callback:00000000 app_callback
-     /tmp/ccfd09Wz.s:2456   .bss.alc_sync_context:00000000 alc_sync_context
-     /tmp/ccfd09Wz.s:2444   .bss.ROSE:00000000 ROSE
-     /tmp/ccfd09Wz.s:2438   .bss.file_upload_context:00000000 file_upload_context
-     /tmp/ccfd09Wz.s:2411   .bss.class_b_bit:00000000 class_b_bit
-     /tmp/ccfd09Wz.s:652    .text.modem_supervisor_get_task_priority:00000000 $t
-     /tmp/ccfd09Wz.s:658    .text.modem_supervisor_get_task_priority:00000000 modem_supervisor_get_task_priority
-     /tmp/ccfd09Wz.s:677    .text.modem_supervisor_get_task_priority:00000014 $d
-     /tmp/ccfd09Wz.s:684    .text.modem_supervisor_remove_task:00000000 $t
-     /tmp/ccfd09Wz.s:690    .text.modem_supervisor_remove_task:00000000 modem_supervisor_remove_task
-     /tmp/ccfd09Wz.s:717    .text.modem_supervisor_remove_task:00000028 $d
-     /tmp/ccfd09Wz.s:726    .text.modem_supervisor_add_task:00000000 $t
-     /tmp/ccfd09Wz.s:732    .text.modem_supervisor_add_task:00000000 modem_supervisor_add_task
-     /tmp/ccfd09Wz.s:770    .text.modem_supervisor_add_task:00000040 $d
-     /tmp/ccfd09Wz.s:821    .text.modem_supervisor_launch_task:00000000 $t
-     /tmp/ccfd09Wz.s:827    .text.modem_supervisor_launch_task:00000000 modem_supervisor_launch_task
-     /tmp/ccfd09Wz.s:837    .text.modem_supervisor_launch_task:0000000e $d
-     /tmp/ccfd09Wz.s:857    .text.modem_supervisor_launch_task:00000036 $t
-     /tmp/ccfd09Wz.s:1196   .text.modem_supervisor_launch_task:000002fc $d
-     /tmp/ccfd09Wz.s:1218   .text.modem_supervisor_launch_task:00000350 $t
-     /tmp/ccfd09Wz.s:1563   .text.modem_supervisor_launch_task:00000628 $d
-     /tmp/ccfd09Wz.s:1590   .text.modem_supervisor_update_task:00000000 $t
-     /tmp/ccfd09Wz.s:1596   .text.modem_supervisor_update_task:00000000 modem_supervisor_update_task
-     /tmp/ccfd09Wz.s:1604   .text.modem_supervisor_update_task:0000000a $d
-     /tmp/ccfd09Wz.s:1624   .text.modem_supervisor_update_task:00000032 $t
-     /tmp/ccfd09Wz.s:1901   .text.modem_supervisor_update_task:00000284 $d
-     /tmp/ccfd09Wz.s:1914   .text.modem_supervisor_scheduler:00000000 $t
-     /tmp/ccfd09Wz.s:1920   .text.modem_supervisor_scheduler:00000000 modem_supervisor_scheduler
-     /tmp/ccfd09Wz.s:2029   .text.modem_supervisor_scheduler:000000c4 $d
-     /tmp/ccfd09Wz.s:2037   .text.modem_supervisor_engine:00000000 $t
-ARM GAS  /tmp/ccfd09Wz.s 			page 48
+     /tmp/ccrjjvry.s:44     .text.certification_event_handler:00000000 $t
+     /tmp/ccrjjvry.s:49     .text.certification_event_handler:00000000 certification_event_handler
+     /tmp/ccrjjvry.s:81     .text.certification_event_handler:0000003e $d
+     /tmp/ccrjjvry.s:101    .text.certification_event_handler:00000052 $t
+     /tmp/ccrjjvry.s:142    .text.certification_event_handler:000000a6 $d
+     /tmp/ccrjjvry.s:148    .text.certification_event_handler:000000b2 $t
+     /tmp/ccrjjvry.s:439    .text.certification_event_handler:0000031c $d
+     /tmp/ccrjjvry.s:2427   .bss.user_payload:00000000 user_payload
+     /tmp/ccrjjvry.s:2432   .data.user_payload_length:00000000 user_payload_length
+     /tmp/ccrjjvry.s:2421   .data.user_port:00000000 user_port
+     /tmp/ccrjjvry.s:2450   .bss.clock_sync_context:00000000 clock_sync_context
+     /tmp/ccrjjvry.s:2416   .bss.certification_data_is_pending:00000000 certification_data_is_pending
+     /tmp/ccrjjvry.s:462    .text.certification_event_handler:00000374 $t
+     /tmp/ccrjjvry.s:512    .text.certification_event_handler:000003cc $d
+     /tmp/ccrjjvry.s:520    .text.modem_supervisor_init_task:00000000 $t
+     /tmp/ccrjjvry.s:526    .text.modem_supervisor_init_task:00000000 modem_supervisor_init_task
+     /tmp/ccrjjvry.s:550    .text.modem_supervisor_init_task:00000020 $d
+     /tmp/ccrjjvry.s:2488   .bss.task_manager:00000000 task_manager
+     /tmp/ccrjjvry.s:553    .text.modem_supervisor_init:00000000 $t
+     /tmp/ccrjjvry.s:559    .text.modem_supervisor_init:00000000 modem_supervisor_init
+     /tmp/ccrjjvry.s:636    .text.modem_supervisor_init:000000ac $d
+     /tmp/ccrjjvry.s:2482   .bss.is_pending_dm_status_payload_periodic:00000000 is_pending_dm_status_payload_periodic
+     /tmp/ccrjjvry.s:2477   .bss.is_pending_dm_status_payload_now:00000000 is_pending_dm_status_payload_now
+     /tmp/ccrjjvry.s:2472   .data.is_first_dm_after_join:00000000 is_first_dm_after_join
+     /tmp/ccrjjvry.s:2467   .bss.send_task_update_needed:00000000 send_task_update_needed
+     /tmp/ccrjjvry.s:2462   .bss.app_callback:00000000 app_callback
+     /tmp/ccrjjvry.s:2456   .bss.alc_sync_context:00000000 alc_sync_context
+     /tmp/ccrjjvry.s:2444   .bss.ROSE:00000000 ROSE
+     /tmp/ccrjjvry.s:2438   .bss.file_upload_context:00000000 file_upload_context
+     /tmp/ccrjjvry.s:2411   .bss.class_b_bit:00000000 class_b_bit
+     /tmp/ccrjjvry.s:652    .text.modem_supervisor_get_task_priority:00000000 $t
+     /tmp/ccrjjvry.s:658    .text.modem_supervisor_get_task_priority:00000000 modem_supervisor_get_task_priority
+     /tmp/ccrjjvry.s:677    .text.modem_supervisor_get_task_priority:00000014 $d
+     /tmp/ccrjjvry.s:684    .text.modem_supervisor_remove_task:00000000 $t
+     /tmp/ccrjjvry.s:690    .text.modem_supervisor_remove_task:00000000 modem_supervisor_remove_task
+     /tmp/ccrjjvry.s:717    .text.modem_supervisor_remove_task:00000028 $d
+     /tmp/ccrjjvry.s:726    .text.modem_supervisor_add_task:00000000 $t
+     /tmp/ccrjjvry.s:732    .text.modem_supervisor_add_task:00000000 modem_supervisor_add_task
+     /tmp/ccrjjvry.s:770    .text.modem_supervisor_add_task:00000040 $d
+     /tmp/ccrjjvry.s:821    .text.modem_supervisor_launch_task:00000000 $t
+     /tmp/ccrjjvry.s:827    .text.modem_supervisor_launch_task:00000000 modem_supervisor_launch_task
+     /tmp/ccrjjvry.s:837    .text.modem_supervisor_launch_task:0000000e $d
+     /tmp/ccrjjvry.s:857    .text.modem_supervisor_launch_task:00000036 $t
+     /tmp/ccrjjvry.s:1196   .text.modem_supervisor_launch_task:000002fc $d
+     /tmp/ccrjjvry.s:1218   .text.modem_supervisor_launch_task:00000350 $t
+     /tmp/ccrjjvry.s:1563   .text.modem_supervisor_launch_task:00000628 $d
+     /tmp/ccrjjvry.s:1590   .text.modem_supervisor_update_task:00000000 $t
+     /tmp/ccrjjvry.s:1596   .text.modem_supervisor_update_task:00000000 modem_supervisor_update_task
+     /tmp/ccrjjvry.s:1604   .text.modem_supervisor_update_task:0000000a $d
+     /tmp/ccrjjvry.s:1624   .text.modem_supervisor_update_task:00000032 $t
+     /tmp/ccrjjvry.s:1901   .text.modem_supervisor_update_task:00000284 $d
+     /tmp/ccrjjvry.s:1914   .text.modem_supervisor_scheduler:00000000 $t
+     /tmp/ccrjjvry.s:1920   .text.modem_supervisor_scheduler:00000000 modem_supervisor_scheduler
+     /tmp/ccrjjvry.s:2029   .text.modem_supervisor_scheduler:000000c4 $d
+     /tmp/ccrjjvry.s:2037   .text.modem_supervisor_engine:00000000 $t
+ARM GAS  /tmp/ccrjjvry.s 			page 48
 
 
-     /tmp/ccfd09Wz.s:2043   .text.modem_supervisor_engine:00000000 modem_supervisor_engine
-     /tmp/ccfd09Wz.s:2223   .text.modem_supervisor_engine:00000178 $d
-     /tmp/ccfd09Wz.s:2232   .text.modem_supervisor_update_downlink_frame:00000000 $t
-     /tmp/ccfd09Wz.s:2238   .text.modem_supervisor_update_downlink_frame:00000000 modem_supervisor_update_downlink_frame
-     /tmp/ccfd09Wz.s:2405   .text.modem_supervisor_update_downlink_frame:00000150 $d
-     /tmp/ccfd09Wz.s:2412   .bss.class_b_bit:00000000 $d
-     /tmp/ccfd09Wz.s:2417   .bss.certification_data_is_pending:00000000 $d
-     /tmp/ccfd09Wz.s:2424   .bss.user_payload:00000000 $d
-     /tmp/ccfd09Wz.s:2435   .bss.file_upload_context:00000000 $d
-     /tmp/ccfd09Wz.s:2441   .bss.ROSE:00000000 $d
-     /tmp/ccfd09Wz.s:2447   .bss.clock_sync_context:00000000 $d
-     /tmp/ccfd09Wz.s:2453   .bss.alc_sync_context:00000000 $d
-     /tmp/ccfd09Wz.s:2459   .bss.app_callback:00000000 $d
-     /tmp/ccfd09Wz.s:2468   .bss.send_task_update_needed:00000000 $d
-     /tmp/ccfd09Wz.s:2478   .bss.is_pending_dm_status_payload_now:00000000 $d
-     /tmp/ccfd09Wz.s:2483   .bss.is_pending_dm_status_payload_periodic:00000000 $d
-     /tmp/ccfd09Wz.s:2485   .bss.task_manager:00000000 $d
+     /tmp/ccrjjvry.s:2043   .text.modem_supervisor_engine:00000000 modem_supervisor_engine
+     /tmp/ccrjjvry.s:2223   .text.modem_supervisor_engine:00000178 $d
+     /tmp/ccrjjvry.s:2232   .text.modem_supervisor_update_downlink_frame:00000000 $t
+     /tmp/ccrjjvry.s:2238   .text.modem_supervisor_update_downlink_frame:00000000 modem_supervisor_update_downlink_frame
+     /tmp/ccrjjvry.s:2405   .text.modem_supervisor_update_downlink_frame:00000150 $d
+     /tmp/ccrjjvry.s:2412   .bss.class_b_bit:00000000 $d
+     /tmp/ccrjjvry.s:2417   .bss.certification_data_is_pending:00000000 $d
+     /tmp/ccrjjvry.s:2424   .bss.user_payload:00000000 $d
+     /tmp/ccrjjvry.s:2435   .bss.file_upload_context:00000000 $d
+     /tmp/ccrjjvry.s:2441   .bss.ROSE:00000000 $d
+     /tmp/ccrjjvry.s:2447   .bss.clock_sync_context:00000000 $d
+     /tmp/ccrjjvry.s:2453   .bss.alc_sync_context:00000000 $d
+     /tmp/ccrjjvry.s:2459   .bss.app_callback:00000000 $d
+     /tmp/ccrjjvry.s:2468   .bss.send_task_update_needed:00000000 $d
+     /tmp/ccrjjvry.s:2478   .bss.is_pending_dm_status_payload_now:00000000 $d
+     /tmp/ccrjjvry.s:2483   .bss.is_pending_dm_status_payload_periodic:00000000 $d
+     /tmp/ccrjjvry.s:2485   .bss.task_manager:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
@@ -2847,7 +2847,7 @@ smtc_modem_request_uplink
 lorawan_api_class_c_enabled
 lorawan_api_init
 lorawan_api_dr_strategy_set
-ARM GAS  /tmp/ccfd09Wz.s 			page 49
+ARM GAS  /tmp/ccrjjvry.s 			page 49
 
 
 lorawan_api_join_status_clear
@@ -2907,7 +2907,7 @@ lorawan_api_class_c_start
 modem_get_duty_cycle_disabled_by_host
 lorawan_api_duty_cycle_enable_set
 modem_supervisor_add_task_join
-ARM GAS  /tmp/ccfd09Wz.s 			page 50
+ARM GAS  /tmp/ccrjjvry.s 			page 50
 
 
 modem_supervisor_add_task_dm_status_now

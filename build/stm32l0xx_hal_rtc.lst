@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc24cTJz.s 			page 1
+ARM GAS  /tmp/cc1dlfyA.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
   60 000e 5202     		lsls	r2, r2, #9
   61 0010 0A43     		orrs	r2, r1
   62 0012 9A60     		str	r2, [r3, #8]
-ARM GAS  /tmp/cc24cTJz.s 			page 2
+ARM GAS  /tmp/cc1dlfyA.s 			page 2
 
 
   63 0014 FF22     		movs	r2, #255
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  122              		.syntax unified
  123              		.code	16
  124              		.thumb_func
-ARM GAS  /tmp/cc24cTJz.s 			page 3
+ARM GAS  /tmp/cc1dlfyA.s 			page 3
 
 
  126              	HAL_RTC_DST_ClearStoreOperation:
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  184 000e 24D0     		beq	.L11
  185 0010 0123     		movs	r3, #1
  186 0012 CA22     		movs	r2, #202
-ARM GAS  /tmp/cc24cTJz.s 			page 4
+ARM GAS  /tmp/cc1dlfyA.s 			page 4
 
 
  187 0014 E619     		adds	r6, r4, r7
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  241 0078 EFE7     		b	.L11
  242              	.L12:
  243 007a 9A68     		ldr	r2, [r3, #8]
-ARM GAS  /tmp/cc24cTJz.s 			page 5
+ARM GAS  /tmp/cc1dlfyA.s 			page 5
 
 
  244 007c 0D49     		ldr	r1, .L23+8
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  302 0008 D204     		lsls	r2, r2, #19
  303 000a 0AD5     		bpl	.L27
  304 000c DB68     		ldr	r3, [r3, #12]
-ARM GAS  /tmp/cc24cTJz.s 			page 6
+ARM GAS  /tmp/cc1dlfyA.s 			page 6
 
 
  305 000e DB05     		lsls	r3, r3, #23
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  361 000a 8027     		movs	r7, #128
  362 000c 0600     		movs	r6, r0
  363 000e 7F00     		lsls	r7, r7, #1
-ARM GAS  /tmp/cc24cTJz.s 			page 7
+ARM GAS  /tmp/cc1dlfyA.s 			page 7
 
 
  364              	.L48:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  420 000e FFF7FEFF 		bl	HAL_GetTick
  421 0012 FA27     		movs	r7, #250
  422 0014 0500     		movs	r5, r0
-ARM GAS  /tmp/cc24cTJz.s 			page 8
+ARM GAS  /tmp/cc1dlfyA.s 			page 8
 
 
  423 0016 2026     		movs	r6, #32
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  481              	.L69:
  482 0012 0122     		movs	r2, #1
  483 0014 5242     		rsbs	r2, r2, #0
-ARM GAS  /tmp/cc24cTJz.s 			page 9
+ARM GAS  /tmp/cc1dlfyA.s 			page 9
 
 
  484 0016 DA60     		str	r2, [r3, #12]
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  540 003a 0125     		movs	r5, #1
  541              	.L79:
  542              		@ sp needed
-ARM GAS  /tmp/cc24cTJz.s 			page 10
+ARM GAS  /tmp/cc1dlfyA.s 			page 10
 
 
  543 003c 2800     		movs	r0, r5
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  597              	.L80:
  598 00a8 FF22     		movs	r2, #255
  599 00aa 2368     		ldr	r3, [r4]
-ARM GAS  /tmp/cc24cTJz.s 			page 11
+ARM GAS  /tmp/cc1dlfyA.s 			page 11
 
 
  600 00ac 5A62     		str	r2, [r3, #36]
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  656 0048 9A68     		ldr	r2, [r3, #8]
  657 004a 0022     		movs	r2, #0
  658 004c 1B49     		ldr	r1, .L101+4
-ARM GAS  /tmp/cc24cTJz.s 			page 12
+ARM GAS  /tmp/cc1dlfyA.s 			page 12
 
 
  659 004e 9A60     		str	r2, [r3, #8]
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  713 00b6 C046     		.align	2
  714              	.L101:
  715 00b8 01210000 		.word	8449
-ARM GAS  /tmp/cc24cTJz.s 			page 13
+ARM GAS  /tmp/cc1dlfyA.s 			page 13
 
 
  716 00bc FFFF0000 		.word	65535
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  774 0026 6678     		ldrb	r6, [r4, #1]
  775 0028 3E33     		adds	r3, r3, #62
  776 002a 002A     		cmp	r2, #0
-ARM GAS  /tmp/cc24cTJz.s 			page 14
+ARM GAS  /tmp/cc1dlfyA.s 			page 14
 
 
  777 002c 2DD1     		bne	.L108
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  831 0094 E170     		strb	r1, [r4, #3]
  832              	.L111:
  833 0096 A378     		ldrb	r3, [r4, #2]
-ARM GAS  /tmp/cc24cTJz.s 			page 15
+ARM GAS  /tmp/cc1dlfyA.s 			page 15
 
 
  834 0098 0004     		lsls	r0, r0, #16
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  888 0102 BFE7     		b	.L107
  889              	.L121:
  890              		.align	2
-ARM GAS  /tmp/cc24cTJz.s 			page 16
+ARM GAS  /tmp/cc1dlfyA.s 			page 16
 
 
  891              	.L120:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  947 0054 019A     		ldr	r2, [sp, #4]
  948 0056 D377     		strb	r3, [r2, #31]
  949 0058 0023     		movs	r3, #0
-ARM GAS  /tmp/cc24cTJz.s 			page 17
+ARM GAS  /tmp/cc1dlfyA.s 			page 17
 
 
  950 005a FB77     		strb	r3, [r7, #31]
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1004 00c2 CBE7     		b	.L128
  1005              	.L129:
  1006 00c4 FF22     		movs	r2, #255
-ARM GAS  /tmp/cc24cTJz.s 			page 18
+ARM GAS  /tmp/cc1dlfyA.s 			page 18
 
 
  1007 00c6 2368     		ldr	r3, [r4]
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1063 0040 FFF7FEFF 		bl	RTC_ByteToBcd2
  1064 0044 0090     		str	r0, [sp]
  1065 0046 3800     		movs	r0, r7
-ARM GAS  /tmp/cc24cTJz.s 			page 19
+ARM GAS  /tmp/cc1dlfyA.s 			page 19
 
 
  1066 0048 FFF7FEFF 		bl	RTC_ByteToBcd2
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1120 00b6 8022     		movs	r2, #128
  1121 00b8 9968     		ldr	r1, [r3, #8]
  1122 00ba 5200     		lsls	r2, r2, #1
-ARM GAS  /tmp/cc24cTJz.s 			page 20
+ARM GAS  /tmp/cc1dlfyA.s 			page 20
 
 
  1123              	.L157:
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1177              	.L141:
  1178              		@ sp needed
  1179 0120 FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
-ARM GAS  /tmp/cc24cTJz.s 			page 21
+ARM GAS  /tmp/cc1dlfyA.s 			page 21
 
 
  1180              	.L146:
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1236 000c 1800     		movs	r0, r3
  1237 000e 012E     		cmp	r6, #1
  1238 0010 00D1     		bne	.LCB1344
-ARM GAS  /tmp/cc24cTJz.s 			page 22
+ARM GAS  /tmp/cc1dlfyA.s 			page 22
 
 
  1239 0012 94E0     		b	.L161	@long jump
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1293 0080 6A6A     		ldr	r2, [r5, #36]
  1294 0082 773B     		subs	r3, r3, #119
  1295 0084 7362     		str	r3, [r6, #36]
-ARM GAS  /tmp/cc24cTJz.s 			page 23
+ARM GAS  /tmp/cc1dlfyA.s 			page 23
 
 
  1296 0086 AD33     		adds	r3, r3, #173
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1350 00f0 25E0     		b	.L161
  1351              	.L162:
  1352 00f2 B268     		ldr	r2, [r6, #8]
-ARM GAS  /tmp/cc24cTJz.s 			page 24
+ARM GAS  /tmp/cc1dlfyA.s 			page 24
 
 
  1353 00f4 1100     		movs	r1, r2
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1407 0158 0600     		movs	r6, r0
  1408 015a AD00     		lsls	r5, r5, #2
  1409              	.L171:
-ARM GAS  /tmp/cc24cTJz.s 			page 25
+ARM GAS  /tmp/cc1dlfyA.s 			page 25
 
 
  1410 015c 0221     		movs	r1, #2
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1467              		.syntax unified
  1468              		.code	16
  1469              		.thumb_func
-ARM GAS  /tmp/cc24cTJz.s 			page 26
+ARM GAS  /tmp/cc1dlfyA.s 			page 26
 
 
  1471              	HAL_RTC_GetTime:
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1526              		.code	16
  1527              		.thumb_func
  1529              	HAL_RTC_GetDate:
-ARM GAS  /tmp/cc24cTJz.s 			page 27
+ARM GAS  /tmp/cc1dlfyA.s 			page 27
 
 
  1530              		@ args = 0, pretend = 0, frame = 0
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1586 0012 8A42     		cmp	r2, r1
  1587 0014 39D1     		bne	.L190
  1588 0016 F169     		ldr	r1, [r6, #28]
-ARM GAS  /tmp/cc24cTJz.s 			page 28
+ARM GAS  /tmp/cc1dlfyA.s 			page 28
 
 
  1589 0018 6262     		str	r2, [r4, #36]
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1643              		@ sp needed
  1644 0088 FEBD     		pop	{r1, r2, r3, r4, r5, r6, r7, pc}
  1645              	.L190:
-ARM GAS  /tmp/cc24cTJz.s 			page 29
+ARM GAS  /tmp/cc1dlfyA.s 			page 29
 
 
  1646 008a 8022     		movs	r2, #128
@@ -1695,77 +1695,77 @@ ARM GAS  /tmp/cc24cTJz.s 			page 1
  1657 00a0 80808080 		.word	-2139062144
  1658 00a4 FFFF00FF 		.word	-16711681
  1660              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc24cTJz.s 			page 30
+ARM GAS  /tmp/cc1dlfyA.s 			page 30
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32l0xx_hal_rtc.c
-     /tmp/cc24cTJz.s:14     .text.HAL_RTC_MspInit:00000000 $t
-     /tmp/cc24cTJz.s:20     .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
-     /tmp/cc24cTJz.s:28     .text.HAL_RTC_MspDeInit:00000000 $t
-     /tmp/cc24cTJz.s:34     .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
-     /tmp/cc24cTJz.s:42     .text.HAL_RTC_DST_Add1Hour:00000000 $t
-     /tmp/cc24cTJz.s:48     .text.HAL_RTC_DST_Add1Hour:00000000 HAL_RTC_DST_Add1Hour
-     /tmp/cc24cTJz.s:68     .text.HAL_RTC_DST_Sub1Hour:00000000 $t
-     /tmp/cc24cTJz.s:74     .text.HAL_RTC_DST_Sub1Hour:00000000 HAL_RTC_DST_Sub1Hour
-     /tmp/cc24cTJz.s:94     .text.HAL_RTC_DST_SetStoreOperation:00000000 $t
-     /tmp/cc24cTJz.s:100    .text.HAL_RTC_DST_SetStoreOperation:00000000 HAL_RTC_DST_SetStoreOperation
-     /tmp/cc24cTJz.s:120    .text.HAL_RTC_DST_ClearStoreOperation:00000000 $t
-     /tmp/cc24cTJz.s:126    .text.HAL_RTC_DST_ClearStoreOperation:00000000 HAL_RTC_DST_ClearStoreOperation
-     /tmp/cc24cTJz.s:146    .text.HAL_RTC_DST_ClearStoreOperation:00000018 $d
-     /tmp/cc24cTJz.s:149    .text.HAL_RTC_DST_ReadStoreOperation:00000000 $t
-     /tmp/cc24cTJz.s:155    .text.HAL_RTC_DST_ReadStoreOperation:00000000 HAL_RTC_DST_ReadStoreOperation
-     /tmp/cc24cTJz.s:168    .text.HAL_RTC_DeactivateAlarm:00000000 $t
-     /tmp/cc24cTJz.s:174    .text.HAL_RTC_DeactivateAlarm:00000000 HAL_RTC_DeactivateAlarm
-     /tmp/cc24cTJz.s:269    .text.HAL_RTC_DeactivateAlarm:000000ac $d
-     /tmp/cc24cTJz.s:275    .text.HAL_RTC_AlarmAEventCallback:00000000 $t
-     /tmp/cc24cTJz.s:281    .text.HAL_RTC_AlarmAEventCallback:00000000 HAL_RTC_AlarmAEventCallback
-     /tmp/cc24cTJz.s:289    .text.HAL_RTC_AlarmIRQHandler:00000000 $t
-     /tmp/cc24cTJz.s:295    .text.HAL_RTC_AlarmIRQHandler:00000000 HAL_RTC_AlarmIRQHandler
-     /tmp/cc24cTJz.s:343    .text.HAL_RTC_AlarmIRQHandler:00000054 $d
-     /tmp/cc24cTJz.s:348    .text.HAL_RTC_PollForAlarmAEvent:00000000 $t
-     /tmp/cc24cTJz.s:354    .text.HAL_RTC_PollForAlarmAEvent:00000000 HAL_RTC_PollForAlarmAEvent
-     /tmp/cc24cTJz.s:401    .text.HAL_RTC_PollForAlarmAEvent:00000048 $d
-     /tmp/cc24cTJz.s:404    .text.HAL_RTC_WaitForSynchro:00000000 $t
-     /tmp/cc24cTJz.s:410    .text.HAL_RTC_WaitForSynchro:00000000 HAL_RTC_WaitForSynchro
-     /tmp/cc24cTJz.s:443    .text.HAL_RTC_GetState:00000000 $t
-     /tmp/cc24cTJz.s:449    .text.HAL_RTC_GetState:00000000 HAL_RTC_GetState
-     /tmp/cc24cTJz.s:460    .text.RTC_EnterInitMode:00000000 $t
-     /tmp/cc24cTJz.s:466    .text.RTC_EnterInitMode:00000000 RTC_EnterInitMode
-     /tmp/cc24cTJz.s:502    .text.HAL_RTC_Init:00000000 $t
-     /tmp/cc24cTJz.s:508    .text.HAL_RTC_Init:00000000 HAL_RTC_Init
-     /tmp/cc24cTJz.s:607    .text.HAL_RTC_Init:000000b4 $d
-     /tmp/cc24cTJz.s:610    .text.HAL_RTC_DeInit:00000000 $t
-     /tmp/cc24cTJz.s:616    .text.HAL_RTC_DeInit:00000000 HAL_RTC_DeInit
-     /tmp/cc24cTJz.s:715    .text.HAL_RTC_DeInit:000000b8 $d
-     /tmp/cc24cTJz.s:720    .text.RTC_ByteToBcd2:00000000 $t
-     /tmp/cc24cTJz.s:726    .text.RTC_ByteToBcd2:00000000 RTC_ByteToBcd2
-     /tmp/cc24cTJz.s:746    .text.HAL_RTC_SetTime:00000000 $t
-     /tmp/cc24cTJz.s:752    .text.HAL_RTC_SetTime:00000000 HAL_RTC_SetTime
-     /tmp/cc24cTJz.s:892    .text.HAL_RTC_SetTime:00000104 $d
-     /tmp/cc24cTJz.s:896    .text.HAL_RTC_SetDate:00000000 $t
-     /tmp/cc24cTJz.s:902    .text.HAL_RTC_SetDate:00000000 HAL_RTC_SetDate
-     /tmp/cc24cTJz.s:1018   .text.HAL_RTC_SetDate:000000d8 $d
-     /tmp/cc24cTJz.s:1021   .text.HAL_RTC_SetAlarm:00000000 $t
-     /tmp/cc24cTJz.s:1027   .text.HAL_RTC_SetAlarm:00000000 HAL_RTC_SetAlarm
-     /tmp/cc24cTJz.s:1215   .text.HAL_RTC_SetAlarm:00000160 $d
-     /tmp/cc24cTJz.s:1221   .text.HAL_RTC_SetAlarm_IT:00000000 $t
-     /tmp/cc24cTJz.s:1227   .text.HAL_RTC_SetAlarm_IT:00000000 HAL_RTC_SetAlarm_IT
-     /tmp/cc24cTJz.s:1436   .text.HAL_RTC_SetAlarm_IT:0000018c $d
-     /tmp/cc24cTJz.s:1443   .text.RTC_Bcd2ToByte:00000000 $t
-     /tmp/cc24cTJz.s:1449   .text.RTC_Bcd2ToByte:00000000 RTC_Bcd2ToByte
-     /tmp/cc24cTJz.s:1465   .text.HAL_RTC_GetTime:00000000 $t
-ARM GAS  /tmp/cc24cTJz.s 			page 31
+     /tmp/cc1dlfyA.s:14     .text.HAL_RTC_MspInit:00000000 $t
+     /tmp/cc1dlfyA.s:20     .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
+     /tmp/cc1dlfyA.s:28     .text.HAL_RTC_MspDeInit:00000000 $t
+     /tmp/cc1dlfyA.s:34     .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
+     /tmp/cc1dlfyA.s:42     .text.HAL_RTC_DST_Add1Hour:00000000 $t
+     /tmp/cc1dlfyA.s:48     .text.HAL_RTC_DST_Add1Hour:00000000 HAL_RTC_DST_Add1Hour
+     /tmp/cc1dlfyA.s:68     .text.HAL_RTC_DST_Sub1Hour:00000000 $t
+     /tmp/cc1dlfyA.s:74     .text.HAL_RTC_DST_Sub1Hour:00000000 HAL_RTC_DST_Sub1Hour
+     /tmp/cc1dlfyA.s:94     .text.HAL_RTC_DST_SetStoreOperation:00000000 $t
+     /tmp/cc1dlfyA.s:100    .text.HAL_RTC_DST_SetStoreOperation:00000000 HAL_RTC_DST_SetStoreOperation
+     /tmp/cc1dlfyA.s:120    .text.HAL_RTC_DST_ClearStoreOperation:00000000 $t
+     /tmp/cc1dlfyA.s:126    .text.HAL_RTC_DST_ClearStoreOperation:00000000 HAL_RTC_DST_ClearStoreOperation
+     /tmp/cc1dlfyA.s:146    .text.HAL_RTC_DST_ClearStoreOperation:00000018 $d
+     /tmp/cc1dlfyA.s:149    .text.HAL_RTC_DST_ReadStoreOperation:00000000 $t
+     /tmp/cc1dlfyA.s:155    .text.HAL_RTC_DST_ReadStoreOperation:00000000 HAL_RTC_DST_ReadStoreOperation
+     /tmp/cc1dlfyA.s:168    .text.HAL_RTC_DeactivateAlarm:00000000 $t
+     /tmp/cc1dlfyA.s:174    .text.HAL_RTC_DeactivateAlarm:00000000 HAL_RTC_DeactivateAlarm
+     /tmp/cc1dlfyA.s:269    .text.HAL_RTC_DeactivateAlarm:000000ac $d
+     /tmp/cc1dlfyA.s:275    .text.HAL_RTC_AlarmAEventCallback:00000000 $t
+     /tmp/cc1dlfyA.s:281    .text.HAL_RTC_AlarmAEventCallback:00000000 HAL_RTC_AlarmAEventCallback
+     /tmp/cc1dlfyA.s:289    .text.HAL_RTC_AlarmIRQHandler:00000000 $t
+     /tmp/cc1dlfyA.s:295    .text.HAL_RTC_AlarmIRQHandler:00000000 HAL_RTC_AlarmIRQHandler
+     /tmp/cc1dlfyA.s:343    .text.HAL_RTC_AlarmIRQHandler:00000054 $d
+     /tmp/cc1dlfyA.s:348    .text.HAL_RTC_PollForAlarmAEvent:00000000 $t
+     /tmp/cc1dlfyA.s:354    .text.HAL_RTC_PollForAlarmAEvent:00000000 HAL_RTC_PollForAlarmAEvent
+     /tmp/cc1dlfyA.s:401    .text.HAL_RTC_PollForAlarmAEvent:00000048 $d
+     /tmp/cc1dlfyA.s:404    .text.HAL_RTC_WaitForSynchro:00000000 $t
+     /tmp/cc1dlfyA.s:410    .text.HAL_RTC_WaitForSynchro:00000000 HAL_RTC_WaitForSynchro
+     /tmp/cc1dlfyA.s:443    .text.HAL_RTC_GetState:00000000 $t
+     /tmp/cc1dlfyA.s:449    .text.HAL_RTC_GetState:00000000 HAL_RTC_GetState
+     /tmp/cc1dlfyA.s:460    .text.RTC_EnterInitMode:00000000 $t
+     /tmp/cc1dlfyA.s:466    .text.RTC_EnterInitMode:00000000 RTC_EnterInitMode
+     /tmp/cc1dlfyA.s:502    .text.HAL_RTC_Init:00000000 $t
+     /tmp/cc1dlfyA.s:508    .text.HAL_RTC_Init:00000000 HAL_RTC_Init
+     /tmp/cc1dlfyA.s:607    .text.HAL_RTC_Init:000000b4 $d
+     /tmp/cc1dlfyA.s:610    .text.HAL_RTC_DeInit:00000000 $t
+     /tmp/cc1dlfyA.s:616    .text.HAL_RTC_DeInit:00000000 HAL_RTC_DeInit
+     /tmp/cc1dlfyA.s:715    .text.HAL_RTC_DeInit:000000b8 $d
+     /tmp/cc1dlfyA.s:720    .text.RTC_ByteToBcd2:00000000 $t
+     /tmp/cc1dlfyA.s:726    .text.RTC_ByteToBcd2:00000000 RTC_ByteToBcd2
+     /tmp/cc1dlfyA.s:746    .text.HAL_RTC_SetTime:00000000 $t
+     /tmp/cc1dlfyA.s:752    .text.HAL_RTC_SetTime:00000000 HAL_RTC_SetTime
+     /tmp/cc1dlfyA.s:892    .text.HAL_RTC_SetTime:00000104 $d
+     /tmp/cc1dlfyA.s:896    .text.HAL_RTC_SetDate:00000000 $t
+     /tmp/cc1dlfyA.s:902    .text.HAL_RTC_SetDate:00000000 HAL_RTC_SetDate
+     /tmp/cc1dlfyA.s:1018   .text.HAL_RTC_SetDate:000000d8 $d
+     /tmp/cc1dlfyA.s:1021   .text.HAL_RTC_SetAlarm:00000000 $t
+     /tmp/cc1dlfyA.s:1027   .text.HAL_RTC_SetAlarm:00000000 HAL_RTC_SetAlarm
+     /tmp/cc1dlfyA.s:1215   .text.HAL_RTC_SetAlarm:00000160 $d
+     /tmp/cc1dlfyA.s:1221   .text.HAL_RTC_SetAlarm_IT:00000000 $t
+     /tmp/cc1dlfyA.s:1227   .text.HAL_RTC_SetAlarm_IT:00000000 HAL_RTC_SetAlarm_IT
+     /tmp/cc1dlfyA.s:1436   .text.HAL_RTC_SetAlarm_IT:0000018c $d
+     /tmp/cc1dlfyA.s:1443   .text.RTC_Bcd2ToByte:00000000 $t
+     /tmp/cc1dlfyA.s:1449   .text.RTC_Bcd2ToByte:00000000 RTC_Bcd2ToByte
+     /tmp/cc1dlfyA.s:1465   .text.HAL_RTC_GetTime:00000000 $t
+ARM GAS  /tmp/cc1dlfyA.s 			page 31
 
 
-     /tmp/cc24cTJz.s:1471   .text.HAL_RTC_GetTime:00000000 HAL_RTC_GetTime
-     /tmp/cc24cTJz.s:1520   .text.HAL_RTC_GetTime:00000058 $d
-     /tmp/cc24cTJz.s:1523   .text.HAL_RTC_GetDate:00000000 $t
-     /tmp/cc24cTJz.s:1529   .text.HAL_RTC_GetDate:00000000 HAL_RTC_GetDate
-     /tmp/cc24cTJz.s:1565   .text.HAL_RTC_GetDate:00000040 $d
-     /tmp/cc24cTJz.s:1568   .text.HAL_RTC_GetAlarm:00000000 $t
-     /tmp/cc24cTJz.s:1574   .text.HAL_RTC_GetAlarm:00000000 HAL_RTC_GetAlarm
-     /tmp/cc24cTJz.s:1655   .text.HAL_RTC_GetAlarm:00000098 $d
+     /tmp/cc1dlfyA.s:1471   .text.HAL_RTC_GetTime:00000000 HAL_RTC_GetTime
+     /tmp/cc1dlfyA.s:1520   .text.HAL_RTC_GetTime:00000058 $d
+     /tmp/cc1dlfyA.s:1523   .text.HAL_RTC_GetDate:00000000 $t
+     /tmp/cc1dlfyA.s:1529   .text.HAL_RTC_GetDate:00000000 HAL_RTC_GetDate
+     /tmp/cc1dlfyA.s:1565   .text.HAL_RTC_GetDate:00000040 $d
+     /tmp/cc1dlfyA.s:1568   .text.HAL_RTC_GetAlarm:00000000 $t
+     /tmp/cc1dlfyA.s:1574   .text.HAL_RTC_GetAlarm:00000000 HAL_RTC_GetAlarm
+     /tmp/cc1dlfyA.s:1655   .text.HAL_RTC_GetAlarm:00000098 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick
