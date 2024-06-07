@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc1fRspG.s 			page 1
+ARM GAS  /tmp/ccMNHVn0.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,20 +58,20 @@ ARM GAS  /tmp/cc1fRspG.s 			page 1
   58              		@ sp needed
   59 0010 08BC     		pop	{r3}
   60 0012 04B0     		add	sp, sp, #16
-ARM GAS  /tmp/cc1fRspG.s 			page 2
+ARM GAS  /tmp/ccMNHVn0.s 			page 2
 
 
   61 0014 1847     		bx	r3
   63              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/cc1fRspG.s 			page 3
+ARM GAS  /tmp/ccMNHVn0.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_hal_trace.c
-     /tmp/cc1fRspG.s:14     .text.hal_trace_print:00000000 $t
-     /tmp/cc1fRspG.s:20     .text.hal_trace_print:00000000 hal_trace_print
-     /tmp/cc1fRspG.s:42     .text.hal_trace_print_var:00000000 $t
-     /tmp/cc1fRspG.s:48     .text.hal_trace_print_var:00000000 hal_trace_print_var
+     /tmp/ccMNHVn0.s:14     .text.hal_trace_print:00000000 $t
+     /tmp/ccMNHVn0.s:20     .text.hal_trace_print:00000000 hal_trace_print
+     /tmp/ccMNHVn0.s:42     .text.hal_trace_print_var:00000000 $t
+     /tmp/ccMNHVn0.s:48     .text.hal_trace_print_var:00000000 hal_trace_print_var
 
 UNDEFINED SYMBOLS
 vsprintf

@@ -36,8 +36,11 @@
         "smtc_basic_modem_lr11xx_api_extension.h": "c",
         "time.h": "c",
         "stddef.h": "c",
-        "settings.h": "c"
+        "settings.h": "c",
+        "lr11xx_gnss_types.h": "c",
+        "lr11xx_system.h": "c",
+        
     },
-    "C_Cpp.errorSquiggles": "enabled",
+    "C_Cpp.errorSquiggles": "disabled",
  
 }

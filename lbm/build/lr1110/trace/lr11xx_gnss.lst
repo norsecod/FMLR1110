@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccDOFONn.s 			page 1
+ARM GAS  /tmp/ccxVv9tF.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
   58 0018 3380     		strh	r3, [r6]
   59 001a FFF7FEFF 		bl	memset
   60 001e 3100     		movs	r1, r6
-ARM GAS  /tmp/ccDOFONn.s 			page 2
+ARM GAS  /tmp/ccxVv9tF.s 			page 2
 
 
   61 0020 2300     		movs	r3, r4
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  117              	.L9:
  118 002a C046     		.align	2
  119              	.L8:
-ARM GAS  /tmp/ccDOFONn.s 			page 3
+ARM GAS  /tmp/ccxVv9tF.s 			page 3
 
 
  120 002c 040C0000 		.word	3076
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  178 002a 04A8     		add	r0, sp, #16
  179 002c FFF7FEFF 		bl	lr11xx_gnss_uint8_to_uint32
  180 0030 FA21     		movs	r1, #250
-ARM GAS  /tmp/ccDOFONn.s 			page 4
+ARM GAS  /tmp/ccxVv9tF.s 			page 4
 
 
  181 0032 8900     		lsls	r1, r1, #2
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  237 002e D318     		adds	r3, r2, r3
  238 0030 3A00     		movs	r2, r7
  239 0032 6A43     		muls	r2, r5
-ARM GAS  /tmp/ccDOFONn.s 			page 5
+ARM GAS  /tmp/ccxVv9tF.s 			page 5
 
 
  240 0034 92B2     		uxth	r2, r2
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  296 0040 2300     		movs	r3, r4
  297 0042 0100     		movs	r1, r0
  298 0044 BC36     		adds	r6, r6, #188
-ARM GAS  /tmp/ccDOFONn.s 			page 6
+ARM GAS  /tmp/ccxVv9tF.s 			page 6
 
 
  299 0046 0496     		str	r6, [sp, #16]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  355 0028 C918     		adds	r1, r1, r3
  356 002a 6A46     		mov	r2, sp
  357 002c 0223     		movs	r3, #2
-ARM GAS  /tmp/ccDOFONn.s 			page 7
+ARM GAS  /tmp/ccxVv9tF.s 			page 7
 
 
  358 002e 2000     		movs	r0, r4
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  416              		@ sp needed
  417 0018 00BD     		pop	{pc}
  419              		.section	.text.lr11xx_gnss_read_used_constellations,"ax",%progbits
-ARM GAS  /tmp/ccDOFONn.s 			page 8
+ARM GAS  /tmp/ccxVv9tF.s 			page 8
 
 
  420              		.align	1
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  479 0000 1FB5     		push	{r0, r1, r2, r3, r4, lr}
  480 0002 C122     		movs	r2, #193
  481 0004 0B00     		movs	r3, r1
-ARM GAS  /tmp/ccDOFONn.s 			page 9
+ARM GAS  /tmp/ccxVv9tF.s 			page 9
 
 
  482 0006 9200     		lsls	r2, r2, #2
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  540 0004 0B00     		movs	r3, r1
  541 0006 03A9     		add	r1, sp, #12
  542 0008 0A80     		strh	r2, [r1]
-ARM GAS  /tmp/ccDOFONn.s 			page 10
+ARM GAS  /tmp/ccxVv9tF.s 			page 10
 
 
  543 000a 0122     		movs	r2, #1
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  601 0010 074E     		ldr	r6, .L53
  602 0012 8A71     		strb	r2, [r1, #6]
  603 0014 0E80     		strh	r6, [r1]
-ARM GAS  /tmp/ccDOFONn.s 			page 11
+ARM GAS  /tmp/ccxVv9tF.s 			page 11
 
 
  604 0016 260E     		lsrs	r6, r4, #24
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  661              		.global	__aeabi_fmul
  662              		.global	__aeabi_f2iz
  663              		.section	.text.lr11xx_gnss_set_assistance_position,"ax",%progbits
-ARM GAS  /tmp/ccDOFONn.s 			page 12
+ARM GAS  /tmp/ccxVv9tF.s 			page 12
 
 
  664              		.align	1
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  721 0006 0393     		str	r3, [sp, #12]
  722 0008 0F4B     		ldr	r3, .L62
  723 000a 0C00     		movs	r4, r1
-ARM GAS  /tmp/ccDOFONn.s 			page 13
+ARM GAS  /tmp/ccxVv9tF.s 			page 13
 
 
  724 000c 02A9     		add	r1, sp, #8
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  780              	.L65:
  781 0018 04150000 		.word	5380
  783              		.section	.text.lr11xx_gnss_get_context_status,"ax",%progbits
-ARM GAS  /tmp/ccDOFONn.s 			page 14
+ARM GAS  /tmp/ccxVv9tF.s 			page 14
 
 
  784              		.align	1
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  842              		.thumb_func
  844              	lr11xx_gnss_get_detected_satellites:
  845              		@ args = 0, pretend = 0, frame = 136
-ARM GAS  /tmp/ccDOFONn.s 			page 15
+ARM GAS  /tmp/ccxVv9tF.s 			page 15
 
 
  846              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  901              		.section	.text.lr11xx_gnss_parse_context_status_buffer,"ax",%progbits
  902              		.align	1
  903              		.global	lr11xx_gnss_parse_context_status_buffer
-ARM GAS  /tmp/ccDOFONn.s 			page 16
+ARM GAS  /tmp/ccxVv9tF.s 			page 16
 
 
  904              		.syntax unified
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  960              		.syntax unified
  961              		.code	16
  962              		.thumb_func
-ARM GAS  /tmp/ccDOFONn.s 			page 17
+ARM GAS  /tmp/ccxVv9tF.s 			page 17
 
 
  964              	lr11xx_gnss_get_result_destination:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  1022 0010 0AD0     		beq	.L95
  1023 0012 032B     		cmp	r3, #3
  1024 0014 10D0     		beq	.L96
-ARM GAS  /tmp/ccDOFONn.s 			page 18
+ARM GAS  /tmp/ccxVv9tF.s 			page 18
 
 
  1025 0016 012B     		cmp	r3, #1
@@ -1057,89 +1057,89 @@ ARM GAS  /tmp/ccDOFONn.s 			page 1
  1058 0054 88130000 		.word	5000
  1059 0058 80EE3600 		.word	3600000
  1061              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccDOFONn.s 			page 19
+ARM GAS  /tmp/ccxVv9tF.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lr11xx_gnss.c
-     /tmp/ccDOFONn.s:14     .text.lr11xx_gnss_uint8_to_uint32:00000000 $t
-     /tmp/ccDOFONn.s:19     .text.lr11xx_gnss_uint8_to_uint32:00000000 lr11xx_gnss_uint8_to_uint32
-     /tmp/ccDOFONn.s:38     .text.lr11xx_gnss_get_almanac_address_size.constprop.0:00000000 $t
-     /tmp/ccDOFONn.s:43     .text.lr11xx_gnss_get_almanac_address_size.constprop.0:00000000 lr11xx_gnss_get_almanac_address_size.constprop.0
-     /tmp/ccDOFONn.s:83     .text.lr11xx_gnss_get_almanac_address_size.constprop.0:00000048 $d
-     /tmp/ccDOFONn.s:86     .text.lr11xx_gnss_get_result_size:00000000 $t
-     /tmp/ccDOFONn.s:92     .text.lr11xx_gnss_get_result_size:00000000 lr11xx_gnss_get_result_size
-     /tmp/ccDOFONn.s:120    .text.lr11xx_gnss_get_result_size:0000002c $d
-     /tmp/ccDOFONn.s:123    .text.lr11xx_gnss_read_results:00000000 $t
-     /tmp/ccDOFONn.s:129    .text.lr11xx_gnss_read_results:00000000 lr11xx_gnss_read_results
-     /tmp/ccDOFONn.s:146    .text.lr11xx_gnss_read_results:00000018 $d
-     /tmp/ccDOFONn.s:150    .text.lr11xx_gnss_get_timings:00000000 $t
-     /tmp/ccDOFONn.s:156    .text.lr11xx_gnss_get_timings:00000000 lr11xx_gnss_get_timings
-     /tmp/ccDOFONn.s:197    .text.lr11xx_gnss_get_timings:00000050 $d
-     /tmp/ccDOFONn.s:200    .text.lr11xx_gnss_almanac_update:00000000 $t
-     /tmp/ccDOFONn.s:206    .text.lr11xx_gnss_almanac_update:00000000 lr11xx_gnss_almanac_update
-     /tmp/ccDOFONn.s:254    .text.lr11xx_gnss_almanac_update:0000004c $d
-     /tmp/ccDOFONn.s:257    .text.lr11xx_gnss_read_almanac:00000000 $t
-     /tmp/ccDOFONn.s:263    .text.lr11xx_gnss_read_almanac:00000000 lr11xx_gnss_read_almanac
-     /tmp/ccDOFONn.s:324    .text.lr11xx_gnss_read_almanac:0000006c $d
-     /tmp/ccDOFONn.s:327    .text.lr11xx_gnss_get_almanac_age_for_satellite:00000000 $t
-     /tmp/ccDOFONn.s:333    .text.lr11xx_gnss_get_almanac_age_for_satellite:00000000 lr11xx_gnss_get_almanac_age_for_satellite
-     /tmp/ccDOFONn.s:370    .text.lr11xx_gnss_push_solver_msg:00000000 $t
-     /tmp/ccDOFONn.s:376    .text.lr11xx_gnss_push_solver_msg:00000000 lr11xx_gnss_push_solver_msg
-     /tmp/ccDOFONn.s:393    .text.lr11xx_gnss_push_solver_msg:00000018 $d
-     /tmp/ccDOFONn.s:396    .text.lr11xx_gnss_set_constellations_to_use:00000000 $t
-     /tmp/ccDOFONn.s:402    .text.lr11xx_gnss_set_constellations_to_use:00000000 lr11xx_gnss_set_constellations_to_use
-     /tmp/ccDOFONn.s:420    .text.lr11xx_gnss_read_used_constellations:00000000 $t
-     /tmp/ccDOFONn.s:426    .text.lr11xx_gnss_read_used_constellations:00000000 lr11xx_gnss_read_used_constellations
-     /tmp/ccDOFONn.s:445    .text.lr11xx_gnss_set_almanac_update:00000000 $t
-     /tmp/ccDOFONn.s:451    .text.lr11xx_gnss_set_almanac_update:00000000 lr11xx_gnss_set_almanac_update
-     /tmp/ccDOFONn.s:470    .text.lr11xx_gnss_read_almanac_update:00000000 $t
-     /tmp/ccDOFONn.s:476    .text.lr11xx_gnss_read_almanac_update:00000000 lr11xx_gnss_read_almanac_update
-     /tmp/ccDOFONn.s:494    .text.lr11xx_gnss_read_firmware_version:00000000 $t
-     /tmp/ccDOFONn.s:500    .text.lr11xx_gnss_read_firmware_version:00000000 lr11xx_gnss_read_firmware_version
-     /tmp/ccDOFONn.s:526    .text.lr11xx_gnss_read_firmware_version:00000028 $d
-     /tmp/ccDOFONn.s:529    .text.lr11xx_gnss_read_supported_constellations:00000000 $t
-     /tmp/ccDOFONn.s:535    .text.lr11xx_gnss_read_supported_constellations:00000000 lr11xx_gnss_read_supported_constellations
-     /tmp/ccDOFONn.s:553    .text.lr11xx_gnss_read_supported_constellations:00000018 $d
-     /tmp/ccDOFONn.s:556    .text.lr11xx_gnss_set_scan_mode:00000000 $t
-     /tmp/ccDOFONn.s:562    .text.lr11xx_gnss_set_scan_mode:00000000 lr11xx_gnss_set_scan_mode
-     /tmp/ccDOFONn.s:581    .text.lr11xx_gnss_set_scan_mode:0000001c $d
-     /tmp/ccDOFONn.s:584    .text.lr11xx_gnss_scan_autonomous:00000000 $t
-     /tmp/ccDOFONn.s:590    .text.lr11xx_gnss_scan_autonomous:00000000 lr11xx_gnss_scan_autonomous
-     /tmp/ccDOFONn.s:620    .text.lr11xx_gnss_scan_autonomous:00000030 $d
-     /tmp/ccDOFONn.s:623    .text.lr11xx_gnss_scan_assisted:00000000 $t
-     /tmp/ccDOFONn.s:629    .text.lr11xx_gnss_scan_assisted:00000000 lr11xx_gnss_scan_assisted
-     /tmp/ccDOFONn.s:659    .text.lr11xx_gnss_scan_assisted:00000030 $d
-     /tmp/ccDOFONn.s:664    .text.lr11xx_gnss_set_assistance_position:00000000 $t
-     /tmp/ccDOFONn.s:670    .text.lr11xx_gnss_set_assistance_position:00000000 lr11xx_gnss_set_assistance_position
-     /tmp/ccDOFONn.s:703    .text.lr11xx_gnss_set_assistance_position:00000040 $d
-     /tmp/ccDOFONn.s:709    .text.lr11xx_gnss_read_assistance_position:00000000 $t
-     /tmp/ccDOFONn.s:715    .text.lr11xx_gnss_read_assistance_position:00000000 lr11xx_gnss_read_assistance_position
-     /tmp/ccDOFONn.s:753    .text.lr11xx_gnss_read_assistance_position:00000048 $d
-     /tmp/ccDOFONn.s:758    .text.lr11xx_gnss_push_dmc_msg:00000000 $t
-ARM GAS  /tmp/ccDOFONn.s 			page 20
+     /tmp/ccxVv9tF.s:14     .text.lr11xx_gnss_uint8_to_uint32:00000000 $t
+     /tmp/ccxVv9tF.s:19     .text.lr11xx_gnss_uint8_to_uint32:00000000 lr11xx_gnss_uint8_to_uint32
+     /tmp/ccxVv9tF.s:38     .text.lr11xx_gnss_get_almanac_address_size.constprop.0:00000000 $t
+     /tmp/ccxVv9tF.s:43     .text.lr11xx_gnss_get_almanac_address_size.constprop.0:00000000 lr11xx_gnss_get_almanac_address_size.constprop.0
+     /tmp/ccxVv9tF.s:83     .text.lr11xx_gnss_get_almanac_address_size.constprop.0:00000048 $d
+     /tmp/ccxVv9tF.s:86     .text.lr11xx_gnss_get_result_size:00000000 $t
+     /tmp/ccxVv9tF.s:92     .text.lr11xx_gnss_get_result_size:00000000 lr11xx_gnss_get_result_size
+     /tmp/ccxVv9tF.s:120    .text.lr11xx_gnss_get_result_size:0000002c $d
+     /tmp/ccxVv9tF.s:123    .text.lr11xx_gnss_read_results:00000000 $t
+     /tmp/ccxVv9tF.s:129    .text.lr11xx_gnss_read_results:00000000 lr11xx_gnss_read_results
+     /tmp/ccxVv9tF.s:146    .text.lr11xx_gnss_read_results:00000018 $d
+     /tmp/ccxVv9tF.s:150    .text.lr11xx_gnss_get_timings:00000000 $t
+     /tmp/ccxVv9tF.s:156    .text.lr11xx_gnss_get_timings:00000000 lr11xx_gnss_get_timings
+     /tmp/ccxVv9tF.s:197    .text.lr11xx_gnss_get_timings:00000050 $d
+     /tmp/ccxVv9tF.s:200    .text.lr11xx_gnss_almanac_update:00000000 $t
+     /tmp/ccxVv9tF.s:206    .text.lr11xx_gnss_almanac_update:00000000 lr11xx_gnss_almanac_update
+     /tmp/ccxVv9tF.s:254    .text.lr11xx_gnss_almanac_update:0000004c $d
+     /tmp/ccxVv9tF.s:257    .text.lr11xx_gnss_read_almanac:00000000 $t
+     /tmp/ccxVv9tF.s:263    .text.lr11xx_gnss_read_almanac:00000000 lr11xx_gnss_read_almanac
+     /tmp/ccxVv9tF.s:324    .text.lr11xx_gnss_read_almanac:0000006c $d
+     /tmp/ccxVv9tF.s:327    .text.lr11xx_gnss_get_almanac_age_for_satellite:00000000 $t
+     /tmp/ccxVv9tF.s:333    .text.lr11xx_gnss_get_almanac_age_for_satellite:00000000 lr11xx_gnss_get_almanac_age_for_satellite
+     /tmp/ccxVv9tF.s:370    .text.lr11xx_gnss_push_solver_msg:00000000 $t
+     /tmp/ccxVv9tF.s:376    .text.lr11xx_gnss_push_solver_msg:00000000 lr11xx_gnss_push_solver_msg
+     /tmp/ccxVv9tF.s:393    .text.lr11xx_gnss_push_solver_msg:00000018 $d
+     /tmp/ccxVv9tF.s:396    .text.lr11xx_gnss_set_constellations_to_use:00000000 $t
+     /tmp/ccxVv9tF.s:402    .text.lr11xx_gnss_set_constellations_to_use:00000000 lr11xx_gnss_set_constellations_to_use
+     /tmp/ccxVv9tF.s:420    .text.lr11xx_gnss_read_used_constellations:00000000 $t
+     /tmp/ccxVv9tF.s:426    .text.lr11xx_gnss_read_used_constellations:00000000 lr11xx_gnss_read_used_constellations
+     /tmp/ccxVv9tF.s:445    .text.lr11xx_gnss_set_almanac_update:00000000 $t
+     /tmp/ccxVv9tF.s:451    .text.lr11xx_gnss_set_almanac_update:00000000 lr11xx_gnss_set_almanac_update
+     /tmp/ccxVv9tF.s:470    .text.lr11xx_gnss_read_almanac_update:00000000 $t
+     /tmp/ccxVv9tF.s:476    .text.lr11xx_gnss_read_almanac_update:00000000 lr11xx_gnss_read_almanac_update
+     /tmp/ccxVv9tF.s:494    .text.lr11xx_gnss_read_firmware_version:00000000 $t
+     /tmp/ccxVv9tF.s:500    .text.lr11xx_gnss_read_firmware_version:00000000 lr11xx_gnss_read_firmware_version
+     /tmp/ccxVv9tF.s:526    .text.lr11xx_gnss_read_firmware_version:00000028 $d
+     /tmp/ccxVv9tF.s:529    .text.lr11xx_gnss_read_supported_constellations:00000000 $t
+     /tmp/ccxVv9tF.s:535    .text.lr11xx_gnss_read_supported_constellations:00000000 lr11xx_gnss_read_supported_constellations
+     /tmp/ccxVv9tF.s:553    .text.lr11xx_gnss_read_supported_constellations:00000018 $d
+     /tmp/ccxVv9tF.s:556    .text.lr11xx_gnss_set_scan_mode:00000000 $t
+     /tmp/ccxVv9tF.s:562    .text.lr11xx_gnss_set_scan_mode:00000000 lr11xx_gnss_set_scan_mode
+     /tmp/ccxVv9tF.s:581    .text.lr11xx_gnss_set_scan_mode:0000001c $d
+     /tmp/ccxVv9tF.s:584    .text.lr11xx_gnss_scan_autonomous:00000000 $t
+     /tmp/ccxVv9tF.s:590    .text.lr11xx_gnss_scan_autonomous:00000000 lr11xx_gnss_scan_autonomous
+     /tmp/ccxVv9tF.s:620    .text.lr11xx_gnss_scan_autonomous:00000030 $d
+     /tmp/ccxVv9tF.s:623    .text.lr11xx_gnss_scan_assisted:00000000 $t
+     /tmp/ccxVv9tF.s:629    .text.lr11xx_gnss_scan_assisted:00000000 lr11xx_gnss_scan_assisted
+     /tmp/ccxVv9tF.s:659    .text.lr11xx_gnss_scan_assisted:00000030 $d
+     /tmp/ccxVv9tF.s:664    .text.lr11xx_gnss_set_assistance_position:00000000 $t
+     /tmp/ccxVv9tF.s:670    .text.lr11xx_gnss_set_assistance_position:00000000 lr11xx_gnss_set_assistance_position
+     /tmp/ccxVv9tF.s:703    .text.lr11xx_gnss_set_assistance_position:00000040 $d
+     /tmp/ccxVv9tF.s:709    .text.lr11xx_gnss_read_assistance_position:00000000 $t
+     /tmp/ccxVv9tF.s:715    .text.lr11xx_gnss_read_assistance_position:00000000 lr11xx_gnss_read_assistance_position
+     /tmp/ccxVv9tF.s:753    .text.lr11xx_gnss_read_assistance_position:00000048 $d
+     /tmp/ccxVv9tF.s:758    .text.lr11xx_gnss_push_dmc_msg:00000000 $t
+ARM GAS  /tmp/ccxVv9tF.s 			page 20
 
 
-     /tmp/ccDOFONn.s:764    .text.lr11xx_gnss_push_dmc_msg:00000000 lr11xx_gnss_push_dmc_msg
-     /tmp/ccDOFONn.s:781    .text.lr11xx_gnss_push_dmc_msg:00000018 $d
-     /tmp/ccDOFONn.s:784    .text.lr11xx_gnss_get_context_status:00000000 $t
-     /tmp/ccDOFONn.s:790    .text.lr11xx_gnss_get_context_status:00000000 lr11xx_gnss_get_context_status
-     /tmp/ccDOFONn.s:808    .text.lr11xx_gnss_get_context_status:00000018 $d
-     /tmp/ccDOFONn.s:811    .text.lr11xx_gnss_get_nb_detected_satellites:00000000 $t
-     /tmp/ccDOFONn.s:817    .text.lr11xx_gnss_get_nb_detected_satellites:00000000 lr11xx_gnss_get_nb_detected_satellites
-     /tmp/ccDOFONn.s:835    .text.lr11xx_gnss_get_nb_detected_satellites:00000018 $d
-     /tmp/ccDOFONn.s:838    .text.lr11xx_gnss_get_detected_satellites:00000000 $t
-     /tmp/ccDOFONn.s:844    .text.lr11xx_gnss_get_detected_satellites:00000000 lr11xx_gnss_get_detected_satellites
-     /tmp/ccDOFONn.s:899    .text.lr11xx_gnss_get_detected_satellites:0000005c $d
-     /tmp/ccDOFONn.s:902    .text.lr11xx_gnss_parse_context_status_buffer:00000000 $t
-     /tmp/ccDOFONn.s:908    .text.lr11xx_gnss_parse_context_status_buffer:00000000 lr11xx_gnss_parse_context_status_buffer
-     /tmp/ccDOFONn.s:958    .text.lr11xx_gnss_get_result_destination:00000000 $t
-     /tmp/ccDOFONn.s:964    .text.lr11xx_gnss_get_result_destination:00000000 lr11xx_gnss_get_result_destination
-     /tmp/ccDOFONn.s:987    .text.lr11xx_gnss_compute_almanac_age:00000000 $t
-     /tmp/ccDOFONn.s:993    .text.lr11xx_gnss_compute_almanac_age:00000000 lr11xx_gnss_compute_almanac_age
-     /tmp/ccDOFONn.s:1004   .text.lr11xx_gnss_get_consumption:00000000 $t
-     /tmp/ccDOFONn.s:1010   .text.lr11xx_gnss_get_consumption:00000000 lr11xx_gnss_get_consumption
-     /tmp/ccDOFONn.s:1053   .text.lr11xx_gnss_get_consumption:00000040 $d
+     /tmp/ccxVv9tF.s:764    .text.lr11xx_gnss_push_dmc_msg:00000000 lr11xx_gnss_push_dmc_msg
+     /tmp/ccxVv9tF.s:781    .text.lr11xx_gnss_push_dmc_msg:00000018 $d
+     /tmp/ccxVv9tF.s:784    .text.lr11xx_gnss_get_context_status:00000000 $t
+     /tmp/ccxVv9tF.s:790    .text.lr11xx_gnss_get_context_status:00000000 lr11xx_gnss_get_context_status
+     /tmp/ccxVv9tF.s:808    .text.lr11xx_gnss_get_context_status:00000018 $d
+     /tmp/ccxVv9tF.s:811    .text.lr11xx_gnss_get_nb_detected_satellites:00000000 $t
+     /tmp/ccxVv9tF.s:817    .text.lr11xx_gnss_get_nb_detected_satellites:00000000 lr11xx_gnss_get_nb_detected_satellites
+     /tmp/ccxVv9tF.s:835    .text.lr11xx_gnss_get_nb_detected_satellites:00000018 $d
+     /tmp/ccxVv9tF.s:838    .text.lr11xx_gnss_get_detected_satellites:00000000 $t
+     /tmp/ccxVv9tF.s:844    .text.lr11xx_gnss_get_detected_satellites:00000000 lr11xx_gnss_get_detected_satellites
+     /tmp/ccxVv9tF.s:899    .text.lr11xx_gnss_get_detected_satellites:0000005c $d
+     /tmp/ccxVv9tF.s:902    .text.lr11xx_gnss_parse_context_status_buffer:00000000 $t
+     /tmp/ccxVv9tF.s:908    .text.lr11xx_gnss_parse_context_status_buffer:00000000 lr11xx_gnss_parse_context_status_buffer
+     /tmp/ccxVv9tF.s:958    .text.lr11xx_gnss_get_result_destination:00000000 $t
+     /tmp/ccxVv9tF.s:964    .text.lr11xx_gnss_get_result_destination:00000000 lr11xx_gnss_get_result_destination
+     /tmp/ccxVv9tF.s:987    .text.lr11xx_gnss_compute_almanac_age:00000000 $t
+     /tmp/ccxVv9tF.s:993    .text.lr11xx_gnss_compute_almanac_age:00000000 lr11xx_gnss_compute_almanac_age
+     /tmp/ccxVv9tF.s:1004   .text.lr11xx_gnss_get_consumption:00000000 $t
+     /tmp/ccxVv9tF.s:1010   .text.lr11xx_gnss_get_consumption:00000000 lr11xx_gnss_get_consumption
+     /tmp/ccxVv9tF.s:1053   .text.lr11xx_gnss_get_consumption:00000040 $d
 
 UNDEFINED SYMBOLS
 memset

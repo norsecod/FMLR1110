@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccXaQpjE.s 			page 1
+ARM GAS  /tmp/cc69qCzQ.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccXaQpjE.s 			page 1
   56 0042 FFF7FEFF 		bl	HAL_ADC_PollForConversion
   57 0046 041E     		subs	r4, r0, #0
   58 0048 E7D1     		bne	.L4
-ARM GAS  /tmp/ccXaQpjE.s 			page 2
+ARM GAS  /tmp/cc69qCzQ.s 			page 2
 
 
   59 004a 2800     		movs	r0, r5
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccXaQpjE.s 			page 1
  109 001a 0122     		movs	r2, #1
  110 001c 6360     		str	r3, [r4, #4]
  111 001e 0023     		movs	r3, #0
-ARM GAS  /tmp/ccXaQpjE.s 			page 3
+ARM GAS  /tmp/cc69qCzQ.s 			page 3
 
 
  112 0020 2C31     		adds	r1, r1, #44
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccXaQpjE.s 			page 1
  166 00a0 00000000 		.word	.LC3
  167 00a4 16000000 		.word	.LC5
  168 00a8 17000000 		.word	.LC7
-ARM GAS  /tmp/ccXaQpjE.s 			page 4
+ARM GAS  /tmp/cc69qCzQ.s 			page 4
 
 
  170              		.global	__aeabi_uidiv
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccXaQpjE.s 			page 1
  227 0024 491B     		subs	r1, r1, r5
  228 0026 FFF7FEFF 		bl	__aeabi_idiv
  229 002a 1E30     		adds	r0, r0, #30
-ARM GAS  /tmp/ccXaQpjE.s 			page 5
+ARM GAS  /tmp/cc69qCzQ.s 			page 5
 
 
  230 002c 40B2     		sxtb	r0, r0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccXaQpjE.s 			page 1
  289              		.thumb_func
  291              	HAL_ADC_MspDeInit:
  292              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccXaQpjE.s 			page 6
+ARM GAS  /tmp/cc69qCzQ.s 			page 6
 
 
  293              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -343,37 +343,37 @@ ARM GAS  /tmp/ccXaQpjE.s 			page 1
  333      00000000 
  333      00000000 
  334              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccXaQpjE.s 			page 7
+ARM GAS  /tmp/cc69qCzQ.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 smtc_hal_adc.c
-     /tmp/ccXaQpjE.s:14     .text.adc_read:00000000 $t
-     /tmp/ccXaQpjE.s:19     .text.adc_read:00000000 adc_read
-     /tmp/ccXaQpjE.s:75     .text.adc_read:00000068 $d
-     /tmp/ccXaQpjE.s:332    .bss.hal_adc_handle:00000000 hal_adc_handle
-     /tmp/ccXaQpjE.s:87     .text.hal_adc_init:00000000 $t
-     /tmp/ccXaQpjE.s:93     .text.hal_adc_init:00000000 hal_adc_init
-     /tmp/ccXaQpjE.s:163    .text.hal_adc_init:00000094 $d
-     /tmp/ccXaQpjE.s:326    .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccXaQpjE.s:173    .text.hal_adc_get_vref_int:00000000 $t
-     /tmp/ccXaQpjE.s:179    .text.hal_adc_get_vref_int:00000000 hal_adc_get_vref_int
-     /tmp/ccXaQpjE.s:197    .text.hal_adc_get_vref_int:0000001c $d
-     /tmp/ccXaQpjE.s:202    .text.hal_adc_get_temp:00000000 $t
-     /tmp/ccXaQpjE.s:208    .text.hal_adc_get_temp:00000000 hal_adc_get_temp
-     /tmp/ccXaQpjE.s:235    .text.hal_adc_get_temp:00000030 $d
-     /tmp/ccXaQpjE.s:241    .text.hal_adc_deinit:00000000 $t
-     /tmp/ccXaQpjE.s:247    .text.hal_adc_deinit:00000000 hal_adc_deinit
-     /tmp/ccXaQpjE.s:258    .text.hal_adc_deinit:0000000c $d
-     /tmp/ccXaQpjE.s:261    .text.HAL_ADC_MspInit:00000000 $t
-     /tmp/ccXaQpjE.s:267    .text.HAL_ADC_MspInit:00000000 HAL_ADC_MspInit
-     /tmp/ccXaQpjE.s:282    .text.HAL_ADC_MspInit:00000010 $d
-     /tmp/ccXaQpjE.s:285    .text.HAL_ADC_MspDeInit:00000000 $t
-     /tmp/ccXaQpjE.s:291    .text.HAL_ADC_MspDeInit:00000000 HAL_ADC_MspDeInit
-     /tmp/ccXaQpjE.s:305    .text.HAL_ADC_MspDeInit:0000000c $d
-     /tmp/ccXaQpjE.s:309    .text.hal_adc_read_channel:00000000 $t
-     /tmp/ccXaQpjE.s:315    .text.hal_adc_read_channel:00000000 hal_adc_read_channel
-     /tmp/ccXaQpjE.s:329    .bss.hal_adc_handle:00000000 $d
+     /tmp/cc69qCzQ.s:14     .text.adc_read:00000000 $t
+     /tmp/cc69qCzQ.s:19     .text.adc_read:00000000 adc_read
+     /tmp/cc69qCzQ.s:75     .text.adc_read:00000068 $d
+     /tmp/cc69qCzQ.s:332    .bss.hal_adc_handle:00000000 hal_adc_handle
+     /tmp/cc69qCzQ.s:87     .text.hal_adc_init:00000000 $t
+     /tmp/cc69qCzQ.s:93     .text.hal_adc_init:00000000 hal_adc_init
+     /tmp/cc69qCzQ.s:163    .text.hal_adc_init:00000094 $d
+     /tmp/cc69qCzQ.s:326    .rodata.__func__.0:00000000 __func__.0
+     /tmp/cc69qCzQ.s:173    .text.hal_adc_get_vref_int:00000000 $t
+     /tmp/cc69qCzQ.s:179    .text.hal_adc_get_vref_int:00000000 hal_adc_get_vref_int
+     /tmp/cc69qCzQ.s:197    .text.hal_adc_get_vref_int:0000001c $d
+     /tmp/cc69qCzQ.s:202    .text.hal_adc_get_temp:00000000 $t
+     /tmp/cc69qCzQ.s:208    .text.hal_adc_get_temp:00000000 hal_adc_get_temp
+     /tmp/cc69qCzQ.s:235    .text.hal_adc_get_temp:00000030 $d
+     /tmp/cc69qCzQ.s:241    .text.hal_adc_deinit:00000000 $t
+     /tmp/cc69qCzQ.s:247    .text.hal_adc_deinit:00000000 hal_adc_deinit
+     /tmp/cc69qCzQ.s:258    .text.hal_adc_deinit:0000000c $d
+     /tmp/cc69qCzQ.s:261    .text.HAL_ADC_MspInit:00000000 $t
+     /tmp/cc69qCzQ.s:267    .text.HAL_ADC_MspInit:00000000 HAL_ADC_MspInit
+     /tmp/cc69qCzQ.s:282    .text.HAL_ADC_MspInit:00000010 $d
+     /tmp/cc69qCzQ.s:285    .text.HAL_ADC_MspDeInit:00000000 $t
+     /tmp/cc69qCzQ.s:291    .text.HAL_ADC_MspDeInit:00000000 HAL_ADC_MspDeInit
+     /tmp/cc69qCzQ.s:305    .text.HAL_ADC_MspDeInit:0000000c $d
+     /tmp/cc69qCzQ.s:309    .text.hal_adc_read_channel:00000000 $t
+     /tmp/cc69qCzQ.s:315    .text.hal_adc_read_channel:00000000 hal_adc_read_channel
+     /tmp/cc69qCzQ.s:329    .bss.hal_adc_handle:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_ADC_ConfigChannel

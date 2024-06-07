@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
+ARM GAS  /tmp/ccTzVZYe.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
   56 0042 0220     		movs	r0, #2
   57 0044 1963     		str	r1, [r3, #48]
   58 0046 3949     		ldr	r1, .L4+32
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 2
+ARM GAS  /tmp/ccTzVZYe.s 			page 2
 
 
   59 0048 FF30     		adds	r0, r0, #255
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  113 00b4 4530     		adds	r0, r0, #69
  114 00b6 8032     		adds	r2, r2, #128
  115 00b8 0231     		adds	r1, r1, #2
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 3
+ARM GAS  /tmp/ccTzVZYe.s 			page 3
 
 
  116 00ba 5133     		adds	r3, r3, #81
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  170 0134 3F000C00 		.word	786495
  171 0138 400D0300 		.word	200000
  172 013c 01060000 		.word	1537
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 4
+ARM GAS  /tmp/ccTzVZYe.s 			page 4
 
 
  173 0140 00000000 		.word	M_eu_868
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  229 004a 0232     		adds	r2, r2, #2
  230 004c D28F     		ldrh	r2, [r2, #62]
  231 004e 0136     		adds	r6, r6, #1
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 5
+ARM GAS  /tmp/ccTzVZYe.s 			page 5
 
 
  232 0050 9A80     		strh	r2, [r3, #4]
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  277 0002 0025     		movs	r5, #0
  278 0004 0400     		movs	r4, r0
  279 0006 2E00     		movs	r6, r5
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 6
+ARM GAS  /tmp/ccTzVZYe.s 			page 6
 
 
  280              	.L14:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  334              	.L19:
  335 0072 711E     		subs	r1, r6, #1
  336 0074 0020     		movs	r0, #0
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 7
+ARM GAS  /tmp/ccTzVZYe.s 			page 7
 
 
  337 0076 FFF7FEFF 		bl	smtc_modem_hal_get_random_nb_in_range
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  390              		.section	.text.region_eu_868_set_rx_config,"ax",%progbits
  391              		.align	1
  392              		.global	region_eu_868_set_rx_config
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 8
+ARM GAS  /tmp/ccTzVZYe.s 			page 8
 
 
  393              		.syntax unified
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  447              		.align	1
  448              		.global	region_eu_868_set_channel_mask
  449              		.syntax unified
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 9
+ARM GAS  /tmp/ccTzVZYe.s 			page 9
 
 
  450              		.code	16
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  502 001a 25782000 		.ascii	"%x \000"
  503              	.LC32:
  504 001e 2C204368 		.ascii	", ChMask = 0x%x\012\000"
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 10
+ARM GAS  /tmp/ccTzVZYe.s 			page 10
 
 
  504      4D61736B 
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  556 004c AF23     		movs	r3, #175
  557 004e AA6B     		ldr	r2, [r5, #56]
  558 0050 234E     		ldr	r6, .L55+4
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 11
+ARM GAS  /tmp/ccTzVZYe.s 			page 11
 
 
  559 0052 5B00     		lsls	r3, r3, #1
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  613 00bc 2833     		adds	r3, r3, #40
  614 00be 9B00     		lsls	r3, r3, #2
  615 00c0 C318     		adds	r3, r0, r3
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 12
+ARM GAS  /tmp/ccTzVZYe.s 			page 12
 
 
  616 00c2 5B68     		ldr	r3, [r3, #4]
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  664 001e 0120     		movs	r0, #1
  665 0020 FFF7FEFF 		bl	smtc_modem_hal_set_crashlog_status
  666 0024 2100     		movs	r1, r4
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 13
+ARM GAS  /tmp/ccTzVZYe.s 			page 13
 
 
  667 0026 0948     		ldr	r0, .L62+4
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  723 002e 2000     		movs	r0, r4
  724 0030 FFF7FEFF 		bl	smtc_modem_hal_print_trace
  725 0034 0948     		ldr	r0, .L67+20
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 14
+ARM GAS  /tmp/ccTzVZYe.s 			page 14
 
 
  726 0036 FFF7FEFF 		bl	smtc_modem_hal_print_trace
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  782 0044 25000000 		.word	.LC13
  783 0048 1E000000 		.word	.LC38
  785              		.section	.text.region_eu_868_lr_fhss_dr_to_cr_bw,"ax",%progbits
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 15
+ARM GAS  /tmp/ccTzVZYe.s 			page 15
 
 
  786              		.align	1
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  842      755F3836 
  842      385F6C72 
  842      5F666873 
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 16
+ARM GAS  /tmp/ccTzVZYe.s 			page 16
 
 
  843              		.section	.rodata.__func__.1,"a"
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  897 0000 01020304 		.ascii	"\001\002\003\004\004\006\000\000\000\000\000\000"
  897      04060000 
  897      00000000 
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 17
+ARM GAS  /tmp/ccTzVZYe.s 			page 17
 
 
  898              		.section	.rodata.MOBILE_LOWPER_DR_DISTRIBUTION_EU_868,"a"
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  958 000c 07000000 		.word	7
  959 0010 07000000 		.word	7
  960 0014 07000000 		.word	7
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 18
+ARM GAS  /tmp/ccTzVZYe.s 			page 18
 
 
  961 0018 09000000 		.word	9
@@ -1074,81 +1074,81 @@ ARM GAS  /tmp/ccK3ZjQ8.s 			page 1
  1008              	SYNC_WORD_GFSK_EU_868:
  1009 0000 C194C1   		.ascii	"\301\224\301"
  1010              		.ident	"GCC: (Arch Repository) 13.2.0"
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 19
+ARM GAS  /tmp/ccTzVZYe.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 region_eu_868.c
-     /tmp/ccK3ZjQ8.s:14     .text.region_eu_868_config:00000000 $t
-     /tmp/ccK3ZjQ8.s:20     .text.region_eu_868_config:00000000 region_eu_868_config
-     /tmp/ccK3ZjQ8.s:160    .text.region_eu_868_config:0000010c $d
-     /tmp/ccK3ZjQ8.s:972    .rodata.datarate_backoff_eu_868:00000000 datarate_backoff_eu_868
-     /tmp/ccK3ZjQ8.s:879    .rodata.duty_cycle_by_band_eu_868:00000000 duty_cycle_by_band_eu_868
-     /tmp/ccK3ZjQ8.s:1008   .rodata.SYNC_WORD_GFSK_EU_868:00000000 SYNC_WORD_GFSK_EU_868
-     /tmp/ccK3ZjQ8.s:1003   .rodata.SYNC_WORD_LR_FHSS_EU_868:00000000 SYNC_WORD_LR_FHSS_EU_868
-     /tmp/ccK3ZjQ8.s:914    .rodata.M_eu_868:00000000 M_eu_868
-     /tmp/ccK3ZjQ8.s:908    .rodata.MOBILE_LONGRANGE_DR_DISTRIBUTION_EU_868:00000000 MOBILE_LONGRANGE_DR_DISTRIBUTION_EU_868
-     /tmp/ccK3ZjQ8.s:902    .rodata.MOBILE_LOWPER_DR_DISTRIBUTION_EU_868:00000000 MOBILE_LOWPER_DR_DISTRIBUTION_EU_868
-     /tmp/ccK3ZjQ8.s:896    .rodata.JOIN_DR_DISTRIBUTION_EU_868:00000000 JOIN_DR_DISTRIBUTION_EU_868
-     /tmp/ccK3ZjQ8.s:890    .rodata.DEFAULT_DR_DISTRIBUTION_EU_868:00000000 DEFAULT_DR_DISTRIBUTION_EU_868
-     /tmp/ccK3ZjQ8.s:862    .rodata.frequency_range_by_band_eu_868:00000000 frequency_range_by_band_eu_868
-     /tmp/ccK3ZjQ8.s:181    .text.region_eu_868_init:00000000 $t
-     /tmp/ccK3ZjQ8.s:187    .text.region_eu_868_init:00000000 region_eu_868_init
-     /tmp/ccK3ZjQ8.s:255    .text.region_eu_868_init:00000078 $d
-     /tmp/ccK3ZjQ8.s:995    .rodata.default_freq_eu_868:00000000 default_freq_eu_868
-     /tmp/ccK3ZjQ8.s:267    .text.region_eu_868_get_next_channel:00000000 $t
-     /tmp/ccK3ZjQ8.s:273    .text.region_eu_868_get_next_channel:00000000 region_eu_868_get_next_channel
-     /tmp/ccK3ZjQ8.s:367    .text.region_eu_868_get_next_channel:000000b0 $d
-     /tmp/ccK3ZjQ8.s:373    .text.region_eu_868_get_join_next_channel:00000000 $t
-     /tmp/ccK3ZjQ8.s:379    .text.region_eu_868_get_join_next_channel:00000000 region_eu_868_get_join_next_channel
-     /tmp/ccK3ZjQ8.s:391    .text.region_eu_868_set_rx_config:00000000 $t
-     /tmp/ccK3ZjQ8.s:397    .text.region_eu_868_set_rx_config:00000000 region_eu_868_set_rx_config
-     /tmp/ccK3ZjQ8.s:435    .text.region_eu_868_set_rx_config:0000003c $d
-     /tmp/ccK3ZjQ8.s:978    .rodata.datarate_offsets_eu_868:00000000 datarate_offsets_eu_868
-     /tmp/ccK3ZjQ8.s:447    .text.region_eu_868_set_channel_mask:00000000 $t
-     /tmp/ccK3ZjQ8.s:453    .text.region_eu_868_set_channel_mask:00000000 region_eu_868_set_channel_mask
-     /tmp/ccK3ZjQ8.s:493    .text.region_eu_868_set_channel_mask:00000048 $d
-     /tmp/ccK3ZjQ8.s:506    .text.region_eu_868_build_channel_mask:00000000 $t
-     /tmp/ccK3ZjQ8.s:512    .text.region_eu_868_build_channel_mask:00000000 region_eu_868_build_channel_mask
-     /tmp/ccK3ZjQ8.s:631    .text.region_eu_868_build_channel_mask:000000dc $d
-     /tmp/ccK3ZjQ8.s:641    .text.region_eu_868_get_modulation_type_from_datarate:00000000 $t
-     /tmp/ccK3ZjQ8.s:647    .text.region_eu_868_get_modulation_type_from_datarate:00000000 region_eu_868_get_modulation_type_from_datarate
-     /tmp/ccK3ZjQ8.s:685    .text.region_eu_868_get_modulation_type_from_datarate:00000048 $d
-     /tmp/ccK3ZjQ8.s:856    .rodata.__func__.3:00000000 __func__.3
-     /tmp/ccK3ZjQ8.s:691    .text.region_eu_868_lora_dr_to_sf_bw:00000000 $t
-     /tmp/ccK3ZjQ8.s:697    .text.region_eu_868_lora_dr_to_sf_bw:00000000 region_eu_868_lora_dr_to_sf_bw
-     /tmp/ccK3ZjQ8.s:734    .text.region_eu_868_lora_dr_to_sf_bw:00000048 $d
-     /tmp/ccK3ZjQ8.s:966    .rodata.datarates_to_sf_eu_868:00000000 datarates_to_sf_eu_868
-     /tmp/ccK3ZjQ8.s:954    .rodata.datarates_to_bandwidths_eu_868:00000000 datarates_to_bandwidths_eu_868
-     /tmp/ccK3ZjQ8.s:851    .rodata.__func__.2:00000000 __func__.2
-     /tmp/ccK3ZjQ8.s:742    .text.region_eu_868_fsk_dr_to_bitrate:00000000 $t
-     /tmp/ccK3ZjQ8.s:748    .text.region_eu_868_fsk_dr_to_bitrate:00000000 region_eu_868_fsk_dr_to_bitrate
-     /tmp/ccK3ZjQ8.s:780    .text.region_eu_868_fsk_dr_to_bitrate:0000003c $d
-     /tmp/ccK3ZjQ8.s:846    .rodata.__func__.1:00000000 __func__.1
-     /tmp/ccK3ZjQ8.s:786    .text.region_eu_868_lr_fhss_dr_to_cr_bw:00000000 $t
-     /tmp/ccK3ZjQ8.s:792    .text.region_eu_868_lr_fhss_dr_to_cr_bw:00000000 region_eu_868_lr_fhss_dr_to_cr_bw
-     /tmp/ccK3ZjQ8.s:831    .text.region_eu_868_lr_fhss_dr_to_cr_bw:0000004c $d
-     /tmp/ccK3ZjQ8.s:920    .rodata.datarates_to_lr_fhss_cr_eu_868:00000000 datarates_to_lr_fhss_cr_eu_868
-     /tmp/ccK3ZjQ8.s:937    .rodata.datarates_to_lr_fhss_bw_eu_868:00000000 datarates_to_lr_fhss_bw_eu_868
-     /tmp/ccK3ZjQ8.s:841    .rodata.__func__.0:00000000 __func__.0
-     /tmp/ccK3ZjQ8.s:859    .rodata.frequency_range_by_band_eu_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:876    .rodata.duty_cycle_by_band_eu_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:887    .rodata.DEFAULT_DR_DISTRIBUTION_EU_868:00000000 $d
-ARM GAS  /tmp/ccK3ZjQ8.s 			page 20
+     /tmp/ccTzVZYe.s:14     .text.region_eu_868_config:00000000 $t
+     /tmp/ccTzVZYe.s:20     .text.region_eu_868_config:00000000 region_eu_868_config
+     /tmp/ccTzVZYe.s:160    .text.region_eu_868_config:0000010c $d
+     /tmp/ccTzVZYe.s:972    .rodata.datarate_backoff_eu_868:00000000 datarate_backoff_eu_868
+     /tmp/ccTzVZYe.s:879    .rodata.duty_cycle_by_band_eu_868:00000000 duty_cycle_by_band_eu_868
+     /tmp/ccTzVZYe.s:1008   .rodata.SYNC_WORD_GFSK_EU_868:00000000 SYNC_WORD_GFSK_EU_868
+     /tmp/ccTzVZYe.s:1003   .rodata.SYNC_WORD_LR_FHSS_EU_868:00000000 SYNC_WORD_LR_FHSS_EU_868
+     /tmp/ccTzVZYe.s:914    .rodata.M_eu_868:00000000 M_eu_868
+     /tmp/ccTzVZYe.s:908    .rodata.MOBILE_LONGRANGE_DR_DISTRIBUTION_EU_868:00000000 MOBILE_LONGRANGE_DR_DISTRIBUTION_EU_868
+     /tmp/ccTzVZYe.s:902    .rodata.MOBILE_LOWPER_DR_DISTRIBUTION_EU_868:00000000 MOBILE_LOWPER_DR_DISTRIBUTION_EU_868
+     /tmp/ccTzVZYe.s:896    .rodata.JOIN_DR_DISTRIBUTION_EU_868:00000000 JOIN_DR_DISTRIBUTION_EU_868
+     /tmp/ccTzVZYe.s:890    .rodata.DEFAULT_DR_DISTRIBUTION_EU_868:00000000 DEFAULT_DR_DISTRIBUTION_EU_868
+     /tmp/ccTzVZYe.s:862    .rodata.frequency_range_by_band_eu_868:00000000 frequency_range_by_band_eu_868
+     /tmp/ccTzVZYe.s:181    .text.region_eu_868_init:00000000 $t
+     /tmp/ccTzVZYe.s:187    .text.region_eu_868_init:00000000 region_eu_868_init
+     /tmp/ccTzVZYe.s:255    .text.region_eu_868_init:00000078 $d
+     /tmp/ccTzVZYe.s:995    .rodata.default_freq_eu_868:00000000 default_freq_eu_868
+     /tmp/ccTzVZYe.s:267    .text.region_eu_868_get_next_channel:00000000 $t
+     /tmp/ccTzVZYe.s:273    .text.region_eu_868_get_next_channel:00000000 region_eu_868_get_next_channel
+     /tmp/ccTzVZYe.s:367    .text.region_eu_868_get_next_channel:000000b0 $d
+     /tmp/ccTzVZYe.s:373    .text.region_eu_868_get_join_next_channel:00000000 $t
+     /tmp/ccTzVZYe.s:379    .text.region_eu_868_get_join_next_channel:00000000 region_eu_868_get_join_next_channel
+     /tmp/ccTzVZYe.s:391    .text.region_eu_868_set_rx_config:00000000 $t
+     /tmp/ccTzVZYe.s:397    .text.region_eu_868_set_rx_config:00000000 region_eu_868_set_rx_config
+     /tmp/ccTzVZYe.s:435    .text.region_eu_868_set_rx_config:0000003c $d
+     /tmp/ccTzVZYe.s:978    .rodata.datarate_offsets_eu_868:00000000 datarate_offsets_eu_868
+     /tmp/ccTzVZYe.s:447    .text.region_eu_868_set_channel_mask:00000000 $t
+     /tmp/ccTzVZYe.s:453    .text.region_eu_868_set_channel_mask:00000000 region_eu_868_set_channel_mask
+     /tmp/ccTzVZYe.s:493    .text.region_eu_868_set_channel_mask:00000048 $d
+     /tmp/ccTzVZYe.s:506    .text.region_eu_868_build_channel_mask:00000000 $t
+     /tmp/ccTzVZYe.s:512    .text.region_eu_868_build_channel_mask:00000000 region_eu_868_build_channel_mask
+     /tmp/ccTzVZYe.s:631    .text.region_eu_868_build_channel_mask:000000dc $d
+     /tmp/ccTzVZYe.s:641    .text.region_eu_868_get_modulation_type_from_datarate:00000000 $t
+     /tmp/ccTzVZYe.s:647    .text.region_eu_868_get_modulation_type_from_datarate:00000000 region_eu_868_get_modulation_type_from_datarate
+     /tmp/ccTzVZYe.s:685    .text.region_eu_868_get_modulation_type_from_datarate:00000048 $d
+     /tmp/ccTzVZYe.s:856    .rodata.__func__.3:00000000 __func__.3
+     /tmp/ccTzVZYe.s:691    .text.region_eu_868_lora_dr_to_sf_bw:00000000 $t
+     /tmp/ccTzVZYe.s:697    .text.region_eu_868_lora_dr_to_sf_bw:00000000 region_eu_868_lora_dr_to_sf_bw
+     /tmp/ccTzVZYe.s:734    .text.region_eu_868_lora_dr_to_sf_bw:00000048 $d
+     /tmp/ccTzVZYe.s:966    .rodata.datarates_to_sf_eu_868:00000000 datarates_to_sf_eu_868
+     /tmp/ccTzVZYe.s:954    .rodata.datarates_to_bandwidths_eu_868:00000000 datarates_to_bandwidths_eu_868
+     /tmp/ccTzVZYe.s:851    .rodata.__func__.2:00000000 __func__.2
+     /tmp/ccTzVZYe.s:742    .text.region_eu_868_fsk_dr_to_bitrate:00000000 $t
+     /tmp/ccTzVZYe.s:748    .text.region_eu_868_fsk_dr_to_bitrate:00000000 region_eu_868_fsk_dr_to_bitrate
+     /tmp/ccTzVZYe.s:780    .text.region_eu_868_fsk_dr_to_bitrate:0000003c $d
+     /tmp/ccTzVZYe.s:846    .rodata.__func__.1:00000000 __func__.1
+     /tmp/ccTzVZYe.s:786    .text.region_eu_868_lr_fhss_dr_to_cr_bw:00000000 $t
+     /tmp/ccTzVZYe.s:792    .text.region_eu_868_lr_fhss_dr_to_cr_bw:00000000 region_eu_868_lr_fhss_dr_to_cr_bw
+     /tmp/ccTzVZYe.s:831    .text.region_eu_868_lr_fhss_dr_to_cr_bw:0000004c $d
+     /tmp/ccTzVZYe.s:920    .rodata.datarates_to_lr_fhss_cr_eu_868:00000000 datarates_to_lr_fhss_cr_eu_868
+     /tmp/ccTzVZYe.s:937    .rodata.datarates_to_lr_fhss_bw_eu_868:00000000 datarates_to_lr_fhss_bw_eu_868
+     /tmp/ccTzVZYe.s:841    .rodata.__func__.0:00000000 __func__.0
+     /tmp/ccTzVZYe.s:859    .rodata.frequency_range_by_band_eu_868:00000000 $d
+     /tmp/ccTzVZYe.s:876    .rodata.duty_cycle_by_band_eu_868:00000000 $d
+     /tmp/ccTzVZYe.s:887    .rodata.DEFAULT_DR_DISTRIBUTION_EU_868:00000000 $d
+ARM GAS  /tmp/ccTzVZYe.s 			page 20
 
 
-     /tmp/ccK3ZjQ8.s:893    .rodata.JOIN_DR_DISTRIBUTION_EU_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:899    .rodata.MOBILE_LOWPER_DR_DISTRIBUTION_EU_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:905    .rodata.MOBILE_LONGRANGE_DR_DISTRIBUTION_EU_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:911    .rodata.M_eu_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:917    .rodata.datarates_to_lr_fhss_cr_eu_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:934    .rodata.datarates_to_lr_fhss_bw_eu_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:951    .rodata.datarates_to_bandwidths_eu_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:963    .rodata.datarates_to_sf_eu_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:969    .rodata.datarate_backoff_eu_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:975    .rodata.datarate_offsets_eu_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:992    .rodata.default_freq_eu_868:00000000 $d
-     /tmp/ccK3ZjQ8.s:1000   .rodata.SYNC_WORD_LR_FHSS_EU_868:00000000 $d
+     /tmp/ccTzVZYe.s:893    .rodata.JOIN_DR_DISTRIBUTION_EU_868:00000000 $d
+     /tmp/ccTzVZYe.s:899    .rodata.MOBILE_LOWPER_DR_DISTRIBUTION_EU_868:00000000 $d
+     /tmp/ccTzVZYe.s:905    .rodata.MOBILE_LONGRANGE_DR_DISTRIBUTION_EU_868:00000000 $d
+     /tmp/ccTzVZYe.s:911    .rodata.M_eu_868:00000000 $d
+     /tmp/ccTzVZYe.s:917    .rodata.datarates_to_lr_fhss_cr_eu_868:00000000 $d
+     /tmp/ccTzVZYe.s:934    .rodata.datarates_to_lr_fhss_bw_eu_868:00000000 $d
+     /tmp/ccTzVZYe.s:951    .rodata.datarates_to_bandwidths_eu_868:00000000 $d
+     /tmp/ccTzVZYe.s:963    .rodata.datarates_to_sf_eu_868:00000000 $d
+     /tmp/ccTzVZYe.s:969    .rodata.datarate_backoff_eu_868:00000000 $d
+     /tmp/ccTzVZYe.s:975    .rodata.datarate_offsets_eu_868:00000000 $d
+     /tmp/ccTzVZYe.s:992    .rodata.default_freq_eu_868:00000000 $d
+     /tmp/ccTzVZYe.s:1000   .rodata.SYNC_WORD_LR_FHSS_EU_868:00000000 $d
 
 UNDEFINED SYMBOLS
 memset1

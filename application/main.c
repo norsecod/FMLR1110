@@ -18,7 +18,6 @@
 
 #include "ralf_lr11xx.h"
 #include "lr11xx_gnss.h"
-#include "lr11xx_gnss_types.h"
 #include "ral_lr11xx.h"
 
 #include "cayenne_lpp.h"
@@ -56,7 +55,13 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
 
 
 
+typedef struct {
+    uint8_t satellite_id;
+    uint8_t cnr;
+    int16_t doppler;
+} parsed_gnss_data_t;
 
+parsed_gnss_data_t gnss_data_buffer[6];
 /*
  * -----------------------------------------------------------------------------
  * --- PRIVATE TYPES -----------------------------------------------------------
@@ -84,6 +89,7 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     int prev_tap = 3;
     
     
+    static uint8_t gnss_count;
     static uint8_t       rx_payload[255]      = { 0 };  // Buffer for rx payload
     static uint8_t       rx_payload_size      = 0;      // Size of the payload in the rx_payload buffer
     extern settings_t    settings;                      //holds the LoRaWAN keys
@@ -91,12 +97,6 @@ const ralf_t modem_radio = RALF_LR11XX_INSTANTIATE( NULL );
     uint32_t link_check_attempts = 0;
     static uint32_t tx_pending;
     //uint16_t axisxyz[3];          //variable used for debuggng adxl343
-
-lr11xx_gnss_detected_satellite_t gnss_data_buffer[RESULT_BUFFER_SIZE];
-lr11xx_gnss_context_status_bytestream_t context_status_buffer;
-lr11xx_gnss_context_status_t context_status;
-lr11xx_gnss_timings_t gnss_timings;
-lr11xx_gnss_solver_assistance_position_t assistance_position;
     
 /*
  * -----------------------------------------------------------------------------
@@ -272,12 +272,10 @@ int main( void )
 
 void gps_snap(void) {
     SMTC_HAL_TRACE_PRINTF("\n-----------------GPS snap----------------\n\r");
-   
 
     // Activate the active antenna
     hal_gpio_set_value(PB_0, 1);
-    hal_mcu_delay_ms(100);
-    
+
     lr11xx_status_t ret;
     uint8_t nb_sat = 0;
     uint8_t result_buffer[RESULT_BUFFER_SIZE];
@@ -291,34 +289,26 @@ void gps_snap(void) {
     uint32_t constellations = LR11XX_GNSS_GPS_MASK | LR11XX_GNSS_BEIDOU_MASK;
     ret = lr11xx_gnss_set_constellations_to_use(modem_radio.ral.context, constellations);
     if (ret != LR11XX_STATUS_OK) {
-        SMTC_HAL_TRACE_PRINTF("LR11XX ERROR: Failed to set constellations\n\r");
+        SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Failed to set constellations\n\r");
         hal_gpio_set_value(PB_0, 0);
         return;
     }
-
-    // Set the GNSS scan mode
-    lr11xx_gnss_scan_mode_t scan_mode = LR11XX_GNSS_SCAN_MODE_0_SINGLE_SCAN_LEGACY;
-    ret = lr11xx_gnss_set_scan_mode(modem_radio.ral.context, scan_mode);
-    if (ret != LR11XX_STATUS_OK) {
-        SMTC_HAL_TRACE_PRINTF("LR11XX ERROR: Failed to set scan mode\n\r");
-        hal_gpio_set_value(PB_0, 0);
-        return;
-    }
-
+    /*
     // Set assistance position to Høgskole i Østfold, Fredrikstad, Norway
+    lr11xx_gnss_solver_assistance_position_t assistance_position;
     assistance_position.latitude = 59.2184;  // Latitude for Høgskole i Østfold
     assistance_position.longitude = 10.9291;  // Longitude for Høgskole i Østfold
     ret = lr11xx_gnss_set_assistance_position(modem_radio.ral.context, &assistance_position);
     if (ret != LR11XX_STATUS_OK) {
-        SMTC_HAL_TRACE_PRINTF("LR11XX ERROR: Failed to set assistance position\n\r");
+        SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Failed to set assistance position\n\r");
         hal_gpio_set_value(PB_0, 0);
         return;
     }
-
+    */
     // Start the GNSS autonomous scan with best effort mode
     ret = lr11xx_gnss_scan_autonomous(modem_radio.ral.context, gnss_time, LR11XX_GNSS_OPTION_BEST_EFFORT, 1, 6);
     if (ret != LR11XX_STATUS_OK) {
-        SMTC_HAL_TRACE_PRINTF("LR11XX ERROR: Failed to start autonomous scan\n\r");
+        SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Failed to start autonomous scan\n\r");
         hal_gpio_set_value(PB_0, 0);
         return;
     }
@@ -329,7 +319,7 @@ void gps_snap(void) {
     // Get the number of detected satellites
     ret = lr11xx_gnss_get_nb_detected_satellites(modem_radio.ral.context, &nb_sat);
     if (ret != LR11XX_STATUS_OK) {
-        SMTC_HAL_TRACE_PRINTF("LR11XX ERROR: Failed to get number of detected satellites\n\r");
+        SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Failed to get number of detected satellites\n\r");
     } else {
         SMTC_HAL_TRACE_PRINTF("Number of satellites found: %d\n\r", nb_sat);
     }
@@ -349,41 +339,18 @@ void gps_snap(void) {
 
             // Parse and store satellite information in the buffer
             for (uint8_t i = 0; i < nb_sat; i++) {
-                gnss_data_buffer[i].satellite_id = result_buffer[i * 8];
-                gnss_data_buffer[i].cnr = result_buffer[i * 8 + 1] + LR11XX_GNSS_SNR_TO_CNR_OFFSET;
-                gnss_data_buffer[i].doppler = (int16_t)((result_buffer[i * 8 + 2] << 8) | result_buffer[i * 8 + 3]);
+                gnss_data_buffer[i].satellite_id = result_buffer[i * 4];
+                gnss_data_buffer[i].cnr = result_buffer[i * 4 + 1] + LR11XX_GNSS_SNR_TO_CNR_OFFSET;
+                gnss_data_buffer[i].doppler = (int16_t)((result_buffer[i * 4 + 2] << 8) | result_buffer[i * 4 + 3]);
 
                 SMTC_HAL_TRACE_PRINTF("Parsed Data - Satellite ID: %d, CNR: %d, Doppler: %d\n\r",
                                       gnss_data_buffer[i].satellite_id, gnss_data_buffer[i].cnr, gnss_data_buffer[i].doppler);
             }
-
-            // Get the GNSS context status
-            ret = lr11xx_gnss_get_context_status(modem_radio.ral.context, context_status_buffer);
-            if (ret == LR11XX_STATUS_OK) {
-                // Parse the GNSS context status buffer
-                ret = lr11xx_gnss_parse_context_status_buffer(context_status_buffer, &context_status);
-                if (ret == LR11XX_STATUS_OK) {
-                    SMTC_HAL_TRACE_PRINTF("Parsed GNSS context status\n\r");
-                } else {
-                    SMTC_HAL_TRACE_PRINTF("LR11XX ERROR: Failed to parse GNSS context status\n\r");
-                }
-            } else {
-                SMTC_HAL_TRACE_PRINTF("LR11XX ERROR: Failed to get GNSS context status\n\r");
-            }
-
-            // Get the timings of the last GNSS scan
-            ret = lr11xx_gnss_get_timings(modem_radio.ral.context, &gnss_timings);
-            if (ret == LR11XX_STATUS_OK) {
-                SMTC_HAL_TRACE_PRINTF("GNSS scan timings - Acquisition: %u ms, Analysis: %u ms\n\r",
-                                      gnss_timings.radio_ms, gnss_timings.computation_ms);
-            } else {
-                SMTC_HAL_TRACE_PRINTF("LR11XX ERROR: Failed to get GNSS scan timings\n\r");
-            }
         } else {
-            SMTC_HAL_TRACE_PRINTF("LR11XX ERROR: Failed to read GNSS results\n\r");
+            SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Failed to read GNSS results\n\r");
         }
     } else {
-        SMTC_HAL_TRACE_PRINTF("LR11XX ERROR: Invalid result size\n\r");
+        SMTC_HAL_TRACE_PRINTF("LR1110 ERROR: Invalid result size\n\r");
     }
 
     // Deactivate the active antenna
